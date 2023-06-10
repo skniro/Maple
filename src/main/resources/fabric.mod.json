@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "maple",
+  "version": "${version}",
+  "name": "Maple",
+  "description": "",
+  "authors": [
+    "skniro"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/maple/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.skniro.maple.client.MapleClient"
+    ],
+    "main": [
+      "com.skniro.maple.Maple"
+    ]
+  },
+  "mixins": [
+    "maple.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "minecraft": "1.19.X"
+  }
+}

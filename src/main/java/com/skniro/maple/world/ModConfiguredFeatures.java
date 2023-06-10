@@ -1,0 +1,65 @@
+package com.skniro.maple.world;
+
+import com.skniro.maple.Maple;
+import com.skniro.maple.block.Maple_block;
+import com.skniro.maple.world.gen.CherryTrunkPlacer;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+
+import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.WeightedListIntProvider;
+import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
+
+import java.util.List;
+import java.util.OptionalInt;
+
+
+public class ModConfiguredFeatures {
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> Maple_TREE;
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> Maple_TREE_SPAWN;
+    public static final RegistryEntry<PlacedFeature> Maple_TREE_CHECKED;
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CHERRY_TREE;
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> CHERRY_TREE_SPAWN;
+    public static final RegistryEntry<PlacedFeature> CHERRY_TREE_CHECKED;
+
+    private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
+        return new TreeFeatureConfig.Builder(BlockStateProvider.of(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.of(leaves), new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1));
+    }
+
+    private static TreeFeatureConfig.Builder maple() {
+        return ModConfiguredFeatures.builder(Maple_block.MAPLE_LOG, Maple_block.MAPLE_LOG, 5, 6, 3, 2).ignoreVines();
+    }
+
+    private static TreeFeatureConfig.Builder cherry() {
+        return ModConfiguredFeatures.builder(Maple_block.CHERRY_LOG,Maple_block.CHERRY_LEAVES,5,5,3,2).ignoreVines();
+    }
+
+    static{
+        Maple_TREE = ConfiguredFeatures.register("maple_tree", Feature.TREE, ModConfiguredFeatures.maple().build());
+        Maple_TREE_CHECKED = PlacedFeatures.register("maple_tree_checked", ModConfiguredFeatures.Maple_TREE,
+                List.of(PlacedFeatures.wouldSurvive(Maple_block.MAPLE_SAPLING)));
+        Maple_TREE_SPAWN = ConfiguredFeatures.register("maple_tree_spawn", Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(Maple_TREE_CHECKED,
+                        0.5f)), Maple_TREE_CHECKED));
+
+        CHERRY_TREE = ConfiguredFeatures.register("cherry_tree", Feature.TREE, ModConfiguredFeatures.cherry().build());
+        CHERRY_TREE_CHECKED = PlacedFeatures.register("cherry_tree_checked", ModConfiguredFeatures.CHERRY_TREE,
+                List.of(PlacedFeatures.wouldSurvive(Maple_block.CHERRY_SAPLING)));
+        CHERRY_TREE_SPAWN = ConfiguredFeatures.register("cherry_tree_spawn", Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(CHERRY_TREE_CHECKED,
+                        0.5f)), CHERRY_TREE_CHECKED));
+    }
+    public static void registerConfiguredFeatures() {
+        Maple.LOGGER.debug("Registering the ModConfiguredFeatures for " + Maple.MOD_ID);
+    }
+
+}
