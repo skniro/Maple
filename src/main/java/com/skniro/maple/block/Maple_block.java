@@ -53,7 +53,7 @@ public class Maple_block {
         return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(tab)));
     }
-    public static void registerModBlocks() {
+    public static void registerModWoodBlocks() {
         Maple.LOGGER.debug("Registering ModBlocks for " + Maple.MOD_ID);
     }
 }

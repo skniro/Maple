@@ -1,0 +1,6 @@
+{
+  "parent": "maple:item/generated",
+  "textures": {
+    "layer0": "maple:item/cherry_sign"
+  }
+}

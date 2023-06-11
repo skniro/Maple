@@ -1,11 +1,13 @@
 package com.skniro.maple;
 
+import com.skniro.maple.block.ModDoorBlocks;
 import com.skniro.maple.block.Maple_block;
 import com.skniro.maple.mixin.TrunkPlacerTypeInvoker;
 import com.skniro.maple.util.ModFlammableBlocks;
 import com.skniro.maple.util.ModStrippableBlocks;
 import com.skniro.maple.world.ModConfiguredFeatures;
 import com.skniro.maple.world.gen.CherryTrunkPlacer;
+import item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -34,6 +36,8 @@ public class Maple implements ModInitializer {
         ModConfiguredFeatures.registerConfiguredFeatures();
         ModFlammableBlocks.registerFlammableBlocks();
         ModStrippableBlocks.registerStrippables();
-        Maple_block.registerModBlocks();
+        Maple_block.registerModWoodBlocks();
+        ModDoorBlocks.registerModDoorBlocks();
+        ModItems.registerModItems();
     }
 }

@@ -4,7 +4,8 @@
   "package": "com.skniro.maple.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "TrunkPlacerTypeInvoker"
+    "TrunkPlacerTypeInvoker",
+    "SignTypeAccessor"
   ],
   "client": [
   ],
