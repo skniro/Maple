@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -37,9 +38,20 @@ public class Maple_block {
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
     public static final Block STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
-
+    public static final Block POTTED_CHERRY_SAPLING = registerBlock("potted_cherry_sapling",
+            new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()), Maple.Maple_Group);
     public static final Block CHERRY_PLANKS = registerBlock("cherry_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+    public static final Block CHERRY_BUTTON = registerBlock("cherry_button",
+            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block CHERRY_STAIRS = registerBlockWithoutItem("cherry_stairs",
+            new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)));
+    public static final Block CHERRY_SLAB = registerBlockWithoutItem("cherry_slab",
+            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block CHERRY_FENCE_GATE = registerBlockWithoutItem("cherry_fence_gate",
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)));
+    public static final Block CHERRY_FENCE = registerBlockWithoutItem("cherry_fence",
+            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {
