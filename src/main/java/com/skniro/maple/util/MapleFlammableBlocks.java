@@ -3,7 +3,7 @@ package com.skniro.maple.util;
 import com.skniro.maple.block.Maple_block;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
-public class ModFlammableBlocks {
+public class MapleFlammableBlocks {
     public static void registerFlammableBlocks() {
         FlammableBlockRegistry registry = FlammableBlockRegistry.getDefaultInstance();
         registry.add(Maple_block.CHERRY_WOOD, 5, 5);

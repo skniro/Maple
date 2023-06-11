@@ -14,8 +14,8 @@ import net.minecraft.util.registry.Registry;
 
 
 public class Maple_block {
-    public static final Block MAPLE_LOG = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG));
-    public static final Block MAPLE_SAPLING = new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING));
+    public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
     public static final Block MAPLE_WOOD = registerBlock("maple_wood",
@@ -28,9 +28,9 @@ public class Maple_block {
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
 
 
-    public static final Block CHERRY_LOG = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG));
-    public static final Block CHERRY_LEAVES = new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES));
-    public static final Block CHERRY_SAPLING = new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING));
+    public static final Block CHERRY_LOG = registerBlock("cherry_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+    public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block CHERRY_WOOD = registerBlock("cherry_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
     public static final Block STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",

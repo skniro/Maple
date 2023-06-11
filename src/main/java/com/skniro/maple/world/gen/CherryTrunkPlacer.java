@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-import static com.skniro.maple.world.ModTrunkPlacerType.CHERRY_TRUNK_PLACER;
+import static com.skniro.maple.world.MapleTrunkPlacerType.CHERRY_TRUNK_PLACER;
 
 public class CherryTrunkPlacer extends TrunkPlacer {
     public static final Codec<CherryTrunkPlacer> CODEC;

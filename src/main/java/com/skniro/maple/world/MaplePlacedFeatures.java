@@ -1,6 +1,5 @@
 package com.skniro.maple.world;
 
-import com.skniro.maple.block.Maple_block;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.PlacedFeatures;
@@ -11,14 +10,14 @@ import java.util.List;
 
 
 
-public class ModPlacedFeatures {
+public class MaplePlacedFeatures {
     public static final RegistryEntry<PlacedFeature> Maple_TREE_PLACED;
     public static final RegistryEntry<PlacedFeature> CHERRY_TREE_PLACED;
 
     static{
-        Maple_TREE_PLACED = PlacedFeatures.register("maple_tree_placed", ModConfiguredFeatures.Maple_TREE_SPAWN,
+        Maple_TREE_PLACED = PlacedFeatures.register("maple_tree_placed", MapleConfiguredFeatures.Maple_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
-        CHERRY_TREE_PLACED = PlacedFeatures.register("cherry_tree_placed", ModConfiguredFeatures.CHERRY_TREE_SPAWN,
+        CHERRY_TREE_PLACED = PlacedFeatures.register("cherry_tree_placed", MapleConfiguredFeatures.CHERRY_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2)));
     }
 
