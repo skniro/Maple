@@ -4,8 +4,8 @@ import com.skniro.maple.block.Maple_block;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-public class MapleLanguageProvider extends FabricLanguageProvider {
-    public MapleLanguageProvider(FabricDataGenerator dataGenerator){
+public class MapleChineseLanguageProvider extends FabricLanguageProvider {
+    public MapleChineseLanguageProvider(FabricDataGenerator dataGenerator){
         super(dataGenerator,"zh_cn");
     }
 

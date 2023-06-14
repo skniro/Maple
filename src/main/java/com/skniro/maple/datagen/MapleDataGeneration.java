@@ -7,6 +7,7 @@ public class MapleDataGeneration implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         fabricDataGenerator.addProvider(MapleModelProvider::new);
-        fabricDataGenerator.addProvider(MapleLanguageProvider::new);
+        fabricDataGenerator.addProvider(MapleChineseLanguageProvider::new);
+        fabricDataGenerator.addProvider(MapleEnglishLanguageProvider::new);
     }
 }
