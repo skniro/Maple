@@ -6,6 +6,9 @@ import net.minecraft.block.Block;
 
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.RegistryWorldView;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
@@ -41,14 +44,14 @@ public class MapleConfiguredFeatures {
                 List.of(PlacedFeatures.wouldSurvive(Maple_block.MAPLE_SAPLING)));
         Maple_TREE_SPAWN = ConfiguredFeatures.register("maple_tree_spawn", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(Maple_TREE_CHECKED,
-                        0.5f)), Maple_TREE_CHECKED));
+                        0.00000005f)), Maple_TREE_CHECKED));
 
         CHERRY_TREE = ConfiguredFeatures.register("cherry_tree", Feature.TREE, MapleConfiguredFeatures.cherry().build());
         CHERRY_TREE_CHECKED = PlacedFeatures.register("cherry_tree_checked", MapleConfiguredFeatures.CHERRY_TREE,
                 List.of(PlacedFeatures.wouldSurvive(Maple_block.CHERRY_SAPLING)));
         CHERRY_TREE_SPAWN = ConfiguredFeatures.register("cherry_tree_spawn", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(CHERRY_TREE_CHECKED,
-                        0.5f)), CHERRY_TREE_CHECKED));
+                        0.00000001f)), CHERRY_TREE_CHECKED));
     }
     public static void registerConfiguredFeatures() {
         Maple.LOGGER.debug("Registering the ModConfiguredFeatures for " + Maple.MOD_ID);

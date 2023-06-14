@@ -7,6 +7,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+    maven {
+        url "https://maven.minecraftforge.net/"
+    }
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -22,6 +25,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
 }
 
 processResources {
@@ -32,6 +36,24 @@ processResources {
         expand "version": project.version
     }
 }
+
+def dataOutput = 'src/main/generated'
+
+loom {
+    runs {
+        datagen {
+            server()
+
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file(dataOutput)}"
+
+            runDir "build/datagen"
+        }
+    }
+}
+
+sourceSets { main { resources { srcDirs += dataOutput } } }
 
 def targetJavaVersion = 17
 tasks.withType(JavaCompile).configureEach {

@@ -12,11 +12,17 @@
   "icon": "assets/maple/icon.png",
   "environment": "*",
   "entrypoints": {
+    "terrablender": [
+      "com.skniro.maple.Maple"
+    ],
     "client": [
       "com.skniro.maple.client.MapleClient"
     ],
     "main": [
       "com.skniro.maple.Maple"
+    ],
+    "fabric-datagen": [
+      "com.skniro.maple.datagen.MapleDataGeneration"
     ]
   },
   "mixins": [

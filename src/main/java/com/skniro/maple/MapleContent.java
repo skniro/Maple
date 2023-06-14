@@ -7,8 +7,9 @@ import com.skniro.maple.block.MapleDoorBlocks;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.MapleConfiguredFeatures;
+import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
-import item.MapleItems;
+import com.skniro.maple.item.MapleItems;
 
 
 public class MapleContent {
@@ -30,6 +31,7 @@ public class MapleContent {
 
     public static void generateWorldGen() {
         MapleTreeGeneration.generateTrees();
+        MapleBiomeKeys.registerBiome();
     }
     public static void registerMapleConfigured() {
         MapleConfiguredFeatures.registerConfiguredFeatures();

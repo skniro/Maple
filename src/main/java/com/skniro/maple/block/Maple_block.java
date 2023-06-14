@@ -6,6 +6,7 @@ import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -44,15 +45,14 @@ public class Maple_block {
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
     public static final Block CHERRY_BUTTON = registerBlock("cherry_button",
             new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
-    public static final Block CHERRY_STAIRS = registerBlockWithoutItem("cherry_stairs",
-            new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)));
-    public static final Block CHERRY_SLAB = registerBlockWithoutItem("cherry_slab",
-            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block CHERRY_FENCE_GATE = registerBlockWithoutItem("cherry_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)));
-    public static final Block CHERRY_FENCE = registerBlockWithoutItem("cherry_fence",
-            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)));
-
+    public static final Block CHERRY_STAIRS = registerBlock("cherry_stairs",
+            new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)), Maple.Maple_Group);
+    public static final Block CHERRY_SLAB = registerBlock("cherry_slab",
+            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
+    public static final Block CHERRY_FENCE = registerBlock("cherry_fence",
+            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(Maple.MOD_ID, name), block);

@@ -1,4 +1,4 @@
-package item;
+package com.skniro.maple.item;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

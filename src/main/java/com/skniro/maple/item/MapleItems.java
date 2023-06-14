@@ -1,4 +1,4 @@
-package item;
+package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleDoorBlocks;
