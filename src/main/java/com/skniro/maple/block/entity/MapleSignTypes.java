@@ -6,4 +6,6 @@ import net.minecraft.util.SignType;
 public class MapleSignTypes {
     public static final SignType CHERRY =
             SignTypeAccessor.registerNew(SignTypeAccessor.newSignType("cherry"));
+    public static final SignType MAPLE =
+            SignTypeAccessor.registerNew(SignTypeAccessor.newSignType("maple"));
 }

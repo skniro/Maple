@@ -46,7 +46,8 @@ public class MapleConfiguredFeatures {
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(Maple_TREE_CHECKED,
                         0.00000005f)), Maple_TREE_CHECKED));
 
-        CHERRY_TREE = ConfiguredFeatures.register("cherry_tree", Feature.TREE, MapleConfiguredFeatures.cherry().build());
+        CHERRY_TREE = ConfiguredFeatures.register(
+                "cherry_tree", Feature.TREE, MapleConfiguredFeatures.cherry().build());
         CHERRY_TREE_CHECKED = PlacedFeatures.register("cherry_tree_checked", MapleConfiguredFeatures.CHERRY_TREE,
                 List.of(PlacedFeatures.wouldSurvive(Maple_block.CHERRY_SAPLING)));
         CHERRY_TREE_SPAWN = ConfiguredFeatures.register("cherry_tree_spawn", Feature.RANDOM_SELECTOR,

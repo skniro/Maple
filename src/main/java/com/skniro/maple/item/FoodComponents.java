@@ -1,31 +1,17 @@
 package com.skniro.maple.item;
 
+import com.skniro.maple.Maple;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.Block;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.EnchantedGoldenAppleItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.registry.Registry;
 
 public class FoodComponents {
-    public static final Item HASTE_APPLE = new Item
-            (new Item
-            .Settings()
-            .rarity(Rarity.RARE)
-            .food
-                    (new FoodComponent
-                    .Builder()
-                    .hunger(6)
-                    .saturationModifier(0.3f)
-                    .alwaysEdible()
-                    .statusEffect
-                            (new StatusEffectInstance(StatusEffects.HASTE,
-                                    6000,
-                                    2),
-                                    1.0F)
-                            .build()
-                    )
-            );
+
 
     public static final Item SPEED_APPLE = new Item
             (new Item
@@ -156,4 +142,8 @@ public class FoodComponents {
                             )
                     )
             );
+
+    private static Item registerItem(String name,Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),item);
+    }
 }

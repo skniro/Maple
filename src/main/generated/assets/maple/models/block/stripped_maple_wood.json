@@ -1,5 +1,5 @@
 {
-  "parent": "block/cube_column",
+  "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "maple:block/stripped_maple_log",
     "side": "maple:block/stripped_maple_log"

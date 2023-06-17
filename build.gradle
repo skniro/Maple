@@ -10,12 +10,18 @@ repositories {
     maven {
         url "https://maven.minecraftforge.net/"
     }
+    maven { // Registrate
+        allowInsecureProtocol = true
+        url "http://maven.tterrag.com/"
+    }
+    mavenLocal()
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
 }
+
 
 dependencies {
     // To change the versions see the gradle.properties file
@@ -25,6 +31,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation(include("com.tterrag.registrate:Registrate:${project.registrate_version}"))
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
 }
 
@@ -53,7 +60,7 @@ loom {
     }
 }
 
-sourceSets { main { resources { srcDirs += dataOutput } } }
+sourceSets {main }
 
 def targetJavaVersion = 17
 tasks.withType(JavaCompile).configureEach {
