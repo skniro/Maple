@@ -31,7 +31,7 @@ public class MapleConfiguredFeatures {
     }
 
     private static TreeFeatureConfig.Builder maple() {
-        return MapleConfiguredFeatures.builder(Maple_block.MAPLE_LOG, Maple_block.MAPLE_LOG, 5, 6, 3, 2).ignoreVines();
+        return MapleConfiguredFeatures.builder(Maple_block.MAPLE_LOG, Maple_block.MAPLE_LEAVES, 5, 6, 3, 2).ignoreVines();
     }
 
     private static TreeFeatureConfig.Builder cherry() {
