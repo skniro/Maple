@@ -53,6 +53,9 @@ public class Maple_block {
     //Potted
     public static final Block POTTED_CHERRY_SAPLING = registerBlock("potted_cherry_sapling",
             new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()), Maple.Maple_Group);
+    public static final Block POTTED_MAPLE_SAPLING = registerBlock("potted_maple_sapling",
+            new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()), Maple.Maple_Group);
+
 
     //BUTTON
     public static final Block CHERRY_BUTTON = registerBlock("cherry_button",
@@ -81,6 +84,7 @@ public class Maple_block {
     //TRAPDOOR
     public static final Block CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
             new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+
 
     //PRESSURE_PLATE
     public static final Block CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",

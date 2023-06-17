@@ -17,6 +17,8 @@ public class MapleModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
         //Cube Block
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_PLANKS);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.CHERRY_PLANKS);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_LEAVES);
 
         //LOG Block
         blockStateModelGenerator.registerLog(Maple_block.MAPLE_LOG).log(Maple_block.MAPLE_LOG).wood(Maple_block.MAPLE_WOOD);
@@ -28,6 +30,10 @@ public class MapleModelProvider extends FabricModelProvider {
 
         //TRAPDOOR
         blockStateModelGenerator.registerTrapdoor(Maple_block.CHERRY_TRAPDOOR);
+
+        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.CHERRY_SAPLING,Maple_block.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.MAPLE_SAPLING,Maple_block.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
 
 
     }
