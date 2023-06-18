@@ -19,5 +19,6 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(Maple_block.MAPLE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Maple_block.CHERRY_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Maple_block.CHERRY_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(Maple_block.MAPLE_TRAPDOOR, RenderLayer.getCutout());
     }
 }

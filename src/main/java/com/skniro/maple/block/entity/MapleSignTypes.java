@@ -8,4 +8,6 @@ public class MapleSignTypes {
             SignTypeAccessor.registerNew(SignTypeAccessor.newSignType("cherry"));
     public static final SignType MAPLE =
             SignTypeAccessor.registerNew(SignTypeAccessor.newSignType("maple"));
+    public static final SignType BAMBOO =
+            SignTypeAccessor.registerNew(SignTypeAccessor.newSignType("bamboo"));
 }

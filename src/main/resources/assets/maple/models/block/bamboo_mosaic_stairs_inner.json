@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "maple:block/bamboo_mosaic",
+    "side": "maple:block/bamboo_mosaic",
+    "top": "maple:block/bamboo_mosaic"
+  }
+}

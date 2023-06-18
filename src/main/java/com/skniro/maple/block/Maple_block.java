@@ -6,12 +6,14 @@ import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 
 
@@ -33,6 +35,12 @@ public class Maple_block {
     public static final Block STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
 
+    public static final Block BAMBOO_BLOCK = registerBlock("bamboo_block", createBambooBlock(MapColor.YELLOW, MapColor.DARK_GREEN, BlockSoundGroup.WOOD), Maple.Maple_Group);
+    public static final Block STRIPPED_BAMBOO_BLOCK = registerBlock("stripped_bamboo_block", createBambooBlock(MapColor.YELLOW, MapColor.YELLOW, BlockSoundGroup.WOOD), Maple.Maple_Group);
+
+
+
+
     //SAPLING Block
     public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
@@ -49,6 +57,10 @@ public class Maple_block {
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
     public static final Block CHERRY_PLANKS = registerBlock("cherry_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+    public static final Block BAMBOO_PLANKS = registerBlock("bamboo_planks",
+            new Block(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
+    public static final Block BAMBOO_MOSAIC = registerBlock("bamboo_mosaic",
+            new Block(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
     //Potted
     public static final Block POTTED_CHERRY_SAPLING = registerBlock("potted_cherry_sapling",
@@ -62,18 +74,31 @@ public class Maple_block {
             new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_BUTTON = registerBlock("maple_button",
             new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block BAMBOO_BUTTON = registerBlock("bamboo_button",
+            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+
 
     //STAIRS
     public static final Block CHERRY_STAIRS = registerBlock("cherry_stairs",
             new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)), Maple.Maple_Group);
     public static final Block MAPLE_STAIRS = registerBlock("maple_stairs",
             new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)), Maple.Maple_Group);
+    public static final Block BAMBOO_STAIRS = registerBlock("bamboo_stairs",
+            new StairsBlock(BAMBOO_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(BAMBOO_PLANKS)), Maple.Maple_Group);
+    public static final Block BAMBOO_MOSAIC_STAIRS = registerBlock("bamboo_mosaic_stairs",
+            new StairsBlock(BAMBOO_MOSAIC.getDefaultState(), AbstractBlock.Settings.copy(BAMBOO_MOSAIC)), Maple.Maple_Group);
+
 
    //SLAB
     public static final Block CHERRY_SLAB = registerBlock("cherry_slab",
             new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_SLAB = registerBlock("maple_slab",
             new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block BAMBOO_SLAB = registerBlock("bamboo_slab",
+            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block BAMBOO_MOSAIC_SLAB = registerBlock("bamboo_mosaic_slab",
+            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+
 
     //FENCE
     public static final Block CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
@@ -84,18 +109,27 @@ public class Maple_block {
             new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
     public static final Block MAPLE_FENCE = registerBlock("maple_fence",
             new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f)), Maple.Maple_Group);
+    public static final Block BAMBOO_FENCE = registerBlock("bamboo_fence",
+            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+
 
     //Door
     public static final Block MAPLE_DOOR = registerBlockWithoutItem("maple_door",
             new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static final Block CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
             new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+    public static final Block BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
+            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
     //TRAPDOOR
     public static final Block CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
             new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
     public static final Block MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
             new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+    public static final Block BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
+            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(3.0f).nonOpaque()), Maple.Maple_Group);
 
 
     //PRESSURE_PLATE
@@ -103,6 +137,8 @@ public class Maple_block {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, Maple_block.CHERRY_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
     public static final Block MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, Maple_block.MAPLE_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+    public static final Block BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, Maple_block.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(0.5f)), Maple.Maple_Group);
 
 
 
@@ -117,7 +153,14 @@ public class Maple_block {
         return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(tab)));
     }
+
+    private static PillarBlock createBambooBlock(MapColor topMapColor, MapColor sideMapColor, BlockSoundGroup soundGroup) {
+        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).mapColor(sideMapColor).strength(2.0f).sounds(soundGroup));
+    }
+
     public static void registerMapleBlocks() {
         Maple.LOGGER.debug("Registering ModBlocks for " + Maple.MOD_ID);
     }
+
+
 }
