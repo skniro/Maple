@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "maple:maple_sapling",
     "maple:maple_sapling"
   ]
 }

@@ -9,6 +9,7 @@ public class MapleDataGeneration implements DataGeneratorEntrypoint {
         fabricDataGenerator.addProvider(MapleModelProvider::new);
         fabricDataGenerator.addProvider(MapleChineseLanguageProvider::new);
         fabricDataGenerator.addProvider(MapleEnglishLanguageProvider::new);
-
+        fabricDataGenerator.addProvider(MapleItemTagGeneration::new);
+        fabricDataGenerator.addProvider(MapleBlockTagGeneration::new);
     }
 }
