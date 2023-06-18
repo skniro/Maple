@@ -1,13 +1,13 @@
 {
   "variants": {
     "axis=x": {
-      "model": "minecraft:block/stripped_bamboo_block_x"
+      "model": "maple:block/stripped_bamboo_block_x"
     },
     "axis=y": {
-      "model": "minecraft:block/stripped_bamboo_block_y"
+      "model": "maple:block/stripped_bamboo_block_y"
     },
     "axis=z": {
-      "model": "minecraft:block/stripped_bamboo_block_z"
+      "model": "maple:block/stripped_bamboo_block_z"
     }
   }
 }

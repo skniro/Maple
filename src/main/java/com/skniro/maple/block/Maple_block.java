@@ -6,18 +6,17 @@ import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 
 
 public class Maple_block {
+    Block block;
     //LOG_Block
     public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
     public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
@@ -63,10 +62,10 @@ public class Maple_block {
             new Block(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
     //Potted
-    public static final Block POTTED_CHERRY_SAPLING = registerBlock("potted_cherry_sapling",
-            new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()), Maple.Maple_Group);
-    public static final Block POTTED_MAPLE_SAPLING = registerBlock("potted_maple_sapling",
-            new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()), Maple.Maple_Group);
+    public static final Block POTTED_CHERRY_SAPLING = registerBlockWithoutItem("potted_cherry_sapling",
+            new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
+    public static final Block POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
+            new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
 
 
     //BUTTON
@@ -161,6 +160,5 @@ public class Maple_block {
     public static void registerMapleBlocks() {
         Maple.LOGGER.debug("Registering ModBlocks for " + Maple.MOD_ID);
     }
-
 
 }
