@@ -9,6 +9,8 @@ import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+
+import static com.skniro.maple.datagen.MapleItemTagGeneration.ModItemTags.*;
 import static net.minecraft.tag.ItemTags.SAPLINGS;
 
 
@@ -17,8 +19,10 @@ public class MapleItemTagGeneration extends FabricTagProvider<Item> {
         super(dataGenerator, Registry.ITEM);
     }
 
-    public class ModBlockTags {
-        public static final TagKey<Block> EXAMPLE_ORES = TagKey.of(Registry.BLOCK_KEY, new Identifier("c", "saplingS"));
+    public class ModItemTags {
+        public static final TagKey<Item> C_SAPLING = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "saplings"));
+        public static final TagKey<Item> C_MAPLE_LOGS = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "maple_logs"));
+        public static final TagKey<Item> C_CHERRY_LOGS = TagKey.of(Registry.ITEM_KEY, new Identifier("c", "cherry_logs"));
     }
 
     @Override
@@ -26,6 +30,8 @@ public class MapleItemTagGeneration extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(SAPLINGS)
                 .add(Item.fromBlock(Maple_block.MAPLE_SAPLING))
                 .add(Item.fromBlock(Maple_block.CHERRY_SAPLING));
+        getOrCreateTagBuilder(C_CHERRY_LOGS)
+                .add(Item.fromBlock(Maple_block.CHERRY_LOG));
 
     }
 }

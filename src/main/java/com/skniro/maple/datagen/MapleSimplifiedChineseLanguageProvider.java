@@ -4,12 +4,11 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.Maple_block;
 import com.skniro.maple.item.GlassCupItems;
-import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-public class MapleChineseLanguageProvider extends FabricLanguageProvider {
-    public MapleChineseLanguageProvider(FabricDataGenerator dataGenerator){
+public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
+    public MapleSimplifiedChineseLanguageProvider(FabricDataGenerator dataGenerator){
         super(dataGenerator,"zh_cn");
     }
 

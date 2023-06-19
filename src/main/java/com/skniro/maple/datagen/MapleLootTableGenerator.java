@@ -7,14 +7,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.BlockLootTableGenerator;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
 
-import static com.skniro.maple.datagen.MapleBlockTagGeneration.ModBlockTags.CSAPLING;
 
 public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
     public MapleLootTableGenerator(FabricDataGenerator dataGenerator) {
@@ -28,6 +26,38 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
                 BlockLootTableGenerator.drops(MapleSignBlocks.CHERRY_SIGN));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_wall_sign"),
                 BlockLootTableGenerator.drops(MapleSignBlocks.CHERRY_WALL_SIGN));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_log"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_LOG));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_wood"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_WOOD));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_door"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_DOOR));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_sapling"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_SAPLING));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_leaves"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_LEAVES));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_button"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_BUTTON));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_fence"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_FENCE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_fence_gate"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_FENCE_GATE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_planks"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_PLANKS));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_pressure_plate"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_PRESSURE_PLATE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_slab"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_SLAB));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_stairs"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_STAIRS));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_trapdoor"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_TRAPDOOR));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/potted_cherry_sapling"),
+                BlockLootTableGenerator.drops(Maple_block.CHERRY_SAPLING,Blocks.FLOWER_POT));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/stripped_cherry_log"),
+                BlockLootTableGenerator.drops(Maple_block.STRIPPED_CHERRY_LOG));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/stripped_cherry_wood"),
+                BlockLootTableGenerator.drops(Maple_block.STRIPPED_CHERRY_WOOD));
 
         //MAPLE
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_sign"),
@@ -76,5 +106,31 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
                 BlockLootTableGenerator.drops(MapleSignBlocks.BAMBOO_SIGN));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_wall_sign"),
                 BlockLootTableGenerator.drops(MapleSignBlocks.BAMBOO_WALL_SIGN));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_mosaic"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_MOSAIC));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_door"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_DOOR));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_button"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_BUTTON));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_fence"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_FENCE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_fence_gate"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_FENCE_GATE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_planks"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_PLANKS));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_pressure_plate"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_PRESSURE_PLATE));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_slab"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_SLAB));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_stairs"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_STAIRS));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_mosaic_slab"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_MOSAIC_SLAB));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_mosaic_stairs"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_MOSAIC_STAIRS));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_trapdoor"),
+                BlockLootTableGenerator.drops(Maple_block.BAMBOO_TRAPDOOR));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks//stripped_bamboo_block"),
+                BlockLootTableGenerator.drops(Maple_block.STRIPPED_BAMBOO_BLOCK));
     }
 }
