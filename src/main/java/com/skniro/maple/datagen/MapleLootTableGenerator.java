@@ -18,6 +18,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
     public MapleLootTableGenerator(FabricDataGenerator dataGenerator) {
         super(dataGenerator, LootContextTypes.ENTITY);
     }
+    public static final float[] SAPLING_DROP_CHANCE = new float[]{0.048F, 0.0425F, 0.062333336F, 0.1F};
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> identifierBuilderBiConsumer) {
@@ -35,7 +36,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_sapling"),
                 BlockLootTableGenerator.drops(Maple_block.CHERRY_SAPLING));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_leaves"),
-                BlockLootTableGenerator.drops(Maple_block.CHERRY_LEAVES));
+                BlockLootTableGenerator.leavesDrop(Maple_block.CHERRY_LEAVES,Maple_block.CHERRY_SAPLING,SAPLING_DROP_CHANCE));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_button"),
                 BlockLootTableGenerator.drops(Maple_block.CHERRY_BUTTON));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_fence"),
@@ -73,7 +74,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_sapling"),
                 BlockLootTableGenerator.drops(Maple_block.MAPLE_SAPLING));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_leaves"),
-                BlockLootTableGenerator.drops(Maple_block.MAPLE_LEAVES));
+                BlockLootTableGenerator.leavesDrop(Maple_block.MAPLE_LEAVES,Maple_block.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_button"),
                 BlockLootTableGenerator.drops(Maple_block.MAPLE_BUTTON));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_fence"),
