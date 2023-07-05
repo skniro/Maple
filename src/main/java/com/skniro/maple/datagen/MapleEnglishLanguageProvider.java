@@ -63,7 +63,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(Maple_block.BAMBOO_SLAB,"Bamboo Slab");
         translationBuilder.add(Maple_block.BAMBOO_STAIRS,"Bamboo Stairs");
         translationBuilder.add(Maple_block.BAMBOO_MOSAIC,"Bamboo Mosaic");
-        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_SLAB,"Bamboo Mosaic");
+        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_SLAB,"Bamboo Mosaic Slab");
         translationBuilder.add(Maple_block.BAMBOO_MOSAIC_STAIRS,"Bamboo Mosaic Stairs");
         translationBuilder.add(MapleSignBlocks.BAMBOO_SIGN,"Bamboo Sign");
         translationBuilder.add(Maple_block.BAMBOO_TRAPDOOR,"Bamboo Trapdoor");
