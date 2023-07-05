@@ -17,63 +17,63 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
         //Maple
-        translationBuilder.add(Maple_block.MAPLE_PLANKS,"maple planks");
-        translationBuilder.add(Maple_block.MAPLE_LOG,"maple log");
-        translationBuilder.add(Maple_block.MAPLE_WOOD,"maple wood");
-        translationBuilder.add(Maple_block.STRIPPED_MAPLE_WOOD,"stripped maple wood");
-        translationBuilder.add(Maple_block.STRIPPED_MAPLE_LOG,"stripped maple log");
-        translationBuilder.add(Maple_block.MAPLE_LEAVES,"maple leaves");
-        translationBuilder.add(Maple_block.MAPLE_DOOR,"maple door");
-        translationBuilder.add(Maple_block.MAPLE_BUTTON,"maple button");
-        translationBuilder.add(Maple_block.MAPLE_FENCE,"maple fence");
-        translationBuilder.add(Maple_block.MAPLE_FENCE_GATE,"maple fence gate");
-        translationBuilder.add(Maple_block.MAPLE_SLAB,"maple slab");
-        translationBuilder.add(Maple_block.MAPLE_STAIRS,"maple stairs");
-        translationBuilder.add(Maple_block.MAPLE_SAPLING,"maple sapling");
-        translationBuilder.add(MapleSignBlocks.Maple_SIGN,"maple sign");
-        translationBuilder.add(Maple_block.MAPLE_TRAPDOOR,"maple trapdoor");
-        translationBuilder.add(Maple_block.MAPLE_PRESSURE_PLATE,"maple pressure plate");
+        translationBuilder.add(Maple_block.MAPLE_PLANKS,"Maple Planks");
+        translationBuilder.add(Maple_block.MAPLE_LOG,"Maple Log");
+        translationBuilder.add(Maple_block.MAPLE_WOOD,"Maple Wood");
+        translationBuilder.add(Maple_block.STRIPPED_MAPLE_WOOD,"Stripped Maple Wood");
+        translationBuilder.add(Maple_block.STRIPPED_MAPLE_LOG,"Stripped Maple Log");
+        translationBuilder.add(Maple_block.MAPLE_LEAVES,"Maple Leaves");
+        translationBuilder.add(Maple_block.MAPLE_DOOR,"Maple Door");
+        translationBuilder.add(Maple_block.MAPLE_BUTTON,"Maple Button");
+        translationBuilder.add(Maple_block.MAPLE_FENCE,"Maple Fence");
+        translationBuilder.add(Maple_block.MAPLE_FENCE_GATE,"Maple Fence Gate");
+        translationBuilder.add(Maple_block.MAPLE_SLAB,"Maple Slab");
+        translationBuilder.add(Maple_block.MAPLE_STAIRS,"Maple Stairs");
+        translationBuilder.add(Maple_block.MAPLE_SAPLING,"Maple Sapling");
+        translationBuilder.add(MapleSignBlocks.Maple_SIGN,"Maple Sign");
+        translationBuilder.add(Maple_block.MAPLE_TRAPDOOR,"Maple Trapdoor");
+        translationBuilder.add(Maple_block.MAPLE_PRESSURE_PLATE,"Maple Pressure Plate");
 
         //Cherry
-        translationBuilder.add(Maple_block.CHERRY_LOG,"cherry log");
-        translationBuilder.add(Maple_block.CHERRY_WOOD,"cherry wood");
-        translationBuilder.add(Maple_block.CHERRY_PLANKS,"cherry planks");
-        translationBuilder.add(Maple_block.STRIPPED_CHERRY_WOOD,"stripped cherry wood");
-        translationBuilder.add(Maple_block.STRIPPED_CHERRY_LOG,"stripped cherry log");
-        translationBuilder.add(Maple_block.CHERRY_LEAVES,"cherry leaves");
-        translationBuilder.add(Maple_block.CHERRY_DOOR,"cherry door");
-        translationBuilder.add(Maple_block.CHERRY_BUTTON,"cherry button");
-        translationBuilder.add(Maple_block.CHERRY_FENCE,"cherry fence");
-        translationBuilder.add(Maple_block.CHERRY_FENCE_GATE,"cherry fence gate");
-        translationBuilder.add(Maple_block.CHERRY_SLAB,"cherry slab");
-        translationBuilder.add(Maple_block.CHERRY_STAIRS,"cherry stairs");
-        translationBuilder.add(Maple_block.CHERRY_SAPLING,"cherry sapling");
-        translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"cherry sign");
-        translationBuilder.add(Maple_block.CHERRY_TRAPDOOR,"cherry trapdoor");
-        translationBuilder.add(Maple_block.CHERRY_PRESSURE_PLATE,"cherry pressure plate");
+        translationBuilder.add(Maple_block.CHERRY_LOG,"Cherry Log");
+        translationBuilder.add(Maple_block.CHERRY_WOOD,"Cherry Wood");
+        translationBuilder.add(Maple_block.CHERRY_PLANKS,"Cherry Planks");
+        translationBuilder.add(Maple_block.STRIPPED_CHERRY_WOOD,"Stripped Cherry Wood");
+        translationBuilder.add(Maple_block.STRIPPED_CHERRY_LOG,"Stripped Cherry Log");
+        translationBuilder.add(Maple_block.CHERRY_LEAVES,"Cherry Leaves");
+        translationBuilder.add(Maple_block.CHERRY_DOOR,"Cherry Door");
+        translationBuilder.add(Maple_block.CHERRY_BUTTON,"Cherry Button");
+        translationBuilder.add(Maple_block.CHERRY_FENCE,"Cherry Fence");
+        translationBuilder.add(Maple_block.CHERRY_FENCE_GATE,"Cherry Fence Gate");
+        translationBuilder.add(Maple_block.CHERRY_SLAB,"Cherry Slab");
+        translationBuilder.add(Maple_block.CHERRY_STAIRS,"Cherry Stairs");
+        translationBuilder.add(Maple_block.CHERRY_SAPLING,"Cherry Sapling");
+        translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"Cherry Sign");
+        translationBuilder.add(Maple_block.CHERRY_TRAPDOOR,"Cherry Trapdoor");
+        translationBuilder.add(Maple_block.CHERRY_PRESSURE_PLATE,"Cherry Pressure Plate");
 
         //BAMBOO
-        translationBuilder.add(Maple_block.BAMBOO_BLOCK,"bamboo block");
-        translationBuilder.add(Maple_block.BAMBOO_PLANKS,"bamboo planks");
-        translationBuilder.add(Maple_block.STRIPPED_BAMBOO_BLOCK,"stripped bamboo block");
-        translationBuilder.add(Maple_block.BAMBOO_DOOR,"bamboo door");
-        translationBuilder.add(Maple_block.BAMBOO_BUTTON,"bamboo button");
-        translationBuilder.add(Maple_block.BAMBOO_FENCE,"bamboo fence");
-        translationBuilder.add(Maple_block.BAMBOO_FENCE_GATE,"bamboo fence gate");
-        translationBuilder.add(Maple_block.BAMBOO_SLAB,"bamboo slab");
-        translationBuilder.add(Maple_block.BAMBOO_STAIRS,"bamboo stairs");
-        translationBuilder.add(Maple_block.BAMBOO_MOSAIC,"bamboo mosaic");
-        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_SLAB,"bamboo mosaic");
-        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_STAIRS,"bamboo mosaic stairs");
-        translationBuilder.add(MapleSignBlocks.BAMBOO_SIGN,"bamboo sign");
-        translationBuilder.add(Maple_block.BAMBOO_TRAPDOOR,"bamboo trapdoor");
-        translationBuilder.add(Maple_block.BAMBOO_PRESSURE_PLATE,"bamboo pressure plate");
+        translationBuilder.add(Maple_block.BAMBOO_BLOCK,"Bamboo Block");
+        translationBuilder.add(Maple_block.BAMBOO_PLANKS,"Bamboo Planks");
+        translationBuilder.add(Maple_block.STRIPPED_BAMBOO_BLOCK,"Stripped Bamboo Block");
+        translationBuilder.add(Maple_block.BAMBOO_DOOR,"Bamboo Door");
+        translationBuilder.add(Maple_block.BAMBOO_BUTTON,"Bamboo Button");
+        translationBuilder.add(Maple_block.BAMBOO_FENCE,"Bamboo Fence");
+        translationBuilder.add(Maple_block.BAMBOO_FENCE_GATE,"Bamboo Fence Gate");
+        translationBuilder.add(Maple_block.BAMBOO_SLAB,"Bamboo Slab");
+        translationBuilder.add(Maple_block.BAMBOO_STAIRS,"Bamboo Stairs");
+        translationBuilder.add(Maple_block.BAMBOO_MOSAIC,"Bamboo Mosaic");
+        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_SLAB,"Bamboo Mosaic");
+        translationBuilder.add(Maple_block.BAMBOO_MOSAIC_STAIRS,"Bamboo Mosaic Stairs");
+        translationBuilder.add(MapleSignBlocks.BAMBOO_SIGN,"Bamboo Sign");
+        translationBuilder.add(Maple_block.BAMBOO_TRAPDOOR,"Bamboo Trapdoor");
+        translationBuilder.add(Maple_block.BAMBOO_PRESSURE_PLATE,"Bamboo Pressure Plate");
 
         //ITEM GLASS CUP
-        translationBuilder.add(GlassCupItems.HIGH_GLASS_CUP,"high glass cup");
+        translationBuilder.add(GlassCupItems.HIGH_GLASS_CUP,"High Glass Cup");
 
         //ITEM GROUP
-        translationBuilder.add(Maple.Maple_Group,"maple");
+        translationBuilder.add(Maple.Maple_Group,"Maple");
 
     }
 }

@@ -14,5 +14,6 @@ public class MapleDataGeneration implements DataGeneratorEntrypoint {
         fabricDataGenerator.addProvider(MapleBlockTagGeneration::new);
         fabricDataGenerator.addProvider(MapleLootTableGenerator::new);
         fabricDataGenerator.addProvider(MapleRecipeGeneration::new);
+        fabricDataGenerator.addProvider(MapleHungarianLanguageProvider::new);
     }
 }
