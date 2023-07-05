@@ -133,5 +133,13 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
                 BlockLootTableGenerator.drops(Maple_block.BAMBOO_TRAPDOOR));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks//stripped_bamboo_block"),
                 BlockLootTableGenerator.drops(Maple_block.STRIPPED_BAMBOO_BLOCK));
+
+        //SAKURA
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/potted_sakura_sapling"),
+                BlockLootTableGenerator.drops(Maple_block.SAKURA_SAPLING,Blocks.FLOWER_POT));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/sakura_sapling"),
+                BlockLootTableGenerator.drops(Maple_block.SAKURA_SAPLING));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/sakura_leaves"),
+                BlockLootTableGenerator.leavesDrop(Maple_block.SAKURA_LEAVES,Maple_block.SAKURA_SAPLING,SAPLING_DROP_CHANCE));
     }
 }

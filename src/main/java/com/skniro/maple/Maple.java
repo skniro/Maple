@@ -1,5 +1,6 @@
 package com.skniro.maple;
 
+import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -20,6 +21,8 @@ public class Maple implements ModInitializer, TerraBlenderApi {
     public static final ItemGroup Maple_Group = FabricItemGroupBuilder.build(
             new Identifier(MOD_ID, "maple_group"),() -> new ItemStack(MAPLE_LOG));
 
+    public static final ItemGroup Maple_Group_Food = FabricItemGroupBuilder.build(
+            new Identifier(MOD_ID, "maple_group_food"),() -> new ItemStack(MapleItems.MapleSyrup));
     @Override
     public void onInitialize() {
         MapleContent.registerItem();

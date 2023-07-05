@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "maple:milk_bottom"
+    }
+  ],
+  "result": {
+    "item": "maple:cream"
+  }
+}

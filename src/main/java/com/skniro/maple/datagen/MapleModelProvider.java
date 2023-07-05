@@ -2,6 +2,7 @@ package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.Maple_block;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -19,6 +20,7 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.CHERRY_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_LEAVES);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.SAKURA_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.BAMBOO_MOSAIC);
 
@@ -38,6 +40,7 @@ public class MapleModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerFlowerPotPlant(Maple_block.CHERRY_SAPLING,Maple_block.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(Maple_block.MAPLE_SAPLING,Maple_block.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.SAKURA_SAPLING,Maple_block.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
 
 
@@ -46,5 +49,6 @@ public class MapleModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(GlassCupItems.HIGH_GLASS_CUP, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.MILK_BOTTOM, Models.GENERATED);
     }
 }

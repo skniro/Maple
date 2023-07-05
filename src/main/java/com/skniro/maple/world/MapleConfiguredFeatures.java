@@ -25,6 +25,9 @@ public class MapleConfiguredFeatures {
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CHERRY_TREE;
     public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> CHERRY_TREE_SPAWN;
     public static final RegistryEntry<PlacedFeature> CHERRY_TREE_CHECKED;
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> SAKURA_TREE;
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> SAKURA_TREE_SPAWN;
+    public static final RegistryEntry<PlacedFeature> SAKURA_TREE_CHECKED;
 
     private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.of(leaves), new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1));
@@ -36,6 +39,10 @@ public class MapleConfiguredFeatures {
 
     private static TreeFeatureConfig.Builder cherry() {
         return MapleConfiguredFeatures.builder(Maple_block.CHERRY_LOG,Maple_block.CHERRY_LEAVES,5,5,3,2).ignoreVines();
+    }
+
+    private static TreeFeatureConfig.Builder sakura() {
+        return MapleConfiguredFeatures.builder(Maple_block.CHERRY_LOG,Maple_block.SAKURA_LEAVES,3,4,3,2).ignoreVines();
     }
 
     static{
@@ -53,6 +60,14 @@ public class MapleConfiguredFeatures {
         CHERRY_TREE_SPAWN = ConfiguredFeatures.register("cherry_tree_spawn", Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfig(List.of(new RandomFeatureEntry(CHERRY_TREE_CHECKED,
                         0.00000001f)), CHERRY_TREE_CHECKED));
+
+        SAKURA_TREE = ConfiguredFeatures.register(
+                "sakura_tree", Feature.TREE, MapleConfiguredFeatures.sakura().build());
+        SAKURA_TREE_CHECKED = PlacedFeatures.register("sakura_tree_checked", MapleConfiguredFeatures.SAKURA_TREE,
+                List.of(PlacedFeatures.wouldSurvive(Maple_block.SAKURA_SAPLING)));
+        SAKURA_TREE_SPAWN = ConfiguredFeatures.register("sakura_tree_spawn", Feature.RANDOM_SELECTOR,
+                new RandomFeatureConfig(List.of(new RandomFeatureEntry(SAKURA_TREE_CHECKED,
+                        0.00000001f)), SAKURA_TREE_CHECKED));
     }
     public static void registerConfiguredFeatures() {
         Maple.LOGGER.debug("Registering the ModConfiguredFeatures for " + Maple.MOD_ID);

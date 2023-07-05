@@ -13,11 +13,14 @@ import java.util.List;
 public class MaplePlacedFeatures {
     public static final RegistryEntry<PlacedFeature> Maple_TREE_PLACED;
     public static final RegistryEntry<PlacedFeature> CHERRY_TREE_PLACED;
+    public static final RegistryEntry<PlacedFeature> SAKURA_TREE_PLACED;
 
     static{
         Maple_TREE_PLACED = PlacedFeatures.register("maple_tree_placed", MapleConfiguredFeatures.Maple_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
         CHERRY_TREE_PLACED = PlacedFeatures.register("cherry_tree_placed", MapleConfiguredFeatures.CHERRY_TREE_SPAWN,
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
+        SAKURA_TREE_PLACED = PlacedFeatures.register("sakura_tree_placed", MapleConfiguredFeatures.SAKURA_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
     }
 

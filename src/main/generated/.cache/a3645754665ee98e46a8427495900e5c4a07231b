@@ -1,10 +1,11 @@
-// 1.19.2	2023-07-05T12:09:13.1620118	minecraft:entity Loot Table
+// 1.19.2	2023-07-05T23:19:12.1076831	minecraft:entity Loot Table
 f8a6f7e4b00798368322995fd8f682e1893b32f0 data\maple\loot_tables\blocks\bamboo_trapdoor.json
 b33d38e23780dd980e5508a7ee31512133b22697 data\maple\loot_tables\blocks\cherry_slab.json
 bbb46abc1c6c33af4fd953c8ea091aa384c3b90d data\maple\loot_tables\blocks\bamboo_mosaic.json
 9335425aa92fcd657af839945300590e9bc67a3c data\maple\loot_tables\blocks\bamboo_fence.json
 82cdfc8eda06b50867288461a1f28174f1d531e0 data\maple\loot_tables\blocks\stripped_cherry_wood.json
 cc8db45eddcbf2bb712b970fb9692fff400ede1c data\maple\loot_tables\blocks\bamboo_slab.json
+83a2b0b137a5dd6c11d62fd5d95fe44254bfa3de data\maple\loot_tables\blocks\potted_sakura_sapling.json
 7ec1903c52dd5726cc7d26a687845987359d95fc data\maple\loot_tables\blocks\maple_stairs.json
 0277b176d828ee44e4c02b6e33c16a4c1149195b data\maple\loot_tables\blocks\bamboo_planks.json
 7a5d904650c0d13df63908001c67a7e5409ba93c data\maple\loot_tables\blocks\stripped_bamboo_block.json
@@ -26,8 +27,10 @@ a9e87f7ff57b870f993c7163d6cb96399c64d1fd data\maple\loot_tables\blocks\maple_but
 27ce7f3a14df0f1173ee9c6488b083fe21696f14 data\maple\loot_tables\blocks\bamboo_wall_sign.json
 2cbb19ea0c995ee923074cca61bc7d0d1b8a57b8 data\maple\loot_tables\blocks\cherry_sapling.json
 46270d5c13d08cc8452167be64e8b1c75d3a7674 data\maple\loot_tables\blocks\maple_leaves.json
+b18510f31b64fe2282c0d0ad427ec42a3c9ee10f data\maple\loot_tables\blocks\sakura_sapling.json
 3fc9f371799126688c3a458c9f8ae3f7abb0917c data\maple\loot_tables\blocks\maple_sapling.json
 dac5261ae963623eae1cb129f883f2e05fe9a990 data\maple\loot_tables\blocks\cherry_door.json
+2f4c465eafba791f206a3d0ff352d208e316109e data\maple\loot_tables\blocks\sakura_leaves.json
 ff82e91d86650e90b053293beb6d9635b233a45c data\maple\loot_tables\blocks\bamboo_block.json
 ded6df07ddeaa433421928a9cae0ad70d68f1ea1 data\maple\loot_tables\blocks\cherry_wall_sign.json
 1426299afe72aa57462e9dd88019b10efd0cf489 data\maple\loot_tables\blocks\cherry_wood.json

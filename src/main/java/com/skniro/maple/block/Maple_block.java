@@ -1,8 +1,10 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.init.RiceBlock;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
+import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -43,13 +45,15 @@ public class Maple_block {
     //SAPLING Block
     public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final Block SAKURA_SAPLING = registerBlock("sakura_sapling",new SaplingBlock(new SakuraSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
 
     //LEAVES Block
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
-
+    public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
 
     //PLANKS Block
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks",
@@ -66,6 +70,8 @@ public class Maple_block {
             new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
     public static final Block POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
             new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
+    public static final Block POTTED_SAKURA_SAPLING = registerBlockWithoutItem("potted_sakura_sapling",
+            new FlowerPotBlock(SAKURA_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
 
 
     //BUTTON
@@ -139,6 +145,8 @@ public class Maple_block {
     public static final Block BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, Maple_block.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(0.5f)), Maple.Maple_Group);
 
+    //Plants Block
+    public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {
