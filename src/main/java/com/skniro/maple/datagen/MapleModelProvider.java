@@ -59,5 +59,6 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.Cream, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Food_Press, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SOYBEAN, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.Salt, Models.GENERATED);
     }
 }
