@@ -45,7 +45,7 @@ public class MapleConfiguredFeatures {
     }
 
     private static TreeFeatureConfig.Builder sakura() {
-        return MapleConfiguredFeatures.builder(MapleBlocks.CHERRY_LOG, MapleBlocks.SAKURA_LEAVES,3,4,3,2).ignoreVines();
+        return MapleConfiguredFeatures.builder(MapleBlocks.CHERRY_LOG, MapleBlocks.SAKURA_LEAVES,4,2,0,2).ignoreVines();
     }
 
     static{
