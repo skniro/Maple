@@ -1,4 +1,5 @@
-// 1.19.2	2023-07-06T17:02:06.8617773	Models
+// 1.19.2	2023-07-06T17:12:37.7124521	Models
+b9565f3814ed733a7111855bd474a80bea7c1303 assets\maple\blockstates\salt_ore.json
 4aabe4b1c9b4f4995c943f38fce57695ff759dd6 assets\maple\models\item\bamboo_planks.json
 2284f720e54cde821ea51488fd671326d7d5bf1d assets\maple\models\item\bamboo_mosaic.json
 761057f9663571831072de64073fe0e2a10a46a1 assets\maple\models\block\cherry_door_top_left.json
@@ -13,8 +14,8 @@ d4150756aad9a9362cff1e0061a3fe20711b6490 assets\maple\models\block\cherry_door_t
 4fd5cd3d2df2a1fa64b341b317bf78d9ebfb198b assets\maple\models\block\stripped_maple_wood.json
 66ce24516d44bc1118d65862baee8a04bc7fa085 assets\maple\models\block\potted_maple_sapling.json
 eaa59a3af98a6ab4c9b4ad02250fd19bf4177e67 assets\maple\blockstates\maple_wood.json
-ebb1472f9219d0d28f6f73fa2131bbaee53dae03 assets\maple\blockstates\maple_log.json
 4cdcfb90f9007c3a9ba7713d29a026b920b245dc assets\maple\blockstates\maple_sapling.json
+ebb1472f9219d0d28f6f73fa2131bbaee53dae03 assets\maple\blockstates\maple_log.json
 81d8607897ac851ef86d789d18b12793db24af6e assets\maple\models\block\rice_plant_stage2.json
 c8711760f9f94701e5cbc12b03f23e0adc84dbd6 assets\maple\models\block\maple_door_top_left_open.json
 570e540ddb44175fafa7b1ff9ae6bf1153567d90 assets\maple\blockstates\cherry_planks.json
@@ -24,7 +25,9 @@ c8711760f9f94701e5cbc12b03f23e0adc84dbd6 assets\maple\models\block\maple_door_to
 82e598c073ea8772e838989c884c4d85d2982ee4 assets\maple\models\item\cherry_trapdoor.json
 6e2dc52314576b2985d306b1b7176ade13690e72 assets\maple\models\block\cherry_door_bottom_left_open.json
 042ea228a0a7bbf8700541b1bc21038551c405fe assets\maple\models\item\cherry_door.json
+5936134cbe7804e3ff7e5d28ddff9ec57a11112e assets\maple\models\item\deepslate_salt_ore.json
 7988cc42d3bc9ef9f3a3292ab5df461014ead810 assets\maple\models\block\bamboo_door_bottom_left_open.json
+eeef1daf34adf13f8b55ef3e5c84c3d591ee560a assets\maple\models\item\salt_ore.json
 6d811203d79a7223635988437f41c05ec625cbf9 assets\maple\models\block\maple_door_top_left.json
 b15ee4c1f8f709c321debc65e12777afe92cee6a assets\maple\models\item\maple_wood.json
 b60c9eef929aa1f06f83a320db029ccf7d80fa37 assets\maple\blockstates\cherry_trapdoor.json
@@ -45,6 +48,7 @@ e9f5737c1580d02de60d5da1d4778b231ae04da3 assets\maple\models\block\cherry_door_t
 bd75844626d65cddcef9679b1adfd5791b817599 assets\maple\blockstates\maple_leaves.json
 7e4ef2245610d0b83759cb46a9e778be2356b07b assets\maple\models\block\maple_door_bottom_right.json
 8d9a1119918a01b7bfd6dc55ec47dc1ac6a66fe6 assets\maple\models\block\bamboo_door_bottom_right_open.json
+156f69ee2d0f80a190eb962e62f3e223a6622721 assets\maple\blockstates\deepslate_salt_ore.json
 d651b177d78f2e862fae8327cb2abbaa31dc99d4 assets\maple\models\block\potted_cherry_sapling.json
 e7dfd378b8be06fa5e17588ed410a4c2fd1c8649 assets\maple\models\block\maple_sapling.json
 a582778395b0acf00e8cd20cae86a1cc911445da assets\maple\models\item\maple_door.json
@@ -74,7 +78,9 @@ c5fae123516227084019f7d1b4758c0a7d1a645e assets\maple\models\block\stripped_mapl
 d6594be6732ac353a113e712fb9949e437653bed assets\maple\models\block\bamboo_planks.json
 32b92259e68e597ce9588ec35d6a807b153dfe76 assets\maple\models\item\soybean.json
 76ff0aa29cc52126c035c04e736a7a2114c5005d assets\maple\models\item\bamboo_trapdoor.json
+11166f97a2c32ab3b8ddc05d3402953cc3e7552a assets\maple\models\block\deepslate_salt_ore.json
 4133c71cea97938cc9296684aa02f53ec7df79f7 assets\maple\models\item\food_press.json
+68edc939eef6140c0ca849be822fc6359fdcde15 assets\maple\models\block\salt_ore.json
 03ebd8798e5f4fe36a2923251201668d97e56c9e assets\maple\blockstates\maple_trapdoor.json
 7306f2a9cb2e2d214c1dbfc9b37b0aebfb026a96 assets\maple\blockstates\stripped_maple_wood.json
 79ae22d66f841b2394be20c1aa9f11332b0fd4ea assets\maple\models\block\cherry_planks.json
@@ -99,8 +105,8 @@ f38ec9f7dd6bc3217ad927062df03a2dfeec4b59 assets\maple\models\item\high_glass_cup
 0afa100b3197b741cdddb721be759e08ac0537c0 assets\maple\models\item\cream.json
 6f08c6b1ede81ee9ca13dc54411109619ba597bf assets\maple\models\block\bamboo_door_top_left_open.json
 532d41c11ea1d729bc2ec3f0b7df1b6dfbc94268 assets\maple\models\block\potted_sakura_sapling.json
-030a46d6df2691ae1054b32cc42788bffa602fe5 assets\maple\blockstates\bamboo_planks.json
 2fc97c8851ed20813065063c40506b1a203f4887 assets\maple\blockstates\potted_maple_sapling.json
+030a46d6df2691ae1054b32cc42788bffa602fe5 assets\maple\blockstates\bamboo_planks.json
 041bde8e3a74880b92c4687b57df8f510a1cedea assets\maple\models\item\maple_syrup.json
 7edfde3c7d738a0212fb51803737240b43218edd assets\maple\models\item\sakura_sapling.json
 48c3ec84852fbdafa2146ad1be2e324a633dbc19 assets\maple\models\block\maple_trapdoor_open.json

@@ -1,6 +1,7 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -24,6 +25,8 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.SAKURA_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.Salt_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.DEEPSLATE_Salt_Ore);
 
         //LOG Block
         blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
