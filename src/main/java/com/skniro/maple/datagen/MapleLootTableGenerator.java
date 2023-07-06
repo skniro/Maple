@@ -3,11 +3,14 @@ package com.skniro.maple.datagen;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.Maple_block;
+import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CropBlock;
 import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.util.Identifier;
 
@@ -141,5 +144,10 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
                 BlockLootTableGenerator.drops(Maple_block.SAKURA_SAPLING));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/sakura_leaves"),
                 BlockLootTableGenerator.leavesDrop(Maple_block.SAKURA_LEAVES,Maple_block.SAKURA_SAPLING,SAPLING_DROP_CHANCE));
+
+        //Crop
+        net.minecraft.loot.condition.LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(Maple_block.RICE).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID,"blocks/rice_plant"),
+                BlockLootTableGenerator.cropDrops(Maple_block.RICE, MapleItems.Rice,MapleItems.Rice,builder));
     }
 }

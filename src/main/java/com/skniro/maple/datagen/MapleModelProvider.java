@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.state.property.Properties;
 
 public class MapleModelProvider extends FabricModelProvider {
     public MapleModelProvider(FabricDataGenerator dataGenerator){
@@ -38,10 +39,13 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(Maple_block.MAPLE_TRAPDOOR);
         blockStateModelGenerator.registerTrapdoor(Maple_block.BAMBOO_TRAPDOOR);
 
+        //SAPLING
         blockStateModelGenerator.registerFlowerPotPlant(Maple_block.CHERRY_SAPLING,Maple_block.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(Maple_block.MAPLE_SAPLING,Maple_block.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(Maple_block.SAKURA_SAPLING,Maple_block.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        //Crop
+        blockStateModelGenerator.registerCrop(Maple_block.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
 
 
     }
@@ -50,5 +54,6 @@ public class MapleModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(GlassCupItems.HIGH_GLASS_CUP, Models.GENERATED);
         itemModelGenerator.register(MapleItems.MILK_BOTTOM, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.MapleSyrup, Models.GENERATED);
     }
 }
