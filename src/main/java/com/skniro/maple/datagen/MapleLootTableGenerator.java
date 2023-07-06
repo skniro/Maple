@@ -1,8 +1,8 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
@@ -149,5 +149,6 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         net.minecraft.loot.condition.LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(MapleBlocks.RICE).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID,"blocks/rice_plant"),
                 BlockLootTableGenerator.cropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
+
     }
 }
