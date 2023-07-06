@@ -2,8 +2,9 @@ package com.skniro.maple;
 
 
 import com.skniro.maple.block.MapleSignBlocks;
-import com.skniro.maple.block.Maple_block;
+import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.MapleConfiguredFeatures;
@@ -18,11 +19,12 @@ public class MapleContent {
     public static void registerItem(){
         MapleItems.registerModItems();
         GlassCupItems.registerModItems();
+        MapleFoodComponents.registerMapleFoodItems();
     }
     public static void registerBlock(){
         MapleFlammableBlocks.registerFlammableBlocks();
         MapleStrippableBlocks.registerStrippables();
-        Maple_block.registerMapleBlocks();
+        MapleBlocks.registerMapleBlocks();
         MapleSignBlocks.registerMapleSignBlocks();
     }
 

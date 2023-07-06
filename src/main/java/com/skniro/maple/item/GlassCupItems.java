@@ -12,7 +12,6 @@ public class GlassCupItems {
     public static final Item HIGH_GLASS_CUP = registerItem("high_glass_cup",new GlassBottleItem(
             (new Item
                     .Settings()
-                    .group(Maple.Maple_Group_Food)
             )));
 
 

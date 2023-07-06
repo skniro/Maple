@@ -1,6 +1,6 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.block.Maple_block;
+import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -18,34 +18,34 @@ public class MapleModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
         //Cube Block
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_PLANKS);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.CHERRY_PLANKS);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.MAPLE_LEAVES);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.SAKURA_LEAVES);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.BAMBOO_PLANKS);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(Maple_block.BAMBOO_MOSAIC);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_LEAVES);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.SAKURA_LEAVES);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
 
         //LOG Block
-        blockStateModelGenerator.registerLog(Maple_block.MAPLE_LOG).log(Maple_block.MAPLE_LOG).wood(Maple_block.MAPLE_WOOD);
-        blockStateModelGenerator.registerLog(Maple_block.STRIPPED_MAPLE_LOG).log(Maple_block.STRIPPED_MAPLE_LOG).wood(Maple_block.STRIPPED_MAPLE_WOOD);
+        blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
+        blockStateModelGenerator.registerLog(MapleBlocks.STRIPPED_MAPLE_LOG).log(MapleBlocks.STRIPPED_MAPLE_LOG).wood(MapleBlocks.STRIPPED_MAPLE_WOOD);
 
         //Door
-        blockStateModelGenerator.registerDoor(Maple_block.MAPLE_DOOR);
-        blockStateModelGenerator.registerDoor(Maple_block.CHERRY_DOOR);
-        blockStateModelGenerator.registerDoor(Maple_block.BAMBOO_DOOR);
+        blockStateModelGenerator.registerDoor(MapleBlocks.MAPLE_DOOR);
+        blockStateModelGenerator.registerDoor(MapleBlocks.CHERRY_DOOR);
+        blockStateModelGenerator.registerDoor(MapleBlocks.BAMBOO_DOOR);
 
         //TRAPDOOR
-        blockStateModelGenerator.registerTrapdoor(Maple_block.CHERRY_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(Maple_block.MAPLE_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(Maple_block.BAMBOO_TRAPDOOR);
+        blockStateModelGenerator.registerTrapdoor(MapleBlocks.CHERRY_TRAPDOOR);
+        blockStateModelGenerator.registerTrapdoor(MapleBlocks.MAPLE_TRAPDOOR);
+        blockStateModelGenerator.registerTrapdoor(MapleBlocks.BAMBOO_TRAPDOOR);
 
         //SAPLING
-        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.CHERRY_SAPLING,Maple_block.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.MAPLE_SAPLING,Maple_block.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(Maple_block.SAKURA_SAPLING,Maple_block.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Crop
-        blockStateModelGenerator.registerCrop(Maple_block.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
+        blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
 
 
     }
@@ -55,5 +55,9 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(GlassCupItems.HIGH_GLASS_CUP, Models.GENERATED);
         itemModelGenerator.register(MapleItems.MILK_BOTTOM, Models.GENERATED);
         itemModelGenerator.register(MapleItems.MapleSyrup, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.Flour, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.Cream, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.Food_Press, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SOYBEAN, Models.GENERATED);
     }
 }

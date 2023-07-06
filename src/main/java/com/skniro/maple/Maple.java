@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import terrablender.api.Regions;
 import terrablender.api.TerraBlenderApi;
 
-import static com.skniro.maple.block.Maple_block.MAPLE_LOG;
+import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
 
 public class Maple implements ModInitializer, TerraBlenderApi {
     public static final String MOD_ID = "maple";

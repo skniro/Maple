@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-06T13:38:57.901033	minecraft:entity Loot Table
+// 1.19.2	2023-07-06T15:12:21.0830067	minecraft:entity Loot Table
 f8a6f7e4b00798368322995fd8f682e1893b32f0 data\maple\loot_tables\blocks\bamboo_trapdoor.json
 b33d38e23780dd980e5508a7ee31512133b22697 data\maple\loot_tables\blocks\cherry_slab.json
 bbb46abc1c6c33af4fd953c8ea091aa384c3b90d data\maple\loot_tables\blocks\bamboo_mosaic.json
@@ -51,7 +51,7 @@ e185be822fcd2238b4f18f7abe220f3801241151 data\maple\loot_tables\blocks\maple_woo
 146e5b966a28405fca4270aef741b1f13b4e3f42 data\maple\loot_tables\blocks\bamboo_sign.json
 bab42060f47b8c02c5eede032de8e840735fe108 data\maple\loot_tables\blocks\stripped_maple_log.json
 6bae0a7e60cb47994a5c8a8dca1e209ac412261b data\maple\loot_tables\blocks\bamboo_door.json
-c9b666f6f62437409bc890f9ba07fc8a3a011e1b data\maple\loot_tables\blocks\rice_plant.json
+891d8b8fa7f2b2ea4b6e00215cdea843fc027379 data\maple\loot_tables\blocks\rice_plant.json
 a56d5e3266ae8d970b24de7bdea2061acef7aafa data\maple\loot_tables\blocks\stripped_maple_wood.json
 99f68d775ae38d18f957f2558ce6bd62922915cf data\maple\loot_tables\blocks\bamboo_fence_gate.json
 6bad63bc58fae8020dd96848ee309635820ab026 data\maple\loot_tables\blocks\maple_pressure_plate.json

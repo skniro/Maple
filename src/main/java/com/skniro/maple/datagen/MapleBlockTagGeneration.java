@@ -1,6 +1,6 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.block.Maple_block;
+import com.skniro.maple.block.MapleBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
@@ -28,19 +28,19 @@ public class MapleBlockTagGeneration extends FabricTagProvider<Block> {
     @Override
     protected void generateTags() {
         getOrCreateTagBuilder(SAPLINGS)
-                .add(Maple_block.MAPLE_SAPLING)
-                .add(Maple_block.CHERRY_SAPLING);
+                .add(MapleBlocks.MAPLE_SAPLING)
+                .add(MapleBlocks.CHERRY_SAPLING);
         getOrCreateTagBuilder(C_SAPLING)
-                .add(Maple_block.MAPLE_SAPLING)
-                .add(Maple_block.CHERRY_SAPLING);
+                .add(MapleBlocks.MAPLE_SAPLING)
+                .add(MapleBlocks.CHERRY_SAPLING);
         getOrCreateTagBuilder(C_MAPLE_LOGS)
-                .add(Maple_block.MAPLE_LOG);
+                .add(MapleBlocks.MAPLE_LOG);
         getOrCreateTagBuilder(C_CHERRY_LOGS)
-                .add(Maple_block.CHERRY_LOG);
+                .add(MapleBlocks.CHERRY_LOG);
         getOrCreateTagBuilder(FENCES)
-                .add(Maple_block.MAPLE_FENCE)
-                .add(Maple_block.CHERRY_FENCE)
-                .add(Maple_block.BAMBOO_FENCE);
+                .add(MapleBlocks.MAPLE_FENCE)
+                .add(MapleBlocks.CHERRY_FENCE)
+                .add(MapleBlocks.BAMBOO_FENCE);
 
     }
 }
