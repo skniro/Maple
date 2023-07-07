@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "maple:milk_bottom"
+      "item": "maple:rice"
     },
     {
-      "item": "maple:milk_bottom"
+      "item": "maple:rice"
     }
   ],
   "result": {
-    "count": 3,
-    "item": "maple:cream"
+    "count": 2,
+    "item": "maple:cooked_rice"
   }
 }

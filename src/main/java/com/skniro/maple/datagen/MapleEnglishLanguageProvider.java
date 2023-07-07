@@ -1,9 +1,12 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleFoodComponents;
+import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
@@ -28,6 +31,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.MAPLE_SLAB,"Maple Slab");
         translationBuilder.add(MapleBlocks.MAPLE_STAIRS,"Maple Stairs");
         translationBuilder.add(MapleBlocks.MAPLE_SAPLING,"Maple Sapling");
+        translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"Potted Maple Sapling");
         translationBuilder.add(MapleSignBlocks.Maple_SIGN,"Maple Sign");
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"Maple Trapdoor");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"Maple Pressure Plate");
@@ -46,6 +50,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.CHERRY_SLAB,"Cherry Slab");
         translationBuilder.add(MapleBlocks.CHERRY_STAIRS,"Cherry Stairs");
         translationBuilder.add(MapleBlocks.CHERRY_SAPLING,"Cherry Sapling");
+        translationBuilder.add(MapleBlocks.POTTED_CHERRY_SAPLING,"Potted Cherry Sapling");
         translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"Cherry Sign");
         translationBuilder.add(MapleBlocks.CHERRY_TRAPDOOR,"Cherry Trapdoor");
         translationBuilder.add(MapleBlocks.CHERRY_PRESSURE_PLATE,"Cherry Pressure Plate");
@@ -72,6 +77,38 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
 
         //ITEM GROUP
         translationBuilder.add(Maple.Maple_Group,"Maple");
+        translationBuilder.add(Maple.Maple_Group_Food,"Maple Food");
 
+        //Sakura
+        translationBuilder.add(MapleBlocks.SAKURA_LEAVES,"Sakura");
+        translationBuilder.add(MapleBlocks.SAKURA_SAPLING,"Sakura Sapling");
+        translationBuilder.add(MapleBlocks.POTTED_SAKURA_SAPLING,"Potted Sakura Sapling");
+
+        //Salt Ore
+        translationBuilder.add(MapleOreBlocks.DEEPSLATE_Salt_Ore,"Deepslate Salt Ore");
+        translationBuilder.add(MapleOreBlocks.Salt_Ore,"Salt Ore");
+
+        //Crop
+        translationBuilder.add(MapleBlocks.RICE,"Crop Rice");
+
+        //Food Materials
+        translationBuilder.add(MapleItems.MILK_BOTTOM,"Bottom Milk");
+        translationBuilder.add(MapleItems.Cream,"Cream");
+        translationBuilder.add(MapleItems.Flour,"Flour");
+        translationBuilder.add(MapleItems.Rice,"Rice");
+        translationBuilder.add(MapleItems.SOYBEAN,"SoyBeam");
+        translationBuilder.add(MapleItems.Salt,"Salt");
+        translationBuilder.add(MapleItems.MapleSyrup,"Maple Syrup");
+
+        //Food
+        translationBuilder.add(MapleFoodComponents.Anko_Dango,"Anko Dango");
+        translationBuilder.add(MapleFoodComponents.Sanshoku_Dango,"Sanshoku Dango");
+        translationBuilder.add(MapleFoodComponents.Kinako_Dango,"Kinako Dango");
+        translationBuilder.add(MapleFoodComponents.Zunda_Dango,"Zunda Dango");
+        translationBuilder.add(MapleFoodComponents.Cooked_Rice,"Cooked Rice");
+        translationBuilder.add(MapleFoodComponents.TOFU,"Tofu");
+        translationBuilder.add(MapleFoodComponents.MILK_ICECREAM,"Milk IceCream");
+        translationBuilder.add(MapleFoodComponents.Mochi,"Mochi");
+        translationBuilder.add(MapleFoodComponents.SakuraMochi,"Sakura Mochi");
     }
 }

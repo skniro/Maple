@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "maple:mochi"
+    },
+    {
+      "item": "maple:sakura_leaves"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "maple:sakura_mochi"
+  }
+}

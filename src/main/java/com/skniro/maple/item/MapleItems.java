@@ -33,7 +33,7 @@ public class MapleItems {
 
 
     //Tools
-    public static final Item Food_Press = registerItem("food_press",new Item(new Item.Settings().group(Maple.Maple_Group_Food)));
+    public static final Item Food_Press = registerItem("food_press",new Item(new Item.Settings()));
 
 
     //Seed

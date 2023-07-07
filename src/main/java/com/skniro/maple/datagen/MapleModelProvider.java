@@ -3,6 +3,7 @@ package com.skniro.maple.datagen;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -63,5 +64,23 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.Food_Press, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SOYBEAN, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Salt, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Anko_Dango, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Beef_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Cheese, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Mochi, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Chicken_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Cooked_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Kinako_Dango, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.MILK_ICECREAM, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Mushroom_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Mushroom_RICEBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Mutton_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Porkchop_Rice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.RICEBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.SakuraMochi, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Salmon_RICEBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Sanshoku_Dango, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.TOFU, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Zunda_Dango, Models.GENERATED);
     }
 }

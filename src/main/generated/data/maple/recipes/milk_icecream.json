@@ -2,14 +2,17 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "maple:milk_bottom"
+      "item": "maple:cream"
     },
     {
       "item": "maple:milk_bottom"
+    },
+    {
+      "item": "minecraft:water_bucket"
     }
   ],
   "result": {
-    "count": 3,
-    "item": "maple:cream"
+    "count": 2,
+    "item": "maple:milk_icecream"
   }
 }

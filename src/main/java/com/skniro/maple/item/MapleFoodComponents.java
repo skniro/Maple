@@ -103,7 +103,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.3f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Mushroom_RICEBALL =
             registerItem("mushroom_riceball",
@@ -117,7 +117,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.3f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Salmon_RICEBALL =
             registerItem("salmon_riceball",
@@ -131,7 +131,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.3f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item TOFU =
             registerItem("tofu",
@@ -187,7 +187,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.7f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Beef_Rice =
             registerItem("beef_rice",
@@ -201,7 +201,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.7f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Mutton_Rice =
             registerItem("mutton_rice",
@@ -215,7 +215,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.7f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Porkchop_Rice =
             registerItem("porkchop_rice",
@@ -229,7 +229,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.7f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Mushroom_Rice =
             registerItem("mushroom_rice",
@@ -243,7 +243,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.7f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Cheese =
             registerItem("cheese",
@@ -257,7 +257,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.3f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
 
 
