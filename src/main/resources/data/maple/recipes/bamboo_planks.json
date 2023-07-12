@@ -4,7 +4,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "tag": "maple:bamboo_blocks"
+      "item": "maple:bamboo_block"
     }
   ],
   "result": {
