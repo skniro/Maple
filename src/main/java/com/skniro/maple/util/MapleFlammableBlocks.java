@@ -1,7 +1,6 @@
 package com.skniro.maple.util;
 
 import com.skniro.maple.block.MapleBlocks;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
 public class MapleFlammableBlocks {
     public static void registerFlammableBlocks() {

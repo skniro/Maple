@@ -1,40 +1,66 @@
 package com.skniro.maple.world;
 
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.*;
+import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleBlocks;
+import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
 
 
 public class MaplePlacedFeatures {
-    public static final RegistryEntry<PlacedFeature> Maple_TREE_PLACED;
-    public static final RegistryEntry<PlacedFeature> CHERRY_TREE_PLACED;
-    public static final RegistryEntry<PlacedFeature> SAKURA_TREE_PLACED;
-    public static final RegistryEntry<PlacedFeature> SALT_ORE_PLACED;
+    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
+            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Maple.MODID);
+    public static final RegistryObject<PlacedFeature> Maple_TREE_PLACED;
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_PLACED;
+    public static final RegistryObject<PlacedFeature> SAKURA_TREE_PLACED;
+    public static final RegistryObject<PlacedFeature> Maple_TREE_CHECKED;
+    public static final RegistryObject<PlacedFeature> CHERRY_TREE_CHECKED;
+    public static final RegistryObject<PlacedFeature> SAKURA_TREE_CHECKED;
+
+    public static final RegistryObject<PlacedFeature> SALT_ORE_PLACED;
     static{
-        SALT_ORE_PLACED = PlacedFeatures.register("ore_salt_overworld",
-                MapleConfiguredFeatures.SALT_ORE, modifiersWithCount(5,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-80), YOffset.fixed(30))));
-        Maple_TREE_PLACED = PlacedFeatures.register("maple_tree_placed", MapleConfiguredFeatures.Maple_TREE_SPAWN,
-                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
-        CHERRY_TREE_PLACED = PlacedFeatures.register("cherry_tree_placed", MapleConfiguredFeatures.CHERRY_TREE_SPAWN,
-                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
-        SAKURA_TREE_PLACED = PlacedFeatures.register("sakura_tree_placed", MapleConfiguredFeatures.SAKURA_TREE_SPAWN,
-                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
+        SALT_ORE_PLACED = PLACED_FEATURES.register("ore_salt_overworld",
+                () -> new PlacedFeature(MapleConfiguredFeatures.SALT_ORE.getHolder().get(), commonOrePlacement(5,
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(30)))));
+        Maple_TREE_PLACED = PLACED_FEATURES.register("maple_tree_placed",
+                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_TREE_SPAWN.getHolder().get(),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
+        CHERRY_TREE_PLACED = PLACED_FEATURES.register("cherry_tree_placed",
+                () -> new PlacedFeature(MapleConfiguredFeatures.CHERRY_TREE_SPAWN.getHolder().get(),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
+        SAKURA_TREE_PLACED = PLACED_FEATURES.register("sakura_tree_placed",
+                () -> new PlacedFeature(MapleConfiguredFeatures.SAKURA_TREE_SPAWN.getHolder().get(),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
+
+        Maple_TREE_CHECKED = PLACED_FEATURES.register("maple_tree_checked",
+                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_TREE.getHolder().get(),
+                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.MAPLE_SAPLING.get()))));
+        CHERRY_TREE_CHECKED = PLACED_FEATURES.register("cherry_tree_checked",
+                () -> new PlacedFeature(MapleConfiguredFeatures.CHERRY_TREE.getHolder().get(),
+                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.CHERRY_SAPLING.get()))));
+        SAKURA_TREE_CHECKED = PLACED_FEATURES.register("sakura_tree_checked",
+                () -> new PlacedFeature(MapleConfiguredFeatures.SAKURA_TREE.getHolder().get(),
+                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.SAKURA_SAPLING.get()))));
     }
 
-    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
-        return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
+    public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
+        return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }
-    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
-        return modifiers(CountPlacementModifier.of(count), heightModifier);
+    public static List<PlacementModifier> commonOrePlacement(int p_195344_, PlacementModifier p_195345_) {
+        return orePlacement(CountPlacement.of(p_195344_), p_195345_);
     }
-    private static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
-        return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
+    public static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
+    }
+    public static void registerMaplePlacedFeatures(IEventBus eventBus) {
+        PLACED_FEATURES.register(eventBus);
     }
 }

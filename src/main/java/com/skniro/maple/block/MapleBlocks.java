@@ -2,169 +2,186 @@ package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.init.RiceBlock;
+import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 
 public class MapleBlocks {
-    Block block;
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Maple.MODID);
+
     //LOG_Block
-    public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
-    public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
-    public static final Block STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
-    public static final Block MAPLE_WOOD = registerBlock("maple_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
+    public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
 
-    public static final Block CHERRY_LOG = registerBlock("cherry_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
-    public static final Block CHERRY_WOOD = registerBlock("cherry_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
-    public static final Block STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
-    public static final Block STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
+    public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
+    public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
 
-    public static final Block BAMBOO_BLOCK = registerBlock("bamboo_block", createBambooBlock(MapColor.YELLOW, MapColor.DARK_GREEN, BlockSoundGroup.WOOD), Maple.Maple_Group);
-    public static final Block STRIPPED_BAMBOO_BLOCK = registerBlock("stripped_bamboo_block", createBambooBlock(MapColor.YELLOW, MapColor.YELLOW, BlockSoundGroup.WOOD), Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_BLOCK = registerBlock("bamboo_block",
+            createBambooBlock(MaterialColor.YELLOW, MaterialColor.DARK_GREEN, SoundType.WOOD), Maple.Maple_Group);
+    public static final RegistryObject<Block> STRIPPED_BAMBOO_BLOCK = registerBlock("stripped_bamboo_block",
+            createBambooBlock(MaterialColor.YELLOW, MaterialColor.YELLOW, SoundType.WOOD), Maple.Maple_Group);
 
 
 
 
     //SAPLING Block
-    public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
-    public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
-    public static final Block SAKURA_SAPLING = registerBlock("sakura_sapling",new SaplingBlock(new SakuraSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
+            () -> new SaplingBlock(new MapleSaplingGenerator(),BlockBehaviour.Properties.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
+            () -> new SaplingBlock(new CherrySaplingGenerator(),BlockBehaviour.Properties.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final RegistryObject<Block> SAKURA_SAPLING = registerBlock("sakura_sapling",
+            () -> new SaplingBlock(new SakuraSaplingGenerator(),BlockBehaviour.Properties.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
 
     //LEAVES Block
-    public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
-    public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
-    public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).luminance((state) -> 8)), Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+    public static final RegistryObject<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).luminance((state) -> 8)), Maple.Maple_Group);
 
     //PLANKS Block
-    public static final Block MAPLE_PLANKS = registerBlock("maple_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
-    public static final Block CHERRY_PLANKS = registerBlock("cherry_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
-    public static final Block BAMBOO_PLANKS = registerBlock("bamboo_planks",
-            new Block(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
-    public static final Block BAMBOO_MOSAIC = registerBlock("bamboo_mosaic",
-            new Block(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_PLANKS = registerBlock("bamboo_planks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).color(MaterialColor.GOLD).strength(2.0f, 3.0f).sounds(SoundType.WOOD)),Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_MOSAIC = registerBlock("bamboo_mosaic",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).color(MaterialColor.GOLD).strength(2.0f, 3.0f).sounds(SoundType.WOOD)),Maple.Maple_Group);
 
     //Potted
-    public static final Block POTTED_CHERRY_SAPLING = registerBlockWithoutItem("potted_cherry_sapling",
-            new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
-    public static final Block POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
-            new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
-    public static final Block POTTED_SAKURA_SAPLING = registerBlockWithoutItem("potted_sakura_sapling",
-            new FlowerPotBlock(SAKURA_SAPLING, AbstractBlock.Settings.of(Material.DECORATION).breakInstantly().nonOpaque()));
+    public static final RegistryObject<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutItem("potted_cherry_sapling",
+            () -> new FlowerPotBlock(CHERRY_SAPLING, BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
+            () -> new FlowerPotBlock(MAPLE_SAPLING, BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> POTTED_SAKURA_SAPLING = registerBlockWithoutItem("potted_sakura_sapling",
+            () -> new FlowerPotBlock(SAKURA_SAPLING, BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion()));
 
 
     //BUTTON
     public static final Block CHERRY_BUTTON = registerBlock("cherry_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new WoodenButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollision().strength(0.5F).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_BUTTON = registerBlock("maple_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new WoodenButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollision().strength(0.5F).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_BUTTON = registerBlock("bamboo_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new WoodenButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollision().strength(0.5F).sounds(SoundType.WOOD)), Maple.Maple_Group);
 
 
     //STAIRS
     public static final Block CHERRY_STAIRS = registerBlock("cherry_stairs",
-            new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)), Maple.Maple_Group);
+            new StairsBlock(CHERRY_PLANKS.getDefaultState(), BlockBehaviour.Properties.copy(CHERRY_PLANKS)), Maple.Maple_Group);
     public static final Block MAPLE_STAIRS = registerBlock("maple_stairs",
-            new StairsBlock(CHERRY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(CHERRY_PLANKS)), Maple.Maple_Group);
+            new StairsBlock(CHERRY_PLANKS.getDefaultState(), BlockBehaviour.Properties.copy(CHERRY_PLANKS)), Maple.Maple_Group);
     public static final Block BAMBOO_STAIRS = registerBlock("bamboo_stairs",
-            new StairsBlock(BAMBOO_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(BAMBOO_PLANKS)), Maple.Maple_Group);
+            new StairsBlock(BAMBOO_PLANKS.getDefaultState(), BlockBehaviour.Properties.copy(BAMBOO_PLANKS)), Maple.Maple_Group);
     public static final Block BAMBOO_MOSAIC_STAIRS = registerBlock("bamboo_mosaic_stairs",
-            new StairsBlock(BAMBOO_MOSAIC.getDefaultState(), AbstractBlock.Settings.copy(BAMBOO_MOSAIC)), Maple.Maple_Group);
+            new StairsBlock(BAMBOO_MOSAIC.getDefaultState(), BlockBehaviour.Properties.copy(BAMBOO_MOSAIC)), Maple.Maple_Group);
 
 
    //SLAB
     public static final Block CHERRY_SLAB = registerBlock("cherry_slab",
-            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_SLAB = registerBlock("maple_slab",
-            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_SLAB = registerBlock("bamboo_slab",
-            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD,MaterialColor.YELLOW).strength(2.0f, 3.0f).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_MOSAIC_SLAB = registerBlock("bamboo_mosaic_slab",
-            new SlabBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD,MaterialColor.YELLOW).strength(2.0f, 3.0f).sounds(SoundType.WOOD)), Maple.Maple_Group);
 
     //FENCE
     public static final Block CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
+            new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, CHERRY_PLANKS.getDefaultMaterialColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
     public static final Block CHERRY_FENCE = registerBlock("cherry_fence",
-            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, CHERRY_PLANKS.getDefaultMaterialColor()).strength(2.0F, 3.0F).sounds(SoundType.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
+            new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, MAPLE_PLANKS.getDefaultMaterialColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
     public static final Block MAPLE_FENCE = registerBlock("maple_fence",
-            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
-    public static final Block BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f)), Maple.Maple_Group);
-    public static final Block BAMBOO_FENCE = registerBlock("bamboo_fence",
-            new FenceBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, MAPLE_PLANKS.getDefaultMaterialColor()).strength(2.0F, 3.0F).sounds(SoundType.WOOD)), Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
+            new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMaterialColor()).strength(2.0f, 3.0f)), Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_FENCE = registerBlock("bamboo_fence",
+            new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMaterialColor()).strength(2.0f, 3.0f).sounds(SoundType.WOOD)), Maple.Maple_Group);
 
 
     //Door
-    public static final Block MAPLE_DOOR = registerBlockWithoutItem("maple_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-    public static final Block CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-    public static final Block BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+    public static final RegistryObject<Block> MAPLE_DOOR = registerBlockWithoutItem("maple_door",
+            new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f).sounds(SoundType.WOOD).nonOpaque()));
+    public static final RegistryObject<Block> CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
+            new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f).sounds(SoundType.WOOD).nonOpaque()));
+    public static final RegistryObject<Block> BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
+            new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMaterialColor()).strength(3.0f).sounds(SoundType.WOOD).nonOpaque()));
 
     //TRAPDOOR
-    public static final Block CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
-    public static final Block MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
-    public static final Block BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(3.0f).nonOpaque()), Maple.Maple_Group);
+    public static final RegistryObject<Block> CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
+            new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+    public static final RegistryObject<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
+            new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+    public static final RegistryObject<Block> BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
+            new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD,MaterialColor.YELLOW).strength(3.0f).nonOpaque()), Maple.Maple_Group);
 
 
     //PRESSURE_PLATE
     public static final Block CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.CHERRY_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.CHERRY_PLANKS.getDefaultMaterialColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
     public static final Block MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.MAPLE_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.MAPLE_PLANKS.getDefaultMaterialColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
     public static final Block BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(0.5f)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.BAMBOO_PLANKS.getDefaultMaterialColor()).noCollision().strength(0.5f)), Maple.Maple_Group);
 
     //Plants Block
-    public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
+    public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(SoundType.CROP)));
 
 
-    private static Block registerBlockWithoutItem(String name, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(Maple.MOD_ID, name), block);
-    }
-    private static Block registerBlock(String name, Block block, ItemGroup tab) {
-        registerBlockItem(name, block, tab);
-        return Registry.register(Registry.BLOCK, new Identifier(Maple.MOD_ID, name), block);
-    }
-    private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(tab)));
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        return toReturn;
     }
 
-    private static PillarBlock createBambooBlock(MapColor topMapColor, MapColor sideMapColor, BlockSoundGroup soundGroup) {
-        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD).mapColor(sideMapColor).strength(2.0f).sounds(soundGroup));
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return toReturn;
     }
 
-    public static void registerMapleBlocks() {
-        Maple.LOGGER.debug("Registering ModBlocks for " + Maple.MOD_ID);
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
+                                                                            CreativeModeTab tab) {
+        return MapleItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
+    private static RotatedPillarBlock createBambooBlock(MaterialColor topMaterialColor, MaterialColor sideMaterialColor, SoundType soundGroup) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).color(sideMaterialColor).strength(2.0f).sound(soundGroup));
+    }
+
+    public static void registerMapleBlocks(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
 }

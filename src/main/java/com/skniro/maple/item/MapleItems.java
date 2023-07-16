@@ -7,8 +7,20 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SignItem;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class MapleItems {
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+
     public static final Item CHERRY_SIGN = registerItem("cherry_sign",
             new SignItem(new FabricItemSettings().group(Maple.Maple_Group).maxCount(16),
                     MapleSignBlocks.CHERRY_SIGN, MapleSignBlocks.CHERRY_WALL_SIGN));
@@ -39,11 +51,12 @@ public class MapleItems {
     //Seed
     public static final Item Rice = registerItem("rice",new AliasedBlockItem(MapleBlocks.RICE, (new FabricItemSettings()).group(Maple.Maple_Group_Food)));
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name), item);
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = ITEMS.register(name, item);
+        return toReturn;
     }
 
-    public static void registerModItems() {
-        Maple.LOGGER.info("Registering Mod Items for " + Maple.MOD_ID);
+    public static void registerModItems(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 }

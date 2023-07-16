@@ -1,16 +1,18 @@
 package com.skniro.maple.world.Tree;
 
 import com.skniro.maple.world.MapleConfiguredFeatures;
-import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.core.Holder;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-public class CherrySaplingGenerator extends SaplingGenerator {
+import java.util.Random;
+
+public class CherrySaplingGenerator extends AbstractTreeGrower {
         @Nullable
         @Override
-        protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-            return MapleConfiguredFeatures.CHERRY_TREE;
+        protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
+            return MapleConfiguredFeatures.CHERRY_TREE.getHolder().get();
         }
     }
