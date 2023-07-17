@@ -3,9 +3,13 @@ package com.skniro.maple;
 import com.mojang.logging.LogUtils;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.MapleSignBlocks;
+import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.MapleConfiguredFeatures;
 import com.skniro.maple.world.MaplePlacedFeatures;
+import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -51,7 +55,7 @@ public class Maple{
     public static final CreativeModeTab Maple_Group_Food =  new CreativeModeTab("maple_group_food") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(MapleSyrup);
+            return new ItemStack(MapleSyrup.get());
         }
     };
 
@@ -79,8 +83,14 @@ public class Maple{
         MapleBlocks.registerMapleBlocks(modEventBus);
         MapleOreBlocks.registerMapleOreBlocks(modEventBus);
 
+
         // Register the Deferred Register to the mod event bus so items get registered
         MapleItems.registerModItems(modEventBus);
+        GlassCupItems.registerMapleGlassItems(modEventBus);
+        MapleFoodComponents.registerModFoodItems(modEventBus);
+
+        MapleBiomeKeys.registerBiome(modEventBus);
+        MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
         MaplePlacedFeatures.registerMaplePlacedFeatures(modEventBus);
         MapleConfiguredFeatures.registerModConfiguredFeatures(modEventBus);

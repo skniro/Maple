@@ -1,31 +1,35 @@
 package com.skniro.maple.world.biome;
 
 import com.skniro.maple.Maple;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.OverworldBiomeCreator;
+import net.minecraft.core.Registry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.biome.OverworldBiomes;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
 
-import static net.minecraft.util.registry.Registry.BIOME_KEY;
+import static net.minecraft.core.Registry.BIOME_REGISTRY;
+
 
 public class MapleBiomeKeys {
-    public static final RegistryKey<Biome> CHERRY_GROVE = register("cherry_grove");
+    public static final DeferredRegister<ConfiguredFeature<?, ?>> Biome =
+            DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Maple.MODID);
+    public static final ResourceKey<Biome> CHERRY_GROVE = register("cherry_grove");
 
-    private static RegistryKey<Biome> register(String name) {
-        return RegistryKey.of(BIOME_KEY, new Identifier(Maple.MOD_ID,name));
+    private static ResourceKey<Biome> register(String name) {
+        return ResourceKey.create(BIOME_REGISTRY, new ResourceLocation(Maple.MODID,name));
     }
 
 
-    public static void registerBiome() {
-        Maple.LOGGER.debug("Registering the MapleBiomeKeysFeatures for " + Maple.MOD_ID);
-        registerBuiltinBiome(CHERRY_GROVE, OverworldBiomeCreator.createMeadow());
+    public static void registerBiome(IEventBus eventBus) {
+        registerBuiltinBiome(CHERRY_GROVE, OverworldBiomes.meadow());
+        Biome.register(eventBus);
     }
 
-    private static void registerBuiltinBiome(RegistryKey<Biome> key, Biome biome) {
-        BuiltinRegistries.add(BuiltinRegistries.BIOME, key, biome);
+    private static void registerBuiltinBiome(ResourceKey<Biome> key, Biome biome) {
+        BuiltinRegistries.register(BuiltinRegistries.BIOME, key, biome);
     }
 }

@@ -1,260 +1,264 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class MapleFoodComponents {
-    public static final Item Sanshoku_Dango =
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+    public static final RegistryObject<Item> Sanshoku_Dango =
             registerItem("sanshoku_dango",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item Anko_Dango =
+    public static final RegistryObject<Item> Anko_Dango =
             registerItem("anko_dango",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
-    public static final Item Kinako_Dango =
+                                    .tab(Maple.Maple_Group_Food)));
+    public static final RegistryObject<Item> Kinako_Dango =
             registerItem("kinako_dango",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item Zunda_Dango =
+    public static final RegistryObject<Item> Zunda_Dango =
             registerItem("zunda_dango",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item Mochi =
+    public static final RegistryObject<Item> Mochi =
             registerItem("mochi",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item SakuraMochi =
+    public static final RegistryObject<Item> SakuraMochi =
             registerItem("sakura_mochi",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(6)
-                                                    .saturationModifier(0.6f)
+                                                    .nutrition(6)
+                                                    .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item RICEBALL =
+    public static final RegistryObject<Item> RICEBALL =
             registerItem("riceball",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(3)
-                                                    .saturationModifier(0.3f)
+                                                    .nutrition(3)
+                                                    .saturationMod(0.3f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Mushroom_RICEBALL =
+    public static final RegistryObject<Item> Mushroom_RICEBALL =
             registerItem("mushroom_riceball",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(4)
-                                                    .saturationModifier(0.3f)
+                                                    .nutrition(4)
+                                                    .saturationMod(0.3f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Salmon_RICEBALL =
+    public static final RegistryObject<Item> Salmon_RICEBALL =
             registerItem("salmon_riceball",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(4)
-                                                    .saturationModifier(0.3f)
+                                                    .nutrition(4)
+                                                    .saturationMod(0.3f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item TOFU =
+    public static final RegistryObject<Item> TOFU =
             registerItem("tofu",
-                    new Item(
+                    ()->  new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(1)
-                                                    .saturationModifier(0.1f)
+                                                    .nutrition(1)
+                                                    .saturationMod(0.1f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item MILK_ICECREAM =
+    public static final RegistryObject<Item> MILK_ICECREAM =
             registerItem("milk_icecream",
-                    new Item(
+                    ()->  new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(1)
-                                                    .saturationModifier(0.1f)
+                                                    .nutrition(1)
+                                                    .saturationMod(0.1f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item Cooked_Rice =
+    public static final RegistryObject<Item> Cooked_Rice =
             registerItem("cooked_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(2)
-                                                    .saturationModifier(0.2f)
+                                                    .nutrition(2)
+                                                    .saturationMod(0.2f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    .tab(Maple.Maple_Group_Food)));
 
-    public static final Item Chicken_Rice =
+    public static final RegistryObject<Item> Chicken_Rice =
             registerItem("chicken_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(9)
-                                                    .saturationModifier(0.7f)
+                                                    .nutrition(9)
+                                                    .saturationMod(0.7f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Beef_Rice =
+    public static final RegistryObject<Item> Beef_Rice =
             registerItem("beef_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(11)
-                                                    .saturationModifier(0.7f)
+                                                    .nutrition(11)
+                                                    .saturationMod(0.7f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Mutton_Rice =
+    public static final RegistryObject<Item> Mutton_Rice =
             registerItem("mutton_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(9)
-                                                    .saturationModifier(0.7f)
+                                                    .nutrition(9)
+                                                    .saturationMod(0.7f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Porkchop_Rice =
+    public static final RegistryObject<Item> Porkchop_Rice =
             registerItem("porkchop_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(9)
-                                                    .saturationModifier(0.7f)
+                                                    .nutrition(9)
+                                                    .saturationMod(0.7f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Mushroom_Rice =
+    public static final RegistryObject<Item> Mushroom_Rice =
             registerItem("mushroom_rice",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(9)
-                                                    .saturationModifier(0.7f)
+                                                    .nutrition(9)
+                                                    .saturationMod(0.7f)
                                                     .build()
                                             )
                                     ));
 
-    public static final Item Cheese =
+    public static final RegistryObject<Item> Cheese =
             registerItem("cheese",
-                    new Item(
+                    ()-> new Item(
                             new Item
-                                    .Settings()
+                                    .Properties()
                                     .food
-                                            (new FoodComponent
+                                            (new FoodProperties
                                                     .Builder()
-                                                    .hunger(3)
-                                                    .saturationModifier(0.3f)
+                                                    .nutrition(3)
+                                                    .saturationMod(0.3f)
                                                     .build()
                                             )
                                     ));
@@ -262,10 +266,12 @@ public class MapleFoodComponents {
 
 
 
-    private static Item registerItem(String name,Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),item);
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
+        RegistryObject<T> toReturn = ITEMS.register(name, item);
+        return toReturn;
     }
-    public static void registerMapleFoodItems() {
-        Maple.LOGGER.info("Registering Maple Food Items for " + Maple.MOD_ID);
+
+    public static void registerModFoodItems(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
 }

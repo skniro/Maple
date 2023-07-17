@@ -1,26 +1,30 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.GlassBottleItem;
-import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.item.BottleItem;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class GlassCupItems {
-    public static final Item HIGH_GLASS_CUP = registerItem("high_glass_cup",new GlassBottleItem(
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+    public static final RegistryObject<Item> HIGH_GLASS_CUP = registerItem("high_glass_cup",
+            ()-> new BottleItem(
             (new Item
-                    .Settings()
+                    .Properties()
             )));
 
 
-    private static Item registerItem(String name,Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),item);
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
+        RegistryObject<T> toReturn = ITEMS.register(name, item);
+        return toReturn;
     }
 
-    public static void registerModItems() {
-        Maple.LOGGER.info("Registering Glass Items for " + Maple.MOD_ID);
+    public static void registerMapleGlassItems(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
-
 }
