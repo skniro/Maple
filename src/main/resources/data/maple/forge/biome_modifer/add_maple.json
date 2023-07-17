@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_forest",
+  "features": "maple:maple_tree_placed",
+  "step": "vegetal_decoration"
+}

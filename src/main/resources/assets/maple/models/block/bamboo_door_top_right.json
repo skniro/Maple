@@ -3,5 +3,6 @@
   "textures": {
     "bottom": "maple:block/bamboo_door_bottom",
     "top": "maple:block/bamboo_door_top"
-  }
+  },
+  "render_type": "cutout"
 }

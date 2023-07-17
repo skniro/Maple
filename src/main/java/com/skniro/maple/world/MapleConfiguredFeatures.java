@@ -68,7 +68,7 @@ public class MapleConfiguredFeatures {
                 () -> new ConfiguredFeature<>(Feature.TREE, MapleConfiguredFeatures.maple().build()));
         Maple_TREE_SPAWN = CONFIGURED_FEATURES.register("maple_tree_spawn",
                 () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
-                        new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(MaplePlacedFeatures.Maple_TREE_CHECKED.getHolder().get(), 0.00000005f)), MaplePlacedFeatures.Maple_TREE_CHECKED.getHolder().get())));
+                        new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(MaplePlacedFeatures.Maple_TREE_CHECKED.getHolder().get(), 0.05f)), MaplePlacedFeatures.Maple_TREE_CHECKED.getHolder().get())));
 
         CHERRY_TREE = CONFIGURED_FEATURES.register("cherry_tree",
                 () -> new ConfiguredFeature<>(Feature.TREE, MapleConfiguredFeatures.cherry().build()));
