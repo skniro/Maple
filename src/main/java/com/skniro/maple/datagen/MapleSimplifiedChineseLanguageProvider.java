@@ -111,5 +111,11 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleFoodComponents.Mochi,"麻糬");
         translationBuilder.add(MapleFoodComponents.SakuraMochi,"樱花麻糬");
 
+        //Boat
+        translationBuilder.add(MapleItems.CHERRY_BOAT,"樱木船");
+        translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"樱木箱船");
+        translationBuilder.add(MapleItems.MAPLE_BOAT,"枫木船");
+        translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"枫木箱船");
+
     }
 }

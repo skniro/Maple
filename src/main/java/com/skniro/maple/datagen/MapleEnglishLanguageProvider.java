@@ -110,5 +110,11 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleFoodComponents.MILK_ICECREAM,"Milk IceCream");
         translationBuilder.add(MapleFoodComponents.Mochi,"Mochi");
         translationBuilder.add(MapleFoodComponents.SakuraMochi,"Sakura Mochi");
+
+        //Boat
+        translationBuilder.add(MapleItems.CHERRY_BOAT,"Cherry Boat");
+        translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"Cherry Chest Boat");
+        translationBuilder.add(MapleItems.MAPLE_BOAT,"Maple Boat");
+        translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"Maple Chest Boat");
     }
 }

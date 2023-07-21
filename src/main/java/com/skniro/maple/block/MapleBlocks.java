@@ -17,7 +17,6 @@ import net.minecraft.util.registry.Registry;
 
 
 public class MapleBlocks {
-    Block block;
     //LOG_Block
     public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
     public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",

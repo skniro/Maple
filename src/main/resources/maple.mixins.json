@@ -5,7 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "SignTypeAccessor",
-    "BlockEntityTypeMixin"
+    "BlockEntityTypeMixin",
+    "BoatTypeMixin",
+    "BoatDropsMixin",
+    "ChestBoatDropsMixin"
+
   ],
   "client": [
   ],
