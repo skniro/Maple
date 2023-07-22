@@ -1,6 +1,7 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.init.MapleFlowerbedBlock;
 import com.skniro.maple.block.init.RiceBlock;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
@@ -8,6 +9,7 @@ import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -144,6 +146,9 @@ public class MapleBlocks {
 
     //Plants Block
     public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
+
+    //FlowerBlock
+    public static final Block PINK_PETALS = registerBlock("pink_petals", new MapleFlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

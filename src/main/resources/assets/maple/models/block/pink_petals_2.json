@@ -1,0 +1,7 @@
+{
+  "parent": "maple:block/flowerbed_2",
+  "textures": {
+    "flowerbed": "maple:block/pink_petals",
+    "stem": "maple:block/pink_petals_stem"
+  }
+}
