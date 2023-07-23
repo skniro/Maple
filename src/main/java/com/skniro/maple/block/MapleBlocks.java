@@ -148,7 +148,7 @@ public class MapleBlocks {
     public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
     //FlowerBlock
-    public static final Block PINK_PETALS = registerBlock("pink_petals", new MapleFlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
+    //public static final Block PINK_PETALS = registerBlock("pink_petals", new MapleFlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

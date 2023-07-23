@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:maple_leaves",
-    "minecraft:cherry_leaves",
-    "minecraft:sakura_leaves"
+    "maple:maple_leaves",
+    "maple:cherry_leaves",
+    "maple:sakura_leaves"
   ]
 }

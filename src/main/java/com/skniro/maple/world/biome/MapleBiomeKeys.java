@@ -22,7 +22,7 @@ public class MapleBiomeKeys {
 
     public static void registerBiome() {
         Maple.LOGGER.debug("Registering the MapleBiomeKeysFeatures for " + Maple.MOD_ID);
-        registerBuiltinBiome(CHERRY_GROVE, OverworldBiomeCreator.createMeadow());
+        registerBuiltinBiome(CHERRY_GROVE, MapleOverworldBiomes.createCherryGrove());
     }
 
     private static void registerBuiltinBiome(RegistryKey<Biome> key, Biome biome) {
