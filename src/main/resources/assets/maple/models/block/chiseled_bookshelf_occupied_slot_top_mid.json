@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/template_chiseled_bookshelf_slot_top_mid",
+  "textures": {
+    "texture": "maple:block/chiseled_bookshelf_occupied"
+  }
+}

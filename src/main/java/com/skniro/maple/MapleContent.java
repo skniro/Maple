@@ -3,6 +3,7 @@ package com.skniro.maple;
 
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.util.MapleFlammableBlocks;
@@ -39,5 +40,8 @@ public class MapleContent {
         MapleConfiguredFeatures.registerConfiguredFeatures();
     }
 
+    public static void registerBlockEntityType() {
+        MapleBlockEntityType.registerMapleBlockEntityType();
+    }
 }
 

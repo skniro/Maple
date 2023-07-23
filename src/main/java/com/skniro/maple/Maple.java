@@ -30,6 +30,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
         MapleContent.CreativeTab();
         MapleContent.generateWorldGen();
         MapleContent.registerMapleConfigured();
+        MapleContent.registerBlockEntityType();
     }
 
     public void onTerraBlenderInitialized() {
