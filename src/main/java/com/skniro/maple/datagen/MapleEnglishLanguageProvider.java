@@ -54,6 +54,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"Cherry Sign");
         translationBuilder.add(MapleBlocks.CHERRY_TRAPDOOR,"Cherry Trapdoor");
         translationBuilder.add(MapleBlocks.CHERRY_PRESSURE_PLATE,"Cherry Pressure Plate");
+        translationBuilder.add(MapleBlocks.PINK_PETALS,"Pink Petals");
 
         //BAMBOO
         translationBuilder.add(MapleBlocks.BAMBOO_BLOCK,"Bamboo Block");
@@ -116,5 +117,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"Cherry Chest Boat");
         translationBuilder.add(MapleItems.MAPLE_BOAT,"Maple Boat");
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"Maple Chest Boat");
+
+        translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"Chiseled Bookshelf");
     }
 }

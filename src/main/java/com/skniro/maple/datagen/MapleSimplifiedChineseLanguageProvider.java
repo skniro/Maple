@@ -54,6 +54,7 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"樱木告示牌");
         translationBuilder.add(MapleBlocks.CHERRY_TRAPDOOR,"樱木活版门");
         translationBuilder.add(MapleBlocks.CHERRY_PRESSURE_PLATE,"樱木压力板");
+        translationBuilder.add(MapleBlocks.PINK_PETALS,"粉红色花簇");
 
         //BAMBOO
         translationBuilder.add(MapleBlocks.BAMBOO_BLOCK,"竹块");
@@ -116,6 +117,8 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"樱木箱船");
         translationBuilder.add(MapleItems.MAPLE_BOAT,"枫木船");
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"枫木箱船");
+
+        translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"雕纹书架");
 
     }
 }
