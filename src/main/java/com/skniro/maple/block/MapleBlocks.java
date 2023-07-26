@@ -2,6 +2,7 @@ package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.init.ChiseledBookshelfBlock;
+import com.skniro.maple.block.init.MapleCherryLeavesBlock;
 import com.skniro.maple.block.init.MapleFlowerbedBlock;
 import com.skniro.maple.block.init.RiceBlock;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
@@ -53,7 +54,7 @@ public class MapleBlocks {
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new MapleCherryLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
     public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).luminance((state) -> 8)), Maple.Maple_Group);
 

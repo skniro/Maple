@@ -1,10 +1,20 @@
 package com.skniro.maple.client;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.particle.MapleParticleTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.block.Block;
+import net.minecraft.client.particle.FlameParticle;
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.screen.PlayerScreenHandler;
+import net.minecraft.util.Identifier;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
 public class MapleClient implements ClientModInitializer {
@@ -28,5 +38,16 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BAMBOO_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RICE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_PETALS,RenderLayer.getCutout());
+
+
+        ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
+            registry.register(new Identifier(Maple.MOD_ID, "particle/cherry"));
+        }));
+
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES,((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
     }
 }
