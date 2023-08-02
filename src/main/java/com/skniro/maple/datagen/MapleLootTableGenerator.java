@@ -35,7 +35,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_wood"),
                 BlockLootTableGenerator.drops(MapleBlocks.CHERRY_WOOD));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_door"),
-                BlockLootTableGenerator.drops(MapleBlocks.CHERRY_DOOR));
+                BlockLootTableGenerator.doorDrops(MapleBlocks.CHERRY_DOOR));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_sapling"),
                 BlockLootTableGenerator.drops(MapleBlocks.CHERRY_SAPLING));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/cherry_leaves"),
@@ -73,7 +73,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_wood"),
                 BlockLootTableGenerator.drops(MapleBlocks.MAPLE_WOOD));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_door"),
-                BlockLootTableGenerator.drops(MapleBlocks.MAPLE_DOOR));
+                BlockLootTableGenerator.doorDrops(MapleBlocks.MAPLE_DOOR));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_sapling"),
                 BlockLootTableGenerator.drops(MapleBlocks.MAPLE_SAPLING));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/maple_leaves"),
@@ -113,7 +113,7 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_mosaic"),
                 BlockLootTableGenerator.drops(MapleBlocks.BAMBOO_MOSAIC));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_door"),
-                BlockLootTableGenerator.drops(MapleBlocks.BAMBOO_DOOR));
+                BlockLootTableGenerator.doorDrops(MapleBlocks.BAMBOO_DOOR));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_button"),
                 BlockLootTableGenerator.drops(MapleBlocks.BAMBOO_BUTTON));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/bamboo_fence"),
