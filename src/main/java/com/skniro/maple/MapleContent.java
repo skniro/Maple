@@ -3,8 +3,6 @@ package com.skniro.maple;
 
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
-import com.skniro.maple.block.entity.MapleBlockEntityType;
-import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.particle.MapleParticleTypes;
@@ -43,7 +41,6 @@ public class MapleContent {
     }
 
     public static void registerBlockEntityType() {
-        MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
     }
 }

@@ -41,13 +41,9 @@ public class MapleItems {
     public static final Item Rice = registerItem("rice",new AliasedBlockItem(MapleBlocks.RICE, (new FabricItemSettings()).group(Maple.Maple_Group_Food)));
 
     //Boat
-    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(false, MapleBoatType.CHERRY, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
-    public static final Item MAPLE_BOAT = registerItem("maple_boat", (new BoatItem(false, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
-    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem(false, MapleBoatType.BAMBOO, (new Item.Settings()).maxCount(1))));
-
-    public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (new BoatItem(true, MapleBoatType.CHERRY, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
-    public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", (new BoatItem(true, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
-    public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (new BoatItem(true, MapleBoatType.BAMBOO, (new Item.Settings()).maxCount(1))));
+    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(MapleBoatType.CHERRY, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
+    public static final Item MAPLE_BOAT = registerItem("maple_boat", (new BoatItem( MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1).group(Maple.Maple_Group))));
+    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem( MapleBoatType.BAMBOO, (new Item.Settings()).maxCount(1))));
 
 
     private static Item registerItem(String name, Item item) {

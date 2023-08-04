@@ -6,8 +6,10 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
+
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class MapleCherryLeavesBlock extends LeavesBlock {
     public MapleCherryLeavesBlock(Settings settings) {

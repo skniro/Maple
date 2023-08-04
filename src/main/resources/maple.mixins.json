@@ -7,8 +7,7 @@
     "SignTypeAccessor",
     "BlockEntityTypeMixin",
     "BoatTypeMixin",
-    "BoatDropsMixin",
-    "ChestBoatDropsMixin"
+    "BoatDropsMixin"
 
   ],
   "client": [

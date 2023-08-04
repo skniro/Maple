@@ -1,7 +1,6 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.block.init.ChiseledBookshelfBlock;
 import com.skniro.maple.block.init.MapleCherryLeavesBlock;
 import com.skniro.maple.block.init.MapleFlowerbedBlock;
 import com.skniro.maple.block.init.RiceBlock;
@@ -11,8 +10,6 @@ import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -154,7 +151,6 @@ public class MapleBlocks {
     public static final Block PINK_PETALS = registerBlock("pink_petals", new MapleFlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
 
 
-    public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

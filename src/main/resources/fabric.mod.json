@@ -20,9 +20,6 @@
     ],
     "main": [
       "com.skniro.maple.Maple"
-    ],
-    "fabric-datagen": [
-      "com.skniro.maple.datagen.MapleDataGeneration"
     ]
   },
   "mixins": [
@@ -30,6 +27,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.9",
-    "minecraft": "1.19.X"
+    "minecraft": "1.18.X"
   }
 }
