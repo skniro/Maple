@@ -14,6 +14,7 @@ import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
 
 
+
 public class MapleContent {
 
 
@@ -35,6 +36,7 @@ public class MapleContent {
     public static void generateWorldGen() {
         MapleTreeGeneration.generateTrees();
         MapleBiomeKeys.registerBiome();
+
     }
     public static void registerMapleConfigured() {
         MapleConfiguredFeatures.registerConfiguredFeatures();
