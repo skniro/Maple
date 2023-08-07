@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "maple:block/bamboo_door_bottom",
+    "top": "maple:block/bamboo_door_top"
+  }
+}
