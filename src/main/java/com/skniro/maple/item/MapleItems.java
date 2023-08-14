@@ -18,7 +18,7 @@ public class MapleItems {
                     MapleSignBlocks.Maple_SIGN,MapleSignBlocks.Maple_WALL_SIGN));
     public static final Item BAMBOO_SIGN = registerItem("bamboo_sign",
             new SignItem(new FabricItemSettings().group(Maple.Maple_Group).maxCount(16),
-                    MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.Maple_WALL_SIGN));
+                    MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN));
 
     public static final Item CHERRY_DOOR = registerItem("cherry_door",new TallBlockItem(MapleBlocks.CHERRY_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
     public static final Item MAPLE_DOOR = registerItem("maple_door",new TallBlockItem(MapleBlocks.MAPLE_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
