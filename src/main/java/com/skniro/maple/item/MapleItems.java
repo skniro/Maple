@@ -5,6 +5,7 @@ import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.entity.MapleBoatType;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -41,13 +42,13 @@ public class MapleItems {
     public static final Item Rice = registerItem("rice",new AliasedBlockItem(MapleBlocks.RICE, (new FabricItemSettings())));
 
     //Boat
-    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(false, MapleBoatType.CHERRY, (new Item.Settings()).maxCount(1))));
+    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(false, BoatEntity.Type.CHERRY, (new Item.Settings()).maxCount(1))));
     public static final Item MAPLE_BOAT = registerItem("maple_boat", (new BoatItem(false, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1))));
-    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem(false, MapleBoatType.BAMBOO, (new Item.Settings()).maxCount(1))));
+    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem(false, BoatEntity.Type.BAMBOO, (new Item.Settings()).maxCount(1))));
 
-    public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (new BoatItem(true, MapleBoatType.CHERRY, (new Item.Settings()).maxCount(1))));
+    public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (new BoatItem(true, BoatEntity.Type.CHERRY, (new Item.Settings()).maxCount(1))));
     public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", (new BoatItem(true, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1))));
-    public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (new BoatItem(true, MapleBoatType.BAMBOO, (new Item.Settings()).maxCount(1))));
+    public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (new BoatItem(true, BoatEntity.Type.BAMBOO, (new Item.Settings()).maxCount(1))));
 
 
     private static Item registerItem(String name, Item item) {

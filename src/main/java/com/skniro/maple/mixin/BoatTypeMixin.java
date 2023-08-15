@@ -52,17 +52,10 @@ public class BoatTypeMixin {
         var types = new ArrayList<>(Arrays.asList(field_7724));
         var last = types.get(types.size() - 1);
 
-        var cherry = newType("CHERRY", last.ordinal() + 1, Blocks.OAK_PLANKS, "cherry");
-        MapleBoatType.CHERRY = cherry;
-        types.add(cherry);
-
-        var maple = newType("MAPLE", last.ordinal() + 2, Blocks.OAK_PLANKS, "maple");
+        var maple = newType("MAPLE", last.ordinal() + 1, Blocks.OAK_PLANKS, "maple");
         MapleBoatType.MAPLE = maple;
         types.add(maple);
 
-        var bamboo = newType("BAMBOO", last.ordinal() + 3, Blocks.OAK_PLANKS, "bamboo");
-        MapleBoatType.BAMBOO = bamboo;
-        types.add(bamboo);
         field_7724 = types.toArray(new BoatEntity.Type[0]);
     }
 }
