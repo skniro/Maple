@@ -1,12 +1,11 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
-import net.minecraft.item.FoodComponent;
 import net.minecraft.item.GlassBottleItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.registry.Registry;
 
 public class GlassCupItems {
     public static final Item HIGH_GLASS_CUP = registerItem("high_glass_cup",new GlassBottleItem(
@@ -16,7 +15,7 @@ public class GlassCupItems {
 
 
     private static Item registerItem(String name,Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),item);
+        return Registry.register(Registries.ITEM, new Identifier(Maple.MOD_ID, name),item);
     }
 
     public static void registerModItems() {

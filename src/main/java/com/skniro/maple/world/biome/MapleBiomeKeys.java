@@ -20,6 +20,6 @@ public class MapleBiomeKeys {
     }
 
     private static void registerBuiltinBiome(RegistryKey<Biome> key, Biome biome) {
-        Registry.register(RegistryKeys.BIOME,key);
+        Registry.register(BuiltinRegistries.createWrapperLookup() ,key,biome);
     }
 }

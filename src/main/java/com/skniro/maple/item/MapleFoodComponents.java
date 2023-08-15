@@ -1,11 +1,10 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class MapleFoodComponents {
     public static final Item Sanshoku_Dango =
@@ -20,7 +19,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Anko_Dango =
             registerItem("anko_dango",
@@ -34,7 +33,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
     public static final Item Kinako_Dango =
             registerItem("kinako_dango",
                     new Item(
@@ -47,7 +46,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Zunda_Dango =
             registerItem("zunda_dango",
@@ -61,7 +60,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Mochi =
             registerItem("mochi",
@@ -75,7 +74,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item SakuraMochi =
             registerItem("sakura_mochi",
@@ -89,7 +88,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.6f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item RICEBALL =
             registerItem("riceball",
@@ -145,7 +144,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.1f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item MILK_ICECREAM =
             registerItem("milk_icecream",
@@ -159,7 +158,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.1f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Cooked_Rice =
             registerItem("cooked_rice",
@@ -173,7 +172,7 @@ public class MapleFoodComponents {
                                                     .saturationModifier(0.2f)
                                                     .build()
                                             )
-                                    .group(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final Item Chicken_Rice =
             registerItem("chicken_rice",
@@ -263,7 +262,7 @@ public class MapleFoodComponents {
 
 
     private static Item registerItem(String name,Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),item);
+        return Registry.register(Registries.ITEM, new Identifier(Maple.MOD_ID, name),item);
     }
     public static void registerMapleFoodItems() {
         Maple.LOGGER.info("Registering Maple Food Items for " + Maple.MOD_ID);

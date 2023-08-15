@@ -15,17 +15,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BoatDropsMixin {
     @Inject(method = "asItem", at = @At("HEAD"), cancellable = true)
     public void asItem(CallbackInfoReturnable<Item> ci) {
-        if (((BoatEntity)(Object)this).getBoatType() == MapleBoatType.CHERRY) {
+        if (((BoatEntity)(Object)this).getVariant() == MapleBoatType.CHERRY) {
             ci.setReturnValue(MapleItems.CHERRY_BOAT);
-        }else if (((BoatEntity)(Object)this).getBoatType() == MapleBoatType.BAMBOO) {
+        }else if (((BoatEntity)(Object)this).getVariant() == MapleBoatType.BAMBOO) {
             ci.setReturnValue(MapleItems.BAMBOO_BOAT);
-        }else if (((BoatEntity)(Object)this).getBoatType() == MapleBoatType.MAPLE) {
+        }else if (((BoatEntity)(Object)this).getVariant() == MapleBoatType.MAPLE) {
             ci.setReturnValue(MapleItems.MAPLE_BOAT);
         }
     }
 
     @Inject(method = "getMountedHeightOffset",at =@At("HEAD"),cancellable = true)
     public void MountedHeightOffset(CallbackInfoReturnable<Double> cir){
-        cir.setReturnValue(((BoatEntity)(Object)this).getBoatType() == MapleBoatType.BAMBOO ? 0.25D : -0.1D);
+        cir.setReturnValue(((BoatEntity)(Object)this).getVariant() == MapleBoatType.BAMBOO ? 0.25D : -0.1D);
     }
 }

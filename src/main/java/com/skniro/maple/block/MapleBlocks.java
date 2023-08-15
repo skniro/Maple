@@ -1,25 +1,22 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.entity.MapleSignTypes;
+import com.skniro.maple.block.init.*;
 import com.skniro.maple.block.init.ChiseledBookshelfBlock;
-import com.skniro.maple.block.init.MapleCherryLeavesBlock;
-import com.skniro.maple.block.init.MapleFlowerbedBlock;
-import com.skniro.maple.block.init.RiceBlock;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-
 
 public class MapleBlocks {
     //LOG_Block
@@ -79,11 +76,11 @@ public class MapleBlocks {
 
     //BUTTON
     public static final Block CHERRY_BUTTON = registerBlock("cherry_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            Blocks.createWoodenButtonBlock(BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block MAPLE_BUTTON = registerBlock("maple_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            Blocks.createWoodenButtonBlock(MapleBlockSetType.MAPLE), Maple.Maple_Group);
     public static final Block BAMBOO_BUTTON = registerBlock("bamboo_button",
-            new WoodenButtonBlock(AbstractBlock.Settings.of(Material.DECORATION).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            Blocks.createWoodenButtonBlock(BlockSetType.BAMBOO), Maple.Maple_Group);
 
 
     //STAIRS
@@ -109,64 +106,64 @@ public class MapleBlocks {
 
     //FENCE
     public static final Block CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F),WoodType.CHERRY), Maple.Maple_Group);
     public static final Block CHERRY_FENCE = registerBlock("cherry_fence",
             new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, CHERRY_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F), MapleSignTypes.MAPLE), Maple.Maple_Group);
     public static final Block MAPLE_FENCE = registerBlock("maple_fence",
             new FenceBlock(AbstractBlock.Settings.of(Material.WOOD, MAPLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
-            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f)), Maple.Maple_Group);
+            new FenceGateBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f), WoodType.BAMBOO), Maple.Maple_Group);
     public static final Block BAMBOO_FENCE = registerBlock("bamboo_fence",
             new FenceBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
 
 
     //Door
     public static final Block MAPLE_DOOR = registerBlockWithoutItem("maple_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),BlockSetType.CHERRY));
     public static final Block CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),MapleBlockSetType.MAPLE));
     public static final Block BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
-            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            new DoorBlock(AbstractBlock.Settings.of(Material.WOOD,BAMBOO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),BlockSetType.BAMBOO));
 
     //TRAPDOOR
     public static final Block CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque(),BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD, MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque(),MapleBlockSetType.MAPLE), Maple.Maple_Group);
     public static final Block BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(3.0f).nonOpaque()), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.of(Material.WOOD,MapColor.YELLOW).strength(3.0f).nonOpaque(),BlockSetType.BAMBOO), Maple.Maple_Group);
 
 
     //PRESSURE_PLATE
     public static final Block CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.CHERRY_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.CHERRY_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F),BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.MAPLE_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.MAPLE_PLANKS.getDefaultMapColor()).noCollision().strength(0.5F),MapleBlockSetType.MAPLE), Maple.Maple_Group);
     public static final Block BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(0.5f)), Maple.Maple_Group);
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, AbstractBlock.Settings.of(Material.WOOD, MapleBlocks.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(0.5f),BlockSetType.BAMBOO), Maple.Maple_Group);
 
     //Plants Block
     public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
     //FlowerBlock
-    public static final Block PINK_PETALS = registerBlock("pink_petals", new MapleFlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
+    public static final Block PINK_PETALS = registerBlock("pink_petals", new FlowerbedBlock(AbstractBlock.Settings.of(Material.PLANT).mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
 
 
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(Maple.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
     }
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
         registerBlockItem(name, block, tab);
-        return Registry.register(Registry.BLOCK, new Identifier(Maple.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
     }
     private static Item registerBlockItem(String name, Block block, ItemGroup tab) {
-        return Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(tab)));
+        return Registry.register(Registries.ITEM, new Identifier(Maple.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings()));
     }
 
     private static PillarBlock createBambooBlock(MapColor topMapColor, MapColor sideMapColor, BlockSoundGroup soundGroup) {

@@ -1,5 +1,6 @@
 package com.skniro.maple.mixin;
 
+import net.minecraft.block.BlockSetType;
 import net.minecraft.block.WoodType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -7,7 +8,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(WoodType.class)
 public interface SignTypeAccessor {
     @Invoker("<init>")
-    static WoodType newSignType(String name) {
+    static WoodType newSignType(String name, BlockSetType setType) {
         throw new AssertionError();
     }
 
