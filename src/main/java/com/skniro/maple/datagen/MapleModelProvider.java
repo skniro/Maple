@@ -6,6 +6,7 @@ import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
@@ -13,7 +14,7 @@ import net.minecraft.data.client.Models;
 import net.minecraft.state.property.Properties;
 
 public class MapleModelProvider extends FabricModelProvider {
-    public MapleModelProvider(FabricDataGenerator dataGenerator){
+    public MapleModelProvider(FabricDataOutput dataGenerator){
         super(dataGenerator);
     }
 

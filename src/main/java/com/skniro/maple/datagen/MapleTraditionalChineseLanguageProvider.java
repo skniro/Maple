@@ -8,10 +8,11 @@ import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 public class MapleTraditionalChineseLanguageProvider extends FabricLanguageProvider {
-    public MapleTraditionalChineseLanguageProvider(FabricDataGenerator dataGenerator){
+    public MapleTraditionalChineseLanguageProvider(FabricDataOutput dataGenerator){
         super(dataGenerator,"zh_tw");
     }
 

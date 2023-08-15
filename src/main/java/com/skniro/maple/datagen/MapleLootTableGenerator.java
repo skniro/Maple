@@ -1,21 +1,13 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
-import net.minecraft.data.server.loottable.BlockLootTableGenerator;
-import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.context.LootContextTypes;
-import net.minecraft.util.Identifier;
-
-import java.util.function.BiConsumer;
 
 
 public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
@@ -31,7 +23,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleSignBlocks.CHERRY_WALL_SIGN);
         addDrop(MapleBlocks.CHERRY_LOG);
         addDrop(MapleBlocks.CHERRY_WOOD);
-        addDrop(MapleBlocks.CHERRY_DOOR,doorDrops(MapleBlocks.CHERRY_DOOR);
+        addDrop(MapleBlocks.CHERRY_DOOR,doorDrops(MapleBlocks.CHERRY_DOOR));
         addDrop(MapleBlocks.CHERRY_SAPLING);
         addDrop(MapleBlocks.CHERRY_LEAVES,leavesDrops(MapleBlocks.CHERRY_LEAVES,MapleBlocks.CHERRY_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.CHERRY_BUTTON);
@@ -53,7 +45,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.MAPLE_WOOD);
         addDrop(MapleBlocks.MAPLE_DOOR,doorDrops(MapleBlocks.MAPLE_DOOR));
         addDrop(MapleBlocks.MAPLE_SAPLING);
-        addDrop(MapleBlocks.MAPLE_LEAVES,leavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE);
+        addDrop(MapleBlocks.MAPLE_LEAVES,leavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.MAPLE_BUTTON);
         addDrop(MapleBlocks.MAPLE_FENCE);
         addDrop(MapleBlocks.MAPLE_FENCE_GATE);
