@@ -11,7 +11,9 @@ import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.MapleConfiguredFeatures;
+import com.skniro.maple.world.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleBiomeKeys;
+import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
 
@@ -38,10 +40,9 @@ public class MapleContent {
 
     public static void generateWorldGen() {
         MapleTreeGeneration.generateTrees();
-        MapleBiomeKeys.registerBiome();
-    }
-    public static void registerMapleConfigured() {
         MapleConfiguredFeatures.registerConfiguredFeatures();
+        MaplePlacedFeatures.registerPlacedFeatures();
+        MapleOreGeneration.generateOres();
     }
 
     public static void registerBlockEntityType() {

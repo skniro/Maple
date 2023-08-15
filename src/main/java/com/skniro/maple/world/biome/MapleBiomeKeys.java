@@ -4,6 +4,8 @@ import com.skniro.maple.Maple;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
+import net.minecraft.world.gen.feature.PlacedFeature;
 
 
 public class MapleBiomeKeys {
@@ -14,12 +16,8 @@ public class MapleBiomeKeys {
     }
 
 
-    public static void registerBiome() {
+    public static void registerBiome(Registerable<Biome> biomeRegisterable, RegistryEntryLookup<PlacedFeature> placedFeatureLookup, RegistryEntryLookup<ConfiguredCarver<?>> configuredCarverLookup) {
         Maple.LOGGER.debug("Registering the MapleBiomeKeysFeatures for " + Maple.MOD_ID);
-        registerBuiltinBiome(CHERRY_GROVE, MapleOverworldBiomes.createCherryGrove());
-    }
-
-    private static void registerBuiltinBiome(RegistryKey<Biome> key, Biome biome) {
-        Registry.register(BuiltinRegistries.createWrapperLookup() ,key,biome);
+        biomeRegisterable.register(CHERRY_GROVE, MapleOverworldBiomes.createCherryGrove(placedFeatureLookup,configuredCarverLookup));
     }
 }
