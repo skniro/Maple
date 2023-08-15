@@ -3,7 +3,7 @@ package com.skniro.maple;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -18,11 +18,15 @@ public class Maple implements ModInitializer, TerraBlenderApi {
     public static final String MOD_ID = "maple";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final ItemGroup Maple_Group = FabricItemGroupBuilder.build(
-            new Identifier(MOD_ID, "maple_group"),() -> new ItemStack(MAPLE_LOG));
+    public static final ItemGroup Maple_Group = FabricItemGroup.builder(new Identifier(MOD_ID, "maple_group"))
+            .icon(() -> new ItemStack(MAPLE_LOG))
+            .build();
 
-    public static final ItemGroup Maple_Group_Food = FabricItemGroupBuilder.build(
-            new Identifier(MOD_ID, "maple_group_food"),() -> new ItemStack(MapleItems.MapleSyrup));
+    public static final ItemGroup Maple_Group_Food = FabricItemGroup.builder(new Identifier(MOD_ID, "maple_group_food"))
+            .icon(() -> new ItemStack(MapleItems.MapleSyrup))
+            .build();
+
+
     @Override
     public void onInitialize() {
         MapleContent.registerItem();

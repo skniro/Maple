@@ -32,6 +32,7 @@ public class MapleContent {
     }
 
     public static void CreativeTab() {
+
     }
 
     public static void generateWorldGen() {
