@@ -33,6 +33,7 @@ public class MapleContent {
         MapleStrippableBlocks.registerStrippables();
         MapleBlocks.registerMapleBlocks();
         MapleSignBlocks.registerMapleSignBlocks();
+        MapleOreBlocks.registerMapleOreBlocks();
     }
 
     public static void CreativeTab() {

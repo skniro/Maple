@@ -27,4 +27,8 @@ public class MapleOreBlocks {
         return Registry.register(Registries.ITEM, new Identifier(Maple.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
+
+    public static void registerMapleOreBlocks() {
+        Maple.LOGGER.debug("Registering ModBlocks for " + Maple.MOD_ID);
+    }
 }
