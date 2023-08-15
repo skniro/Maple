@@ -65,6 +65,8 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.Food_Press, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SOYBEAN, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Salt, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.BAMBOO_BOAT, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.BAMBOO_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Anko_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Beef_Rice, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Cheese, Models.GENERATED);
