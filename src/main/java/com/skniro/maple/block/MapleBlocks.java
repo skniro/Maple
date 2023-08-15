@@ -3,7 +3,6 @@ package com.skniro.maple.block;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.block.init.*;
-import com.skniro.maple.block.init.ChiseledBookshelfBlock;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import com.skniro.maple.world.Tree.SakuraSaplingGenerator;

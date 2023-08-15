@@ -13,7 +13,7 @@ import net.minecraft.util.Util;
 
 
 public class MapleBlockEntityType {
-    public static final BlockEntityType<ChiseledBookshelfBlockEntity> CHISELED_BOOKSHELF;
+
 
     private static <T extends BlockEntity> BlockEntityType<T> create(String id, BlockEntityType.Builder<T> builder) {
         Type<?> type = Util.getChoiceType(TypeReferences.BLOCK_ENTITY, id);
@@ -21,7 +21,6 @@ public class MapleBlockEntityType {
     }
 
     static {
-        CHISELED_BOOKSHELF = create("chiseled_bookshelf", BlockEntityType.Builder.create(ChiseledBookshelfBlockEntity::new, MapleBlocks.CHISELED_BOOKSHELF));
     }
 
     public static void registerMapleBlockEntityType() {
