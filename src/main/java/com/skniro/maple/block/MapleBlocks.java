@@ -31,22 +31,22 @@ public class MapleBlocks {
 
     //LOG_Block
     public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
 
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).requiresCorrectToolForDrops()), Maple.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
 
     public static final RegistryObject<Block> BAMBOO_BLOCK = registerBlock("bamboo_block",
             () -> createBambooBlock(MaterialColor.COLOR_YELLOW, MaterialColor.TERRACOTTA_GREEN, SoundType.WOOD), Maple.Maple_Group);
@@ -124,7 +124,7 @@ public class MapleBlocks {
 
     //PLANKS Block
     public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops())
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
