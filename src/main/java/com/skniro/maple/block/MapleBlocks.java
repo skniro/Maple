@@ -2,6 +2,7 @@ package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.init.MapleFlammableRotatedPillarBlock;
+import com.skniro.maple.block.init.MapleFlowerbedBlock;
 import com.skniro.maple.block.init.RiceBlock;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
@@ -122,6 +123,7 @@ public class MapleBlocks {
                 }
             }, Maple.Maple_Group);
 
+
     //PLANKS Block
     public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS))
@@ -213,6 +215,10 @@ public class MapleBlocks {
             () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_BUTTON = registerBlock("bamboo_button",
             () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD)), Maple.Maple_Group);
+
+
+    public static final RegistryObject<Block> PINK_PETALS = registerBlock("pink_petals",
+            () -> new MapleFlowerbedBlock(BlockBehaviour.Properties.of(Material.PLANT).color(MaterialColor.COLOR_PINK).noCollission().sound(SoundType.GRASS)),Maple.Maple_Group);
 
 
     //STAIRS
