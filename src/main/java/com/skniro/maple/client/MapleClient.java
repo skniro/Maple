@@ -3,6 +3,7 @@ package com.skniro.maple.client;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.misc.qsldatafixupper.impl.client.ClientFreezer;
 import com.skniro.maple.particle.MapleParticleTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -33,6 +34,7 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BAMBOO_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RICE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_PETALS,RenderLayer.getCutout());
+
 
 
 

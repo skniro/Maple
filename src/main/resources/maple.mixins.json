@@ -9,7 +9,6 @@
     "BoatTypeMixin",
     "BoatDropsMixin",
     "ChestBoatDropsMixin"
-
   ],
   "client": [
   ],

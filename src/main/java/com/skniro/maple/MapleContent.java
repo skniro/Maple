@@ -1,6 +1,11 @@
 package com.skniro.maple;
 
 
+import com.google.common.collect.ImmutableMap;
+import com.mojang.datafixers.DSL;
+import com.mojang.datafixers.DataFixerBuilder;
+import com.mojang.datafixers.optics.profunctors.GetterP;
+import com.mojang.datafixers.schemas.Schema;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
@@ -8,6 +13,9 @@ import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
+import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixerBuilder;
+import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixes;
+import com.skniro.maple.misc.qsldatafixupper.api.SimpleFixes;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
@@ -18,6 +26,23 @@ import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.SharedConstants;
+import net.minecraft.block.Block;
+import net.minecraft.datafixer.DataFixTypes;
+import net.minecraft.datafixer.Schemas;
+import net.minecraft.datafixer.fix.BlockNameFix;
+import net.minecraft.datafixer.fix.ItemNameFix;
+import net.minecraft.datafixer.schema.IdentifierNormalizingSchema;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MapleContent {
@@ -132,5 +157,25 @@ public class MapleContent {
         MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
     }
+
+    private static final int DATA_VERSION = 3;
+    public static void datafix(final @NotNull ModContainer mod) {
+        QuiltDataFixerBuilder builder = new QuiltDataFixerBuilder(DATA_VERSION);
+        builder.addSchema(0, QuiltDataFixes.BASE_SCHEMA);
+        Schema schemaV1 = builder.addSchema(3, IdentifierNormalizingSchema::new);
+        SimpleFixes.addItemRenameFix(builder, "Rename old_item to new_item",
+                new Identifier(Maple.MOD_ID, "cherry_log"), new Identifier(Maple.MOD_ID, "cherry_log"), schemaV1);
+        SimpleFixes.addBlockRenameFix(builder, "Rename cherry_log to vanilla",
+                new Identifier(Maple.MOD_ID, "cherry_log"), new Identifier(Maple.MOD_ID, "cherry_log"), schemaV1);
+/*        Schema schemaV2 = builder.addSchema(2, IdentifierNormalizingSchema::new);
+        SimpleFixes.addItemRenameFix(builder, "Rename new_item to fine_item",
+                new Identifier(Maple.MOD_ID, "new_item"), new Identifier(Maple.MOD_ID, "fine_item"), schemaV2);
+        SimpleFixes.addBlockRenameFix(builder, "Rename old_block to cool_block",
+                new Identifier(Maple.MOD_ID, "old_block"), new Identifier(Maple.MOD_ID, "cool_block"), schemaV2);*/
+        QuiltDataFixes.buildAndRegisterFixer(mod,new QuiltDataFixerBuilder(3));
+    }
+
+
+
 }
 

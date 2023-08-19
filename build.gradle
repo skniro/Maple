@@ -12,10 +12,15 @@ repositories {
     }
 
     maven {
+        url = "https://jitpack.io"
+    }
+
+    maven {
         // location of the maven that hosts JEI files before January 2023
         name = "Progwml6's maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
+
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -33,6 +38,8 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
+
+    modApi(include(implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:0.2.0-beta.9"))))
 
     // compile against the JEI API but do not include it at runtime
     //modCompileOnlyApi("mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}")
