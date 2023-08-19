@@ -22,7 +22,7 @@ public class MapleItems {
                     MapleSignBlocks.Maple_SIGN.get(),MapleSignBlocks.Maple_WALL_SIGN.get()));
     public static final RegistryObject<Item> BAMBOO_SIGN = registerItem("bamboo_sign",
             ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
-                    MapleSignBlocks.BAMBOO_SIGN.get(),MapleSignBlocks.Maple_WALL_SIGN.get()));
+                    MapleSignBlocks.BAMBOO_SIGN.get(),MapleSignBlocks.BAMBOO_WALL_SIGN.get()));
 
     public static final RegistryObject<Item> CHERRY_DOOR = registerItem("cherry_door",
             ()-> new DoubleHighBlockItem(MapleBlocks.CHERRY_DOOR.get(), new Item.Properties().tab(Maple.Maple_Group).stacksTo(16)));
