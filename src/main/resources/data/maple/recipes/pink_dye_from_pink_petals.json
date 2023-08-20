@@ -4,7 +4,7 @@
   "group": "pink_dye",
   "ingredients": [
     {
-      "item": "minecraft:pink_petals"
+      "item": "maple:pink_petals"
     }
   ],
   "result": {
