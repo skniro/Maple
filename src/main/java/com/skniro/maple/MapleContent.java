@@ -1,22 +1,20 @@
 package com.skniro.maple;
 
 
+import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
-import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
-import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
+import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.MapleConfiguredFeatures;
 import com.skniro.maple.world.MaplePlacedFeatures;
-import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
-import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 
