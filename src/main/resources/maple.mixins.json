@@ -8,8 +8,9 @@
     "BlockEntityTypeMixin",
     "BoatTypeMixin",
     "BoatDropsMixin",
-    "ChestBoatDropsMixin"
-
+    "ChestBoatDropsMixin",
+    "TrunkPlacerTypeInvoker",
+    "TreeDecoratorTypeInvoker"
   ],
   "client": [
   ],

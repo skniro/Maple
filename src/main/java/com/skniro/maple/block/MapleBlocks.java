@@ -1,18 +1,13 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.block.init.ChiseledBookshelfBlock;
-import com.skniro.maple.block.init.MapleCherryLeavesBlock;
-import com.skniro.maple.block.init.MapleFlowerbedBlock;
-import com.skniro.maple.block.init.RiceBlock;
+import com.skniro.maple.block.init.*;
 import com.skniro.maple.world.Tree.CherrySaplingGenerator;
 import com.skniro.maple.world.Tree.MapleSaplingGenerator;
 import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.Instrument;
-import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -50,13 +45,14 @@ public class MapleBlocks {
     public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block SAKURA_SAPLING = registerBlock("sakura_sapling",new SaplingBlock(new SakuraSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
 
+
     //LEAVES Block
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.BROWN)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
             new MapleCherryLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK)), Maple.Maple_Group);
     public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK).luminance((state) -> 8)), Maple.Maple_Group);
+            new MapleSakuraLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK).luminance((state) -> 8)), Maple.Maple_Group);
 
     //PLANKS Block
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks",

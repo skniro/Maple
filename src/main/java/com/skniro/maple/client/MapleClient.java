@@ -44,6 +44,16 @@ public class MapleClient implements ClientModInitializer {
             registry.register(new Identifier(Maple.MOD_ID, "particle/cherry"));
         }));
 
+        ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
+            registry.register(new Identifier(Maple.MOD_ID, "particle/sakura"));
+        }));
+
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES,((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
+
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES,((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
                 return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);

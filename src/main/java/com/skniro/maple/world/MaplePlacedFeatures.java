@@ -15,6 +15,7 @@ public class MaplePlacedFeatures {
     public static final RegistryEntry<PlacedFeature> Maple_TREE_PLACED;
     public static final RegistryEntry<PlacedFeature> CHERRY_TREE_PLACED;
     public static final RegistryEntry<PlacedFeature> SAKURA_TREE_PLACED;
+    public static final RegistryEntry<PlacedFeature> MAGE_SAKURA_TREE_PLACED;
     public static final RegistryEntry<PlacedFeature> SALT_ORE_PLACED;
     static{
         SALT_ORE_PLACED = PlacedFeatures.register("ore_salt_overworld",
@@ -25,6 +26,8 @@ public class MaplePlacedFeatures {
         CHERRY_TREE_PLACED = PlacedFeatures.register("cherry_tree_placed", MapleConfiguredFeatures.CHERRY_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
         SAKURA_TREE_PLACED = PlacedFeatures.register("sakura_tree_placed", MapleConfiguredFeatures.SAKURA_TREE_SPAWN,
+                VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
+        MAGE_SAKURA_TREE_PLACED = PlacedFeatures.register("mage_sakura_tree_placed", MapleConfiguredFeatures.MAGE_SAKURA_TREE_SPAWN,
                 VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1)));
     }
 

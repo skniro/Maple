@@ -13,9 +13,11 @@ import java.util.function.Function;
 
 public class MapleParticleTypes {
     public static final DefaultParticleType CHERRY_LEAVES = FabricParticleTypes.simple();
+    public static final DefaultParticleType SAKURA_LEAVES = FabricParticleTypes.simple();
 
     static {
         Registry.register(Registry.PARTICLE_TYPE, new Identifier(Maple.MOD_ID,"cherry_leaves"), CHERRY_LEAVES);
+        Registry.register(Registry.PARTICLE_TYPE, new Identifier(Maple.MOD_ID,"sakura_leaves"), SAKURA_LEAVES);
     }
 
     public static void registerParticleTypes() {
