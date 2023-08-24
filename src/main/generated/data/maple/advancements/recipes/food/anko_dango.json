@@ -43,5 +43,6 @@
     "recipes": [
       "maple:anko_dango"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -56,6 +56,10 @@ public class BoatTypeMixin {
         MapleBoatType.MAPLE = maple;
         types.add(maple);
 
+        var ginkgo = newType("GINKGO", last.ordinal() + 2, Blocks.OAK_PLANKS, "ginkgo");
+        MapleBoatType.GINKGO = ginkgo;
+        types.add(ginkgo);
+
         field_7724 = types.toArray(new BoatEntity.Type[0]);
     }
 }

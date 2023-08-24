@@ -9,6 +9,10 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 public class SakuraSaplingGenerator extends SaplingGenerator {
         @Override
         protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-            return MapleConfiguredFeatures.SAKURA_TREE;
+            int chance = random.nextInt(100);
+            return switch (chance) {
+                case 20 -> MapleConfiguredFeatures.MAGE_SAKURA_TREE;
+                default -> MapleConfiguredFeatures.SAKURA_TREE;
+            };
         }
     }

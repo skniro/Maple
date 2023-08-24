@@ -43,5 +43,6 @@
     "recipes": [
       "maple:cooked_rice"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -43,5 +43,6 @@
     "recipes": [
       "maple:cream"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

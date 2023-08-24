@@ -19,6 +19,7 @@ public class MaplePlacedFeatures {
     public static final RegistryKey<PlacedFeature> Maple_TREE_PLACED = registerKey("maple_tree_placed");
     public static final RegistryKey<PlacedFeature> CHERRY_TREE_PLACED= registerKey("cherry_tree_placed");;
     public static final RegistryKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");;
+    public static final RegistryKey<PlacedFeature> MAGE_SAKURA_TREE_PLACED= registerKey("mage_sakura_tree_placed");;
     public static final RegistryKey<PlacedFeature> SALT_ORE_PLACED = registerKey("ore_salt_overworld");
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -33,6 +34,9 @@ public class MaplePlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING));
 
         register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SAKURA_TREE),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
+
+        register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
 
     }

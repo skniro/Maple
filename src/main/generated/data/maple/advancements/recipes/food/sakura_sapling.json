@@ -43,5 +43,6 @@
     "recipes": [
       "maple:sakura_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

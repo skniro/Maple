@@ -43,5 +43,6 @@
     "recipes": [
       "maple:flour"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -16,6 +16,8 @@ public class MapleSignBlocks {
     public static final Block Maple_WALL_SIGN = registerBlockWithoutItem("maple_wall_sign",new WallSignBlock(AbstractBlock.Settings.create().mapColor(MapleBlocks.MAPLE_PLANKS.getDefaultMapColor()).noCollision().strength(1.0F).dropsLike(Maple_SIGN),MapleSignTypes.MAPLE),Maple.Maple_Group);
     public static final Block BAMBOO_SIGN = registerBlockWithoutItem("bamboo_sign", new SignBlock(AbstractBlock.Settings.create().mapColor(MapleBlocks.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(1.0f), WoodType.BAMBOO),Maple.Maple_Group);
     public static final Block BAMBOO_WALL_SIGN = registerBlockWithoutItem("bamboo_wall_sign",new WallSignBlock(AbstractBlock.Settings.create().mapColor(MapleBlocks.BAMBOO_PLANKS.getDefaultMapColor()).noCollision().strength(1.0F).dropsLike(BAMBOO_SIGN),WoodType.BAMBOO),Maple.Maple_Group);
+    public static final Block GINKGO_SIGN = registerBlockWithoutItem("ginkgo_sign", new SignBlock(AbstractBlock.Settings.create().mapColor(MapleBlocks.GINKGO_LEAVES.getDefaultMapColor()).noCollision().strength(1.0f), MapleSignTypes.GINKGO),Maple.Maple_Group);
+    public static final Block GINKGO_WALL_SIGN = registerBlockWithoutItem("ginkgo_wall_sign",new WallSignBlock(AbstractBlock.Settings.create().mapColor(MapleBlocks.GINKGO_LEAVES.getDefaultMapColor()).noCollision().strength(1.0F).dropsLike(BAMBOO_SIGN),MapleSignTypes.GINKGO),Maple.Maple_Group);
 
     private static Block registerBlockWithoutItem(String name, Block block, RegistryKey<ItemGroup> group) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);

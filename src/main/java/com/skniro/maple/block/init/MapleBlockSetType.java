@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 public record MapleBlockSetType(String name, BlockSoundGroup soundType, SoundEvent doorClose, SoundEvent doorOpen, SoundEvent trapdoorClose, SoundEvent trapdoorOpen, SoundEvent pressurePlateClickOff, SoundEvent pressurePlateClickOn, SoundEvent buttonClickOff, SoundEvent buttonClickOn) {
     private static final Set<net.minecraft.block.BlockSetType> VALUES = new ObjectArraySet<net.minecraft.block.BlockSetType>();
     public static final BlockSetType MAPLE = register(new BlockSetType("maple"));
+    public static final BlockSetType GINKGO = register(new BlockSetType("ginkgo"));
 
 
     public MapleBlockSetType(String name) {

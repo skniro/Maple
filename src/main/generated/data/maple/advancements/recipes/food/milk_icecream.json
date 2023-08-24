@@ -56,5 +56,6 @@
     "recipes": [
       "maple:milk_icecream"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

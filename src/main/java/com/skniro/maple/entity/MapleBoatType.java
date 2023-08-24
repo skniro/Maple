@@ -7,4 +7,5 @@ public class MapleBoatType {
         BoatEntity.Type.values();
     }
     public static BoatEntity.Type MAPLE;
+    public static BoatEntity.Type GINKGO;
 }

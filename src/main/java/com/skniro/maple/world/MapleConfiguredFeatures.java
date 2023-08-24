@@ -21,17 +21,22 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
+import net.minecraft.world.gen.foliage.LargeOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
+import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
+import java.util.OptionalInt;
 
 
 public class MapleConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> Maple_TREE =registerKey("maple_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHERRY_TREE = registerKey("cherry_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_TREE = registerKey("sakura_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MAGE_SAKURA_TREE = registerKey("mage_sakura_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> GINKGO_TREE = registerKey("ginkgo_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SALT_ORE = registerKey("salt_ore");
 
 
@@ -51,6 +56,14 @@ public class MapleConfiguredFeatures {
     private static TreeFeatureConfig.Builder sakura() {
         return MapleConfiguredFeatures.builder(Blocks.CHERRY_LOG, MapleBlocks.SAKURA_LEAVES,4,2,0,2).ignoreVines();
     }
+
+    private static TreeFeatureConfig.Builder sakura2() {
+        return (new TreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.CHERRY_LOG), new LargeOakTrunkPlacer(8, 20, 0), BlockStateProvider.of(MapleBlocks.SAKURA_LEAVES), new LargeOakFoliagePlacer(ConstantIntProvider.create(2),ConstantIntProvider.create(3), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(1)))).ignoreVines();
+    }
+
+    private static TreeFeatureConfig.Builder ginkgo() {
+        return (new TreeFeatureConfig.Builder(BlockStateProvider.of(MapleBlocks.GINKGO_LOG), new LargeOakTrunkPlacer(8, 20, 0), BlockStateProvider.of(MapleBlocks.GINKGO_LEAVES), new LargeOakFoliagePlacer(ConstantIntProvider.create(2),ConstantIntProvider.create(3), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(1)))).ignoreVines();
+    }
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -65,6 +78,10 @@ public class MapleConfiguredFeatures {
                 MapleConfiguredFeatures.cherry().build());
         register(featureRegisterable, SAKURA_TREE, Feature.TREE,
                 MapleConfiguredFeatures.sakura().build());
+        register(featureRegisterable, MAGE_SAKURA_TREE, Feature.TREE,
+                MapleConfiguredFeatures.sakura2().build());
+        register(featureRegisterable, GINKGO_TREE, Feature.TREE,
+                MapleConfiguredFeatures.ginkgo().build());
 
         register(featureRegisterable, SALT_ORE , Feature.ORE, new OreFeatureConfig(overworldSaltOres, 12));
     }

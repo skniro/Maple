@@ -43,5 +43,6 @@
     "recipes": [
       "maple:sanshoku_dango"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

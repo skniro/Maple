@@ -43,5 +43,6 @@
     "recipes": [
       "maple:milk_bottom"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -43,5 +43,6 @@
     "recipes": [
       "maple:sakura_mochi"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

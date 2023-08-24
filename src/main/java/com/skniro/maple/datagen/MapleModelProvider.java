@@ -20,6 +20,15 @@ public class MapleModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
+        BlockStateModelGenerator.BlockTexturePool GINKGOPool = blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GINKGO_PLANKS);
+
+        GINKGOPool.stairs(MapleBlocks.GINKGO_STAIRS);
+        GINKGOPool.slab(MapleBlocks.GINKGO_SLAB);
+        GINKGOPool.button(MapleBlocks.GINKGO_BUTTON);
+        GINKGOPool.pressurePlate(MapleBlocks.GINKGO_PRESSURE_PLATE);
+        GINKGOPool.fence(MapleBlocks.GINKGO_FENCE);
+        GINKGOPool.fenceGate(MapleBlocks.GINKGO_FENCE_GATE);
+
         //Cube Block
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
@@ -33,21 +42,26 @@ public class MapleModelProvider extends FabricModelProvider {
         //LOG Block
         blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
         blockStateModelGenerator.registerLog(MapleBlocks.STRIPPED_MAPLE_LOG).log(MapleBlocks.STRIPPED_MAPLE_LOG).wood(MapleBlocks.STRIPPED_MAPLE_WOOD);
+        blockStateModelGenerator.registerLog(MapleBlocks.GINKGO_LOG).log(MapleBlocks.GINKGO_LOG).wood(MapleBlocks.GINKGO_WOOD);
+        blockStateModelGenerator.registerLog(MapleBlocks.STRIPPED_GINKGO_LOG).log(MapleBlocks.STRIPPED_GINKGO_LOG).wood(MapleBlocks.STRIPPED_GINKGO_WOOD);
 
         //Door
         blockStateModelGenerator.registerDoor(MapleBlocks.MAPLE_DOOR);
         blockStateModelGenerator.registerDoor(MapleBlocks.CHERRY_DOOR);
         blockStateModelGenerator.registerDoor(MapleBlocks.BAMBOO_DOOR);
+        blockStateModelGenerator.registerDoor(MapleBlocks.GINKGO_DOOR);
 
         //TRAPDOOR
         blockStateModelGenerator.registerTrapdoor(MapleBlocks.CHERRY_TRAPDOOR);
         blockStateModelGenerator.registerTrapdoor(MapleBlocks.MAPLE_TRAPDOOR);
         blockStateModelGenerator.registerTrapdoor(MapleBlocks.BAMBOO_TRAPDOOR);
+        blockStateModelGenerator.registerTrapdoor(MapleBlocks.GINKGO_TRAPDOOR);
 
         //SAPLING
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         //Crop
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
@@ -85,5 +99,7 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFoodComponents.Sanshoku_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.TOFU, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Zunda_Dango, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.GINKGO_BOAT, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.GINKGO_CHEST_BOAT, Models.GENERATED);
     }
 }

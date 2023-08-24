@@ -43,5 +43,6 @@
     "recipes": [
       "maple:tofu"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

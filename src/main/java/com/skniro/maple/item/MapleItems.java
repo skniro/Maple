@@ -20,11 +20,14 @@ public class MapleItems {
     public static final Item BAMBOO_SIGN = registerItem("bamboo_sign",
             new SignItem(new FabricItemSettings().maxCount(16),
                     MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN));
+    public static final Item GINKGO_SIGN = registerItem("ginkgo_sign",
+            new SignItem(new FabricItemSettings().maxCount(16),
+                    MapleSignBlocks.GINKGO_SIGN,MapleSignBlocks.GINKGO_WALL_SIGN));
 
     public static final Item CHERRY_DOOR = registerItem("cherry_door",new TallBlockItem(MapleBlocks.CHERRY_DOOR, new FabricItemSettings().maxCount(16)));
     public static final Item MAPLE_DOOR = registerItem("maple_door",new TallBlockItem(MapleBlocks.MAPLE_DOOR, new FabricItemSettings().maxCount(16)));
     public static final Item BAMBOO_DOOR = registerItem("bamboo_door",new TallBlockItem(MapleBlocks.BAMBOO_DOOR, new FabricItemSettings().maxCount(16)));
-
+    public static final Item GINKGO_DOOR = registerItem("ginkgo_door",new TallBlockItem(MapleBlocks.GINKGO_DOOR, new FabricItemSettings().maxCount(16)));
     //Food Materials
     public static final Item Flour = registerItem("flour",new Item(new Item.Settings()));
     public static final Item MapleSyrup = registerItem("maple_syrup",new Item(new Item.Settings()));
@@ -45,10 +48,12 @@ public class MapleItems {
     public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(false, BoatEntity.Type.CHERRY, (new Item.Settings()).maxCount(1))));
     public static final Item MAPLE_BOAT = registerItem("maple_boat", (new BoatItem(false, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1))));
     public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem(false, BoatEntity.Type.BAMBOO, (new Item.Settings()).maxCount(1))));
+    public static final Item GINKGO_BOAT = registerItem("ginkgo_boat", (new BoatItem(false, MapleBoatType.GINKGO, (new Item.Settings()).maxCount(1))));
 
     public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (new BoatItem(true, BoatEntity.Type.CHERRY, (new Item.Settings()).maxCount(1))));
     public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", (new BoatItem(true, MapleBoatType.MAPLE, (new Item.Settings()).maxCount(1))));
     public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (new BoatItem(true, BoatEntity.Type.BAMBOO, (new Item.Settings()).maxCount(1))));
+    public static final Item GINKGO_CHEST_BOAT = registerItem("ginkgo_chest_boat", (new BoatItem(true, MapleBoatType.GINKGO, (new Item.Settings()).maxCount(1))));
 
 
     private static Item registerItem(String name, Item item) {
