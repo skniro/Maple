@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
 
 public class MapleModelProvider extends FabricModelProvider {
@@ -33,7 +34,6 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_LEAVES);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.SAKURA_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.Salt_Ore);
@@ -66,6 +66,8 @@ public class MapleModelProvider extends FabricModelProvider {
         //Crop
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
 
+        //Block and Carpet
+        blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
 
     }
 
@@ -101,5 +103,15 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFoodComponents.Zunda_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_BOAT, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_CHEST_BOAT, Models.GENERATED);
+
+
+        itemModelGenerator.register(MapleItems.SNOWBALL_STONE, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Diamond, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Gold, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_ICE, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_IRON, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Compression, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Teleporting, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Confusion, Items.SNOWBALL, Models.GENERATED);
     }
 }

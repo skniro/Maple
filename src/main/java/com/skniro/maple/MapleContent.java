@@ -107,6 +107,7 @@ public class MapleContent {
             content.add(MapleItems.GINKGO_CHEST_BOAT);
             content.add(MapleOreBlocks.Salt_Ore);
             content.add(MapleOreBlocks.DEEPSLATE_Salt_Ore);
+            content.add(MapleItems.SNOWBALL_STONE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {
