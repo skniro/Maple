@@ -187,7 +187,7 @@ public class MapleBlocks {
 
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
-    public static final Block SAKURA_CARPET = Blocks.register("sakura_carpet", new DyedCarpetBlock(DyeColor.PINK, AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()));
+    public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);

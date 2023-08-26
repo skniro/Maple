@@ -67,7 +67,7 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
 
         //Block and Carpet
-        blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.SAKURA_LEAVES);
 
     }
 
@@ -113,5 +113,7 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.SNOWBALL_Compression, Items.SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SNOWBALL_Teleporting, Items.SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SNOWBALL_Confusion, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Instant_Health, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
     }
 }

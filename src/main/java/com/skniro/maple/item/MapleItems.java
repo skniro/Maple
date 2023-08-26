@@ -66,6 +66,8 @@ public class MapleItems {
     public static final Item SNOWBALL_Compression = registerItem("snowball_compression", new StoneSnowballItem(new Item.Settings().maxCount(64)));
     public static final Item SNOWBALL_Teleporting = registerItem("snowball_teleporting", new TeleportingSnowballItem(new Item.Settings().maxCount(64)));
     public static final Item SNOWBALL_Confusion = registerItem("snowball_confusion", new ConfusionSnowballItem(new Item.Settings().maxCount(64)));
+    public static final Item SNOWBALL_Poison = registerItem("snowball_poison", new PoisonSnowballItem(new Item.Settings().maxCount(64)));
+    public static final Item SNOWBALL_Instant_Health = registerItem("snowball_instant_health", new InstantHealthSnowballItem(new Item.Settings().maxCount(64)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Maple.MOD_ID, name), item);
