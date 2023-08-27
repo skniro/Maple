@@ -1,18 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "wooden_slab",
+  "group": "wooden_stairs",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   },
   "pattern": [
+    "#  ",
+    "## ",
     "###"
   ],
   "result": {
-    "count": 6,
-    "item": "minecraft:cherry_slab"
+    "count": 4,
+    "item": "maple:ginkgo_stairs"
   },
   "show_notification": true
 }

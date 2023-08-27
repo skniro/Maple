@@ -7,10 +7,10 @@
       "item": "minecraft:chest"
     },
     {
-      "item": "maple:cherry_boat"
+      "item": "maple:ginkgo_boat"
     }
   ],
   "result": {
-    "item": "minecraft:cherry_chest_boat"
+    "item": "maple:ginkgo_chest_boat"
   }
 }

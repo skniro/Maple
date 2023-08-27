@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#G#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:snow_block"
+        },
+        "G": {
+            "item": "minecraft:water_bucket"
+        }
+    },
+    "result": {
+        "item": "better_snowball:snowball_compression",
+        "count": 32
+    }
+}

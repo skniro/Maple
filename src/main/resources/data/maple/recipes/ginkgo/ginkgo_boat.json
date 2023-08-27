@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "group": "wooden_slab",
+  "category": "misc",
+  "group": "boat",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   },
   "pattern": [
+    "# #",
     "###"
   ],
   "result": {
-    "count": 6,
-    "item": "minecraft:cherry_slab"
+    "item": "maple:ginkgo_boat"
   },
   "show_notification": true
 }

@@ -4,11 +4,11 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "maple:cherry_log"
+      "item": "maple:ginkgo_log"
     }
   ],
   "result": {
     "count": 4,
-    "item": "minecraft:cherry_planks"
+    "item": "maple:ginkgo_planks"
   }
 }

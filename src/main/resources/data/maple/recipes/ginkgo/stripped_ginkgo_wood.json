@@ -1,18 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "wooden_slab",
+  "group": "bark",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:stripped_ginkgo_log"
     }
   },
   "pattern": [
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 6,
-    "item": "minecraft:cherry_slab"
+    "count": 3,
+    "item": "maple:stripped_ginkgo_wood"
   },
   "show_notification": true
 }

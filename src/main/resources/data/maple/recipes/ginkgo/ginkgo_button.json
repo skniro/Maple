@@ -4,10 +4,10 @@
   "group": "wooden_button",
   "ingredients": [
     {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   ],
   "result": {
-    "item": "minecraft:cherry_button"
+    "item": "maple:ginkgo_button"
   }
 }

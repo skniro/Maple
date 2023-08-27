@@ -4,7 +4,7 @@
   "group": "wooden_trapdoor",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   },
   "pattern": [
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 2,
-    "item": "minecraft:cherry_trapdoor"
+    "item": "maple:ginkgo_trapdoor"
   },
   "show_notification": true
 }

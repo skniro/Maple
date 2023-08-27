@@ -121,5 +121,17 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
         translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"雕纹书架");
 
+        //Snowball
+        translationBuilder.add(MapleItems.SNOWBALL_STONE, "雪球(石)");
+        translationBuilder.add(MapleItems.SNOWBALL_Diamond, "雪球(钻石)");
+        translationBuilder.add(MapleItems.SNOWBALL_Gold, "雪球(金)");
+        translationBuilder.add(MapleItems.SNOWBALL_ICE, "雪球(冰)");
+        translationBuilder.add(MapleItems.SNOWBALL_IRON, "雪球(铁)");
+        translationBuilder.add(MapleItems.SNOWBALL_Compression, "雪球(混合)");
+        translationBuilder.add(MapleItems.SNOWBALL_Teleporting, "雪球(瞬移)");
+        translationBuilder.add(MapleItems.SNOWBALL_Confusion, "雪球(混乱)");
+        translationBuilder.add(MapleItems.SNOWBALL_Instant_Health, "雪球(瞬间治疗)");
+        translationBuilder.add(MapleItems.SNOWBALL_Poison, "雪球(毒)");
+
     }
 }

@@ -120,5 +120,17 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"Maple Chest Boat");
 
         translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"Chiseled Bookshelf");
+
+        //Snowball
+        translationBuilder.add(MapleItems.SNOWBALL_STONE, "Snowball(Stone)");
+        translationBuilder.add(MapleItems.SNOWBALL_Diamond, "Snowball(Diamond)");
+        translationBuilder.add(MapleItems.SNOWBALL_Gold, "Snowball(Gold)");
+        translationBuilder.add(MapleItems.SNOWBALL_ICE, "Snowball(Ice)");
+        translationBuilder.add(MapleItems.SNOWBALL_IRON, "Snowball(Iron)");
+        translationBuilder.add(MapleItems.SNOWBALL_Compression, "Snowball(Compression)");
+        translationBuilder.add(MapleItems.SNOWBALL_Teleporting, "Snowball(Teleporting)");
+        translationBuilder.add(MapleItems.SNOWBALL_Confusion, "Snowball(Confusion)");
+        translationBuilder.add(MapleItems.SNOWBALL_Instant_Health, "Snowball(InstantHealth)");
+        translationBuilder.add(MapleItems.SNOWBALL_Poison, "Snowball(Poison)");
     }
 }

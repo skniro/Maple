@@ -1,19 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "wooden_trapdoor",
+  "group": "wooden_door",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   },
   "pattern": [
-    "###",
-    "###"
+    "##",
+    "##",
+    "##"
   ],
   "result": {
-    "count": 2,
-    "item": "minecraft:cherry_trapdoor"
+    "count": 3,
+    "item": "maple:ginkgo_door"
   },
   "show_notification": true
 }

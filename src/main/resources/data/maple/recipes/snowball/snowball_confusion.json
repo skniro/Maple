@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#G#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:snow_block"
+        },
+        "G": {
+            "item": "minecraft:red_mushroom"
+        }
+    },
+    "result": {
+        "item": "better_snowball:snowball_confusion",
+        "count": 32
+    }
+}

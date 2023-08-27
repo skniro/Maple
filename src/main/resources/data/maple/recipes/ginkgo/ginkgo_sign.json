@@ -1,22 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "wooden_fence",
+  "group": "wooden_sign",
   "key": {
     "#": {
-      "item": "minecraft:stick"
+      "item": "maple:ginkgo_planks"
     },
-    "W": {
-      "item": "maple:cherry_planks"
+    "X": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "W#W",
-    "W#W"
+    "###",
+    "###",
+    " X "
   ],
   "result": {
     "count": 3,
-    "item": "minecraft:cherry_fence"
+    "item": "maple:ginkgo_sign"
   },
   "show_notification": true
 }

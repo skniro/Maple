@@ -4,7 +4,7 @@
   "group": "wooden_slab",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:ginkgo_planks"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "minecraft:cherry_slab"
+    "item": "maple:ginkgo_slab"
   },
   "show_notification": true
 }

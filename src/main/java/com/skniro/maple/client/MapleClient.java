@@ -35,12 +35,24 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RICE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_PETALS,RenderLayer.getCutout());
 
+        RenderLayer renderLayer2 = RenderLayer.getCutoutMipped();
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer2);
         RenderLayer renderLayer3 = RenderLayer.getCutout();
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_GINKGO_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_TRAPDOOR, RenderLayer.getCutout());
+
 
 
 
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES,((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES,((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
                 return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
             };

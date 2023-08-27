@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "maple:maple_sapling"
+          "name": "minecraft:flower_pot"
         }
       ],
       "rolls": 1.0
