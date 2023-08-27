@@ -109,6 +109,15 @@ public class MapleContent {
             content.add(MapleOreBlocks.Salt_Ore);
             content.add(MapleOreBlocks.DEEPSLATE_Salt_Ore);
             content.add(MapleItems.SNOWBALL_STONE);
+            content.add(MapleItems.SNOWBALL_Diamond);
+            content.add(MapleItems.SNOWBALL_Gold);
+            content.add(MapleItems.SNOWBALL_ICE);
+            content.add(MapleItems.SNOWBALL_IRON);
+            content.add(MapleItems.SNOWBALL_Compression);
+            content.add(MapleItems.SNOWBALL_Teleporting);
+            content.add(MapleItems.SNOWBALL_Confusion);
+            content.add(MapleItems.SNOWBALL_Instant_Health);
+            content.add(MapleItems.SNOWBALL_Poison);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {
