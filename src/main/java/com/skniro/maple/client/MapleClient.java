@@ -52,6 +52,7 @@ public class MapleClient implements ClientModInitializer {
                 return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
             };
         }));
+
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES,((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
                 return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
