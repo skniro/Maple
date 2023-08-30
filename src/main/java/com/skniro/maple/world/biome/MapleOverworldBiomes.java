@@ -34,9 +34,9 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
@@ -54,9 +54,9 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
