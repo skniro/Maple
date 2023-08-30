@@ -1,4 +1,4 @@
-package com.skniro.maple.world;
+package com.skniro.maple.world.feature;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
@@ -33,6 +33,7 @@ import java.util.OptionalInt;
 
 public class MapleConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> Maple_TREE =registerKey("maple_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Red_Maple_TREE =registerKey("red_maple_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CHERRY_TREE = registerKey("cherry_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAKURA_TREE = registerKey("sakura_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAGE_SAKURA_TREE = registerKey("mage_sakura_tree");
@@ -48,6 +49,9 @@ public class MapleConfiguredFeatures {
         return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.MAPLE_LEAVES, 5, 6, 3, 2).ignoreVines();
     }
 
+    private static TreeFeatureConfig.Builder redmaple() {
+        return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.RED_MAPLE_LEAVES, 5, 6, 3, 2).ignoreVines();
+    }
 
     private static TreeFeatureConfig.Builder cherry() {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.CHERRY_LOG), new CherryTrunkPlacer(7, 1, 0, new WeightedListIntProvider(DataPool.<IntProvider>builder().add(ConstantIntProvider.create(1), 1).add(ConstantIntProvider.create(2), 1).add(ConstantIntProvider.create(3), 1).build()), UniformIntProvider.create(2, 4), UniformIntProvider.create(-4, -3), UniformIntProvider.create(-1, 0)), BlockStateProvider.of(Blocks.CHERRY_LEAVES), new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(0), ConstantIntProvider.create(5), 0.25f, 0.5f, 0.16666667f, 0.33333334f), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines();
@@ -72,6 +76,8 @@ public class MapleConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, MapleOreBlocks.Salt_Ore.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplaceables, MapleOreBlocks.DEEPSLATE_Salt_Ore.getDefaultState()));
 
+        register(featureRegisterable, Red_Maple_TREE, Feature.TREE,
+                MapleConfiguredFeatures.redmaple().build());
         register(featureRegisterable, Maple_TREE, Feature.TREE,
                 MapleConfiguredFeatures.maple().build());
         register(featureRegisterable, CHERRY_TREE, Feature.TREE,

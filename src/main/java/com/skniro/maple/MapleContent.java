@@ -1,16 +1,11 @@
 package com.skniro.maple;
 
 
-import com.google.common.collect.ImmutableMap;
-import com.mojang.datafixers.DSL;
-import com.mojang.datafixers.DataFixerBuilder;
-import com.mojang.datafixers.optics.profunctors.GetterP;
 import com.mojang.datafixers.schemas.Schema;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
-import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixerBuilder;
@@ -19,30 +14,18 @@ import com.skniro.maple.misc.qsldatafixupper.api.SimpleFixes;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
 import com.skniro.maple.util.MapleStrippableBlocks;
-import com.skniro.maple.world.MapleConfiguredFeatures;
-import com.skniro.maple.world.MaplePlacedFeatures;
+import com.skniro.maple.world.feature.MapleConfiguredFeatures;
+import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleBiomeKeys;
+import com.skniro.maple.world.feature.MapleBiomeFeatures;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.SharedConstants;
-import net.minecraft.block.Block;
-import net.minecraft.datafixer.DataFixTypes;
-import net.minecraft.datafixer.Schemas;
-import net.minecraft.datafixer.fix.BlockNameFix;
-import net.minecraft.datafixer.fix.ItemNameFix;
 import net.minecraft.datafixer.schema.IdentifierNormalizingSchema;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
-import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class MapleContent {
@@ -71,10 +54,11 @@ public class MapleContent {
             content.add(MapleBlocks.STRIPPED_MAPLE_LOG);
             content.add(MapleBlocks.MAPLE_SAPLING);
             content.add(MapleBlocks.SAKURA_SAPLING);
-            content.add(MapleBlocks.SAKURA_CARPET);
+            //content.add(MapleBlocks.SAKURA_CARPET);
             content.add(MapleBlocks.MAPLE_LEAVES);
             content.add(MapleBlocks.SAKURA_LEAVES);
             content.add(MapleBlocks.MAPLE_PLANKS);
+            content.add(MapleBlocks.RED_MAPLE_LEAVES);
             content.add(MapleBlocks.MAPLE_BUTTON);
             content.add(MapleBlocks.MAPLE_STAIRS);
             content.add(MapleBlocks.MAPLE_SLAB);
@@ -147,6 +131,8 @@ public class MapleContent {
         MapleConfiguredFeatures.registerConfiguredFeatures();
         MaplePlacedFeatures.registerPlacedFeatures();
         MapleOreGeneration.generateOres();
+        MapleBiomeKeys.registerBiome();
+        MapleBiomeFeatures.registerBiomesFeatures();
     }
 
     public static void registerBlockEntityType() {

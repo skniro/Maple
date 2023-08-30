@@ -62,6 +62,9 @@ public class MapleBlocks {
     //LEAVES Block
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+    public static final Block RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+
     public static final Block GINKGO_LEAVES = registerBlock("ginkgo_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",

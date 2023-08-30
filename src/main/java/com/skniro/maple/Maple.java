@@ -57,6 +57,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
     }
 
     public void onTerraBlenderInitialized() {
+        Regions.register(new MapleOverworldBiomes(new Identifier(Maple.MOD_ID, "overworld"), 1));
     }
 
     public static Identifier asResource(String path) {

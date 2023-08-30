@@ -25,6 +25,7 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_WOOD,"去皮枫树木");
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_LOG,"去皮枫树原木");
         translationBuilder.add(MapleBlocks.MAPLE_LEAVES,"枫树叶");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_LEAVES,"红枫树叶");
         translationBuilder.add(MapleBlocks.MAPLE_DOOR,"枫木门");
         translationBuilder.add(MapleBlocks.MAPLE_BUTTON,"枫木按钮");
         translationBuilder.add(MapleBlocks.MAPLE_FENCE,"枫木栏杆");

@@ -1,4 +1,4 @@
-package com.skniro.maple.world;
+package com.skniro.maple.world.feature;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
@@ -17,6 +17,7 @@ import java.util.List;
 
 public class MaplePlacedFeatures {
     public static final RegistryKey<PlacedFeature> Maple_TREE_PLACED = registerKey("maple_tree_placed");
+    public static final RegistryKey<PlacedFeature> Red_Maple_TREE_PLACED = registerKey("red_maple_tree_placed");
     public static final RegistryKey<PlacedFeature> CHERRY_TREE_PLACED= registerKey("cherry_tree_placed");;
     public static final RegistryKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");;
     public static final RegistryKey<PlacedFeature> MAGE_SAKURA_TREE_PLACED= registerKey("mage_sakura_tree_placed");;
@@ -28,7 +29,10 @@ public class MaplePlacedFeatures {
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(30))));
 
         register(context, Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Maple_TREE),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.MAPLE_SAPLING));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING));
+
+        register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_TREE),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING));
 
         register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.CHERRY_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING));
@@ -38,7 +42,6 @@ public class MaplePlacedFeatures {
 
         register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
-
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

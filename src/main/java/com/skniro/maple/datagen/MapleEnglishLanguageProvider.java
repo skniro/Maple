@@ -25,6 +25,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_WOOD,"Stripped Maple Wood");
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_LOG,"Stripped Maple Log");
         translationBuilder.add(MapleBlocks.MAPLE_LEAVES,"Maple Leaves");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_LEAVES,"Red Maple Leaves");
         translationBuilder.add(MapleBlocks.MAPLE_DOOR,"Maple Door");
         translationBuilder.add(MapleBlocks.MAPLE_BUTTON,"Maple Button");
         translationBuilder.add(MapleBlocks.MAPLE_FENCE,"Maple Fence");
