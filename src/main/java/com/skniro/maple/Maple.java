@@ -105,6 +105,24 @@ public class Maple{
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_MAPLE_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_SAKURA_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_DOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_DOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_DOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RICE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MapleBlocks.PINK_PETALS.get(), RenderType.cutout());
         }
     }
 
