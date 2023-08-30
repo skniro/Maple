@@ -12,7 +12,7 @@ public class MapleBiomeFeatures {
     }
 
     public static void addSakuraFeatures(GenerationSettings.LookupBackedBuilder builder) {
-        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.MAGE_SAKURA_TREE_PLACED);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.SAKURA_TREE_PLACED);
     }
 
     public static void registerBiomesFeatures() {

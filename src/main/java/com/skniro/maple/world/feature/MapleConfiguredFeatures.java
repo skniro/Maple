@@ -46,11 +46,11 @@ public class MapleConfiguredFeatures {
     }
 
     private static TreeFeatureConfig.Builder maple() {
-        return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.MAPLE_LEAVES, 5, 6, 3, 2).ignoreVines();
+        return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.MAPLE_LEAVES, 4, 2, 0, 2).ignoreVines();
     }
 
     private static TreeFeatureConfig.Builder redmaple() {
-        return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.RED_MAPLE_LEAVES, 5, 6, 3, 2).ignoreVines();
+        return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.RED_MAPLE_LEAVES, 4, 3, 0, 2).ignoreVines();
     }
 
     private static TreeFeatureConfig.Builder cherry() {
@@ -66,7 +66,7 @@ public class MapleConfiguredFeatures {
     }
 
     private static TreeFeatureConfig.Builder ginkgo() {
-        return (new TreeFeatureConfig.Builder(BlockStateProvider.of(MapleBlocks.GINKGO_LOG), new LargeOakTrunkPlacer(8, 20, 0), BlockStateProvider.of(MapleBlocks.GINKGO_LEAVES), new LargeOakFoliagePlacer(ConstantIntProvider.create(2),ConstantIntProvider.create(3), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(1)))).ignoreVines();
+        return (new TreeFeatureConfig.Builder(BlockStateProvider.of(MapleBlocks.GINKGO_LOG), new LargeOakTrunkPlacer(6, 12, 0), BlockStateProvider.of(MapleBlocks.GINKGO_LEAVES), new LargeOakFoliagePlacer(ConstantIntProvider.create(2),ConstantIntProvider.create(3), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(1)))).ignoreVines();
     }
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);

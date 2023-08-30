@@ -41,7 +41,7 @@ public class MaplePlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
 
         register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.00001f, 1), MapleBlocks.SAKURA_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
