@@ -10,9 +10,9 @@ public class MapleTreeGeneration {
 
     public static void generateTrees() {
 
-        /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(MapleBiomeKeys.Maple_Grove),
-                GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.Maple_TREE_PLACED);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(MapleBiomeKeys.Maple_Grove),
+/*        BiomeModifications.addFeature(BiomeSelectors.includeByKey(MapleBiomeKeys.Sakura),
+                GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.MAGE_SAKURA_TREE_PLACED);*/
+/*        BiomeModifications.addFeature(BiomeSelectors.includeByKey(MapleBiomeKeys.Maple_Grove),
                 GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.Red_Maple_TREE_PLACED);*/
     }
 }

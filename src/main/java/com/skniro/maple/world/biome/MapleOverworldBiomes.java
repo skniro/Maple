@@ -25,12 +25,7 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 
-public class MapleOverworldBiomes extends Region {
-        public MapleOverworldBiomes(Identifier name, int weight) {
-            super(name, RegionType.OVERWORLD, weight);
-        }
-
-
+public class MapleOverworldBiomes {
     public static Biome createMapleGrove(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
@@ -41,7 +36,7 @@ public class MapleOverworldBiomes extends Region {
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
-        MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
+        //MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
@@ -57,15 +52,12 @@ public class MapleOverworldBiomes extends Region {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
         builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIG, 1, 1, 2)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
-        DefaultBiomeFeatures.addBatsAndMonsters(builder);
         addBasicFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
-        MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
-        DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
@@ -106,9 +98,4 @@ public class MapleOverworldBiomes extends Region {
 
         return (new net.minecraft.world.biome.Biome.Builder()).precipitation(true).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
-
-        @Override
-        public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-            addBiomeSimilar(mapper, BiomeKeys.FOREST, MapleBiomeKeys.Maple_Grove);
-        }
-    }
+}

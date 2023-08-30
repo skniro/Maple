@@ -4,7 +4,9 @@ import com.mojang.datafixers.DataFixerBuilder;
 import com.mojang.datafixers.schemas.Schema;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.misc.qsldatafixupper.impl.ServerFreezer;
+import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
+import com.skniro.maple.world.biome.MapleSakuraBiome;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
@@ -56,8 +58,10 @@ public class Maple implements ModInitializer, TerraBlenderApi {
         //MapleContent.datafix(MOD_CONTAINER);
     }
 
+    @Override
     public void onTerraBlenderInitialized() {
-        Regions.register(new MapleOverworldBiomes(new Identifier(Maple.MOD_ID, "overworld"), 1));
+        Regions.register(new MapleGroveBiome(new Identifier(Maple.MOD_ID, "overworld_1"), 2));
+        Regions.register(new MapleSakuraBiome(new Identifier(Maple.MOD_ID, "overworld_2"), 2));
     }
 
     public static Identifier asResource(String path) {

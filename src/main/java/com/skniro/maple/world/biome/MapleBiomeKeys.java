@@ -17,7 +17,7 @@ public class MapleBiomeKeys {
     }
 
 
-    public static void bootstrap(Registerable<Biome> biomeRegisterable) {
+   public static void bootstrap(Registerable<Biome> biomeRegisterable) {
         RegistryEntryLookup<PlacedFeature> registryEntryLookup = biomeRegisterable.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
         RegistryEntryLookup<ConfiguredCarver<?>> registryEntryLookup2 = biomeRegisterable.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER);
         biomeRegisterable.register(Maple_Grove, MapleOverworldBiomes.createMapleGrove(registryEntryLookup,registryEntryLookup2));
