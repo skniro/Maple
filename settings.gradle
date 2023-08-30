@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'maple'
+rootProject.name = 'maple-1.18'

@@ -4,23 +4,21 @@ import com.skniro.maple.state.property.MapleProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.swing.text.html.BlockView;
+import java.util.Random;
 
 public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock {
     public static final int field_42762 = 1;
@@ -66,11 +64,11 @@ public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock 
         return true;
     }
 
-    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState state) {
+    public boolean isBonemealSuccess(Level world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
-    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
+    public void performBonemeal(ServerLevel world, Random random, BlockPos pos, BlockState state) {
         int i = (Integer)state.getValue(FLOWER_AMOUNT);
         if (i < 4) {
             world.setBlock(pos, (BlockState)state.setValue(FLOWER_AMOUNT, i + 1), 2);

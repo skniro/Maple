@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:village",
+  "config": {
+    "size": 6,
+    "start_pool": "maple:village/sakura/town_centers"
+  },
+  "spawn_overrides": {},
+  "start_height": {
+    "absolute": 0
+  },
+  "biomes": "maple:cherry_grove",
+  "adapt_noise": true
+}
