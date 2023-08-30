@@ -84,6 +84,7 @@
       "minecraft:glow_lichen",
       "minecraft:patch_tall_grass_2",
       "minecraft:patch_grass_badlands",
+      "maple:mage_sakura_tree_placed",
       "minecraft:flower_default",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
@@ -115,30 +116,6 @@
         "maxCount": 4,
         "minCount": 2,
         "weight": 2
-      },
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
       }
     ],
     "misc": [],
