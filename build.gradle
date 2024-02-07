@@ -17,7 +17,7 @@ plugins {
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'com.skniro'
-version = '1.19.2-0.1.1forge'
+version = "${project.mod_version}"
 
 java {
     archivesBaseName = 'maple'

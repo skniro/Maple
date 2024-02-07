@@ -9,7 +9,9 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.MapleConfiguredFeatures;
 import com.skniro.maple.world.MaplePlacedFeatures;
+import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
+import com.skniro.maple.world.biome.MapleTerrablender;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
@@ -78,7 +80,7 @@ public class Maple{
         GlassCupItems.registerMapleGlassItems(modEventBus);
         MapleFoodComponents.registerModFoodItems(modEventBus);
 
-        //MapleBiomeKeys.registerBiome(modEventBus);
+        MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
         MaplePlacedFeatures.registerMaplePlacedFeatures(modEventBus);
@@ -90,7 +92,6 @@ public class Maple{
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(this::registerTerraBlender);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -106,10 +107,6 @@ public class Maple{
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
         }
-    }
-
-    private void registerTerraBlender() {
-        Regions.register(new MapleOverworldBiomes(new ResourceLocation(Maple.MODID, "overworld"), 1));
     }
 
 }
