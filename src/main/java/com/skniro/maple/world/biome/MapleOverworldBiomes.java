@@ -15,9 +15,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import org.jetbrains.annotations.Nullable;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
@@ -35,6 +37,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
+        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
@@ -43,7 +46,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         DefaultBiomeFeatures.addFarmAnimals(builder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
-        return createBiome(true, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.5F, 0.8F, 6141935, 6141935, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome createSakura(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
@@ -55,7 +58,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
+        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
         MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);

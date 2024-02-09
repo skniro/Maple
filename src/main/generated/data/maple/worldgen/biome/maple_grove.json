@@ -10,7 +10,7 @@
   "effects": {
     "fog_color": 12638463,
     "foliage_color": 11983713,
-    "grass_color": 11983713,
+    "grass_color": 13408563,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -84,6 +84,7 @@
       "minecraft:glow_lichen",
       "minecraft:patch_tall_grass_2",
       "minecraft:flower_default",
+      "minecraft:flower_flower_forest",
       "minecraft:patch_grass_badlands",
       "maple:maple_tree_placed",
       "maple:red_maple_tree_placed",

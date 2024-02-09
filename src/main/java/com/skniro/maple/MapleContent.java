@@ -77,7 +77,7 @@ public class MapleContent {
             content.add(MapleBlocks.GINKGO_WOOD);
             content.add(MapleBlocks.STRIPPED_GINKGO_WOOD);
             content.add(MapleBlocks.STRIPPED_GINKGO_LOG);
-            content.add(MapleBlocks.GINKGO_SAPLING);
+/*            content.add(MapleBlocks.GINKGO_SAPLING);
             content.add(MapleBlocks.GINKGO_LEAVES);
             content.add(MapleBlocks.GINKGO_PLANKS);
             content.add(MapleBlocks.GINKGO_BUTTON);
@@ -90,7 +90,7 @@ public class MapleContent {
             content.add(MapleItems.GINKGO_SIGN);
             content.add(MapleItems.GINKGO_DOOR);
             content.add(MapleItems.GINKGO_BOAT);
-            content.add(MapleItems.GINKGO_CHEST_BOAT);
+            content.add(MapleItems.GINKGO_CHEST_BOAT);*/
             content.add(MapleOreBlocks.Salt_Ore);
             content.add(MapleOreBlocks.DEEPSLATE_Salt_Ore);
             content.add(MapleItems.SNOWBALL_STONE);

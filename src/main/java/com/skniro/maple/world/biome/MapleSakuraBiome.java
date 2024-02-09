@@ -22,20 +22,19 @@ public class MapleSakuraBiome extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
- /*       VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
+        VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         // Overlap Vanilla's parameters with our own for our COLD_BLUE biome.
         // The parameters for this biome are chosen arbitrarily.
         new ParameterUtils.ParameterPointListBuilder()
-                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
-                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.ARID, ParameterUtils.Humidity.DRY))
-                .continentalness(ParameterUtils.Continentalness.FULL_RANGE)
+                .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.WARM))
+                .humidity(ParameterUtils.Humidity.span(ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET))
+                .continentalness(ParameterUtils.Continentalness.INLAND)
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
-                .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
+                .weirdness(ParameterUtils.Weirdness.span(ParameterUtils.Weirdness.HIGH_SLICE_VARIANT_ASCENDING, ParameterUtils.Weirdness.PEAK_VARIANT))
                 .build().forEach(point -> builder.add(point, MapleBiomeKeys.Sakura));
 
         // Add our points to the mapper
-        builder.build().forEach(mapper::accept);*/
-        addBiomeSimilar(mapper,BiomeKeys.GROVE,MapleBiomeKeys.Sakura);
+        builder.build().forEach(mapper::accept);
     }
 }
