@@ -71,12 +71,12 @@ public class MapleContent {
             content.add(MapleItems.MAPLE_DOOR);
             content.add(MapleItems.MAPLE_BOAT);
             content.add(MapleItems.MAPLE_CHEST_BOAT);
-            content.add(MapleBlocks.GINKGO_LOG);
+/*            content.add(MapleBlocks.GINKGO_LOG);
             content.add(MapleBlocks.STRIPPED_GINKGO_LOG);
             content.add(MapleBlocks.STRIPPED_GINKGO_WOOD);
             content.add(MapleBlocks.GINKGO_WOOD);
             content.add(MapleBlocks.STRIPPED_GINKGO_WOOD);
-            content.add(MapleBlocks.STRIPPED_GINKGO_LOG);
+            content.add(MapleBlocks.STRIPPED_GINKGO_LOG);*/
 /*            content.add(MapleBlocks.GINKGO_SAPLING);
             content.add(MapleBlocks.GINKGO_LEAVES);
             content.add(MapleBlocks.GINKGO_PLANKS);
