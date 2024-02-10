@@ -37,9 +37,10 @@ public class MapleClient implements ClientModInitializer {
 
         RenderLayer renderLayer2 = RenderLayer.getCutoutMipped();
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlocks(renderLayer2,MapleBlocks.SAKURA_CARPET);
+        BlockRenderLayerMap.INSTANCE.putBlocks(renderLayer2,MapleBlocks.Maple_CARPET);
 
         RenderLayer renderLayer3 = RenderLayer.getCutout();
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_SAPLING, renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_GINKGO_SAPLING, renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_DOOR, renderLayer3);

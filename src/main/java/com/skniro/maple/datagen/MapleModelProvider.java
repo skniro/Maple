@@ -35,7 +35,7 @@ public class MapleModelProvider extends FabricModelProvider {
         //Cube Block
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_LEAVES);
+        //blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.RED_MAPLE_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
@@ -70,8 +70,8 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
 
         //Block and Carpet
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.SAKURA_LEAVES);
-
+        blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
+        blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.MAPLE_LEAVES,MapleBlocks.Maple_CARPET);
     }
 
     @Override

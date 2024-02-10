@@ -61,9 +61,9 @@ public class MapleBlocks {
 
     //LEAVES Block
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.RED)), Maple.Maple_Group);
 
     public static final Block GINKGO_LEAVES = registerBlock("ginkgo_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
@@ -191,7 +191,7 @@ public class MapleBlocks {
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
     public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
-
+    public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
     }

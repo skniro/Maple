@@ -1,25 +1,27 @@
 package com.skniro.maple.block.init;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-import javax.swing.text.html.BlockView;
 
 public class MapleCarpetBlock extends Block {
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 0.5, 16.0);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
 
-    public MapleCarpetBlock(AbstractBlock.Settings settings) {
+    public MapleCarpetBlock(Settings settings) {
         super(settings);
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, net.minecraft.world.BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
@@ -33,11 +35,8 @@ public class MapleCarpetBlock extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return !world.isAir(pos.down());
-    }
+        BlockState down = world.getBlockState(pos.down());
 
-    @Environment(EnvType.CLIENT)
-    public float getAmbientOcclusionLightLevel(BlockState state, BlockView worldIn, BlockPos pos) {
-        return 0.9F;
+        return down.isOpaque() || down.getFluidState().isIn(FluidTags.WATER);
     }
 }
