@@ -19,16 +19,18 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import org.jetbrains.annotations.Nullable;
+import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 
 public class MapleOverworldBiomes extends Region {
-        public MapleOverworldBiomes(Identifier name, int weight) {
-            super(name, RegionType.OVERWORLD, weight);
-        }
+    public MapleOverworldBiomes(Identifier name, int weight) {
+        super(name, RegionType.OVERWORLD, weight);
+    }
 
     public static Biome createCherryGrove() {
         net.minecraft.world.biome.GenerationSettings.Builder builder = new net.minecraft.world.biome.GenerationSettings.Builder();
@@ -63,7 +65,7 @@ public class MapleOverworldBiomes extends Region {
 
 
     private static Biome createBiome(Biome.Precipitation precipitation, float temperature, float downfall, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
-        return createBiome(precipitation, temperature, downfall, 4159204, 329011, (Integer)null, (Integer)null, spawnSettings, generationSettings, music);
+        return createBiome(precipitation, temperature, downfall, 4159204, 329011, (Integer) null, (Integer) null, spawnSettings, generationSettings, music);
     }
 
     private static Biome createBiome(Biome.Precipitation precipitation, float temperature, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColor, @Nullable Integer foliageColor, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
@@ -79,8 +81,23 @@ public class MapleOverworldBiomes extends Region {
         return (new net.minecraft.world.biome.Biome.Builder()).precipitation(precipitation).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
 
-        @Override
-        public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
-            addBiomeSimilar(mapper, BiomeKeys.MEADOW, MapleBiomeKeys.CHERRY_GROVE);
-        }
+    @Override
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            // Simple example:
+            // Replace the Vanilla desert with our hot_red biome
+            builder.replaceBiome(BiomeKeys.MEADOW, MapleBiomeKeys.CHERRY_GROVE);
+
+            // More complex example:
+            // Replace specific parameter points for the frozen peaks with our cold_blue biome
+            List<MultiNoiseUtil.NoiseHypercube> MapleCherryPoints = new ParameterUtils.ParameterPointListBuilder()
+                    .temperature(ParameterUtils.Temperature.WARM, ParameterUtils.Temperature.NEUTRAL)
+                    .humidity(ParameterUtils.Humidity.HUMID, ParameterUtils.Humidity.NEUTRAL, ParameterUtils.Humidity.WET)
+                    .continentalness(ParameterUtils.Continentalness.span(ParameterUtils.Continentalness.COAST, ParameterUtils.Continentalness.INLAND))
+                    .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_2)
+                    .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
+                    .build();
+            MapleCherryPoints.forEach(point -> builder.replaceBiome(point, MapleBiomeKeys.CHERRY_GROVE));
+        });
     }
+}
