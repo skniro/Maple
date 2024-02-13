@@ -192,6 +192,13 @@ public class MapleBlocks {
 
     public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
     public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
+
+    //Glass Blocks
+    public static final Block WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+    public static final Block WHITE_STAINED_GLASS_STAIRS = registerBlock("white_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
+
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
     }

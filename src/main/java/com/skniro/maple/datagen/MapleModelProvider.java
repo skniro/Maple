@@ -8,6 +8,7 @@ import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -29,6 +30,12 @@ public class MapleModelProvider extends FabricModelProvider {
         GINKGOPool.pressurePlate(MapleBlocks.GINKGO_PRESSURE_PLATE);
         GINKGOPool.fence(MapleBlocks.GINKGO_FENCE);
         GINKGOPool.fenceGate(MapleBlocks.GINKGO_FENCE_GATE);
+
+        BlockStateModelGenerator.BlockTexturePool white =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_STAINED_GLASS);
+        white.slab(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
+        white.stairs(MapleBlocks.WHITE_STAINED_GLASS_STAIRS);
+
+
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GINKGO_LEAVES);
 
