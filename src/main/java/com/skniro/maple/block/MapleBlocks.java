@@ -263,6 +263,9 @@ public class MapleBlocks {
     public static final Block BLACK_STAINED_GLASS_STAIRS = registerBlock("black_stained_glass_stairs",
             new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
 
+
+    public static final Block TATAMI =registerBlock("tatami",
+            new HayBlock(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK).mapColor(MapColor.GREEN)),Maple.Maple_Group);
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
     }

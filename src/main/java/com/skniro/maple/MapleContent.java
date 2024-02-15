@@ -105,7 +105,7 @@ public class MapleContent {
             content.add(MapleItems.MAPLE_DOOR);
             content.add(MapleItems.MAPLE_BOAT);
             content.add(MapleItems.MAPLE_CHEST_BOAT);
-           /* content.add(MapleBlocks.GINKGO_LOG);
+            content.add(MapleBlocks.GINKGO_LOG);
             content.add(MapleBlocks.STRIPPED_GINKGO_LOG);
             content.add(MapleBlocks.STRIPPED_GINKGO_WOOD);
             content.add(MapleBlocks.GINKGO_WOOD);
@@ -119,12 +119,12 @@ public class MapleContent {
             content.add(MapleBlocks.GINKGO_SLAB);
             content.add(MapleBlocks.GINKGO_FENCE);
             content.add(MapleBlocks.GINKGO_FENCE_GATE);
-            content.add(MapleBlocks.GINKGO_TRAPDOOR);
+/*            content.add(MapleBlocks.GINKGO_TRAPDOOR);*/
             content.add(MapleBlocks.GINKGO_PRESSURE_PLATE);
             content.add(MapleItems.GINKGO_SIGN);
-            content.add(MapleItems.GINKGO_DOOR);
+/*            content.add(MapleItems.GINKGO_DOOR);*/
             content.add(MapleItems.GINKGO_BOAT);
-            content.add(MapleItems.GINKGO_CHEST_BOAT);*/
+            content.add(MapleItems.GINKGO_CHEST_BOAT);
             content.add(MapleOreBlocks.Salt_Ore);
             content.add(MapleOreBlocks.DEEPSLATE_Salt_Ore);
             content.add(MapleItems.SNOWBALL_STONE);
@@ -137,6 +137,7 @@ public class MapleContent {
             content.add(MapleItems.SNOWBALL_Confusion);
             content.add(MapleItems.SNOWBALL_Instant_Health);
             content.add(MapleItems.SNOWBALL_Poison);
+            content.add(MapleBlocks.TATAMI);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {

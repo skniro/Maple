@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "maple:salt_ore",
-    "maple:deepslate_salt_ore",
     "maple:tatami"
   ]
 }

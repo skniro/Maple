@@ -66,7 +66,7 @@ public class MapleConfiguredFeatures {
     }
 
     private static TreeFeatureConfig.Builder ginkgo() {
-        return (new TreeFeatureConfig.Builder(BlockStateProvider.of(MapleBlocks.GINKGO_LOG), new LargeOakTrunkPlacer(6, 12, 0), BlockStateProvider.of(MapleBlocks.GINKGO_LEAVES), new LargeOakFoliagePlacer(ConstantIntProvider.create(2),ConstantIntProvider.create(3), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(1)))).ignoreVines();
+        return MapleConfiguredFeatures.builder(MapleBlocks.GINKGO_LOG, MapleBlocks.GINKGO_LEAVES,5,2,0,2).ignoreVines();
     }
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);

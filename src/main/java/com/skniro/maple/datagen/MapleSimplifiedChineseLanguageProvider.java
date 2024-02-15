@@ -25,7 +25,7 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_WOOD,"去皮枫树木");
         translationBuilder.add(MapleBlocks.STRIPPED_MAPLE_LOG,"去皮枫树原木");
         translationBuilder.add(MapleBlocks.MAPLE_LEAVES,"枫树叶");
-        translationBuilder.add(MapleBlocks.RED_MAPLE_LEAVES,"红枫树叶");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_LEAVES,"红枫枫树叶");
         translationBuilder.add(MapleBlocks.MAPLE_DOOR,"枫木门");
         translationBuilder.add(MapleBlocks.MAPLE_BUTTON,"枫木按钮");
         translationBuilder.add(MapleBlocks.MAPLE_FENCE,"枫木栏杆");
@@ -33,10 +33,31 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.MAPLE_SLAB,"枫木台阶");
         translationBuilder.add(MapleBlocks.MAPLE_STAIRS,"枫木楼梯");
         translationBuilder.add(MapleBlocks.MAPLE_SAPLING,"枫木树苗");
-        translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"枫木树苗盆栽");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_SAPLING,"红枫枫木树苗");
+        translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"红枫枫木树苗盆栽");
+        translationBuilder.add(MapleBlocks.POTTED_RED_MAPLE_SAPLING,"枫木树苗盆栽");
         translationBuilder.add(MapleSignBlocks.Maple_SIGN,"枫木告示牌");
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"枫木活版门");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"枫木压力板");
+
+        //Ginkgo
+        translationBuilder.add(MapleBlocks.GINKGO_PLANKS,"银杏木木板");
+        translationBuilder.add(MapleBlocks.GINKGO_LOG,"银杏树原木");
+        translationBuilder.add(MapleBlocks.GINKGO_WOOD,"银杏树木");
+        translationBuilder.add(MapleBlocks.STRIPPED_GINKGO_WOOD,"去皮银杏树木");
+        translationBuilder.add(MapleBlocks.STRIPPED_GINKGO_LOG,"去皮银杏树原木");
+        translationBuilder.add(MapleBlocks.GINKGO_LEAVES,"银杏树叶");
+        translationBuilder.add(MapleBlocks.GINKGO_DOOR,"银杏木门");
+        translationBuilder.add(MapleBlocks.GINKGO_BUTTON,"银杏木按钮");
+        translationBuilder.add(MapleBlocks.GINKGO_FENCE,"银杏木栏杆");
+        translationBuilder.add(MapleBlocks.GINKGO_FENCE_GATE,"银杏木栏杆门");
+        translationBuilder.add(MapleBlocks.GINKGO_SLAB,"银杏木台阶");
+        translationBuilder.add(MapleBlocks.GINKGO_STAIRS,"银杏木楼梯");
+        translationBuilder.add(MapleBlocks.GINKGO_SAPLING,"银杏木树苗");
+        translationBuilder.add(MapleBlocks.POTTED_GINKGO_SAPLING,"银杏木树苗盆栽");
+        translationBuilder.add(MapleSignBlocks.GINKGO_SIGN,"银杏木告示牌");
+        translationBuilder.add(MapleBlocks.GINKGO_TRAPDOOR,"银杏木活版门");
+        translationBuilder.add(MapleBlocks.GINKGO_PRESSURE_PLATE,"银杏木压力板");
 
         //Cherry
         translationBuilder.add(MapleBlocks.CHERRY_LOG,"樱树原木");
@@ -167,6 +188,8 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"红色染色玻璃楼梯");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"黑色染色玻璃台阶");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"黑色染色玻璃楼梯");
+
+        translationBuilder.add(MapleBlocks.TATAMI,"榻榻米");
 
     }
 }

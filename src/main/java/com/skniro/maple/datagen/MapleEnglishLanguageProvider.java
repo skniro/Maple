@@ -33,10 +33,31 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.MAPLE_SLAB,"Maple Slab");
         translationBuilder.add(MapleBlocks.MAPLE_STAIRS,"Maple Stairs");
         translationBuilder.add(MapleBlocks.MAPLE_SAPLING,"Maple Sapling");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_SAPLING,"Red Maple Sapling");
         translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"Potted Maple Sapling");
+        translationBuilder.add(MapleBlocks.POTTED_RED_MAPLE_SAPLING,"Potted Red Maple Sapling");
         translationBuilder.add(MapleSignBlocks.Maple_SIGN,"Maple Sign");
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"Maple Trapdoor");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"Maple Pressure Plate");
+
+        //Ginkgo
+        translationBuilder.add(MapleBlocks.GINKGO_PLANKS,"Ginkgo Planks");
+        translationBuilder.add(MapleBlocks.GINKGO_LOG,"Ginkgo Log");
+        translationBuilder.add(MapleBlocks.GINKGO_WOOD,"Ginkgo Wood");
+        translationBuilder.add(MapleBlocks.STRIPPED_GINKGO_WOOD,"Stripped Ginkgo Wood");
+        translationBuilder.add(MapleBlocks.STRIPPED_GINKGO_LOG,"Stripped Ginkgo Log");
+        translationBuilder.add(MapleBlocks.GINKGO_LEAVES,"Ginkgo Leaves");
+        translationBuilder.add(MapleBlocks.GINKGO_DOOR,"Ginkgo Door");
+        translationBuilder.add(MapleBlocks.GINKGO_BUTTON,"Ginkgo Button");
+        translationBuilder.add(MapleBlocks.GINKGO_FENCE,"Ginkgo Fence");
+        translationBuilder.add(MapleBlocks.GINKGO_FENCE_GATE,"Ginkgo Fence Gate");
+        translationBuilder.add(MapleBlocks.GINKGO_SLAB,"Ginkgo Slab");
+        translationBuilder.add(MapleBlocks.GINKGO_STAIRS,"Ginkgo Stairs");
+        translationBuilder.add(MapleBlocks.GINKGO_SAPLING,"Ginkgo Sapling");
+        translationBuilder.add(MapleBlocks.POTTED_GINKGO_SAPLING,"Potted Ginkgo Sapling");
+        translationBuilder.add(MapleSignBlocks.GINKGO_SIGN,"Ginkgo Sign");
+        translationBuilder.add(MapleBlocks.GINKGO_TRAPDOOR,"Ginkgo Trapdoor");
+        translationBuilder.add(MapleBlocks.GINKGO_PRESSURE_PLATE,"Ginkgo Pressure Plate");
 
         //Cherry
         translationBuilder.add(MapleBlocks.CHERRY_LOG,"Cherry Log");
@@ -148,24 +169,26 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_SLAB,"Lime Stained Glass Slab");
         translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_STAIRS,"Lime Stained Glass Stairs");
         translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_SLAB,"Pink Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_STAIRS,"Pink  Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_SLAB,"灰色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_STAIRS,"灰色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB,"淡灰色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS,"淡灰色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_SLAB,"青色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_STAIRS,"青色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_SLAB,"紫色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS,"紫色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_SLAB,"蓝色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_STAIRS,"蓝色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_SLAB,"棕色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_STAIRS,"棕色Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_SLAB,"绿色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_STAIRS,"绿色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_STAIRS,"Pink Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_SLAB,"Gray Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_STAIRS,"Gray Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB,"Light Gray Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS,"Light Gray Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_SLAB,"Cyan Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_STAIRS,"Cyan Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_SLAB,"Purple Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS,"Purple Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_SLAB,"Blue Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_STAIRS,"Blue Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_SLAB,"Brown Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_STAIRS,"Brown Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_SLAB,"Green Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_STAIRS,"Green Stained Glass Stairs");
         translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_SLAB,"Red Stained Glass Slab");
         translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"Red Stained Glass Stairs");
-        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"黑色Stained Glass Slab");
-        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"黑色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"Black Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"Black Stained Glass Stairs");
+
+        translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
     }
 }

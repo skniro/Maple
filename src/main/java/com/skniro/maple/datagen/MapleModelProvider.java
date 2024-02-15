@@ -138,6 +138,8 @@ public class MapleModelProvider extends FabricModelProvider {
         //Block and Carpet
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.MAPLE_LEAVES,MapleBlocks.Maple_CARPET);
+
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.TATAMI);
     }
 
     @Override
