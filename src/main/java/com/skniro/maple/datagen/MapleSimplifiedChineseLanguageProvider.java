@@ -140,6 +140,8 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"樱木箱船");
         translationBuilder.add(MapleItems.MAPLE_BOAT,"枫木船");
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"枫木箱船");
+        translationBuilder.add(MapleItems.GINKGO_BOAT,"银杏木船");
+        translationBuilder.add(MapleItems.GINKGO_CHEST_BOAT,"银杏木箱船");
 
         translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"雕纹书架");
 

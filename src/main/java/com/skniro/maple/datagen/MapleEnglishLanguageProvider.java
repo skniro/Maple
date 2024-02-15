@@ -140,6 +140,8 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"Cherry Chest Boat");
         translationBuilder.add(MapleItems.MAPLE_BOAT,"Maple Boat");
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"Maple Chest Boat");
+        translationBuilder.add(MapleItems.GINKGO_BOAT,"Ginkgo Boat");
+        translationBuilder.add(MapleItems.GINKGO_CHEST_BOAT,"Ginkgo Chest Boat");
 
         translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"Chiseled Bookshelf");
 
