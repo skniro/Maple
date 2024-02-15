@@ -134,5 +134,39 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleItems.SNOWBALL_Instant_Health, "雪球(瞬间治疗)");
         translationBuilder.add(MapleItems.SNOWBALL_Poison, "雪球(毒)");
 
+        //Glass
+        translationBuilder.add(MapleBlocks.WHITE_STAINED_GLASS_STAIRS,"白色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.WHITE_STAINED_GLASS_SLAB,"白色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.ORANGE_STAINED_GLASS_SLAB,"橘色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS,"橘色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB,"品红色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS,"品红色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB,"淡蓝色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS,"淡蓝色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.YELLOW_STAINED_GLASS_SLAB,"黄色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS,"黄色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_SLAB,"黄绿色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_STAIRS,"黄绿色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_SLAB,"粉红色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_STAIRS,"粉红色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_SLAB,"灰色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_STAIRS,"灰色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB,"淡灰色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS,"淡灰色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_SLAB,"青色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_STAIRS,"青色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_SLAB,"紫色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS,"紫色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_SLAB,"蓝色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_STAIRS,"蓝色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_SLAB,"棕色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_STAIRS,"棕色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_SLAB,"绿色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_STAIRS,"绿色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_SLAB,"红色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"红色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"黑色染色玻璃台阶");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"黑色染色玻璃楼梯");
+
     }
 }

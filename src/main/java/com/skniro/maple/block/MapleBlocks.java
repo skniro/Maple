@@ -55,6 +55,7 @@ public class MapleBlocks {
 
     //SAPLING Block
     public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final Block RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block GINKGO_SAPLING = registerBlock("ginkgo_sapling",new SaplingBlock(new GinkgoSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block SAKURA_SAPLING = registerBlock("sakura_sapling",new SaplingBlock(new SakuraSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
@@ -91,6 +92,9 @@ public class MapleBlocks {
             new FlowerPotBlock(CHERRY_SAPLING, AbstractBlock.Settings.create().breakInstantly().nonOpaque()));
     public static final Block POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
             new FlowerPotBlock(MAPLE_SAPLING, AbstractBlock.Settings.create().breakInstantly().nonOpaque()));
+
+    public static final Block POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
+            new FlowerPotBlock(RED_MAPLE_SAPLING, AbstractBlock.Settings.create().breakInstantly().nonOpaque()));
     public static final Block POTTED_SAKURA_SAPLING = registerBlockWithoutItem("potted_sakura_sapling",
             new FlowerPotBlock(SAKURA_SAPLING, AbstractBlock.Settings.create().breakInstantly().nonOpaque()));
 
@@ -195,9 +199,69 @@ public class MapleBlocks {
 
     //Glass Blocks
     public static final Block WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",
-            new MapleGlassSlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
     public static final Block WHITE_STAINED_GLASS_STAIRS = registerBlock("white_stained_glass_stairs",
             new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block ORANGE_STAINED_GLASS_SLAB = registerBlock("orange_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block ORANGE_STAINED_GLASS_STAIRS = registerBlock("orange_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.ORANGE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.ORANGE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block MAGENTA_STAINED_GLASS_SLAB = registerBlock("magenta_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block MAGENTA_STAINED_GLASS_STAIRS = registerBlock("magenta_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.MAGENTA_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MAGENTA_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("light_blue_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("light_blue_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.LIGHT_BLUE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block YELLOW_STAINED_GLASS_SLAB = registerBlock("yellow_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block YELLOW_STAINED_GLASS_STAIRS = registerBlock("yellow_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.YELLOW_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.YELLOW_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIME_STAINED_GLASS_SLAB = registerBlock("lime_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIME_STAINED_GLASS_STAIRS = registerBlock("lime_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.LIME_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block PINK_STAINED_GLASS_SLAB = registerBlock("pink_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block PINK_STAINED_GLASS_STAIRS = registerBlock("pink_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.PINK_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block GRAY_STAINED_GLASS_SLAB = registerBlock("gray_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block GRAY_STAINED_GLASS_STAIRS = registerBlock("gray_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.GRAY_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("light_gray_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("light_gray_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.LIGHT_GRAY_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block CYAN_STAINED_GLASS_SLAB = registerBlock("cyan_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block CYAN_STAINED_GLASS_STAIRS = registerBlock("cyan_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.CYAN_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block PURPLE_STAINED_GLASS_SLAB = registerBlock("purple_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block PURPLE_STAINED_GLASS_STAIRS = registerBlock("purple_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.PURPLE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BLUE_STAINED_GLASS_SLAB = registerBlock("blue_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BLUE_STAINED_GLASS_STAIRS = registerBlock("blue_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.BLUE_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BROWN_STAINED_GLASS_SLAB = registerBlock("brown_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BROWN_STAINED_GLASS_STAIRS = registerBlock("brown_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.BROWN_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block GREEN_STAINED_GLASS_SLAB = registerBlock("green_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block GREEN_STAINED_GLASS_STAIRS = registerBlock("green_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.GREEN_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block RED_STAINED_GLASS_SLAB = registerBlock("red_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block RED_STAINED_GLASS_STAIRS = registerBlock("red_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.RED_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BLACK_STAINED_GLASS_SLAB = registerBlock("black_stained_glass_slab",
+            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
+    public static final Block BLACK_STAINED_GLASS_STAIRS = registerBlock("black_stained_glass_stairs",
+            new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);

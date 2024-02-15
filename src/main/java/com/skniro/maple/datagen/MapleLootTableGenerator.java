@@ -3,6 +3,7 @@ package com.skniro.maple.datagen;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Blocks;
@@ -46,7 +47,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.MAPLE_DOOR,doorDrops(MapleBlocks.MAPLE_DOOR));
         addDrop(MapleBlocks.MAPLE_SAPLING);
         addDrop(MapleBlocks.MAPLE_LEAVES,leavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
-        addDrop(MapleBlocks.RED_MAPLE_LEAVES,leavesDrops(MapleBlocks.RED_MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
+        addDrop(MapleBlocks.RED_MAPLE_LEAVES,leavesDrops(MapleBlocks.RED_MAPLE_LEAVES,MapleBlocks.RED_MAPLE_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.MAPLE_BUTTON);
         addDrop(MapleBlocks.MAPLE_FENCE);
         addDrop(MapleBlocks.MAPLE_FENCE_GATE);
@@ -108,6 +109,40 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         //Crop
         net.minecraft.loot.condition.LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(MapleBlocks.RICE).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
         addDrop(MapleBlocks.RICE, cropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
+
+        //Glass Block
+        addDropWithSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.LIME_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.LIME_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.PINK_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.PINK_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.RED_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.RED_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
 
     }
 }

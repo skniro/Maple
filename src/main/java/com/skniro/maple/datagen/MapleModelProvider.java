@@ -35,7 +35,65 @@ public class MapleModelProvider extends FabricModelProvider {
         white.slab(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
         white.stairs(MapleBlocks.WHITE_STAINED_GLASS_STAIRS);
 
+        BlockStateModelGenerator.BlockTexturePool orange =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_STAINED_GLASS);
+        orange.slab(MapleBlocks.ORANGE_STAINED_GLASS_SLAB);
+        orange.stairs(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS);
 
+        BlockStateModelGenerator.BlockTexturePool magenta =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_STAINED_GLASS);
+        magenta.slab(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB);
+        magenta.stairs(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool light_blue =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_STAINED_GLASS);
+        light_blue.slab(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
+        light_blue.stairs(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool yellow =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_STAINED_GLASS);
+        yellow.slab(MapleBlocks.YELLOW_STAINED_GLASS_SLAB);
+        yellow.stairs(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool lime =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_STAINED_GLASS);
+        lime.slab(MapleBlocks.LIME_STAINED_GLASS_SLAB);
+        lime.stairs(MapleBlocks.LIME_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool pink =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_STAINED_GLASS);
+        pink.slab(MapleBlocks.PINK_STAINED_GLASS_SLAB);
+        pink.stairs(MapleBlocks.PINK_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool gray =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_STAINED_GLASS);
+        gray.slab(MapleBlocks.GRAY_STAINED_GLASS_SLAB);
+        gray.stairs(MapleBlocks.GRAY_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool light_gray =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_STAINED_GLASS);
+        light_gray.slab(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
+        light_gray.stairs(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool cyan =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_STAINED_GLASS);
+        cyan.slab(MapleBlocks.CYAN_STAINED_GLASS_SLAB);
+        cyan.stairs(MapleBlocks.CYAN_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool purple =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_STAINED_GLASS);
+        purple.slab(MapleBlocks.PURPLE_STAINED_GLASS_SLAB);
+        purple.stairs(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool blue =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_STAINED_GLASS);
+        blue.slab(MapleBlocks.BLUE_STAINED_GLASS_SLAB);
+        blue.stairs(MapleBlocks.BLUE_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool brown =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_STAINED_GLASS);
+        brown.slab(MapleBlocks.BROWN_STAINED_GLASS_SLAB);
+        brown.stairs(MapleBlocks.BROWN_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool green =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_STAINED_GLASS);
+        green.slab(MapleBlocks.GREEN_STAINED_GLASS_SLAB);
+        green.stairs(MapleBlocks.GREEN_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool red =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_STAINED_GLASS);
+        red.slab(MapleBlocks.RED_STAINED_GLASS_SLAB);
+        red.stairs(MapleBlocks.RED_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool black =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_STAINED_GLASS);
+        black.slab(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
+        black.stairs(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GINKGO_LEAVES);
 
@@ -70,6 +128,7 @@ public class MapleModelProvider extends FabricModelProvider {
         //SAPLING
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.RED_MAPLE_SAPLING, MapleBlocks.POTTED_RED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 

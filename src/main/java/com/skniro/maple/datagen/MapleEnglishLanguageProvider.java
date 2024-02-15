@@ -133,5 +133,39 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleItems.SNOWBALL_Confusion, "Snowball(Confusion)");
         translationBuilder.add(MapleItems.SNOWBALL_Instant_Health, "Snowball(InstantHealth)");
         translationBuilder.add(MapleItems.SNOWBALL_Poison, "Snowball(Poison)");
+
+        //Glass
+        translationBuilder.add(MapleBlocks.WHITE_STAINED_GLASS_STAIRS,"White Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.WHITE_STAINED_GLASS_SLAB,"White Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.ORANGE_STAINED_GLASS_SLAB,"Orange Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS,"Orange Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB,"Magenta Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS,"Magenta Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB,"Light Blue Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS,"Light Blue Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.YELLOW_STAINED_GLASS_SLAB,"Yellow Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS,"Yellow Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_SLAB,"Lime Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.LIME_STAINED_GLASS_STAIRS,"Lime Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_SLAB,"Pink Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.PINK_STAINED_GLASS_STAIRS,"Pink  Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_SLAB,"灰色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.GRAY_STAINED_GLASS_STAIRS,"灰色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB,"淡灰色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS,"淡灰色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_SLAB,"青色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.CYAN_STAINED_GLASS_STAIRS,"青色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_SLAB,"紫色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS,"紫色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_SLAB,"蓝色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BLUE_STAINED_GLASS_STAIRS,"蓝色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_SLAB,"棕色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BROWN_STAINED_GLASS_STAIRS,"棕色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_SLAB,"绿色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.GREEN_STAINED_GLASS_STAIRS,"绿色Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_SLAB,"Red Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"Red Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"黑色Stained Glass Slab");
+        translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"黑色Stained Glass Stairs");
     }
 }
