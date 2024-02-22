@@ -6,6 +6,7 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
+import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixerBuilder;
@@ -44,6 +45,10 @@ public class MapleContent {
         MapleBlocks.registerMapleBlocks();
         MapleSignBlocks.registerMapleSignBlocks();
         MapleOreBlocks.registerMapleOreBlocks();
+    }
+
+    public static void registerFluid(){
+        MapleFluids.registerFluids();
     }
 
     public static void CreativeTab() {
@@ -138,6 +143,7 @@ public class MapleContent {
             content.add(MapleItems.SNOWBALL_Instant_Health);
             content.add(MapleItems.SNOWBALL_Poison);
             content.add(MapleBlocks.TATAMI);
+            content.add(MapleFluids.Hot_Spring_BUCKET);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {

@@ -52,6 +52,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
                 .build()); // build() no longer registers by itself
         MapleContent.registerItem();
         MapleContent.registerBlock();
+        MapleContent.registerFluid();
         MapleContent.CreativeTab();
         MapleContent.generateWorldGen();
         MapleContent.registerBlockEntityType();

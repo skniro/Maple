@@ -2,6 +2,7 @@ package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
@@ -11,6 +12,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.ModelProvider;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
@@ -139,7 +141,8 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.MAPLE_LEAVES,MapleBlocks.Maple_CARPET);
 
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.TATAMI);
+        BlockStateModelGenerator.BlockTexturePool tatami =blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.TATAMI);
+        tatami.slab(MapleBlocks.TATAMI_SLAB);
     }
 
     @Override
@@ -186,5 +189,7 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.SNOWBALL_Confusion, Items.SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SNOWBALL_Instant_Health, Items.SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
+
+        itemModelGenerator.register(MapleFluids.Hot_Spring_BUCKET, Models.GENERATED);
     }
 }
