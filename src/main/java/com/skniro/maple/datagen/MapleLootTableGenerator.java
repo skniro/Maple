@@ -143,8 +143,11 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDropWithSilkTouch(MapleBlocks.RED_STAINED_GLASS_STAIRS);
         addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
         addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
+        addDropWithSilkTouch(MapleBlocks.GLASS_SLAB);
+        addDropWithSilkTouch(MapleBlocks.GLASS_STAIRS);
 
         addDrop(MapleBlocks.TATAMI);
+        addDrop(MapleBlocks.TATAMI_SLAB);
 
     }
 }

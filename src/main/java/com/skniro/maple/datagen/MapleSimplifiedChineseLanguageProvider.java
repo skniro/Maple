@@ -190,6 +190,8 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"红色染色玻璃楼梯");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"黑色染色玻璃台阶");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"黑色染色玻璃楼梯");
+        translationBuilder.add(MapleBlocks.GLASS_SLAB,"玻璃台阶");
+        translationBuilder.add(MapleBlocks.GLASS_STAIRS,"玻璃楼梯");
 
         translationBuilder.add(MapleBlocks.TATAMI,"榻榻米");
 

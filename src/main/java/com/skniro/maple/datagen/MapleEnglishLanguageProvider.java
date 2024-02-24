@@ -190,6 +190,8 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.RED_STAINED_GLASS_STAIRS,"Red Stained Glass Stairs");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB,"Black Stained Glass Slab");
         translationBuilder.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS,"Black Stained Glass Stairs");
+        translationBuilder.add(MapleBlocks.GLASS_SLAB,"Glass Slab");
+        translationBuilder.add(MapleBlocks.GLASS_STAIRS,"Glass Stairs");
 
         translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
     }

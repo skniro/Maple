@@ -6,6 +6,7 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
@@ -19,6 +20,7 @@ import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.feature.MapleBiomeFeatures;
+import com.skniro.maple.world.gen.MapleLakeGeneration;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
@@ -49,6 +51,8 @@ public class MapleContent {
 
     public static void registerFluid(){
         MapleFluids.registerFluids();
+        MapleFluidBlockOrItem.registerFluidBlocks();
+        MapleFluidBlockOrItem.registerFluidItems();
     }
 
     public static void CreativeTab() {
@@ -106,6 +110,8 @@ public class MapleContent {
             content.add(MapleBlocks.RED_STAINED_GLASS_STAIRS);
             content.add(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
             content.add(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
+            content.add(MapleBlocks.GLASS_SLAB);
+            content.add(MapleBlocks.GLASS_STAIRS);
             content.add(MapleItems.MAPLE_SIGN);
             content.add(MapleItems.MAPLE_DOOR);
             content.add(MapleItems.MAPLE_BOAT);
@@ -143,7 +149,7 @@ public class MapleContent {
             content.add(MapleItems.SNOWBALL_Instant_Health);
             content.add(MapleItems.SNOWBALL_Poison);
             content.add(MapleBlocks.TATAMI);
-            content.add(MapleFluids.Hot_Spring_BUCKET);
+            content.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {
@@ -175,6 +181,7 @@ public class MapleContent {
         MapleOreGeneration.generateOres();
         MapleBiomeKeys.registerBiome();
         MapleBiomeFeatures.registerBiomesFeatures();
+        MapleLakeGeneration.generateHotSpringLake();
     }
 
     public static void registerBlockEntityType() {

@@ -2,10 +2,12 @@ package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -96,6 +98,10 @@ public class MapleModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool black =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_STAINED_GLASS);
         black.slab(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
         black.stairs(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
+
+        BlockStateModelGenerator.BlockTexturePool glass =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GLASS);
+        glass.slab(MapleBlocks.GLASS_SLAB);
+        glass.stairs(MapleBlocks.GLASS_STAIRS);
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GINKGO_LEAVES);
 
@@ -190,6 +196,6 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.SNOWBALL_Instant_Health, Items.SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
 
-        itemModelGenerator.register(MapleFluids.Hot_Spring_BUCKET, Models.GENERATED);
+        itemModelGenerator.register(MapleFluidBlockOrItem.Hot_Spring_BUCKET, Models.GENERATED);
     }
 }

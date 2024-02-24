@@ -3,6 +3,7 @@ package com.skniro.maple.world.feature;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
@@ -39,6 +40,7 @@ public class MapleConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAGE_SAKURA_TREE = registerKey("mage_sakura_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> GINKGO_TREE = registerKey("ginkgo_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SALT_ORE = registerKey("salt_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LAKE_HOT_SPRING = registerKey("lake_hot_spring");
 
 
     private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
@@ -76,6 +78,10 @@ public class MapleConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, MapleOreBlocks.Salt_Ore.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplaceables, MapleOreBlocks.DEEPSLATE_Salt_Ore.getDefaultState()));
 
+        //Lake
+        register(featureRegisterable, LAKE_HOT_SPRING , Feature.LAKE, new LakeFeature.Config(BlockStateProvider.of(MapleFluidBlockOrItem.Hot_Spring_BLOCK.getDefaultState()), BlockStateProvider.of(Blocks.GRASS_BLOCK.getDefaultState())));
+
+        //Tree
         register(featureRegisterable, Red_Maple_TREE, Feature.TREE,
                 MapleConfiguredFeatures.redmaple().build());
         register(featureRegisterable, Maple_TREE, Feature.TREE,
@@ -89,6 +95,7 @@ public class MapleConfiguredFeatures {
         register(featureRegisterable, GINKGO_TREE, Feature.TREE,
                 MapleConfiguredFeatures.ginkgo().build());
 
+        //Ores
         register(featureRegisterable, SALT_ORE , Feature.ORE, new OreFeatureConfig(overworldSaltOres, 12));
     }
 
