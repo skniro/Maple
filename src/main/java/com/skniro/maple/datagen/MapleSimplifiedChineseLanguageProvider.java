@@ -5,6 +5,7 @@ import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
@@ -205,6 +206,9 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
         translationBuilder.add(MapleBlocks.TATAMI,"榻榻米");
         translationBuilder.add(MapleBlocks.TATAMI_SLAB,"榻榻米台阶");
+
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"温泉桶");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"温泉");
 
         translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"允许流动温泉转换成温泉源");
 

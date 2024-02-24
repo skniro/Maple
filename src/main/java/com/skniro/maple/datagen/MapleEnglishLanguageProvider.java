@@ -5,6 +5,7 @@ import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
@@ -205,6 +206,9 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
         translationBuilder.add(MapleBlocks.TATAMI_SLAB,"Tatami Slab");
+
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Hot Spring Bucket");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Hot Spring");
 
         translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"Enable Hot Spring Source Conversion");
     }
