@@ -2,6 +2,7 @@ package com.skniro.maple;
 
 
 import com.mojang.datafixers.schemas.Schema;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
@@ -20,6 +21,7 @@ import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleBiomeKeys;
 import com.skniro.maple.world.feature.MapleBiomeFeatures;
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import com.skniro.maple.world.gen.MapleLakeGeneration;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
@@ -47,6 +49,7 @@ public class MapleContent {
         MapleBlocks.registerMapleBlocks();
         MapleSignBlocks.registerMapleSignBlocks();
         MapleOreBlocks.registerMapleOreBlocks();
+        MapleNetherOresBlocks.registerNetherOresBlock();
     }
 
     public static void registerFluid(){
@@ -149,7 +152,16 @@ public class MapleContent {
             content.add(MapleItems.SNOWBALL_Instant_Health);
             content.add(MapleItems.SNOWBALL_Poison);
             content.add(MapleBlocks.TATAMI);
+            content.add(MapleBlocks.TATAMI_SLAB);
             content.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET);
+            content.add(MapleNetherOresBlocks.Nether_Coal_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Copper_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Diamond_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Emerald_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Gold_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Iron_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Lapis_Ore);
+            content.add(MapleNetherOresBlocks.Nether_Redstone_Ore);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {
@@ -187,6 +199,10 @@ public class MapleContent {
     public static void registerBlockEntityType() {
         MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
+    }
+
+    public static void registerCommand() {
+        MapleGameRules.maplegamerule();
     }
 
     private static final int DATA_VERSION = 3;

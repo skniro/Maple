@@ -1,12 +1,14 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -108,9 +110,17 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.SAKURA_SAPLING,"樱花树苗");
         translationBuilder.add(MapleBlocks.POTTED_SAKURA_SAPLING,"樱花树苗盆栽");
 
-        //Salt Ore
+        //Ores
         translationBuilder.add(MapleOreBlocks.DEEPSLATE_Salt_Ore,"深板岩盐矿石");
         translationBuilder.add(MapleOreBlocks.Salt_Ore,"盐矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Coal_Ore,"下届煤矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Copper_Ore,"下届铜矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Diamond_Ore,"下届钻石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Emerald_Ore,"下届绿宝石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Gold_Ore,"下届金矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Iron_Ore,"下届铁矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Lapis_Ore,"下届青金石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Redstone_Ore,"下届红石矿石");
 
         //Crop
         translationBuilder.add(MapleBlocks.RICE,"稻米作物");
@@ -194,6 +204,9 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.GLASS_STAIRS,"玻璃楼梯");
 
         translationBuilder.add(MapleBlocks.TATAMI,"榻榻米");
+        translationBuilder.add(MapleBlocks.TATAMI_SLAB,"榻榻米台阶");
+
+        translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"允许流动温泉转换成温泉源");
 
     }
 }

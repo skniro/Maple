@@ -22,8 +22,15 @@ public class MaplePlacedFeatures {
     public static final RegistryKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");;
     public static final RegistryKey<PlacedFeature> MAGE_SAKURA_TREE_PLACED= registerKey("mage_sakura_tree_placed");;
     public static final RegistryKey<PlacedFeature> SALT_ORE_PLACED = registerKey("ore_salt_overworld");
-
     public static final RegistryKey<PlacedFeature> LAKE_HOT_SPRING_SURFACE = registerKey("lake_hot_spring_surface");
+    public static final RegistryKey<PlacedFeature> Coal_ORE_PLACED_KEY = registerKey("coal_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Copper_PLACED_KEY = registerKey("copper_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Diamond_PLACED_KEY = registerKey("diamond_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Emerald_PLACED_KEY = registerKey("emerald_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Gold_PLACED_KEY = registerKey("gold_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Iron_PLACED_KEY = registerKey("iron_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Lapis_PLACED_KEY = registerKey("lapis_ore_placed");
+    public static final RegistryKey<PlacedFeature> Nether_Redstone_PLACED_KEY = registerKey("redstone_ore_placed");
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
@@ -49,6 +56,37 @@ public class MaplePlacedFeatures {
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.00001f, 1), MapleBlocks.SAKURA_SAPLING));
 
         register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP);
+        register(context, Coal_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Coal_ORE_KEY),
+                modifiersWithCount(40, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Copper_KEY),
+                modifiersWithCount(32, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Diamond_KEY),
+                modifiersWithCount(17, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Emerald_KEY),
+                modifiersWithCount(17, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Gold_KEY),
+                modifiersWithCount(20, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures. Nether_Iron_KEY),
+                modifiersWithCount(32, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Lapis_KEY),
+                modifiersWithCount(25, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
+
+        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
+                modifiersWithCount(20, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

@@ -2,6 +2,7 @@ package com.skniro.maple.world.feature;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
@@ -41,7 +43,14 @@ public class MapleConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> GINKGO_TREE = registerKey("ginkgo_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SALT_ORE = registerKey("salt_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LAKE_HOT_SPRING = registerKey("lake_hot_spring");
-
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Coal_ORE_KEY = registerKey("coal_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Copper_KEY = registerKey("copper_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Diamond_KEY = registerKey("diamond_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Emerald_KEY = registerKey("emerald_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Gold_KEY = registerKey("gold_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Iron_KEY = registerKey("iron_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Lapis_KEY = registerKey("lapis_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Redstone_ORE_KEY = registerKey("redstone_ore");
 
     private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.of(leaves), new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1));
@@ -73,10 +82,27 @@ public class MapleConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> featureRegisterable) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest netherstoneReplaceables = new BlockMatchRuleTest(Blocks.NETHERRACK);
 
         List<OreFeatureConfig.Target> overworldSaltOres =
                 List.of(OreFeatureConfig.createTarget(stoneReplaceables, MapleOreBlocks.Salt_Ore.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplaceables, MapleOreBlocks.DEEPSLATE_Salt_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherCoalOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Coal_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherCopperOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Copper_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherDiamondOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Diamond_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherEmeraldOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Emerald_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherGoldOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Gold_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherIronOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Iron_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherLapisOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Lapis_Ore.getDefaultState()));
+        List<OreFeatureConfig.Target> netherRedstoneOres =
+                List.of(OreFeatureConfig.createTarget(netherstoneReplaceables, MapleNetherOresBlocks.Nether_Redstone_Ore.getDefaultState()));
 
         //Lake
         register(featureRegisterable, LAKE_HOT_SPRING , Feature.LAKE, new LakeFeature.Config(BlockStateProvider.of(MapleFluidBlockOrItem.Hot_Spring_BLOCK.getDefaultState()), BlockStateProvider.of(Blocks.GRASS_BLOCK.getDefaultState())));
@@ -97,6 +123,16 @@ public class MapleConfiguredFeatures {
 
         //Ores
         register(featureRegisterable, SALT_ORE , Feature.ORE, new OreFeatureConfig(overworldSaltOres, 12));
+
+
+        register(featureRegisterable, Nether_Coal_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherCoalOres, 10));
+        register(featureRegisterable, Nether_Copper_KEY, Feature.ORE, new OreFeatureConfig(netherCopperOres, 8));
+        register(featureRegisterable, Nether_Diamond_KEY, Feature.ORE, new OreFeatureConfig(netherDiamondOres, 8));
+        register(featureRegisterable, Nether_Emerald_KEY, Feature.ORE, new OreFeatureConfig(netherEmeraldOres, 3));
+        register(featureRegisterable,Nether_Gold_KEY, Feature.ORE, new OreFeatureConfig(netherGoldOres, 8));
+        register(featureRegisterable, Nether_Iron_KEY, Feature.ORE, new OreFeatureConfig(netherIronOres, 8));
+        register(featureRegisterable, Nether_Lapis_KEY, Feature.ORE, new OreFeatureConfig(netherLapisOres, 8));
+        register(featureRegisterable, Nether_Redstone_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherRedstoneOres, 8));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

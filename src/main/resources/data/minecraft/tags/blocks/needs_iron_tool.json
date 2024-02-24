@@ -8,6 +8,10 @@
     {
       "id": "maple:salt_ore",
       "required": false
-    }
+    },
+    "maple:diamond_ore",
+    "maple:emerald_ore",
+    "maple:gold_ore",
+    "maple:redstone_ore"
   ]
 }

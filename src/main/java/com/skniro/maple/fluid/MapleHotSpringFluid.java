@@ -1,5 +1,6 @@
 package com.skniro.maple.fluid;
 
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 public class MapleHotSpringFluid extends FlowableFluid {
     @Override
     protected boolean isInfinite(World world) {
-        return world.getGameRules().getBoolean(GameRules.WATER_SOURCE_CONVERSION);
+        return world.getGameRules().getBoolean(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION);
     }
 
     @Override

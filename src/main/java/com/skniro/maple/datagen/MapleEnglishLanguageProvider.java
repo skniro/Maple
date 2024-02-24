@@ -1,12 +1,14 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -108,9 +110,17 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.SAKURA_SAPLING,"Sakura Sapling");
         translationBuilder.add(MapleBlocks.POTTED_SAKURA_SAPLING,"Potted Sakura Sapling");
 
-        //Salt Ore
+        //Ores
         translationBuilder.add(MapleOreBlocks.DEEPSLATE_Salt_Ore,"Deepslate Salt Ore");
         translationBuilder.add(MapleOreBlocks.Salt_Ore,"Salt Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Coal_Ore,"Nether Coal Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Copper_Ore,"Nether Copper Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Diamond_Ore,"Nether Diamond Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Emerald_Ore,"Nether Emerald Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Gold_Ore,"Nether Gold Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Iron_Ore,"Nether Iron Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Lapis_Ore,"Nether Lapis Ore");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Redstone_Ore,"Nether Redstone Ore");
 
         //Crop
         translationBuilder.add(MapleBlocks.RICE,"Crop Rice");
@@ -194,5 +204,8 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.GLASS_STAIRS,"Glass Stairs");
 
         translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
+        translationBuilder.add(MapleBlocks.TATAMI_SLAB,"Tatami Slab");
+
+        translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"Enable Hot Spring Source Conversion");
     }
 }

@@ -1,6 +1,7 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
@@ -114,6 +115,14 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.Salt_Ore);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.DEEPSLATE_Salt_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Coal_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Copper_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Diamond_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Emerald_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Gold_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Iron_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Lapis_Ore);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Redstone_Ore);
 
         //LOG Block
         blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
@@ -146,6 +155,7 @@ public class MapleModelProvider extends FabricModelProvider {
         //Block and Carpet
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.MAPLE_LEAVES,MapleBlocks.Maple_CARPET);
+
 
         BlockStateModelGenerator.BlockTexturePool tatami =blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.TATAMI);
         tatami.slab(MapleBlocks.TATAMI_SLAB);

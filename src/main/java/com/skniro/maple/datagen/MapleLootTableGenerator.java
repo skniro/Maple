@@ -1,6 +1,7 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -8,6 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
+import net.minecraft.item.Items;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 
 
@@ -148,6 +150,16 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
 
         addDrop(MapleBlocks.TATAMI);
         addDrop(MapleBlocks.TATAMI_SLAB);
+
+        addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore, Items.COAL));
+        addDrop(MapleNetherOresBlocks.Nether_Copper_Ore, copperOreDrops(MapleNetherOresBlocks.Nether_Copper_Ore));
+        addDrop(MapleNetherOresBlocks.Nether_Diamond_Ore, oreDrops(MapleNetherOresBlocks.Nether_Diamond_Ore,Items.DIAMOND));
+        addDrop(MapleNetherOresBlocks.Nether_Emerald_Ore, oreDrops(MapleNetherOresBlocks.Nether_Emerald_Ore,Items.EMERALD));
+        addDrop(MapleNetherOresBlocks.Nether_Gold_Ore, oreDrops(MapleNetherOresBlocks.Nether_Gold_Ore,Items.RAW_GOLD));
+        addDrop(MapleNetherOresBlocks.Nether_Iron_Ore, oreDrops(MapleNetherOresBlocks.Nether_Iron_Ore,Items.RAW_IRON));
+        addDrop(MapleNetherOresBlocks.Nether_Lapis_Ore, lapisOreDrops(MapleNetherOresBlocks.Nether_Lapis_Ore));
+        addDrop(MapleNetherOresBlocks.Nether_Redstone_Ore,redstoneOreDrops(MapleNetherOresBlocks.Nether_Redstone_Ore));
+        addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore,Items.COAL));
 
     }
 }
