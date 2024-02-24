@@ -48,7 +48,7 @@ public class MaplePlacedFeatures {
         register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.00001f, 1), MapleBlocks.SAKURA_SAPLING));
 
-        register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilterPlacementModifier.of(200), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP);
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
