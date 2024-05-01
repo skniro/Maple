@@ -10,6 +10,7 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
+import com.skniro.maple.util.MapleLootTableModifiers;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.MapleConfiguredFeatures;
 import com.skniro.maple.world.MaplePlacedFeatures;
@@ -129,6 +130,10 @@ public class MapleContent {
     public static void registerBlockEntityType() {
         MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
+    }
+
+    public static void registerMapleLootTable() {
+        MapleLootTableModifiers.modifyLootTables();
     }
 }
 
