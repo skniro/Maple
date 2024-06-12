@@ -2,6 +2,7 @@ package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
+import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -11,6 +12,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.Items;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 
 public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
@@ -160,6 +163,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleNetherOresBlocks.Nether_Lapis_Ore, lapisOreDrops(MapleNetherOresBlocks.Nether_Lapis_Ore));
         addDrop(MapleNetherOresBlocks.Nether_Redstone_Ore,redstoneOreDrops(MapleNetherOresBlocks.Nether_Redstone_Ore));
         addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore,Items.COAL));
-
+        addDrop(MapleOreBlocks.Salt_Ore, oreDrops(MapleOreBlocks.Salt_Ore,MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 4.0F))));
+        addDrop(MapleOreBlocks.DEEPSLATE_Salt_Ore, oreDrops(MapleOreBlocks.DEEPSLATE_Salt_Ore,MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F))));
     }
 }

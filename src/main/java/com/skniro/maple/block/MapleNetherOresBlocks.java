@@ -26,12 +26,6 @@ public class MapleNetherOresBlocks {
     public static final Block Nether_Lapis_Ore = registerBlock("lapis_ore", new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.COAL_ORE), UniformIntProvider.create(2, 4)),ItemGroups.NATURAL);
     public static final Block Nether_Redstone_Ore = registerBlock("redstone_ore", new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.COAL_ORE), UniformIntProvider.create(2, 4)), ItemGroups.NATURAL);
 
-    //TechReborn
-    public static final Block Nether_Iridium_Ore = registerBlock("iridium_ore", new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.COAL_ORE), UniformIntProvider.create(2, 4)), ItemGroups.NATURAL);
-    public static final Block Nether_Ruby_Ore = registerBlock("ruby_ore", new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.COAL_ORE), UniformIntProvider.create(2, 4)), ItemGroups.NATURAL);
-    public static final Block Nether_Lead_Ore = registerBlock("lead_ore", new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.COAL_ORE), UniformIntProvider.create(2, 4)), ItemGroups.NATURAL);
-
-
 
 
     private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> tab) {
