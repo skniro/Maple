@@ -194,8 +194,8 @@ public class MapleBlocks {
 
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
-    public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
-    public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.1f).sounds(BlockSoundGroup.CHERRY_LEAVES).burnable()),Maple.Maple_Group);
+    public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)),Maple.Maple_Group);
+    public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)),Maple.Maple_Group);
 
     //Glass Blocks
     public static final Block WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",
@@ -271,7 +271,11 @@ public class MapleBlocks {
     public static final Block TATAMI =registerBlock("tatami",
             new HayBlock(AbstractBlock.Settings.copy(Blocks.HAY_BLOCK).mapColor(MapColor.GREEN)),Maple.Maple_Group);
     public static final Block TATAMI_SLAB = registerBlock("tatami_slab",
-            new MapleGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
+            new SlabBlock(AbstractBlock.Settings.copy(MapleBlocks.TATAMI).mapColor(MapColor.GREEN)), Maple.Maple_Group);
+
+    //PLASTER
+    public static final Block PLASTER =registerBlock("plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE).mapColor(MapColor.TERRACOTTA_GREEN)),Maple.Maple_Group);
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);
