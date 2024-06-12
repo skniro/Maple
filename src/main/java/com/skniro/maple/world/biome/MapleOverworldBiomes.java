@@ -46,7 +46,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         DefaultBiomeFeatures.addFarmAnimals(builder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
-        return createBiome(true, 0.5F, 0.8F, 6141935, 6141935, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
+        return createBiome(true, 0.5F, 0.8F, 4159204, 329011, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome createSakura(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
