@@ -57,6 +57,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
         MapleContent.generateWorldGen();
         MapleContent.registerBlockEntityType();
         MapleContent.registerCommand();
+        MapleContent.registerMapleLootTable();
         //MapleContent.datafix(MOD_CONTAINER);
     }
 

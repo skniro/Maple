@@ -16,6 +16,7 @@ import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixes;
 import com.skniro.maple.misc.qsldatafixupper.api.SimpleFixes;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleFlammableBlocks;
+import com.skniro.maple.util.MapleLootTableModifiers;
 import com.skniro.maple.util.MapleStrippableBlocks;
 import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import com.skniro.maple.world.feature.MaplePlacedFeatures;
@@ -133,10 +134,10 @@ public class MapleContent {
             content.add(MapleBlocks.GINKGO_SLAB);
             content.add(MapleBlocks.GINKGO_FENCE);
             content.add(MapleBlocks.GINKGO_FENCE_GATE);
-/*            content.add(MapleBlocks.GINKGO_TRAPDOOR);*/
+            content.add(MapleBlocks.GINKGO_TRAPDOOR);
             content.add(MapleBlocks.GINKGO_PRESSURE_PLATE);
             content.add(MapleItems.GINKGO_SIGN);
-/*            content.add(MapleItems.GINKGO_DOOR);*/
+            content.add(MapleItems.GINKGO_DOOR);
             content.add(MapleItems.GINKGO_BOAT);
             content.add(MapleItems.GINKGO_CHEST_BOAT);
             content.add(MapleOreBlocks.Salt_Ore);
@@ -181,6 +182,15 @@ public class MapleContent {
             content.add(MapleFoodComponents.TOFU);
             content.add(MapleFoodComponents.MILK_ICECREAM);
             content.add(MapleFoodComponents.Cooked_Rice);
+            content.add(MapleFoodComponents.Beef_Rice);
+            content.add(MapleFoodComponents.Cheese);
+            content.add(MapleFoodComponents.Chicken_Rice);
+            content.add(MapleFoodComponents.Mushroom_Rice);
+            content.add(MapleFoodComponents.Mushroom_RICEBALL);
+            content.add(MapleFoodComponents.Mutton_Rice);
+            content.add(MapleFoodComponents.Porkchop_Rice);
+            content.add(MapleFoodComponents.RICEBALL);
+            content.add(MapleFoodComponents.Salmon_RICEBALL);
         });
 
 
@@ -203,6 +213,10 @@ public class MapleContent {
 
     public static void registerCommand() {
         MapleGameRules.maplegamerule();
+    }
+
+    public static void registerMapleLootTable() {
+        MapleLootTableModifiers.modifyLootTables();
     }
 
     private static final int DATA_VERSION = 3;
