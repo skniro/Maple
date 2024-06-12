@@ -8,6 +8,7 @@ import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.item.Items;
@@ -165,5 +166,10 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore,Items.COAL));
         addDrop(MapleOreBlocks.Salt_Ore, oreDrops(MapleOreBlocks.Salt_Ore,MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 4.0F))));
         addDrop(MapleOreBlocks.DEEPSLATE_Salt_Ore, oreDrops(MapleOreBlocks.DEEPSLATE_Salt_Ore,MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F))));
+
+        addDrop(MapleBlocks.RED_MAPLE_CARPET);
+        addDrop(MapleBlocks.Maple_CARPET);
+        addDrop(MapleBlocks.GINKGO_CARPET);
+        addDrop(MapleBlocks.SAKURA_CARPET);
     }
 }

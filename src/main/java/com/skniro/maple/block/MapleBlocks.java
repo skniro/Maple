@@ -194,8 +194,10 @@ public class MapleBlocks {
 
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
-    public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)),Maple.Maple_Group);
-    public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS)),Maple.Maple_Group);
+    public static final Block SAKURA_CARPET = registerBlock("sakura_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).mapColor(MapColor.PINK)),Maple.Maple_Group);
+    public static final Block Maple_CARPET = registerBlock("maple_carpet", new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).mapColor(MapColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
+    public static final Block RED_MAPLE_CARPET = registerBlock("red_maple_carpet",new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).mapColor(MapColor.RED)),Maple.Maple_Group);
+    public static final Block GINKGO_CARPET= registerBlock("ginkgo_carpet",new MapleCarpetBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).mapColor(MapColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
 
     //Glass Blocks
     public static final Block WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",

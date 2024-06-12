@@ -70,7 +70,7 @@ public class MapleContent {
             content.add(MapleBlocks.MAPLE_SAPLING);
             content.add(MapleBlocks.RED_MAPLE_SAPLING);
             content.add(MapleBlocks.SAKURA_SAPLING);
-            //content.add(MapleBlocks.SAKURA_CARPET);
+            content.add(MapleBlocks.SAKURA_CARPET);
             content.add(MapleBlocks.MAPLE_LEAVES);
             content.add(MapleBlocks.SAKURA_LEAVES);
             content.add(MapleBlocks.MAPLE_PLANKS);
