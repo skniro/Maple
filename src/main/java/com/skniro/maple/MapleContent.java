@@ -72,9 +72,11 @@ public class MapleContent {
             content.add(MapleBlocks.SAKURA_SAPLING);
             content.add(MapleBlocks.SAKURA_CARPET);
             content.add(MapleBlocks.MAPLE_LEAVES);
+            content.add(MapleBlocks.Maple_CARPET);
             content.add(MapleBlocks.SAKURA_LEAVES);
             content.add(MapleBlocks.MAPLE_PLANKS);
             content.add(MapleBlocks.RED_MAPLE_LEAVES);
+            content.add(MapleBlocks.RED_MAPLE_CARPET);
             content.add(MapleBlocks.MAPLE_BUTTON);
             content.add(MapleBlocks.MAPLE_STAIRS);
             content.add(MapleBlocks.MAPLE_SLAB);
@@ -128,6 +130,7 @@ public class MapleContent {
             content.add(MapleBlocks.STRIPPED_GINKGO_LOG);
             content.add(MapleBlocks.GINKGO_SAPLING);
             content.add(MapleBlocks.GINKGO_LEAVES);
+            content.add(MapleBlocks.GINKGO_CARPET);
             content.add(MapleBlocks.GINKGO_PLANKS);
             content.add(MapleBlocks.GINKGO_BUTTON);
             content.add(MapleBlocks.GINKGO_STAIRS);
@@ -163,6 +166,7 @@ public class MapleContent {
             content.add(MapleNetherOresBlocks.Nether_Iron_Ore);
             content.add(MapleNetherOresBlocks.Nether_Lapis_Ore);
             content.add(MapleNetherOresBlocks.Nether_Redstone_Ore);
+            content.add(MapleBlocks.PLASTER);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {

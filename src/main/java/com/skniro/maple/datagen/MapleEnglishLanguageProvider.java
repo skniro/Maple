@@ -14,6 +14,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
+import java.nio.file.Path;
+
 public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
     public MapleEnglishLanguageProvider(FabricDataOutput dataGenerator){
         super(dataGenerator,"en_us");
@@ -210,6 +212,11 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Hot Spring Bucket");
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Hot Spring");
 
-        translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"Enable Hot Spring Source Conversion");
+        try {
+            Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/en_us.existing.json").get();
+            translationBuilder.add(existingFilePath);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to add existing language file!", e);
+        }
     }
 }

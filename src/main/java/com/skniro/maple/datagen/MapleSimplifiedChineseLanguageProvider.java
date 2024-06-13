@@ -14,6 +14,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
+import java.nio.file.Path;
+
 public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
     public MapleSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator){
         super(dataGenerator,"zh_cn");
@@ -210,7 +212,11 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"温泉桶");
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"温泉");
 
-        translationBuilder.add(String.valueOf(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION),"允许流动温泉转换成温泉源");
-
+        try {
+            Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/zh_cn.existing.json").get();
+            translationBuilder.add(existingFilePath);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to add existing language file!", e);
+        }
     }
 }

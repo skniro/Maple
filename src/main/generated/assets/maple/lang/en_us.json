@@ -1,5 +1,4 @@
 {
-  "HotSpringSourceConversion": "Enable Hot Spring Source Conversion",
   "block.maple.bamboo_block": "Bamboo Block",
   "block.maple.bamboo_button": "Bamboo Button",
   "block.maple.bamboo_door": "Bamboo Door",
@@ -122,6 +121,7 @@
   "block.maple.white_stained_glass_stairs": "White Stained Glass Stairs",
   "block.maple.yellow_stained_glass_slab": "Yellow Stained Glass Slab",
   "block.maple.yellow_stained_glass_stairs": "Yellow Stained Glass Stairs",
+  "gamerule.HotSpringSourceConversion": "Enable Hot Spring Source Conversion",
   "item.maple.anko_dango": "Anko Dango",
   "item.maple.cherry_boat": "Cherry Boat",
   "item.maple.cherry_chest_boat": "Cherry Chest Boat",

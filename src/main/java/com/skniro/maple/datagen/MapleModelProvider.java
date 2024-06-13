@@ -104,12 +104,9 @@ public class MapleModelProvider extends FabricModelProvider {
         glass.slab(MapleBlocks.GLASS_SLAB);
         glass.stairs(MapleBlocks.GLASS_STAIRS);
 
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GINKGO_LEAVES);
-
         //Cube Block
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.RED_MAPLE_LEAVES);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleOreBlocks.Salt_Ore);

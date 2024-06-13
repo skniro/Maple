@@ -1,5 +1,4 @@
 {
-  "HotSpringSourceConversion": "允许流动温泉转换成温泉源",
   "block.maple.bamboo_block": "竹块",
   "block.maple.bamboo_button": "竹制木按钮",
   "block.maple.bamboo_door": "竹制木门",
@@ -122,6 +121,7 @@
   "block.maple.white_stained_glass_stairs": "白色染色玻璃楼梯",
   "block.maple.yellow_stained_glass_slab": "黄色染色玻璃台阶",
   "block.maple.yellow_stained_glass_stairs": "黄色染色玻璃楼梯",
+  "gamerule.HotSpringSourceConversion": "允许流动温泉转换成温泉源",
   "item.maple.anko_dango": "豆沙团子",
   "item.maple.cherry_boat": "樱木船",
   "item.maple.cherry_chest_boat": "樱木箱船",
