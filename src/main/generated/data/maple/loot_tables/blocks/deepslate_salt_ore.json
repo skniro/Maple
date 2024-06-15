@@ -1,5 +1,16 @@
 {
   "type": "minecraft:block",
+  "functions": [
+    {
+      "add": false,
+      "count": {
+        "type": "minecraft:uniform",
+        "max": 5.0,
+        "min": 2.0
+      },
+      "function": "minecraft:set_count"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -17,7 +28,7 @@
                       {
                         "enchantment": "minecraft:silk_touch",
                         "levels": {
-                          "min": 2
+                          "min": 1
                         }
                       }
                     ]
