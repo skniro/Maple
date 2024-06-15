@@ -39,6 +39,10 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
 
+    //Production environment client test to use
+    //include "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
+    //include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
     modApi(include(implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:0.2.0-beta.9"))))
 
     // compile against the JEI API but do not include it at runtime

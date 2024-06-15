@@ -32,6 +32,8 @@ public class MaplePlacedFeatures {
     public static final RegistryKey<PlacedFeature> Nether_Lapis_PLACED_KEY = registerKey("lapis_ore_placed");
     public static final RegistryKey<PlacedFeature> Nether_Redstone_PLACED_KEY = registerKey("redstone_ore_placed");
     public static final RegistryKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
+    public static final RegistryKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
+    public static final RegistryKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -91,6 +93,14 @@ public class MaplePlacedFeatures {
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Sakura_Carpet_KEY),
+                NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
+                SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Maple_Carpet_KEY),
+                NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
+                SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, Red_Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_Carpet_KEY),
                 NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
                 SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 

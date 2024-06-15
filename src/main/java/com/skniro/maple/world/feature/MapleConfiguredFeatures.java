@@ -54,6 +54,8 @@ public class MapleConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Lapis_KEY = registerKey("lapis_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> Nether_Redstone_ORE_KEY = registerKey("redstone_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> Sakura_Carpet_KEY = registerKey("sakura_carpet");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Maple_Carpet_KEY = registerKey("maple_carpet");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> Red_Maple_Carpet_KEY = registerKey("red_maple_carpet");
 
     private static TreeFeatureConfig.Builder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new TreeFeatureConfig.Builder(BlockStateProvider.of(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.of(leaves), new BlobFoliagePlacer(ConstantIntProvider.create(radius), ConstantIntProvider.create(0), 3), new TwoLayersFeatureSize(1, 0, 1));
@@ -132,14 +134,14 @@ public class MapleConfiguredFeatures {
         register(featureRegisterable, Nether_Copper_KEY, Feature.ORE, new OreFeatureConfig(netherCopperOres, 8));
         register(featureRegisterable, Nether_Diamond_KEY, Feature.ORE, new OreFeatureConfig(netherDiamondOres, 8));
         register(featureRegisterable, Nether_Emerald_KEY, Feature.ORE, new OreFeatureConfig(netherEmeraldOres, 3));
-        register(featureRegisterable,Nether_Gold_KEY, Feature.ORE, new OreFeatureConfig(netherGoldOres, 8));
+        register(featureRegisterable, Nether_Gold_KEY, Feature.ORE, new OreFeatureConfig(netherGoldOres, 8));
         register(featureRegisterable, Nether_Iron_KEY, Feature.ORE, new OreFeatureConfig(netherIronOres, 8));
         register(featureRegisterable, Nether_Lapis_KEY, Feature.ORE, new OreFeatureConfig(netherLapisOres, 8));
         register(featureRegisterable, Nether_Redstone_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherRedstoneOres, 8));
 
         //Leave carpet
-        register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.RED_MAPLE_CARPET.getDefaultState())))));
-        register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.Maple_CARPET.getDefaultState())))));
+        register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.RED_MAPLE_CARPET.getDefaultState())))));
+        register(featureRegisterable, Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.Maple_CARPET.getDefaultState())))));
         register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.SAKURA_CARPET.getDefaultState())))));
     }
 
