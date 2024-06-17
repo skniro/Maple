@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "maple:bamboo_sign"
         }
       ],
       "rolls": 1.0

@@ -2,6 +2,7 @@ package com.skniro.maple.datagen;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -12,9 +13,14 @@ import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.context.LootContextTypes;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
+
+import static net.minecraft.data.server.BlockLootTableGenerator.addSurvivesExplosionCondition;
 
 
 public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
@@ -149,6 +155,12 @@ public class MapleLootTableGenerator extends SimpleFabricLootTableProvider {
         net.minecraft.loot.condition.LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(MapleBlocks.RICE).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
         identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID,"blocks/rice_plant"),
                 BlockLootTableGenerator.cropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
+
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/salt_ore"),
+                BlockLootTableGenerator.dropsWithSilkTouch(MapleOreBlocks.Salt_Ore, addSurvivesExplosionCondition(MapleOreBlocks.Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F,1.0F))))));
+        identifierBuilderBiConsumer.accept(new Identifier(Maple.MOD_ID, "blocks/deepslate_salt_ore"),
+                BlockLootTableGenerator.dropsWithSilkTouch(MapleOreBlocks.DEEPSLATE_Salt_Ore, addSurvivesExplosionCondition(MapleOreBlocks.DEEPSLATE_Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F))))));
+
 
     }
 }
