@@ -276,8 +276,43 @@ public class MapleBlocks {
             new SlabBlock(AbstractBlock.Settings.copy(MapleBlocks.TATAMI).mapColor(MapColor.GREEN)), Maple.Maple_Group);
 
     //PLASTER
+    public static final Block GREEN_PLASTER =registerBlock("green_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.GREEN_CONCRETE)),Maple.Maple_Group);
     public static final Block PLASTER =registerBlock("plaster",
-            new Block(AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE).mapColor(MapColor.TERRACOTTA_GREEN)),Maple.Maple_Group);
+            new Block(AbstractBlock.Settings.copy(Blocks.WHITE_CONCRETE)),Maple.Maple_Group);
+    public static final Block ORANGE_PLASTER =registerBlock("orange_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE)),Maple.Maple_Group);
+    public static final Block MAGENTA_PLASTER =registerBlock("magenta_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE)),Maple.Maple_Group);
+    public static final Block LIGHT_BLUE_PLASTER =registerBlock("light_blue_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.LIGHT_BLUE_CONCRETE)),Maple.Maple_Group);
+    public static final Block YELLOW_PLASTER =registerBlock("yellow_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.YELLOW_CONCRETE)),Maple.Maple_Group);
+    public static final Block LIME_PLASTER =registerBlock("lime_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.LIME_CONCRETE)),Maple.Maple_Group);
+    public static final Block PINK_PLASTER =registerBlock("pink_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE)),Maple.Maple_Group);
+    public static final Block GRAY_PLASTER =registerBlock("gray_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.GRAY_CONCRETE)),Maple.Maple_Group);
+    public static final Block LIGHT_GRAY_PLASTER =registerBlock("light_gray_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_CONCRETE)),Maple.Maple_Group);
+    public static final Block CYAN_PLASTER =registerBlock("cyan_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE)),Maple.Maple_Group);
+    public static final Block PURPLE_PLASTER =registerBlock("purple_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.PURPLE_CONCRETE)),Maple.Maple_Group);
+    public static final Block BLUE_PLASTER =registerBlock("blue_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.BLUE_CONCRETE)),Maple.Maple_Group);
+    public static final Block BROWN_PLASTER =registerBlock("brown_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.BROWN_CONCRETE)),Maple.Maple_Group);
+    public static final Block RED_PLASTER =registerBlock("red_plaster",
+            new Block(AbstractBlock.Settings.copy(Blocks.RED_CONCRETE)),Maple.Maple_Group);
+
+    //Sea Lantern
+    public static final Block Iron_Sea_Lantern =registerBlock("iron_sea_lantern",
+            new Block(AbstractBlock.Settings.copy(Blocks.SEA_LANTERN)),Maple.Maple_Group);
+    public static final Block Gold_Sea_Lantern =registerBlock("gold_sea_lantern",
+            new Block(AbstractBlock.Settings.copy(Blocks.SEA_LANTERN)),Maple.Maple_Group);
+
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);

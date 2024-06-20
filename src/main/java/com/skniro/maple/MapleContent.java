@@ -166,7 +166,25 @@ public class MapleContent {
             content.add(MapleNetherOresBlocks.Nether_Iron_Ore);
             content.add(MapleNetherOresBlocks.Nether_Lapis_Ore);
             content.add(MapleNetherOresBlocks.Nether_Redstone_Ore);
+            //PLASTER
+            content.add(MapleBlocks.GREEN_PLASTER);
             content.add(MapleBlocks.PLASTER);
+            content.add(MapleBlocks.ORANGE_PLASTER);
+            content.add(MapleBlocks.MAGENTA_PLASTER);
+            content.add(MapleBlocks.LIGHT_BLUE_PLASTER);
+            content.add(MapleBlocks.YELLOW_PLASTER);
+            content.add(MapleBlocks.LIME_PLASTER);
+            content.add(MapleBlocks.PINK_PLASTER);
+            content.add(MapleBlocks.GRAY_PLASTER);
+            content.add(MapleBlocks.LIGHT_GRAY_PLASTER);
+            content.add(MapleBlocks.CYAN_PLASTER);
+            content.add(MapleBlocks.PURPLE_PLASTER);
+            content.add(MapleBlocks.BLUE_PLASTER);
+            content.add(MapleBlocks.BROWN_PLASTER);
+            content.add(MapleBlocks.RED_PLASTER);
+            //Sea Lantern
+            content.add(MapleBlocks.Iron_Sea_Lantern);
+            content.add(MapleBlocks.Gold_Sea_Lantern);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {

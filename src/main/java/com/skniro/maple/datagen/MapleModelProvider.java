@@ -1,5 +1,6 @@
 package com.skniro.maple.datagen;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
@@ -12,6 +13,8 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
@@ -119,7 +122,6 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Iron_Ore);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Lapis_Ore);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Redstone_Ore);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.PLASTER);
 
         //LOG Block
         blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
@@ -158,6 +160,28 @@ public class MapleModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool tatami =blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.TATAMI);
         tatami.slab(MapleBlocks.TATAMI_SLAB);
+
+        //PLASTER
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GREEN_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.ORANGE_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAGENTA_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.LIGHT_BLUE_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.YELLOW_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.LIME_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.PINK_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.GRAY_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.LIGHT_GRAY_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CYAN_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.PURPLE_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BLUE_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BROWN_PLASTER);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.RED_PLASTER);
+
+        //Sea Lantern
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.Iron_Sea_Lantern);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.Gold_Sea_Lantern);
+
     }
 
     @Override
