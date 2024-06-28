@@ -42,7 +42,7 @@ public class MapleFlammableRotatedPillarBlock extends RotatedPillarBlock {
             }
 
             if(state.is(MapleBlocks.CHERRY_LOG.get())) {
-                return MapleBlocks.STRIPPED_CHERRY_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+                return MapleBlocks.STRIPPED_CHERRY_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
             if(state.is(MapleBlocks.CHERRY_WOOD.get())) {
