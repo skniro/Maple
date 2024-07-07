@@ -8,6 +8,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class MapleArmorItems {
+
+
     //Tool
     public static final Item RUBY_SWORD = registerItem("ruby_sword", (new SwordItem(MapleToolMaterials.RUBY, 3, -2.4F, new Item.Settings())));
     public static final Item RUBY_SHOVEL = registerItem("ruby_shovel", (new ShovelItem(MapleToolMaterials.RUBY, 1.5F, -3.0F, new Item.Settings())));
