@@ -90,48 +90,6 @@ public class MapleFoodComponents {
                                             )
                                     ));
 
-    public static final Item RICEBALL =
-            registerItem("riceball",
-                    new Item(
-                            new Item
-                                    .Settings()
-                                    .food
-                                            (new FoodComponent
-                                                    .Builder()
-                                                    .hunger(3)
-                                                    .saturationModifier(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final Item Mushroom_RICEBALL =
-            registerItem("mushroom_riceball",
-                    new Item(
-                            new Item
-                                    .Settings()
-                                    .food
-                                            (new FoodComponent
-                                                    .Builder()
-                                                    .hunger(4)
-                                                    .saturationModifier(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final Item Salmon_RICEBALL =
-            registerItem("salmon_riceball",
-                    new Item(
-                            new Item
-                                    .Settings()
-                                    .food
-                                            (new FoodComponent
-                                                    .Builder()
-                                                    .hunger(4)
-                                                    .saturationModifier(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
     public static final Item TOFU =
             registerItem("tofu",
                     new Item(
@@ -174,20 +132,6 @@ public class MapleFoodComponents {
                                             )
                                     ));
 
-    public static final Item Chicken_Rice =
-            registerItem("chicken_rice",
-                    new Item(
-                            new Item
-                                    .Settings()
-                                    .food
-                                            (new FoodComponent
-                                                    .Builder()
-                                                    .hunger(9)
-                                                    .saturationModifier(0.7f)
-                                                    .build()
-                                            )
-                                    ));
-
     public static final Item Beef_Rice =
             registerItem("beef_rice",
                     new Item(
@@ -202,7 +146,21 @@ public class MapleFoodComponents {
                                             )
                                     ));
 
-    public static final Item Mutton_Rice =
+    public static final Item Cheese =
+            registerItem("cheese",
+                    new Item(
+                            new Item
+                                    .Settings()
+                                    .food
+                                            (new FoodComponent
+                                                    .Builder()
+                                                    .hunger(3)
+                                                    .saturationModifier(0.3f)
+                                                    .build()
+                                            )
+                                    ));
+
+       /* public static final Item Mutton_Rice =
             registerItem("mutton_rice",
                     new Item(
                             new Item
@@ -215,6 +173,21 @@ public class MapleFoodComponents {
                                                     .build()
                                             )
                                     ));
+
+
+    public static final Item Chicken_Rice =
+            registerItem("chicken_rice",
+                    new Item(
+                            new Item
+                                    .Settings()
+                                    .food
+                                            (new FoodComponent
+                                                    .Builder()
+                                                    .hunger(9)
+                                                    .saturationModifier(0.7f)
+                                                    .build()
+                                            )
+                    ));
 
     public static final Item Porkchop_Rice =
             registerItem("porkchop_rice",
@@ -244,8 +217,8 @@ public class MapleFoodComponents {
                                             )
                                     ));
 
-    public static final Item Cheese =
-            registerItem("cheese",
+     public static final Item RICEBALL =
+            registerItem("riceball",
                     new Item(
                             new Item
                                     .Settings()
@@ -257,6 +230,34 @@ public class MapleFoodComponents {
                                                     .build()
                                             )
                                     ));
+
+    public static final Item Mushroom_RICEBALL =
+            registerItem("mushroom_riceball",
+                    new Item(
+                            new Item
+                                    .Settings()
+                                    .food
+                                            (new FoodComponent
+                                                    .Builder()
+                                                    .hunger(4)
+                                                    .saturationModifier(0.3f)
+                                                    .build()
+                                            )
+                                    ));
+
+    public static final Item Salmon_RICEBALL =
+            registerItem("salmon_riceball",
+                    new Item(
+                            new Item
+                                    .Settings()
+                                    .food
+                                            (new FoodComponent
+                                                    .Builder()
+                                                    .hunger(4)
+                                                    .saturationModifier(0.3f)
+                                                    .build()
+                                            )
+                                    ));*/
 
 
 

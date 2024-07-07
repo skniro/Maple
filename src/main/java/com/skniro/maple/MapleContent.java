@@ -206,13 +206,6 @@ public class MapleContent {
             content.add(MapleFoodComponents.Cooked_Rice);
             content.add(MapleFoodComponents.Beef_Rice);
             content.add(MapleFoodComponents.Cheese);
-            content.add(MapleFoodComponents.Chicken_Rice);
-            content.add(MapleFoodComponents.Mushroom_Rice);
-            content.add(MapleFoodComponents.Mushroom_RICEBALL);
-            content.add(MapleFoodComponents.Mutton_Rice);
-            content.add(MapleFoodComponents.Porkchop_Rice);
-            content.add(MapleFoodComponents.RICEBALL);
-            content.add(MapleFoodComponents.Salmon_RICEBALL);
         });
 
 
