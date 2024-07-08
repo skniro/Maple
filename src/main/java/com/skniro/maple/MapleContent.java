@@ -121,6 +121,7 @@ public class MapleContent {
             content.add(MapleBlocks.GLASS_SLAB);
             content.add(MapleBlocks.GLASS_STAIRS);
             content.add(MapleItems.MAPLE_SIGN);
+            content.add(MapleItems.Maple_HANGING_SIGN);
             content.add(MapleItems.MAPLE_DOOR);
             content.add(MapleItems.MAPLE_BOAT);
             content.add(MapleItems.MAPLE_CHEST_BOAT);
@@ -142,6 +143,7 @@ public class MapleContent {
             content.add(MapleBlocks.GINKGO_TRAPDOOR);
             content.add(MapleBlocks.GINKGO_PRESSURE_PLATE);
             content.add(MapleItems.GINKGO_SIGN);
+            content.add(MapleItems.GINKGO_HANGING_SIGN);
             content.add(MapleItems.GINKGO_DOOR);
             content.add(MapleItems.GINKGO_BOAT);
             content.add(MapleItems.GINKGO_CHEST_BOAT);

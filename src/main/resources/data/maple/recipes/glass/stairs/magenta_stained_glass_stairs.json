@@ -4,7 +4,7 @@
   "group": "wooden_stairs",
   "key": {
     "#": {
-      "item": "minecraft:orange_stained_glass"
+      "item": "minecraft:magenta_stained_glass"
     }
   },
   "pattern": [
@@ -14,7 +14,7 @@
   ],
   "result": {
     "count": 4,
-    "item": "maple:orange_stained_glass_stairs"
+    "item": "maple:magenta_stained_glass_stairs"
   },
   "show_notification": true
 }

@@ -4,7 +4,7 @@
   "group": "wooden_slab",
   "key": {
     "#": {
-      "item": "minecraft:pink_stained_glass"
+      "item": "minecraft:orange_stained_glass"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "maple:pink_stained_glass_slab"
+    "item": "maple:orange_stained_glass_slab"
   },
   "show_notification": true
 }

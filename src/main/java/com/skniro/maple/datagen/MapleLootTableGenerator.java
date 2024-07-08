@@ -50,6 +50,8 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         //MAPLE
         addDrop(MapleSignBlocks.Maple_SIGN);
         addDrop(MapleSignBlocks.Maple_WALL_SIGN);
+        addDrop(MapleSignBlocks.Maple_HANGING_SIGN);
+        addDrop(MapleSignBlocks.Maple_WALL_HANGING_SIGN);
         addDrop(MapleBlocks.MAPLE_LOG);
         addDrop(MapleBlocks.MAPLE_WOOD);
         addDrop(MapleBlocks.MAPLE_DOOR,doorDrops(MapleBlocks.MAPLE_DOOR));
@@ -71,6 +73,8 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         //GINKGO
         addDrop(MapleSignBlocks.GINKGO_SIGN);
         addDrop(MapleSignBlocks.GINKGO_WALL_SIGN);
+        addDrop(MapleSignBlocks.GINKGO_HANGING_SIGN);
+        addDrop(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
         addDrop(MapleBlocks.GINKGO_LOG);
         addDrop(MapleBlocks.GINKGO_WOOD);
         addDrop(MapleBlocks.GINKGO_DOOR,doorDrops(MapleBlocks.GINKGO_DOOR));

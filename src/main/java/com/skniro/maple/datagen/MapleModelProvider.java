@@ -240,5 +240,9 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_BOOTS));
+
+        //Sign
+        itemModelGenerator.register(MapleItems.Maple_HANGING_SIGN, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.GINKGO_HANGING_SIGN, Models.GENERATED);
     }
 }

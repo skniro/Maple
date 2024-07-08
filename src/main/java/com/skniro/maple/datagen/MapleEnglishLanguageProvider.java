@@ -48,6 +48,9 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"Potted Maple Sapling");
         translationBuilder.add(MapleBlocks.POTTED_RED_MAPLE_SAPLING,"Potted Red Maple Sapling");
         translationBuilder.add(MapleSignBlocks.Maple_SIGN,"Maple Sign");
+        translationBuilder.add(MapleSignBlocks.Maple_WALL_SIGN,"Maple Wall Sign");
+        translationBuilder.add(MapleSignBlocks.Maple_HANGING_SIGN,"Maple Hanging Sign");
+        translationBuilder.add(MapleSignBlocks.Maple_WALL_HANGING_SIGN,"Maple Wall Hanging Sign");
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"Maple Trapdoor");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"Maple Pressure Plate");
 
@@ -67,6 +70,9 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.GINKGO_SAPLING,"Ginkgo Sapling");
         translationBuilder.add(MapleBlocks.POTTED_GINKGO_SAPLING,"Potted Ginkgo Sapling");
         translationBuilder.add(MapleSignBlocks.GINKGO_SIGN,"Ginkgo Sign");
+        translationBuilder.add(MapleSignBlocks.GINKGO_WALL_SIGN,"Ginkgo Wall Sign");
+        translationBuilder.add(MapleSignBlocks.GINKGO_HANGING_SIGN,"Ginkgo Hanging Sign");
+        translationBuilder.add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN,"Ginkgo Wall Hanging Sign");
         translationBuilder.add(MapleBlocks.GINKGO_TRAPDOOR,"Ginkgo Trapdoor");
         translationBuilder.add(MapleBlocks.GINKGO_PRESSURE_PLATE,"Ginkgo Pressure Plate");
 

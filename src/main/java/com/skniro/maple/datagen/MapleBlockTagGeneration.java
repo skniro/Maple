@@ -1,11 +1,13 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleSignBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
@@ -61,5 +63,11 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
                 .add(MapleBlocks.BLUE_PLASTER)
                 .add(MapleBlocks.BROWN_PLASTER)
                 .add(MapleBlocks.RED_PLASTER);
+        getOrCreateTagBuilder(CEILING_HANGING_SIGNS)
+                .add(MapleSignBlocks.Maple_HANGING_SIGN)
+                .add(MapleSignBlocks.GINKGO_HANGING_SIGN);
+        getOrCreateTagBuilder(WALL_HANGING_SIGNS)
+                .add(MapleSignBlocks.Maple_WALL_HANGING_SIGN)
+                .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
     }
 }

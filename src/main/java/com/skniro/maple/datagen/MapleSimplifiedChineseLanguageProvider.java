@@ -43,6 +43,9 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.POTTED_MAPLE_SAPLING,"红枫枫木树苗盆栽");
         translationBuilder.add(MapleBlocks.POTTED_RED_MAPLE_SAPLING,"枫木树苗盆栽");
         translationBuilder.add(MapleSignBlocks.Maple_SIGN,"枫木告示牌");
+        translationBuilder.add(MapleSignBlocks.Maple_WALL_SIGN,"墙上的枫木告示牌");
+        translationBuilder.add(MapleSignBlocks.Maple_HANGING_SIGN,"悬挂式枫木告示牌");
+        translationBuilder.add(MapleSignBlocks.Maple_WALL_HANGING_SIGN,"墙上的悬挂式枫木告示牌");
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"枫木活版门");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"枫木压力板");
 
@@ -62,6 +65,9 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleBlocks.GINKGO_SAPLING,"银杏木树苗");
         translationBuilder.add(MapleBlocks.POTTED_GINKGO_SAPLING,"银杏木树苗盆栽");
         translationBuilder.add(MapleSignBlocks.GINKGO_SIGN,"银杏木告示牌");
+        translationBuilder.add(MapleSignBlocks.GINKGO_WALL_SIGN,"墙上的银杏木告示牌");
+        translationBuilder.add(MapleSignBlocks.GINKGO_HANGING_SIGN,"悬挂式银杏木告示牌");
+        translationBuilder.add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN,"墙上的悬挂式银杏木告示牌");
         translationBuilder.add(MapleBlocks.GINKGO_TRAPDOOR,"银杏木活版门");
         translationBuilder.add(MapleBlocks.GINKGO_PRESSURE_PLATE,"银杏木压力板");
 

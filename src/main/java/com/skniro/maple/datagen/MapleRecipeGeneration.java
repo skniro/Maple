@@ -309,8 +309,23 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.RED_DYE))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.Iron_Sea_Lantern).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', Blocks.SEA_LANTERN)
+                .input('i', Items.IRON_NUGGET)
+                .criterion(FabricRecipeProvider.hasItem(Blocks.SEA_LANTERN),
+                        FabricRecipeProvider.conditionsFromItem(Blocks.SEA_LANTERN))
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_NUGGET),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_NUGGET))
+                .offerTo(exporter);
 
-
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.Gold_Sea_Lantern).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', Blocks.SEA_LANTERN)
+                .input('i', Items.GOLD_NUGGET)
+                .criterion(FabricRecipeProvider.hasItem(Blocks.SEA_LANTERN),
+                        FabricRecipeProvider.conditionsFromItem(Blocks.SEA_LANTERN))
+                .criterion(FabricRecipeProvider.hasItem(Items.GOLD_NUGGET),
+                        FabricRecipeProvider.conditionsFromItem(Items.GOLD_NUGGET))
+                .offerTo(exporter);
 
         RecipeProvider.offerSmelting(exporter, STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
 
