@@ -30,6 +30,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.9",
-    "minecraft": "1.20.X"
+    "minecraft": "1.20.X",
+    "terrablender": "*",
+    "fabric": "*"
   }
 }

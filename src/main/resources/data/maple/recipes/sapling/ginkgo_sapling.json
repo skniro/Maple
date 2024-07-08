@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "minecraft:sapling"
+      "item": "minecraft:oak_sapling"
     },
     {
       "item": "minecraft:yellow_dye"

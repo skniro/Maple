@@ -257,6 +257,12 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleFoodComponents.Cheese,"Cheese");
         translationBuilder.add(MapleFoodComponents.Beef_Rice,"Beef Rice");
 
+        //Carpet
+        translationBuilder.add(MapleBlocks.Maple_CARPET,"Maple Fallen Leaves");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_CARPET,"Red Maple Fallen Leaves");
+        translationBuilder.add(MapleBlocks.GINKGO_CARPET,"Ginkgo Fallen Leaves");
+        translationBuilder.add(MapleBlocks.SAKURA_CARPET,"Sakura Fallen Flowers");
+
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/en_us.existing.json").get();
             translationBuilder.add(existingFilePath);

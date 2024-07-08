@@ -252,6 +252,12 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleFoodComponents.Cheese,"芝士");
         translationBuilder.add(MapleFoodComponents.Beef_Rice,"牛肉饭");
 
+        //Carpet
+        translationBuilder.add(MapleBlocks.Maple_CARPET,"枫落叶");
+        translationBuilder.add(MapleBlocks.RED_MAPLE_CARPET,"红枫落叶");
+        translationBuilder.add(MapleBlocks.GINKGO_CARPET,"银杏落叶");
+        translationBuilder.add(MapleBlocks.SAKURA_CARPET,"樱花落花");
+
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/zh_cn.existing.json").get();
             translationBuilder.add(existingFilePath);

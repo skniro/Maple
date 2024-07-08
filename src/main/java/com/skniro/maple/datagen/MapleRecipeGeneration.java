@@ -138,6 +138,15 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(MapleItems.MILK_BOTTOM),
                         FabricRecipeProvider.conditionsFromItem(MapleItems.MILK_BOTTOM)).offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.Beef_Rice,1)
+                .input(MapleFoodComponents.Cooked_Rice)
+                .input(Items.BEEF)
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Cooked_Rice),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Cooked_Rice))
+                .criterion(FabricRecipeProvider.hasItem(Items.BEEF),
+                        FabricRecipeProvider.conditionsFromItem(Items.BEEF))
+                .offerTo(exporter);
+
 
 
         RecipeProvider.offerSmelting(exporter, STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
