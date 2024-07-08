@@ -4,7 +4,7 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.entity.MapleBoatType;
-import com.skniro.maple.item.init.*;
+import com.skniro.maple.item.init.snowball.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.*;

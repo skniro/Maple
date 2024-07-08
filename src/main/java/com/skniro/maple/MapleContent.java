@@ -10,6 +10,7 @@ import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixerBuilder;
 import com.skniro.maple.misc.qsldatafixupper.api.QuiltDataFixes;
@@ -43,6 +44,7 @@ public class MapleContent {
         MapleItems.registerModItems();
         GlassCupItems.registerModItems();
         MapleFoodComponents.registerMapleFoodItems();
+        MapleArmorItems.registerMapleArmorItems();
     }
     public static void registerBlock(){
         MapleFlammableBlocks.registerFlammableBlocks();
@@ -185,6 +187,17 @@ public class MapleContent {
             //Sea Lantern
             content.add(MapleBlocks.Iron_Sea_Lantern);
             content.add(MapleBlocks.Gold_Sea_Lantern);
+            //
+            content.add(MapleArmorItems.Cherry_INGOT);
+            content.add(MapleArmorItems.Cherry_HELMET);
+            content.add(MapleArmorItems.Cherry_CHESTPLATE);
+            content.add(MapleArmorItems.Cherry_LEGGINGS);
+            content.add(MapleArmorItems.Cherry_BOOTS);
+            content.add(MapleArmorItems.Cherry_SWORD);
+            content.add(MapleArmorItems.Cherry_AXE);
+            content.add(MapleArmorItems.Cherry_PICKAXE);
+            content.add(MapleArmorItems.Cherry_SHOVEL);
+            content.add(MapleArmorItems.Cherry_HOE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {

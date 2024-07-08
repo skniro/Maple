@@ -7,6 +7,7 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -20,6 +21,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.ModelProvider;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
 
@@ -200,17 +202,10 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFoodComponents.Beef_Rice, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Cheese, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Mochi, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Chicken_Rice, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Cooked_Rice, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Kinako_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.MILK_ICECREAM, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Mushroom_Rice, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Mushroom_RICEBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Mutton_Rice, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Porkchop_Rice, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.RICEBALL, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.SakuraMochi, Models.GENERATED);
-        itemModelGenerator.register(MapleFoodComponents.Salmon_RICEBALL, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Sanshoku_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.TOFU, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Zunda_Dango, Models.GENERATED);
@@ -230,5 +225,18 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
 
         itemModelGenerator.register(MapleFluidBlockOrItem.Hot_Spring_BUCKET, Models.GENERATED);
+
+        //Cherry tools
+        itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(MapleArmorItems.Cherry_AXE, Models.HANDHELD);
+        itemModelGenerator.register(MapleArmorItems.Cherry_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(MapleArmorItems.Cherry_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(MapleArmorItems.Cherry_HOE, Models.HANDHELD);
+
+        //Cherry armors
+        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_BOOTS));
     }
 }
