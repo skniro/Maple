@@ -7,12 +7,18 @@ import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 
 import java.nio.file.Path;
 
@@ -209,8 +215,47 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
         translationBuilder.add(MapleBlocks.TATAMI_SLAB,"Tatami Slab");
 
-        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Hot Spring Bucket");
-        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Hot Spring");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Plaster Bucket");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Plaster");
+
+        //PLASTER
+        translationBuilder.add(MapleBlocks.GREEN_PLASTER,"Green Plaster");
+        translationBuilder.add(MapleBlocks.PLASTER,"Plaster");
+        translationBuilder.add(MapleBlocks.ORANGE_PLASTER,"Orange Plaster");
+        translationBuilder.add(MapleBlocks.MAGENTA_PLASTER,"Magenta Plaster");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_PLASTER,"Light Blue Plaster");
+        translationBuilder.add(MapleBlocks.YELLOW_PLASTER,"Yellow Plaster");
+        translationBuilder.add(MapleBlocks.LIME_PLASTER,"Lime Plaster");
+        translationBuilder.add(MapleBlocks.PINK_PLASTER,"Pink Plaster");
+        translationBuilder.add(MapleBlocks.GRAY_PLASTER,"Gray Plaster");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_PLASTER,"Light Gray Plaster");
+        translationBuilder.add(MapleBlocks.CYAN_PLASTER,"Cyan Plaster");
+        translationBuilder.add(MapleBlocks.PURPLE_PLASTER,"Purple Plaster");
+        translationBuilder.add(MapleBlocks.BLUE_PLASTER,"Blue Plaster");
+        translationBuilder.add(MapleBlocks.BROWN_PLASTER,"Brown Plaster");
+        translationBuilder.add(MapleBlocks.RED_PLASTER,"Red Plaster");
+
+        //Sea Lantern
+        translationBuilder.add(MapleBlocks.Iron_Sea_Lantern,"Plating Sea Lantern");
+        translationBuilder.add(MapleBlocks.Gold_Sea_Lantern,"Gilded Sea Lantern");
+
+        //Cherry tools
+        translationBuilder.add(MapleArmorItems.Cherry_INGOT,"Cherry Ingot");
+        translationBuilder.add(MapleArmorItems.Cherry_PICKAXE,"Cherry Pickaxe");
+        translationBuilder.add(MapleArmorItems.Cherry_AXE,"Cherry Axe");
+        translationBuilder.add(MapleArmorItems.Cherry_SHOVEL,"Cherry Shovel");
+        translationBuilder.add(MapleArmorItems.Cherry_SWORD,"Cherry Sword");
+        translationBuilder.add(MapleArmorItems.Cherry_HOE,"Cherry Hoe");
+
+        //Cherry armors
+        translationBuilder.add(MapleArmorItems.Cherry_HELMET,"Cherry Helmet");
+        translationBuilder.add(MapleArmorItems.Cherry_CHESTPLATE,"Cherry Chestplate");
+        translationBuilder.add(MapleArmorItems.Cherry_LEGGINGS,"Cherry Leggings");
+        translationBuilder.add(MapleArmorItems.Cherry_BOOTS,"Cherry Boots");
+
+        //Food(1.3)
+        translationBuilder.add(MapleFoodComponents.Cheese,"Cheese");
+        translationBuilder.add(MapleFoodComponents.Beef_Rice,"Beef Rice");
 
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/en_us.existing.json").get();

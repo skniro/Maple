@@ -7,6 +7,7 @@ import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.gamerules.MapleGameRules;
@@ -211,6 +212,45 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"温泉桶");
         translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"温泉");
+
+        //PLASTER
+        translationBuilder.add(MapleBlocks.GREEN_PLASTER,"绿色灰浆");
+        translationBuilder.add(MapleBlocks.PLASTER,"灰浆");
+        translationBuilder.add(MapleBlocks.ORANGE_PLASTER,"橙色灰浆");
+        translationBuilder.add(MapleBlocks.MAGENTA_PLASTER,"品红色灰浆");
+        translationBuilder.add(MapleBlocks.LIGHT_BLUE_PLASTER,"淡蓝色灰浆");
+        translationBuilder.add(MapleBlocks.YELLOW_PLASTER,"黄色灰浆");
+        translationBuilder.add(MapleBlocks.LIME_PLASTER,"黄绿色灰浆");
+        translationBuilder.add(MapleBlocks.PINK_PLASTER,"粉色灰浆");
+        translationBuilder.add(MapleBlocks.GRAY_PLASTER,"灰色灰浆");
+        translationBuilder.add(MapleBlocks.LIGHT_GRAY_PLASTER,"淡灰色灰浆");
+        translationBuilder.add(MapleBlocks.CYAN_PLASTER,"青色灰浆");
+        translationBuilder.add(MapleBlocks.PURPLE_PLASTER,"紫色灰浆");
+        translationBuilder.add(MapleBlocks.BLUE_PLASTER,"蓝色灰浆");
+        translationBuilder.add(MapleBlocks.BROWN_PLASTER,"棕色灰浆");
+        translationBuilder.add(MapleBlocks.RED_PLASTER,"红色灰浆");
+
+        //Sea Lantern
+        translationBuilder.add(MapleBlocks.Iron_Sea_Lantern,"镶嵌海晶灯");
+        translationBuilder.add(MapleBlocks.Gold_Sea_Lantern,"镶金海晶灯");
+
+        //Cherry tools
+        translationBuilder.add(MapleArmorItems.Cherry_INGOT,"樱锭");
+        translationBuilder.add(MapleArmorItems.Cherry_PICKAXE,"樱稿");
+        translationBuilder.add(MapleArmorItems.Cherry_AXE,"樱斧");
+        translationBuilder.add(MapleArmorItems.Cherry_SHOVEL,"樱锹");
+        translationBuilder.add(MapleArmorItems.Cherry_SWORD,"樱剑");
+        translationBuilder.add(MapleArmorItems.Cherry_HOE,"樱锄");
+
+        //Cherry armors
+        translationBuilder.add(MapleArmorItems.Cherry_HELMET,"樱头盔");
+        translationBuilder.add(MapleArmorItems.Cherry_CHESTPLATE,"樱胸甲");
+        translationBuilder.add(MapleArmorItems.Cherry_LEGGINGS,"樱护腿");
+        translationBuilder.add(MapleArmorItems.Cherry_BOOTS,"樱靴子");
+
+        //Food(1.3)
+        translationBuilder.add(MapleFoodComponents.Cheese,"芝士");
+        translationBuilder.add(MapleFoodComponents.Beef_Rice,"牛肉饭");
 
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/zh_cn.existing.json").get();

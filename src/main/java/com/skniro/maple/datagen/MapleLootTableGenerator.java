@@ -173,5 +173,26 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.Maple_CARPET);
         addDrop(MapleBlocks.GINKGO_CARPET);
         addDrop(MapleBlocks.SAKURA_CARPET);
+
+        //PLASTER
+        addDrop(MapleBlocks.GREEN_PLASTER);
+        addDrop(MapleBlocks.PLASTER);
+        addDrop(MapleBlocks.ORANGE_PLASTER);
+        addDrop(MapleBlocks.MAGENTA_PLASTER);
+        addDrop(MapleBlocks.LIGHT_BLUE_PLASTER);
+        addDrop(MapleBlocks.YELLOW_PLASTER);
+        addDrop(MapleBlocks.LIME_PLASTER);
+        addDrop(MapleBlocks.PINK_PLASTER);
+        addDrop(MapleBlocks.GRAY_PLASTER);
+        addDrop(MapleBlocks.LIGHT_GRAY_PLASTER);
+        addDrop(MapleBlocks.CYAN_PLASTER);
+        addDrop(MapleBlocks.PURPLE_PLASTER);
+        addDrop(MapleBlocks.BLUE_PLASTER);
+        addDrop(MapleBlocks.BROWN_PLASTER);
+        addDrop(MapleBlocks.RED_PLASTER);
+
+        //Sea Lantern
+        addDrop(MapleBlocks.Iron_Sea_Lantern);
+        addDrop(MapleBlocks.Gold_Sea_Lantern);
     }
 }

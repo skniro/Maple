@@ -1,11 +1,7 @@
 package com.skniro.maple;
 
-import com.mojang.datafixers.DataFixerBuilder;
-import com.mojang.datafixers.schemas.Schema;
 import com.skniro.maple.item.MapleItems;
-import com.skniro.maple.misc.qsldatafixupper.impl.ServerFreezer;
 import com.skniro.maple.world.biome.MapleGroveBiome;
-import com.skniro.maple.world.biome.MapleOverworldBiomes;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -19,14 +15,10 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import terrablender.api.Regions;
 import terrablender.api.TerraBlenderApi;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
 
