@@ -236,6 +236,7 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
         //Cherry tools
         translationBuilder.add(MapleArmorItems.Cherry_INGOT,"樱锭");
+        translationBuilder.add(MapleArmorItems.Cherry_NUGGET,"樱粒");
         translationBuilder.add(MapleArmorItems.Cherry_PICKAXE,"樱稿");
         translationBuilder.add(MapleArmorItems.Cherry_AXE,"樱斧");
         translationBuilder.add(MapleArmorItems.Cherry_SHOVEL,"樱锹");

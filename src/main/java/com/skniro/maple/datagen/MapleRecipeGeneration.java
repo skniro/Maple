@@ -6,11 +6,14 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.RecipeProvider;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Util;
 
@@ -146,6 +149,166 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.BEEF),
                         FabricRecipeProvider.conditionsFromItem(Items.BEEF))
                 .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS ,MapleBlocks.Maple_CARPET,2)
+                .input(MapleBlocks.MAPLE_LEAVES,2)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.MAPLE_LEAVES),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.MAPLE_LEAVES))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS ,MapleBlocks.RED_MAPLE_CARPET,2)
+                .input(MapleBlocks.RED_MAPLE_LEAVES,2)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.RED_MAPLE_LEAVES),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.RED_MAPLE_LEAVES))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS ,MapleBlocks.GINKGO_CARPET,2)
+                .input(MapleBlocks.GINKGO_LEAVES,2)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.GINKGO_LEAVES),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.GINKGO_LEAVES))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS ,MapleBlocks.SAKURA_CARPET,2)
+                .input(MapleBlocks.SAKURA_LEAVES,2)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.SAKURA_LEAVES),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.SAKURA_LEAVES))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', Blocks.SAND)
+                .input('i', Blocks.BAMBOO_BLOCK)
+                .criterion(FabricRecipeProvider.hasItem(Blocks.SAND),
+                        FabricRecipeProvider.conditionsFromItem(Blocks.SAND))
+                .criterion(FabricRecipeProvider.hasItem(Blocks.BAMBOO_BLOCK),
+                        FabricRecipeProvider.conditionsFromItem(Blocks.BAMBOO_BLOCK))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.GREEN_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.GREEN_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.GREEN_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GREEN_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.ORANGE_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.ORANGE_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.ORANGE_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.ORANGE_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.MAGENTA_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.MAGENTA_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.MAGENTA_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.MAGENTA_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.LIGHT_BLUE_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.LIGHT_BLUE_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.LIGHT_BLUE_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.LIGHT_BLUE_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.YELLOW_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.YELLOW_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.YELLOW_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.YELLOW_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.LIME_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.LIME_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.LIME_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.LIME_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.PINK_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.PINK_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.PINK_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.PINK_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.GRAY_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.GRAY_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.GRAY_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GRAY_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.LIGHT_GRAY_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.LIGHT_GRAY_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.LIGHT_GRAY_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.LIGHT_GRAY_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.CYAN_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.CYAN_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.CYAN_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.CYAN_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.PURPLE_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.PURPLE_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.PURPLE_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.PURPLE_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.BLUE_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.BLUE_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.BLUE_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.BLUE_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.BROWN_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.BROWN_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.BROWN_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.BROWN_DYE))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS ,MapleBlocks.RED_PLASTER,8).pattern("bbb").pattern("bib").pattern("bbb")
+                .input('b', MapleBlocks.PLASTER)
+                .input('i', Items.GREEN_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MapleBlocks.PLASTER),
+                        FabricRecipeProvider.conditionsFromItem(MapleBlocks.PLASTER))
+                .criterion(FabricRecipeProvider.hasItem(Items.RED_DYE),
+                        FabricRecipeProvider.conditionsFromItem(Items.RED_DYE))
+                .offerTo(exporter);
+
 
 
 

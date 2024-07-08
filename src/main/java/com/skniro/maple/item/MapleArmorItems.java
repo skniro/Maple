@@ -14,6 +14,8 @@ import net.minecraft.util.Identifier;
 public class MapleArmorItems {
     //Ingot
     public static final Item Cherry_INGOT = registerItem("cherry_ingot",new Item(new Item.Settings()));
+    public static final Item Cherry_NUGGET = registerItem("cherry_nugget",new Item(new Item.Settings()));
+
 
     //Tool
     public static final Item Cherry_SWORD = registerItem("cherry_sword", (new SwordItem(MapleToolMaterials.Cherry, 3, -2.4F, new Item.Settings())));

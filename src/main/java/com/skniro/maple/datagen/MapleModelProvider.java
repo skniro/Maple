@@ -227,6 +227,7 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFluidBlockOrItem.Hot_Spring_BUCKET, Models.GENERATED);
 
         //Cherry tools
+        itemModelGenerator.register(MapleArmorItems.Cherry_NUGGET, Models.GENERATED);
         itemModelGenerator.register(MapleArmorItems.Cherry_INGOT, Models.GENERATED);
         itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_AXE, Models.HANDHELD);

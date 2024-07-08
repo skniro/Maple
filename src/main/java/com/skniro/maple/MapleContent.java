@@ -187,8 +187,9 @@ public class MapleContent {
             //Sea Lantern
             content.add(MapleBlocks.Iron_Sea_Lantern);
             content.add(MapleBlocks.Gold_Sea_Lantern);
-            //
+            //Cherry Armor and tools
             content.add(MapleArmorItems.Cherry_INGOT);
+            content.add(MapleArmorItems.Cherry_NUGGET);
             content.add(MapleArmorItems.Cherry_HELMET);
             content.add(MapleArmorItems.Cherry_CHESTPLATE);
             content.add(MapleArmorItems.Cherry_LEGGINGS);

@@ -240,6 +240,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.Gold_Sea_Lantern,"Gilded Sea Lantern");
 
         //Cherry tools
+        translationBuilder.add(MapleArmorItems.Cherry_NUGGET,"Cherry Nugget");
         translationBuilder.add(MapleArmorItems.Cherry_INGOT,"Cherry Ingot");
         translationBuilder.add(MapleArmorItems.Cherry_PICKAXE,"Cherry Pickaxe");
         translationBuilder.add(MapleArmorItems.Cherry_AXE,"Cherry Axe");
