@@ -98,10 +98,6 @@ public class Maple{
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(this::registerTerraBlender);
-
-        Sheets.addWoodType(MapleSignTypes.MAPLE);
-        Sheets.addWoodType(MapleSignTypes.BAMBOO);
-        Sheets.addWoodType(MapleSignTypes.CHERRY);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -134,6 +130,9 @@ public class Maple{
             ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RICE.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(MapleBlocks.PINK_PETALS.get(), RenderType.cutout());
+            Sheets.addWoodType(MapleSignTypes.MAPLE);
+            Sheets.addWoodType(MapleSignTypes.BAMBOO);
+            Sheets.addWoodType(MapleSignTypes.CHERRY);
 
             WoodType.register(MapleSignTypes.MAPLE);
             WoodType.register(MapleSignTypes.CHERRY);
