@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "maple.refmap.json",
   "mixins": [
-    "BlockEntityTypeMixin",
-    "SignTypeAccessor"
   ],
   "client": [
   ],

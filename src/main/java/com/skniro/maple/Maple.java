@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
+import com.skniro.maple.block.entity.MapleBlockEntities;
+import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
@@ -14,6 +16,9 @@ import com.skniro.maple.world.biome.MapleOverworldBiomes;
 import com.skniro.maple.world.biome.MapleTerrablender;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -22,6 +27,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -86,6 +92,8 @@ public class Maple{
         MaplePlacedFeatures.registerMaplePlacedFeatures(modEventBus);
         MapleConfiguredFeatures.registerModConfiguredFeatures(modEventBus);
 
+        MapleBlockEntities.registerMapleBlockEntities(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -106,6 +114,13 @@ public class Maple{
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            WoodType.register(MapleSignTypes.MAPLE);
+            WoodType.register(MapleSignTypes.CHERRY);
+            WoodType.register(MapleSignTypes.BAMBOO);
+            BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+            Sheets.addWoodType(MapleSignTypes.MAPLE);
+            Sheets.addWoodType(MapleSignTypes.BAMBOO);
+            Sheets.addWoodType(MapleSignTypes.CHERRY);
         }
     }
 
