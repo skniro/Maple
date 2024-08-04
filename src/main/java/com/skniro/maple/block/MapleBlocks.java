@@ -3,10 +3,7 @@ package com.skniro.maple.block;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.block.init.*;
-import com.skniro.maple.world.Tree.CherrySaplingGenerator;
-import com.skniro.maple.world.Tree.GinkgoSaplingGenerator;
-import com.skniro.maple.world.Tree.MapleSaplingGenerator;
-import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
+import com.skniro.maple.world.Tree.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -55,7 +52,7 @@ public class MapleBlocks {
 
     //SAPLING Block
     public static final Block MAPLE_SAPLING = registerBlock("maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
-    public static final Block RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",new SaplingBlock(new MapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
+    public static final Block RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",new SaplingBlock(new RedMapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block GINKGO_SAPLING = registerBlock("ginkgo_sapling",new SaplingBlock(new GinkgoSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block CHERRY_SAPLING = registerBlock("cherry_sapling",new SaplingBlock(new CherrySaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block SAKURA_SAPLING = registerBlock("sakura_sapling",new SaplingBlock(new SakuraSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
