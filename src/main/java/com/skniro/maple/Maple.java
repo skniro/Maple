@@ -1,7 +1,9 @@
 package com.skniro.maple;
 
 import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleOverworldBiomes;
+import com.skniro.maple.world.biome.MapleSakuraBiome;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -32,10 +34,13 @@ public class Maple implements ModInitializer, TerraBlenderApi {
         MapleContent.registerMapleConfigured();
         MapleContent.registerBlockEntityType();
         MapleContent.registerMapleLootTable();
+        MapleContent.registerFluid();
     }
 
     public void onTerraBlenderInitialized() {
         Regions.register(new MapleOverworldBiomes(new Identifier(Maple.MOD_ID, "overworld"), 1));
+        Regions.register(new MapleGroveBiome(new Identifier(Maple.MOD_ID, "overworld_1"), 2));
+        Regions.register(new MapleSakuraBiome(new Identifier(Maple.MOD_ID, "overworld_2"), 2));
     }
 
     public static Identifier asResource(String path) {

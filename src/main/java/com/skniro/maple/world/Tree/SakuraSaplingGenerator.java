@@ -1,6 +1,6 @@
 package com.skniro.maple.world.Tree;
 
-import com.skniro.maple.world.MapleConfiguredFeatures;
+import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.registry.RegistryEntry;

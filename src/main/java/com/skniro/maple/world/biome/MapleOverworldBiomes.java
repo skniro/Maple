@@ -1,6 +1,7 @@
 package com.skniro.maple.world.biome;
 
 import com.mojang.datafixers.util.Pair;
+import com.skniro.maple.world.feature.MapleBiomeFeatures;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -13,11 +14,14 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import org.jetbrains.annotations.Nullable;
 import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
@@ -46,6 +50,45 @@ public class MapleOverworldBiomes extends Region {
         DefaultBiomeFeatures.addInfestedStone(builder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
         return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder2, builder, musicSound);
+    }
+
+    public static Biome createMapleGrove() {
+        net.minecraft.world.biome.GenerationSettings.Builder lookupBackedBuilder = new net.minecraft.world.biome.GenerationSettings.Builder();
+        SpawnSettings.Builder builder = new SpawnSettings.Builder();
+        DefaultBiomeFeatures.addBatsAndMonsters(builder);
+        addBasicFeatures(lookupBackedBuilder);
+        DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
+        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
+        MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
+        DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
+        DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
+        DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
+        DefaultBiomeFeatures.addFarmAnimals(builder);
+        MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
+        return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 4159204, 329011, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
+    }
+
+    public static Biome createSakura() {
+        net.minecraft.world.biome.GenerationSettings.Builder lookupBackedBuilder = new net.minecraft.world.biome.GenerationSettings.Builder();
+        SpawnSettings.Builder builder = new SpawnSettings.Builder();
+        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIG, 1, 1, 2)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
+        addBasicFeatures(lookupBackedBuilder);
+        DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultDisks(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
+        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
+        DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
+        DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
+        MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
+        return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder, lookupBackedBuilder, musicSound);
     }
 
     private static void addBasicFeatures(net.minecraft.world.biome.GenerationSettings.Builder generationSettings) {

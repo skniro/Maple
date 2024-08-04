@@ -63,6 +63,11 @@ public class BoatTypeMixin {
         var bamboo = newType("BAMBOO", last.ordinal() + 3, Blocks.OAK_PLANKS, "bamboo");
         MapleBoatType.BAMBOO = bamboo;
         types.add(bamboo);
+
+        var ginkgo = newType("GINKGO", last.ordinal() + 4, Blocks.OAK_PLANKS, "ginkgo");
+        MapleBoatType.GINKGO = ginkgo;
+        types.add(ginkgo);
+
         field_7724 = types.toArray(new BoatEntity.Type[0]);
     }
 }

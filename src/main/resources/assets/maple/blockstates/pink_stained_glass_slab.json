@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "maple:block/pink_stained_glass_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/pink_stained_glass"
+    },
+    "type=top": {
+      "model": "maple:block/pink_stained_glass_slab_top"
+    }
+  }
+}

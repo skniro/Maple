@@ -14,6 +14,8 @@ import static net.minecraft.util.registry.Registry.BIOME_KEY;
 
 public class MapleBiomeKeys {
     public static final RegistryKey<Biome> CHERRY_GROVE = register("cherry_grove");
+    public static final RegistryKey<Biome> Maple_Grove = register("maple_grove");
+    public static final RegistryKey<Biome> Sakura = register("sakura");
 
     private static RegistryKey<Biome> register(String name) {
         return RegistryKey.of(BIOME_KEY, new Identifier(Maple.MOD_ID,name));
@@ -23,6 +25,8 @@ public class MapleBiomeKeys {
     public static void registerBiome() {
         Maple.LOGGER.debug("Registering the MapleBiomeKeysFeatures for " + Maple.MOD_ID);
         registerBuiltinBiome(CHERRY_GROVE, MapleOverworldBiomes.createCherryGrove());
+        registerBuiltinBiome(Sakura, MapleOverworldBiomes.createSakura());
+        registerBuiltinBiome(Maple_Grove, MapleOverworldBiomes.createMapleGrove());
     }
 
     private static void registerBuiltinBiome(RegistryKey<Biome> key, Biome biome) {
