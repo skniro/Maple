@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:entity",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:flower_pot"
+          "name": "maple:cherry_sapling"
         }
       ],
       "rolls": 1.0

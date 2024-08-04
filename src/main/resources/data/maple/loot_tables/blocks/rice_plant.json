@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:entity",
   "functions": [
     {
       "function": "minecraft:explosion_decay"

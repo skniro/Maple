@@ -23,6 +23,6 @@ public class MapleFluidBlockOrItem {
     }
     public static void registerFluidItems() {
         Hot_Spring_BUCKET = Registry.register(Registry.ITEM, new Identifier(Maple.MOD_ID, "hot_spring_bucket"),
-                new BucketItem(MapleFluids.STILL_Hot_Spring, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+                new BucketItem(MapleFluids.STILL_Hot_Spring, new FabricItemSettings().recipeRemainder(Items.BUCKET).group(Maple.Maple_Group).maxCount(1)));
     }
 }

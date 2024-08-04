@@ -22,6 +22,8 @@ public class ChestBoatDropsMixin {
             ci.setReturnValue(MapleItems.BAMBOO_CHEST_BOAT);
         }else if (((BoatEntity)(Object)this).getBoatType() == MapleBoatType.MAPLE) {
             ci.setReturnValue(MapleItems.MAPLE_CHEST_BOAT);
+        }else if (((BoatEntity)(Object)this).getBoatType() == MapleBoatType.GINKGO) {
+            ci.setReturnValue(MapleItems.GINKGO_CHEST_BOAT);
         }
     }
 }

@@ -21,10 +21,14 @@ public class MapleItems {
     public static final Item BAMBOO_SIGN = registerItem("bamboo_sign",
             new SignItem(new FabricItemSettings().group(Maple.Maple_Group).maxCount(16),
                     MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN));
+    public static final Item GINKGO_SIGN = registerItem("ginkgo_sign",
+            new SignItem(new FabricItemSettings().maxCount(16),
+                    MapleSignBlocks.GINKGO_SIGN,MapleSignBlocks.GINKGO_WALL_SIGN));
 
     public static final Item CHERRY_DOOR = registerItem("cherry_door",new TallBlockItem(MapleBlocks.CHERRY_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
     public static final Item MAPLE_DOOR = registerItem("maple_door",new TallBlockItem(MapleBlocks.MAPLE_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
     public static final Item BAMBOO_DOOR = registerItem("bamboo_door",new TallBlockItem(MapleBlocks.BAMBOO_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
+    public static final Item GINKGO_DOOR = registerItem("ginkgo_door",new TallBlockItem(MapleBlocks.GINKGO_DOOR, new FabricItemSettings().group(Maple.Maple_Group).maxCount(16)));
 
     //Food Materials
     public static final Item Flour = registerItem("flour",new Item(new Item.Settings().group(Maple.Maple_Group_Food)));

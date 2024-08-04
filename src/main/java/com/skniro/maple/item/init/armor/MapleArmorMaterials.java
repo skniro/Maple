@@ -2,6 +2,7 @@ package com.skniro.maple.item.init.armor;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -38,14 +39,15 @@ import java.util.function.Supplier;
         }
 
         @Override
-        public int getDurability(ArmorItem.Type type) {
-            return BASE_DURABILITY[type.ordinal()] * this.durabilityMultiplier;
+        public int getDurability(EquipmentSlot slot) {
+            return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
         }
 
         @Override
-        public int getProtection(ArmorItem.Type type) {
-            return protectionAmounts[type.ordinal()];
+        public int getProtectionAmount(EquipmentSlot slot) {
+            return this.protectionAmounts[slot.getEntitySlotId()];
         }
+
 
         @Override
         public int getEnchantability() {

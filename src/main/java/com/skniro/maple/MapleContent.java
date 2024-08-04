@@ -45,7 +45,6 @@ public class MapleContent {
 
     public static void generateWorldGen() {
         MapleTreeGeneration.generateTrees();
-        MapleBiomeKeys.registerBiome();
         MapleOreGeneration.generateOres();
         MapleBiomeKeys.registerBiome();
         MapleBiomeFeatures.registerBiomesFeatures();
