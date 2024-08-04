@@ -9,5 +9,7 @@ public class MapleStrippableBlocks {
         StrippableBlockRegistry.register(MapleBlocks.MAPLE_WOOD, MapleBlocks.STRIPPED_MAPLE_WOOD);
         StrippableBlockRegistry.register(MapleBlocks.CHERRY_LOG, MapleBlocks.STRIPPED_CHERRY_LOG);
         StrippableBlockRegistry.register(MapleBlocks.CHERRY_WOOD, MapleBlocks.STRIPPED_CHERRY_WOOD);
+        StrippableBlockRegistry.register(MapleBlocks.GINKGO_LOG, MapleBlocks.STRIPPED_GINKGO_LOG);
+        StrippableBlockRegistry.register(MapleBlocks.GINKGO_WOOD, MapleBlocks.STRIPPED_GINKGO_WOOD);
     }
 }
