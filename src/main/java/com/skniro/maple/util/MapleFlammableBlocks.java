@@ -22,6 +22,10 @@ public class MapleFlammableBlocks {
         registry.add(MapleBlocks.MAPLE_PLANKS, 5, 20);
         registry.add(MapleBlocks.MAPLE_LEAVES, 30, 60);
 
+        registry.add(MapleBlocks.RED_MAPLE_LEAVES, 30, 60);
+
+        registry.add(MapleBlocks.SAKURA_LEAVES, 30, 60);
+
         registry.add(MapleBlocks.GINKGO_LOG, 5, 5);
         registry.add(MapleBlocks.GINKGO_WOOD, 5, 5);
         registry.add(MapleBlocks.STRIPPED_GINKGO_LOG, 5, 5);

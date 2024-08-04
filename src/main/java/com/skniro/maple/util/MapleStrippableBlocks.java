@@ -11,5 +11,6 @@ public class MapleStrippableBlocks {
         StrippableBlockRegistry.register(MapleBlocks.CHERRY_WOOD, MapleBlocks.STRIPPED_CHERRY_WOOD);
         StrippableBlockRegistry.register(MapleBlocks.GINKGO_LOG, MapleBlocks.STRIPPED_GINKGO_LOG);
         StrippableBlockRegistry.register(MapleBlocks.GINKGO_WOOD, MapleBlocks.STRIPPED_GINKGO_WOOD);
+        StrippableBlockRegistry.register(MapleBlocks.BAMBOO_BLOCK, MapleBlocks.STRIPPED_BAMBOO_BLOCK);
     }
 }
