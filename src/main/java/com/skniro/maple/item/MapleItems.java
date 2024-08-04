@@ -28,7 +28,7 @@ public class MapleItems {
                     MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN));
     public static final Item GINKGO_SIGN = registerItem("ginkgo_sign",
             new SignItem(new FabricItemSettings().maxCount(16),
-                    MapleSignBlocks.GINKGO_SIGN,MapleSignBlocks.GINKGO_WALL_SIGN));
+                    MapleSignBlocks.GINKGO_SIGN, MapleSignBlocks.GINKGO_WALL_SIGN));
 
     public static final Item GINKGO_HANGING_SIGN = registerItem("ginkgo_hanging_sign", new HangingSignItem(
             MapleSignBlocks.GINKGO_HANGING_SIGN, MapleSignBlocks.GINKGO_WALL_HANGING_SIGN, new FabricItemSettings().maxCount(16)));

@@ -52,11 +52,11 @@ public class BoatTypeMixin {
         var types = new ArrayList<>(Arrays.asList(field_7724));
         var last = types.get(types.size() - 1);
 
-        var maple = newType("MAPLE", last.ordinal() + 1, MapleBlocks.MAPLE_PLANKS, "maple");
+        var maple = newType("MAPLE", last.ordinal() + 1, Blocks.OAK_PLANKS, "maple");
         MapleBoatType.MAPLE = maple;
         types.add(maple);
 
-        var ginkgo = newType("GINKGO", last.ordinal() + 2, MapleBlocks.GINKGO_PLANKS, "ginkgo");
+        var ginkgo = newType("GINKGO", last.ordinal() + 2, Blocks.OAK_PLANKS, "ginkgo");
         MapleBoatType.GINKGO = ginkgo;
         types.add(ginkgo);
 
