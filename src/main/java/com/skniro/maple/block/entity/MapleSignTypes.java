@@ -11,4 +11,6 @@ public class MapleSignTypes {
             WoodType.create("maple_maple");
     public static final WoodType BAMBOO =
             WoodType.create("maple_bamboo");
+    public static final WoodType GINKGO =
+            WoodType.create("maple_ginkgo");
 }

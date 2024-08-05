@@ -24,6 +24,9 @@ public class MapleBiomeKeys {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> Biome =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, Maple.MODID);
     public static final ResourceKey<Biome> CHERRY_GROVE = register("cherry_grove");
+    public static final ResourceKey<Biome> Maple_Grove = register("maple_grove");
+    public static final ResourceKey<Biome> Sakura = register("sakura");
+
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
@@ -42,6 +45,8 @@ public class MapleBiomeKeys {
 
     public static void registerBiome(IEventBus eventBus) {
         registerBuiltinBiome(CHERRY_GROVE, OverworldBiomes.meadow());
+        registerBuiltinBiome(Sakura, MapleOverworldBiomes.createSakura());
+        registerBuiltinBiome(Maple_Grove, MapleOverworldBiomes.createMapleGrove());
         Biome.register(eventBus);
     }
 

@@ -6,10 +6,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -27,6 +24,22 @@ public class MapleOreBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)),Maple.Maple_Group);
     public static final RegistryObject<Block> DEEPSLATE_Salt_Ore =registerBlock("deepslate_salt_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Salt_Ore.get()).color(MaterialColor.COLOR_GRAY).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(3, 7)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Coal_Ore = registerBlock("coal_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Copper_Ore = registerBlock("copper_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Diamond_Ore = registerBlock("diamond_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Emerald_Ore = registerBlock("emerald_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Gold_Ore = registerBlock("gold_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Iron_Ore = registerBlock("iron_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Lapis_Ore = registerBlock("lapis_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
+    public static final RegistryObject<Block> Nether_Redstone_Ore = registerBlock("redstone_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)), Maple.Maple_Group);
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {

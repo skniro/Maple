@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "maple:cherry_pickaxe"
+    },
+    {
+      "item": "maple:cherry_shovel"
+    },
+    {
+      "item": "maple:cherry_axe"
+    },
+    {
+      "item": "maple:cherry_hoe"
+    },
+    {
+      "item": "maple:cherry_sword"
+    },
+    {
+      "item": "maple:cherry_helmet"
+    },
+    {
+      "item": "maple:cherry_chestplate"
+    },
+    {
+      "item": "maple:cherry_leggings"
+    },
+    {
+      "item": "maple:cherry_boots"
+    }
+  ],
+  "result": "maple:cherry_nugget"
+}

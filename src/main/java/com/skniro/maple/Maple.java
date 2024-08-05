@@ -9,26 +9,19 @@ import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
-import com.skniro.maple.world.MapleConfiguredFeatures;
-import com.skniro.maple.world.MaplePlacedFeatures;
-import com.skniro.maple.world.biome.MapleBiomeKeys;
-import com.skniro.maple.world.biome.MapleOverworldBiomes;
+import com.skniro.maple.particle.MapleParticleProvider;
+import com.skniro.maple.particle.MapleParticleTypes;
+import com.skniro.maple.world.feature.MapleConfiguredFeatures;
+import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleTerrablender;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.material.Material;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -37,11 +30,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
-import terrablender.api.Regions;
 
 import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
 import static com.skniro.maple.item.MapleItems.MapleSyrup;
@@ -121,6 +110,14 @@ public class Maple{
             Sheets.addWoodType(MapleSignTypes.MAPLE);
             Sheets.addWoodType(MapleSignTypes.BAMBOO);
             Sheets.addWoodType(MapleSignTypes.CHERRY);
+        }
+    }
+
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public class ParticleFactoryRegistry {
+        @SubscribeEvent
+        public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
+            event.register(MapleParticleTypes.CHERRY_LEAVES.get(), MapleParticleProvider::new);
         }
     }
 

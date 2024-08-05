@@ -1,6 +1,6 @@
 package com.skniro.maple.world.Tree;
 
-import com.skniro.maple.world.MapleConfiguredFeatures;
+import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
