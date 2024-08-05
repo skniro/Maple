@@ -95,48 +95,6 @@ public class MapleFoodComponents {
                                             )
                                     .tab(Maple.Maple_Group_Food)));
 
-    public static final RegistryObject<Item> RICEBALL =
-            registerItem("riceball",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(3)
-                                                    .saturationMod(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final RegistryObject<Item> Mushroom_RICEBALL =
-            registerItem("mushroom_riceball",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(4)
-                                                    .saturationMod(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final RegistryObject<Item> Salmon_RICEBALL =
-            registerItem("salmon_riceball",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(4)
-                                                    .saturationMod(0.3f)
-                                                    .build()
-                                            )
-                                    ));
-
     public static final RegistryObject<Item> TOFU =
             registerItem("tofu",
                     ()->  new Item(
@@ -179,20 +137,6 @@ public class MapleFoodComponents {
                                             )
                                     .tab(Maple.Maple_Group_Food)));
 
-    public static final RegistryObject<Item> Chicken_Rice =
-            registerItem("chicken_rice",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(9)
-                                                    .saturationMod(0.7f)
-                                                    .build()
-                                            )
-                                    ));
-
     public static final RegistryObject<Item> Beef_Rice =
             registerItem("beef_rice",
                     ()-> new Item(
@@ -205,49 +149,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.7f)
                                                     .build()
                                             )
-                                    ));
-
-    public static final RegistryObject<Item> Mutton_Rice =
-            registerItem("mutton_rice",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(9)
-                                                    .saturationMod(0.7f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final RegistryObject<Item> Porkchop_Rice =
-            registerItem("porkchop_rice",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(9)
-                                                    .saturationMod(0.7f)
-                                                    .build()
-                                            )
-                                    ));
-
-    public static final RegistryObject<Item> Mushroom_Rice =
-            registerItem("mushroom_rice",
-                    ()-> new Item(
-                            new Item
-                                    .Properties()
-                                    .food
-                                            (new FoodProperties
-                                                    .Builder()
-                                                    .nutrition(9)
-                                                    .saturationMod(0.7f)
-                                                    .build()
-                                            )
-                                    ));
+                                    .tab(Maple.Maple_Group_Food)));
 
     public static final RegistryObject<Item> Cheese =
             registerItem("cheese",
@@ -261,7 +163,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.3f)
                                                     .build()
                                             )
-                                    ));
+                                    .tab(Maple.Maple_Group_Food)));
 
 
 

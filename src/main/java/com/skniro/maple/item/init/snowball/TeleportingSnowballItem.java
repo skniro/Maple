@@ -1,6 +1,6 @@
-package com.skniro.maple.item.init;
+package com.skniro.maple.item.init.snowball;
 
-import com.skniro.better_snowball.entity.projectile.thrown.MapleConfusionSnowballEntity;
+import com.skniro.maple.entity.projectile.thrown.MapletransSnowballEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -11,9 +11,8 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-
-public class ConfusionSnowballItem extends BetterSnowballSnowballItem {
-    public ConfusionSnowballItem(Properties settings) {
+public class TeleportingSnowballItem extends MapleSnowballItem {
+    public TeleportingSnowballItem(Properties settings) {
         super(settings);
     }
 
@@ -22,7 +21,7 @@ public class ConfusionSnowballItem extends BetterSnowballSnowballItem {
         ItemStack itemStack = user.getItemInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
         if (!world.isClientSide) {
-            Snowball snowballEntity = new MapleConfusionSnowballEntity(world, user);
+            Snowball snowballEntity = new MapletransSnowballEntity(world, user);
             snowballEntity.setItem(itemStack);
             snowballEntity.shootFromRotation(user, user.getXRot(), user.getYRot(), 0.0f, 1.5f, 1.0f);
             world.addFreshEntity(snowballEntity);

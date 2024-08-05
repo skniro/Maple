@@ -1,6 +1,7 @@
 package com.skniro.maple.entity.projectile.thrown;
 
 import com.google.common.collect.Sets;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -23,7 +24,7 @@ public class MapleConfusionSnowballEntity extends Snowball {
         super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         int i = entity instanceof Blaze ? 4 : 0;
-        entity.hurt(this.damageSources().thrown(this, this.getOwner()), i);
+        entity.hurt(DamageSource.thrown(this, this.getOwner()), i);
         LivingEntity playerEntity = (LivingEntity) entityHitResult.getEntity();;
         playerEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION,150,1));
     }

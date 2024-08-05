@@ -1,6 +1,6 @@
-package com.skniro.maple.item.init;
+package com.skniro.maple.item.init.snowball;
 
-import com.skniro.better_snowball.entity.projectile.thrown.MapleStoneSnowballEntity;
+import com.skniro.maple.entity.projectile.thrown.MapleStoneSnowballEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -11,8 +11,9 @@ import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class StoneSnowballItem extends BetterSnowballSnowballItem {
-    public StoneSnowballItem(Properties settings) {
+
+public class IceSnowballItem extends MapleSnowballItem {
+    public IceSnowballItem(Properties settings) {
         super(settings);
     }
 

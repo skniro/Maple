@@ -1,6 +1,5 @@
-package com.skniro.maple.item.init;
+package com.skniro.maple.item.init.snowball;
 
-import com.skniro.better_snowball.entity.projectile.thrown.MapleGoldSnowballEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -8,11 +7,14 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class GoldSnowballItem extends BetterSnowballSnowballItem {
-    public GoldSnowballItem(Properties settings) {
+
+public class MapleSnowballItem
+        extends Item {
+    public MapleSnowballItem(Properties settings) {
         super(settings);
     }
 
@@ -21,7 +23,7 @@ public class GoldSnowballItem extends BetterSnowballSnowballItem {
         ItemStack itemStack = user.getItemInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
         if (!world.isClientSide) {
-            Snowball snowballEntity = new MapleGoldSnowballEntity(world, user);
+            Snowball snowballEntity = new Snowball(world, user);
             snowballEntity.setItem(itemStack);
             snowballEntity.shootFromRotation(user, user.getXRot(), user.getYRot(), 0.0f, 1.5f, 1.0f);
             world.addFreshEntity(snowballEntity);

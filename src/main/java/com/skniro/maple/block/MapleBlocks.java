@@ -1,13 +1,9 @@
 package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.block.init.MapleFlammableRotatedPillarBlock;
-import com.skniro.maple.block.init.MapleFlowerbedBlock;
-import com.skniro.maple.block.init.RiceBlock;
+import com.skniro.maple.block.init.*;
 import com.skniro.maple.item.MapleItems;
-import com.skniro.maple.world.Tree.CherrySaplingGenerator;
-import com.skniro.maple.world.Tree.MapleSaplingGenerator;
-import com.skniro.maple.world.Tree.SakuraSaplingGenerator;
+import com.skniro.maple.world.Tree.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -310,11 +306,11 @@ public class MapleBlocks {
     public static final RegistryObject<Block> POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
             () -> new FlowerPotBlock(RED_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).breakInstantly().nonOpaque()));
     public static final RegistryObject<Block> GINKGO_BUTTON = registerBlock("ginkgo_button",
-            () -> new WoodenButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).MaterialColor(MaterialColor.TERRACOTTA_YELLOW).noCollision().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_STAIRS = registerBlock("ginkgo_stairs",
-            () -> new StairsBlock(GINKGO_PLANKS.getDefaultState(), BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())), Maple.Maple_Group);
+            () -> new StairBlock(GINKGO_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD).MaterialColor(MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE_GATE = registerBlock("ginkgo_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).color(GINKGO_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE = registerBlock("ginkgo_fence",
@@ -322,88 +318,88 @@ public class MapleBlocks {
     public static final RegistryObject<Block> GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
             () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     public static final RegistryObject<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
-            () -> new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD).MaterialColor(MaterialColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+            () -> new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.GINKGO_PLANKS.getDefaultMaterialColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_CARPET = registerBlock("sakura_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS).MaterialColor(MaterialColor.PINK)),Maple.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).color(MaterialColor.COLOR_PINK)),Maple.Maple_Group);
     public static final RegistryObject<Block> Maple_CARPET = registerBlock("maple_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS).MaterialColor(MaterialColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).color(MaterialColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_CARPET = registerBlock("red_maple_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS).MaterialColor(MaterialColor.RED)),Maple.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).color(MaterialColor.COLOR_RED)),Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_CARPET= registerBlock("ginkgo_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS).MaterialColor(MaterialColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).color(MaterialColor.TERRACOTTA_YELLOW)),Maple.Maple_Group);
 
     //Glass Blocks
     public static final RegistryObject<Block> WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",
             () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> WHITE_STAINED_GLASS_STAIRS = registerBlock("white_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> ORANGE_STAINED_GLASS_SLAB = registerBlock("orange_stained_glass_slab",
             () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> ORANGE_STAINED_GLASS_STAIRS = registerBlock("orange_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.ORANGE_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.ORANGE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_SLAB = registerBlock("magenta_stained_glass_slab",
             () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_STAIRS = registerBlock("magenta_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.MAGENTA_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.MAGENTA_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("light_blue_stained_glass_slab",
             () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("light_blue_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.LIGHT_BLUE_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIGHT_BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_SLAB = registerBlock("yellow_stained_glass_slab",
             () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_STAIRS = registerBlock("yellow_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.YELLOW_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.YELLOW_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIME_STAINED_GLASS_SLAB = registerBlock("lime_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIME_STAINED_GLASS_STAIRS = registerBlock("lime_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.LIME_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIME_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> PINK_STAINED_GLASS_SLAB = registerBlock("pink_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> PINK_STAINED_GLASS_STAIRS = registerBlock("pink_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.PINK_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.PINK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GRAY_STAINED_GLASS_SLAB = registerBlock("gray_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GRAY_STAINED_GLASS_STAIRS = registerBlock("gray_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.GRAY_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("light_gray_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("light_gray_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.LIGHT_GRAY_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIGHT_GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> CYAN_STAINED_GLASS_SLAB = registerBlock("cyan_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> CYAN_STAINED_GLASS_STAIRS = registerBlock("cyan_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.CYAN_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.CYAN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> PURPLE_STAINED_GLASS_SLAB = registerBlock("purple_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> PURPLE_STAINED_GLASS_STAIRS = registerBlock("purple_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.PURPLE_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.PURPLE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BLUE_STAINED_GLASS_SLAB = registerBlock("blue_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BLUE_STAINED_GLASS_STAIRS = registerBlock("blue_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.BLUE_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BROWN_STAINED_GLASS_SLAB = registerBlock("brown_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BROWN_STAINED_GLASS_STAIRS = registerBlock("brown_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.BROWN_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BROWN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_SLAB = registerBlock("green_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_STAIRS = registerBlock("green_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.GREEN_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.GREEN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> RED_STAINED_GLASS_SLAB = registerBlock("red_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> RED_STAINED_GLASS_STAIRS = registerBlock("red_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.RED_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.RED_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_SLAB = registerBlock("black_stained_glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_STAIRS = registerBlock("black_stained_glass_stairs",
-            new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GLASS_SLAB = registerBlock("glass_slab",
-            new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)), Maple.Maple_Group);
     public static final RegistryObject<Block> GLASS_STAIRS = registerBlock("glass_stairs",
-            new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.getDefaultState(), BlockBehaviour.Properties.copy(Blocks.GLASS)), Maple.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GLASS)), Maple.Maple_Group);
 
 
     public static final RegistryObject<Block> TATAMI =registerBlock("tatami",
