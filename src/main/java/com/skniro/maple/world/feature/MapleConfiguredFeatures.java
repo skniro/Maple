@@ -155,7 +155,7 @@ public class MapleConfiguredFeatures {
         Nether_Gold_ORE_KEY = ConfiguredFeatures.register("gold_ore", Feature.ORE, new OreFeatureConfig(Nether_Gold_ORES_LIST, 8));
         Nether_Iron_ORE_KEY = ConfiguredFeatures.register("iron_ore", Feature.ORE, new OreFeatureConfig(Nether_Iron_ORES_LIST, 8));
         Nether_Lapis_ORE_KEY = ConfiguredFeatures.register("lapis_ore", Feature.ORE, new OreFeatureConfig(Nether_Lapis_ORES_LIST, 8));
-        Nether_Redstone_ORE_KEY = ConfiguredFeatures.register("redstone_ore", Feature.ORE, new OreFeatureConfig(OVERWORLD_SALT_ORES, 8));
+        Nether_Redstone_ORE_KEY = ConfiguredFeatures.register("redstone_ore", Feature.ORE, new OreFeatureConfig(Nether_Redstone_ORES_LIST, 8));
 
         //Leave carpet
         Red_Maple_Carpet_KEY = ConfiguredFeatures.register("red_maple_carpet", Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.RED_MAPLE_CARPET.getDefaultState())))));
