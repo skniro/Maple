@@ -59,16 +59,16 @@ public class MapleItems {
 
 
     //Snowball
-    public static final Item SNOWBALL_STONE = registerItem("snowball_stone", new StoneSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_ICE = registerItem("snowball_ice", new IceSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_IRON = registerItem("snowball_iron", new IronSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Gold = registerItem("snowball_gold", new GoldSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Diamond = registerItem("snowball_diamond", new DiamondSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Compression = registerItem("snowball_compression", new StoneSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Teleporting = registerItem("snowball_teleporting", new TeleportingSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Confusion = registerItem("snowball_confusion", new ConfusionSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Poison = registerItem("snowball_poison", new PoisonSnowballItem(new Item.Settings().maxCount(64)));
-    public static final Item SNOWBALL_Instant_Health = registerItem("snowball_instant_health", new InstantHealthSnowballItem(new Item.Settings().maxCount(64)));
+    public static final Item SNOWBALL_STONE = registerItem("snowball_stone", new StoneSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_ICE = registerItem("snowball_ice", new IceSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_IRON = registerItem("snowball_iron", new IronSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Gold = registerItem("snowball_gold", new GoldSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Diamond = registerItem("snowball_diamond", new DiamondSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Compression = registerItem("snowball_compression", new StoneSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Teleporting = registerItem("snowball_teleporting", new TeleportingSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Confusion = registerItem("snowball_confusion", new ConfusionSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Poison = registerItem("snowball_poison", new PoisonSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
+    public static final Item SNOWBALL_Instant_Health = registerItem("snowball_instant_health", new InstantHealthSnowballItem(new Item.Settings().maxCount(64).group(Maple.Maple_Group)));
 
 
     private static Item registerItem(String name, Item item) {
