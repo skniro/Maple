@@ -2,79 +2,94 @@ package com.skniro.maple.item.init.tool;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableMap;
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
-import net.minecraft.world.event.GameEvent.Emitter;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 import java.util.Optional;
 
-public class MapleAxeItem extends MiningToolItem {
+public class MapleAxeItem extends DiggerItem {
     protected static final Map<Block, Block> STRIPPED_BLOCKS;
 
-    public MapleAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
-        super(attackDamage, attackSpeed, material, BlockTags.AXE_MINEABLE, settings);
+    public MapleAxeItem(Tier material, float attackDamage, float attackSpeed, Properties settings) {
+        super(attackDamage, attackSpeed, material, BlockTags.MINEABLE_WITH_AXE, settings);
     }
 
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        World world = context.getWorld();
-        BlockPos blockPos = context.getBlockPos();
-        PlayerEntity playerEntity = context.getPlayer();
-        BlockState blockState = world.getBlockState(blockPos);
-        Optional<BlockState> optional = this.getStrippedState(blockState);
-        Optional<BlockState> optional2 = Oxidizable.getDecreasedOxidationState(blockState);
-        Optional<BlockState> optional3 = Optional.ofNullable((Block)((BiMap) HoneycombItem.WAXED_TO_UNWAXED_BLOCKS.get()).get(blockState.getBlock())).map((block) -> {
-            return block.getStateWithProperties(blockState);
-        });
-        ItemStack itemStack = context.getStack();
-        Optional<BlockState> optional4 = Optional.empty();
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        Player player = context.getPlayer();
+        BlockState blockstate = level.getBlockState(blockpos);
+        Optional<BlockState> optional = Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_STRIP, false));
+        Optional<BlockState> optional1 = optional.isPresent() ? Optional.empty() : Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_SCRAPE, false));
+        Optional<BlockState> optional2 = !optional.isPresent() && !optional1.isPresent() ? Optional.ofNullable(blockstate.getToolModifiedState(context, ToolActions.AXE_WAX_OFF, false)) : Optional.empty();
+        ItemStack itemstack = context.getItemInHand();
+        Optional<BlockState> optional3 = Optional.empty();
         if (optional.isPresent()) {
-            world.playSound(playerEntity, blockPos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            optional4 = optional;
+            level.playSound(player, blockpos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            optional3 = optional;
+        } else if (optional1.isPresent()) {
+            level.playSound(player, blockpos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.levelEvent(player, 3005, blockpos, 0);
+            optional3 = optional1;
         } else if (optional2.isPresent()) {
-            world.playSound(playerEntity, blockPos, SoundEvents.ITEM_AXE_SCRAPE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            world.syncWorldEvent(playerEntity, 3005, blockPos, 0);
-            optional4 = optional2;
-        } else if (optional3.isPresent()) {
-            world.playSound(playerEntity, blockPos, SoundEvents.ITEM_AXE_WAX_OFF, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            world.syncWorldEvent(playerEntity, 3004, blockPos, 0);
-            optional4 = optional3;
+            level.playSound(player, blockpos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.levelEvent(player, 3004, blockpos, 0);
+            optional3 = optional2;
         }
 
-        if (optional4.isPresent()) {
-            if (playerEntity instanceof ServerPlayerEntity) {
-                Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos, itemStack);
+        if (optional3.isPresent()) {
+            if (player instanceof ServerPlayer) {
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
             }
 
-            world.setBlockState(blockPos, (BlockState)optional4.get(), 11);
-            world.emitGameEvent(GameEvent.BLOCK_CHANGE, blockPos, Emitter.of(playerEntity, (BlockState)optional4.get()));
-            if (playerEntity != null) {
-                itemStack.damage(1, playerEntity, (p) -> {
-                    p.sendToolBreakStatus(context.getHand());
+            level.setBlock(blockpos, (BlockState)optional3.get(), 11);
+            level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, (BlockState)optional3.get()));
+            if (player != null) {
+                itemstack.hurtAndBreak(1, player, (p_150686_) -> {
+                    p_150686_.broadcastBreakEvent(context.getHand());
                 });
             }
 
-            return ActionResult.success(world.isClient);
+            return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }
     }
 
-    private Optional<BlockState> getStrippedState(BlockState state) {
-        return Optional.ofNullable((Block)STRIPPED_BLOCKS.get(state.getBlock())).map((block) -> {
-            return (BlockState)block.getDefaultState().with(PillarBlock.AXIS, (Direction.Axis)state.get(PillarBlock.AXIS));
+    public static @Nullable BlockState getAxeStrippingState(BlockState originalState) {
+        Block block = (Block)STRIPPED_BLOCKS.get(originalState.getBlock());
+        return block != null ? (BlockState)block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, (Direction.Axis)originalState.getValue(RotatedPillarBlock.AXIS)) : null;
+    }
+
+    private Optional<BlockState> getStripped(BlockState blockState) {
+        return Optional.ofNullable((Block)STRIPPED_BLOCKS.get(blockState.getBlock())).map((p_150689_) -> {
+            return (BlockState)p_150689_.defaultBlockState().setValue(RotatedPillarBlock.AXIS, (Direction.Axis)blockState.getValue(RotatedPillarBlock.AXIS));
         });
+    }
+
+    public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
+        return ToolActions.DEFAULT_AXE_ACTIONS.contains(toolAction);
     }
 
     static {

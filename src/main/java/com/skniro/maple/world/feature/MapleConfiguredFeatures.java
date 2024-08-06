@@ -9,8 +9,10 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
@@ -170,7 +172,7 @@ public class MapleConfiguredFeatures {
 
         //Lake
         LAKE_HOT_SPRING = CONFIGURED_FEATURES.register("lake_hot_spring",
-                () -> new ConfiguredFeature<>(Feature.LAKE, new LakeFeature.Config(BlockStateProvider.of(MapleFluidBlockOrItem.Hot_Spring_BLOCK.get().defaultBlockState()), BlockStateProvider.of(Blocks.GRASS_BLOCK.get().defaultBlockState())));
+                () -> new ConfiguredFeature<>(Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(MapleFluidBlockOrItem.Hot_Spring_BLOCK), BlockStateProvider.of(Blocks.GRASS_BLOCK.get().defaultBlockState())));
 
 
 

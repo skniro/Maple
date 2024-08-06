@@ -4,12 +4,16 @@ import com.mojang.datafixers.util.Pair;
 import com.skniro.maple.world.feature.MapleBiomeFeatures;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import org.jetbrains.annotations.Nullable;
 import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
@@ -26,79 +30,79 @@ public class MapleOverworldBiomes extends Region {
     public static Biome createCherryGrove() {
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder();
         MobSpawnSettings.Builder builder2 = new MobSpawnSettings.Builder();
-        builder2.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.PIG, 1, 1, 2)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
-        BiomeDefaultFeatures.addBatsAndMonsters(builder2);
-        addBasicFeatures(builder.build());
-        BiomeDefaultFeatures.addPlainsTallGrass(builder);
+        builder2.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        BiomeDefaultFeatures.commonSpawns(builder2);
+        addBasicFeatures(builder);
+        BiomeDefaultFeatures.addPlainGrass(builder);
         BiomeDefaultFeatures.addDefaultOres(builder);
-        BiomeDefaultFeatures.addDefaultDisks(builder);
-        BiomeDefaultFeatures.addMeadowFlowers(builder);
-        BiomeDefaultFeatures.addEmeraldOre(builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder);
+        BiomeDefaultFeatures.addMeadowVegetation(builder);
+        BiomeDefaultFeatures.addExtraEmeralds(builder);
         BiomeDefaultFeatures.addInfestedStone(builder);
-        MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
+        Music musicSound = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
         return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder2, builder, musicSound);
     }
 
     public static Biome createMapleGrove() {
         BiomeGenerationSettings.Builder lookupBackedBuilder = new BiomeGenerationSettings.Builder();
         MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.addBatsAndMonsters(builder);
-        addBasicFeatures(lookupBackedBuilder.build());
-        BiomeDefaultFeatures.addPlainsTallGrass(lookupBackedBuilder);
+        BiomeDefaultFeatures.commonSpawns(builder);
+        addBasicFeatures(lookupBackedBuilder);
+        BiomeDefaultFeatures.addPlainGrass(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultOres(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultDisks(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultFlowers(lookupBackedBuilder);
-        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        lookupBackedBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
         BiomeDefaultFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
         BiomeDefaultFeatures.addForestGrass(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultVegetation(lookupBackedBuilder);
-        BiomeDefaultFeatures.addEmeraldOre(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder);
+        BiomeDefaultFeatures.addExtraEmeralds(lookupBackedBuilder);
         BiomeDefaultFeatures.addInfestedStone(lookupBackedBuilder);
-        BiomeDefaultFeatures.addFarmAnimals(builder);
-        MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
+        BiomeDefaultFeatures.farmAnimals(builder);
+        Music musicSound = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
         return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 4159204, 329011, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
     }
 
     public static Biome createSakura() {
         BiomeGenerationSettings.Builder lookupBackedBuilder = new BiomeGenerationSettings.Builder();
         MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.PIG, 1, 1, 2)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
-        addBasicFeatures(lookupBackedBuilder.build());
-        BiomeDefaultFeatures.addPlainsTallGrass(lookupBackedBuilder);
+        builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        addBasicFeatures(lookupBackedBuilder);
+        BiomeDefaultFeatures.addPlainGrass(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultOres(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultDisks(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultFlowers(lookupBackedBuilder);
-        lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
+        lookupBackedBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
         MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultVegetation(lookupBackedBuilder);
-        BiomeDefaultFeatures.addEmeraldOre(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder);
+        BiomeDefaultFeatures.addExtraEmeralds(lookupBackedBuilder);
         BiomeDefaultFeatures.addInfestedStone(lookupBackedBuilder);
-        MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
+        Music musicSound = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
         return createBiome(Biome.Precipitation.RAIN, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder, lookupBackedBuilder, musicSound);
     }
 
-    private static void addBasicFeatures(BiomeGenerationSettings generationSettings) {
-        BiomeDefaultFeatures.addLandCarvers(generationSettings);
-        BiomeDefaultFeatures.addAmethystGeodes(generationSettings);
-        BiomeDefaultFeatures.addDungeons(generationSettings);
-        BiomeDefaultFeatures.addMineables(generationSettings);
-        BiomeDefaultFeatures.addSprings(generationSettings);
-        BiomeDefaultFeatures.addFrozenTopLayer(generationSettings);
+    private static void addBasicFeatures(BiomeGenerationSettings.Builder generationSettings) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(generationSettings);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(generationSettings);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(generationSettings);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(generationSettings);
+        BiomeDefaultFeatures.addDefaultSprings(generationSettings);
+        BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
     }
 
 
     private static Biome createBiome(Biome.Precipitation precipitation, float temperature, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColor, @Nullable Integer foliageColor, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
-        net.minecraft.world.biome.BiomeEffects.Builder builder = (new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(getSkyColor(temperature)).moodSound(BiomeMoodSound.CAVE).music(music);
+        BiomeSpecialEffects.Builder builder = (new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(getSkyColor(temperature)).moodSound(BiomeMoodSound.CAVE).music(music);
         if (grassColor != null) {
-            builder.grassColor(grassColor);
+            builder.grassColorOverride(grassColor);
         }
 
         if (foliageColor != null) {
-            builder.foliageColor(foliageColor);
+            builder.foliageColorOverride(foliageColor);
         }
 
-        return (new net.minecraft.world.biome.Biome.Builder()).precipitation(precipitation).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
 
         @Override

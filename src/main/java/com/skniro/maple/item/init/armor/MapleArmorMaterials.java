@@ -2,17 +2,19 @@ package com.skniro.maple.item.init.armor;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Supplier;
 
-    public enum MapleArmorMaterials implements ArmorMaterial {
+public enum MapleArmorMaterials implements ArmorMaterial {
         Cherry("cherry", 25, new int[] { 3, 8, 6, 3 }, 25,
-                SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(MapleArmorItems.Cherry_INGOT));
+                SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()}));
 
         private final String name;
         private final int durabilityMultiplier;
@@ -21,12 +23,12 @@ import java.util.function.Supplier;
         private final SoundEvent equipSound;
         private final float toughness;
         private final float knockbackResistance;
-        private final Supplier<Ingredient> repairIngredient;
+    private final LazyLoadedValue<Ingredient> repairIngredient;
 
         private static final int[] BASE_DURABILITY = { 13, 16, 16, 13 };
 
         MapleArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
-                          float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+                          float toughness, float knockbackResistance, Supplier repairIngredient) {
             this.name = name;
             this.durabilityMultiplier = durabilityMultiplier;
             this.protectionAmounts = protectionAmounts;
@@ -34,22 +36,22 @@ import java.util.function.Supplier;
             this.equipSound = equipSound;
             this.toughness = toughness;
             this.knockbackResistance = knockbackResistance;
-            this.repairIngredient = repairIngredient;
+            this.repairIngredient = new LazyLoadedValue(repairIngredient);
         }
 
         @Override
-        public int getDurability(EquipmentSlot slot) {
-            return BASE_DURABILITY[slot.getEntitySlotId()] * this.durabilityMultiplier;
+        public int getDurabilityForSlot(EquipmentSlot slot) {
+            return BASE_DURABILITY[slot.getIndex()] * this.durabilityMultiplier;
         }
 
         @Override
-        public int getProtectionAmount(EquipmentSlot slot) {
-            return this.protectionAmounts[slot.getEntitySlotId()];
+        public int getDefenseForSlot(EquipmentSlot slot) {
+            return this.protectionAmounts[slot.getIndex()];
         }
 
 
         @Override
-        public int getEnchantability() {
+        public int getEnchantmentValue() {
             return this.enchantability;
         }
 
@@ -65,7 +67,7 @@ import java.util.function.Supplier;
 
         @Override
         public String getName() {
-            return Maple.MOD_ID + ":" + this.name;
+            return Maple.MODID + ":" + this.name;
         }
 
         @Override

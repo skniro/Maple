@@ -26,7 +26,7 @@ public class MapleItems {
                     MapleSignBlocks.BAMBOO_SIGN.get(),MapleSignBlocks.BAMBOO_WALL_SIGN.get()));
     public static final RegistryObject<Item> GINKGO_SIGN = registerItem("ginkgo_sign",
             ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
-                    MapleSignBlocks.GINKGO_SIGN,MapleSignBlocks.GINKGO_WALL_SIGN));
+                    MapleSignBlocks.GINKGO_SIGN.get(),MapleSignBlocks.GINKGO_WALL_SIGN.get()));
 
 
     public static final RegistryObject<Item> CHERRY_DOOR = registerItem("cherry_door",

@@ -302,25 +302,25 @@ public class MapleBlocks {
     public static final RegistryObject<Block> GINKGO_PLANKS = registerBlock("ginkgo_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).color(MaterialColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final RegistryObject<Block> POTTED_GINKGO_SAPLING = registerBlockWithoutItem("potted_ginkgo_sapling",
-            () -> new FlowerPotBlock(GINKGO_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).breakInstantly().nonOpaque()));
+            () -> new FlowerPotBlock(GINKGO_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
     public static final RegistryObject<Block> POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
-            () -> new FlowerPotBlock(RED_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).breakInstantly().nonOpaque()));
+            () -> new FlowerPotBlock(RED_MAPLE_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
     public static final RegistryObject<Block> GINKGO_BUTTON = registerBlock("ginkgo_button",
-            () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_STAIRS = registerBlock("ginkgo_stairs",
-            () -> new StairBlock(GINKGO_PLANKS.defaultBlockState(), BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())), Maple.Maple_Group);
+            () -> new StairBlock(GINKGO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sound(SoundType.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE_GATE = registerBlock("ginkgo_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).color(GINKGO_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE = registerBlock("ginkgo_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD,GINKGO_PLANKS.getDefaultMaterialColor()).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD,GINKGO_PLANKS.get().defaultMaterialColor()).strength(2.0f, 3.0f).sound(SoundType.WOOD)), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistryObject<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
-            () -> new TrapdoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque()), Maple.Maple_Group);
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_WHITE).strength(3.0F).noOcclusion()), Maple.Maple_Group);
     public static final RegistryObject<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.GINKGO_PLANKS.getDefaultMaterialColor()).noCollision().strength(0.5F)), Maple.Maple_Group);
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MapleBlocks.GINKGO_PLANKS.get().defaultMaterialColor()).noCollission().strength(0.5F)), Maple.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_CARPET = registerBlock("sakura_carpet",
             () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).color(MaterialColor.COLOR_PINK)),Maple.Maple_Group);

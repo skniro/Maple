@@ -20,10 +20,8 @@ public class MapleParticleProvider implements ParticleProvider<SimpleParticleTyp
     @Nullable
     @Override
     public Particle createParticle(SimpleParticleType pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
-        MapleCherryLeavesParticle exampleParticle = new MapleCherryLeavesParticle(pLevel, pX, pY, pZ, pType.getSpeed(),pType.getColor(),pType.getDiameter());
-        // 随机选择一张图片作为纹理图
+        MapleCherryLeavesParticle exampleParticle = new MapleCherryLeavesParticle(pLevel, pX, pY, pZ, sprites);
         exampleParticle.pickSprite(this.sprites);
-        // 返回创建好的粒子
         return exampleParticle;
     }
 }

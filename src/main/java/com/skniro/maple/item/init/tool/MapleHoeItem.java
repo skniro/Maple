@@ -3,82 +3,92 @@ package com.skniro.maple.item.init.tool;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
-import net.minecraft.world.event.GameEvent.Emitter;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.common.ToolAction;
+import net.minecraftforge.common.ToolActions;
 
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class MapleHoeItem extends MiningToolItem {
-    protected static final Map<Block, Pair<Predicate<ItemUsageContext>, Consumer<ItemUsageContext>>> TILLING_ACTIONS;
+public class MapleHoeItem extends DiggerItem {
+    protected static final Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> TILLING_ACTIONS;
 
-    public MapleHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-        super((float)attackDamage, attackSpeed, material, BlockTags.HOE_MINEABLE, settings);
+    public MapleHoeItem(Tier material, int attackDamage, float attackSpeed, Properties settings) {
+        super((float)attackDamage, attackSpeed, material, BlockTags.MINEABLE_WITH_HOE, settings);
     }
 
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        World world = context.getWorld();
-        BlockPos blockPos = context.getBlockPos();
-        Pair<Predicate<ItemUsageContext>, Consumer<ItemUsageContext>> pair = (Pair)TILLING_ACTIONS.get(world.getBlockState(blockPos).getBlock());
+    public InteractionResult useOn(UseOnContext context) {
+        Level level = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
+        BlockState toolModifiedState = level.getBlockState(blockpos).getToolModifiedState(context, ToolActions.HOE_TILL, false);
+        Pair<Predicate<UseOnContext>, Consumer<UseOnContext>> pair = toolModifiedState == null ? null : Pair.of((ctx) -> {
+            return true;
+        }, changeIntoState(toolModifiedState));
         if (pair == null) {
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         } else {
-            Predicate<ItemUsageContext> predicate = (Predicate)pair.getFirst();
-            Consumer<ItemUsageContext> consumer = (Consumer)pair.getSecond();
+            Predicate<UseOnContext> predicate = (Predicate)pair.getFirst();
+            Consumer<UseOnContext> consumer = (Consumer)pair.getSecond();
             if (predicate.test(context)) {
-                PlayerEntity playerEntity = context.getPlayer();
-                world.playSound(playerEntity, blockPos, SoundEvents.ITEM_HOE_TILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                if (!world.isClient) {
+                Player player = context.getPlayer();
+                level.playSound(player, blockpos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                if (!level.isClientSide) {
                     consumer.accept(context);
-                    if (playerEntity != null) {
-                        context.getStack().damage(1, playerEntity, (p) -> {
-                            p.sendToolBreakStatus(context.getHand());
+                    if (player != null) {
+                        context.getItemInHand().hurtAndBreak(1, player, (p_150845_) -> {
+                            p_150845_.broadcastBreakEvent(context.getHand());
                         });
                     }
                 }
 
-                return ActionResult.success(world.isClient);
+                return InteractionResult.sidedSuccess(level.isClientSide);
             } else {
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
             }
         }
     }
 
-    public static Consumer<ItemUsageContext> createTillAction(BlockState result) {
+    public static Consumer<UseOnContext> changeIntoState(BlockState result) {
         return (context) -> {
-            context.getWorld().setBlockState(context.getBlockPos(), result, 11);
-            context.getWorld().emitGameEvent(GameEvent.BLOCK_CHANGE, context.getBlockPos(), Emitter.of(context.getPlayer(), result));
+            context.getLevel().setBlock(context.getClickedPos(), result, 11);
+            context.getLevel().gameEvent(GameEvent.BLOCK_CHANGE, context.getClickedPos(), GameEvent.Context.of(context.getPlayer(), result));
         };
     }
 
-    public static Consumer<ItemUsageContext> createTillAndDropAction(BlockState result, ItemConvertible droppedItem) {
+    public static Consumer<UseOnContext> changeIntoStateAndDropItem(BlockState result, ItemLike droppedItem) {
         return (context) -> {
-            context.getWorld().setBlockState(context.getBlockPos(), result, 11);
-            context.getWorld().emitGameEvent(GameEvent.BLOCK_CHANGE, context.getBlockPos(), Emitter.of(context.getPlayer(), result));
-            Block.dropStack(context.getWorld(), context.getBlockPos(), context.getSide(), new ItemStack(droppedItem));
+            context.getLevel().setBlock(context.getClickedPos(), result, 11);
+            context.getLevel().gameEvent(GameEvent.BLOCK_CHANGE, context.getClickedPos(), GameEvent.Context.of(context.getPlayer(), result));
+            Block.popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(droppedItem));
         };
     }
 
-    public static boolean canTillFarmland(ItemUsageContext context) {
-        return context.getSide() != Direction.DOWN && context.getWorld().getBlockState(context.getBlockPos().up()).isAir();
+    public static boolean onlyIfAirAbove(UseOnContext  context) {
+        return context.getClickedFace() != Direction.DOWN && context.getLevel().getBlockState(context.getClickedPos().above()).isAir();
+    }
+
+    public boolean canPerformAction(ItemStack stack, ToolAction toolAction) {
+        return ToolActions.DEFAULT_HOE_ACTIONS.contains(toolAction);
     }
 
     static {
-        TILLING_ACTIONS = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Pair.of(HoeItem::canTillFarmland, createTillAction(Blocks.FARMLAND.getDefaultState())), Blocks.DIRT_PATH, Pair.of(HoeItem::canTillFarmland, createTillAction(Blocks.FARMLAND.getDefaultState())), Blocks.DIRT, Pair.of(HoeItem::canTillFarmland, createTillAction(Blocks.FARMLAND.getDefaultState())), Blocks.COARSE_DIRT, Pair.of(HoeItem::canTillFarmland, createTillAction(Blocks.DIRT.getDefaultState())), Blocks.ROOTED_DIRT, Pair.of((itemUsageContext) -> {
+        TILLING_ACTIONS = Maps.newHashMap(ImmutableMap.of(Blocks.GRASS_BLOCK, Pair.of(MapleHoeItem::onlyIfAirAbove, changeIntoState(Blocks.FARMLAND.defaultBlockState())), Blocks.DIRT_PATH, Pair.of(HoeItem::onlyIfAirAbove, changeIntoState(Blocks.FARMLAND.defaultBlockState())), Blocks.DIRT, Pair.of(HoeItem::onlyIfAirAbove, changeIntoState(Blocks.FARMLAND.defaultBlockState())), Blocks.COARSE_DIRT, Pair.of(HoeItem::onlyIfAirAbove, changeIntoState(Blocks.DIRT.defaultBlockState())), Blocks.ROOTED_DIRT, Pair.of((pair) -> {
             return true;
-        }, createTillAndDropAction(Blocks.DIRT.getDefaultState(), Items.HANGING_ROOTS))));
+        }, changeIntoStateAndDropItem(Blocks.DIRT.defaultBlockState(), Items.HANGING_ROOTS))));
     }
 }

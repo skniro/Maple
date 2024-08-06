@@ -1,11 +1,11 @@
 package com.skniro.maple.item.init.tool;
 
-import net.minecraft.item.MiningToolItem;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Tier;
 
-public class MaplePickaxeItem extends MiningToolItem {
-    public MaplePickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-        super((float)attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
+public class MaplePickaxeItem extends DiggerItem {
+    public MaplePickaxeItem(Tier material, int attackDamage, float attackSpeed, Properties settings) {
+        super((float)attackDamage, attackSpeed, material, BlockTags.MINEABLE_WITH_PICKAXE, settings);
     }
 }

@@ -1,12 +1,17 @@
 package com.skniro.maple.fluid;
 
 import com.skniro.maple.Maple;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class MapleFluids {
-        public static FlowableFluid STILL_Hot_Spring;
+
+    public static RegistryObject<FlowingFluid> STILL_Hot_Spring;
         public static FlowableFluid FLOWING_Hot_Spring;
 
         public static void registerFluids() {

@@ -2,16 +2,16 @@ package com.skniro.maple.item.init.tool;
 
 
 import com.skniro.maple.item.MapleArmorItems;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Supplier;
 
-public enum MapleToolMaterials implements ToolMaterial {
+public enum MapleToolMaterials implements Tier {
     Cherry(3, 3231, 12.0F, 3.0F, 22, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{MapleArmorItems.Cherry_INGOT});
+        return Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()});
     });
 
     private final int miningLevel;
@@ -19,34 +19,34 @@ public enum MapleToolMaterials implements ToolMaterial {
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
+    private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    private MapleToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    private MapleToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy(repairIngredient);
+        this.repairIngredient = new LazyLoadedValue(repairIngredient);
     }
 
-    public int getDurability() {
+    public int getUses() {
         return this.itemDurability;
     }
 
-    public float getMiningSpeedMultiplier() {
+    public float getSpeed() {
         return this.miningSpeed;
     }
 
-    public float getAttackDamage() {
+    public float getAttackDamageBonus() {
         return this.attackDamage;
     }
 
-    public int getMiningLevel() {
+    public int getLevel() {
         return this.miningLevel;
     }
 
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 
