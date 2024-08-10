@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "maple:sakura",
+  "biomes": "#maple:is_sakura",
   "features": "maple:sakura_carpet_placed",
   "step": "vegetal_decoration"
 }

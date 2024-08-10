@@ -9,6 +9,7 @@ import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
+import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.particle.MapleParticleProvider;
@@ -76,6 +77,7 @@ public class Maple{
         MapleItems.registerModItems(modEventBus);
         GlassCupItems.registerMapleGlassItems(modEventBus);
         MapleFoodComponents.registerModFoodItems(modEventBus);
+        MapleArmorItems.registerMapleArmorItems(modEventBus);
 
         MapleFluids.registerFluids(modEventBus);
         MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
@@ -88,8 +90,8 @@ public class Maple{
         MapleConfiguredFeatures.registerModConfiguredFeatures(modEventBus);
 
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
-        MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
 
+        MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
