@@ -7,6 +7,7 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,9 +15,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -164,15 +163,15 @@ public class MapleConfiguredFeatures {
 
         //Leave carpet
         Red_Maple_Carpet_KEY = CONFIGURED_FEATURES.register("red_maple_carpet",
-                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.RED_MAPLE_CARPET.get().defaultBlockState()))))));
+                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET.get().defaultBlockState()))))));
         Maple_Carpet_KEY = CONFIGURED_FEATURES.register("maple_carpet",
-                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.Maple_CARPET.get().defaultBlockState()))))));
+                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET.get().defaultBlockState()))))));
         Sakura_Carpet_KEY = CONFIGURED_FEATURES.register("sakura_carpet",
-                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchFeatureConfig(30, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(MapleBlocks.SAKURA_CARPET.get().defaultBlockState()))))));
+                () -> new ConfiguredFeature<>(Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET.get().defaultBlockState()))))));
 
         //Lake
         LAKE_HOT_SPRING = CONFIGURED_FEATURES.register("lake_hot_spring",
-                () -> new ConfiguredFeature<>(Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(MapleFluidBlockOrItem.Hot_Spring_BLOCK), BlockStateProvider.of(Blocks.GRASS_BLOCK.get().defaultBlockState())));
+                () -> new ConfiguredFeature<>(Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(MapleFluidBlockOrItem.Hot_Spring_BLOCK.get()), BlockStateProvider.simple(Blocks.GRASS_BLOCK.defaultBlockState()))));
 
 
 

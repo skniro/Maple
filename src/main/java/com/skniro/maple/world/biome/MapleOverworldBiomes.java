@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
@@ -67,7 +68,7 @@ public class MapleOverworldBiomes extends Region {
     public static Biome createSakura() {
         BiomeGenerationSettings.Builder lookupBackedBuilder = new BiomeGenerationSettings.Builder();
         MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).spawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
         addBasicFeatures(lookupBackedBuilder);
         BiomeDefaultFeatures.addPlainGrass(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultOres(lookupBackedBuilder);
@@ -91,9 +92,15 @@ public class MapleOverworldBiomes extends Region {
         BiomeDefaultFeatures.addSurfaceFreezing(generationSettings);
     }
 
+    protected static int getSkyColor(float temperature) {
+        float f = temperature / 3.0F;
+        f = Mth.clamp(f, -1.0F, 1.0F);
+        return Mth.hsvToRgb(0.62222224F - f * 0.05F, 0.5F + f * 0.1F, 1.0F);
+    }
 
-    private static Biome createBiome(Biome.Precipitation precipitation, float temperature, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColor, @Nullable Integer foliageColor, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
-        BiomeSpecialEffects.Builder builder = (new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(getSkyColor(temperature)).moodSound(BiomeMoodSound.CAVE).music(music);
+
+    private static Biome createBiome(Biome.Precipitation precipitation, float temperature, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColor, @Nullable Integer foliageColor, MobSpawnSettings.Builder spawnSettings, BiomeGenerationSettings.Builder generationSettings, @Nullable Music music) {
+        BiomeSpecialEffects.Builder builder = (new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(getSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music);
         if (grassColor != null) {
             builder.grassColorOverride(grassColor);
         }
@@ -102,7 +109,7 @@ public class MapleOverworldBiomes extends Region {
             builder.foliageColorOverride(foliageColor);
         }
 
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).specialEffects(builder.build()).mobSpawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
 
         @Override

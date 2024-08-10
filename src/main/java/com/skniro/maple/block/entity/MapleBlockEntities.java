@@ -19,7 +19,9 @@ public class MapleBlockEntities {
                             MapleSignBlocks.Maple_SIGN.get(),
                             MapleSignBlocks.Maple_WALL_SIGN.get(),
                             MapleSignBlocks.CHERRY_SIGN.get(),
-                            MapleSignBlocks.CHERRY_WALL_SIGN.get()).build(null));
+                            MapleSignBlocks.CHERRY_WALL_SIGN.get(),
+                            MapleSignBlocks.GINKGO_SIGN.get(),
+                            MapleSignBlocks.GINKGO_WALL_SIGN.get()).build(null));
 
 
     public static void registerMapleBlockEntities(IEventBus eventBus) {

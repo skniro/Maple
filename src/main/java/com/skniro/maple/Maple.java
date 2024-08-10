@@ -6,6 +6,8 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntities;
 import com.skniro.maple.block.entity.MapleSignTypes;
+import com.skniro.maple.fluid.MapleFluidBlockOrItem;
+import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
@@ -75,6 +77,10 @@ public class Maple{
         GlassCupItems.registerMapleGlassItems(modEventBus);
         MapleFoodComponents.registerModFoodItems(modEventBus);
 
+        MapleFluids.registerFluids(modEventBus);
+        MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
+        MapleFluidBlockOrItem.registerFluidItems(modEventBus);
+
         MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
@@ -82,6 +88,7 @@ public class Maple{
         MapleConfiguredFeatures.registerModConfiguredFeatures(modEventBus);
 
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
+        MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in
@@ -118,6 +125,7 @@ public class Maple{
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
             event.register(MapleParticleTypes.CHERRY_LEAVES.get(), MapleParticleProvider::new);
+            event.register(MapleParticleTypes.SAKURA_LEAVES.get(), MapleParticleProvider::new);
         }
     }
 

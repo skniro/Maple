@@ -77,7 +77,7 @@ public class MaplePlacedFeatures {
 
         LAKE_HOT_SPRING_SURFACE= PLACED_FEATURES.register("lake_hot_spring_surface",
                 () -> new PlacedFeature(MapleConfiguredFeatures.LAKE_HOT_SPRING.getHolder().get(),
-                RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP));
+                        MapleLakeSurfaceSquaredWithCount()));
 
         Coal_ORE_PLACED_KEY = PLACED_FEATURES.register("coal_ore_placed",
                 () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Coal_ORE_KEY.getHolder().get(),
@@ -121,18 +121,15 @@ public class MaplePlacedFeatures {
 
         Sakura_carpet_PLACED_KEY= PLACED_FEATURES.register("sakura_carpet_placed",
                 () -> new PlacedFeature(MapleConfiguredFeatures.Sakura_Carpet_KEY.getHolder().get(),
-                NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
-                SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+                        MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
 
         Maple_carpet_PLACED_KEY= PLACED_FEATURES.register("maple_carpet_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_Carpet_KEY,
-                NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
-                SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_Carpet_KEY.getHolder().get(),
+                        MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
 
         Red_Maple_carpet_PLACED_KEY= PLACED_FEATURES.register("red_maple_carpet_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Red_Maple_Carpet_KEY,
-                NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
-                SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+                () -> new PlacedFeature(MapleConfiguredFeatures.Red_Maple_Carpet_KEY.getHolder().get(),
+                MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
 
     }
 
@@ -144,6 +141,13 @@ public class MaplePlacedFeatures {
     }
     public static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_) {
         return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
+    }
+    public static List<PlacementModifier> MapleLakeSurfaceSquaredWithCount() {
+        return List.of(InSquarePlacement.spread(),RarityFilter.onAverageOnceEvery(100), PlacementUtils.HEIGHTMAP);
+    }
+    public static List<PlacementModifier> MapleCarpetNoiseThresholdCount(double noiseLevel, int belowNoise, int aboveNoise) {
+        return List.of(NoiseThresholdCountPlacement.of(noiseLevel, belowNoise, aboveNoise),
+        InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
     public static void registerMaplePlacedFeatures(IEventBus eventBus) {
         PLACED_FEATURES.register(eventBus);
