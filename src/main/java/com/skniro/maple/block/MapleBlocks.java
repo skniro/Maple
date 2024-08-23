@@ -152,19 +152,19 @@ public class MapleBlocks {
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.of(Material.WOOD).mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
 
     //1.3.0
-    public static final Block GINKGO_LOG = registerBlock("ginkgo_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final Block GINKGO_LOG = registerBlock("ginkgo_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block STRIPPED_GINKGO_LOG = registerBlock("stripped_ginkgo_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block STRIPPED_GINKGO_WOOD = registerBlock("stripped_ginkgo_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block GINKGO_WOOD = registerBlock("ginkgo_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",new SaplingBlock(new RedMapleSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block GINKGO_SAPLING = registerBlock("ginkgo_sapling",new SaplingBlock(new GinkgoSaplingGenerator(),FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), Maple.Maple_Group);
     public static final Block RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.RED)), Maple.Maple_Group);
     public static final Block GINKGO_LEAVES = registerBlock("ginkgo_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block GINKGO_PLANKS = registerBlock("ginkgo_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block POTTED_GINKGO_SAPLING = registerBlockWithoutItem("potted_ginkgo_sapling",
