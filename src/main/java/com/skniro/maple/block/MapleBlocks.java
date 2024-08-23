@@ -19,21 +19,21 @@ import net.minecraft.util.Identifier;
 
 public class MapleBlocks {
     //LOG_Block
-    public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final Block MAPLE_LOG = registerBlock("maple_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).mapColor(MapColor.BROWN)), Maple.Maple_Group);
     public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.BROWN)), Maple.Maple_Group);
     public static final Block STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.BROWN)), Maple.Maple_Group);
     public static final Block MAPLE_WOOD = registerBlock("maple_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD).mapColor(MapColor.BROWN)), Maple.Maple_Group);
 
-    public static final Block GINKGO_LOG = registerBlock("ginkgo_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
+    public static final Block GINKGO_LOG = registerBlock("ginkgo_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block STRIPPED_GINKGO_LOG = registerBlock("stripped_ginkgo_log",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block STRIPPED_GINKGO_WOOD = registerBlock("stripped_ginkgo_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
     public static final Block GINKGO_WOOD = registerBlock("ginkgo_wood",
-            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD)), Maple.Maple_Group);
+            new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_WOOD).mapColor(MapColor.PALE_YELLOW)), Maple.Maple_Group);
 
 
     public static final Block CHERRY_LOG = registerBlock("cherry_log",new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_LOG)), Maple.Maple_Group);
@@ -64,17 +64,17 @@ public class MapleBlocks {
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.RED)), Maple.Maple_Group);
 
     public static final Block GINKGO_LEAVES = registerBlock("ginkgo_leaves",
-            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
-            new CherryLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), Maple.Maple_Group);
+            new CherryLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK)), Maple.Maple_Group);
     public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
-            new MapleSakuraLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).luminance((state) -> 8)), Maple.Maple_Group);
+            new MapleSakuraLeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK).luminance((state) -> 8)), Maple.Maple_Group);
 
     //PLANKS Block
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).mapColor(MapColor.BROWN)), Maple.Maple_Group);
     public static final Block CHERRY_PLANKS = registerBlock("cherry_planks",
-            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS)), Maple.Maple_Group);
+            new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).mapColor(MapColor.PINK)), Maple.Maple_Group);
     public static final Block GINKGO_PLANKS = registerBlock("ginkgo_planks",
             new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block BAMBOO_PLANKS = registerBlock("bamboo_planks",
@@ -122,11 +122,11 @@ public class MapleBlocks {
 
    //SLAB
    public static final Block GINKGO_SLAB = registerBlock("ginkgo_slab",
-           new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+           new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_YELLOW).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block CHERRY_SLAB = registerBlock("cherry_slab",
-            new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block MAPLE_SLAB = registerBlock("maple_slab",
-            new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
+            new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_SLAB = registerBlock("bamboo_slab",
             new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).strength(2.0f, 3.0f).sounds(BlockSoundGroup.WOOD)), Maple.Maple_Group);
     public static final Block BAMBOO_MOSAIC_SLAB = registerBlock("bamboo_mosaic_slab",
@@ -153,21 +153,21 @@ public class MapleBlocks {
 
     //Door
     public static final Block GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
-            new DoorBlock(AbstractBlock.Settings.create().strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),MapleBlockSetType.GINKGO));
+            new DoorBlock(AbstractBlock.Settings.create().mapColor(GINKGO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),MapleBlockSetType.GINKGO));
     public static final Block MAPLE_DOOR = registerBlockWithoutItem("maple_door",
-            new DoorBlock(AbstractBlock.Settings.create().strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),BlockSetType.CHERRY));
+            new DoorBlock(AbstractBlock.Settings.create().mapColor(MAPLE_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),BlockSetType.CHERRY));
     public static final Block CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
-            new DoorBlock(AbstractBlock.Settings.create().strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),MapleBlockSetType.MAPLE));
+            new DoorBlock(AbstractBlock.Settings.create().mapColor(CHERRY_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),MapleBlockSetType.MAPLE));
     public static final Block BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
             new DoorBlock(AbstractBlock.Settings.create().mapColor(BAMBOO_PLANKS.getDefaultMapColor()).strength(3.0f).sounds(BlockSoundGroup.WOOD).nonOpaque(),BlockSetType.BAMBOO));
 
     //TRAPDOOR
     public static final Block GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque(),BlockSetType.CHERRY), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).nonOpaque(),BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque(),BlockSetType.CHERRY), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_PINK).strength(3.0F).nonOpaque(),BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
-            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).strength(3.0F).nonOpaque(),MapleBlockSetType.MAPLE), Maple.Maple_Group);
+            new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(3.0F).nonOpaque(),MapleBlockSetType.MAPLE), Maple.Maple_Group);
     public static final Block BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
             new TrapdoorBlock(AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).strength(3.0f).nonOpaque(),BlockSetType.BAMBOO), Maple.Maple_Group);
 
@@ -186,7 +186,7 @@ public class MapleBlocks {
     public static final Block RICE = registerBlockWithoutItem("rice_plant",new RiceBlock(AbstractBlock.Settings.create().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)));
 
     //FlowerBlock
-    public static final Block PINK_PETALS = registerBlock("pink_petals", new FlowerbedBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
+    public static final Block PINK_PETALS = registerBlock("pink_petals", new FlowerbedBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).noCollision().sounds(BlockSoundGroup.GRASS)),Maple.Maple_Group);
 
 
     public static final Block CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", new ChiseledBookshelfBlock(AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).strength(1.5F).sounds(BlockSoundGroup.WOOD)),Maple.Maple_Group);
