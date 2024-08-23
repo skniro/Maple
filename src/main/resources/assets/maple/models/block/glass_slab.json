@@ -4,5 +4,6 @@
     "bottom": "minecraft:block/glass",
     "side": "minecraft:block/glass",
     "top": "minecraft:block/glass"
-  }
+  },
+  "render_type": "minecraft:translucent"
 }

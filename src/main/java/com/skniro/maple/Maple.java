@@ -14,6 +14,7 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.particle.MapleParticleProvider;
 import com.skniro.maple.particle.MapleParticleTypes;
+import com.skniro.maple.util.MapleLootModifiers;
 import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import com.skniro.maple.world.biome.MapleTerrablender;
@@ -92,6 +93,8 @@ public class Maple{
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
 
         MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
+
+        MapleLootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

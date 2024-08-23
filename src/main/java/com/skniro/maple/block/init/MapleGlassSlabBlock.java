@@ -8,13 +8,16 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import javax.swing.text.html.BlockView;
-
 public class MapleGlassSlabBlock extends SlabBlock {
 
 
     public MapleGlassSlabBlock(Properties properties) {
-        super(properties);
+        super(properties.noOcclusion());
+    }
+
+    @Override
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
     @Override

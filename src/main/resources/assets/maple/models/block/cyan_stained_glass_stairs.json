@@ -1,4 +1,5 @@
 {
+  "render_type": "minecraft:translucent",
   "parent": "minecraft:block/stairs",
   "textures": {
     "bottom": "minecraft:block/cyan_stained_glass",
