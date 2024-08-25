@@ -82,7 +82,7 @@ public class MapleBlocks {
             }, Maple.Maple_Group);
 
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).color(MaterialColor.COLOR_PINK))
+            () -> new MapleCherryLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).color(MaterialColor.COLOR_PINK))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -101,7 +101,7 @@ public class MapleBlocks {
             }, Maple.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).color(MaterialColor.COLOR_PINK).lightLevel((state) -> 8))
+            () -> new MapleSakuraLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).color(MaterialColor.COLOR_PINK).lightLevel((state) -> 8))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
