@@ -118,10 +118,12 @@ public class Maple{
             WoodType.register(MapleSignTypes.MAPLE);
             WoodType.register(MapleSignTypes.CHERRY);
             WoodType.register(MapleSignTypes.BAMBOO);
+            WoodType.register(MapleSignTypes.GINKGO);
             BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
             Sheets.addWoodType(MapleSignTypes.MAPLE);
             Sheets.addWoodType(MapleSignTypes.BAMBOO);
             Sheets.addWoodType(MapleSignTypes.CHERRY);
+            Sheets.addWoodType(MapleSignTypes.GINKGO);
         }
     }
 
