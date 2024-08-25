@@ -24,7 +24,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Anko_Dango =
             registerItem("anko_dango",
@@ -38,7 +38,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
     public static final RegistryObject<Item> Kinako_Dango =
             registerItem("kinako_dango",
                     ()-> new Item(
@@ -51,7 +51,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Zunda_Dango =
             registerItem("zunda_dango",
@@ -65,7 +65,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Mochi =
             registerItem("mochi",
@@ -79,7 +79,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> SakuraMochi =
             registerItem("sakura_mochi",
@@ -93,7 +93,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.6f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> TOFU =
             registerItem("tofu",
@@ -107,7 +107,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.1f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> MILK_ICECREAM =
             registerItem("milk_icecream",
@@ -121,7 +121,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.1f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Cooked_Rice =
             registerItem("cooked_rice",
@@ -135,7 +135,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.2f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Beef_Rice =
             registerItem("beef_rice",
@@ -149,7 +149,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.7f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
     public static final RegistryObject<Item> Cheese =
             registerItem("cheese",
@@ -163,7 +163,7 @@ public class MapleFoodComponents {
                                                     .saturationMod(0.3f)
                                                     .build()
                                             )
-                                    .tab(Maple.Maple_Group_Food)));
+                                    ));
 
 
 

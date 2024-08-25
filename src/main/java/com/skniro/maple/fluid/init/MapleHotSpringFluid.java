@@ -10,10 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,8 +26,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class MapleHotSpringFluid extends FlowingFluid {
     @Override
-    protected boolean canConvertToSource() {
-        return false;
+    protected boolean canConvertToSource(Level level) {
+        return level.getGameRules().getBoolean(GameRules.RULE_WATER_SOURCE_CONVERSION);
     }
 
     @Override

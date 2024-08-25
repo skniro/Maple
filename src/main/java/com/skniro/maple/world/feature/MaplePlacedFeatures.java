@@ -2,154 +2,139 @@ package com.skniro.maple.world.feature;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
-import net.minecraft.core.Registry;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
 
 
 public class MaplePlacedFeatures {
-    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
-            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Maple.MODID);
-    public static final RegistryObject<PlacedFeature> Maple_TREE_PLACED;
-    public static final RegistryObject<PlacedFeature> CHERRY_TREE_PLACED;
-    public static final RegistryObject<PlacedFeature> SAKURA_TREE_PLACED;
-    public static final RegistryObject<PlacedFeature> Maple_TREE_CHECKED;
-    public static final RegistryObject<PlacedFeature> CHERRY_TREE_CHECKED;
-    public static final RegistryObject<PlacedFeature> SAKURA_TREE_CHECKED;
-    public static final RegistryObject<PlacedFeature> Red_Maple_TREE_CHECKED;
-    public static final RegistryObject<PlacedFeature> GINKGO_TREE_CHECKED;
-    public static final RegistryObject<PlacedFeature> Red_Maple_TREE_PLACED;
-    public static final RegistryObject<PlacedFeature> LAKE_HOT_SPRING_SURFACE;
-    public static final RegistryObject<PlacedFeature> Coal_ORE_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Copper_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Diamond_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Emerald_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Gold_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Iron_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Lapis_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Nether_Redstone_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Sakura_carpet_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Maple_carpet_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> Red_Maple_carpet_PLACED_KEY;
-    public static final RegistryObject<PlacedFeature> SALT_ORE_PLACED;
+    public static final ResourceKey<PlacedFeature> Maple_TREE_PLACED = registerKey("maple_tree_placed");
+    public static final ResourceKey<PlacedFeature> Red_Maple_TREE_PLACED = registerKey("red_maple_tree_placed");
+    public static final ResourceKey<PlacedFeature> CHERRY_TREE_PLACED= registerKey("cherry_tree_placed");;
+    public static final ResourceKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");;
+    public static final ResourceKey<PlacedFeature> MAGE_SAKURA_TREE_PLACED= registerKey("mage_sakura_tree_placed");;
+    public static final ResourceKey<PlacedFeature> SALT_ORE_PLACED = registerKey("ore_salt_overworld");
+    public static final ResourceKey<PlacedFeature> LAKE_HOT_SPRING_SURFACE = registerKey("lake_hot_spring_surface");
+    public static final ResourceKey<PlacedFeature> Coal_ORE_PLACED_KEY = registerKey("coal_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Copper_PLACED_KEY = registerKey("copper_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Diamond_PLACED_KEY = registerKey("diamond_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Emerald_PLACED_KEY = registerKey("emerald_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Gold_PLACED_KEY = registerKey("gold_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Iron_PLACED_KEY = registerKey("iron_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Lapis_PLACED_KEY = registerKey("lapis_ore_placed");
+    public static final ResourceKey<PlacedFeature> Nether_Redstone_PLACED_KEY = registerKey("redstone_ore_placed");
+    public static final ResourceKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
+    public static final ResourceKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
+    public static final ResourceKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
 
-    static{
-        SALT_ORE_PLACED = PLACED_FEATURES.register("ore_salt_overworld",
-                () -> new PlacedFeature(MapleConfiguredFeatures.SALT_ORE.getHolder().get(), commonOrePlacement(5,
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(30)))));
-        Maple_TREE_PLACED = PLACED_FEATURES.register("maple_tree_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_TREE_SPAWN.getHolder().get(),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
-        CHERRY_TREE_PLACED = PLACED_FEATURES.register("cherry_tree_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.CHERRY_TREE_SPAWN.getHolder().get(),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
-        SAKURA_TREE_PLACED = PLACED_FEATURES.register("sakura_tree_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.SAKURA_TREE_SPAWN.getHolder().get(),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1))));
+    public static void bootstrap(BootstapContext<PlacedFeature> context) {
+        var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        GINKGO_TREE_CHECKED = PLACED_FEATURES.register("ginkgo_tree_checked",
-                () -> new PlacedFeature(MapleConfiguredFeatures.GINKGO_TREE.getHolder().get(),
-                        List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.GINKGO_SAPLING.get()))));
-        Red_Maple_TREE_CHECKED = PLACED_FEATURES.register("red_maple_tree_checked",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Red_Maple_TREE.getHolder().get(),
-                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.RED_MAPLE_SAPLING.get()))));
-        Maple_TREE_CHECKED = PLACED_FEATURES.register("maple_tree_checked",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_TREE.getHolder().get(),
-                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.MAPLE_SAPLING.get()))));
-        CHERRY_TREE_CHECKED = PLACED_FEATURES.register("cherry_tree_checked",
-                () -> new PlacedFeature(MapleConfiguredFeatures.CHERRY_TREE.getHolder().get(),
-                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.CHERRY_SAPLING.get()))));
-        SAKURA_TREE_CHECKED = PLACED_FEATURES.register("sakura_tree_checked",
-                () -> new PlacedFeature(MapleConfiguredFeatures.SAKURA_TREE.getHolder().get(),
-                List.of(PlacementUtils.filteredByBlockSurvival(MapleBlocks.SAKURA_SAPLING.get()))));
+        Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.LAKE_HOT_SPRING);
 
-        Red_Maple_TREE_PLACED = PLACED_FEATURES.register("red_maple_tree_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Red_Maple_TREE_SPAWN.getHolder().get(),
-                        VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1))));
+        register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.SALT_ORE),
+                modifiersWithCount(12, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(30))));
 
-        LAKE_HOT_SPRING_SURFACE= PLACED_FEATURES.register("lake_hot_spring_surface",
-                () -> new PlacedFeature(MapleConfiguredFeatures.LAKE_HOT_SPRING.getHolder().get(),
-                        MapleLakeSurfaceSquaredWithCount()));
+        register(context, Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Maple_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING.get()));
 
-        Coal_ORE_PLACED_KEY = PLACED_FEATURES.register("coal_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Coal_ORE_KEY.getHolder().get(),
-                commonOrePlacement(40, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Red_Maple_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING.get()));
 
-        Nether_Copper_PLACED_KEY = PLACED_FEATURES.register("copper_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Copper_ORE_KEY.getHolder().get(),
-                commonOrePlacement(32, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.CHERRY_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING.get()));
 
-        Nether_Diamond_PLACED_KEY = PLACED_FEATURES.register("diamond_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Diamond_ORE_KEY.getHolder().get(),
-                commonOrePlacement(17, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.SAKURA_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING.get()));
 
-        Nether_Emerald_PLACED_KEY= PLACED_FEATURES.register("emerald_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Emerald_ORE_KEY.getHolder().get(),
-                commonOrePlacement(17, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.MAGE_SAKURA_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.00001f, 1), MapleBlocks.SAKURA_SAPLING.get()));
 
-        Nether_Gold_PLACED_KEY= PLACED_FEATURES.register("gold_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Gold_ORE_KEY.getHolder().get(),
-                commonOrePlacement(20, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilter.onAverageOnceEvery(100), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP);
+        register(context, Coal_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Coal_ORE_KEY),
+                modifiersWithCount(40, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Nether_Iron_PLACED_KEY= PLACED_FEATURES.register("iron_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Iron_ORE_KEY.getHolder().get(),
-                commonOrePlacement(32, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Copper_KEY),
+                modifiersWithCount(32, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Nether_Lapis_PLACED_KEY= PLACED_FEATURES.register("lapis_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Lapis_ORE_KEY.getHolder().get(),
-                commonOrePlacement(25, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Diamond_KEY),
+                modifiersWithCount(17, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Nether_Redstone_PLACED_KEY= PLACED_FEATURES.register("redstone_ore_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Nether_Redstone_ORE_KEY.getHolder().get(),
-                commonOrePlacement(20, // Veins per Chunk
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(256)))));
+        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Emerald_KEY),
+                modifiersWithCount(17, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Sakura_carpet_PLACED_KEY= PLACED_FEATURES.register("sakura_carpet_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Sakura_Carpet_KEY.getHolder().get(),
-                        MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
+        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Gold_KEY),
+                modifiersWithCount(20, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Maple_carpet_PLACED_KEY= PLACED_FEATURES.register("maple_carpet_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Maple_Carpet_KEY.getHolder().get(),
-                        MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
+        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures. Nether_Iron_KEY),
+                modifiersWithCount(32, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        Red_Maple_carpet_PLACED_KEY= PLACED_FEATURES.register("red_maple_carpet_placed",
-                () -> new PlacedFeature(MapleConfiguredFeatures.Red_Maple_Carpet_KEY.getHolder().get(),
-                MapleCarpetNoiseThresholdCount(-0.8, 4, 8)));
+        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Lapis_KEY),
+                modifiersWithCount(25, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
+
+        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
+                modifiersWithCount(20, // Veins per Chunk
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
+
+        register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Sakura_Carpet_KEY),
+                NoiseThresholdCountPlacement.of(-0.8, 4, 8),
+                InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+
+        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Maple_Carpet_KEY),
+                NoiseThresholdCountPlacement.of(-0.8, 4, 8),
+                InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+
+        register(context, Red_Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_Carpet_KEY),
+                NoiseThresholdCountPlacement.of(-0.8, 4, 8),
+                InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
     }
 
-    public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
-        return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
+    public static ResourceKey<PlacedFeature> registerKey(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Maple.MODID, name));
     }
-    public static List<PlacementModifier> commonOrePlacement(int p_195344_, PlacementModifier p_195345_) {
-        return orePlacement(CountPlacement.of(p_195344_), p_195345_);
+
+    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+                                 List<PlacementModifier> modifiers) {
+        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
-    public static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_) {
-        return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
+
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
+                                                                                          Holder<ConfiguredFeature<?, ?>> configuration,
+                                                                                          PlacementModifier... modifiers) {
+        register(context, key, configuration, List.of(modifiers));
     }
-    public static List<PlacementModifier> MapleLakeSurfaceSquaredWithCount() {
-        return List.of(InSquarePlacement.spread(),RarityFilter.onAverageOnceEvery(100), PlacementUtils.HEIGHTMAP);
+
+    // Used here because the vanilla ones are private
+    private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
+        return List.of(countModifier, InSquarePlacement.spread(), heightModifier, BiomeFilter.biome());
     }
-    public static List<PlacementModifier> MapleCarpetNoiseThresholdCount(double noiseLevel, int belowNoise, int aboveNoise) {
-        return List.of(NoiseThresholdCountPlacement.of(noiseLevel, belowNoise, aboveNoise),
-        InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+
+    private static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
+        return modifiers(CountPlacement.of(count), heightModifier);
     }
-    public static void registerMaplePlacedFeatures(IEventBus eventBus) {
-        PLACED_FEATURES.register(eventBus);
+
+    private static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {
+        return modifiers(RarityFilter.onAverageOnceEvery(chance), heightModifier);
     }
 }

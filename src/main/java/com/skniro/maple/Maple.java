@@ -5,7 +5,7 @@ import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntities;
-import com.skniro.maple.block.entity.MapleSignTypes;
+import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
@@ -15,12 +15,14 @@ import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.particle.MapleParticleProvider;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleLootModifiers;
-import com.skniro.maple.world.feature.MapleConfiguredFeatures;
-import com.skniro.maple.world.feature.MaplePlacedFeatures;
+import com.skniro.maple.world.biome.MapleGroveBiome;
+import com.skniro.maple.world.biome.MapleSakuraBiome;
 import com.skniro.maple.world.biome.MapleTerrablender;
+import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -35,6 +37,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import terrablender.api.Regions;
 
 import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
 import static com.skniro.maple.item.MapleItems.MapleSyrup;
@@ -87,9 +90,6 @@ public class Maple{
         MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
-        MaplePlacedFeatures.registerMaplePlacedFeatures(modEventBus);
-        MapleConfiguredFeatures.registerModConfiguredFeatures(modEventBus);
-
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
 
         MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
@@ -115,13 +115,11 @@ public class Maple{
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            WoodType.register(MapleSignTypes.MAPLE);
-            WoodType.register(MapleSignTypes.CHERRY);
-            WoodType.register(MapleSignTypes.BAMBOO);
+            WoodType.register(MapleWoodTypes.MAPLE);
+            WoodType.register(MapleWoodTypes.GINKGO);
             BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
-            Sheets.addWoodType(MapleSignTypes.MAPLE);
-            Sheets.addWoodType(MapleSignTypes.BAMBOO);
-            Sheets.addWoodType(MapleSignTypes.CHERRY);
+            Sheets.addWoodType(MapleWoodTypes.MAPLE);
+            Sheets.addWoodType(MapleWoodTypes.GINKGO);
         }
     }
 
@@ -129,8 +127,8 @@ public class Maple{
     public class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
-            event.register(MapleParticleTypes.CHERRY_LEAVES.get(), MapleParticleProvider::new);
-            event.register(MapleParticleTypes.SAKURA_LEAVES.get(), MapleParticleProvider::new);
+            Regions.register(new MapleGroveBiome(new ResourceLocation(Maple.MODID, "overworld_1"), 2));
+            Regions.register(new MapleSakuraBiome(new ResourceLocation(Maple.MODID, "overworld_2"), 2));
         }
     }
 

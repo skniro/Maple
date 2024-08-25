@@ -16,42 +16,42 @@ public class MapleItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
 
     public static final RegistryObject<Item> CHERRY_SIGN = registerItem("cherry_sign",
-            ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
+            ()-> new SignItem(new Item.Properties().stacksTo(16),
                     MapleSignBlocks.CHERRY_SIGN.get(), MapleSignBlocks.CHERRY_WALL_SIGN.get()));
     public static final RegistryObject<Item> MAPLE_SIGN = registerItem("maple_sign",
-            ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
+            ()-> new SignItem(new Item.Properties().stacksTo(16),
                     MapleSignBlocks.Maple_SIGN.get(),MapleSignBlocks.Maple_WALL_SIGN.get()));
     public static final RegistryObject<Item> BAMBOO_SIGN = registerItem("bamboo_sign",
-            ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
+            ()-> new SignItem(new Item.Properties().stacksTo(16),
                     MapleSignBlocks.BAMBOO_SIGN.get(),MapleSignBlocks.BAMBOO_WALL_SIGN.get()));
     public static final RegistryObject<Item> GINKGO_SIGN = registerItem("ginkgo_sign",
-            ()-> new SignItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(16),
+            ()-> new SignItem(new Item.Properties().stacksTo(16),
                     MapleSignBlocks.GINKGO_SIGN.get(),MapleSignBlocks.GINKGO_WALL_SIGN.get()));
 
 
     public static final RegistryObject<Item> CHERRY_DOOR = registerItem("cherry_door",
-            ()-> new DoubleHighBlockItem(MapleBlocks.CHERRY_DOOR.get(), new Item.Properties().tab(Maple.Maple_Group).stacksTo(16)));
+            ()-> new DoubleHighBlockItem(MapleBlocks.CHERRY_DOOR.get(), new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> MAPLE_DOOR = registerItem("maple_door",
-            ()-> new DoubleHighBlockItem(MapleBlocks.MAPLE_DOOR.get(), new Item.Properties().tab(Maple.Maple_Group).stacksTo(16)));
+            ()-> new DoubleHighBlockItem(MapleBlocks.MAPLE_DOOR.get(), new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> BAMBOO_DOOR = registerItem("bamboo_door",
-            ()-> new DoubleHighBlockItem(MapleBlocks.BAMBOO_DOOR.get(), new Item.Properties().tab(Maple.Maple_Group).stacksTo(16)));
+            ()-> new DoubleHighBlockItem(MapleBlocks.BAMBOO_DOOR.get(), new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> GINKGO_DOOR = registerItem("ginkgo_door",
-            ()-> new DoubleHighBlockItem(MapleBlocks.GINKGO_DOOR.get(), new Item.Properties().tab(Maple.Maple_Group).stacksTo(16)));
+            ()-> new DoubleHighBlockItem(MapleBlocks.GINKGO_DOOR.get(), new Item.Properties().stacksTo(16)));
 
 
     //Food Materials
     public static final RegistryObject<Item> Flour = registerItem("flour",
-            ()-> new Item(new Item.Properties().tab(Maple.Maple_Group_Food)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MapleSyrup = registerItem("maple_syrup",
-            ()-> new Item(new Item.Properties().tab(Maple.Maple_Group_Food)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> Cream = registerItem("cream",
-            ()-> new Item(new Item.Properties().tab(Maple.Maple_Group_Food)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MILK_BOTTOM = registerItem("milk_bottom",
-            ()-> new MilkBucketItem(new Item.Properties().stacksTo(16).tab(Maple.Maple_Group_Food)));
+            ()-> new MilkBucketItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> SOYBEAN = registerItem("soybean",
-            ()-> new Item(new Item.Properties().tab(Maple.Maple_Group_Food)));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> Salt = registerItem("salt",
-            ()-> new Item(new Item.Properties().tab(Maple.Maple_Group_Food)));
+            ()-> new Item(new Item.Properties()));
 
 /*
     //Boat
@@ -69,25 +69,25 @@ public class MapleItems {
 
     //Snowball
     public static final RegistryObject<Item> SNOWBALL_STONE = registerItem("snowball_stone",
-            ()->new StoneSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new StoneSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_ICE = registerItem("snowball_ice",
-            ()->new IceSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new IceSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_IRON = registerItem("snowball_iron",
-            ()->new IronSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new IronSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Gold = registerItem("snowball_gold",
-            ()->new GoldSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new GoldSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Diamond = registerItem("snowball_diamond",
-            ()->new DiamondSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new DiamondSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Compression = registerItem("snowball_compression",
-            ()->new StoneSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new StoneSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Teleporting = registerItem("snowball_teleporting",
-            ()->new TeleportingSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new TeleportingSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Confusion = registerItem("snowball_confusion",
-            ()->new ConfusionSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new ConfusionSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Poison = registerItem("snowball_poison",
-            ()->new PoisonSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new PoisonSnowballItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> SNOWBALL_Instant_Health = registerItem("snowball_instant_health",
-            ()->new InstantHealthSnowballItem(new Item.Properties().tab(Maple.Maple_Group).stacksTo(64)));
+            ()->new InstantHealthSnowballItem(new Item.Properties().stacksTo(64)));
 
 
 
@@ -98,7 +98,7 @@ public class MapleItems {
 
     //Seed
     public static final RegistryObject<Item> Rice = registerItem("rice",
-            ()-> new ItemNameBlockItem(MapleBlocks.RICE.get(), (new Item.Properties().tab(Maple.Maple_Group_Food))));
+            ()-> new ItemNameBlockItem(MapleBlocks.RICE.get(), (new Item.Properties())));
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
         RegistryObject<T> toReturn = ITEMS.register(name, item);

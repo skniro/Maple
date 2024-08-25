@@ -1,13 +1,8 @@
 package com.skniro.maple.particle;
 
-import com.mojang.math.Vector3d;
 import com.skniro.maple.Maple;
-import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

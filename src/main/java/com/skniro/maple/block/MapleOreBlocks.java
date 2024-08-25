@@ -8,8 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,9 +20,9 @@ public class MapleOreBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Maple.MODID);
 
     public static final RegistryObject<Block> Salt_Ore =registerBlock("salt_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)),Maple.Maple_Group);
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)),Maple.Maple_Group);
     public static final RegistryObject<Block> DEEPSLATE_Salt_Ore =registerBlock("deepslate_salt_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Salt_Ore.get()).color(MaterialColor.COLOR_GRAY).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(3, 7)),Maple.Maple_Group);
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Salt_Ore.get()).mapColor(MapColor.COLOR_GRAY).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(3, 7)),Maple.Maple_Group);
     public static final RegistryObject<Block> Nether_Coal_Ore = registerBlock("coal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE), UniformInt.of(2, 4)),Maple.Maple_Group);
     public static final RegistryObject<Block> Nether_Copper_Ore = registerBlock("copper_ore",
@@ -55,11 +54,7 @@ public class MapleOreBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
                                                                             CreativeModeTab tab) {
-        return MapleItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
-    }
-
-    private static RotatedPillarBlock createBambooBlock(MaterialColor topMaterialColor, MaterialColor sideMaterialColor, SoundType soundGroup) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).color(sideMaterialColor).strength(2.0f).sound(soundGroup));
+        return MapleItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void registerMapleOreBlocks(IEventBus eventBus) {
