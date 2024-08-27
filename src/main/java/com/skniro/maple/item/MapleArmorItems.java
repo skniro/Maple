@@ -42,16 +42,16 @@ public class MapleArmorItems {
 
     //Armor
     public static final RegistryObject<Item> Cherry_HELMET = registerItem("cherry_helmet",
-            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, EquipmentSlot.HEAD,
+            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, ArmorItem.Type.HELMET,
                     new Item.Properties())));
     public static final RegistryObject<Item> Cherry_CHESTPLATE = registerItem("cherry_chestplate",
-            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, EquipmentSlot.CHEST,
+            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties())));
     public static final RegistryObject<Item> Cherry_LEGGINGS = registerItem("cherry_leggings",
-            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, EquipmentSlot.LEGS,
+            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, ArmorItem.Type.LEGGINGS,
                     new Item.Properties())));
     public static final RegistryObject<Item> Cherry_BOOTS = registerItem("cherry_boots",
-            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, EquipmentSlot.FEET,
+            ()-> (new ArmorItem(MapleArmorMaterials.Cherry, ArmorItem.Type.BOOTS,
                     new Item.Properties())));
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {

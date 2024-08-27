@@ -2,32 +2,46 @@ package com.skniro.maple.item.init.armor;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
+import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
+import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum MapleArmorMaterials implements ArmorMaterial {
-        Cherry("cherry", 25, new int[] { 3, 8, 6, 3 }, 25,
-                SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()}));
+            Cherry("cherry", 25, (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266655_) -> {
+                p_266655_.put(ArmorItem.Type.BOOTS, 3);
+                p_266655_.put(ArmorItem.Type.LEGGINGS, 8);
+                p_266655_.put(ArmorItem.Type.CHESTPLATE, 8);
+                p_266655_.put(ArmorItem.Type.HELMET, 3);
+            }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
+                return Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()});
+            });
 
         private final String name;
         private final int durabilityMultiplier;
-        private final int[] protectionAmounts;
+        private final EnumMap<ArmorItem.Type, Integer> protectionAmounts;
         private final int enchantability;
         private final SoundEvent equipSound;
         private final float toughness;
         private final float knockbackResistance;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+        private final LazyLoadedValue<Ingredient> repairIngredient;
 
-        private static final int[] BASE_DURABILITY = { 13, 16, 16, 13 };
-
-        MapleArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
+        private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266653_) -> {
+           p_266653_.put(ArmorItem.Type.BOOTS, 13);
+           p_266653_.put(ArmorItem.Type.LEGGINGS, 15);
+          p_266653_.put(ArmorItem.Type.CHESTPLATE, 16);
+           p_266653_.put(ArmorItem.Type.HELMET, 11);
+        });
+        MapleArmorMaterials(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantability, SoundEvent equipSound,
                           float toughness, float knockbackResistance, Supplier repairIngredient) {
             this.name = name;
             this.durabilityMultiplier = durabilityMultiplier;
@@ -40,15 +54,13 @@ public enum MapleArmorMaterials implements ArmorMaterial {
         }
 
         @Override
-        public int getDurabilityForSlot(EquipmentSlot slot) {
-            return BASE_DURABILITY[slot.getIndex()] * this.durabilityMultiplier;
+        public int getDurabilityForType(ArmorItem.Type slot) {
+            return HEALTH_FUNCTION_FOR_TYPE.get(slot) * this.durabilityMultiplier;
         }
 
-        @Override
-        public int getDefenseForSlot(EquipmentSlot slot) {
-            return this.protectionAmounts[slot.getIndex()];
+        public int getDefenseForType(ArmorItem.Type slot) {
+            return this.protectionAmounts.get(slot);
         }
-
 
         @Override
         public int getEnchantmentValue() {

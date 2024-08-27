@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "wooden_sign",
+  "group": "hanging_sign",
   "key": {
     "#": {
-      "item": "maple:cherry_planks"
+      "item": "maple:stripped_maple_log"
     },
     "X": {
-      "item": "minecraft:stick"
+      "item": "minecraft:chain"
     }
   },
   "pattern": [
+    "X X",
     "###",
-    "###",
-    " X "
+    "###"
   ],
   "result": {
-    "count": 3,
-    "item": "minecraft:cherry_sign"
+    "count": 6,
+    "item": "maple:maple_hanging_sign"
   },
   "show_notification": true
 }

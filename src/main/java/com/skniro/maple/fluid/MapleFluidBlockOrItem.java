@@ -18,15 +18,15 @@ public class MapleFluidBlockOrItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
 
     public static RegistryObject<Block> Hot_Spring_BLOCK = registerBlock("hot_spring_block",
-            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.copy(Blocks.WATER).lightLevel((state) -> 8)), Maple.Maple_Group);
+            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.copy(Blocks.WATER).lightLevel((state) -> 8)));
 
     public static RegistryObject<Item> Hot_Spring_BUCKET = registerItem("hot_spring_bucket",
             ()-> new BucketItem(MapleFluids.STILL_Hot_Spring, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
 
@@ -35,8 +35,8 @@ public class MapleFluidBlockOrItem {
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,
-                                                                            CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block
+                                                                            ) {
         return MapleItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 

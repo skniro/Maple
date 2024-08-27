@@ -8,23 +8,16 @@ import com.skniro.maple.block.entity.MapleBlockEntities;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
-import com.skniro.maple.item.GlassCupItems;
-import com.skniro.maple.item.MapleArmorItems;
-import com.skniro.maple.item.MapleFoodComponents;
-import com.skniro.maple.item.MapleItems;
-import com.skniro.maple.particle.MapleParticleProvider;
+import com.skniro.maple.item.*;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.util.MapleLootModifiers;
 import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
 import com.skniro.maple.world.biome.MapleTerrablender;
-import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -39,27 +32,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import terrablender.api.Regions;
 
-import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
-import static com.skniro.maple.item.MapleItems.MapleSyrup;
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Maple.MODID)
 public class Maple{
-
-    public static final CreativeModeTab Maple_Group = new CreativeModeTab("maple.maple_group") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(MAPLE_LOG.get());
-        }
-    };
-
-    public static final CreativeModeTab Maple_Group_Food =  new CreativeModeTab("maple.maple_group_food") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(MapleSyrup.get());
-        }
-    };
-
     // Define mod id in a common place for everything to reference
     public static final String MODID = "maple";
     // Directly reference a slf4j logger
@@ -86,6 +61,8 @@ public class Maple{
         MapleFluids.registerFluids(modEventBus);
         MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
         MapleFluidBlockOrItem.registerFluidItems(modEventBus);
+
+        MapleCreativeModeTabs.registerMapleCreativeModeTabs(modEventBus);
 
         MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
