@@ -198,5 +198,12 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         //Sea Lantern
         addDrop(MapleBlocks.Iron_Sea_Lantern);
         addDrop(MapleBlocks.Gold_Sea_Lantern);
+
+        //Potted
+        addPottedPlantDrops(MapleBlocks.POTTED_SAKURA_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_RED_MAPLE_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_CHERRY_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_GINKGO_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_MAPLE_SAPLING);
     }
 }
