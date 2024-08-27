@@ -96,5 +96,12 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleOreBlocks.Salt_Ore, dropsWithSilkTouch(MapleOreBlocks.Salt_Ore, this.applyExplosionDecay((ItemConvertible)MapleOreBlocks.Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F,1.0F))))));
         addDrop(MapleOreBlocks.DEEPSLATE_Salt_Ore, dropsWithSilkTouch(MapleOreBlocks.DEEPSLATE_Salt_Ore, this.applyExplosionDecay((ItemConvertible)MapleOreBlocks.DEEPSLATE_Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F))))));
 
+
+        //Potted
+        addPottedPlantDrops(MapleBlocks.POTTED_SAKURA_SAPLING);
+        //addPottedPlantDrops(MapleBlocks.POTTED_RED_MAPLE_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_CHERRY_SAPLING);
+        //addPottedPlantDrops(MapleBlocks.POTTED_GINKGO_SAPLING);
+        addPottedPlantDrops(MapleBlocks.POTTED_MAPLE_SAPLING);
     }
 }
