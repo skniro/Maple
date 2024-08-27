@@ -21,6 +21,7 @@ import com.skniro.maple.world.gen.MapleLakeGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.gen.MapleOreGeneration;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 
 
 public class MapleContent {
@@ -67,6 +68,25 @@ public class MapleContent {
 
     public static void registerMapleLootTable() {
         MapleLootTableModifiers.modifyLootTables();
+    }
+
+    public static void registerMapleCompostableItems() {
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.CHERRY_SAPLING, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.MAPLE_SAPLING, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_SAPLING, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_SAPLING, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_SAPLING, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.CHERRY_LEAVES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.MAPLE_LEAVES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_LEAVES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_LEAVES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_LEAVES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.Maple_CARPET, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_CARPET, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_CARPET, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_CARPET, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleItems.Rice, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(MapleItems.SOYBEAN, 0.3f);
     }
 }
 
