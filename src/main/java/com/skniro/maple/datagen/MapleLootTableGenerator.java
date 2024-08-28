@@ -43,7 +43,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.CHERRY_SLAB);
         addDrop(MapleBlocks.CHERRY_STAIRS);
         addDrop(MapleBlocks.CHERRY_TRAPDOOR);
-        addDrop(MapleBlocks.CHERRY_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.STRIPPED_CHERRY_LOG);
         addDrop(MapleBlocks.STRIPPED_CHERRY_WOOD);
 
@@ -56,6 +55,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.MAPLE_WOOD);
         addDrop(MapleBlocks.MAPLE_DOOR,doorDrops(MapleBlocks.MAPLE_DOOR));
         addDrop(MapleBlocks.MAPLE_SAPLING);
+        addDrop(MapleBlocks.RED_MAPLE_SAPLING);
         addDrop(MapleBlocks.MAPLE_LEAVES,leavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.RED_MAPLE_LEAVES,leavesDrops(MapleBlocks.RED_MAPLE_LEAVES,MapleBlocks.RED_MAPLE_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.MAPLE_BUTTON);
@@ -66,7 +66,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.MAPLE_SLAB);
         addDrop(MapleBlocks.MAPLE_STAIRS);
         addDrop(MapleBlocks.MAPLE_TRAPDOOR);
-        addDrop(MapleBlocks.MAPLE_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.STRIPPED_MAPLE_LOG);
         addDrop(MapleBlocks.STRIPPED_MAPLE_WOOD);
 
@@ -78,7 +77,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.GINKGO_LOG);
         addDrop(MapleBlocks.GINKGO_WOOD);
         addDrop(MapleBlocks.GINKGO_DOOR,doorDrops(MapleBlocks.GINKGO_DOOR));
-        addDrop(MapleBlocks.MAPLE_SAPLING);
         addDrop(MapleBlocks.GINKGO_LEAVES,leavesDrops(MapleBlocks.GINKGO_LEAVES,MapleBlocks.GINKGO_SAPLING,SAPLING_DROP_CHANCE));
         addDrop(MapleBlocks.GINKGO_BUTTON);
         addDrop(MapleBlocks.GINKGO_FENCE);
@@ -88,7 +86,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.GINKGO_SLAB);
         addDrop(MapleBlocks.GINKGO_STAIRS);
         addDrop(MapleBlocks.GINKGO_TRAPDOOR);
-        addDrop(MapleBlocks.GINKGO_SAPLING,Blocks.FLOWER_POT);
+        addDrop(MapleBlocks.GINKGO_SAPLING);
         addDrop(MapleBlocks.STRIPPED_GINKGO_LOG);
         addDrop(MapleBlocks.STRIPPED_GINKGO_WOOD);
 
@@ -114,7 +112,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.STRIPPED_BAMBOO_BLOCK);
 
         //SAKURA
-        addDrop(MapleBlocks.SAKURA_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.SAKURA_SAPLING);
         addDrop(MapleBlocks.SAKURA_LEAVES, leavesDrops(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_SAPLING, SAPLING_DROP_CHANCE));
 
