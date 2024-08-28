@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "maple:salt_ore",
+  "features": "maple:ore_salt_overworld",
   "step": "underground_ores"
 }
