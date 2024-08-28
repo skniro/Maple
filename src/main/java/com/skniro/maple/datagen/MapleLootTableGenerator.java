@@ -39,7 +39,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.CHERRY_SLAB);
         addDrop(MapleBlocks.CHERRY_STAIRS);
         addDrop(MapleBlocks.CHERRY_TRAPDOOR);
-        addDrop(MapleBlocks.CHERRY_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.STRIPPED_CHERRY_LOG);
         addDrop(MapleBlocks.STRIPPED_CHERRY_WOOD);
 
@@ -59,7 +58,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.MAPLE_SLAB);
         addDrop(MapleBlocks.MAPLE_STAIRS);
         addDrop(MapleBlocks.MAPLE_TRAPDOOR);
-        addDrop(MapleBlocks.MAPLE_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.STRIPPED_MAPLE_LOG);
         addDrop(MapleBlocks.STRIPPED_MAPLE_WOOD);
 
@@ -84,7 +82,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(MapleBlocks.STRIPPED_BAMBOO_BLOCK);
 
         //SAKURA
-        addDrop(MapleBlocks.SAKURA_SAPLING,Blocks.FLOWER_POT);
         addDrop(MapleBlocks.SAKURA_SAPLING);
         addDrop(MapleBlocks.SAKURA_LEAVES, leavesDrops(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_SAPLING, SAPLING_DROP_CHANCE));
 
