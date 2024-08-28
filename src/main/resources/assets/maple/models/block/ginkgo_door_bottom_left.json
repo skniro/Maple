@@ -3,5 +3,6 @@
   "textures": {
     "bottom": "maple:block/ginkgo_door_bottom",
     "top": "maple:block/ginkgo_door_top"
-  }
+  },
+  "render_type": "cutout"
 }
