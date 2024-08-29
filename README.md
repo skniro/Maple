@@ -20,4 +20,4 @@ Submitting translations for Maple can be done via our [Crowdin page](https://cro
 This project is licensed under Creative Commons Attribution Share Alike 4.0 International.
 
 ## Mod Life Cycle
-[LifeCycle Web](https://lifecycle.sttsakara.top/)
+[LifeCycle Web](https://lifecycle.skniro.org/)
