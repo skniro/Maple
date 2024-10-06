@@ -1,13 +1,11 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "maple:deepslate_salt_ore",
-      "required": false
-    },
-    {
-      "id": "maple:salt_ore",
-      "required": false
-    }
+    "maple:deepslate_salt_ore",
+    "maple:salt_ore",
+    "maple:diamond_ore",
+    "maple:emerald_ore",
+    "maple:gold_ore",
+    "maple:redstone_ore"
   ]
 }
