@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:entity",
+  "type": "minecraft:block",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -28,11 +28,6 @@
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:survives_explosion"
-                }
-              ],
               "functions": [
                 {
                   "add": false,
@@ -42,6 +37,9 @@
                     "min": 2.0
                   },
                   "function": "minecraft:set_count"
+                },
+                {
+                  "function": "minecraft:explosion_decay"
                 }
               ],
               "name": "maple:salt"
