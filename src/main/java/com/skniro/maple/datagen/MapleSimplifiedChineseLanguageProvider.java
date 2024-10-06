@@ -119,14 +119,14 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         //Ores
         translationBuilder.add(MapleOreBlocks.DEEPSLATE_Salt_Ore,"深板岩盐矿石");
         translationBuilder.add(MapleOreBlocks.Salt_Ore,"盐矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Coal_Ore,"下届煤矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Copper_Ore,"下届铜矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Diamond_Ore,"下届钻石矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Emerald_Ore,"下届绿宝石矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Gold_Ore,"下届金矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Iron_Ore,"下届铁矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Lapis_Ore,"下届青金石矿石");
-        translationBuilder.add(MapleNetherOresBlocks.Nether_Redstone_Ore,"下届红石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Coal_Ore,"下界煤矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Copper_Ore,"下界铜矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Diamond_Ore,"下界钻石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Emerald_Ore,"下界绿宝石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Gold_Ore,"下界金矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Iron_Ore,"下界铁矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Lapis_Ore,"下界青金石矿石");
+        translationBuilder.add(MapleNetherOresBlocks.Nether_Redstone_Ore,"下界红石矿石");
 
         //Crop
         translationBuilder.add(MapleBlocks.RICE,"稻米作物");
