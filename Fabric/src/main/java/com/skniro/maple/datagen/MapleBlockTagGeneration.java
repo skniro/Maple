@@ -23,7 +23,7 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
     }
 
 
-    public class ModBlockTags {
+    public static class ModBlockTags {
         public static final TagKey<Block> C_SAPLING = TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "saplings"));
         public static final TagKey<Block> C_MAPLE_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "maple_logs"));
         public static final TagKey<Block> C_CHERRY_LOGS = TagKey.of(RegistryKeys.BLOCK, Identifier.of("c", "cherry_logs"));

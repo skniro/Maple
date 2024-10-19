@@ -45,7 +45,7 @@ public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock 
 
     @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
-        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && (Integer)state.getValue(FLOWER_AMOUNT) < 4 ? true : super.canBeReplaced(state, context);
+        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && (Integer) state.getValue(FLOWER_AMOUNT) < 4 || super.canBeReplaced(state, context);
     }
 
     public VoxelShape getShape(BlockState state, BlockView world, BlockPos pos, CollisionContext context) {

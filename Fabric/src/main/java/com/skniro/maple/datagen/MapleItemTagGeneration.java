@@ -26,7 +26,7 @@ public class MapleItemTagGeneration extends FabricTagProvider<Item> {
         super(dataGenerator, RegistryKeys.ITEM, completableFuture);
     }
 
-    public class ModItemTags {
+    public static class ModItemTags {
         public static final TagKey<Item> C_SAPLING = TagKey.of(RegistryKeys.ITEM, Identifier.of("c", "saplings"));
         public static final TagKey<Item> C_MAPLE_LOGS = TagKey.of(RegistryKeys.ITEM, Identifier.of("c", "maple_logs"));
         public static final TagKey<Item> C_CHERRY_LOGS = TagKey.of(RegistryKeys.ITEM, Identifier.of("c", "cherry_logs"));

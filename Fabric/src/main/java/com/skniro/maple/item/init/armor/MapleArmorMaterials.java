@@ -40,9 +40,8 @@ public class MapleArmorMaterials {
         ArmorItem.Type[] var9 = ArmorItem.Type.values();
         int var10 = var9.length;
 
-        for(int var11 = 0; var11 < var10; ++var11) {
-            ArmorItem.Type type = var9[var11];
-            enumMap.put(type, (Integer)defense.get(type));
+        for (ArmorItem.Type type : var9) {
+            enumMap.put(type, (Integer) defense.get(type));
         }
 
         return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.ofVanilla(id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));

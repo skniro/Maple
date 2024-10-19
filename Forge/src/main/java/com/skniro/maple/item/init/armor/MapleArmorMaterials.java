@@ -4,6 +4,7 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
 import net.minecraft.Util;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
