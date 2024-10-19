@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beef": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:beef"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cooked_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cooked_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:beef_rice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_rice",
+      "has_beef"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:beef_rice"
+    ]
+  }
+}

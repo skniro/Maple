@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ginkgo_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:ginkgo_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:ginkgo_carpet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ginkgo_leaves"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:ginkgo_carpet"
+    ]
+  }
+}

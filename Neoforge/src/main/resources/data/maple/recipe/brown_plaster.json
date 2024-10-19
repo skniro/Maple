@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": {
+      "item": "maple:plaster"
+    },
+    "i": {
+      "item": "minecraft:brown_dye"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bib",
+    "bbb"
+  ],
+  "result": {
+    "count": 8,
+    "id": "maple:brown_plaster"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": {
+      "item": "minecraft:sea_lantern"
+    },
+    "i": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bib",
+    "bbb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "maple:iron_sea_lantern"
+  }
+}
