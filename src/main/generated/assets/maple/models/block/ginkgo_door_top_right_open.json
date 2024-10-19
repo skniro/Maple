@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right_open",
-  "textures": {
-    "bottom": "maple:block/ginkgo_door_bottom",
-    "top": "maple:block/ginkgo_door_top"
-  }
-}

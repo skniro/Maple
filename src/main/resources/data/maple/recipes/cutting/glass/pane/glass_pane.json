@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:glass"
-    },
-    "result": "minecraft:glass_pane",
-    "count": 3
-}

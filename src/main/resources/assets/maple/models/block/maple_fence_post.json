@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_post",
-  "textures": {
-    "texture": "maple:block/maple_planks"
-  }
-}

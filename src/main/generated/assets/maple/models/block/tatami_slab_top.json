@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "maple:block/tatami",
-    "side": "maple:block/tatami",
-    "top": "maple:block/tatami"
-  }
-}
