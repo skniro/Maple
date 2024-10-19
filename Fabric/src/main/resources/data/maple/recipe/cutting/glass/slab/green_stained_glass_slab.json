@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:green_stained_glass"
+    },
+        "result": {
+        "id": "maple:green_stained_glass_slab",
+            "count": 2
+        }}

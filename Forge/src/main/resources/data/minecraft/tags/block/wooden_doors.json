@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "maple:maple_door",
+    "maple:bamboo_door",
+    "maple:cherry_door"
+  ]
+}

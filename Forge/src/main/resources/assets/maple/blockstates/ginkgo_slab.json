@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "maple:block/ginkgo_slab"
+    },
+    "type=double": {
+      "model": "maple:block/ginkgo_planks"
+    },
+    "type=top": {
+      "model": "maple:block/ginkgo_slab_top"
+    }
+  }
+}

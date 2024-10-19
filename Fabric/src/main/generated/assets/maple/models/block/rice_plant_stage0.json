@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "maple:block/rice_plant_stage0"
+  }
+}

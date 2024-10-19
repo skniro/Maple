@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "maple:deepslate_salt_ore",
+      "required": false
+    },
+    {
+      "id": "maple:salt_ore",
+      "required": false
+    }
+  ]
+}

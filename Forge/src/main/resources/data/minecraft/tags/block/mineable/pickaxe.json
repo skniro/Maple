@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "maple:salt_ore",
+    "maple:deepslate_salt_ore",
+    "maple:diamond_ore",
+    "maple:emerald_ore",
+    "maple:gold_ore",
+    "maple:redstone_ore",
+    "maple:iron_ore",
+    "maple:lapis_ore",
+    "maple:copper_ore",
+    "maple:coal_ore"
+  ]
+}

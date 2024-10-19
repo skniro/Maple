@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "maple:cream"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk_bottom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "maple:milk_bottom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk_icecream": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "maple:milk_icecream"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:milk_icecream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_milk_icecream",
+      "has_cream",
+      "has_milk_bottom",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:milk_icecream"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "maple:block/cherry_leaves"
+  },
+  "render_type": "cutout"
+}

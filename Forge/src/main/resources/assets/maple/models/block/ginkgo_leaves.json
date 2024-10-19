@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "maple:block/ginkgo_leaves"
+  },
+  "render_type": "cutout"
+}

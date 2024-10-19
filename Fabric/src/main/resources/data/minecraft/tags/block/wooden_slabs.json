@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "maple:maple_slab",
+    "maple:bamboo_slab",
+    "maple:cherry_slab",
+    "maple:ginkgo_slab"
+  ]
+}

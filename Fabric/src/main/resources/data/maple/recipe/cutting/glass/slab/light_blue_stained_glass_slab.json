@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:light_blue_stained_glass"
+    },
+        "result": {
+        "id": "maple:light_blue_stained_glass_slab",
+            "count": 2
+        }}

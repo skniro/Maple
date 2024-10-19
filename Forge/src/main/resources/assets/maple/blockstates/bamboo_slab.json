@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "maple:block/bamboo_slab"
+    },
+    "type=double": {
+      "model": "maple:block/bamboo_planks"
+    },
+    "type=top": {
+      "model": "maple:block/bamboo_slab_top"
+    }
+  }
+}

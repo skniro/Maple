@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "maple:block/cherry_slab"
+    },
+    "type=double": {
+      "model": "maple:block/cherry_planks"
+    },
+    "type=top": {
+      "model": "maple:block/cherry_slab_top"
+    }
+  }
+}
