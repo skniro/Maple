@@ -315,13 +315,13 @@ public class MapleBlocks {
     public static final Supplier<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(2.0F, 3.0F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final Supplier<Block> GINKGO_FENCE_GATE = registerBlock("ginkgo_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F), MapleWoodTypes.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new FenceGateBlock(MapleWoodTypes.GINKGO, BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
     public static final Supplier<Block> GINKGO_FENCE = registerBlock("ginkgo_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0f, 3.0f).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final Supplier<Block> GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD).noOcclusion(), MapleBlockSetType.GINKGO));
+            () -> new DoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
     public static final Supplier<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion(), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new TrapDoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
     public static final Supplier<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
 

@@ -21,7 +21,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -35,7 +35,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -48,7 +48,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -62,7 +62,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -76,7 +76,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -90,7 +90,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(6)
-                                                    .saturationMod(0.6f)
+                                                    .saturationModifier(0.6f)
                                                     .build()
                                             )
                                     ));
@@ -104,7 +104,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(1)
-                                                    .saturationMod(0.1f)
+                                                    .saturationModifier(0.1f)
                                                     .build()
                                             )
                                     ));
@@ -118,7 +118,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(1)
-                                                    .saturationMod(0.1f)
+                                                    .saturationModifier(0.1f)
                                                     .build()
                                             )
                                     ));
@@ -132,7 +132,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(2)
-                                                    .saturationMod(0.2f)
+                                                    .saturationModifier(0.2f)
                                                     .build()
                                             )
                                     ));
@@ -146,7 +146,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(11)
-                                                    .saturationMod(0.7f)
+                                                    .saturationModifier(0.7f)
                                                     .build()
                                             )
                                     ));
@@ -160,7 +160,7 @@ public class MapleFoodComponents {
                                             (new FoodProperties
                                                     .Builder()
                                                     .nutrition(3)
-                                                    .saturationMod(0.3f)
+                                                    .saturationModifier(0.3f)
                                                     .build()
                                             )
                                     ));

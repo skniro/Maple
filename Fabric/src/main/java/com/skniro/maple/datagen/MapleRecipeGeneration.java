@@ -113,7 +113,7 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.Sanshoku_Dango,1)
                 .input(Items.SUGAR)
                 .input(MapleFoodComponents.Mochi)
-                .input(Items.GRASS_BLOCK)
+                .input(Items.SHORT_GRASS)
                 .input(MapleBlocks.SAKURA_LEAVES)
                 .input(Items.BAMBOO)
                 .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Sanshoku_Dango),

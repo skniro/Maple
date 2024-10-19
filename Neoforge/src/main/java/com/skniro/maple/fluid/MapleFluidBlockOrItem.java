@@ -3,25 +3,24 @@ package com.skniro.maple.fluid;
 import com.skniro.maple.Maple;
 import com.skniro.maple.fluid.init.MapleHotSpringFluidBlock;
 import com.skniro.maple.item.MapleItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.Supplier;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
 public class MapleFluidBlockOrItem {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Maple.MODID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, Maple.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Maple.MODID);
 
     public static Supplier<Block> Hot_Spring_BLOCK = registerBlock("hot_spring_block",
-            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.copy(Blocks.WATER).lightLevel((state) -> 8)));
+            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WATER).lightLevel((state) -> 8)));
 
     public static Supplier<Item> Hot_Spring_BUCKET = registerItem("hot_spring_bucket",
-            ()-> new BucketItem(MapleFluids.STILL_Hot_Spring, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+            ()-> new BucketItem(MapleFluids.STILL_Hot_Spring.get(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
     private static <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> block) {

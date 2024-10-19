@@ -18,7 +18,7 @@ public class MapleFluidBlockOrItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
 
     public static RegistryObject<Block> Hot_Spring_BLOCK = registerBlock("hot_spring_block",
-            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.copy(Blocks.WATER).lightLevel((state) -> 8)));
+            ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WATER).lightLevel((state) -> 8)));
 
     public static RegistryObject<Item> Hot_Spring_BUCKET = registerItem("hot_spring_bucket",
             ()-> new BucketItem(MapleFluids.STILL_Hot_Spring, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));

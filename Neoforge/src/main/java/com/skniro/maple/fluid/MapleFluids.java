@@ -2,17 +2,16 @@ package com.skniro.maple.fluid;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.fluid.init.MapleHotSpringFluid;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.Supplier;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
 public class MapleFluids {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Maple.MODID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, Maple.MODID);
     public static Supplier<FlowingFluid> STILL_Hot_Spring= registerfluid("hot_spring",
             () -> new MapleHotSpringFluid.Still());
 

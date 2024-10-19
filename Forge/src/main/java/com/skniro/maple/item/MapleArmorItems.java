@@ -2,11 +2,7 @@ package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.init.armor.MapleArmorMaterials;
-import com.skniro.maple.item.init.tool.MapleAxeItem;
-import com.skniro.maple.item.init.tool.MapleHoeItem;
-import com.skniro.maple.item.init.tool.MaplePickaxeItem;
 import com.skniro.maple.item.init.tool.MapleToolMaterials;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

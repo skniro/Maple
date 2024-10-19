@@ -32,22 +32,22 @@ public class MapleBlocks {
 
     //LOG_Block
     public static final RegistryObject<Block> MAPLE_LOG = registerBlock("maple_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_WOOD = registerBlock("maple_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_BROWN)), MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_PINK)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_PINK)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_PINK)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_PINK)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_PINK)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_PINK)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_PINK)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_PINK)), MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> BAMBOO_BLOCK = registerBlock("bamboo_block",
             () -> createBambooBlock(MapColor.COLOR_YELLOW, MapColor.TERRACOTTA_GREEN, SoundType.WOOD), MapleCreativeModeTabs.Maple_Group);
@@ -59,15 +59,15 @@ public class MapleBlocks {
 
     //SAPLING Block
     public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
-            () -> new SaplingBlock(new MapleSaplingGenerator(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(new MapleSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
-            () -> new SaplingBlock(new CherrySaplingGenerator(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(new CherrySaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> SAKURA_SAPLING = registerBlock("sakura_sapling",
-            () -> new SaplingBlock(new SakuraSaplingGenerator(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(new SakuraSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
 
     //LEAVES Block
     public static final RegistryObject<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW))
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -86,7 +86,7 @@ public class MapleBlocks {
             }, MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK))
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -105,7 +105,7 @@ public class MapleBlocks {
             }, MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8))
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -126,7 +126,7 @@ public class MapleBlocks {
 
     //PLANKS Block
     public static final RegistryObject<Block> MAPLE_PLANKS = registerBlock("maple_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_BROWN))
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_BROWN))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -144,7 +144,7 @@ public class MapleBlocks {
                 }
             }, MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_PINK))
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_PINK))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -223,13 +223,13 @@ public class MapleBlocks {
 
     //STAIRS
     public static final RegistryObject<Block> CHERRY_STAIRS = registerBlock("cherry_stairs",
-            () -> new StairBlock(CHERRY_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHERRY_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
+            () -> new StairBlock(CHERRY_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(CHERRY_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
-            () -> new StairBlock(CHERRY_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHERRY_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
+            () -> new StairBlock(CHERRY_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(CHERRY_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_STAIRS = registerBlock("bamboo_stairs",
-            () -> new StairBlock(BAMBOO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(BAMBOO_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
+            () -> new StairBlock(BAMBOO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(BAMBOO_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_MOSAIC_STAIRS = registerBlock("bamboo_mosaic_stairs",
-            () -> new StairBlock(BAMBOO_MOSAIC.get().defaultBlockState(), BlockBehaviour.Properties.copy(BAMBOO_MOSAIC.get())), MapleCreativeModeTabs.Maple_Group);
+            () -> new StairBlock(BAMBOO_MOSAIC.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(BAMBOO_MOSAIC.get())), MapleCreativeModeTabs.Maple_Group);
 
 
    //SLAB
@@ -244,34 +244,34 @@ public class MapleBlocks {
 
     //FENCE
     public static final RegistryObject<Block> CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(CHERRY_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F), WoodType.CHERRY), MapleCreativeModeTabs.Maple_Group);
+            () -> new FenceGateBlock(WoodType.CHERRY, BlockBehaviour.Properties.of().mapColor(CHERRY_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CHERRY_FENCE = registerBlock("cherry_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().mapColor(CHERRY_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(MAPLE_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F), MapleWoodTypes.MAPLE), MapleCreativeModeTabs.Maple_Group);
+            () -> new FenceGateBlock(MapleWoodTypes.MAPLE, BlockBehaviour.Properties.of().mapColor(MAPLE_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_FENCE = registerBlock("maple_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().mapColor(MAPLE_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(BAMBOO_PLANKS.get().defaultMapColor()).strength(2.0f, 3.0f), WoodType.BAMBOO), MapleCreativeModeTabs.Maple_Group);
+            () -> new FenceGateBlock(WoodType.BAMBOO, BlockBehaviour.Properties.of().mapColor(BAMBOO_PLANKS.get().defaultMapColor()).strength(2.0f, 3.0f)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_FENCE = registerBlock("bamboo_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().mapColor(BAMBOO_PLANKS.get().defaultMapColor()).strength(2.0f, 3.0f).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
 
 
     //Door
     public static final RegistryObject<Block> MAPLE_DOOR = registerBlockWithoutItem("maple_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of().mapColor(MAPLE_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion(), MapleBlockSetType.MAPLE));
+            () -> new DoorBlock(MapleBlockSetType.MAPLE, BlockBehaviour.Properties.of().mapColor(MAPLE_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistryObject<Block> CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of().mapColor(CHERRY_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion(), BlockSetType.CHERRY));
+            () -> new DoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().mapColor(CHERRY_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistryObject<Block> BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of().mapColor(BAMBOO_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion(), BlockSetType.BAMBOO));
+            () -> new DoorBlock(BlockSetType.BAMBOO, BlockBehaviour.Properties.of().mapColor(BAMBOO_PLANKS.get().defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
 
     //TRAPDOOR
     public static final RegistryObject<Block> CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK).strength(3.0F).noOcclusion(), BlockSetType.CHERRY), MapleCreativeModeTabs.Maple_Group);
+            () -> new TrapDoorBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK).strength(3.0F).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN).strength(3.0F).noOcclusion(), MapleBlockSetType.MAPLE), MapleCreativeModeTabs.Maple_Group);
+            () -> new TrapDoorBlock(MapleBlockSetType.MAPLE, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN).strength(3.0F).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(3.0f).noOcclusion(), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new TrapDoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(3.0f).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
 
 
     //PRESSURE_PLATE
@@ -288,166 +288,166 @@ public class MapleBlocks {
 
     //1.3.0
     public static final RegistryObject<Block> GINKGO_LOG = registerBlock("ginkgo_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LOG).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_GINKGO_LOG = registerBlock("stripped_ginkgo_log",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> STRIPPED_GINKGO_WOOD = registerBlock("stripped_ginkgo_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_WOOD = registerBlock("ginkgo_wood",
-            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",
-            () -> new SaplingBlock(new RedMapleSaplingGenerator(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(new RedMapleSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SAPLING = registerBlock("ginkgo_sapling",
-            () -> new SaplingBlock(new GinkgoSaplingGenerator(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(new GinkgoSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_RED)), MapleCreativeModeTabs.Maple_Group);
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_RED)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_LEAVES = registerBlock("ginkgo_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), MapleCreativeModeTabs.Maple_Group);
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_PLANKS = registerBlock("ginkgo_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_YELLOW)), MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_YELLOW)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> POTTED_GINKGO_SAPLING = registerBlockWithoutItem("potted_ginkgo_sapling",
-            () -> new FlowerPotBlock(GINKGO_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
+            () -> new FlowerPotBlock(GINKGO_SAPLING.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
     public static final RegistryObject<Block> POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
-            () -> new FlowerPotBlock(RED_MAPLE_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
+            () -> new FlowerPotBlock(RED_MAPLE_SAPLING.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
     public static final RegistryObject<Block> GINKGO_BUTTON = registerBlock("ginkgo_button",
             () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD), MapleBlockSetType.GINKGO,30,true), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_STAIRS = registerBlock("ginkgo_stairs",
-            () -> new StairBlock(GINKGO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(GINKGO_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
+            () -> new StairBlock(GINKGO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(GINKGO_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(2.0F, 3.0F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE_GATE = registerBlock("ginkgo_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F), MapleWoodTypes.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new FenceGateBlock(MapleWoodTypes.GINKGO, BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_FENCE = registerBlock("ginkgo_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of().mapColor(GINKGO_PLANKS.get().defaultMapColor()).strength(2.0f, 3.0f).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD).noOcclusion(), MapleBlockSetType.GINKGO));
+            () -> new DoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD).noOcclusion()));
     public static final RegistryObject<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion(), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new TrapDoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_CARPET = registerBlock("sakura_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.COLOR_PINK)),MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.COLOR_PINK)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> Maple_CARPET = registerBlock("maple_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.TERRACOTTA_YELLOW)),MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.TERRACOTTA_YELLOW)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_CARPET = registerBlock("red_maple_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.COLOR_RED)),MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.COLOR_RED)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_CARPET= registerBlock("ginkgo_carpet",
-            () -> new MapleCarpetBlock(BlockBehaviour.Properties.copy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.TERRACOTTA_YELLOW)),MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleCarpetBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.TERRACOTTA_YELLOW)),MapleCreativeModeTabs.Maple_Group);
 
     //Glass Blocks
     public static final RegistryObject<Block> WHITE_STAINED_GLASS_SLAB = registerBlock("white_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.WHITE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> WHITE_STAINED_GLASS_STAIRS = registerBlock("white_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.WHITE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WHITE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> ORANGE_STAINED_GLASS_SLAB = registerBlock("orange_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.ORANGE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> ORANGE_STAINED_GLASS_STAIRS = registerBlock("orange_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.ORANGE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.ORANGE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.ORANGE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_SLAB = registerBlock("magenta_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAGENTA_STAINED_GLASS_STAIRS = registerBlock("magenta_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.MAGENTA_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.MAGENTA_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.MAGENTA_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_SLAB = registerBlock("light_blue_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_BLUE_STAINED_GLASS_STAIRS = registerBlock("light_blue_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.LIGHT_BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIGHT_BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_SLAB = registerBlock("yellow_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.YELLOW_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> YELLOW_STAINED_GLASS_STAIRS = registerBlock("yellow_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.YELLOW_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.YELLOW_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.YELLOW_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.YELLOW_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIME_STAINED_GLASS_SLAB = registerBlock("lime_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIME_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIME_STAINED_GLASS_STAIRS = registerBlock("lime_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.LIME_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIME_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIME_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIME_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PINK_STAINED_GLASS_SLAB = registerBlock("pink_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PINK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PINK_STAINED_GLASS_STAIRS = registerBlock("pink_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.PINK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PINK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.PINK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.PINK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GRAY_STAINED_GLASS_SLAB = registerBlock("gray_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GRAY_STAINED_GLASS_STAIRS = registerBlock("gray_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_SLAB = registerBlock("light_gray_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_GRAY_STAINED_GLASS_STAIRS = registerBlock("light_gray_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.LIGHT_GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.LIGHT_GRAY_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_GRAY_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CYAN_STAINED_GLASS_SLAB = registerBlock("cyan_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.CYAN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CYAN_STAINED_GLASS_STAIRS = registerBlock("cyan_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.CYAN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CYAN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.CYAN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.CYAN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PURPLE_STAINED_GLASS_SLAB = registerBlock("purple_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPLE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PURPLE_STAINED_GLASS_STAIRS = registerBlock("purple_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.PURPLE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PURPLE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.PURPLE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPLE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BLUE_STAINED_GLASS_SLAB = registerBlock("blue_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BLUE_STAINED_GLASS_STAIRS = registerBlock("blue_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLUE_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLUE_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BROWN_STAINED_GLASS_SLAB = registerBlock("brown_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BROWN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BROWN_STAINED_GLASS_STAIRS = registerBlock("brown_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.BROWN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BROWN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BROWN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BROWN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_SLAB = registerBlock("green_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GREEN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GREEN_STAINED_GLASS_STAIRS = registerBlock("green_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.GREEN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GREEN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.GREEN_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.GREEN_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_STAINED_GLASS_SLAB = registerBlock("red_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_STAINED_GLASS_STAIRS = registerBlock("red_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.RED_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.RED_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.RED_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_SLAB = registerBlock("black_stained_glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLACK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BLACK_STAINED_GLASS_STAIRS = registerBlock("black_stained_glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.BLACK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLACK_STAINED_GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GLASS_SLAB = registerBlock("glass_slab",
-            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassSlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GLASS)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GLASS_STAIRS = registerBlock("glass_stairs",
-            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GLASS)), MapleCreativeModeTabs.Maple_Group);
+            () -> new MapleGlassStairsBlock(Blocks.BLACK_STAINED_GLASS.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.GLASS)), MapleCreativeModeTabs.Maple_Group);
 
 
     public static final RegistryObject<Block> TATAMI =registerBlock("tatami",
-            () -> new HayBlock(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK).mapColor(MapColor.COLOR_GREEN)),MapleCreativeModeTabs.Maple_Group);
+            () -> new HayBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.HAY_BLOCK).mapColor(MapColor.COLOR_GREEN)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> TATAMI_SLAB = registerBlock("tatami_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(MapleBlocks.TATAMI.get()).mapColor(MapColor.COLOR_GREEN)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.TATAMI.get()).mapColor(MapColor.COLOR_GREEN)), MapleCreativeModeTabs.Maple_Group);
 
     //PLASTER
     public static final RegistryObject<Block> GREEN_PLASTER =registerBlock("green_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GREEN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GREEN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PLASTER =registerBlock("plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.WHITE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> ORANGE_PLASTER =registerBlock("orange_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ORANGE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.ORANGE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAGENTA_PLASTER =registerBlock("magenta_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MAGENTA_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_BLUE_PLASTER =registerBlock("light_blue_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_BLUE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_BLUE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> YELLOW_PLASTER =registerBlock("yellow_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.YELLOW_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIME_PLASTER =registerBlock("lime_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIME_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIME_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PINK_PLASTER =registerBlock("pink_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PINK_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PINK_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GRAY_PLASTER =registerBlock("gray_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GRAY_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRAY_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> LIGHT_GRAY_PLASTER =registerBlock("light_gray_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LIGHT_GRAY_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_GRAY_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CYAN_PLASTER =registerBlock("cyan_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CYAN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.CYAN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> PURPLE_PLASTER =registerBlock("purple_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PURPLE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPLE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BLUE_PLASTER =registerBlock("blue_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BLUE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLUE_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BROWN_PLASTER =registerBlock("brown_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BROWN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BROWN_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_PLASTER =registerBlock("red_plaster",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RED_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_CONCRETE)),MapleCreativeModeTabs.Maple_Group);
 
     //Sea Lantern
     public static final RegistryObject<Block> Iron_Sea_Lantern =registerBlock("iron_sea_lantern",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> Gold_Sea_Lantern =registerBlock("gold_sea_lantern",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
+            () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
 
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {

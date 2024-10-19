@@ -41,9 +41,7 @@ public class Maple{
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public Maple() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    public Maple(IEventBus modEventBus) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -101,11 +99,11 @@ public class Maple{
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public class ParticleFactoryRegistry {
+    public static class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
-            Regions.register(new MapleGroveBiome(new ResourceLocation(Maple.MODID, "overworld_1"), 2));
-            Regions.register(new MapleSakuraBiome(new ResourceLocation(Maple.MODID, "overworld_2"), 2));
+            Regions.register(new MapleGroveBiome(ResourceLocation.fromNamespaceAndPath(Maple.MODID, "overworld_1"), 2));
+            Regions.register(new MapleSakuraBiome(ResourceLocation.fromNamespaceAndPath(Maple.MODID, "overworld_2"), 2));
         }
     }
 

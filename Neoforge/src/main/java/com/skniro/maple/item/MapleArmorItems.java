@@ -6,20 +6,18 @@ import com.skniro.maple.item.init.tool.MapleAxeItem;
 import com.skniro.maple.item.init.tool.MapleHoeItem;
 import com.skniro.maple.item.init.tool.MaplePickaxeItem;
 import com.skniro.maple.item.init.tool.MapleToolMaterials;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.Supplier;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
 public class MapleArmorItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Maple.MODID);
 
     //Ingot
     public static final Supplier<Item> Cherry_INGOT = registerItem("cherry_ingot",
