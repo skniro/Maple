@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class MapleStandingSignBlock extends StandingSignBlock {
     public MapleStandingSignBlock(Properties p_56990_, WoodType p_56991_) {
-        super(p_56990_, p_56991_);
+        super(p_56991_, p_56990_);
     }
 
     @Override

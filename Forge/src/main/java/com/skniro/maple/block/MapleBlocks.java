@@ -59,11 +59,11 @@ public class MapleBlocks {
 
     //SAPLING Block
     public static final RegistryObject<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
-            () -> new SaplingBlock(new MapleSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(MapleSaplingGenerator.MapleSapling,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
-            () -> new SaplingBlock(new CherrySaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(CherrySaplingGenerator.CherrySapling,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> SAKURA_SAPLING = registerBlock("sakura_sapling",
-            () -> new SaplingBlock(new SakuraSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(SakuraSaplingGenerator.SakuraSapling,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
 
     //LEAVES Block
     public static final RegistryObject<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
@@ -210,11 +210,11 @@ public class MapleBlocks {
 
     //BUTTON
     public static final RegistryObject<Block> CHERRY_BUTTON = registerBlock("cherry_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(0.5F).sound(SoundType.WOOD), BlockSetType.CHERRY,30,true), MapleCreativeModeTabs.Maple_Group);
+            () -> new ButtonBlock(BlockSetType.CHERRY, 30, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(0.5F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_BUTTON = registerBlock("maple_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().strength(0.5F).sound(SoundType.WOOD), MapleBlockSetType.MAPLE,30,true), MapleCreativeModeTabs.Maple_Group);
+            () -> new ButtonBlock(MapleBlockSetType.MAPLE, 30, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().strength(0.5F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_BUTTON = registerBlock("bamboo_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD), BlockSetType.BAMBOO,30,true), MapleCreativeModeTabs.Maple_Group);
+            () -> new ButtonBlock(BlockSetType.BAMBOO, 30, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
 
 
     public static final RegistryObject<Block> PINK_PETALS = registerBlock("pink_petals",
@@ -276,11 +276,11 @@ public class MapleBlocks {
 
     //PRESSURE_PLATE
     public static final RegistryObject<Block> CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.CHERRY_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F), BlockSetType.CHERRY), MapleCreativeModeTabs.Maple_Group);
+            () -> new PressurePlateBlock(BlockSetType.CHERRY, BlockBehaviour.Properties.of().mapColor(MapleBlocks.CHERRY_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F), MapleBlockSetType.MAPLE), MapleCreativeModeTabs.Maple_Group);
+            () -> new PressurePlateBlock(MapleBlockSetType.MAPLE, BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.BAMBOO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5f), BlockSetType.BAMBOO), MapleCreativeModeTabs.Maple_Group);
+            () -> new PressurePlateBlock(BlockSetType.BAMBOO, BlockBehaviour.Properties.of().mapColor(MapleBlocks.BAMBOO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5f)), MapleCreativeModeTabs.Maple_Group);
 
     //Plants Block
     public static final RegistryObject<Block> RICE = registerBlockWithoutItem("rice_plant",
@@ -296,9 +296,9 @@ public class MapleBlocks {
     public static final RegistryObject<Block> GINKGO_WOOD = registerBlock("ginkgo_wood",
             () -> new MapleFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_WOOD).mapColor(MapColor.SAND)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",
-            () -> new SaplingBlock(new RedMapleSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(RedMapleSaplingGenerator.RedMapleSapling,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SAPLING = registerBlock("ginkgo_sapling",
-            () -> new SaplingBlock(new GinkgoSaplingGenerator(),BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
+            () -> new SaplingBlock(GinkgoSaplingGenerator.GinkgoSapling,BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_SAPLING)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_RED)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_LEAVES = registerBlock("ginkgo_leaves",
@@ -310,7 +310,7 @@ public class MapleBlocks {
     public static final RegistryObject<Block> POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
             () -> new FlowerPotBlock(RED_MAPLE_SAPLING.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.POTTED_ACACIA_SAPLING).instabreak().noOcclusion()));
     public static final RegistryObject<Block> GINKGO_BUTTON = registerBlock("ginkgo_button",
-            () -> new ButtonBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD), MapleBlockSetType.GINKGO,30,true), MapleCreativeModeTabs.Maple_Group);
+            () -> new ButtonBlock(MapleBlockSetType.GINKGO, 30, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollission().strength(0.5F).sound(SoundType.WOOD)), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_STAIRS = registerBlock("ginkgo_stairs",
             () -> new StairBlock(GINKGO_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(GINKGO_PLANKS.get())), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
@@ -324,7 +324,7 @@ public class MapleBlocks {
     public static final RegistryObject<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
             () -> new TrapDoorBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion()), MapleCreativeModeTabs.Maple_Group);
     public static final RegistryObject<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
-            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F), MapleBlockSetType.GINKGO), MapleCreativeModeTabs.Maple_Group);
+            () -> new PressurePlateBlock(MapleBlockSetType.GINKGO, BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(0.5F)), MapleCreativeModeTabs.Maple_Group);
 
     public static final RegistryObject<Block> SAKURA_CARPET = registerBlock("sakura_carpet",
             () -> new MapleCarpetBlock(BlockBehaviour.Properties.ofLegacyCopy(MapleBlocks.PINK_PETALS.get()).mapColor(MapColor.COLOR_PINK)),MapleCreativeModeTabs.Maple_Group);

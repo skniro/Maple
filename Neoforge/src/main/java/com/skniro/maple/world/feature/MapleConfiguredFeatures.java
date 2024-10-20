@@ -5,7 +5,7 @@ import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -85,7 +85,7 @@ public class MapleConfiguredFeatures {
     private static TreeConfiguration.TreeConfigurationBuilder ginkgo() {
         return MapleConfiguredFeatures.builder(MapleBlocks.GINKGO_LOG.get(), MapleBlocks.GINKGO_LEAVES.get(),5,2,0,2).ignoreVines();
     }
-    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> featureRegisterable) {
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> featureRegisterable) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherstoneReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
@@ -150,7 +150,7 @@ public class MapleConfiguredFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(Maple.MODID, name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

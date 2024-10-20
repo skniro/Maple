@@ -1,5 +1,6 @@
 package com.skniro.maple.block.init;
 
+import com.mojang.serialization.MapCodec;
 import com.skniro.maple.state.property.MapleProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,10 +28,16 @@ public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock 
     public static final int field_42763 = 4;
     public static final DirectionProperty FACING;
     public static final IntegerProperty FLOWER_AMOUNT;
+    public static final MapCodec<MapleFlowerbedBlock> CODEC = simpleCodec(MapleFlowerbedBlock::new);
 
     public MapleFlowerbedBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(FLOWER_AMOUNT, Integer.valueOf(1)));
+    }
+
+    @Override
+    protected MapCodec<? extends MapleFlowerbedBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -62,7 +69,7 @@ public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock 
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 

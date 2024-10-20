@@ -3,7 +3,10 @@ package com.skniro.maple.item.init.armor;
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
 import net.minecraft.Util;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -20,33 +23,52 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
 
-public enum MapleArmorMaterials implements ArmorMaterial {
-            Cherry("cherry", 25, (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266655_) -> {
-                p_266655_.put(ArmorItem.Type.BOOTS, 3);
-                p_266655_.put(ArmorItem.Type.LEGGINGS, 8);
-                p_266655_.put(ArmorItem.Type.CHESTPLATE, 8);
-                p_266655_.put(ArmorItem.Type.HELMET, 3);
-            }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
-                return Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()});
-            });
+public class MapleArmorMaterials {
+    public static final Holder<ArmorMaterial> Cherry = register("cherry", Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 8);
+        map.put(ArmorItem.Type.CHESTPLATE, 8);
+        map.put(ArmorItem.Type.HELMET, 3);
+        map.put(ArmorItem.Type.BODY, 11);
+    }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> Ingredient.of(MapleArmorItems.Cherry_INGOT.get()));
 
-    public static final int Ruby_DURABILITY_MULTIPLIER = 37;
 
-    private static RegistryAccess.RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        List<Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.ofVanilla(id)));
-        return register(id, defense, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, list);
+    public static final int Cherry_DURABILITY_MULTIPLIER = 37;
+
+
+    private static Holder<ArmorMaterial> register(
+            String p_334359_,
+            EnumMap<ArmorItem.Type, Integer> p_329993_,
+            int p_332696_,
+            Holder<SoundEvent> p_333975_,
+            float p_329381_,
+            float p_334853_,
+            Supplier<Ingredient> p_333678_
+    ) {
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Maple.MODID, p_334359_)));
+        return register(p_334359_, p_329993_, p_332696_, p_333975_, p_329381_, p_334853_, p_333678_, list);
     }
 
-    private static RegistryAccess.RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient, List<ArmorMaterial.Layer> layers) {
-        EnumMap<ArmorItem.Type, Integer> enumMap = new EnumMap(ArmorItem.Type.class);
-        ArmorItem.Type[] var9 = ArmorItem.Type.values();
-        int var10 = var9.length;
+    private static Holder<ArmorMaterial> register(
+            String p_332406_,
+            EnumMap<ArmorItem.Type, Integer> p_331524_,
+            int p_331490_,
+            Holder<SoundEvent> p_331648_,
+            float p_327988_,
+            float p_328616_,
+            Supplier<Ingredient> p_334412_,
+            List<ArmorMaterial.Layer> p_330855_
+    ) {
+        EnumMap<ArmorItem.Type, Integer> enummap = new EnumMap<>(ArmorItem.Type.class);
 
-        for(int var11 = 0; var11 < var10; ++var11) {
-            ArmorItem.Type type = var9[var11];
-            enumMap.put(type, (Integer)defense.get(type));
+        for (ArmorItem.Type armoritem$type : ArmorItem.Type.values()) {
+            enummap.put(armoritem$type, p_331524_.get(armoritem$type));
         }
 
-        return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.ofVanilla(id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
+        return Registry.registerForHolder(
+                BuiltInRegistries.ARMOR_MATERIAL,
+                ResourceLocation.fromNamespaceAndPath(Maple.MODID, p_332406_),
+                new ArmorMaterial(enummap, p_331490_, p_331648_, p_334412_, p_330855_, p_327988_, p_328616_)
+        );
     }
 }

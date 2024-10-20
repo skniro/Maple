@@ -1,4 +1,13 @@
-// 1.21.1	2024-10-19T22:41:49.676084	Maple/Tags for minecraft:item
+// 1.21.1	2024-10-20T13:22:07.6929165	Maple/Tags for minecraft:item
+c4b08ad4c819557b4180729d645b86337536988c data\minecraft\tags\item\leg_armor.json
+32399c922c0e7dbab9eb0a475347e82bd851cfdb data\minecraft\tags\item\axes.json
+8679d456bb958c9bcb6910722dfba66cfce9e69b data\minecraft\tags\item\chest_armor.json
+0d33ce772379c6fc80492ff3ccb5171f6573051e data\minecraft\tags\item\swords.json
 a7fc8b882bbdaca6c7ad83cf4394c3cc1a912ffd data\c\tags\item\cherry_logs.json
-55994e10185d687a1dbefc0fe39234e3f949aa75 data\minecraft\tags\item\saplings.json
 c8da0821d950459c254ca666ab63d9e37e3cf4f6 data\minecraft\tags\item\trimmable_armor.json
+3e867cf1e25ace0db6e0a18b641b40705825f01b data\minecraft\tags\item\pickaxes.json
+a85abf1be0ef7b74a5af96af2ab1360e74f94970 data\minecraft\tags\item\shovels.json
+46a4629058f1c4cc860981dd27461113e1e385a1 data\minecraft\tags\item\head_armor.json
+adfe2c693d94ab4cb1630db4878f76e0accd095f data\minecraft\tags\item\hoes.json
+8f872f1ce0f8f0c15e7debbd40e35cedd5a95c95 data\minecraft\tags\item\saplings.json
+7a9b6035146ca4354bab3566e4aaf0ca522a8820 data\minecraft\tags\item\foot_armor.json

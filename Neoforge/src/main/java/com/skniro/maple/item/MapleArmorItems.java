@@ -2,15 +2,9 @@ package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.init.armor.MapleArmorMaterials;
-import com.skniro.maple.item.init.tool.MapleAxeItem;
-import com.skniro.maple.item.init.tool.MapleHoeItem;
-import com.skniro.maple.item.init.tool.MaplePickaxeItem;
 import com.skniro.maple.item.init.tool.MapleToolMaterials;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShovelItem;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -28,15 +22,16 @@ public class MapleArmorItems {
 
     //Tool
     public static final Supplier<Item> Cherry_SWORD = registerItem("cherry_sword",
-            ()-> (new SwordItem(MapleToolMaterials.Cherry, 3, -2.4F, new Item.Properties())));
+            ()-> (new SwordItem(MapleToolMaterials.Cherry, new Item.Properties().attributes(SwordItem.createAttributes(MapleToolMaterials.Cherry, 3, -2.4F)))));
     public static final Supplier<Item> Cherry_SHOVEL = registerItem("cherry_shovel",
-            ()-> (new ShovelItem(MapleToolMaterials.Cherry, 1.5F, -3.0F, new Item.Properties())));
+            ()-> (new ShovelItem(MapleToolMaterials.Cherry, new Item.Properties().attributes(ShovelItem.createAttributes(MapleToolMaterials.Cherry, 1.5F, -3.0F)))));
     public static final Supplier<Item> Cherry_PICKAXE = registerItem("cherry_pickaxe",
-            ()-> (new MaplePickaxeItem(MapleToolMaterials.Cherry, 1, -2.8F, new Item.Properties())));
+            ()-> (new PickaxeItem(MapleToolMaterials.Cherry, new Item.Properties().attributes(PickaxeItem.createAttributes(MapleToolMaterials.Cherry, 1, -2.8F)))));
     public static final Supplier<Item> Cherry_AXE = registerItem("cherry_axe",
-            ()-> (new MapleAxeItem(MapleToolMaterials.Cherry, 5.0F, -3.0F, new Item.Properties())));
+            ()-> (new AxeItem(MapleToolMaterials.Cherry, new Item.Properties().attributes(AxeItem.createAttributes(MapleToolMaterials.Cherry, 5.0F, -3.0F)))));
     public static final Supplier<Item> Cherry_HOE = registerItem("cherry_hoe",
-            ()-> (new MapleHoeItem(MapleToolMaterials.Cherry, -3, 0.0F, new Item.Properties())));
+            ()-> (new HoeItem(MapleToolMaterials.Cherry, new Item.Properties().attributes(HoeItem.createAttributes(MapleToolMaterials.Cherry, -3, 0.0F)))));
+
 
     //Armor
     public static final Supplier<Item> Cherry_HELMET = registerItem("cherry_helmet",

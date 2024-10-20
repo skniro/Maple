@@ -1,14 +1,15 @@
 package com.skniro.maple.world.Tree;
 
 import com.skniro.maple.world.feature.MapleConfiguredFeatures;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import java.util.Optional;
+import net.minecraft.world.level.block.grower.TreeGrower;
 
-public class RedMapleSaplingGenerator extends AbstractTreeGrower {
-        @Override
-        protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
-            return MapleConfiguredFeatures.Red_Maple_TREE;
-        }
+public class RedMapleSaplingGenerator {
+    public static final TreeGrower RedMapleSapling =
+            new TreeGrower("redmapletreesapling", 0f, Optional.empty(),
+                    Optional.empty(),
+                    Optional.of(MapleConfiguredFeatures.Red_Maple_TREE),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty());
     }

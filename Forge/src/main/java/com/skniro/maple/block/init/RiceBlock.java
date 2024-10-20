@@ -1,7 +1,7 @@
 package com.skniro.maple.block.init;
 
 import com.skniro.maple.item.MapleItems;
-import net.minecraft.core.BlockPos;;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;

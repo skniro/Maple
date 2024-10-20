@@ -1,9 +1,9 @@
-// 1.21.1	2024-10-19T22:41:49.6680777	Maple/Tags for minecraft:block
+// 1.21.1	2024-10-20T13:22:07.6819062	Maple/Tags for minecraft:block
 e930ce90e6c1c53236061afdbf19bc691e9f8b72 data\c\tags\block\maple_logs.json
 beeda30809d17d7d9d20eea52e244dddc8ea9e21 data\minecraft\tags\block\ceiling_hanging_signs.json
 a7fc8b882bbdaca6c7ad83cf4394c3cc1a912ffd data\c\tags\block\cherry_logs.json
 48ace48f2ea45269be60a52ad804a7d9282791d9 data\c\tags\block\plaster.json
-55994e10185d687a1dbefc0fe39234e3f949aa75 data\minecraft\tags\block\saplings.json
-55994e10185d687a1dbefc0fe39234e3f949aa75 data\c\tags\block\saplings.json
-047fe48afd39a7616fc99599b5c65dbbab239534 data\minecraft\tags\block\fences.json
+8f872f1ce0f8f0c15e7debbd40e35cedd5a95c95 data\minecraft\tags\block\saplings.json
+8f872f1ce0f8f0c15e7debbd40e35cedd5a95c95 data\c\tags\block\saplings.json
+bf291aa4637925c0ef5f7ee0c91257fd7c667710 data\minecraft\tags\block\fences.json
 ef0cea20f72e4440b204529b7be7e45c3e42dc88 data\minecraft\tags\block\wall_hanging_signs.json

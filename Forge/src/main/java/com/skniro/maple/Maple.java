@@ -41,7 +41,8 @@ public class Maple{
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public Maple(IEventBus modEventBus) {
+    public Maple(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 

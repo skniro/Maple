@@ -3,93 +3,63 @@ package com.skniro.maple.item.init.armor;
 import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
 import net.minecraft.Util;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.function.Supplier;
 
-public enum MapleArmorMaterials implements ArmorMaterial {
-            Cherry("cherry", 25, (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266655_) -> {
-                p_266655_.put(ArmorItem.Type.BOOTS, 3);
-                p_266655_.put(ArmorItem.Type.LEGGINGS, 8);
-                p_266655_.put(ArmorItem.Type.CHESTPLATE, 8);
-                p_266655_.put(ArmorItem.Type.HELMET, 3);
-            }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
-                return Ingredient.of(new ItemLike[]{MapleArmorItems.Cherry_INGOT.get()});
-            });
+public class MapleArmorMaterials {
+    public static final Holder<ArmorMaterial> Cherry = register("cherry", Util.make(new EnumMap<>(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 8);
+        map.put(ArmorItem.Type.CHESTPLATE, 8);
+        map.put(ArmorItem.Type.HELMET, 3);
+        map.put(ArmorItem.Type.BODY, 11);
+    }), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> Ingredient.of(MapleArmorItems.Cherry_INGOT.get()));
 
-        private final String name;
-        private final int durabilityMultiplier;
-        private final EnumMap<ArmorItem.Type, Integer> protectionAmounts;
-        private final int enchantability;
-        private final SoundEvent equipSound;
-        private final float toughness;
-        private final float knockbackResistance;
-        private final LazyLoadedValue<Ingredient> repairIngredient;
-
-        private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = (EnumMap)Util.make(new EnumMap(ArmorItem.Type.class), (p_266653_) -> {
-           p_266653_.put(ArmorItem.Type.BOOTS, 13);
-           p_266653_.put(ArmorItem.Type.LEGGINGS, 15);
-          p_266653_.put(ArmorItem.Type.CHESTPLATE, 16);
-           p_266653_.put(ArmorItem.Type.HELMET, 11);
-        });
-        MapleArmorMaterials(String name, int durabilityMultiplier, EnumMap protectionAmounts, int enchantability, SoundEvent equipSound,
-                          float toughness, float knockbackResistance, Supplier repairIngredient) {
-            this.name = name;
-            this.durabilityMultiplier = durabilityMultiplier;
-            this.protectionAmounts = protectionAmounts;
-            this.enchantability = enchantability;
-            this.equipSound = equipSound;
-            this.toughness = toughness;
-            this.knockbackResistance = knockbackResistance;
-            this.repairIngredient = new LazyLoadedValue(repairIngredient);
-        }
-
-        @Override
-        public int getDurabilityForType(ArmorItem.Type slot) {
-            return HEALTH_FUNCTION_FOR_TYPE.get(slot) * this.durabilityMultiplier;
-        }
-
-        public int getDefenseForType(ArmorItem.Type slot) {
-            return this.protectionAmounts.get(slot);
-        }
-
-        @Override
-        public int getEnchantmentValue() {
-            return this.enchantability;
-        }
-
-        @Override
-        public SoundEvent getEquipSound() {
-            return this.equipSound;
-        }
-
-        @Override
-        public Ingredient getRepairIngredient() {
-            return this.repairIngredient.get();
-        }
-
-        @Override
-        public String getName() {
-            return Maple.MODID + ":" + this.name;
-        }
-
-        @Override
-        public float getToughness() {
-            return this.toughness;
-        }
-
-        @Override
-        public float getKnockbackResistance() {
-            return this.knockbackResistance;
-        }
+    public static final int Ruby_DURABILITY_MULTIPLIER = 37;
+    private static Holder<ArmorMaterial> register(
+            String p_334359_,
+            EnumMap<ArmorItem.Type, Integer> p_329993_,
+            int p_332696_,
+            Holder<SoundEvent> p_333975_,
+            float p_329381_,
+            float p_334853_,
+            Supplier<Ingredient> p_333678_
+    ) {
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Maple.MODID, p_334359_)));
+        return register(p_334359_, p_329993_, p_332696_, p_333975_, p_329381_, p_334853_, p_333678_, list);
     }
 
+    private static Holder<ArmorMaterial> register(
+            String p_332406_,
+            EnumMap<ArmorItem.Type, Integer> p_331524_,
+            int p_331490_,
+            Holder<SoundEvent> p_331648_,
+            float p_327988_,
+            float p_328616_,
+            Supplier<Ingredient> p_334412_,
+            List<ArmorMaterial.Layer> p_330855_
+    ) {
+        EnumMap<ArmorItem.Type, Integer> enummap = new EnumMap<>(ArmorItem.Type.class);
+
+        for (ArmorItem.Type armoritem$type : ArmorItem.Type.values()) {
+            enummap.put(armoritem$type, p_331524_.get(armoritem$type));
+        }
+
+        return Registry.registerForHolder(
+                BuiltInRegistries.ARMOR_MATERIAL,
+                ResourceLocation.fromNamespaceAndPath(Maple.MODID, p_332406_),
+                new ArmorMaterial(enummap, p_331490_, p_331648_, p_334412_, p_330855_, p_327988_, p_328616_)
+        );
+    }
+}

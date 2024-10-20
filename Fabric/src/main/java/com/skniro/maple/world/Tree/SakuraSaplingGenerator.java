@@ -10,10 +10,10 @@ import java.util.Optional;
 
 public class SakuraSaplingGenerator {
     public static final SaplingGenerator SakuraSapling =
-            new SaplingGenerator("sakuratreesapling", 0f, Optional.empty(),
-                    Optional.of(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
-                    Optional.of(MapleConfiguredFeatures.SAKURA_TREE),
+            new SaplingGenerator("sakuratreesapling", 0.1f, Optional.empty(),
                     Optional.empty(),
+                    Optional.of(MapleConfiguredFeatures.SAKURA_TREE),
+                    Optional.of(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                     Optional.empty(),
                     Optional.empty());
 }
