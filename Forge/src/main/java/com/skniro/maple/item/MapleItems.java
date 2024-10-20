@@ -3,6 +3,8 @@ package com.skniro.maple.item;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.entity.custom.MapleBoatEntity;
+import com.skniro.maple.item.init.MapleBoatItem;
 import com.skniro.maple.item.init.snowball.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,7 +29,10 @@ public class MapleItems {
     public static final RegistryObject<Item> GINKGO_SIGN = registerItem("ginkgo_sign",
             ()-> new SignItem(new Item.Properties().stacksTo(16),
                     MapleSignBlocks.GINKGO_SIGN.get(),MapleSignBlocks.GINKGO_WALL_SIGN.get()));
-
+    public static final RegistryObject<Item> GINKGO_HANGING_SIGN = registerItem("ginkgo_hanging_sign",
+            ()-> new HangingSignItem(MapleSignBlocks.GINKGO_HANGING_SIGN.get(), MapleSignBlocks.GINKGO_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> Maple_HANGING_SIGN = registerItem("maple_hanging_sign",
+            ()-> new HangingSignItem(MapleSignBlocks.Maple_HANGING_SIGN.get(), MapleSignBlocks.Maple_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> CHERRY_DOOR = registerItem("cherry_door",
             ()-> new DoubleHighBlockItem(MapleBlocks.CHERRY_DOOR.get(), new Item.Properties().stacksTo(16)));
@@ -53,18 +58,18 @@ public class MapleItems {
     public static final RegistryObject<Item> Salt = registerItem("salt",
             ()-> new Item(new Item.Properties()));
 
-/*
-    //Boat
-    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (new BoatItem(false, MapleBoatType.CHERRY, (new Item.Properties()).stacksTo(1).group(Maple.Maple_Group))));
-    public static final Item MAPLE_BOAT = registerItem("maple_boat", (new BoatItem(false, MapleBoatType.MAPLE, (new Item.Properties()).stacksTo(1).group(Maple.Maple_Group))));
-    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (new BoatItem(false, MapleBoatType.BAMBOO, (new Item.Properties()).stacksTo(1))));
-    public static final Item GINKGO_BOAT = registerItem("ginkgo_boat", (new BoatItem(false, MapleBoatType.GINKGO, (new Item.Properties()).stacksTo(1))));
 
-    public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (new BoatItem(true, MapleBoatType.CHERRY, (new Item.Properties()).stacksTo(1).group(Maple.Maple_Group))));
-    public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", (new BoatItem(true, MapleBoatType.MAPLE, (new Item.Properties()).stacksTo(1).group(Maple.Maple_Group))));
-    public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (new BoatItem(true, MapleBoatType.BAMBOO, (new Item.Properties()).stacksTo(1))));
-    public static final Item GINKGO_CHEST_BOAT = registerItem("ginkgo_chest_boat", (new BoatItem(true, MapleBoatType.GINKGO, (new Item.Properties()).stacksTo(1))));
-*/
+    //Boat
+    public static final RegistryObject<Item> MAPLE_BOAT = registerItem("maple_boat",
+            ()->(new MapleBoatItem(false, MapleBoatEntity.Type.MAPLE, (new Item.Properties()).stacksTo(1))));
+    public static final RegistryObject<Item> GINKGO_BOAT = registerItem("ginkgo_boat",
+            ()->(new MapleBoatItem(false, MapleBoatEntity.Type.GINKGO, (new Item.Properties()).stacksTo(1))));
+
+    public static final RegistryObject<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
+            ()->(new MapleBoatItem(true, MapleBoatEntity.Type.MAPLE, (new Item.Properties()).stacksTo(1))));
+    public static final RegistryObject<Item> GINKGO_CHEST_BOAT = registerItem("ginkgo_chest_boat",
+            ()->(new MapleBoatItem(true, MapleBoatEntity.Type.GINKGO, (new Item.Properties()).stacksTo(1))));
+
 
 
     //Snowball

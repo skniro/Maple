@@ -82,10 +82,10 @@ public class MapleCreativeModeTabs {
                         pOutput.accept(MapleBlocks.GLASS_SLAB.get());
                         pOutput.accept(MapleBlocks.GLASS_STAIRS.get());
                         pOutput.accept(MapleItems.MAPLE_SIGN.get());
-                        //pOutput.accept(MapleItems.Maple_HANGING_SIGN.get());
+                        pOutput.accept(MapleItems.Maple_HANGING_SIGN.get());
                         pOutput.accept(MapleItems.MAPLE_DOOR.get());
-                        //pOutput.accept(MapleItems.MAPLE_BOAT.get());
-                        //pOutput.accept(MapleItems.MAPLE_CHEST_BOAT.get());
+                        pOutput.accept(MapleItems.MAPLE_BOAT.get());
+                        pOutput.accept(MapleItems.MAPLE_CHEST_BOAT.get());
                         pOutput.accept(MapleBlocks.GINKGO_LOG.get());
                         pOutput.accept(MapleBlocks.STRIPPED_GINKGO_LOG.get());
                         pOutput.accept(MapleBlocks.STRIPPED_GINKGO_WOOD.get());
@@ -104,10 +104,10 @@ public class MapleCreativeModeTabs {
                         pOutput.accept(MapleBlocks.GINKGO_TRAPDOOR.get());
                         pOutput.accept(MapleBlocks.GINKGO_PRESSURE_PLATE.get());
                         pOutput.accept(MapleItems.GINKGO_SIGN.get());
-                        //pOutput.accept(MapleItems.GINKGO_HANGING_SIGN.get());
-                        //pOutput.accept(MapleItems.GINKGO_DOOR.get());
-                        //pOutput.accept(MapleItems.GINKGO_BOAT.get());
-                        //pOutput.accept(MapleItems.GINKGO_CHEST_BOAT.get());
+                        pOutput.accept(MapleItems.GINKGO_HANGING_SIGN.get());
+                        pOutput.accept(MapleItems.GINKGO_DOOR.get());
+                        pOutput.accept(MapleItems.GINKGO_BOAT.get());
+                        pOutput.accept(MapleItems.GINKGO_CHEST_BOAT.get());
                         pOutput.accept(MapleOreBlocks.Salt_Ore.get());
                         pOutput.accept(MapleOreBlocks.DEEPSLATE_Salt_Ore.get());
                         pOutput.accept(MapleItems.SNOWBALL_STONE.get());

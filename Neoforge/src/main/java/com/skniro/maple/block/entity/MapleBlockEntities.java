@@ -25,6 +25,15 @@ public class MapleBlockEntities {
                             MapleSignBlocks.GINKGO_SIGN.get(),
                             MapleSignBlocks.GINKGO_WALL_SIGN.get()).build(null));
 
+    public static final Supplier<BlockEntityType<MapleHangingSignBlockEntity>> Maple_HANGING_SIGN =
+            BLOCK_ENTITIES.register("maple_hanging_sign", () ->
+                    BlockEntityType.Builder.of(MapleHangingSignBlockEntity::new,
+                            MapleSignBlocks.Maple_HANGING_SIGN.get(),
+                            MapleSignBlocks.Maple_WALL_HANGING_SIGN.get(),
+                            MapleSignBlocks.GINKGO_HANGING_SIGN.get(),
+                            MapleSignBlocks.GINKGO_WALL_HANGING_SIGN.get()
+                            ).build(null));
+
 
     public static void registerMapleBlockEntities(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

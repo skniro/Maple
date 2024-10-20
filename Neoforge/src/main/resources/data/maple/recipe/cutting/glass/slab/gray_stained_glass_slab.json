@@ -3,7 +3,8 @@
     "ingredient": {
         "item": "minecraft:gray_stained_glass"
     },
-        "result": {
+    "result": {
         "id": "maple:gray_stained_glass_slab",
-            "count": 2
-        }
+        "count": 2
+    }
+}

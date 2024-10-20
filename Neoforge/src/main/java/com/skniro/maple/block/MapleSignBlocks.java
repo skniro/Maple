@@ -3,11 +3,16 @@ package com.skniro.maple.block;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 
+import com.skniro.maple.block.init.MapleHangingSignBlock;
 import com.skniro.maple.block.init.MapleStandingSignBlock;
+import com.skniro.maple.block.init.MapleWallHangingSignBlock;
 import com.skniro.maple.block.init.MapleWallSignBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CeilingHangingSignBlock;
+import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,6 +38,15 @@ public class MapleSignBlocks {
            ()-> new MapleStandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F), MapleWoodTypes.GINKGO));
     public static final Supplier<Block> GINKGO_WALL_SIGN = registerBlockWithoutItem("ginkgo_wall_sign",
             ()-> new MapleWallSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F).dropsLike(GINKGO_SIGN.get()), MapleWoodTypes.GINKGO));
+    public static final Supplier<Block> Maple_HANGING_SIGN = registerBlockWithoutItem("maple_hanging_sign",
+            ()-> new MapleHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), MapleWoodTypes.MAPLE));
+    public static final Supplier<Block> GINKGO_HANGING_SIGN = registerBlockWithoutItem("ginkgo_hanging_sign",
+            ()-> new MapleHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), MapleWoodTypes.GINKGO));
+    public static final Supplier<Block> GINKGO_WALL_HANGING_SIGN = registerBlockWithoutItem("ginkgo_wall_hanging_sign",
+            ()-> new MapleWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().dropsLike(GINKGO_HANGING_SIGN.get()), MapleWoodTypes.GINKGO));
+    public static final Supplier<Block> Maple_WALL_HANGING_SIGN = registerBlockWithoutItem("maple_wall_hanging_sign",
+            ()-> new MapleWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().dropsLike(Maple_HANGING_SIGN.get()), MapleWoodTypes.MAPLE));
+
 
     private static <T extends Block> Supplier<T> registerBlockWithoutItem(String name, Supplier<T> block) {
         Supplier<T> toReturn = BLOCKS.register(name, block);
