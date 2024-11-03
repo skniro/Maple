@@ -71,7 +71,6 @@ public class Maple{
 
         MapleCreativeModeTabs.registerMapleCreativeModeTabs(modEventBus);
 
-        MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
@@ -86,6 +85,7 @@ public class Maple{
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(MapleTerrablender::registerBiomes);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
