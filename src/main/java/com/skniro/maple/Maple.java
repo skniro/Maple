@@ -61,10 +61,8 @@ public class Maple{
         MapleFluids.registerFluids(modEventBus);
         MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
         MapleFluidBlockOrItem.registerFluidItems(modEventBus);
-
         MapleCreativeModeTabs.registerMapleCreativeModeTabs(modEventBus);
 
-        MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
@@ -78,6 +76,7 @@ public class Maple{
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(MapleTerrablender::registerBiomes);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -104,8 +103,6 @@ public class Maple{
     public class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
-            Regions.register(new MapleGroveBiome(new ResourceLocation(Maple.MODID, "overworld_1"), 2));
-            Regions.register(new MapleSakuraBiome(new ResourceLocation(Maple.MODID, "overworld_2"), 2));
         }
     }
 
