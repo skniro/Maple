@@ -6,6 +6,7 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntities;
 import com.skniro.maple.block.entity.MapleSignTypes;
+import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
@@ -84,7 +85,6 @@ public class Maple{
         MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
         MapleFluidBlockOrItem.registerFluidItems(modEventBus);
 
-        MapleTerrablender.registerBiomes();
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
         MaplePlacedFeatures.registerMaplePlacedFeatures(modEventBus);
@@ -101,6 +101,7 @@ public class Maple{
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(MapleTerrablender::registerBiomes);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -131,8 +132,16 @@ public class Maple{
     public class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
-            event.register(MapleParticleTypes.CHERRY_LEAVES.get(), MapleParticleProvider::new);
-            event.register(MapleParticleTypes.SAKURA_LEAVES.get(), MapleParticleProvider::new);
+            event.register(MapleParticleTypes.CHERRY_LEAVES.get(),(spriteProvider) -> {
+                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+                };
+            });
+            event.register(MapleParticleTypes.SAKURA_LEAVES.get(), (spriteProvider) -> {
+                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+                };
+            });
         }
     }
 

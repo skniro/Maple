@@ -16,7 +16,7 @@ public class MapleParticleProvider implements ParticleProvider<SimpleParticleTyp
     public MapleParticleProvider(SpriteSet sprites) {
         this.sprites = sprites;
     }
-    // 创建粒子
+
     @Nullable
     @Override
     public Particle createParticle(SimpleParticleType pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
