@@ -115,8 +115,6 @@ public class Maple{
     public static class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
-            Regions.register(new MapleGroveBiome(ResourceLocation.fromNamespaceAndPath(Maple.MODID, "overworld_1"), 2));
-            Regions.register(new MapleSakuraBiome(ResourceLocation.fromNamespaceAndPath(Maple.MODID, "overworld_2"), 2));
         }
 
         @SubscribeEvent
