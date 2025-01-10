@@ -7,7 +7,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class MapleHotSpringFluidBlock extends FluidBlock {
@@ -20,5 +22,12 @@ public class MapleHotSpringFluidBlock extends FluidBlock {
         if (entity instanceof LivingEntity && this.getFluidState(state).getFluid().isStill(this.getFluidState(state))) {
             ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 10 * 6,0));
         }
+    }
+
+    public static void spawnParticle(World world, BlockPos pos, Random random, ParticleEffect effect) {
+        double d = (double)pos.getX() + random.nextDouble();
+        double e = (double)pos.getY() - 0.05D;
+        double f = (double)pos.getZ() + random.nextDouble();
+        world.addParticle(effect, d, e, f, 0.0D, 0.0D, 0.0D);
     }
 }
