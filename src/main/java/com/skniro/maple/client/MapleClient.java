@@ -3,6 +3,8 @@ package com.skniro.maple.client;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.client.renderer.ChairRenderer;
+import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import net.fabricmc.api.ClientModInitializer;
@@ -10,6 +12,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.particle.CampfireSmokeParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
@@ -113,5 +116,8 @@ public class MapleClient implements ClientModInitializer {
         }));
 
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.HOT_SPRING, MapleCampfireSmokeParticle.CosySmokeFactory::new);
+
+        EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, ChairRenderer::new);
     }
 }

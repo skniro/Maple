@@ -1,5 +1,7 @@
 package com.skniro.maple;
 
+import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleCushionBlocks;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
@@ -30,6 +32,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
 
     public static final RegistryKey<ItemGroup> Maple_Group = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "maple_group"));
     public static final RegistryKey<ItemGroup> Maple_Group_Food = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "test_group"));
+    public static final RegistryKey<ItemGroup> Maple_Group_Furniture = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MOD_ID, "maple_group_furniture"));
 
 
     @Override
@@ -42,6 +45,10 @@ public class Maple implements ModInitializer, TerraBlenderApi {
                 .icon(() -> new ItemStack(MapleItems.MapleSyrup))
                 .displayName(Text.translatable("itemGroup.maple.maple_group_food"))
                 .build()); // build() no longer registers by itself
+        Registry.register(Registries.ITEM_GROUP, Maple_Group_Furniture, FabricItemGroup.builder()
+                .icon(() -> new ItemStack(MapleCushionBlocks.CUSHION_MAPLE_YELLOW))
+                .displayName(Text.translatable("itemGroup.maple.maple_group_furniture"))
+                .build());
         MapleContent.registerItem();
         MapleContent.registerBlock();
         MapleContent.registerFluid();
