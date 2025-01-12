@@ -29,8 +29,6 @@ import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.datafixer.schema.IdentifierNormalizingSchema;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
@@ -434,6 +432,41 @@ public class MapleContent {
             content.add(MapleCushionBlocks.CUSHION_BAMBOO_GREEN);
             content.add(MapleCushionBlocks.CUSHION_BAMBOO_RED);
             content.add(MapleCushionBlocks.CUSHION_BAMBOO_BLACK);
+
+            content.add(MapleCushionBlocks.TABLE_OAK);
+            content.add(MapleCushionBlocks.TABLE_SPRUCE);
+            content.add(MapleCushionBlocks.TABLE_BIRCH);
+            content.add(MapleCushionBlocks.TABLE_JUNGLE);
+            content.add(MapleCushionBlocks.TABLE_ACACIA);
+            content.add(MapleCushionBlocks.TABLE_DARK_OAK);
+            content.add(MapleCushionBlocks.TABLE_CRIMSON);
+            content.add(MapleCushionBlocks.TABLE_WARPED);
+            content.add(MapleCushionBlocks.TABLE_MANGROVE);
+            content.add(MapleCushionBlocks.TABLE_BAMBOO);
+            content.add(MapleCushionBlocks.TABLE_CHERRY);
+            content.add(MapleCushionBlocks.TABLE_MAPLE);
+            content.add(MapleCushionBlocks.TABLE_GINKGO);
+            content.add(MapleCushionBlocks.Window_WOOD_OAK);
+            content.add(MapleCushionBlocks.Window_WOOD_BIRCH);
+            content.add(MapleCushionBlocks.Window_WOOD_SPRUCE);
+            content.add(MapleCushionBlocks.Window_WOOD_JUNGLE);
+            content.add(MapleCushionBlocks.Window_WOOD_DARK_OAK);
+            content.add(MapleCushionBlocks.Window_WOOD_ACACIA);
+            content.add(MapleCushionBlocks.Window_WOOD_MANGROVE);
+            content.add(MapleCushionBlocks.Window_WOOD_CHERRY);
+            content.add(MapleCushionBlocks.Window_WOOD_CRIMSON);
+            content.add(MapleCushionBlocks.Window_WOOD_WARPED);
+            content.add(MapleCushionBlocks.Window_PLANK_OAK);
+            content.add(MapleCushionBlocks.Window_PLANK_BIRCH);
+            content.add(MapleCushionBlocks.Window_PLANK_SPRUCE);
+            content.add(MapleCushionBlocks.Window_PLANK_JUNGLE);
+            content.add(MapleCushionBlocks.Window_PLANK_DARK_OAK);
+            content.add(MapleCushionBlocks.Window_PLANK_ACACIA);
+            content.add(MapleCushionBlocks.Window_PLANK_MANGROVE);
+            content.add(MapleCushionBlocks.Window_PLANK_CHERRY);
+            content.add(MapleCushionBlocks.Window_PLANK_CRIMSON);
+            content.add(MapleCushionBlocks.Window_PLANK_WARPED);
+
         });
 
 

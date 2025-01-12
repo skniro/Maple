@@ -1,0 +1,8 @@
+{
+  "parent": "maple:block/window/window_left_open",
+  "textures": {
+    "front": "maple:block/stripped_maple_log",
+    "side": "maple:block/stripped_maple_log",
+    "glass": "minecraft:block/glass"
+  }
+}

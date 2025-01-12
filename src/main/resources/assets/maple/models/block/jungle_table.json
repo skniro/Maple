@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/table",
+  "textures": {
+    "plank": "minecraft:block/jungle_planks"
+  }
+}

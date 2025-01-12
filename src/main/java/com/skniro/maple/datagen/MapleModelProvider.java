@@ -388,6 +388,19 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.CUSHION_BAMBOO_RED);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.CUSHION_BAMBOO_BLACK);
 
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_OAK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_SPRUCE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_BIRCH);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_JUNGLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_ACACIA);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_DARK_OAK);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_CRIMSON);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_WARPED);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_MANGROVE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_BAMBOO);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_CHERRY);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_MAPLE);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleCushionBlocks.TABLE_GINKGO);
 
     }
 

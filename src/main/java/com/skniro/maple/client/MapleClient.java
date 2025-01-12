@@ -1,6 +1,7 @@
 package com.skniro.maple.client;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleCushionBlocks;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.client.renderer.ChairRenderer;
@@ -46,6 +47,19 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.Maple_CARPET,renderLayer2);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer2);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_OAK,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_SPRUCE,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_BIRCH,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_JUNGLE,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_ACACIA,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_DARK_OAK,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_CRIMSON,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_WARPED,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_MANGROVE,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_BAMBOO,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_CHERRY,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_MAPLE,renderLayer2);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.TABLE_GINKGO,renderLayer2);
 
         RenderLayer renderLayer3 = RenderLayer.getCutout();
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_SAPLING, renderLayer3);
@@ -55,6 +69,26 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_LEAVES, renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_SAPLING , renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_RED_MAPLE_SAPLING, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_OAK, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_BIRCH, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_SPRUCE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_JUNGLE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_DARK_OAK, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_ACACIA, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_MANGROVE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_CHERRY, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_CRIMSON, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_WOOD_WARPED, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_OAK, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_BIRCH, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_SPRUCE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_JUNGLE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_DARK_OAK, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_ACACIA, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_MANGROVE, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_CHERRY, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_CRIMSON, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleCushionBlocks.Window_PLANK_WARPED, renderLayer3);
 
 
         RenderLayer renderLayer4 = RenderLayer.getTranslucent();
