@@ -446,6 +446,8 @@ public class MapleContent {
             content.add(MapleCushionBlocks.TABLE_CHERRY);
             content.add(MapleCushionBlocks.TABLE_MAPLE);
             content.add(MapleCushionBlocks.TABLE_GINKGO);
+            content.add(MapleCushionBlocks.Window_Wood_GINKGO);
+            content.add(MapleCushionBlocks.Window_Wood_MAPLE);
             content.add(MapleCushionBlocks.Window_WOOD_OAK);
             content.add(MapleCushionBlocks.Window_WOOD_BIRCH);
             content.add(MapleCushionBlocks.Window_WOOD_SPRUCE);
@@ -466,7 +468,8 @@ public class MapleContent {
             content.add(MapleCushionBlocks.Window_PLANK_CHERRY);
             content.add(MapleCushionBlocks.Window_PLANK_CRIMSON);
             content.add(MapleCushionBlocks.Window_PLANK_WARPED);
-
+            content.add(MapleCushionBlocks.Window_PLANK_GINKGO);
+            content.add(MapleCushionBlocks.Window_PLANK_MAPLE);
         });
 
 

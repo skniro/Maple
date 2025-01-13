@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "P P",
+    "P P"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:spruce_slab"
+    },
+    "P": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "result": {
+    "item": "maple:spruce_table",
+    "count": 2
+  }
+}

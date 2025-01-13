@@ -2,6 +2,7 @@ package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.init.CushionBlock;
+import com.skniro.maple.block.init.MapleBlockSetType;
 import com.skniro.maple.block.init.TableBlock;
 import com.skniro.maple.block.init.WindowBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -272,7 +273,8 @@ public class MapleCushionBlocks {
     public static final Block TABLE_GINKGO = registerBlock("ginkgo_table", new TableBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque()), Maple.Maple_Group);
 
     //Window
-    public static final Block Window_Wood_GINKGO = registerBlock("ginkgo_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque(), BlockSetType.ACACIA), Maple.Maple_Group);
+    public static final Block Window_Wood_GINKGO = registerBlock("ginkgo_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque(), MapleBlockSetType.GINKGO), Maple.Maple_Group);
+    public static final Block Window_Wood_MAPLE = registerBlock("maple_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque(), MapleBlockSetType.MAPLE), Maple.Maple_Group);
     public static final Block Window_WOOD_OAK = registerBlock("oak_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque(), BlockSetType.OAK), Maple.Maple_Group);
     public static final Block Window_WOOD_BIRCH = registerBlock("birch_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.BIRCH_PLANKS).nonOpaque(), BlockSetType.BIRCH), Maple.Maple_Group);
     public static final Block Window_WOOD_SPRUCE = registerBlock("spruce_wood_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.SPRUCE_PLANKS).nonOpaque(), BlockSetType.SPRUCE), Maple.Maple_Group);
@@ -293,6 +295,8 @@ public class MapleCushionBlocks {
     public static final Block Window_PLANK_CHERRY = registerBlock("cherry_plank_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.CHERRY_PLANKS).nonOpaque(), BlockSetType.CHERRY), Maple.Maple_Group);
     public static final Block Window_PLANK_CRIMSON = registerBlock("crimson_plank_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.CRIMSON_PLANKS).nonOpaque(), BlockSetType.CRIMSON), Maple.Maple_Group);
     public static final Block Window_PLANK_WARPED = registerBlock("warped_plank_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.WARPED_PLANKS).nonOpaque(), BlockSetType.WARPED), Maple.Maple_Group);
+    public static final Block Window_PLANK_GINKGO = registerBlock("ginkgo_plank_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.CRIMSON_PLANKS).nonOpaque(), MapleBlockSetType.GINKGO), Maple.Maple_Group);
+    public static final Block Window_PLANK_MAPLE = registerBlock("maple_plank_window", new WindowBlock(AbstractBlock.Settings.copy(Blocks.WARPED_PLANKS).nonOpaque(), MapleBlockSetType.MAPLE), Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

@@ -39,10 +39,15 @@ public class WindowBlock extends HorizontalFacingBlock {
     public static final EnumProperty<DoorHinge> HINGE;
     public static final BooleanProperty OPEN;
     public static final BooleanProperty POWERED;
-    public static final VoxelShape NORTH_SHAPE;
-    public static final VoxelShape SOUTH_SHAPE;
-    public static final VoxelShape EAST_SHAPE;
-    public static final VoxelShape WEST_SHAPE;
+    public static final VoxelShape WEST_OPEN_SHAPE;
+    public static final VoxelShape EAST_OPEN_SHAPE;
+    public static final VoxelShape NORTH_OPEN_SHAPE;
+    public static final VoxelShape SOUTH_OPEN_SHAPE;
+
+    public static final VoxelShape WEST_CLOSED_SHAPE;
+    public static final VoxelShape EAST_CLOSED_SHAPE;
+    public static final VoxelShape NORTH_CLOSED_SHAPE;
+    public static final VoxelShape SOUTH_CLOSED_SHAPE;
     private final BlockSetType blockSetType;
 
     public WindowBlock(AbstractBlock.Settings settings, BlockSetType blockSetType) {
@@ -59,24 +64,25 @@ public class WindowBlock extends HorizontalFacingBlock {
         return this.blockSetType;
     }
 
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction direction = state.get(FACING);
         boolean closed = !state.get(OPEN);
-        boolean hingeRight = state.get(HINGE) == DoorHinge.RIGHT;
 
         switch (direction) {
             case EAST:
-            default:
-                return closed ? WEST_SHAPE : (hingeRight ? SOUTH_SHAPE : NORTH_SHAPE);
+                return closed ? EAST_CLOSED_SHAPE : EAST_OPEN_SHAPE;
             case SOUTH:
-                return closed ? NORTH_SHAPE : (hingeRight ? WEST_SHAPE : EAST_SHAPE);
+                return closed ? SOUTH_CLOSED_SHAPE : SOUTH_OPEN_SHAPE;
             case WEST:
-                return closed ? EAST_SHAPE : (hingeRight ? NORTH_SHAPE : SOUTH_SHAPE);
+                return closed ? WEST_CLOSED_SHAPE : WEST_OPEN_SHAPE;
             case NORTH:
-                return closed ? SOUTH_SHAPE : (hingeRight ? EAST_SHAPE : WEST_SHAPE);
+            default:
+                return closed ? NORTH_CLOSED_SHAPE : NORTH_OPEN_SHAPE;
         }
     }
 
+    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
         World world = ctx.getWorld();
@@ -106,6 +112,7 @@ public class WindowBlock extends HorizontalFacingBlock {
         return offset <= 0 ? DoorHinge.LEFT : DoorHinge.RIGHT;
     }
 
+    @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!this.blockSetType.canOpenByHand()) {
             return ActionResult.PASS;
@@ -119,16 +126,11 @@ public class WindowBlock extends HorizontalFacingBlock {
         return ActionResult.success(world.isClient);
     }
 
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        BlockPos blockPos = pos.down();
-        BlockState blockState = world.getBlockState(blockPos);
-        return blockState.isSideSolidFullSquare(world, blockPos, Direction.UP);
-    }
-
     private void playOpenCloseSound(@Nullable Entity entity, World world, BlockPos pos, boolean open) {
         world.playSound(entity, pos, open ? this.blockSetType.doorOpen() : this.blockSetType.doorClose(), SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.1F + 0.9F);
     }
 
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, OPEN, HINGE, POWERED);
     }
@@ -139,10 +141,16 @@ public class WindowBlock extends HorizontalFacingBlock {
         HINGE = Properties.DOOR_HINGE;
         POWERED = Properties.POWERED;
 
-        NORTH_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
-        SOUTH_SHAPE = Block.createCuboidShape(0.0, 0.0, 13.0, 16.0, 16.0, 16.0);
-        EAST_SHAPE = Block.createCuboidShape(13.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-        WEST_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 3.0, 16.0, 16.0);
+
+        WEST_CLOSED_SHAPE = Block.createCuboidShape(7.0, 0.0, 0.0, 8.5, 16.0, 16.0);
+        EAST_CLOSED_SHAPE = Block.createCuboidShape(7.5, 0.0, 0.0, 9.0, 16.0, 16.0);
+        NORTH_CLOSED_SHAPE = Block.createCuboidShape(0.0, 0.0, 7.0, 16.0, 16.0, 8.5);
+        SOUTH_CLOSED_SHAPE = Block.createCuboidShape(0.0, 0.0, 7.5, 16.0, 16.0, 9.0);
+
+        WEST_OPEN_SHAPE = Block.createCuboidShape(0.0, 0.0, 14.5, 16.0, 16.0, 16.0);
+        EAST_OPEN_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 1.5);
+        NORTH_OPEN_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 1.5, 16.0, 16.0);
+        SOUTH_OPEN_SHAPE = Block.createCuboidShape(14.5, 0.0, 0.0, 16.0, 16.0, 16.0);
     }
 }
 

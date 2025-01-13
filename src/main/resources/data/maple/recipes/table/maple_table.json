@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "P P",
+    "P P"
+  ],
+  "key": {
+    "W": {
+      "item": "maple:maple_slab"
+    },
+    "P": {
+      "item": "maple:maple_planks"
+    }
+  },
+  "result": {
+    "item": "maple:maple_table",
+    "count": 2
+  }
+}
