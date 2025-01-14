@@ -4,7 +4,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "maple:ginkgo_log"
+      "tag": "maple:ginkgo_logs"
     }
   ],
   "result": {
