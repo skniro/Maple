@@ -4,7 +4,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "maple:cherry_log"
+      "tag": "maple:cherry_logs"
     }
   ],
   "result": {
