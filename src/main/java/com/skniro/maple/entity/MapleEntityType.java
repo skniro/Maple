@@ -2,6 +2,7 @@ package com.skniro.maple.entity;
 
 import com.mojang.datafixers.types.Type;
 import com.skniro.maple.Maple;
+import com.skniro.maple.entity.furniture.CushionEntity;
 import net.minecraft.datafixer.TypeReferences;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

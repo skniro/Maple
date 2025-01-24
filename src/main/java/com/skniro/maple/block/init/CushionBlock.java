@@ -1,6 +1,6 @@
 package com.skniro.maple.block.init;
 
-import com.skniro.maple.entity.CushionEntity;
+import com.skniro.maple.entity.furniture.CushionEntity;
 import com.skniro.maple.entity.MapleEntityType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

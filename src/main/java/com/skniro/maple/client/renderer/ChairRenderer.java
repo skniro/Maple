@@ -1,6 +1,6 @@
 package com.skniro.maple.client.renderer;
 
-import com.skniro.maple.entity.CushionEntity;
+import com.skniro.maple.entity.furniture.CushionEntity;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;

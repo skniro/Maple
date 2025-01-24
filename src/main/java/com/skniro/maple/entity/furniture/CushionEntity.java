@@ -1,4 +1,4 @@
-package com.skniro.maple.entity;
+package com.skniro.maple.entity.furniture;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

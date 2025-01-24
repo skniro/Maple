@@ -5,6 +5,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.skniro.maple.block.*;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.entity.MapleEntityType;
+import com.skniro.maple.entity.village.MapleVillagers;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
@@ -489,6 +490,7 @@ public class MapleContent {
         MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
         MapleEntityType.registerMapleEntityType();
+        MapleVillagers.registerVillagerType();
     }
 
     public static void registerCommand() {
