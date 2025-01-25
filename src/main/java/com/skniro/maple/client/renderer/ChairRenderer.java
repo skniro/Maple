@@ -1,23 +1,24 @@
 package com.skniro.maple.client.renderer;
 
+import com.skniro.maple.entity.furniture.ChairEntity;
 import com.skniro.maple.entity.furniture.CushionEntity;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 
-public class ChairRenderer extends EntityRenderer<CushionEntity> {
+public class ChairRenderer extends EntityRenderer<ChairEntity> {
 
     public ChairRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
     }
 
     @Override
-    public Identifier getTexture(CushionEntity entity) {
+    public Identifier getTexture(ChairEntity entity) {
         return null;
     }
     @Override
-    public boolean shouldRender(CushionEntity livingEntity, Frustum camera, double camX, double camY, double camZ) {
+    public boolean shouldRender(ChairEntity livingEntity, Frustum camera, double camX, double camY, double camZ) {
         return true;
     }
 

@@ -2,6 +2,7 @@ package com.skniro.maple.entity;
 
 import com.mojang.datafixers.types.Type;
 import com.skniro.maple.Maple;
+import com.skniro.maple.entity.furniture.ChairEntity;
 import com.skniro.maple.entity.furniture.CushionEntity;
 import net.minecraft.datafixer.TypeReferences;
 import net.minecraft.entity.Entity;
@@ -13,8 +14,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
 public class MapleEntityType {
-    public static final EntityType<CushionEntity> CHAIR_ENTITY =
-            register("chair_entity",  EntityType.Builder.create(CushionEntity::new, SpawnGroup.MISC)
+    public static final EntityType<ChairEntity> CHAIR_ENTITY =
+            register("chair_entity",  EntityType.Builder.create(ChairEntity::new, SpawnGroup.MISC)
                     .setDimensions(0.5f, 0.5f));
 
     public static final EntityType<CushionEntity> Cushion_ENTITY =

@@ -89,27 +89,8 @@ public class WindowBlock extends HorizontalFacingBlock {
         boolean powered = world.isReceivingRedstonePower(blockPos);
         return this.getDefaultState()
                 .with(FACING, ctx.getHorizontalPlayerFacing())
-                .with(HINGE, this.getHinge(ctx))
                 .with(POWERED, powered)
                 .with(OPEN, powered);
-    }
-
-    private DoorHinge getHinge(ItemPlacementContext ctx) {
-        BlockView blockView = ctx.getWorld();
-        BlockPos blockPos = ctx.getBlockPos();
-        Direction direction = ctx.getHorizontalPlayerFacing();
-        Direction left = direction.rotateYCounterclockwise();
-        Direction right = direction.rotateYClockwise();
-
-        int offset = 0;
-        if (blockView.getBlockState(blockPos.offset(left)).isFullCube(blockView, blockPos.offset(left))) {
-            offset--;
-        }
-        if (blockView.getBlockState(blockPos.offset(right)).isFullCube(blockView, blockPos.offset(right))) {
-            offset++;
-        }
-
-        return offset <= 0 ? DoorHinge.LEFT : DoorHinge.RIGHT;
     }
 
     @Override

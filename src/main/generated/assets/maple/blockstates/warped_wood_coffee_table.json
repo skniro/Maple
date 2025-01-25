@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "maple:block/warped_wood_coffee_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "maple:block/warped_wood_coffee_table"
+    },
+    "facing=south": {
+      "model": "maple:block/warped_wood_coffee_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maple:block/warped_wood_coffee_table",
+      "y": 270
+    }
+  }
+}
