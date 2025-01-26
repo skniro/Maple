@@ -15,7 +15,7 @@ public interface MapleRecipeType<T extends Recipe<?>> {
             Registries.RECIPE_TYPE, Identifier.of(Maple.MOD_ID, "maple_juicer"), new RecipeType<>() {
                 @Override
                 public String toString() {
-                    return "cane_converter";
+                    return "maple_juicer";
                 }
             });
     public static void registerMapleRecipes() {

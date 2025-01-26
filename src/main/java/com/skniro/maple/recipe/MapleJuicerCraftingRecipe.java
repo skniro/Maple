@@ -29,10 +29,12 @@ public class MapleJuicerCraftingRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if (world.isClient()) {
-            return false;
+        for (int i = 0; i < recipeItems.size(); i++) {
+            if (!recipeItems.get(i).test(inventory.getStack(i))) {
+                return false;
+            }
         }
-        return recipeItems.get(0).test(inventory.getStack(1));
+        return true;
     }
 
     @Override
@@ -81,7 +83,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<SimpleInventory> {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredient");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(ingredients.size(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

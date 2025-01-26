@@ -536,16 +536,17 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleFurnitureBlocks.END_TABLE_CHERRY);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleFurnitureBlocks.END_TABLE_MAPLE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleFurnitureBlocks.END_TABLE_GINKGO);
+
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(MapleBlocks.Maple_Juicer_Block);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(GlassCupItems.HIGH_GLASS_CUP, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.MILK_BOTTOM, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.MILK_BOTTOM, Models.GENERATED);
         itemModelGenerator.register(MapleItems.MapleSyrup, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Flour, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Cream, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.Food_Press, Models.GENERATED);
         itemModelGenerator.register(MapleItems.SOYBEAN, Models.GENERATED);
         itemModelGenerator.register(MapleItems.Salt, Models.GENERATED);
         itemModelGenerator.register(MapleItems.BAMBOO_BOAT, Models.GENERATED);
@@ -561,6 +562,12 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFoodComponents.Sanshoku_Dango, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.TOFU, Models.GENERATED);
         itemModelGenerator.register(MapleFoodComponents.Zunda_Dango, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Chorus_Juice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.AppleJuice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.CarrotJuice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.MelonJuice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Sweet_Berries_Juice, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Glow_Berries_Juice, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_BOAT, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_CHEST_BOAT, Models.GENERATED);
 

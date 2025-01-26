@@ -392,7 +392,7 @@ public class MapleBlocks {
             new SlabBlock(AbstractBlock.Settings.copy(Blocks.BLACK_CONCRETE)), Maple.Maple_Group);
 
     //MapleJuicer
-    public static final Block Maple_Juicer_Block =registerBlock("maple_juicer_block",new MapleJuicerBlock(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
+    public static final Block Maple_Juicer_Block =registerBlock("maple_juicer_block",new MapleJuicerBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

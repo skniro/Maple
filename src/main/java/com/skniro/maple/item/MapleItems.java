@@ -43,13 +43,8 @@ public class MapleItems {
     public static final Item Flour = registerItem("flour",new Item(new Item.Settings()));
     public static final Item MapleSyrup = registerItem("maple_syrup",new Item(new Item.Settings()));
     public static final Item Cream = registerItem("cream",new Item(new Item.Settings()));
-    public static final Item MILK_BOTTOM = registerItem("milk_bottom",new MilkBucketItem(new Item.Settings().maxCount(16)));
     public static final Item SOYBEAN = registerItem("soybean",new Item(new Item.Settings()));
     public static final Item Salt = registerItem("salt",new Item(new Item.Settings()));
-
-
-    //Tools
-    public static final Item Food_Press = registerItem("food_press",new Item(new Item.Settings()));
 
 
     //Seed

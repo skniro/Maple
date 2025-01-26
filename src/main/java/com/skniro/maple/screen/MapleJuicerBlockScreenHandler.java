@@ -31,7 +31,8 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (MapleJuicerBlockEntity) blockEntity;
-        this.addSlot(new Slot(inventory, 1, 52, 34));
+        this.addSlot(new Slot(inventory, 0, 52, 19));
+        this.addSlot(new Slot(inventory, 1, 52, 50));
         this.addSlot(new FurnaceOutputSlot(playerInventory.player, inventory, 2, 100, 34));
 
 

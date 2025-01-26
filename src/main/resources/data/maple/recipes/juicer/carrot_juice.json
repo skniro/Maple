@@ -1,0 +1,15 @@
+{
+  "type": "maple:maple_juicer",
+  "category": "misc",
+  "ingredient": [ {
+      "item": "minecraft:carrot"
+  },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+    "result": {
+    "item": "maple:carrot_juice",
+    "count": 1
+  }
+}

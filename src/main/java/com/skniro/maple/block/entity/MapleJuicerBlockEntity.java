@@ -31,8 +31,8 @@ import java.util.Optional;
 public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private float rotation = 0;
-    private static final int FLUID_ITEM_SLOT = 0;
-    private static final int INPUT_SLOT = 1;
+    private static final int INPUT_SLOT = 0;
+    private static final int Glass_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
     private static final int ENERGY_ITEM_SLOT = 3;
 
@@ -139,17 +139,18 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     private void craftItem() {
         Optional<MapleJuicerCraftingRecipe> recipe = getCurrentRecipe();
         this.removeStack(INPUT_SLOT, 1);
+        this.removeStack(Glass_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + recipe.get().getOutput(null).getCount()));
     }
 
     @Override
     public int[] getAvailableSlots(Direction direction) {
-        if (direction != Direction.DOWN) {
-            return new int[]{INPUT_SLOT};
-        } else {
-            return new int[]{OUTPUT_SLOT};
-        }
+        return switch (direction){
+            case UP -> new int[]{INPUT_SLOT};
+            case DOWN -> new int[]{Glass_SLOT};
+            default -> new int[]{OUTPUT_SLOT};
+        };
     }
 
     @Override

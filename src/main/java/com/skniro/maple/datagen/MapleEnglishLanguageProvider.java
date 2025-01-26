@@ -128,7 +128,7 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.RICE,"Crop Rice");
 
         //Food Materials
-        translationBuilder.add(MapleItems.MILK_BOTTOM,"Bottom Milk");
+        translationBuilder.add(MapleFoodComponents.MILK_BOTTOM,"Bottom Milk");
         translationBuilder.add(MapleItems.Cream,"Cream");
         translationBuilder.add(MapleItems.Flour,"Flour");
         translationBuilder.add(MapleItems.Rice,"Rice");

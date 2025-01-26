@@ -32,6 +32,7 @@ import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.data.client.Models;
 import net.minecraft.datafixer.schema.IdentifierNormalizingSchema;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
@@ -241,7 +242,7 @@ public class MapleContent {
             content.add(MapleItems.Flour);
             content.add(MapleItems.MapleSyrup);
             content.add(MapleItems.Cream);
-            content.add(MapleItems.MILK_BOTTOM);
+            content.add(MapleFoodComponents.MILK_BOTTOM);
             content.add(MapleItems.SOYBEAN);
             content.add(MapleItems.Salt);
             content.add(MapleItems.Rice);
@@ -256,6 +257,12 @@ public class MapleContent {
             content.add(MapleFoodComponents.Cooked_Rice);
             content.add(MapleFoodComponents.Beef_Rice);
             content.add(MapleFoodComponents.Cheese);
+            content.add(MapleFoodComponents.Chorus_Juice);
+            content.add(MapleFoodComponents.AppleJuice);
+            content.add(MapleFoodComponents.CarrotJuice);
+            content.add(MapleFoodComponents.MelonJuice);
+            content.add(MapleFoodComponents.Sweet_Berries_Juice);
+            content.add(MapleFoodComponents.Glow_Berries_Juice);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Furniture).register(content -> {
