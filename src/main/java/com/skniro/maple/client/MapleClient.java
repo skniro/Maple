@@ -99,6 +99,7 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_CHERRY, renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_CRIMSON, renderLayer3);
         BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_WARPED, renderLayer3);
+        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.Tea_Block, renderLayer3);
 
 
         RenderLayer renderLayer4 = RenderLayer.getTranslucent();
@@ -140,8 +141,8 @@ public class MapleClient implements ClientModInitializer {
 
         FluidRenderHandlerRegistry.INSTANCE.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
                 new SimpleFluidRenderHandler(
-                        new Identifier("minecraft:block/water_still"),
-                        new Identifier("minecraft:block/water_flow"),
+                        new Identifier("maple:block/spring_still"),
+                        new Identifier("maple:block/spring_flow"),
                         0x5DB7EF
                 ));
 

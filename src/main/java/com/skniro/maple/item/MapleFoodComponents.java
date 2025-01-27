@@ -1,6 +1,7 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.init.food.ItemBottle;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -169,8 +170,8 @@ public class MapleFoodComponents {
                     .food
                     (new FoodComponent
                             .Builder()
-                            .hunger(6)
-                            .saturationModifier(0.9f)
+                            .hunger(2)
+                            .saturationModifier(0.2f)
                             .alwaysEdible()
                             .build()
                     )
@@ -184,9 +185,8 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
-                                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
@@ -200,9 +200,8 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
-                                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
@@ -216,7 +215,7 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
                                     .build()
@@ -232,7 +231,7 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
                             )
@@ -247,7 +246,7 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
                             )
@@ -262,13 +261,71 @@ public class MapleFoodComponents {
                             (new FoodComponent
                                     .Builder()
                                     .hunger(2)
-                                    .saturationModifier(0.9f)
+                                    .saturationModifier(0.2f)
                                     .alwaysEdible()
                                     .build()
                             )
                     .recipeRemainder(Items.GLASS_BOTTLE)
                     .maxCount(1)
     ));
+
+    public static final Item Green_Tea_Leaves = registerItem("green_tea_leaves",
+            new AliasedBlockItem(MapleBlocks.Tea_Block,
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .hunger(1)
+                                            .saturationModifier(0.1f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(64)
+            ));
+
+    public static final Item Red_Tea_Leaves = registerItem("red_tea_leaves",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .hunger(1)
+                                            .saturationModifier(0.1f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(64)
+            ));
+
+    public static final Item Red_Tea = registerItem("red_tea",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .hunger(4)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(1)
+            ));
+
+    public static final Item Green_Tea = registerItem("green_tea",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .hunger(4)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(1)
+            ));
+
+
 
 
        /* public static final Item Mutton_Rice =

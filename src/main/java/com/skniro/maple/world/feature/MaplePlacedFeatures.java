@@ -34,11 +34,14 @@ public class MaplePlacedFeatures {
     public static final RegistryKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
     public static final RegistryKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
     public static final RegistryKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
+    public static final RegistryKey<PlacedFeature> PATCH_TEA_COMMON = registerKey("patch_tea_common");
+    public static final RegistryKey<PlacedFeature> PATCH_TEA_RARE = registerKey("patch_tea_rare");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         RegistryEntry<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        RegistryEntry<ConfiguredFeature<?, ?>> registryEntry2 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.PATCH_TEA);
 
         register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SALT_ORE),
                 modifiersWithCount(12, // Veins per Chunk
@@ -104,6 +107,8 @@ public class MaplePlacedFeatures {
                 NoiseThresholdCountPlacementModifier.of(-0.8, 4, 8),
                 SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
+        register(context, PATCH_TEA_COMMON, registryEntry2, RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
+        register(context, PATCH_TEA_RARE, registryEntry2, RarityFilterPlacementModifier.of(384), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

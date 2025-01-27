@@ -4,6 +4,7 @@ import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleArmorItems;
@@ -211,6 +212,8 @@ public class MapleModelProvider extends FabricModelProvider {
 
         //Crop
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
+        MapleModelDatagenHelper mapleModelDatagenHelper = new MapleModelDatagenHelper(blockStateModelGenerator);
+        mapleModelDatagenHelper.registerModSweetBerryBush(MapleFoodComponents.Green_Tea_Leaves, MapleBlocks.Tea_Block);
 
         //Block and Carpet
         blockStateModelGenerator.registerWoolAndCarpet(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
@@ -603,5 +606,10 @@ public class MapleModelProvider extends FabricModelProvider {
         //Sign
         itemModelGenerator.register(MapleItems.Maple_HANGING_SIGN, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_HANGING_SIGN, Models.GENERATED);
+
+        //Tea
+        itemModelGenerator.register(MapleFoodComponents.Green_Tea, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Red_Tea, Models.GENERATED);
+        itemModelGenerator.register(MapleFoodComponents.Red_Tea_Leaves, Models.GENERATED);
     }
 }

@@ -195,7 +195,7 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
-    int maxCount = this.getStack(OUTPUT_SLOT).isEmpty() ? 64 : this.getStack(OUTPUT_SLOT).getMaxCount();
+    int maxCount = this.getStack(OUTPUT_SLOT).isEmpty() ? 1 : this.getStack(OUTPUT_SLOT).getMaxCount();
     int currentCount = this.getStack(OUTPUT_SLOT).getCount();
 
         return maxCount >= currentCount + count;

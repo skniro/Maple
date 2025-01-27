@@ -30,6 +30,9 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
         list.add(MapleBlocks.STRIPPED_MAPLE_LOG);
         list.add(MapleBlocks.STRIPPED_MAPLE_WOOD);
     });
+    public static final List<ItemConvertible> Green_Tea = Util.make(Lists.newArrayList(), list -> {
+        list.add(MapleFoodComponents.Green_Tea_Leaves);
+    });
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
@@ -327,7 +330,24 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.GOLD_NUGGET))
                 .offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD , MapleFoodComponents.Red_Tea,1)
+                .input(MapleFoodComponents.Red_Tea_Leaves,2)
+                .input(Items.GLASS_BOTTLE)
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Red_Tea_Leaves),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Red_Tea_Leaves))
+                .criterion(FabricRecipeProvider.hasItem(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD , MapleFoodComponents.Green_Tea,1)
+                .input(MapleFoodComponents.Green_Tea_Leaves,2)
+                .input(Items.GLASS_BOTTLE)
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Green_Tea_Leaves),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Green_Tea_Leaves))
+                .criterion(FabricRecipeProvider.hasItem(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+
         RecipeProvider.offerSmelting(exporter, STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
+        RecipeProvider.offerSmelting(exporter, Green_Tea, RecipeCategory.FOOD , MapleFoodComponents.Red_Tea_Leaves, 0.45F, 300, "red_tea");
 
     }
 }

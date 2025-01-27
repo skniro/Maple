@@ -541,6 +541,89 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(MapleBlocks.Maple_Juicer_Block,"Juicer");
 
+        translationBuilder.add(MapleFoodComponents.Green_Tea_Leaves,"Green Tea Leaves");
+        translationBuilder.add(MapleFoodComponents.Red_Tea_Leaves,"Red Tea Leaves");
+        translationBuilder.add(MapleFoodComponents.Green_Tea,"Green Tea");
+        translationBuilder.add(MapleFoodComponents.Red_Tea,"Red Tea");
+        translationBuilder.add(MapleBlocks.Tea_Block,"Plant Tea");
+
+        translationBuilder.add(MapleFoodComponents.Chorus_Juice,"Chorus Juice");
+        translationBuilder.add(MapleFoodComponents.AppleJuice,"Apple Juice");
+        translationBuilder.add(MapleFoodComponents.CarrotJuice,"Carrot Juice");
+        translationBuilder.add(MapleFoodComponents.MelonJuice,"Melon Juice");
+        translationBuilder.add(MapleFoodComponents.Sweet_Berries_Juice,"Sweet Berries Juice");
+        translationBuilder.add(MapleFoodComponents.Glow_Berries_Juice,"Glow Berries Juice");
+
+        //CoffeeTable
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_OAK,"Oak Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_SPRUCE,"Spruce Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_BIRCH,"Birch Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_JUNGLE,"JungleWood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_ACACIA,"Acacia Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_DARK_OAK,"Dark Oak Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_CRIMSON,"Crimson Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_WARPED,"Warped Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_MANGROVE,"Mangrove Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_BAMBOO,"Bamboo Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_WOOD_CHERRY,"Cherry Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_Wood_MAPLE,"Maple Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_Wood_GINKGO,"Ginkgo Wood Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_OAK,"Oak Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_SPRUCE,"Spruce Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_BIRCH,"Birch Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_JUNGLE,"JunglePlank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_ACACIA,"Acacia Plank Coffee Table");;
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_DARK_OAK,"Dark Oak Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_CRIMSON,"Crimson Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_WARPED,"Warped Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_MANGROVE,"Mangrove Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_BAMBOO,"Bamboo Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_CHERRY,"Cherry Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_MAPLE,"Maple Plank Coffee Table");
+        translationBuilder.add(MapleFurnitureBlocks.Coffee_Table_PLANK_GINKGO,"Ginkgo Plank Coffee Table");
+
+        //Chair
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_OAK,"Oak Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_SPRUCE,"Spruce Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_BIRCH,"Birch Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_JUNGLE,"JungleWood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_ACACIA,"Acacia Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_DARK_OAK,"Dark Oak Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_CRIMSON,"Crimson Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_WARPED,"Warped Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_MANGROVE,"Mangrove Wood Chair");;
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_BAMBOO,"Bamboo Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_WOOD_CHERRY,"Cherry Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_Wood_MAPLE,"Maple Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_Wood_GINKGO,"Ginkgo Wood Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_OAK,"Oak Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_SPRUCE,"Spruce Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_BIRCH,"Birch Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_JUNGLE,"JunglePlank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_ACACIA,"Acacia Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_DARK_OAK,"Dark Oak Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_CRIMSON,"Crimson Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_WARPED,"Warped Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_MANGROVE,"Mangrove Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_BAMBOO,"Bamboo Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_CHERRY,"Cherry Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_MAPLE,"Maple Plank Chair");
+        translationBuilder.add(MapleFurnitureBlocks.Chair_PLANK_GINKGO,"Ginkgo Plank Chair");
+
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_OAK,"Oak End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_SPRUCE,"Spruce End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_BIRCH,"Birch End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_JUNGLE,"JungleEnd Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_ACACIA,"Acacia End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_DARK_OAK,"Dark Oak End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_CRIMSON,"Crimson End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_WARPED,"Warped End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_MANGROVE,"Mangrove End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_BAMBOO,"Bamboo End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_CHERRY,"Cherry End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_MAPLE,"Maple End Table");
+        translationBuilder.add(MapleFurnitureBlocks.END_TABLE_GINKGO,"Ginkgo End Table");
+
         try {
             Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/en_us.existing.json").get();
             translationBuilder.add(existingFilePath);

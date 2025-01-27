@@ -394,6 +394,9 @@ public class MapleBlocks {
     //MapleJuicer
     public static final Block Maple_Juicer_Block =registerBlock("maple_juicer_block",new MapleJuicerBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
 
+    //Tea
+    public static final Block Tea_Block =registerBlock("tea_block",new MapleTeaBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
+
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(Maple.MOD_ID, name), block);

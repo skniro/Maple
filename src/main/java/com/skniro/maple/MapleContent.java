@@ -263,6 +263,10 @@ public class MapleContent {
             content.add(MapleFoodComponents.MelonJuice);
             content.add(MapleFoodComponents.Sweet_Berries_Juice);
             content.add(MapleFoodComponents.Glow_Berries_Juice);
+            content.add(MapleFoodComponents.Green_Tea);
+            content.add(MapleFoodComponents.Red_Tea);
+            content.add(MapleFoodComponents.Green_Tea_Leaves);
+            content.add(MapleFoodComponents.Red_Tea_Leaves);
         });
 
         ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Furniture).register(content -> {
