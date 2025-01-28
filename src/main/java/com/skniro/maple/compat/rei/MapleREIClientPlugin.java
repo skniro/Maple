@@ -24,7 +24,7 @@ public class MapleREIClientPlugin implements REIClientPlugin {
     }
     @Override
     public void registerScreens(ScreenRegistry registry) {
-        registry.registerClickArea(screen -> new Rectangle(75, 30, 20, 30), MapleJuicerBlockScreen.class,
+        registry.registerClickArea(screen -> new Rectangle(73, 34, 22, 16), MapleJuicerBlockScreen.class,
                 MapleJuicerCraftingCategory.UID);
     }
 }

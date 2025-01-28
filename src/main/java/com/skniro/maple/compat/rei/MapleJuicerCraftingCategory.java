@@ -45,8 +45,10 @@ public class MapleJuicerCraftingCategory implements DisplayCategory<BasicDisplay
         final Point startPoint = new Point(bounds.getCenterX() - 87, bounds.getCenterY() - 35);
         List<Widget> widgets = new LinkedList<>();
         widgets.add(Widgets.createTexturedWidget(TEXTURE, new Rectangle(startPoint.x, startPoint.y, 175, 82)));
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 52, startPoint.y + 34))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 52, startPoint.y + 19))
                 .entries(display.getInputEntries().get(0)));
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 52, startPoint.y + 50))
+                .entries(display.getInputEntries().get(1)));
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 100, startPoint.y + 34))
                 .markOutput().entries(display.getOutputEntries().get(0)));
         return widgets;
