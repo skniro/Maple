@@ -22,7 +22,7 @@ import java.util.List;
 public class MapleJuicerCraftingCategory implements DisplayCategory<BasicDisplay> {
     public static final CategoryIdentifier<MapleJuicerCraftingDisplay> UID = CategoryIdentifier.of(Maple.MOD_ID, "maple_juicer");
     public static final Identifier TEXTURE = Identifier.of(Maple.MOD_ID,
-            "textures/maple_juicer/container/maple_juicer.png");
+            "textures/gui/maple_juicer/maple_juicer.png");
 
     @Override
     public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier() {

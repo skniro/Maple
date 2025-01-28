@@ -319,6 +319,10 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_GREEN,"绿色丛林木坐垫");
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_RED,"红色丛林木坐垫");
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_BLACK,"黑色丛林木坐垫");
+        translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_WHITE,"白色丛林木坐垫");
+        translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_ORANGE,"橙色丛林木坐垫");
+        translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_MAGENTA,"品红色丛林木坐垫");
+        translationBuilder.add(MapleFurnitureBlocks.CUSHION_JUNGLE_LIGHT_BLUE,"淡蓝色丛林木坐垫");
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_ACACIA_WHITE,"白色金合欢木坐垫");
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_ACACIA_ORANGE,"橙色金合欢木坐垫");
         translationBuilder.add(MapleFurnitureBlocks.CUSHION_ACACIA_MAGENTA,"品红色金合欢木坐垫");
