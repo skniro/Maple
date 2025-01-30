@@ -13,8 +13,14 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.placement.*;
-
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import java.util.List;
 
 
@@ -38,11 +44,14 @@ public class MaplePlacedFeatures {
     public static final ResourceKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
     public static final ResourceKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
     public static final ResourceKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_COMMON = registerKey("patch_tea_common");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_RARE = registerKey("patch_tea_rare");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        Holder<ConfiguredFeature<?, ?>> registryEntry2 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.PATCH_TEA);
 
         register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.SALT_ORE),
                 modifiersWithCount(12, // Veins per Chunk
@@ -68,39 +77,39 @@ public class MaplePlacedFeatures {
                 modifiersWithCount(40, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Copper_KEY),
+        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Copper_KEY),
                 modifiersWithCount(32, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Diamond_KEY),
+        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Diamond_KEY),
                 modifiersWithCount(17, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Emerald_KEY),
+        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Emerald_KEY),
                 modifiersWithCount(17, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Gold_KEY),
+        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Gold_KEY),
                 modifiersWithCount(20, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures. Nether_Iron_KEY),
+        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures. Nether_Iron_KEY),
                 modifiersWithCount(32, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Lapis_KEY),
+        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Lapis_KEY),
                 modifiersWithCount(25, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
+        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
                 modifiersWithCount(20, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Sakura_Carpet_KEY),
+        register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Sakura_Carpet_KEY),
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
-        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Maple_Carpet_KEY),
+        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Maple_Carpet_KEY),
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
@@ -108,6 +117,8 @@ public class MaplePlacedFeatures {
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
+        register(context, PATCH_TEA_COMMON, registryEntry2, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, PATCH_TEA_RARE, registryEntry2, RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
@@ -120,8 +131,8 @@ public class MaplePlacedFeatures {
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
-                                                                                          Holder<ConfiguredFeature<?, ?>> configuration,
-                                                                                          PlacementModifier... modifiers) {
+                                                                                   Holder<ConfiguredFeature<?, ?>> configuration,
+                                                                                   PlacementModifier... modifiers) {
         register(context, key, configuration, List.of(modifiers));
     }
 

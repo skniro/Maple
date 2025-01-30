@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_taiga",
+  "features": "maple:patch_tea_common",
+  "step": "vegetal_decoration"
+}
