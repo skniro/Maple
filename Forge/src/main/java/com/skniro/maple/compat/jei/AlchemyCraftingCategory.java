@@ -40,11 +40,6 @@ public class AlchemyCraftingCategory implements IRecipeCategory<MapleJuicerCraft
     }
 
     @Override
-    public IDrawable getBackground() {
-        return this.background;
-    }
-
-    @Override
     public IDrawable getIcon() {
         return this.icon;
     }
