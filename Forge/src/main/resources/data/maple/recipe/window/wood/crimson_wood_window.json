@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        "PWP",
+        "PPP"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:glass"
+        },
+        "P": {
+            "item": "minecraft:stripped_crimson_stem"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "maple:crimson_wood_window"
+    }
+}

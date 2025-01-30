@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "maple:block/mangrove_end_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "maple:block/mangrove_end_table"
+    },
+    "facing=south": {
+      "model": "maple:block/mangrove_end_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maple:block/mangrove_end_table",
+      "y": 270
+    }
+  }
+}

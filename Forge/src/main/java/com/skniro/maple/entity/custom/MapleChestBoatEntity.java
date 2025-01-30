@@ -1,6 +1,6 @@
 package com.skniro.maple.entity.custom;
 
-import com.skniro.maple.entity.MapleBoatEntities;
+import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.item.MapleItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -17,7 +17,7 @@ public class MapleChestBoatEntity extends ChestBoat {
         super(pEntityType, pLevel);
     }
     public MapleChestBoatEntity(Level pLevel, double pX, double pY, double pZ) {
-        this(MapleBoatEntities.Maple_CHEST_BOAT.get(), pLevel);
+        this(MapleEntityType.Maple_CHEST_BOAT.get(), pLevel);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
         this.yo = pY;

@@ -12,4 +12,14 @@ public class MapleBiomeFeatures {
     public static void addSakuraFeatures(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MaplePlacedFeatures.SAKURA_TREE_PLACED);
     }
+
+    public static void addTeaSnowy(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MaplePlacedFeatures.PATCH_TEA_RARE);
+    }
+
+    public static void addTea(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MaplePlacedFeatures.PATCH_TEA_COMMON);
+    }
+
+
 }

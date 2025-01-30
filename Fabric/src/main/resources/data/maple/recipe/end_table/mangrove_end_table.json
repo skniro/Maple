@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "WWW",
+        "P P"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:mangrove_slab"
+        },
+        "P": {
+            "item": "minecraft:mangrove_planks"
+        }
+    },
+    "result": {
+        "count": 2,
+        "id": "maple:mangrove_end_table"
+    }
+}

@@ -2,6 +2,7 @@ package com.skniro.maple.fluid.init;
 
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluids;
+import com.skniro.maple.particle.MapleParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -44,6 +45,9 @@ public class MapleHotSpringFluid extends FlowingFluid {
         } else if (random.nextInt(10) == 0) {
             world.addParticle(ParticleTypes.UNDERWATER, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + random.nextDouble(), (double)pos.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
         }
+        if (random.nextFloat() < 0.07F) {
+            world.addParticle(MapleParticleTypes.HOT_SPRING.get(), (double) pos.getX() + random.nextDouble(), (double) pos.getY() + random.nextDouble(), (double) pos.getZ() + random.nextDouble(), 0.0, 0.03, 0.0);
+        }
     }
 
     @Override
@@ -68,7 +72,7 @@ public class MapleHotSpringFluid extends FlowingFluid {
 
     @Override
     public FluidType getFluidType() {
-        return (FluidType) NeoForgeMod.WATER_TYPE;
+        return NeoForgeMod.WATER_TYPE.value();
     }
 
 

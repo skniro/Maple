@@ -1,7 +1,11 @@
 package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
+import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.item.init.food.ItemBottle;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -160,6 +164,167 @@ public class MapleFoodComponents {
                                                     .build()
                                             )
                                     ));
+
+    public static final Item MILK_BOTTOM = registerItem("milk_bottom",new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .maxCount(16)
+    ));
+
+    public static final Item MelonJuice = registerItem("melon_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item AppleJuice = registerItem("apple_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item CarrotJuice = registerItem("carrot_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED,600,1),1.0F)
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item Sweet_Berries_Juice = registerItem("sweet_berries_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item Glow_Berries_Juice = registerItem("glow_berries_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item Chorus_Juice = registerItem("chorus_juice", new ItemBottle(
+            new Item
+                    .Settings()
+                    .food
+                            (new FoodComponent
+                                    .Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.2f)
+                                    .alwaysEdible()
+                                    .build()
+                            )
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(1)
+    ));
+
+    public static final Item Green_Tea_Leaves = registerItem("green_tea_leaves",
+            new AliasedBlockItem(MapleBlocks.Tea_Block,
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .nutrition(1)
+                                            .saturationModifier(0.1f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(64)
+            ));
+
+    public static final Item Red_Tea_Leaves = registerItem("red_tea_leaves",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .nutrition(1)
+                                            .saturationModifier(0.1f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(64)
+            ));
+
+    public static final Item Red_Tea = registerItem("red_tea",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .nutrition(4)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(1)
+            ));
+
+    public static final Item Green_Tea = registerItem("green_tea",
+            new Item(
+                    new Item
+                            .Settings() .food
+                                    (new FoodComponent
+                                            .Builder()
+                                            .nutrition(4)
+                                            .saturationModifier(0.4f)
+                                            .alwaysEdible()
+                                            .build()
+                                    )
+                            .maxCount(1)
+            ));
 
        /* public static final Item Mutton_Rice =
             registerItem("mutton_rice",

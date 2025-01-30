@@ -1,0 +1,16 @@
+{
+    "type": "maple:maple_juicer",
+    "category": "misc",
+    "ingredient": [
+        {
+            "item": "minecraft:glow_berries"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "maple:glow_berries_juice"
+    }
+}

@@ -15,7 +15,6 @@ import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.SignItem;
 public class MapleItems {
     public static final Item CHERRY_SIGN = registerItem("cherry_sign",
@@ -44,14 +43,8 @@ public class MapleItems {
     public static final Item Flour = registerItem("flour",new Item(new Item.Properties()));
     public static final Item MapleSyrup = registerItem("maple_syrup",new Item(new Item.Properties()));
     public static final Item Cream = registerItem("cream",new Item(new Item.Properties()));
-    public static final Item MILK_BOTTOM = registerItem("milk_bottom",new MilkBucketItem(new Item.Properties().stacksTo(16)));
     public static final Item SOYBEAN = registerItem("soybean",new Item(new Item.Properties()));
     public static final Item Salt = registerItem("salt",new Item(new Item.Properties()));
-
-
-    //Tools
-    public static final Item Food_Press = registerItem("food_press",new Item(new Item.Properties()));
-
 
     //Seed
     public static final Item Rice = registerItem("rice",new ItemNameBlockItem(MapleBlocks.RICE, (new Item.Properties())));

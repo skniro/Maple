@@ -1,17 +1,15 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
-import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -106,6 +104,71 @@ public class MapleModelProvider extends FabricModelProvider {
         glass.slab(MapleBlocks.GLASS_SLAB);
         glass.stairs(MapleBlocks.GLASS_STAIRS);
 
+        //Concrete
+        BlockModelGenerators.BlockFamilyProvider white1 = blockStateModelGenerator.family(Blocks.WHITE_CONCRETE);
+        white1.slab(MapleBlocks.WHITE_CONCRETE_SLAB);
+        white1.stairs(MapleBlocks.WHITE_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider orange1 = blockStateModelGenerator.family(Blocks.ORANGE_CONCRETE);
+        orange1.slab(MapleBlocks.ORANGE_CONCRETE_SLAB);
+        orange1.stairs(MapleBlocks.ORANGE_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider magenta1 = blockStateModelGenerator.family(Blocks.MAGENTA_CONCRETE);
+        magenta1.slab(MapleBlocks.MAGENTA_CONCRETE_SLAB);
+        magenta1.stairs(MapleBlocks.MAGENTA_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider light_blue1 = blockStateModelGenerator.family(Blocks.LIGHT_BLUE_CONCRETE);
+        light_blue1.slab(MapleBlocks.LIGHT_BLUE_CONCRETE_SLAB);
+        light_blue1.stairs(MapleBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider yellow1 = blockStateModelGenerator.family(Blocks.YELLOW_CONCRETE);
+        yellow1.slab(MapleBlocks.YELLOW_CONCRETE_SLAB);
+        yellow1.stairs(MapleBlocks.YELLOW_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider lime1 = blockStateModelGenerator.family(Blocks.LIME_CONCRETE);
+        lime1.slab(MapleBlocks.LIME_CONCRETE_SLAB);
+        lime1.stairs(MapleBlocks.LIME_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider pink1 = blockStateModelGenerator.family(Blocks.PINK_CONCRETE);
+        pink1.slab(MapleBlocks.PINK_CONCRETE_SLAB);
+        pink1.stairs(MapleBlocks.PINK_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider gray1 = blockStateModelGenerator.family(Blocks.GRAY_CONCRETE);
+        gray1.slab(MapleBlocks.GRAY_CONCRETE_SLAB);
+        gray1.stairs(MapleBlocks.GRAY_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider light_gray1 = blockStateModelGenerator.family(Blocks.LIGHT_GRAY_CONCRETE);
+        light_gray1.slab(MapleBlocks.LIGHT_GRAY_CONCRETE_SLAB);
+        light_gray1.stairs(MapleBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider cyan1 = blockStateModelGenerator.family(Blocks.CYAN_CONCRETE);
+        cyan1.slab(MapleBlocks.CYAN_CONCRETE_SLAB);
+        cyan1.stairs(MapleBlocks.CYAN_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider purple1 = blockStateModelGenerator.family(Blocks.PURPLE_CONCRETE);
+        purple1.slab(MapleBlocks.PURPLE_CONCRETE_SLAB);
+        purple1.stairs(MapleBlocks.PURPLE_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider blue1 = blockStateModelGenerator.family(Blocks.BLUE_CONCRETE);
+        blue1.slab(MapleBlocks.BLUE_CONCRETE_SLAB);
+        blue1.stairs(MapleBlocks.BLUE_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider brown1 = blockStateModelGenerator.family(Blocks.BROWN_CONCRETE);
+        brown1.slab(MapleBlocks.BROWN_CONCRETE_SLAB);
+        brown1.stairs(MapleBlocks.BROWN_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider green1 = blockStateModelGenerator.family(Blocks.GREEN_CONCRETE);
+        green1.slab(MapleBlocks.GREEN_CONCRETE_SLAB);
+        green1.stairs(MapleBlocks.GREEN_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider red1 = blockStateModelGenerator.family(Blocks.RED_CONCRETE);
+        red1.slab(MapleBlocks.RED_CONCRETE_SLAB);
+        red1.stairs(MapleBlocks.RED_CONCRETE_STAIRS);
+
+        BlockModelGenerators.BlockFamilyProvider black1 = blockStateModelGenerator.family(Blocks.BLACK_CONCRETE);
+        black1.slab(MapleBlocks.BLACK_CONCRETE_SLAB);
+        black1.stairs(MapleBlocks.BLACK_CONCRETE_STAIRS);
+
         //Cube Block
         blockStateModelGenerator.family(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.family(MapleBlocks.CHERRY_PLANKS);
@@ -149,6 +212,8 @@ public class MapleModelProvider extends FabricModelProvider {
 
         //Crop
         blockStateModelGenerator.createCropBlock(MapleBlocks.RICE, BlockStateProperties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
+        MapleModelDatagenHelper mapleModelDatagenHelper = new MapleModelDatagenHelper(blockStateModelGenerator);
+        mapleModelDatagenHelper.registerModSweetBerryBush(MapleFoodComponents.Green_Tea_Leaves, MapleBlocks.Tea_Block);
 
         //Block and Carpet
         blockStateModelGenerator.createFullAndCarpetBlocks(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_CARPET);
@@ -181,16 +246,310 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.family(MapleBlocks.Iron_Sea_Lantern);
         blockStateModelGenerator.family(MapleBlocks.Gold_Sea_Lantern);
 
+        //Cushion
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_OAK_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_SPRUCE_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BIRCH_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_JUNGLE_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_ACACIA_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_DARK_OAK_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CRIMSON_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_WARPED_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MANGROVE_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_MAPLE_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_CHERRY_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_GINKGO_BLACK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_WHITE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_ORANGE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_MAGENTA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_LIGHT_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_YELLOW);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_LIME);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_PINK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_LIGHT_GRAY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_CYAN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_PURPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_BLUE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_BROWN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_GREEN);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_RED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.CUSHION_BAMBOO_BLACK);
+
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.TABLE_GINKGO);
+
+        //CoffeeTable
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_WOOD_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_Wood_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_Wood_GINKGO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Coffee_Table_PLANK_GINKGO);
+
+        //Chair
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_WOOD_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_Wood_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_Wood_GINKGO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.Chair_PLANK_GINKGO);
+
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_SPRUCE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_BIRCH);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_JUNGLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_ACACIA);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_DARK_OAK);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_CRIMSON);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_WARPED);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_MANGROVE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_BAMBOO);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_CHERRY);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_MAPLE);
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleFurnitureBlocks.END_TABLE_GINKGO);
+
+        blockStateModelGenerator.createNonTemplateHorizontalBlock(MapleBlocks.Maple_Juicer_Block);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(GlassCupItems.HIGH_GLASS_CUP, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(MapleItems.MILK_BOTTOM, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.MILK_BOTTOM, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.MapleSyrup, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.Flour, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.Cream, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(MapleItems.Food_Press, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.SOYBEAN, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.Salt, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.BAMBOO_BOAT, ModelTemplates.FLAT_ITEM);
@@ -206,6 +565,12 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(MapleFoodComponents.Sanshoku_Dango, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleFoodComponents.TOFU, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleFoodComponents.Zunda_Dango, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Chorus_Juice, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.AppleJuice, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.CarrotJuice, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.MelonJuice, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Sweet_Berries_Juice, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Glow_Berries_Juice, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.GINKGO_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.GINKGO_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
@@ -241,5 +606,10 @@ public class MapleModelProvider extends FabricModelProvider {
         //Sign
         itemModelGenerator.generateFlatItem(MapleItems.Maple_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(MapleItems.GINKGO_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+
+        //Tea
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Green_Tea, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Red_Tea, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(MapleFoodComponents.Red_Tea_Leaves, ModelTemplates.FLAT_ITEM);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "maple:block/window/window_right",
+  "textures": {
+    "front": "minecraft:block/stripped_crimson_stem",
+    "side": "minecraft:block/stripped_crimson_stem",
+    "glass": "minecraft:block/glass"
+  }
+}

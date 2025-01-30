@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        " P ",
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:birch_planks"
+        }
+    },
+    "result": {
+        "count": 3,
+        "id": "maple:birch_plank_coffee_table"
+    }
+}

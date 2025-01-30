@@ -51,8 +51,6 @@ public class MapleItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> Cream = registerItem("cream",
             ()-> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MILK_BOTTOM = registerItem("milk_bottom",
-            ()-> new MilkBucketItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> SOYBEAN = registerItem("soybean",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> Salt = registerItem("salt",
@@ -94,11 +92,6 @@ public class MapleItems {
     public static final RegistryObject<Item> SNOWBALL_Instant_Health = registerItem("snowball_instant_health",
             ()->new InstantHealthSnowballItem(new Item.Properties().stacksTo(64)));
 
-
-
-    //Tools
-    public static final RegistryObject<Item> Food_Press = registerItem("food_press",
-            ()-> new Item(new Item.Properties()));
 
 
     //Seed

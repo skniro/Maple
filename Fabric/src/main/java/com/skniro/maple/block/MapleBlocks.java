@@ -309,6 +309,95 @@ public class MapleBlocks {
     public static final Block Gold_Sea_Lantern =registerBlock("gold_sea_lantern",
             new Block(AbstractBlock.Settings.copy(Blocks.SEA_LANTERN)),Maple.Maple_Group);
 
+    //Concrete
+    public static final Block WHITE_CONCRETE_STAIRS = registerBlock("white_concrete_stairs",
+            new StairsBlock(Blocks.WHITE_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.WHITE_CONCRETE)), Maple.Maple_Group);
+    public static final Block WHITE_CONCRETE_SLAB = registerBlock("white_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.WHITE_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block ORANGE_CONCRETE_STAIRS = registerBlock("orange_concrete_stairs",
+            new StairsBlock(Blocks.ORANGE_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE)), Maple.Maple_Group);
+    public static final Block ORANGE_CONCRETE_SLAB = registerBlock("orange_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block MAGENTA_CONCRETE_STAIRS = registerBlock("magenta_concrete_stairs",
+            new StairsBlock(Blocks.MAGENTA_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE)), Maple.Maple_Group);
+    public static final Block MAGENTA_CONCRETE_SLAB = registerBlock("magenta_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block LIGHT_BLUE_CONCRETE_STAIRS = registerBlock("light_blue_concrete_stairs",
+            new StairsBlock(Blocks.MAGENTA_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE)), Maple.Maple_Group);
+    public static final Block LIGHT_BLUE_CONCRETE_SLAB = registerBlock("light_blue_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.MAGENTA_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block YELLOW_CONCRETE_STAIRS = registerBlock("yellow_concrete_stairs",
+            new StairsBlock(Blocks.YELLOW_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.YELLOW_CONCRETE)), Maple.Maple_Group);
+    public static final Block YELLOW_CONCRETE_SLAB = registerBlock("yellow_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.YELLOW_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block LIME_CONCRETE_STAIRS = registerBlock("lime_concrete_stairs",
+            new StairsBlock(Blocks.LIME_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.LIME_CONCRETE)), Maple.Maple_Group);
+    public static final Block LIME_CONCRETE_SLAB = registerBlock("lime_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.LIME_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block PINK_CONCRETE_STAIRS = registerBlock("pink_concrete_stairs",
+            new StairsBlock(Blocks.PINK_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE)), Maple.Maple_Group);
+    public static final Block PINK_CONCRETE_SLAB = registerBlock("pink_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.PINK_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block GRAY_CONCRETE_STAIRS = registerBlock("gray_concrete_stairs",
+            new StairsBlock(Blocks.GRAY_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GRAY_CONCRETE)), Maple.Maple_Group);
+    public static final Block GRAY_CONCRETE_SLAB = registerBlock("gray_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GRAY_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block LIGHT_GRAY_CONCRETE_STAIRS = registerBlock("light_gray_concrete_stairs",
+            new StairsBlock(Blocks.LIGHT_GRAY_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_CONCRETE)), Maple.Maple_Group);
+    public static final Block LIGHT_GRAY_CONCRETE_SLAB = registerBlock("light_gray_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.LIGHT_GRAY_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block CYAN_CONCRETE_STAIRS = registerBlock("cyan_concrete_stairs",
+            new StairsBlock(Blocks.CYAN_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE)), Maple.Maple_Group);
+    public static final Block CYAN_CONCRETE_SLAB = registerBlock("cyan_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.CYAN_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block PURPLE_CONCRETE_STAIRS = registerBlock("purple_concrete_stairs",
+            new StairsBlock(Blocks.PURPLE_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PURPLE_CONCRETE)), Maple.Maple_Group);
+    public static final Block PURPLE_CONCRETE_SLAB = registerBlock("purple_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.PURPLE_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block BLUE_CONCRETE_STAIRS = registerBlock("blue_concrete_stairs",
+            new StairsBlock(Blocks.BLUE_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BLUE_CONCRETE)), Maple.Maple_Group);
+    public static final Block BLUE_CONCRETE_SLAB = registerBlock("blue_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.BLUE_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block BROWN_CONCRETE_STAIRS = registerBlock("brown_concrete_stairs",
+            new StairsBlock(Blocks.BROWN_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BROWN_CONCRETE)), Maple.Maple_Group);
+    public static final Block BROWN_CONCRETE_SLAB = registerBlock("brown_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.BROWN_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block GREEN_CONCRETE_STAIRS = registerBlock("green_concrete_stairs",
+            new StairsBlock(Blocks.GREEN_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.GREEN_CONCRETE)), Maple.Maple_Group);
+    public static final Block GREEN_CONCRETE_SLAB = registerBlock("green_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.GREEN_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block RED_CONCRETE_STAIRS = registerBlock("red_concrete_stairs",
+            new StairsBlock(Blocks.RED_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.RED_CONCRETE)), Maple.Maple_Group);
+    public static final Block RED_CONCRETE_SLAB = registerBlock("red_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.RED_CONCRETE)), Maple.Maple_Group);
+
+    public static final Block BLACK_CONCRETE_STAIRS = registerBlock("black_concrete_stairs",
+            new StairsBlock(Blocks.BLACK_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.BLACK_CONCRETE)), Maple.Maple_Group);
+    public static final Block BLACK_CONCRETE_SLAB = registerBlock("black_concrete_slab",
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.BLACK_CONCRETE)), Maple.Maple_Group);
+
+    //MapleJuicer
+    public static final Block Maple_Juicer_Block =registerBlock("maple_juicer_block",new MapleJuicerBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
+
+    //Tea
+    public static final Block Tea_Block =registerBlock("tea_block",new MapleTeaBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().strength(3.0F, 3.0F)), Maple.Maple_Group);
+
+
+
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(Maple.MOD_ID, name), block);

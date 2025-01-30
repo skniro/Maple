@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        " P ",
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:stripped_jungle_log"
+        }
+    },
+    "result": {
+        "count": 3,
+        "id": "maple:jungle_wood_coffee_table"
+    }
+}

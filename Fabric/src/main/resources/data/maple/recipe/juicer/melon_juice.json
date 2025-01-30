@@ -1,0 +1,16 @@
+{
+    "type": "maple:maple_juicer",
+    "category": "misc",
+    "ingredient": [
+        {
+            "item": "minecraft:melon_slice"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        }
+    ],
+    "result": {
+        "count": 1,
+        "id": "maple:melon_juice"
+    }
+}

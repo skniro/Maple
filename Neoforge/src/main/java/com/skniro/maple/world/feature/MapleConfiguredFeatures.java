@@ -3,9 +3,11 @@ package com.skniro.maple.world.feature;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.init.MapleTeaBlock;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -57,6 +59,7 @@ public class MapleConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> Sakura_Carpet_KEY = registerKey("sakura_carpet");
     public static final ResourceKey<ConfiguredFeature<?, ?>> Maple_Carpet_KEY = registerKey("maple_carpet");
     public static final ResourceKey<ConfiguredFeature<?, ?>> Red_Maple_Carpet_KEY = registerKey("red_maple_carpet");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TEA = registerKey("patch_tea");
 
     private static TreeConfiguration.TreeConfigurationBuilder builder(Block log, Block leaves, int baseHeight, int firstRandomHeight, int secondRandomHeight, int radius) {
         return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log), new StraightTrunkPlacer(baseHeight, firstRandomHeight, secondRandomHeight), BlockStateProvider.simple(leaves), new BlobFoliagePlacer(ConstantInt.of(radius), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
@@ -144,6 +147,8 @@ public class MapleConfiguredFeatures {
         register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET.get())))));
         register(featureRegisterable, Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET.get())))));
         register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET.get())))));
+
+        register(featureRegisterable, PATCH_TEA, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Tea_Block.get().defaultBlockState().setValue(MapleTeaBlock.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

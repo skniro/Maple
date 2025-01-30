@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/normal_chair",
+  "textures": {
+    "plank": "minecraft:block/acacia_planks"
+  }
+}

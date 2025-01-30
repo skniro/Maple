@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "maple:block/cherry_black_cushion",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "maple:block/cherry_black_cushion"
+    },
+    "facing=south": {
+      "model": "maple:block/cherry_black_cushion",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maple:block/cherry_black_cushion",
+      "y": 270
+    }
+  }
+}

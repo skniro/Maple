@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        "PWP",
+        "PPP"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:glass"
+        },
+        "P": {
+            "item": "maple:stripped_maple_log"
+        }
+    },
+    "result": {
+        "count": 8,
+        "id": "maple:maple_wood_window"
+    }
+}

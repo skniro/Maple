@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
@@ -35,18 +34,10 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(SAPLINGS)
                 .add(MapleBlocks.MAPLE_SAPLING)
-                .add(MapleBlocks.CHERRY_SAPLING)
-                .add(MapleBlocks.GINKGO_SAPLING)
-                .add(MapleBlocks.SAKURA_SAPLING)
-                .add(MapleBlocks.RED_MAPLE_SAPLING)
-                .setReplace(false);
+                .add(MapleBlocks.CHERRY_SAPLING);
         getOrCreateTagBuilder(C_SAPLING)
                 .add(MapleBlocks.MAPLE_SAPLING)
-                .add(MapleBlocks.CHERRY_SAPLING)
-                .add(MapleBlocks.GINKGO_SAPLING)
-                .add(MapleBlocks.SAKURA_SAPLING)
-                .add(MapleBlocks.RED_MAPLE_SAPLING)
-                .setReplace(false);
+                .add(MapleBlocks.CHERRY_SAPLING);
         getOrCreateTagBuilder(C_MAPLE_LOGS)
                 .add(MapleBlocks.MAPLE_LOG);
         getOrCreateTagBuilder(C_CHERRY_LOGS)
@@ -54,9 +45,7 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
         getOrCreateTagBuilder(FENCES)
                 .add(MapleBlocks.MAPLE_FENCE)
                 .add(MapleBlocks.CHERRY_FENCE)
-                .add(MapleBlocks.GINKGO_FENCE)
-                .add(MapleBlocks.BAMBOO_FENCE)
-                .setReplace(false);
+                .add(MapleBlocks.BAMBOO_FENCE);
         getOrCreateTagBuilder(C_PLASTER)
                 .add(MapleBlocks.GREEN_PLASTER)
                 .add(MapleBlocks.PLASTER)
@@ -75,11 +64,9 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
                 .add(MapleBlocks.RED_PLASTER);
         getOrCreateTagBuilder(CEILING_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_HANGING_SIGN)
-                .add(MapleSignBlocks.GINKGO_HANGING_SIGN)
-                .setReplace(false);
+                .add(MapleSignBlocks.GINKGO_HANGING_SIGN);
         getOrCreateTagBuilder(WALL_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_WALL_HANGING_SIGN)
-                .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN)
-                .setReplace(false);
+                .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
     }
 }

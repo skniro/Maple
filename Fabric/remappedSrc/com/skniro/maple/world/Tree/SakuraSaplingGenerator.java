@@ -6,10 +6,10 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 
 public class SakuraSaplingGenerator {
     public static final TreeGrower SakuraSapling =
-            new TreeGrower("sakuratreesapling", 0f, Optional.empty(),
-                    Optional.of(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
-                    Optional.of(MapleConfiguredFeatures.SAKURA_TREE),
+            new TreeGrower("sakuratreesapling", 0.1f, Optional.empty(),
                     Optional.empty(),
+                    Optional.of(MapleConfiguredFeatures.SAKURA_TREE),
+                    Optional.of(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                     Optional.empty(),
                     Optional.empty());
 }

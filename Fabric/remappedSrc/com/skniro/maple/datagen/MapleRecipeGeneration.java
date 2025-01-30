@@ -29,11 +29,14 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
         list.add(MapleBlocks.STRIPPED_MAPLE_LOG);
         list.add(MapleBlocks.STRIPPED_MAPLE_WOOD);
     });
+    public static final List<ItemLike> Green_Tea = Util.make(Lists.newArrayList(), list -> {
+        list.add(MapleFoodComponents.Green_Tea_Leaves);
+    });
 
     @Override
     public void buildRecipes(RecipeOutput exporter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleItems.MILK_BOTTOM,3).requires(Items.MILK_BUCKET).unlockedBy(FabricRecipeProvider.getHasName(MapleItems.MILK_BOTTOM),
-                FabricRecipeProvider.has(MapleItems.MILK_BOTTOM)).unlockedBy(FabricRecipeProvider.getHasName(Items.MILK_BUCKET),
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).requires(Items.MILK_BUCKET).unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.MILK_BOTTOM),
+                FabricRecipeProvider.has(MapleFoodComponents.MILK_BOTTOM)).unlockedBy(FabricRecipeProvider.getHasName(Items.MILK_BUCKET),
                 FabricRecipeProvider.has(Items.MILK_BUCKET)).save(exporter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleItems.Flour,2).requires(Items.WHEAT).unlockedBy(FabricRecipeProvider.getHasName(MapleItems.Flour),
@@ -73,12 +76,12 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.has(MapleFoodComponents.Cooked_Rice)).save(exporter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleItems.Cream,3)
-                .requires(MapleItems.MILK_BOTTOM)
-                .requires(MapleItems.MILK_BOTTOM)
+                .requires(MapleFoodComponents.MILK_BOTTOM)
+                .requires(MapleFoodComponents.MILK_BOTTOM)
                 .unlockedBy(FabricRecipeProvider.getHasName(MapleItems.Cream),
                         FabricRecipeProvider.has(MapleItems.Cream))
-                .unlockedBy(FabricRecipeProvider.getHasName(MapleItems.MILK_BOTTOM),
-                        FabricRecipeProvider.has(MapleItems.MILK_BOTTOM)).save(exporter);
+                .unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.MILK_BOTTOM),
+                        FabricRecipeProvider.has(MapleFoodComponents.MILK_BOTTOM)).save(exporter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleFoodComponents.Cooked_Rice,2)
                 .requires(MapleItems.Rice)
@@ -131,14 +134,14 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleFoodComponents.MILK_ICECREAM,2)
                 .requires(MapleItems.Cream)
-                .requires(MapleItems.MILK_BOTTOM)
+                .requires(MapleFoodComponents.MILK_BOTTOM)
                 .requires(Items.WATER_BUCKET)
                 .unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.MILK_ICECREAM),
                         FabricRecipeProvider.has(MapleFoodComponents.MILK_ICECREAM))
                 .unlockedBy(FabricRecipeProvider.getHasName(MapleItems.Cream),
                         FabricRecipeProvider.has(MapleItems.Cream))
-                .unlockedBy(FabricRecipeProvider.getHasName(MapleItems.MILK_BOTTOM),
-                        FabricRecipeProvider.has(MapleItems.MILK_BOTTOM)).save(exporter);
+                .unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.MILK_BOTTOM),
+                        FabricRecipeProvider.has(MapleFoodComponents.MILK_BOTTOM)).save(exporter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD ,MapleFoodComponents.Beef_Rice,1)
                 .requires(MapleFoodComponents.Cooked_Rice)
@@ -326,7 +329,24 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.has(Items.GOLD_NUGGET))
                 .save(exporter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD , MapleFoodComponents.Red_Tea,1)
+                .requires(MapleFoodComponents.Red_Tea_Leaves,2)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.Red_Tea_Leaves),
+                        FabricRecipeProvider.has(MapleFoodComponents.Red_Tea_Leaves))
+                .unlockedBy(FabricRecipeProvider.getHasName(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.has(Items.GLASS_BOTTLE)).save(exporter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD , MapleFoodComponents.Green_Tea,1)
+                .requires(MapleFoodComponents.Green_Tea_Leaves,2)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy(FabricRecipeProvider.getHasName(MapleFoodComponents.Green_Tea_Leaves),
+                        FabricRecipeProvider.has(MapleFoodComponents.Green_Tea_Leaves))
+                .unlockedBy(FabricRecipeProvider.getHasName(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.has(Items.GLASS_BOTTLE)).save(exporter);
+
         RecipeProvider.oreSmelting(exporter, STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
+        RecipeProvider.oreSmelting(exporter, Green_Tea, RecipeCategory.FOOD , MapleFoodComponents.Red_Tea_Leaves, 0.45F, 300, "red_tea");
 
     }
 }

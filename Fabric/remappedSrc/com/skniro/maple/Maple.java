@@ -1,5 +1,6 @@
 package com.skniro.maple;
 
+import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
@@ -30,6 +31,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
 
     public static final ResourceKey<CreativeModeTab> Maple_Group = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "maple_group"));
     public static final ResourceKey<CreativeModeTab> Maple_Group_Food = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "test_group"));
+    public static final ResourceKey<CreativeModeTab> Maple_Group_Furniture = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "maple_group_furniture"));
 
 
     @Override
@@ -42,6 +44,10 @@ public class Maple implements ModInitializer, TerraBlenderApi {
                 .icon(() -> new ItemStack(MapleItems.MapleSyrup))
                 .title(Component.translatable("itemGroup.maple.maple_group_food"))
                 .build()); // build() no longer registers by itself
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group_Furniture, FabricItemGroup.builder()
+                .icon(() -> new ItemStack(MapleFurnitureBlocks.CUSHION_MAPLE_YELLOW))
+                .title(Component.translatable("itemGroup.maple.maple_group_furniture"))
+                .build());
         MapleContent.registerItem();
         MapleContent.registerBlock();
         MapleContent.registerFluid();
@@ -51,6 +57,8 @@ public class Maple implements ModInitializer, TerraBlenderApi {
         MapleContent.registerCommand();
         MapleContent.registerMapleLootTable();
         MapleContent.registerMapleCompostableItems();
+        MapleContent.registerScreenType();
+        MapleContent.registerRecipeType();
         //MapleContent.datafix(MOD_CONTAINER);
     }
 

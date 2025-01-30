@@ -38,69 +38,72 @@ public class MaplePlacedFeatures {
     public static final ResourceKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
     public static final ResourceKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
     public static final ResourceKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_COMMON = registerKey("patch_tea_common");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_RARE = registerKey("patch_tea_rare");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        Holder<ConfiguredFeature<?, ?>> registryEntry2 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.PATCH_TEA);
 
-        register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.SALT_ORE),
+        register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SALT_ORE),
                 modifiersWithCount(12, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(30))));
 
-        register(context, Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Maple_TREE),
+        register(context, Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Maple_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING.get()));
 
-        register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Red_Maple_TREE),
+        register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING.get()));
 
-        register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.CHERRY_TREE),
+        register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.CHERRY_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING.get()));
 
-        register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.SAKURA_TREE),
+        register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SAKURA_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING.get()));
 
-        register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.MAGE_SAKURA_TREE),
+        register(context, MAGE_SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.MAGE_SAKURA_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.00001f, 1), MapleBlocks.SAKURA_SAPLING.get()));
 
         register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilter.onAverageOnceEvery(100), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP);
-        register(context, Coal_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Coal_ORE_KEY),
+        register(context, Coal_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Coal_ORE_KEY),
                 modifiersWithCount(40, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Copper_KEY),
+        register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Copper_KEY),
                 modifiersWithCount(32, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Diamond_KEY),
+        register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Diamond_KEY),
                 modifiersWithCount(17, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Emerald_KEY),
+        register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Emerald_KEY),
                 modifiersWithCount(17, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Gold_KEY),
+        register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Gold_KEY),
                 modifiersWithCount(20, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures. Nether_Iron_KEY),
+        register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures. Nether_Iron_KEY),
                 modifiersWithCount(32, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Lapis_KEY),
+        register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Lapis_KEY),
                 modifiersWithCount(25, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
+        register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
                 modifiersWithCount(20, // Veins per Chunk
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(256))));
 
-        register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Sakura_Carpet_KEY),
+        register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Sakura_Carpet_KEY),
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
-        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(com.skniro.maple.world.feature.MapleConfiguredFeatures.Maple_Carpet_KEY),
+        register(context, Maple_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Maple_Carpet_KEY),
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
@@ -108,6 +111,8 @@ public class MaplePlacedFeatures {
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
+        register(context, PATCH_TEA_COMMON, registryEntry2, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, PATCH_TEA_RARE, registryEntry2, RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

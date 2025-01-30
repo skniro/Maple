@@ -15,6 +15,14 @@ public class MapleBiomeFeatures {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.SAKURA_TREE_PLACED);
     }
 
+    public static void addTeaSnowy(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.PATCH_TEA_RARE);
+    }
+
+    public static void addTea(GenerationSettings.LookupBackedBuilder builder) {
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MaplePlacedFeatures.PATCH_TEA_COMMON);
+    }
+
     public static void registerBiomesFeatures() {
         Maple.LOGGER.debug("Registering the ModBiomesFeatures for " + Maple.MOD_ID);
     }

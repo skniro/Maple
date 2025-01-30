@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-20T13:22:07.6939174	Maple/Recipes
+// 1.21.1	2025-01-30T16:44:53.1633533	Maple/Recipes
 72f942ac15810cb30bcafc7c91f9b312ea5f01e7 data\maple\advancement\recipes\building_blocks\light_gray_plaster.json
 beb5011fc2b1deb996a9f7d6a0f00d3000ce7dc5 data\maple\advancement\recipes\building_blocks\cyan_plaster.json
 a14435f683d7c4ff38a81826c3e0931ba87f043c data\maple\recipe\gold_sea_lantern.json
@@ -21,6 +21,7 @@ dd577c8b67390af362095c48f35dc3110f99549d data\maple\recipe\lime_plaster.json
 5063b4ed231bdf9eb86513e9ed0cc274064f7ccf data\maple\advancement\recipes\decorations\sakura_carpet.json
 bc950c0ca09962b8af43265519d7859ebc844789 data\maple\recipe\zunda_dango.json
 63afc10a19b930b5b404237a5b4992fa1cf8b02b data\maple\recipe\milk_bottom.json
+2ec14132522dedfc11bec6e8bcfe67392bc98ebb data\maple\recipe\red_tea.json
 360974c85176dc86de81818941e9d5b8cc77df0a data\maple\advancement\recipes\food\tofu.json
 aab8efa7ca2e28915958fb5e00d020c64e4b7516 data\maple\recipe\green_plaster.json
 9a8492e2800e0575e34d4e835f4339bb7d6aeca0 data\maple\advancement\recipes\building_blocks\plaster.json
@@ -36,6 +37,7 @@ c6e90cd49c5d873546422cb128f7fe3ee32a3791 data\maple\recipe\maple_syrup_from_smel
 537d17e1e0851b1e6cac9afa8962fac8709f95f6 data\maple\recipe\milk_icecream.json
 ab92cce0c31d464545fc38113208fbfe3a3f0d4a data\maple\recipe\kinako_dango.json
 645048d27cdd2c579787d68414e03267024bf713 data\maple\advancement\recipes\building_blocks\magenta_plaster.json
+b0a0ee0ff5611710ad61357d7473b0d1d71c8d04 data\maple\advancement\recipes\food\green_tea.json
 9d82b9af5f9ef70b72de84a47293529003fe4f1d data\maple\recipe\beef_rice.json
 23a11ea4260175cee786a913fa5504a1aac9f94c data\maple\advancement\recipes\decorations\ginkgo_carpet.json
 62c69627974b5dbdd3f44ba6844a4c66159d7c0a data\maple\advancement\recipes\building_blocks\yellow_plaster.json
@@ -52,6 +54,8 @@ cb6d3af24ae2e2e2707eaaaf8f61cc6667dfe666 data\maple\recipe\sanshoku_dango.json
 c37273862a15d07bf5d4750e9745d51ef768e696 data\maple\recipe\cream.json
 4f902efe7ff339dbc15d6398102c67364a0b4d0f data\maple\recipe\orange_plaster.json
 5d6aec7ade1c43feee4a7904489b46278487ae96 data\maple\advancement\recipes\building_blocks\gold_sea_lantern.json
+f9fac3bfc7ef15d6910481e1fdaf46bd04b56624 data\maple\recipe\red_tea_leaves_from_smelting_green_tea_leaves.json
+dfb7aa16e1cf3333cebfeaad85ba8f57cc1634bd data\maple\advancement\recipes\food\red_tea_leaves_from_smelting_green_tea_leaves.json
 6a853c56f176c28d4a9a91a64d3f103a8449be20 data\maple\recipe\magenta_plaster.json
 19a299be2d05efb1d24b5bcc1f1c7c1b199c4052 data\maple\recipe\red_plaster.json
 a7c11585df27a06d10a70dcf04601d64ff386502 data\maple\advancement\recipes\food\anko_dango.json
@@ -59,6 +63,7 @@ a7c11585df27a06d10a70dcf04601d64ff386502 data\maple\advancement\recipes\food\ank
 08b96f42b335821b9a25395de687c93c85d19aee data\maple\advancement\recipes\food\cooked_rice.json
 f3514e3e953f46f27c0692f72df309829d80630b data\maple\advancement\recipes\food\kinako_dango.json
 01f7be1f08e661b57e3db7625fb13073147ef5e6 data\maple\advancement\recipes\building_blocks\blue_plaster.json
+75bb32594b6179a392f319114f0edb2abe9e837c data\maple\advancement\recipes\food\red_tea.json
 a4c1c4d44c06fe203f3013bf70946ee7e0c02108 data\maple\advancement\recipes\decorations\maple_carpet.json
 a22e2419ac1a2413b2416ab95fbda1bfbca1d8e7 data\maple\advancement\recipes\food\mochi.json
 5f7daa85992d63f5dcab753435e871bde5dff88a data\maple\advancement\recipes\building_blocks\green_plaster.json
@@ -67,6 +72,7 @@ f0f77b92d86a664ec0094ab35af47967f7cd9ffb data\maple\recipe\purple_plaster.json
 449a950b17ab71fa7f6f842c94ff6f8389ea4f7d data\maple\recipe\yellow_plaster.json
 c9a508efc960ea0c77f4c6939a5af9268b90e30c data\maple\advancement\recipes\building_blocks\gray_plaster.json
 a2af039781876e28443f3f8eba47f5b0a78de80d data\maple\recipe\tofu.json
+10262c618a936e5cfa8e0adf2138517e41f58ba8 data\maple\recipe\green_tea.json
 4070cda144fe133735a38b3022c95e90e7d20855 data\maple\advancement\recipes\food\sakura_sapling.json
 59d9120afcd96907cb7fb33d51ce0df167a69c73 data\maple\advancement\recipes\food\milk_bottom.json
 ac3d900a1b135ea81f580dc3e8990eef530caa9e data\maple\advancement\recipes\building_blocks\light_blue_plaster.json

@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class MapleBlockEntityType {
 
+    public static final BlockEntityType<MapleJuicerBlockEntity> MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = create("maple_juicer_block_entity", BlockEntityType.Builder.of(MapleJuicerBlockEntity::new, MapleBlocks.Maple_Juicer_Block));
 
     private static <T extends BlockEntity> BlockEntityType<T> create(String id, BlockEntityType.Builder<T> builder) {
         Type<?> type = Util.fetchChoiceType(References.BLOCK_ENTITY, id);

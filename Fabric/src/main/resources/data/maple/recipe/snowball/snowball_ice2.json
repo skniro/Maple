@@ -14,7 +14,7 @@
         }
     },
     "result": {
-        "id": "maple:snowball_ice",
-        "count": 32
+        "count": 32,
+        "id": "maple:snowball_ice"
     }
 }

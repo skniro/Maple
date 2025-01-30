@@ -21,6 +21,9 @@ repositories {
         url = "https://dvs1.progwml6.com/files/maven/"
     }
 
+    maven {
+        url "https://maven.shedaniel.me"
+    }
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -38,7 +41,8 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
-
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
     //Production environment client test to use
     //include "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
     //include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

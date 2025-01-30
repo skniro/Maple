@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/coffee_table",
+  "textures": {
+    "plank": "minecraft:block/stripped_warped_stem"
+  }
+}

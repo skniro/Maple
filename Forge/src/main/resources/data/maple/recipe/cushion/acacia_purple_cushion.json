@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "WWW",
+        "PPP"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:purple_carpet"
+        },
+        "P": {
+            "item": "minecraft:acacia_planks"
+        }
+    },
+    "result": {
+        "count": 3,
+        "id": "maple:acacia_purple_cushion"
+    }
+}

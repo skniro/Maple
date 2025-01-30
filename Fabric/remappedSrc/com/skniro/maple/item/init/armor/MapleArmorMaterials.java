@@ -1,5 +1,6 @@
 package com.skniro.maple.item.init.armor;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.item.MapleArmorItems;
 import java.util.EnumMap;
 import java.util.List;
@@ -30,7 +31,7 @@ public class MapleArmorMaterials {
     public static final int Cherry_DURABILITY_MULTIPLIER = 37;
 
     private static Holder<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, Holder<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace(id)));
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, id)));
         return register(id, defense, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, list);
     }
 
@@ -43,6 +44,6 @@ public class MapleArmorMaterials {
             enumMap.put(type, (Integer) defense.get(type));
         }
 
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, ResourceLocation.withDefaultNamespace(id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
+        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
     }
 }

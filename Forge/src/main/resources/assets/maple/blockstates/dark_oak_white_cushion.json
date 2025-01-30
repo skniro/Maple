@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "maple:block/dark_oak_white_cushion",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "maple:block/dark_oak_white_cushion"
+    },
+    "facing=south": {
+      "model": "maple:block/dark_oak_white_cushion",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maple:block/dark_oak_white_cushion",
+      "y": 270
+    }
+  }
+}

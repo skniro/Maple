@@ -1,23 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "wooden_sign",
-  "key": {
-    "#": {
-      "item": "maple:maple_planks"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "wooden_sign",
+    "key": {
+        "#": {
+            "item": "maple:maple_planks"
+        },
+        "X": {
+            "item": "minecraft:stick"
+        }
     },
-    "X": {
-      "item": "minecraft:stick"
-    }
-  },
-  "pattern": [
-    "###",
-    "###",
-    " X "
-  ],
-  "result": {
-    "count": 3,
-    "id": "maple:maple_sign"
-  },
-  "show_notification": true
+    "pattern": [
+        "###",
+        "###",
+        " X "
+    ],
+    "result": {
+        "count": 3,
+        "id": "maple:maple_sign"
+    },
+    "show_notification": true
 }

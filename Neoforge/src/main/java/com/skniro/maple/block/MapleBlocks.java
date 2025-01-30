@@ -104,7 +104,7 @@ public class MapleBlocks {
             }, MapleCreativeModeTabs.Maple_Group);
 
     public static final Supplier<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8))
+            () -> new MapleSakuraLeavesBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8))
             {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -447,6 +447,95 @@ public class MapleBlocks {
             () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
     public static final Supplier<Block> Gold_Sea_Lantern =registerBlock("gold_sea_lantern",
             () -> new Block(BlockBehaviour.Properties.ofLegacyCopy(Blocks.SEA_LANTERN)),MapleCreativeModeTabs.Maple_Group);
+
+    //Concrete
+    public static final Supplier<Block> WHITE_CONCRETE_STAIRS = registerBlock("white_concrete_stairs",
+            ()-> new StairBlock(Blocks.WHITE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WHITE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> WHITE_CONCRETE_SLAB = registerBlock("white_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.WHITE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> ORANGE_CONCRETE_STAIRS = registerBlock("orange_concrete_stairs",
+            ()-> new StairBlock(Blocks.ORANGE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.ORANGE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> ORANGE_CONCRETE_SLAB = registerBlock("orange_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.ORANGE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> MAGENTA_CONCRETE_STAIRS = registerBlock("magenta_concrete_stairs",
+            ()-> new StairBlock(Blocks.MAGENTA_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> MAGENTA_CONCRETE_SLAB = registerBlock("magenta_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> LIGHT_BLUE_CONCRETE_STAIRS = registerBlock("light_blue_concrete_stairs",
+            ()-> new StairBlock(Blocks.MAGENTA_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> LIGHT_BLUE_CONCRETE_SLAB = registerBlock("light_blue_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.MAGENTA_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> YELLOW_CONCRETE_STAIRS = registerBlock("yellow_concrete_stairs",
+            ()-> new StairBlock(Blocks.YELLOW_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.YELLOW_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> YELLOW_CONCRETE_SLAB = registerBlock("yellow_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.YELLOW_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> LIME_CONCRETE_STAIRS = registerBlock("lime_concrete_stairs",
+            ()-> new StairBlock(Blocks.LIME_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIME_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> LIME_CONCRETE_SLAB = registerBlock("lime_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIME_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> PINK_CONCRETE_STAIRS = registerBlock("pink_concrete_stairs",
+            ()-> new StairBlock(Blocks.PINK_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.PINK_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> PINK_CONCRETE_SLAB = registerBlock("pink_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PINK_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> GRAY_CONCRETE_STAIRS = registerBlock("gray_concrete_stairs",
+            ()-> new StairBlock(Blocks.GRAY_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRAY_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> GRAY_CONCRETE_SLAB = registerBlock("gray_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRAY_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> LIGHT_GRAY_CONCRETE_STAIRS = registerBlock("light_gray_concrete_stairs",
+            ()-> new StairBlock(Blocks.LIGHT_GRAY_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_GRAY_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> LIGHT_GRAY_CONCRETE_SLAB = registerBlock("light_gray_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.LIGHT_GRAY_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> CYAN_CONCRETE_STAIRS = registerBlock("cyan_concrete_stairs",
+            ()-> new StairBlock(Blocks.CYAN_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.CYAN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> CYAN_CONCRETE_SLAB = registerBlock("cyan_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.CYAN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> PURPLE_CONCRETE_STAIRS = registerBlock("purple_concrete_stairs",
+            ()-> new StairBlock(Blocks.PURPLE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPLE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> PURPLE_CONCRETE_SLAB = registerBlock("purple_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPLE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> BLUE_CONCRETE_STAIRS = registerBlock("blue_concrete_stairs",
+            ()-> new StairBlock(Blocks.BLUE_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLUE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> BLUE_CONCRETE_SLAB = registerBlock("blue_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLUE_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> BROWN_CONCRETE_STAIRS = registerBlock("brown_concrete_stairs",
+            ()-> new StairBlock(Blocks.BROWN_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BROWN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> BROWN_CONCRETE_SLAB = registerBlock("brown_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BROWN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> GREEN_CONCRETE_STAIRS = registerBlock("green_concrete_stairs",
+            ()-> new StairBlock(Blocks.GREEN_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.GREEN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> GREEN_CONCRETE_SLAB = registerBlock("green_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.GREEN_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> RED_CONCRETE_STAIRS = registerBlock("red_concrete_stairs",
+            ()-> new StairBlock(Blocks.RED_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> RED_CONCRETE_SLAB = registerBlock("red_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    public static final Supplier<Block> BLACK_CONCRETE_STAIRS = registerBlock("black_concrete_stairs",
+            ()-> new StairBlock(Blocks.BLACK_CONCRETE.defaultBlockState(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLACK_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+    public static final Supplier<Block> BLACK_CONCRETE_SLAB = registerBlock("black_concrete_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(Blocks.BLACK_CONCRETE)), MapleCreativeModeTabs.Maple_Group);
+
+    //MapleJuicer
+    public static final Supplier<Block> Maple_Juicer_Block =registerBlock("maple_juicer_block",
+            ()-> new MapleJuicerBlock(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(3.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
+
+    //Tea
+    public static final Supplier<Block> Tea_Block =registerBlock("tea_block",
+            ()-> new MapleTeaBlock(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(3.0F, 3.0F)), MapleCreativeModeTabs.Maple_Group);
 
 
     private static <T extends Block> Supplier<T> registerBlockWithoutItem(String name, Supplier<T> block) {

@@ -30,11 +30,14 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
         list.add(MapleBlocks.STRIPPED_MAPLE_LOG);
         list.add(MapleBlocks.STRIPPED_MAPLE_WOOD);
     });
+    public static final List<ItemConvertible> Green_Tea = Util.make(Lists.newArrayList(), list -> {
+        list.add(MapleFoodComponents.Green_Tea_Leaves);
+    });
 
     @Override
     public void generate(RecipeExporter exporter) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleItems.MILK_BOTTOM,3).input(Items.MILK_BUCKET).criterion(FabricRecipeProvider.hasItem(MapleItems.MILK_BOTTOM),
-                FabricRecipeProvider.conditionsFromItem(MapleItems.MILK_BOTTOM)).criterion(FabricRecipeProvider.hasItem(Items.MILK_BUCKET),
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).input(Items.MILK_BUCKET).criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.MILK_BOTTOM),
+                FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.MILK_BOTTOM)).criterion(FabricRecipeProvider.hasItem(Items.MILK_BUCKET),
                 FabricRecipeProvider.conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleItems.Flour,2).input(Items.WHEAT).criterion(FabricRecipeProvider.hasItem(MapleItems.Flour),
@@ -74,12 +77,12 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Cooked_Rice)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleItems.Cream,3)
-                .input(MapleItems.MILK_BOTTOM)
-                .input(MapleItems.MILK_BOTTOM)
+                .input(MapleFoodComponents.MILK_BOTTOM)
+                .input(MapleFoodComponents.MILK_BOTTOM)
                 .criterion(FabricRecipeProvider.hasItem(MapleItems.Cream),
                         FabricRecipeProvider.conditionsFromItem(MapleItems.Cream))
-                .criterion(FabricRecipeProvider.hasItem(MapleItems.MILK_BOTTOM),
-                        FabricRecipeProvider.conditionsFromItem(MapleItems.MILK_BOTTOM)).offerTo(exporter);
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.MILK_BOTTOM),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.MILK_BOTTOM)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.Cooked_Rice,2)
                 .input(MapleItems.Rice)
@@ -132,14 +135,14 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.MILK_ICECREAM,2)
                 .input(MapleItems.Cream)
-                .input(MapleItems.MILK_BOTTOM)
+                .input(MapleFoodComponents.MILK_BOTTOM)
                 .input(Items.WATER_BUCKET)
                 .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.MILK_ICECREAM),
                         FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.MILK_ICECREAM))
                 .criterion(FabricRecipeProvider.hasItem(MapleItems.Cream),
                         FabricRecipeProvider.conditionsFromItem(MapleItems.Cream))
-                .criterion(FabricRecipeProvider.hasItem(MapleItems.MILK_BOTTOM),
-                        FabricRecipeProvider.conditionsFromItem(MapleItems.MILK_BOTTOM)).offerTo(exporter);
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.MILK_BOTTOM),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.MILK_BOTTOM)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.Beef_Rice,1)
                 .input(MapleFoodComponents.Cooked_Rice)
@@ -327,7 +330,24 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.GOLD_NUGGET))
                 .offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD , MapleFoodComponents.Red_Tea,1)
+                .input(MapleFoodComponents.Red_Tea_Leaves,2)
+                .input(Items.GLASS_BOTTLE)
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Red_Tea_Leaves),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Red_Tea_Leaves))
+                .criterion(FabricRecipeProvider.hasItem(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD , MapleFoodComponents.Green_Tea,1)
+                .input(MapleFoodComponents.Green_Tea_Leaves,2)
+                .input(Items.GLASS_BOTTLE)
+                .criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.Green_Tea_Leaves),
+                        FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.Green_Tea_Leaves))
+                .criterion(FabricRecipeProvider.hasItem(Items.GLASS_BOTTLE),
+                        FabricRecipeProvider.conditionsFromItem(Items.GLASS_BOTTLE)).offerTo(exporter);
+
         RecipeProvider.offerSmelting(exporter, STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
+        RecipeProvider.offerSmelting(exporter, Green_Tea, RecipeCategory.FOOD , MapleFoodComponents.Red_Tea_Leaves, 0.45F, 300, "red_tea");
 
     }
 }

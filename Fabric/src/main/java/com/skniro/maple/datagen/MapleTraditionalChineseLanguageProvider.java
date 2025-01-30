@@ -97,7 +97,7 @@ public class MapleTraditionalChineseLanguageProvider extends FabricLanguageProvi
         translationBuilder.add(MapleBlocks.RICE,"稻米作物");
 
         //Food Materials
-        translationBuilder.add(MapleItems.MILK_BOTTOM,"瓶裝牛奶");
+        translationBuilder.add(MapleFoodComponents.MILK_BOTTOM,"瓶裝牛奶");
         translationBuilder.add(MapleItems.Cream,"奶油");
         translationBuilder.add(MapleItems.Flour,"麵粉");
         translationBuilder.add(MapleItems.Rice,"稻米");

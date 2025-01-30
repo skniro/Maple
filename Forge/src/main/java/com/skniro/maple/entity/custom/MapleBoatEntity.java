@@ -1,7 +1,7 @@
 package com.skniro.maple.entity.custom;
 
 import com.skniro.maple.block.MapleBlocks;
-import com.skniro.maple.entity.MapleBoatEntities;
+import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.item.MapleItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -22,7 +22,7 @@ public class MapleBoatEntity extends Boat {
         super(pEntityType, pLevel);
     }
     public MapleBoatEntity(Level level, double pX, double pY, double pZ) {
-        this(MapleBoatEntities.Maple_BOAT.get(), level);
+        this(MapleEntityType.Maple_BOAT.get(), level);
         this.setPos(pX, pY, pZ);
         this.xo = pX;
         this.yo = pY;

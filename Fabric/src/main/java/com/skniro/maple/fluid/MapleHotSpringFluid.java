@@ -1,5 +1,6 @@
 package com.skniro.maple.fluid;
 
+import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -39,6 +40,9 @@ public class MapleHotSpringFluid extends FlowableFluid {
             }
         } else if (random.nextInt(10) == 0) {
             world.addParticle(ParticleTypes.UNDERWATER, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + random.nextDouble(), (double)pos.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
+        }
+        if (random.nextFloat() < 0.07F) {
+            world.addParticle(MapleParticleTypes.HOT_SPRING, (double) pos.getX() + random.nextDouble(), (double) pos.getY() + random.nextDouble(), (double) pos.getZ() + random.nextDouble(), 0.0, 0.03, 0.0);
         }
     }
 

@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/coffee_table",
+  "textures": {
+    "plank": "maple:block/stripped_maple_log"
+  }
+}

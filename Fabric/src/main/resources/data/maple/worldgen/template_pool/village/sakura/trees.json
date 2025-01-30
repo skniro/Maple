@@ -4,7 +4,7 @@
     {
       "element": {
         "element_type": "minecraft:feature_pool_element",
-        "feature": "maple:trees_cherry",
+        "feature": "minecraft:trees_cherry",
         "projection": "rigid"
       },
       "weight": 1

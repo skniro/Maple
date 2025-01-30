@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "maple:block/bamboo_light_blue_cushion",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "maple:block/bamboo_light_blue_cushion"
+    },
+    "facing=south": {
+      "model": "maple:block/bamboo_light_blue_cushion",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maple:block/bamboo_light_blue_cushion",
+      "y": 270
+    }
+  }
+}

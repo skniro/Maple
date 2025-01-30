@@ -1,21 +1,21 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": {
+            "item": "minecraft:stick"
+        },
+        "X": {
+            "item": "maple:cherry_ingot"
+        }
     },
-    "X": {
-      "item": "maple:cherry_ingot"
-    }
-  },
-  "pattern": [
-    "XXX",
-    " # ",
-    " # "
-  ],
-   "result": {
-    "id": "maple:cherry_pickaxe"
-  },
-  "show_notification": true
+    "pattern": [
+        "XXX",
+        " # ",
+        " # "
+    ],
+    "result": {
+        "id": "maple:cherry_pickaxe"
+    },
+    "show_notification": true
 }

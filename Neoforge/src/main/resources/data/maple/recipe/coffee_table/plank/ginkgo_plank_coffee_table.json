@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        " P ",
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "item": "maple:ginkgo_planks"
+        }
+    },
+    "result": {
+        "count": 3,
+        "id": "maple:ginkgo_plank_coffee_table"
+    }
+}

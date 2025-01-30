@@ -46,11 +46,14 @@ public class MaplePlacedFeatures {
     public static final ResourceKey<PlacedFeature> Sakura_carpet_PLACED_KEY = registerKey("sakura_carpet_placed");
     public static final ResourceKey<PlacedFeature> Maple_carpet_PLACED_KEY = registerKey("maple_carpet_placed");
     public static final ResourceKey<PlacedFeature> Red_Maple_carpet_PLACED_KEY = registerKey("red_maple_carpet_placed");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_COMMON = registerKey("patch_tea_common");
+    public static final ResourceKey<PlacedFeature> PATCH_TEA_RARE = registerKey("patch_tea_rare");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
         Holder<ConfiguredFeature<?, ?>> registryEntry1 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.LAKE_HOT_SPRING);
+        Holder<ConfiguredFeature<?, ?>> registryEntry2 = configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.PATCH_TEA);
 
         register(context, SALT_ORE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SALT_ORE),
                 modifiersWithCount(12, // Veins per Chunk
@@ -116,6 +119,8 @@ public class MaplePlacedFeatures {
                 NoiseThresholdCountPlacement.of(-0.8, 4, 8),
                 InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
+        register(context, PATCH_TEA_COMMON, registryEntry2, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, PATCH_TEA_RARE, registryEntry2, RarityFilter.onAverageOnceEvery(384), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

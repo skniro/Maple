@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        "PWP",
+        "PPP"
+    ],
+    "key": {
+        "W": {
+            "item": "minecraft:glass"
+        },
+        "P": {
+            "item": "minecraft:mangrove_planks"
+        }
+    },
+    "result": {
+        "count": 4,
+        "id": "maple:mangrove_plank_window"
+    }
+}
