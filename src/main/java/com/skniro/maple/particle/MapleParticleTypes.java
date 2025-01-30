@@ -14,6 +14,7 @@ public class MapleParticleTypes {
     public static final DeferredRegister <ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Maple.MODID);
     public static final RegistryObject<SimpleParticleType> CHERRY_LEAVES = register("cherry_leaves",() -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> SAKURA_LEAVES = register("sakura_leaves",() -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> HOT_SPRING = register("hot_spring", () -> new SimpleParticleType(true));
 
     public static <T extends ParticleType<?>> RegistryObject<T> register(String name, Supplier<T> particleType){
         return PARTICLE_TYPES.register(name, particleType);

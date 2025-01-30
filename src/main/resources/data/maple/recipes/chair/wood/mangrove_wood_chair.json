@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P  ",
+    "PPP",
+    "P P"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:stripped_mangrove_log"
+    }
+  },
+  "result": {
+    "item": "maple:mangrove_wood_chair",
+    "count": 3
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "P P",
+    "P P"
+  ],
+  "key": {
+    "W": {
+      "item": "maple:ginkgo_slab"
+    },
+    "P": {
+      "item": "maple:ginkgo_planks"
+    }
+  },
+  "result": {
+    "item": "maple:ginkgo_table",
+    "count": 2
+  }
+}

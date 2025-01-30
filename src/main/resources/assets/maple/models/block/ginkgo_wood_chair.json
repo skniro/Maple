@@ -1,0 +1,6 @@
+{
+  "parent": "maple:block/normal_chair",
+  "textures": {
+    "plank": "maple:block/stripped_ginkgo_log"
+  }
+}

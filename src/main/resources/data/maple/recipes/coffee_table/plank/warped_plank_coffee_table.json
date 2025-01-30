@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    " P ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "item": "maple:warped_plank_coffee_table",
+    "count": 3
+  }
+}

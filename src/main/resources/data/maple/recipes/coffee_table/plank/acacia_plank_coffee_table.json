@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    " P ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:acacia_planks"
+    }
+  },
+  "result": {
+    "item": "maple:acacia_plank_coffee_table",
+    "count": 3
+  }
+}

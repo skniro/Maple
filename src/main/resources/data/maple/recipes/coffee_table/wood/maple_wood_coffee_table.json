@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    " P ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "maple:stripped_maple_log"
+    }
+  },
+  "result": {
+    "item": "maple:maple_wood_coffee_table",
+    "count": 3
+  }
+}

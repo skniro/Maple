@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    " P ",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:stripped_crimson_stem"
+    }
+  },
+  "result": {
+    "item": "maple:crimson_wood_coffee_table",
+    "count": 3
+  }
+}

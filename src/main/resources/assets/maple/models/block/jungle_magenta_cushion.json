@@ -1,0 +1,7 @@
+{
+  "parent": "maple:block/cushion",
+  "textures": {
+    "wool": "minecraft:block/magenta_wool",
+    "plank": "minecraft:block/jungle_planks"
+  }
+}
