@@ -7,15 +7,8 @@ import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
-import com.skniro.maple.world.gamerules.MapleGameRules;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.data.client.Models;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.nio.file.Path;

@@ -22,12 +22,12 @@ public class MapleSnowballEntity
         super((EntityType<? extends ThrownItemEntity>)entityType, world);
     }
 
-    public MapleSnowballEntity(World world, LivingEntity owner) {
-        super((EntityType<? extends ThrownItemEntity>)EntityType.SNOWBALL, owner, world);
+    public MapleSnowballEntity(World world, LivingEntity owner, ItemStack stack) {
+        super(EntityType.SNOWBALL, owner, world, stack);
     }
 
-    public MapleSnowballEntity(World world, double x, double y, double z) {
-        super((EntityType<? extends ThrownItemEntity>)EntityType.SNOWBALL, x, y, z, world);
+    public MapleSnowballEntity(World world, double x, double y, double z, ItemStack stack) {
+        super(EntityType.SNOWBALL, x, y, z, world, stack);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class MapleSnowballEntity
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         int i = entity instanceof BlazeEntity ? 3 : 0;
-        entity.damage(this.getDamageSources().thrown(this, this.getOwner()), i);
+        entity.serverDamage(this.getDamageSources().thrown(this, this.getOwner()), i);
     }
 
     @Override

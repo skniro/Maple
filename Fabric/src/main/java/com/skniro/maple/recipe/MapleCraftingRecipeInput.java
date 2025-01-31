@@ -15,8 +15,9 @@ public record MapleCraftingRecipeInput(ItemStack input,ItemStack glass) implemen
 
         return input;
     }
+
     @Override
-    public int getSize() {
+    public int size() {
         return 2;
     }
 }

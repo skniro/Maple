@@ -5,10 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "SignTypeAccessor",
-    "BlockEntityTypeMixin",
-    "BoatTypeMixin",
-    "BoatDropsMixin",
-    "ChestBoatDropsMixin"
+    "BlockEntityTypeMixin"
   ],
   "client": [
   ],

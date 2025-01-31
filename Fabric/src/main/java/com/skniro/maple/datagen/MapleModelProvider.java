@@ -10,12 +10,13 @@ import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.item.init.equipment.MapleEquipmentAssetKeys;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
@@ -204,11 +205,11 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(MapleBlocks.GINKGO_TRAPDOOR);
 
         //SAPLING
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.RED_MAPLE_SAPLING, MapleBlocks.POTTED_RED_MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.RED_MAPLE_SAPLING, MapleBlocks.POTTED_RED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         //Crop
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
@@ -575,16 +576,16 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleItems.GINKGO_CHEST_BOAT, Models.GENERATED);
 
 
-        itemModelGenerator.register(MapleItems.SNOWBALL_STONE, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Diamond, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Gold, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_ICE, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_IRON, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Compression, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Teleporting, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Confusion, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Instant_Health, Items.SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_STONE, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Diamond, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Gold, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_ICE, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_IRON, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Compression, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Teleporting, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Confusion, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Instant_Health, Items.SNOWBALL, Models.GENERATED);
+        itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_Poison, Items.SNOWBALL, Models.GENERATED);
 
         itemModelGenerator.register(MapleFluidBlockOrItem.Hot_Spring_BUCKET, Models.GENERATED);
 
@@ -598,10 +599,10 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleArmorItems.Cherry_HOE, Models.HANDHELD);
 
         //Cherry armors
-        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) MapleArmorItems.Cherry_BOOTS));
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_HELMET, MapleEquipmentAssetKeys.Cherry,"helmet", false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_CHESTPLATE, MapleEquipmentAssetKeys.Cherry,"chestplate", false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_LEGGINGS, MapleEquipmentAssetKeys.Cherry,"leggings", false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_BOOTS, MapleEquipmentAssetKeys.Cherry,"boots", false);
 
         //Sign
         itemModelGenerator.register(MapleItems.Maple_HANGING_SIGN, Models.GENERATED);

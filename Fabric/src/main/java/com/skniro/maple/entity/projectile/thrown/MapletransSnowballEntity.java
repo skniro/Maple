@@ -5,8 +5,8 @@ import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.mob.BlazeEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -15,8 +15,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class MapletransSnowballEntity extends MapleSnowballEntity {
-    public MapletransSnowballEntity(World world, LivingEntity owner) {
-        super(world, owner);
+    public MapletransSnowballEntity(World world, LivingEntity owner, ItemStack stack) {
+        super(world, owner,stack);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         int i = entity instanceof BlazeEntity ? 4 : 0;
-        entity.damage(this.getDamageSources().thrown(this, this.getOwner()), i);
+        entity.serverDamage(this.getDamageSources().thrown(this, this.getOwner()), i);
         entity.move(MovementType.SELF, new Vec3d(5.0, 0.0, 5.0));
         if (entity instanceof ServerPlayerEntity) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) entity;
@@ -54,7 +54,6 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
     }
 
     @Nullable
-    @Override
     public Entity teleportTo(TeleportTarget teleportTarget) {
         Entity entity = this.getOwner();
         if (entity != null && entity.getWorld().getRegistryKey() != teleportTarget.world().getRegistryKey()) {

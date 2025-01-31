@@ -1,6 +1,5 @@
 package com.skniro.maple.block.init;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
@@ -11,11 +10,9 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -25,15 +22,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Function;
-
 public class WindowBlock extends HorizontalFacingBlock {
     public static final MapCodec<WindowBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> {
         return instance.group(createSettingsCodec(),BlockSetType.CODEC.fieldOf("block_set_type").forGetter((block) -> {
             return block.blockSetType;
         })).apply(instance, WindowBlock::new);
     });
-    public static final DirectionProperty FACING;
+    public static final EnumProperty<Direction> FACING;
     public static final EnumProperty<DoorHinge> HINGE;
     public static final BooleanProperty OPEN;
     public static final BooleanProperty POWERED;
@@ -103,7 +98,7 @@ public class WindowBlock extends HorizontalFacingBlock {
         this.playOpenCloseSound(player, world, pos, state.get(OPEN));
         world.emitGameEvent(player, state.get(OPEN) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
 
-        return ActionResult.success(world.isClient);
+        return ActionResult.SUCCESS;
     }
 
     private void playOpenCloseSound(@Nullable Entity entity, World world, BlockPos pos, boolean open) {

@@ -188,7 +188,7 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
         for(int i = 0; i < this.size(); i++) {
             inv.setStack(i, this.getStack(i));
         }
-        return this.getWorld().getRecipeManager()
+        return this.getWorld().getServer().getRecipeManager()
                 .getFirstMatch(MapleRecipeType.Maple_JUIER_TYPE, new MapleCraftingRecipeInput(inventory.get(INPUT_SLOT), inventory.get(Glass_SLOT)), this.getWorld());
     }
 

@@ -6,7 +6,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
 public class ItemBottle
@@ -27,8 +26,9 @@ public class ItemBottle
     }
 
     @Override
-    public UseAction getUseAction(ItemStack stack) {
-        return UseAction.DRINK;
+    public int getMaxUseTime(ItemStack stack, LivingEntity user) {
+        return MAX_USE_TIME;
     }
+
 
 }

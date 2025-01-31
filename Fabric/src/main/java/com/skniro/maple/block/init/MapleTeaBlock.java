@@ -18,7 +18,6 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -80,9 +79,6 @@ public class MapleTeaBlock extends PlantBlock implements Fertilizable {
             if (!world.isClient && (Integer)state.get(AGE) > 0 && (entity.lastRenderX != entity.getX() || entity.lastRenderZ != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.lastRenderX);
                 double e = Math.abs(entity.getZ() - entity.lastRenderZ);
-                if (d >= 0.003000000026077032 || e >= 0.003000000026077032) {
-                    entity.damage(world.getDamageSources().sweetBerryBush(), 1.0F);
-                }
             }
 
         }
@@ -98,17 +94,17 @@ public class MapleTeaBlock extends PlantBlock implements Fertilizable {
             BlockState blockState = (BlockState)state.with(AGE, 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, Emitter.of(player, blockState));
-            return ActionResult.success(world.isClient);
+            return ActionResult.SUCCESS;
         } else {
             return super.onUse(state, world, pos, player, hit);
         }
     }
 
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         int i = (Integer)state.get(AGE);
         boolean bl = i == 3;
         if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
-            return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return ActionResult.PASS;
         }
         return super.onUseWithItem(stack,state, world, pos, player, hand, hit);
     }

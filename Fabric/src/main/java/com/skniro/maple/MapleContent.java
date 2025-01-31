@@ -11,6 +11,7 @@ import com.skniro.maple.item.GlassCupItems;
 import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.item.init.equipment.MapleEquipmentAssetKeys;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleScreenHandlerType;
@@ -597,11 +598,12 @@ public class MapleContent {
         MapleScreenHandlerType.registerMapleScreenHandlerType();
     }
 
-    public static void registerBlockEntityType() {
+    public static void registerOthers() {
         MapleBlockEntityType.registerMapleBlockEntityType();
         MapleParticleTypes.registerParticleTypes();
         MapleEntityType.registerMapleEntityType();
         MapleVillagers.registerVillagerType();
+        MapleEquipmentAssetKeys.registerMapleArmorAssetsKeys();
     }
 
     public static void registerCommand() {

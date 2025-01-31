@@ -2,7 +2,6 @@ package com.skniro.maple.block.init;
 
 
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.entity.MapleJuicerBlockEntity;
 import net.minecraft.block.*;
@@ -14,11 +13,12 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -36,7 +36,7 @@ public class MapleJuicerBlock extends BlockWithEntity {
         return CODEC;
     }
 
-    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = Properties.HORIZONTAL_FACING;
 
 
     private static VoxelShape SHAPE = Block.createCuboidShape(5, 0, 5, 11, 14, 11);

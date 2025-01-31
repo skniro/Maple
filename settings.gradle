@@ -20,5 +20,5 @@ pluginManagement {
 }
 
 
-rootProject.name = 'Maple-1.21'
+rootProject.name = 'Maple-1.21.4'
 include("Fabric", "Forge", "Neoforge")

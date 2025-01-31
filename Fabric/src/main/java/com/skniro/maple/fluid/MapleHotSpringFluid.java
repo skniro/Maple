@@ -11,6 +11,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -23,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class MapleHotSpringFluid extends FlowableFluid {
     @Override
-    protected boolean isInfinite(World world) {
+    protected boolean isInfinite(ServerWorld world) {
         return world.getGameRules().getBoolean(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION);
     }
 

@@ -22,6 +22,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.BoatEntityRenderer;
 import net.minecraft.util.Identifier;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
@@ -164,6 +165,8 @@ public class MapleClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.HOT_SPRING, MapleCampfireSmokeParticle.CosySmokeFactory::new);
 
         EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, BoatEntityRenderer::new);
         EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
 
         HandledScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);

@@ -1,7 +1,7 @@
 package com.skniro.maple.block.api.registry;
 
 import net.minecraft.block.Block;
-import net.minecraft.data.client.*;
+import net.minecraft.client.data.*;
 import net.minecraft.item.Item;
 import net.minecraft.state.property.Properties;
 
