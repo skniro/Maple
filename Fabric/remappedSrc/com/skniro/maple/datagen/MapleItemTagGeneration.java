@@ -1,7 +1,10 @@
 package com.skniro.maple.datagen;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.MapleArmorItems;
+import com.skniro.maple.item.MapleItems;
+import com.skniro.maple.tag.MapleItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -32,6 +35,10 @@ public class MapleItemTagGeneration extends FabricTagProvider<Item> {
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
+        tag(MapleItemTags.REPAIRS_CHERRY_ARMOR)
+                .add(MapleArmorItems.Cherry_INGOT);
+        tag(MapleItemTags.CHERRY_TOOL_MATERIALS)
+                .add(MapleArmorItems.Cherry_INGOT);
         tag(SAPLINGS)
                 .add(Item.byBlock(MapleBlocks.MAPLE_SAPLING))
                 .add(Item.byBlock(MapleBlocks.CHERRY_SAPLING))

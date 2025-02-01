@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "maple:ginkgo_leaves"
-    },
-    {
-      "item": "maple:ginkgo_leaves"
-    }
+    "maple:ginkgo_leaves",
+    "maple:ginkgo_leaves"
   ],
   "result": {
     "count": 2,

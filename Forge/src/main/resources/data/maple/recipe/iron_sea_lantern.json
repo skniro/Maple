@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "b": {
-      "item": "minecraft:sea_lantern"
-    },
-    "i": {
-      "item": "minecraft:iron_nugget"
-    }
+    "b": "minecraft:sea_lantern",
+    "i": "minecraft:iron_nugget"
   },
   "pattern": [
     "bbb",

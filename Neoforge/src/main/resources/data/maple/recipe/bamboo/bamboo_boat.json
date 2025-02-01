@@ -1,18 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "boat",
-  "key": {
-    "#": {
-      "item": "maple:bamboo_planks"
-    }
-  },
-  "pattern": [
-    "# #",
-    "###"
-  ],
-   "result": {
-    "id": "minecraft:oak_boat"
-  },
-  "show_notification": true
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "boat",
+    "key": {
+        "#": "maple:bamboo_planks"
+    },
+    "pattern": [
+        "# #",
+        "###"
+    ],
+    "result": {
+        "id": "minecraft:oak_boat"
+    },
+    "show_notification": true
 }

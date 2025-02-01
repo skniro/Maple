@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:bamboo_block"
-            ]
+            "items": "minecraft:bamboo_block"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sand"
-            ]
+            "items": "minecraft:sand"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_sand",
-      "has_bamboo_block",
-      "has_the_recipe"
+      "has_bamboo_block"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

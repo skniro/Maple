@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "maple:sakura_leaves"
-    },
-    {
-      "item": "maple:sakura_leaves"
-    }
+    "maple:sakura_leaves",
+    "maple:sakura_leaves"
   ],
   "result": {
     "count": 2,

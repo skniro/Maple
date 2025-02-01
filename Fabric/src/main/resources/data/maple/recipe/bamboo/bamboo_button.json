@@ -1,13 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "redstone",
-  "group": "wooden_button",
-  "ingredients": [
-    {
-      "item": "maple:bamboo_planks"
+    "type": "minecraft:crafting_shapeless",
+    "category": "redstone",
+    "group": "wooden_button",
+    "ingredients": [
+        "maple:bamboo_planks"
+    ],
+    "result": {
+        "id": "minecraft:bamboo_button"
     }
-  ],
-   "result": {
-    "id": "minecraft:bamboo_button"
-  }
 }

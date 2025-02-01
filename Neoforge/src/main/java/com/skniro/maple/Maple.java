@@ -9,7 +9,6 @@ import com.skniro.maple.block.entity.MapleBlockEntities;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.block.renderer.MapleJuicerEntityRenderer;
-import com.skniro.maple.client.boat.MapleBoatRenderer;
 import com.skniro.maple.client.boat.MapleModelLayers;
 import com.skniro.maple.client.gui.screen.ingame.MapleJuicerBlockScreen;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
@@ -31,6 +30,7 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.api.distmarker.Dist;
@@ -48,10 +48,10 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(Maple.MODID)
+@Mod(Maple.MOD_ID)
 public class Maple{
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "maple";
+    public static final String MOD_ID = "maple";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -108,7 +108,7 @@ public class Maple{
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
 
         @SubscribeEvent
@@ -119,8 +119,6 @@ public class Maple{
             BlockEntityRenderers.register(MapleBlockEntities.Maple_HANGING_SIGN.get(), HangingSignRenderer::new);
             Sheets.addWoodType(MapleWoodTypes.MAPLE);
             Sheets.addWoodType(MapleWoodTypes.GINKGO);
-            EntityRenderers.register(MapleEntityType.Maple_BOAT.get(), pContext -> new MapleBoatRenderer(pContext, false));
-            EntityRenderers.register(MapleEntityType.Maple_CHEST_BOAT.get(), pContext -> new MapleBoatRenderer(pContext, true));
             EntityRenderers.register(MapleEntityType.Cushion_ENTITY.get(), CushinoRenderer::new);
             EntityRenderers.register(MapleEntityType.CHAIR_ENTITY.get(), ChairRenderer::new);
             BlockEntityRenderers.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE.get(), MapleJuicerEntityRenderer::new);
@@ -132,7 +130,7 @@ public class Maple{
         }
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
@@ -153,10 +151,14 @@ public class Maple{
 
         @SubscribeEvent
         public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(MapleModelLayers.Maple_BOAT_LAYER, BoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Maple_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Ginkgo_BOAT_LAYER, BoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Ginkgo_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+            EntityRenderers.register(MapleEntityType.Maple_BOAT.get(), pContext -> new BoatRenderer(pContext, MapleModelLayers.Maple_BOAT_LAYER));
+            EntityRenderers.register(MapleEntityType.Maple_CHEST_BOAT.get(), pContext -> new BoatRenderer(pContext, MapleModelLayers.Maple_CHEST_BOAT_LAYER));
+            EntityRenderers.register(MapleEntityType.GINKGO_BOAT.get(), pContext -> new BoatRenderer(pContext, MapleModelLayers.Ginkgo_BOAT_LAYER));
+            EntityRenderers.register(MapleEntityType.GINKGO_CHEST_BOAT.get(), pContext -> new BoatRenderer(pContext, MapleModelLayers.Ginkgo_CHEST_BOAT_LAYER));
+            event.registerLayerDefinition(MapleModelLayers.Maple_BOAT_LAYER, BoatModel::createBoatModel);
+            event.registerLayerDefinition(MapleModelLayers.Maple_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+            event.registerLayerDefinition(MapleModelLayers.Ginkgo_BOAT_LAYER, BoatModel::createBoatModel);
+            event.registerLayerDefinition(MapleModelLayers.Ginkgo_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
         }
     }
 }

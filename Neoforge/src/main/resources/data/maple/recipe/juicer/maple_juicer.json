@@ -6,12 +6,8 @@
         "#G#"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:iron_ingot"
-        },
-        "G": {
-            "item": "minecraft:glass"
-        }
+        "#": "minecraft:iron_ingot",
+        "G": "minecraft:glass"
     },
     "result": {
         "count": 1,

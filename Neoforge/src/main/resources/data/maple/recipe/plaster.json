@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "b": {
-      "item": "minecraft:sand"
-    },
-    "i": {
-      "item": "minecraft:bamboo_block"
-    }
+    "b": "minecraft:sand",
+    "i": "minecraft:bamboo_block"
   },
   "pattern": [
     "bbb",

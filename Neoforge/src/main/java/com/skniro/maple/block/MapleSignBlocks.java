@@ -2,55 +2,77 @@ package com.skniro.maple.block;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleWoodTypes;
-
 import com.skniro.maple.block.init.MapleHangingSignBlock;
 import com.skniro.maple.block.init.MapleStandingSignBlock;
 import com.skniro.maple.block.init.MapleWallHangingSignBlock;
 import com.skniro.maple.block.init.MapleWallSignBlock;
-import net.minecraft.core.registries.BuiltInRegistries;
+import com.skniro.maple.item.MapleItems;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CeilingHangingSignBlock;
-import net.minecraft.world.level.block.WallHangingSignBlock;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class MapleSignBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK, Maple.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Maple.MOD_ID);
 
     public static final Supplier<Block> CHERRY_SIGN = registerBlockWithoutItem("cherry_sign",
-            ()-> new MapleStandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.CHERRY_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F), WoodType.CHERRY));
+            (properties)-> new MapleStandingSignBlock(properties, WoodType.CHERRY), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(1.0F));
     public static final Supplier<Block> CHERRY_WALL_SIGN = registerBlockWithoutItem("cherry_wall_sign",
-            ()-> new MapleWallSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.CHERRY_LOG.get().defaultMapColor()).noCollission().strength(1.0F).dropsLike(CHERRY_SIGN.get()), WoodType.CHERRY));
+            (properties)-> new MapleWallSignBlock(properties, WoodType.CHERRY),BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().strength(1.0F));
     public static final Supplier<Block> Maple_SIGN = registerBlockWithoutItem("maple_sign",
-            ()-> new MapleStandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F), MapleWoodTypes.MAPLE));
+            (properties)-> new MapleStandingSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().strength(1.0F));
     public static final Supplier<Block> Maple_WALL_SIGN = registerBlockWithoutItem("maple_wall_sign",
-            ()-> new MapleWallSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F).dropsLike(Maple_SIGN.get()), MapleWoodTypes.MAPLE));
+            (properties)-> new MapleWallSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().strength(1.0F));
     public static final Supplier<Block> BAMBOO_SIGN = registerBlockWithoutItem("bamboo_sign",
-            ()-> new MapleStandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.BAMBOO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0f), WoodType.BAMBOO));
+            (properties)-> new MapleStandingSignBlock(properties, WoodType.BAMBOO), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().strength(1.0f));
     public static final Supplier<Block> BAMBOO_WALL_SIGN = registerBlockWithoutItem("bamboo_wall_sign",
-            ()-> new MapleWallSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.BAMBOO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F).dropsLike(BAMBOO_SIGN.get()), WoodType.BAMBOO));
+            (properties)-> new MapleWallSignBlock(properties, WoodType.BAMBOO),BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().strength(1.0F));
    public static final Supplier<Block> GINKGO_SIGN = registerBlockWithoutItem("ginkgo_sign",
-           ()-> new MapleStandingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F), MapleWoodTypes.GINKGO));
+            (properties)-> new MapleStandingSignBlock(properties, MapleWoodTypes.GINKGO), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollission().strength(1.0F));
     public static final Supplier<Block> GINKGO_WALL_SIGN = registerBlockWithoutItem("ginkgo_wall_sign",
-            ()-> new MapleWallSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_PLANKS.get().defaultMapColor()).noCollission().strength(1.0F).dropsLike(GINKGO_SIGN.get()), MapleWoodTypes.GINKGO));
+            (properties)-> new MapleWallSignBlock(properties, MapleWoodTypes.GINKGO), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollission().strength(1.0F));
     public static final Supplier<Block> Maple_HANGING_SIGN = registerBlockWithoutItem("maple_hanging_sign",
-            ()-> new MapleHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), MapleWoodTypes.MAPLE));
+            (properties)-> new MapleHangingSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava());
     public static final Supplier<Block> GINKGO_HANGING_SIGN = registerBlockWithoutItem("ginkgo_hanging_sign",
-            ()-> new MapleHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), MapleWoodTypes.GINKGO));
+            (properties)-> new MapleHangingSignBlock(properties, MapleWoodTypes.GINKGO), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava());
     public static final Supplier<Block> GINKGO_WALL_HANGING_SIGN = registerBlockWithoutItem("ginkgo_wall_hanging_sign",
-            ()-> new MapleWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.GINKGO_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().dropsLike(GINKGO_HANGING_SIGN.get()), MapleWoodTypes.GINKGO));
+            (properties)-> new MapleWallHangingSignBlock(properties, MapleWoodTypes.GINKGO), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava());
     public static final Supplier<Block> Maple_WALL_HANGING_SIGN = registerBlockWithoutItem("maple_wall_hanging_sign",
-            ()-> new MapleWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(MapleBlocks.MAPLE_LEAVES.get().defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().dropsLike(Maple_HANGING_SIGN.get()), MapleWoodTypes.MAPLE));
+            (properties)-> new MapleWallHangingSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava());
 
+    private static <B extends Block> DeferredBlock<B> registerBlock(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
+        DeferredBlock<B> bDeferredBlock = registerBlockWithoutItem(name, block, properties);
+        registerBlockItem(name, bDeferredBlock);
+        return bDeferredBlock;
+    }
 
-    private static <T extends Block> Supplier<T> registerBlockWithoutItem(String name, Supplier<T> block) {
-        Supplier<T> toReturn = BLOCKS.register(name, block);
-        return toReturn;
+    private static <B extends Block> DeferredBlock<B> registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
+        DeferredBlock<B> register = BLOCKS.registerBlock(name, block, properties.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
+        return register;
+    }
+
+    private static <B extends Block> DeferredBlock<B> registerBlockWithoutItemWithEmpty(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {
+        DeferredBlock<B> register = registerBlockWithoutItem(name, block, properties);
+        return register;
+    }
+
+    private static <T extends Block> Holder<Item> registerBlockItem(String name, DeferredBlock<T> block) {
+        return MapleItems.ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
+                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name)))));
     }
 
     public static void registerMapleSignBlocks(IEventBus eventBus) {

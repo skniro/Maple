@@ -6,12 +6,8 @@
         "P P"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:spruce_slab"
-        },
-        "P": {
-            "item": "minecraft:spruce_planks"
-        }
+        "W": "minecraft:spruce_slab",
+        "P": "minecraft:spruce_planks"
     },
     "result": {
         "count": 2,

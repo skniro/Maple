@@ -15,12 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.DoorHingeSide;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -33,7 +28,7 @@ public class WindowBlock extends HorizontalDirectionalBlock {
             return block.blockSetType;
         })).apply(instance, WindowBlock::new);
     });
-    public static final DirectionProperty FACING;
+    public static final EnumProperty<Direction> FACING;
     public static final EnumProperty<DoorHingeSide> HINGE;
     public static final BooleanProperty OPEN;
     public static final BooleanProperty POWERED;
@@ -103,7 +98,7 @@ public class WindowBlock extends HorizontalDirectionalBlock {
         this.playOpenCloseSound(player, world, pos, state.getValue(OPEN));
         world.gameEvent(player, state.getValue(OPEN) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pos);
 
-        return InteractionResult.sidedSuccess(world.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     private void playOpenCloseSound(@Nullable Entity entity, Level world, BlockPos pos, boolean open) {

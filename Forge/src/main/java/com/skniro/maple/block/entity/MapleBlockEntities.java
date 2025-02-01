@@ -8,15 +8,17 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class MapleBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Maple.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Maple.MOD_ID);
 
     public static final Supplier<BlockEntityType<MapleSignBlockEntity>> SIGN_BLOCK_ENTITIES =
             BLOCK_ENTITIES.register("sign_block_entity", () ->
-                    BlockEntityType.Builder.of(MapleSignBlockEntity::new,
+                    new BlockEntityType<>(MapleSignBlockEntity::new,
+                            Set.of(
                             MapleSignBlocks.BAMBOO_SIGN.get(),
                             MapleSignBlocks.BAMBOO_WALL_SIGN.get(),
                             MapleSignBlocks.Maple_SIGN.get(),
@@ -24,16 +26,17 @@ public class MapleBlockEntities {
                             MapleSignBlocks.CHERRY_SIGN.get(),
                             MapleSignBlocks.CHERRY_WALL_SIGN.get(),
                             MapleSignBlocks.GINKGO_SIGN.get(),
-                            MapleSignBlocks.GINKGO_WALL_SIGN.get()).build(null));
+                            MapleSignBlocks.GINKGO_WALL_SIGN.get())));
 
     public static final Supplier<BlockEntityType<MapleHangingSignBlockEntity>> Maple_HANGING_SIGN =
             BLOCK_ENTITIES.register("maple_hanging_sign", () ->
-                    BlockEntityType.Builder.of(MapleHangingSignBlockEntity::new,
+                    new BlockEntityType<>(MapleHangingSignBlockEntity::new,
+                            Set.of(
                             MapleSignBlocks.Maple_HANGING_SIGN.get(),
                             MapleSignBlocks.Maple_WALL_HANGING_SIGN.get(),
                             MapleSignBlocks.GINKGO_HANGING_SIGN.get(),
                             MapleSignBlocks.GINKGO_WALL_HANGING_SIGN.get()
-                            ).build(null));
+                            )));
 
 
     public static void registerMapleBlockEntities(IEventBus eventBus) {

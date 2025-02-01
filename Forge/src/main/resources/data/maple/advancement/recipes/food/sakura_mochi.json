@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:cooked_rice"
-            ]
+            "items": "maple:cooked_rice"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:mochi"
-            ]
+            "items": "maple:mochi"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_mochi",
-      "has_cooked_rice",
-      "has_the_recipe"
+      "has_cooked_rice"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:sakura_mochi"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

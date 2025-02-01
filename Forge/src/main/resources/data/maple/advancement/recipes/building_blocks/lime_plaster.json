@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:lime_dye"
-            ]
+            "items": "minecraft:lime_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_lime_dye",
-      "has_the_recipe"
+      "has_lime_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:lime_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

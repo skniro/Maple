@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:ginkgo_leaves"
-            ]
+            "items": "maple:ginkgo_leaves"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_ginkgo_leaves",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ginkgo_leaves"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:ginkgo_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

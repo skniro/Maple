@@ -6,12 +6,8 @@
         "P P"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:mangrove_slab"
-        },
-        "P": {
-            "item": "minecraft:mangrove_planks"
-        }
+        "W": "minecraft:mangrove_slab",
+        "P": "minecraft:mangrove_planks"
     },
     "result": {
         "count": 2,

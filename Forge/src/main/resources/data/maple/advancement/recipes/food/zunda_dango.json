@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sugar"
-            ]
+            "items": "minecraft:sugar"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:zunda_dango"
-            ]
+            "items": "maple:zunda_dango"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_zunda_dango",
-      "has_sugar",
-      "has_the_recipe"
+      "has_sugar"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:zunda_dango"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

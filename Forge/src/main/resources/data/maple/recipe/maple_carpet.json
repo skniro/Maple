@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "maple:maple_leaves"
-    },
-    {
-      "item": "maple:maple_leaves"
-    }
+    "maple:maple_leaves",
+    "maple:maple_leaves"
   ],
   "result": {
     "count": 2,

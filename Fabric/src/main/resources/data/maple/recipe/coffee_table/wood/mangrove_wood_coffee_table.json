@@ -6,9 +6,7 @@
         "PPP"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:stripped_mangrove_log"
-        }
+        "P": "minecraft:stripped_mangrove_log"
     },
     "result": {
         "count": 3,

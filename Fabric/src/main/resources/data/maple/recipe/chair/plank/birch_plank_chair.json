@@ -6,9 +6,7 @@
         "P P"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:birch_planks"
-        }
+        "P": "minecraft:birch_planks"
     },
     "result": {
         "count": 3,

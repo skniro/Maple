@@ -10,9 +10,11 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 
+import java.util.function.Supplier;
+
 public class MapleHotSpringFluidBlock extends LiquidBlock {
-    public MapleHotSpringFluidBlock(FlowingFluid fluid, Properties settings) {
-        super(fluid, settings);
+    public MapleHotSpringFluidBlock(Supplier<FlowingFluid> fluid, Properties settings) {
+        super(fluid.get(), settings);
     }
 
     @Override

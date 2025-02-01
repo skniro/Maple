@@ -3,12 +3,8 @@
     "category": "misc",
     "group": "wooden_fence",
     "key": {
-        "#": {
-            "item": "minecraft:stick"
-        },
-        "W": {
-            "item": "maple:ginkgo_planks"
-        }
+        "#": "minecraft:stick",
+        "W": "maple:ginkgo_planks"
     },
     "pattern": [
         "W#W",

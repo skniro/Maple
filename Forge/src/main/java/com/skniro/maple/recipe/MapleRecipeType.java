@@ -14,9 +14,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 public interface MapleRecipeType<T extends Recipe<?>> {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Maple.MODID);
+            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Maple.MOD_ID);
     public static final DeferredRegister<RecipeType<?>> TYPES =
-            DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, Maple.MODID);
+            DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, Maple.MOD_ID);
 
     public static final RegistryObject<RecipeSerializer<MapleJuicerCraftingRecipe>> Maple_JUIER_SERIALIZER = SERIALIZERS.register( "maple_juicer", MapleJuicerCraftingRecipe.Serializer::new);
     public static final RegistryObject<RecipeType<MapleJuicerCraftingRecipe>> Maple_JUIER_TYPE = TYPES.register( "maple_juicer", () -> new RecipeType<MapleJuicerCraftingRecipe>() {

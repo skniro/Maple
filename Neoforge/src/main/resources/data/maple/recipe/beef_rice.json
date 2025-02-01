@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "maple:cooked_rice"
-    },
-    {
-      "item": "minecraft:beef"
-    }
+    "maple:cooked_rice",
+    "minecraft:beef"
   ],
   "result": {
     "count": 1,

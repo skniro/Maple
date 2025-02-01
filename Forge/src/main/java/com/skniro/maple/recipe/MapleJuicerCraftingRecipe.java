@@ -8,12 +8,9 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeInput;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +18,9 @@ import java.util.List;
 
 public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     private final ItemStack output;
-    final List<Ingredient> recipeItems;
+    final List<Ingredient>  recipeItems;
+    @Nullable
+    private PlacementInfo ingredientPlacement;
 
     public MapleJuicerCraftingRecipe(List<Ingredient> recipeItems, ItemStack output) {
         this.output = output;
@@ -43,17 +42,27 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
         return output;
     }
 
+
     @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
+    public PlacementInfo placementInfo() {
+        if (this.ingredientPlacement == null) {
+            this.ingredientPlacement = PlacementInfo.create(this.recipeItems);
+        }
+
+        return this.ingredientPlacement;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider lookup) {
+    public RecipeBookCategory recipeBookCategory() {
+        return null;
+    }
+
+
+    public ItemStack getResult(HolderLookup.Provider lookup) {
         return output;
     }
 
-    @Override
+
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.createWithCapacity(2);
         list.addAll(recipeItems);
@@ -61,19 +70,19 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<RecipeInput>> getSerializer() {
         return MapleRecipeType.Maple_JUIER_SERIALIZER.get();
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<RecipeInput>> getType() {
         return MapleRecipeType.Maple_JUIER_TYPE.get();
     }
 
     public static class Serializer implements RecipeSerializer<MapleJuicerCraftingRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final MapCodec<MapleJuicerCraftingRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-                Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredient").forGetter((recipe) -> {
+                Ingredient.CODEC.listOf().fieldOf("ingredient").forGetter((recipe) -> {
                     return recipe.recipeItems;
                 }),
                 ItemStack.CODEC.fieldOf("result").forGetter((recipe) -> {
@@ -82,7 +91,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
         ).apply(inst, MapleJuicerCraftingRecipe::new));
 
 
-        public static final StreamCodec<RegistryFriendlyByteBuf, MapleJuicerCraftingRecipe> PACKET_CODEC = StreamCodec.of(Serializer::write, Serializer::read);
+        public static final StreamCodec<RegistryFriendlyByteBuf, MapleJuicerCraftingRecipe> PACKET_CODEC = StreamCodec.of(MapleJuicerCraftingRecipe.Serializer::write, MapleJuicerCraftingRecipe.Serializer::read);
 
         public Serializer() {
         }
@@ -97,7 +106,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
 
         private static MapleJuicerCraftingRecipe read(RegistryFriendlyByteBuf buf) {
             int i = buf.readVarInt();
-            NonNullList<Ingredient> defaultedList = NonNullList.withSize(i, Ingredient.EMPTY);
+            NonNullList<Ingredient> defaultedList = NonNullList.withSize(i, Ingredient.of(ItemStack.EMPTY.getItem()));
             defaultedList.replaceAll((empty) -> {
                 return (Ingredient)Ingredient.CONTENTS_STREAM_CODEC.decode(buf);
             });

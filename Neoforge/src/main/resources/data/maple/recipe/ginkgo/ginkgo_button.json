@@ -1,13 +1,11 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "redstone",
-  "group": "wooden_button",
-  "ingredients": [
-    {
-      "item": "maple:ginkgo_planks"
+    "type": "minecraft:crafting_shapeless",
+    "category": "redstone",
+    "group": "wooden_button",
+    "ingredients": [
+        "maple:ginkgo_planks"
+    ],
+    "result": {
+        "id": "maple:ginkgo_button"
     }
-  ],
-   "result": {
-    "id": "maple:ginkgo_button"
-  }
 }

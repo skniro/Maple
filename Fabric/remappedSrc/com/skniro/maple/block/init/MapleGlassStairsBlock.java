@@ -22,7 +22,7 @@ public class MapleGlassStairsBlock extends StairBlock {
         return 1.0F;
     }
 
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+    public boolean isTransparent(BlockState state, BlockGetter world, BlockPos pos) {
         return true;
     }
 }

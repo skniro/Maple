@@ -6,9 +6,7 @@
         "PPP"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:dark_oak_planks"
-        }
+        "P": "minecraft:dark_oak_planks"
     },
     "result": {
         "count": 3,

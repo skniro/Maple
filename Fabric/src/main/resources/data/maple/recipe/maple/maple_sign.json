@@ -3,12 +3,8 @@
     "category": "misc",
     "group": "wooden_sign",
     "key": {
-        "#": {
-            "item": "maple:maple_planks"
-        },
-        "X": {
-            "item": "minecraft:stick"
-        }
+        "#": "maple:maple_planks",
+        "X": "minecraft:stick"
     },
     "pattern": [
         "###",

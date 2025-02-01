@@ -1,23 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "hanging_sign",
-  "key": {
-    "#": {
-      "item": "maple:stripped_ginkgo_log"
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "group": "hanging_sign",
+    "key": {
+        "#": "maple:stripped_ginkgo_log",
+        "X": "minecraft:chain"
     },
-    "X": {
-      "item": "minecraft:chain"
-    }
-  },
-  "pattern": [
-    "X X",
-    "###",
-    "###"
-  ],
-  "result": {
-    "count": 6,
-    "id": "maple:ginkgo_hanging_sign"
-  },
-  "show_notification": true
+    "pattern": [
+        "X X",
+        "###",
+        "###"
+    ],
+    "result": {
+        "count": 6,
+        "id": "maple:ginkgo_hanging_sign"
+    },
+    "show_notification": true
 }

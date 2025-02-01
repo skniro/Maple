@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "maple:mochi"
-    },
-    {
-      "item": "minecraft:short_grass"
-    },
-    {
-      "item": "maple:sakura_leaves"
-    },
-    {
-      "item": "minecraft:bamboo"
-    }
+    "minecraft:sugar",
+    "maple:mochi",
+    "minecraft:short_grass",
+    "maple:sakura_leaves",
+    "minecraft:bamboo"
   ],
   "result": {
     "count": 1,

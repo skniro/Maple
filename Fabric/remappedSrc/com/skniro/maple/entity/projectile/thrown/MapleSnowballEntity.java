@@ -22,12 +22,12 @@ public class MapleSnowballEntity
         super((EntityType<? extends ThrowableItemProjectile>)entityType, world);
     }
 
-    public MapleSnowballEntity(Level world, LivingEntity owner) {
-        super((EntityType<? extends ThrowableItemProjectile>)EntityType.SNOWBALL, owner, world);
+    public MapleSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
+        super(EntityType.SNOWBALL, owner, world, stack);
     }
 
-    public MapleSnowballEntity(Level world, double x, double y, double z) {
-        super((EntityType<? extends ThrowableItemProjectile>)EntityType.SNOWBALL, x, y, z, world);
+    public MapleSnowballEntity(Level world, double x, double y, double z, ItemStack stack) {
+        super(EntityType.SNOWBALL, x, y, z, world, stack);
     }
 
     @Override

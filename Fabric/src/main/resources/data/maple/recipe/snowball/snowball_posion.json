@@ -6,12 +6,8 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:spider_eye"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:spider_eye"
     },
     "result": {
         "count": 32,

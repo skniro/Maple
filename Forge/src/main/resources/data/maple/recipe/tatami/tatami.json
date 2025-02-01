@@ -1,22 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "group": "wooden_slab",
-  "key": {
-    "#": {
-      "item": "minecraft:grass"
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "group": "wooden_slab",
+    "key": {
+        "#": "minecraft:short_grass",
+        "G": "minecraft:wheat"
     },
-    "G":{
-      "item": "minecraft:wheat"
-    }
-  },
-  "pattern": [
-    "###",
-    "GGG"
-  ],
-  "result": {
-    "count": 4,
-    "id":"maple:tatami"
-  },
-  "show_notification": true
+    "pattern": [
+        "###",
+        "GGG"
+    ],
+    "result": {
+        "count": 4,
+        "id": "maple:tatami"
+    },
+    "show_notification": true
 }

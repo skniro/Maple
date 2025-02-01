@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:sanshoku_dango"
-            ]
+            "items": "maple:sanshoku_dango"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sugar"
-            ]
+            "items": "minecraft:sugar"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_sanshoku_dango",
-      "has_sugar",
-      "has_the_recipe"
+      "has_sugar"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:sanshoku_dango"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

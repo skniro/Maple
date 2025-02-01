@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class MapleFluids {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Maple.MODID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Maple.MOD_ID);
     public static RegistryObject<FlowingFluid> STILL_Hot_Spring= registerfluid("hot_spring",
             () -> new MapleHotSpringFluid.Still());
 

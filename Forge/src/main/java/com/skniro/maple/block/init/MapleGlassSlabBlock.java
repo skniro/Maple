@@ -11,8 +11,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class MapleGlassSlabBlock extends SlabBlock {
 
 
-    public MapleGlassSlabBlock(Properties properties) {
-        super(properties.noOcclusion());
+    public MapleGlassSlabBlock(Properties settings) {
+        super(settings);
     }
 
     @Override
@@ -20,13 +20,11 @@ public class MapleGlassSlabBlock extends SlabBlock {
         return Shapes.empty();
     }
 
-    @Override
     public float getShadeBrightness(BlockState state, BlockGetter world, BlockPos pos) {
         return 1.0F;
     }
 
-    @Override
-    public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+    public boolean isTransparent(BlockState state, BlockGetter world, BlockPos pos) {
         return true;
     }
 }

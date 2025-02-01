@@ -3,9 +3,7 @@
     "category": "building",
     "group": "wooden_slab",
     "key": {
-        "#": {
-            "item": "maple:ginkgo_planks"
-        }
+        "#": "maple:ginkgo_planks"
     },
     "pattern": [
         "###"

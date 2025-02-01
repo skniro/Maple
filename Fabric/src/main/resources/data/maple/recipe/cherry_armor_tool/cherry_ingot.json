@@ -3,33 +3,15 @@
     "category": "misc",
     "group": "cherry_ingot",
     "ingredients": [
-        {
-            "item": "minecraft:iron_ingot"
-        },
-        {
-            "item": "minecraft:iron_ingot"
-        },
-        {
-            "item": "minecraft:iron_ingot"
-        },
-        {
-            "item": "minecraft:iron_ingot"
-        },
-        {
-            "item": "minecraft:gold_ingot"
-        },
-        {
-            "item": "minecraft:gold_ingot"
-        },
-        {
-            "item": "minecraft:gold_ingot"
-        },
-        {
-            "item": "minecraft:gold_ingot"
-        },
-        {
-            "item": "minecraft:cherry_leaves"
-        }
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:gold_ingot",
+        "minecraft:gold_ingot",
+        "minecraft:gold_ingot",
+        "minecraft:gold_ingot",
+        "minecraft:cherry_leaves"
     ],
     "result": {
         "id": "maple:cherry_ingot"

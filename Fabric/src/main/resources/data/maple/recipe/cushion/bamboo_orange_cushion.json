@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:orange_carpet"
-        },
-        "P": {
-            "item": "minecraft:bamboo_planks"
-        }
+        "W": "minecraft:orange_carpet",
+        "P": "minecraft:bamboo_planks"
     },
     "result": {
         "count": 3,

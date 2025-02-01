@@ -22,9 +22,9 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public class MapleVillagers {
-    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(Registries.POINT_OF_INTEREST_TYPE, Maple.MODID);
-    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSION = DeferredRegister.create(Registries.VILLAGER_PROFESSION, Maple.MODID);
-    public static final DeferredRegister<VillagerType> VILLAGER_TYPES = DeferredRegister.create(BuiltInRegistries.VILLAGER_TYPE, Maple.MODID);
+    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(Registries.POINT_OF_INTEREST_TYPE, Maple.MOD_ID);
+    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSION = DeferredRegister.create(Registries.VILLAGER_PROFESSION, Maple.MOD_ID);
+    public static final DeferredRegister<VillagerType> VILLAGER_TYPES = DeferredRegister.create(BuiltInRegistries.VILLAGER_TYPE, Maple.MOD_ID);
     public static final Map<VillagerType, Set<ResourceKey<Biome>>> VILLAGER_TYPE_BY_BIOME = new HashMap<>();
 
     public static final Supplier<VillagerType> Cherry = registerType("cherry", Set.of(MapleBiomeKeys.Sakura, Biomes.CHERRY_GROVE));

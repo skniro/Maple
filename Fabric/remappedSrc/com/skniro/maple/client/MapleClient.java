@@ -1,15 +1,12 @@
 package com.skniro.maple.client;
 
+import com.skniro.maple.MapleContent;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.renderer.MapleJuicerEntityRenderer;
 import com.skniro.maple.client.gui.screen.ingame.MapleJuicerBlockScreen;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
-import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
-import com.skniro.maple.client.renderer.ChairRenderer;
-import com.skniro.maple.client.renderer.CushinoRenderer;
-import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.screen.MapleScreenHandlerType;
@@ -18,7 +15,6 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -149,24 +145,13 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(),
                 MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring);
 
-        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES,((spriteProvider) -> {
-            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
-            };
-        }));
-
-        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES,((spriteProvider) -> {
-            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
-            };
-        }));
 
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.HOT_SPRING, MapleCampfireSmokeParticle.CosySmokeFactory::new);
 
-        EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
-        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
-
         MenuScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);
         BlockEntityRenderers.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, MapleJuicerEntityRenderer::new);
+
+        MapleContent.registerClientEntityRenderer();
+        MapleContent.registerClientParticle();
     }
 }

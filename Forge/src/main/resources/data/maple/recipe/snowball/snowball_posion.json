@@ -6,15 +6,11 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:spider_eye"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:spider_eye"
     },
     "result": {
-        "id": "maple:snowball_poison",
-        "count": 32
+        "count": 32,
+        "id": "maple:snowball_poison"
     }
 }

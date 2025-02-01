@@ -3,9 +3,7 @@
     "category": "building",
     "group": "wooden_stairs",
     "key": {
-        "#": {
-            "item": "minecraft:white_concrete"
-        }
+        "#": "minecraft:white_concrete"
     },
     "pattern": [
         "#  ",

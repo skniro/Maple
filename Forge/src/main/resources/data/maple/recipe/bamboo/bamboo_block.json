@@ -1,36 +1,18 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients": [
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
-    },
-    {
-      "item": "minecraft:bamboo"
+    "type": "minecraft:crafting_shapeless",
+    "category": "building",
+    "ingredients": [
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo",
+        "minecraft:bamboo"
+    ],
+    "result": {
+        "id": "minecraft:bamboo_block"
     }
-  ],
-   "result": {
-    "id": "minecraft:bamboo_block"
-  }
 }

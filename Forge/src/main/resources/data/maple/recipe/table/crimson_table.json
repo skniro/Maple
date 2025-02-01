@@ -6,12 +6,8 @@
         "P P"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:crimson_slab"
-        },
-        "P": {
-            "item": "minecraft:crimson_planks"
-        }
+        "W": "minecraft:crimson_slab",
+        "P": "minecraft:crimson_planks"
     },
     "result": {
         "count": 2,

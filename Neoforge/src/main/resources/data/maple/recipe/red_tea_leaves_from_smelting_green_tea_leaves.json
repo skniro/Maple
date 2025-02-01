@@ -4,9 +4,7 @@
   "cookingtime": 300,
   "experience": 0.45,
   "group": "red_tea",
-  "ingredient": {
-    "item": "maple:green_tea_leaves"
-  },
+  "ingredient": "maple:green_tea_leaves",
   "result": {
     "id": "maple:red_tea_leaves"
   }

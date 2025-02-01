@@ -14,8 +14,8 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class MapleFluidBlockOrItem {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Maple.MODID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Maple.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MOD_ID);
 
     public static RegistryObject<Block> Hot_Spring_BLOCK = registerBlock("hot_spring_block",
             ()->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring.get(), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WATER).lightLevel((state) -> 8)));

@@ -18,7 +18,7 @@ import static com.skniro.maple.item.MapleItems.MapleSyrup;
 
 public class MapleCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Maple.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Maple.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> Maple_Group = CREATIVE_MODE_TABS.register("maple_group",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(MAPLE_LOG.get()))

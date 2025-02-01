@@ -6,12 +6,8 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:iron_ingot"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:iron_ingot"
     },
     "result": {
         "count": 32,

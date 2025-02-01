@@ -3,12 +3,13 @@ package com.skniro.maple.entity.projectile.thrown;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 
 public class MapleIronSnowballEntity extends MapleSnowballEntity {
-    public MapleIronSnowballEntity(Level world, LivingEntity owner) {
-        super(world, owner);
+    public MapleIronSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
+        super(world, owner, stack);
     }
 
     @Override

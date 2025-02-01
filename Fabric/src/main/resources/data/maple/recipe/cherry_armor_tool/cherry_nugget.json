@@ -2,9 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "category": "misc",
     "ingredients": [
-        {
-            "item": "maple:cherry_ingot"
-        }
+        "maple:cherry_ingot"
     ],
     "result": {
         "count": 9,

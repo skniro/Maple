@@ -3,12 +3,8 @@
     "category": "building",
     "group": "wooden_slab",
     "key": {
-        "#": {
-            "item": "minecraft:grass"
-        },
-        "G": {
-            "item": "minecraft:wheat"
-        }
+        "#": "minecraft:short_grass",
+        "G": "minecraft:wheat"
     },
     "pattern": [
         "###",

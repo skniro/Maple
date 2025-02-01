@@ -6,12 +6,8 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:water_bucket"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:water_bucket"
     },
     "result": {
         "count": 32,

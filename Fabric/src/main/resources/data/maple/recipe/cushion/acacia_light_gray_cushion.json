@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:light_gray_carpet"
-        },
-        "P": {
-            "item": "minecraft:acacia_planks"
-        }
+        "W": "minecraft:light_gray_carpet",
+        "P": "minecraft:acacia_planks"
     },
     "result": {
         "count": 3,

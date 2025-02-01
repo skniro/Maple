@@ -6,12 +6,8 @@
         "P P"
     ],
     "key": {
-        "W": {
-            "item": "maple:maple_slab"
-        },
-        "P": {
-            "item": "maple:maple_planks"
-        }
+        "W": "maple:maple_slab",
+        "P": "maple:maple_planks"
     },
     "result": {
         "count": 2,

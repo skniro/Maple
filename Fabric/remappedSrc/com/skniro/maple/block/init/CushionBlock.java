@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -42,7 +42,7 @@ public class CushionBlock extends HorizontalDirectionalBlock {
             Entity entity = null;
             List<CushionEntity> entities = level.getEntities(MapleEntityType.Cushion_ENTITY, new AABB(pos), chair -> true);
             if(entities.isEmpty()) {
-                entity = MapleEntityType.Cushion_ENTITY.spawn(((ServerLevel) level), pos, MobSpawnType.TRIGGERED);
+                entity = MapleEntityType.Cushion_ENTITY.spawn(((ServerLevel) level), pos, EntitySpawnReason.TRIGGERED);
             } else {
                 entity = entities.get(0);
             }

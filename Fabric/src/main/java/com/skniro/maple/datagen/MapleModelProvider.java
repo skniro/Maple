@@ -600,7 +600,6 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleArmorItems.Cherry_NUGGET, Models.GENERATED);
         itemModelGenerator.register(MapleArmorItems.Cherry_INGOT, Models.GENERATED);
         itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_AXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_SWORD, Models.HANDHELD);
@@ -615,6 +614,8 @@ public class MapleModelProvider extends FabricModelProvider {
         //Sign
         itemModelGenerator.register(MapleItems.Maple_HANGING_SIGN, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_HANGING_SIGN, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.MAPLE_SIGN, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.GINKGO_SIGN, Models.GENERATED);
 
         //Tea
         itemModelGenerator.register(MapleFoodComponents.Green_Tea, Models.GENERATED);

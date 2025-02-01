@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -27,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class MapleHotSpringFluid extends FlowingFluid {
     @Override
-    protected boolean canConvertToSource(Level world) {
+    protected boolean canConvertToSource(ServerLevel world) {
         return world.getGameRules().getBoolean(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION);
     }
 

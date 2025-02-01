@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:maple_leaves"
-            ]
+            "items": "maple:maple_leaves"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_maple_leaves",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_maple_leaves"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:maple_carpet"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

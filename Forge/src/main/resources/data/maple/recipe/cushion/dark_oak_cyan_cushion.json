@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:cyan_carpet"
-        },
-        "P": {
-            "item": "minecraft:dark_oak_planks"
-        }
+        "W": "minecraft:cyan_carpet",
+        "P": "minecraft:dark_oak_planks"
     },
     "result": {
         "count": 3,

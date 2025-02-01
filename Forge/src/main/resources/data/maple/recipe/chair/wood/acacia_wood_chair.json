@@ -6,9 +6,7 @@
         "P P"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:stripped_acacia_log"
-        }
+        "P": "minecraft:stripped_acacia_log"
     },
     "result": {
         "count": 3,

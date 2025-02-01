@@ -1,11 +1,9 @@
 package com.skniro.maple.entity;
 
-import net.minecraft.world.entity.vehicle.Boat;
-
 public class MapleBoatType {
-    static {
-        Boat.Type.values();
+/*    static {
+        BoatEntity.Type.values();
     }
-    public static Boat.Type MAPLE;
-    public static Boat.Type GINKGO;
+    public static BoatEntity.Type MAPLE;
+    public static BoatEntity.Type GINKGO;*/
 }

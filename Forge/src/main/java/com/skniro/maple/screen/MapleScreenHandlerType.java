@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class MapleScreenHandlerType<T extends AbstractContainerMenu> {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, Maple.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, Maple.MOD_ID);
 
     public static final RegistryObject<MenuType<MapleJuicerBlockScreenHandler>> Maple_JUICER =
             registerMenuType("maple_juicer_screen_handler", MapleJuicerBlockScreenHandler::new);

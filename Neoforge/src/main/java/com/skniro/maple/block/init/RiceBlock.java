@@ -19,7 +19,8 @@ public class RiceBlock extends CropBlock {
     }
 
     protected ItemLike getBaseSeedId() {
-        return MapleItems.Rice.get();
+        //return MapleItems.Rice.get();
+        return null;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

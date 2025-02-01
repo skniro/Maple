@@ -136,8 +136,8 @@ public class MapleJuicerBlockEntity extends BlockEntity implements MenuProvider,
         Optional<RecipeHolder<MapleJuicerCraftingRecipe>> recipe = getCurrentRecipe();
         this.removeItem(INPUT_SLOT, 1);
         this.removeItem(Glass_SLOT, 1);
-        this.setItem(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResultItem(null).getItem(),
-                this.getItem(OUTPUT_SLOT).getCount() + recipe.get().value().getResultItem(null).getCount()));
+        this.setItem(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                this.getItem(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
     @Override
@@ -173,7 +173,7 @@ public class MapleJuicerBlockEntity extends BlockEntity implements MenuProvider,
             return false;
         }
 
-        ItemStack output = recipe.get().value().getResultItem(null);
+        ItemStack output = recipe.get().value().getResult(null);
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
@@ -182,7 +182,7 @@ public class MapleJuicerBlockEntity extends BlockEntity implements MenuProvider,
         for(int i = 0; i < this.getContainerSize(); i++) {
             inv.setItem(i, this.getItem(i));
         }
-        return this.getLevel().getRecipeManager()
+        return this.getLevel().getServer().getRecipeManager()
                 .getRecipeFor(MapleRecipeType.Maple_JUIER_TYPE.get(), new MapleCraftingRecipeInput(inventory.get(INPUT_SLOT), inventory.get(Glass_SLOT)), this.getLevel());
     }
 

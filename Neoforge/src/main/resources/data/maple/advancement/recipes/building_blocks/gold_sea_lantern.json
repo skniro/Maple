@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:gold_nugget"
-            ]
+            "items": "minecraft:gold_nugget"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sea_lantern"
-            ]
+            "items": "minecraft:sea_lantern"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_sea_lantern",
-      "has_gold_nugget",
-      "has_the_recipe"
+      "has_gold_nugget"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:gold_sea_lantern"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

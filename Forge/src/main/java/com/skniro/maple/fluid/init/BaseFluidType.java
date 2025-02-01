@@ -70,12 +70,6 @@ public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
                                                 int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
             return fogColor;
         }
-        @Override
-        public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick,
-                                    float nearDistance, float farDistance, FogShape shape) {
-            RenderSystem.setShaderFogStart(1f);
-            RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
-        }
     });
 }
 }

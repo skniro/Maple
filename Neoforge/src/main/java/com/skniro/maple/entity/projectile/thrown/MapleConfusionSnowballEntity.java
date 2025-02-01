@@ -7,6 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 
@@ -14,8 +15,8 @@ import java.util.Set;
 
 public class MapleConfusionSnowballEntity extends Snowball {
     private final Set<MobEffectInstance> effects = Sets.newHashSet();
-    public MapleConfusionSnowballEntity(Level world, LivingEntity owner) {
-        super(world, owner);
+    public MapleConfusionSnowballEntity(Level world, LivingEntity owner, ItemStack itemStack) {
+        super(world, owner, itemStack);
     }
 
     @Override

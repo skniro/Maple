@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "maple:red_tea_leaves"
-    },
-    {
-      "item": "maple:red_tea_leaves"
-    },
-    {
-      "item": "minecraft:glass_bottle"
-    }
+    "maple:red_tea_leaves",
+    "maple:red_tea_leaves",
+    "minecraft:glass_bottle"
   ],
   "result": {
     "count": 1,

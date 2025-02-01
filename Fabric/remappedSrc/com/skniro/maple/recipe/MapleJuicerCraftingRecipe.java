@@ -1,8 +1,6 @@
 package com.skniro.maple.recipe;
 
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
@@ -12,19 +10,25 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.recipe.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.PlacementInfo;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import java.util.Collections;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 
 public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     private final ItemStack output;
-    final List<Ingredient> recipeItems;
+    final List<Ingredient>  recipeItems;
+    @Nullable
+    private PlacementInfo ingredientPlacement;
 
     public MapleJuicerCraftingRecipe(List<Ingredient> recipeItems, ItemStack output) {
         this.output = output;
@@ -46,17 +50,27 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
         return output;
     }
 
+
     @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
+    public PlacementInfo placementInfo() {
+        if (this.ingredientPlacement == null) {
+            this.ingredientPlacement = PlacementInfo.create(this.recipeItems);
+        }
+
+        return this.ingredientPlacement;
     }
 
     @Override
-    public ItemStack getResultItem(HolderLookup.Provider lookup) {
+    public RecipeBookCategory recipeBookCategory() {
+        return null;
+    }
+
+
+    public ItemStack getResult(HolderLookup.Provider lookup) {
         return output;
     }
 
-    @Override
+
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.createWithCapacity(2);
         list.addAll(recipeItems);
@@ -64,19 +78,19 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<RecipeInput>> getSerializer() {
         return MapleRecipeType.Maple_JUIER_SERIALIZER;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<RecipeInput>> getType() {
         return MapleRecipeType.Maple_JUIER_TYPE;
     }
 
     public static class Serializer implements RecipeSerializer<MapleJuicerCraftingRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final MapCodec<MapleJuicerCraftingRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
-                Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredient").forGetter((recipe) -> {
+                Ingredient.CODEC.listOf().fieldOf("ingredient").forGetter((recipe) -> {
                     return recipe.recipeItems;
                 }),
                 ItemStack.CODEC.fieldOf("result").forGetter((recipe) -> {
@@ -100,7 +114,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
 
         private static MapleJuicerCraftingRecipe read(RegistryFriendlyByteBuf buf) {
             int i = buf.readVarInt();
-            NonNullList<Ingredient> defaultedList = NonNullList.withSize(i, Ingredient.EMPTY);
+            NonNullList<Ingredient> defaultedList = NonNullList.withSize(i, Ingredient.of(ItemStack.EMPTY.getItem()));
             defaultedList.replaceAll((empty) -> {
                 return (Ingredient)Ingredient.CONTENTS_STREAM_CODEC.decode(buf);
             });

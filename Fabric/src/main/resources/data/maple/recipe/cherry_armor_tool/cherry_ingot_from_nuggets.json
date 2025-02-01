@@ -3,9 +3,7 @@
     "category": "misc",
     "group": "cherry_ingot",
     "key": {
-        "#": {
-            "item": "maple:cherry_nugget"
-        }
+        "#": "maple:cherry_nugget"
     },
     "pattern": [
         "###",

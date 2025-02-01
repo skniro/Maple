@@ -6,15 +6,11 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:red_mushroom"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:red_mushroom"
     },
     "result": {
-        "id": "maple:snowball_confusion",
-        "count": 32
+        "count": 32,
+        "id": "maple:snowball_confusion"
     }
 }

@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:glass"
-        },
-        "P": {
-            "item": "minecraft:crimson_planks"
-        }
+        "W": "minecraft:glass",
+        "P": "minecraft:crimson_planks"
     },
     "result": {
         "count": 4,

@@ -1,21 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": "minecraft:stick",
+        "X": "maple:cherry_ingot"
     },
-    "X": {
-      "item": "maple:cherry_ingot"
-    }
-  },
-  "pattern": [
-    "X",
-    "#",
-    "#"
-  ],
-   "result": {
-    "id": "maple:cherry_shovel"
-  },
-  "show_notification": true
+    "pattern": [
+        "X",
+        "#",
+        "#"
+    ],
+    "result": {
+        "id": "maple:cherry_shovel"
+    },
+    "show_notification": true
 }

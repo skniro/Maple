@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:brown_carpet"
-        },
-        "P": {
-            "item": "minecraft:spruce_planks"
-        }
+        "W": "minecraft:brown_carpet",
+        "P": "minecraft:spruce_planks"
     },
     "result": {
         "count": 3,

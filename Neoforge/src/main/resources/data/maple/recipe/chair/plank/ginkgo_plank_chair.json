@@ -6,9 +6,7 @@
         "P P"
     ],
     "key": {
-        "P": {
-            "item": "maple:ginkgo_planks"
-        }
+        "P": "maple:ginkgo_planks"
     },
     "result": {
         "count": 3,

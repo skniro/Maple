@@ -6,9 +6,7 @@
         "PPP"
     ],
     "key": {
-        "P": {
-            "item": "maple:stripped_ginkgo_log"
-        }
+        "P": "maple:stripped_ginkgo_log"
     },
     "result": {
         "count": 3,

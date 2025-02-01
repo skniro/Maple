@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:pink_dye"
-            ]
+            "items": "minecraft:pink_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_pink_dye",
-      "has_the_recipe"
+      "has_pink_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:pink_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

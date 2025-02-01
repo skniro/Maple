@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:glass"
-        },
-        "P": {
-            "item": "maple:stripped_maple_log"
-        }
+        "W": "minecraft:glass",
+        "P": "maple:stripped_maple_log"
     },
     "result": {
         "count": 8,

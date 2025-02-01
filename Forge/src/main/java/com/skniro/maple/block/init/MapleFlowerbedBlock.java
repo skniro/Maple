@@ -8,16 +8,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -26,7 +24,7 @@ import javax.swing.text.html.BlockView;
 public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock {
     public static final int field_42762 = 1;
     public static final int field_42763 = 4;
-    public static final DirectionProperty FACING;
+    public static final EnumProperty<Direction> FACING;
     public static final IntegerProperty FLOWER_AMOUNT;
     public static final MapCodec<MapleFlowerbedBlock> CODEC = simpleCodec(MapleFlowerbedBlock::new);
 

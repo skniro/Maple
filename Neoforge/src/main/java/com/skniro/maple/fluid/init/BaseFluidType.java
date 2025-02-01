@@ -47,7 +47,7 @@ public Vector3f getFogColor() {
     return fogColor;
 }
 
-@Override
+
 public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
     consumer.accept(new IClientFluidTypeExtensions() {
         @Override
@@ -66,17 +66,7 @@ public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         public int getTintColor() {
             return tintColor;
         }
-        @Override
-        public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level,
-                                                int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
-            return fogColor;
-        }
-        @Override
-        public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick,
-                                    float nearDistance, float farDistance, FogShape shape) {
-            RenderSystem.setShaderFogStart(1f);
-            RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
-        }
+
     });
 }
 }

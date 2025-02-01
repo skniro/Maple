@@ -3,12 +3,8 @@
     "category": "misc",
     "group": "chest_boat",
     "ingredients": [
-        {
-            "item": "minecraft:chest"
-        },
-        {
-            "item": "maple:ginkgo_boat"
-        }
+        "minecraft:chest",
+        "maple:ginkgo_boat"
     ],
     "result": {
         "id": "maple:ginkgo_chest_boat"

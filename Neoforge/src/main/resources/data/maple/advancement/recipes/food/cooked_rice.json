@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:cooked_rice"
-            ]
+            "items": "maple:cooked_rice"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:rice"
-            ]
+            "items": "maple:rice"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_cooked_rice",
-      "has_rice",
-      "has_the_recipe"
+      "has_rice"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:cooked_rice"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

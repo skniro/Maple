@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:milk_bottom"
-            ]
+            "items": "maple:milk_bottom"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:milk_bucket"
-            ]
+            "items": "minecraft:milk_bucket"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_milk_bottom",
-      "has_milk_bucket",
-      "has_the_recipe"
+      "has_milk_bucket"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:milk_bottom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

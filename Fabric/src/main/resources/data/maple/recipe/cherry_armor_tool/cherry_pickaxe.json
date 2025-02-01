@@ -2,12 +2,8 @@
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
     "key": {
-        "#": {
-            "item": "minecraft:stick"
-        },
-        "X": {
-            "item": "maple:cherry_ingot"
-        }
+        "#": "minecraft:stick",
+        "X": "maple:cherry_ingot"
     },
     "pattern": [
         "XXX",

@@ -2,12 +2,8 @@
     "type": "maple:maple_juicer",
     "category": "misc",
     "ingredient": [
-        {
-            "item": "minecraft:carrot"
-        },
-        {
-            "item": "minecraft:glass_bottle"
-        }
+        "minecraft:carrot",
+        "minecraft:glass_bottle"
     ],
     "result": {
         "count": 1,

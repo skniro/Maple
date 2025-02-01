@@ -12,9 +12,9 @@ import java.util.function.Supplier;
 
 public interface MapleRecipeType<T extends Recipe<?>> {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-            DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, Maple.MODID);
+            DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, Maple.MOD_ID);
     public static final DeferredRegister<RecipeType<?>> TYPES =
-            DeferredRegister.create(BuiltInRegistries.RECIPE_TYPE, Maple.MODID);
+            DeferredRegister.create(BuiltInRegistries.RECIPE_TYPE, Maple.MOD_ID);
 
     public static final Supplier<RecipeSerializer<MapleJuicerCraftingRecipe>> Maple_JUIER_SERIALIZER = SERIALIZERS.register( "maple_juicer", MapleJuicerCraftingRecipe.Serializer::new);
     public static final Supplier<RecipeType<MapleJuicerCraftingRecipe>> Maple_JUIER_TYPE = TYPES.register( "maple_juicer", () -> new RecipeType<MapleJuicerCraftingRecipe>() {

@@ -2,9 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "category": "equipment",
     "key": {
-        "X": {
-            "item": "maple:cherry_ingot"
-        }
+        "X": "maple:cherry_ingot"
     },
     "pattern": [
         "XXX",

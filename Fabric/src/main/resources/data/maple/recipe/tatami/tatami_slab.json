@@ -3,9 +3,7 @@
     "category": "building",
     "group": "wooden_slab",
     "key": {
-        "#": {
-            "item": "maple:tatami"
-        }
+        "#": "maple:tatami"
     },
     "pattern": [
         "###"

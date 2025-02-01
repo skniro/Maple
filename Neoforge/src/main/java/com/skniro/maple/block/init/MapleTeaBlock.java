@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -84,9 +83,6 @@ public class MapleTeaBlock extends BushBlock implements BonemealableBlock {
             if (!world.isClientSide && (Integer)state.getValue(AGE) > 0 && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.xOld);
                 double e = Math.abs(entity.getZ() - entity.zOld);
-                if (d >= 0.003000000026077032 || e >= 0.003000000026077032) {
-                    entity.hurt(world.damageSources().sweetBerryBush(), 1.0F);
-                }
             }
 
         }
@@ -102,17 +98,17 @@ public class MapleTeaBlock extends BushBlock implements BonemealableBlock {
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             world.setBlock(pos, blockState, 2);
             world.gameEvent(GameEvent.BLOCK_CHANGE, pos, Context.of(player, blockState));
-            return InteractionResult.sidedSuccess(world.isClientSide);
+            return InteractionResult.SUCCESS;
         } else {
             return super.useWithoutItem(state, world, pos, player, hit);
         }
     }
 
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
         if (!bl && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
-            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            return InteractionResult.PASS;
         }
         return super.useItemOn(stack,state, world, pos, player, hand, hit);
     }

@@ -2,12 +2,8 @@
     "type": "maple:maple_juicer",
     "category": "misc",
     "ingredient": [
-        {
-            "item": "minecraft:chorus_fruit"
-        },
-        {
-            "item": "minecraft:glass_bottle"
-        }
+        "minecraft:chorus_fruit",
+        "minecraft:glass_bottle"
     ],
     "result": {
         "count": 1,

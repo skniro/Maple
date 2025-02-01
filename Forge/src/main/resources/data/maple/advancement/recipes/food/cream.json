@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:cream"
-            ]
+            "items": "maple:cream"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:milk_bottom"
-            ]
+            "items": "maple:milk_bottom"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_cream",
-      "has_milk_bottom",
-      "has_the_recipe"
+      "has_milk_bottom"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:cream"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

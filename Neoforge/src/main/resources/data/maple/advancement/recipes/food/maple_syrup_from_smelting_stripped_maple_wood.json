@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:stripped_maple_wood"
-            ]
+            "items": "maple:stripped_maple_wood"
           }
         ]
       },
@@ -22,14 +20,13 @@
   },
   "requirements": [
     [
-      "has_stripped_maple_wood",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_stripped_maple_wood"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:maple_syrup_from_smelting_stripped_maple_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

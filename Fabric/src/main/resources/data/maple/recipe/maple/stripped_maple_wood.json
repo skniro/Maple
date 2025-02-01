@@ -3,9 +3,7 @@
     "category": "building",
     "group": "bark",
     "key": {
-        "#": {
-            "item": "maple:stripped_maple_log"
-        }
+        "#": "maple:stripped_maple_log"
     },
     "pattern": [
         "##",

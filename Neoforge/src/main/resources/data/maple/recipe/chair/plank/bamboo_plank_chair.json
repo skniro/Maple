@@ -6,9 +6,7 @@
         "P P"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:bamboo_planks"
-        }
+        "P": "minecraft:bamboo_planks"
     },
     "result": {
         "count": 3,

@@ -19,7 +19,7 @@ import static com.skniro.maple.item.MapleItems.MapleSyrup;
 
 public class MapleCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Maple.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Maple.MOD_ID);
 
     public static final Supplier<CreativeModeTab> Maple_Group = CREATIVE_MODE_TABS.register("maple_group",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(MAPLE_LOG.get()))
@@ -209,7 +209,7 @@ public class MapleCreativeModeTabs {
                         pOutput.accept(MapleFoodComponents.MILK_BOTTOM.get());
                         pOutput.accept(MapleItems.SOYBEAN.get());
                         pOutput.accept(MapleItems.Salt.get());
-                        pOutput.accept(MapleItems.Rice.get());
+                        //pOutput.accept(MapleItems.Rice.get());
                         pOutput.accept(MapleFoodComponents.Sanshoku_Dango.get());
                         pOutput.accept(MapleFoodComponents.Anko_Dango.get());
                         pOutput.accept(MapleFoodComponents.Zunda_Dango.get());

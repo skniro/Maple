@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:orange_dye"
-            ]
+            "items": "minecraft:orange_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_orange_dye",
-      "has_the_recipe"
+      "has_orange_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:orange_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

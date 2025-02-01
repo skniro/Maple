@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:orange_carpet"
-        },
-        "P": {
-            "item": "maple:ginkgo_planks"
-        }
+        "W": "minecraft:orange_carpet",
+        "P": "maple:ginkgo_planks"
     },
     "result": {
         "count": 3,

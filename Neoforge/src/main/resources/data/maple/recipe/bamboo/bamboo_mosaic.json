@@ -1,17 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "#": {
-      "item": "maple:bamboo_slab"
-    }
-  },
-  "pattern": [
-    "#",
-    "#"
-  ],
-   "result": {
-    "id": "minecraft:bamboo_mosaic"
-  },
-  "show_notification": true
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "key": {
+        "#": "maple:bamboo_slab"
+    },
+    "pattern": [
+        "#",
+        "#"
+    ],
+    "result": {
+        "id": "minecraft:bamboo_mosaic"
+    },
+    "show_notification": true
 }

@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class MapleLootModifiers {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Maple.MODID);
+            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Maple.MOD_ID);
 
     public static final RegistryObject<MapCodec<? extends IGlobalLootModifier>> ADD_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AddItemModifier.CODEC);

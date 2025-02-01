@@ -6,11 +6,11 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MapleModelLayers {
     public static final ModelLayerLocation Maple_BOAT_LAYER = new ModelLayerLocation(
-            ResourceLocation.fromNamespaceAndPath(Maple.MODID, "boat/maple"), "main");
+            ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "boat/maple"), "main");
     public static final ModelLayerLocation Maple_CHEST_BOAT_LAYER = new ModelLayerLocation(
-            ResourceLocation.fromNamespaceAndPath(Maple.MODID, "chest_boat/maple"), "main");
+            ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/maple"), "main");
     public static final ModelLayerLocation Ginkgo_BOAT_LAYER = new ModelLayerLocation(
-            ResourceLocation.fromNamespaceAndPath(Maple.MODID, "boat/ginkgo"), "main");
+            ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "boat/ginkgo"), "main");
     public static final ModelLayerLocation Ginkgo_CHEST_BOAT_LAYER = new ModelLayerLocation(
-            ResourceLocation.fromNamespaceAndPath(Maple.MODID, "chest_boat/ginkgo"), "main");
+            ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
 }

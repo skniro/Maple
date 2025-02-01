@@ -6,12 +6,8 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:melon_slice"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:melon_slice"
     },
     "result": {
         "count": 32,

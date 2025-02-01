@@ -6,16 +6,17 @@ import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.portal.DimensionTransition;
+import net.minecraft.world.level.portal.TeleportTransition;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class MapletransSnowballEntity extends MapleSnowballEntity {
-    public MapletransSnowballEntity(Level world, LivingEntity owner) {
-        super(world, owner);
+    public MapletransSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
+        super(world, owner,stack);
     }
 
     @Override
@@ -53,13 +54,12 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
     }
 
     @Nullable
-    @Override
-    public Entity changeDimension(DimensionTransition teleportTarget) {
+    public Entity teleport(TeleportTransition teleportTarget) {
         Entity entity = this.getOwner();
         if (entity != null && entity.level().dimension() != teleportTarget.newLevel().dimension()) {
             this.setOwner((Entity)null);
         }
 
-        return super.changeDimension(teleportTarget);
+        return super.teleport(teleportTarget);
     }
 }

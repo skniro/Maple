@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:beef"
-            ]
+            "items": "minecraft:beef"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:cooked_rice"
-            ]
+            "items": "maple:cooked_rice"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_cooked_rice",
-      "has_beef",
-      "has_the_recipe"
+      "has_beef"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:beef_rice"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

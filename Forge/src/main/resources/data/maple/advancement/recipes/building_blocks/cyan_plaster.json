@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cyan_dye"
-            ]
+            "items": "minecraft:cyan_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_cyan_dye",
-      "has_the_recipe"
+      "has_cyan_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:cyan_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

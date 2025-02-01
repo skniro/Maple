@@ -6,12 +6,8 @@
         "P P"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:warped_slab"
-        },
-        "P": {
-            "item": "minecraft:warped_planks"
-        }
+        "W": "minecraft:warped_slab",
+        "P": "minecraft:warped_planks"
     },
     "result": {
         "count": 2,

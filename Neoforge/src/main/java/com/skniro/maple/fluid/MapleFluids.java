@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class MapleFluids {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, Maple.MODID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, Maple.MOD_ID);
     public static Supplier<FlowingFluid> STILL_Hot_Spring= registerfluid("hot_spring",
             () -> new MapleHotSpringFluid.Still());
 

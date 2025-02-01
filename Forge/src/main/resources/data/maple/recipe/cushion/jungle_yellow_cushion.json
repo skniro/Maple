@@ -6,12 +6,8 @@
         "PPP"
     ],
     "key": {
-        "W": {
-            "item": "minecraft:yellow_carpet"
-        },
-        "P": {
-            "item": "minecraft:jungle_planks"
-        }
+        "W": "minecraft:yellow_carpet",
+        "P": "minecraft:jungle_planks"
     },
     "result": {
         "count": 3,

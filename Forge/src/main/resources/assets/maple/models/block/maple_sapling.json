@@ -2,6 +2,5 @@
   "parent": "minecraft:block/cross",
   "textures": {
     "cross": "maple:block/maple_sapling"
-  },
-  "render_type": "cutout"
+  }
 }

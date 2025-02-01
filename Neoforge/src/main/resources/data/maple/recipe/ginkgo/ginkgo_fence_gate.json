@@ -1,21 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "redstone",
-  "group": "wooden_fence_gate",
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "group": "wooden_fence_gate",
+    "key": {
+        "#": "minecraft:stick",
+        "W": "maple:ginkgo_planks"
     },
-    "W": {
-      "item": "maple:ginkgo_planks"
-    }
-  },
-  "pattern": [
-    "#W#",
-    "#W#"
-  ],
-   "result": {
-    "id": "maple:ginkgo_fence_gate"
-  },
-  "show_notification": true
+    "pattern": [
+        "#W#",
+        "#W#"
+    ],
+    "result": {
+        "id": "maple:ginkgo_fence_gate"
+    },
+    "show_notification": true
 }

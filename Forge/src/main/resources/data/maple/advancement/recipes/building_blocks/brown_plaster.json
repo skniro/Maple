@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:brown_dye"
-            ]
+            "items": "minecraft:brown_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_brown_dye",
-      "has_the_recipe"
+      "has_brown_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:brown_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

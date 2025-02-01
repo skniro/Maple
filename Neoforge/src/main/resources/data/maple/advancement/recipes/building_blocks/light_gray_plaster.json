@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:light_gray_dye"
-            ]
+            "items": "minecraft:light_gray_dye"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:plaster"
-            ]
+            "items": "maple:plaster"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_plaster",
-      "has_light_gray_dye",
-      "has_the_recipe"
+      "has_light_gray_dye"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:light_gray_plaster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

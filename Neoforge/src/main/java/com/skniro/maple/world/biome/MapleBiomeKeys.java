@@ -25,6 +25,6 @@ public class MapleBiomeKeys {
 
 
     private static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Maple.MODID, name));
+        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name));
     }
 }

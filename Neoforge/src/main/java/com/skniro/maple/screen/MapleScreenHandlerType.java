@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public class MapleScreenHandlerType<T extends AbstractContainerMenu> {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(BuiltInRegistries.MENU, Maple.MODID);
+            DeferredRegister.create(BuiltInRegistries.MENU, Maple.MOD_ID);
 
     public static final Supplier<MenuType<MapleJuicerBlockScreenHandler>> Maple_JUICER =
             registerMenuType("maple_juicer_screen_handler", MapleJuicerBlockScreenHandler::new);

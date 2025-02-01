@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:iron_nugget"
-            ]
+            "items": "minecraft:iron_nugget"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:sea_lantern"
-            ]
+            "items": "minecraft:sea_lantern"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_sea_lantern",
-      "has_iron_nugget",
-      "has_the_recipe"
+      "has_iron_nugget"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:iron_sea_lantern"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

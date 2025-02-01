@@ -6,9 +6,7 @@
         "PPP"
     ],
     "key": {
-        "P": {
-            "item": "minecraft:stripped_warped_stem"
-        }
+        "P": "minecraft:stripped_warped_stem"
     },
     "result": {
         "count": 3,

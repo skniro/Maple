@@ -6,15 +6,11 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:stone"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:stone"
     },
     "result": {
-        "id": "maple:snowball_stone",
-        "count": 32
+        "count": 32,
+        "id": "maple:snowball_stone"
     }
 }

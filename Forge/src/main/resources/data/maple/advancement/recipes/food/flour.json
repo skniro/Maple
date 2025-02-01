@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "maple:flour"
-            ]
+            "items": "maple:flour"
           }
         ]
       },
@@ -23,9 +21,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:wheat"
-            ]
+            "items": "minecraft:wheat"
           }
         ]
       },
@@ -34,15 +30,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_flour",
-      "has_wheat",
-      "has_the_recipe"
+      "has_wheat"
     ]
   ],
   "rewards": {
     "recipes": [
       "maple:flour"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

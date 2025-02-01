@@ -3,9 +3,7 @@
     "category": "redstone",
     "group": "wooden_button",
     "ingredients": [
-        {
-            "item": "maple:ginkgo_planks"
-        }
+        "maple:ginkgo_planks"
     ],
     "result": {
         "id": "maple:ginkgo_button"

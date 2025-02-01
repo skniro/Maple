@@ -6,15 +6,11 @@
         "###"
     ],
     "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:iron_ingot"
-        }
+        "#": "minecraft:snow_block",
+        "G": "minecraft:iron_ingot"
     },
     "result": {
-        "id": "maple:snowball_iron",
-        "count": 32
+        "count": 32,
+        "id": "maple:snowball_iron"
     }
 }

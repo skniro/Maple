@@ -1,20 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "group": "wooden_stairs",
-  "key": {
-    "#": {
-      "item": "maple:maple_planks"
-    }
-  },
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
-  "result": {
-    "count": 4,
-    "id": "maple:maple_stairs"
-  },
-  "show_notification": true
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "group": "wooden_stairs",
+    "key": {
+        "#": "maple:maple_planks"
+    },
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "result": {
+        "count": 4,
+        "id": "maple:maple_stairs"
+    },
+    "show_notification": true
 }

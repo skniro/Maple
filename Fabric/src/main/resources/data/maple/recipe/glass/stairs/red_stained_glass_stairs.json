@@ -3,9 +3,7 @@
     "category": "building",
     "group": "wooden_stairs",
     "key": {
-        "#": {
-            "item": "minecraft:red_stained_glass"
-        }
+        "#": "minecraft:red_stained_glass"
     },
     "pattern": [
         "#  ",
