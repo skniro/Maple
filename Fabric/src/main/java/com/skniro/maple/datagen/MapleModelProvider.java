@@ -1,9 +1,6 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.block.MapleBlocks;
-import com.skniro.maple.block.MapleFurnitureBlocks;
-import com.skniro.maple.block.MapleNetherOresBlocks;
-import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.*;
 import com.skniro.maple.block.api.registry.MapleModelDatagenHelper;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.item.GlassCupItems;
@@ -36,6 +33,15 @@ public class MapleModelProvider extends FabricModelProvider {
         GINKGOPool.pressurePlate(MapleBlocks.GINKGO_PRESSURE_PLATE);
         GINKGOPool.fence(MapleBlocks.GINKGO_FENCE);
         GINKGOPool.fenceGate(MapleBlocks.GINKGO_FENCE_GATE);
+
+        BlockStateModelGenerator.BlockTexturePool MaplePool = blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
+
+        MaplePool.stairs(MapleBlocks.MAPLE_STAIRS);
+        MaplePool.slab(MapleBlocks.MAPLE_SLAB);
+        MaplePool.button(MapleBlocks.MAPLE_BUTTON);
+        MaplePool.pressurePlate(MapleBlocks.MAPLE_PRESSURE_PLATE);
+        MaplePool.fence(MapleBlocks.MAPLE_FENCE);
+        MaplePool.fenceGate(MapleBlocks.MAPLE_FENCE_GATE);
 
         BlockStateModelGenerator.BlockTexturePool white =blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_STAINED_GLASS);
         white.slab(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
@@ -171,7 +177,6 @@ public class MapleModelProvider extends FabricModelProvider {
         black1.stairs(MapleBlocks.BLACK_CONCRETE_STAIRS);
 
         //Cube Block
-        blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.MAPLE_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.CHERRY_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_PLANKS);
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleBlocks.BAMBOO_MOSAIC);
@@ -205,11 +210,11 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(MapleBlocks.GINKGO_TRAPDOOR);
 
         //SAPLING
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.RED_MAPLE_SAPLING, MapleBlocks.POTTED_RED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(MapleBlocks.CHERRY_SAPLING, MapleBlocks.POTTED_CHERRY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(MapleBlocks.MAPLE_SAPLING, MapleBlocks.POTTED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(MapleBlocks.RED_MAPLE_SAPLING, MapleBlocks.POTTED_RED_MAPLE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(MapleBlocks.SAKURA_SAPLING, MapleBlocks.POTTED_SAKURA_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(MapleBlocks.GINKGO_SAPLING, MapleBlocks.POTTED_GINKGO_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         //Crop
         blockStateModelGenerator.registerCrop(MapleBlocks.RICE, Properties.AGE_7, 0, 0, 0, 1, 1, 1, 1, 2);
@@ -574,6 +579,8 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleFoodComponents.Glow_Berries_Juice, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_BOAT, Models.GENERATED);
         itemModelGenerator.register(MapleItems.GINKGO_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.MAPLE_BOAT, Models.GENERATED);
+        itemModelGenerator.register(MapleItems.MAPLE_CHEST_BOAT, Models.GENERATED);
 
 
         itemModelGenerator.registerWithTextureSource(MapleItems.SNOWBALL_STONE, Items.SNOWBALL, Models.GENERATED);
@@ -592,6 +599,7 @@ public class MapleModelProvider extends FabricModelProvider {
         //Cherry tools
         itemModelGenerator.register(MapleArmorItems.Cherry_NUGGET, Models.GENERATED);
         itemModelGenerator.register(MapleArmorItems.Cherry_INGOT, Models.GENERATED);
+        itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_AXE, Models.HANDHELD);
         itemModelGenerator.register(MapleArmorItems.Cherry_SHOVEL, Models.HANDHELD);

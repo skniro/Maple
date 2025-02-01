@@ -9,6 +9,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import org.joml.Vector3f;
 
 public class CushionEntity extends Entity {
@@ -43,9 +44,14 @@ public class CushionEntity extends Entity {
 
     }
 
+    protected void kill(){
+        this.remove(Entity.RemovalReason.KILLED);
+        this.emitGameEvent(GameEvent.ENTITY_DIE);
+    }
+
     @Override
     protected void removePassenger(Entity passenger) {
         super.removePassenger(passenger);
-        this.kill((ServerWorld) passenger.getWorld());
+        this.kill();
     }
 }

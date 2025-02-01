@@ -3,6 +3,9 @@ package com.skniro.maple;
 
 import com.skniro.maple.block.*;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
+import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.client.renderer.ChairRenderer;
+import com.skniro.maple.client.renderer.CushinoRenderer;
 import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.entity.village.MapleVillagers;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
@@ -26,8 +29,17 @@ import com.skniro.maple.world.gamerules.MapleGameRules;
 import com.skniro.maple.world.gen.MapleLakeGeneration;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.minecraft.client.render.entity.BoatEntityRenderer;
+import net.minecraft.client.render.entity.model.BoatEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.util.Identifier;
 
 
 public class MapleContent {
@@ -631,6 +643,44 @@ public class MapleContent {
         CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_CARPET, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(MapleItems.Rice, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(MapleItems.SOYBEAN, 0.3f);
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientEntityRenderer() {
+        EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
+
+        var maple_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher,maple_boat));
+
+        var ginkgo_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_boat));
+
+        var maple_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, maple_chest_boat));
+
+        var ginkgo_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_chest_boat));
+
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientParticle() {
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
+
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
     }
 }
 

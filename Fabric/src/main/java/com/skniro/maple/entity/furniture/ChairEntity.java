@@ -7,6 +7,7 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 
 public class ChairEntity extends Entity {
     public ChairEntity(EntityType<?> type, World world) {
@@ -33,9 +34,14 @@ public class ChairEntity extends Entity {
 
     }
 
+    protected void kill(){
+        this.remove(Entity.RemovalReason.KILLED);
+        this.emitGameEvent(GameEvent.ENTITY_DIE);
+    }
+
     @Override
     protected void removePassenger(Entity passenger) {
         super.removePassenger(passenger);
-        this.kill((ServerWorld) passenger.getWorld());
+        this.kill();
     }
 }

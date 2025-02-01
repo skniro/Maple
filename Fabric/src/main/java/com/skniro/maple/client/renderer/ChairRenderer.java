@@ -20,6 +20,6 @@ public class ChairRenderer extends EntityRenderer<ChairEntity, EntityRenderState
 
     @Override
     public EntityRenderState createRenderState() {
-        return null;
+        return new EntityRenderState();
     }
 }

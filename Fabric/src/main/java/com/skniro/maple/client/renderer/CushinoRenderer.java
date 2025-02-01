@@ -20,6 +20,6 @@ public class CushinoRenderer extends EntityRenderer<CushionEntity, EntityRenderS
 
     @Override
     public EntityRenderState createRenderState() {
-        return null;
+        return new EntityRenderState();
     }
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "maple:block/maple_fence"
+    "model": "maple:block/maple_fence_inventory"
   }
 }
