@@ -20,7 +20,9 @@ public class MapleHotSpringFluidBlock extends FluidBlock {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && this.getFluidState(state).getFluid().isStill(this.getFluidState(state))) {
-            ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 10 * 6,0));
+            if(!((LivingEntity) entity).hasStatusEffect(StatusEffects.REGENERATION)){
+                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 10 * 6,1));
+            }
         }
     }
 
