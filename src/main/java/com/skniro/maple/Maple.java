@@ -81,6 +81,7 @@ public class Maple{
         MapleFoodComponents.registerModFoodItems(modEventBus);
         MapleArmorItems.registerMapleArmorItems(modEventBus);
 
+        MapleFluidTypes.register(modEventBus);
         MapleFluids.registerFluids(modEventBus);
         MapleFluidBlockOrItem.registerFluidBlocks(modEventBus);
         MapleFluidBlockOrItem.registerFluidItems(modEventBus);
@@ -92,7 +93,6 @@ public class Maple{
         MapleBoatEntities.register(modEventBus);
         MapleScreenHandlerType.registerMapleScreenHandlerType(modEventBus);
         MapleRecipeType.registerRecipes(modEventBus);
-        MapleFluidTypes.register(modEventBus);
 
         MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
 

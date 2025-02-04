@@ -20,7 +20,9 @@ public class MapleHotSpringFluidBlock extends LiquidBlock {
     @Override
     public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && this.getFluidState(state).getType().isSource(this.getFluidState(state))) {
-            ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10 * 6,0));
+            if(!((LivingEntity) entity).hasEffect(MobEffects.REGENERATION)) {
+                ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10 * 6, 1));
+            }
         }
     }
 
