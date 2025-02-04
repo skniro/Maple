@@ -5,7 +5,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.material.FluidState;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
@@ -30,21 +33,6 @@ public BaseFluidType(final ResourceLocation stillTexture, final ResourceLocation
     this.overlayTexture = overlayTexture;
     this.tintColor = tintColor;
     this.fogColor = fogColor;
-}
-public ResourceLocation getStillTexture() {
-    return stillTexture;
-}
-public ResourceLocation getFlowingTexture() {
-    return flowingTexture;
-}
-public int getTintColor() {
-    return tintColor;
-}
-public ResourceLocation getOverlayTexture() {
-    return overlayTexture;
-}
-public Vector3f getFogColor() {
-    return fogColor;
 }
 
 @Override
@@ -76,6 +64,10 @@ public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
                                     float nearDistance, float farDistance, FogShape shape) {
             RenderSystem.setShaderFogStart(1f);
             RenderSystem.setShaderFogEnd(6f); // distance when the fog starts
+        }
+
+        public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
+            return 12638463 | tintColor;
         }
     });
 }

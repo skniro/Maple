@@ -73,7 +73,7 @@ public class MapleHotSpringFluid extends FlowingFluid {
 
     @Override
     public FluidType getFluidType() {
-        return ForgeMod.WATER_TYPE.get();
+        return MapleFluidTypes.Spring_FLUID_TYPE.get();
     }
 
 
