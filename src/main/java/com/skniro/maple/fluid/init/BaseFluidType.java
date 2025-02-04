@@ -82,7 +82,7 @@ public BaseFluidType(final ResourceLocation stillTexture, final ResourceLocation
             }
 
             public int getTintColor(FluidState state, BlockAndTintGetter getter, BlockPos pos) {
-                return BiomeColors.getAverageWaterColor(getter, pos) | tintColor;
+                return 12638463 | tintColor;
             }
         });
     }
