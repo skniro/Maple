@@ -1,6 +1,8 @@
 package com.skniro.maple.datagen;
 
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleNetherOresBlocks;
+import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -62,6 +64,33 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
                 .add(MapleBlocks.BLUE_PLASTER)
                 .add(MapleBlocks.BROWN_PLASTER)
                 .add(MapleBlocks.RED_PLASTER);
+        getOrCreateTagBuilder(PICKAXE_MINEABLE)
+                .add(MapleBlocks.GREEN_PLASTER)
+                .add(MapleBlocks.PLASTER)
+                .add(MapleBlocks.ORANGE_PLASTER)
+                .add(MapleBlocks.MAGENTA_PLASTER)
+                .add(MapleBlocks.LIGHT_BLUE_PLASTER)
+                .add(MapleBlocks.YELLOW_PLASTER)
+                .add(MapleBlocks.LIME_PLASTER)
+                .add(MapleBlocks.PINK_PLASTER)
+                .add(MapleBlocks.GRAY_PLASTER)
+                .add(MapleBlocks.LIGHT_GRAY_PLASTER)
+                .add(MapleBlocks.CYAN_PLASTER)
+                .add(MapleBlocks.PURPLE_PLASTER)
+                .add(MapleBlocks.BLUE_PLASTER)
+                .add(MapleBlocks.BROWN_PLASTER)
+                .add(MapleBlocks.RED_PLASTER)
+                .add(MapleOreBlocks.Salt_Ore)
+                .add(MapleOreBlocks.DEEPSLATE_Salt_Ore)
+                .add(MapleNetherOresBlocks.Nether_Coal_Ore)
+                .add(MapleNetherOresBlocks.Nether_Diamond_Ore)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore)
+                .add(MapleNetherOresBlocks.Nether_Emerald_Ore)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore)
+                .add(MapleNetherOresBlocks.Nether_Gold_Ore)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
+                .add(MapleNetherOresBlocks.Nether_Redstone_Ore)
+                .setReplace(false);
         getOrCreateTagBuilder(CEILING_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_HANGING_SIGN);
