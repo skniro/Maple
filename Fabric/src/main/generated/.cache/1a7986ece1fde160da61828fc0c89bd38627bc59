@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-10T17:57:37.8905407	Maple/Block Loot Tables
+// 1.21.1	2025-05-10T19:14:37.1106577	Maple/Block Loot Tables
 9317b34c737170d787a36481e48689a3652ab00a data\maple\loot_table\blocks\cherry_cyan_cushion.json
 f34ac9bf37b39ad12ab3d1ea30674fe426f5c326 data\maple\loot_table\blocks\dark_oak_light_blue_cushion.json
 e067155a38b806f96585dc8deaf1349abc64edef data\maple\loot_table\blocks\birch_cyan_cushion.json
@@ -185,8 +185,8 @@ b03f5d352fdb06bf2cb654f5af6cf8ea77f6b0d7 data\maple\loot_table\blocks\cherry_mag
 b0bc9edae2a59fc1f3fdf8a79dab201072695823 data\maple\loot_table\blocks\acacia_cyan_cushion.json
 f663bd322e5f15fab8d298944bb63f91f2bc2c54 data\maple\loot_table\blocks\cherry_light_blue_cushion.json
 81c6e9ce32b654b55ab2bee33338fbe7feec15f4 data\maple\loot_table\blocks\birch_plank_chair.json
-8adcedda180a88108d661e04216b2e375aea0636 data\maple\loot_table\blocks\bamboo_purple_cushion.json
 78d3cb2440542bae2ea047798c30687619ec255c data\maple\loot_table\blocks\coal_ore.json
+8adcedda180a88108d661e04216b2e375aea0636 data\maple\loot_table\blocks\bamboo_purple_cushion.json
 c658cdadd4a407f60edbc650d10c2e9875234d7e data\maple\loot_table\blocks\stripped_cherry_wood.json
 7786e2249d090b53b0e78740311f7894e12985ac data\maple\loot_table\blocks\oak_wood_chair.json
 d35bf18d9c2e7877c5920e331302b791d36db468 data\maple\loot_table\blocks\birch_lime_cushion.json
@@ -304,9 +304,9 @@ fd38421a9e1e8a048bf3b2ea191113d05ea46cd4 data\maple\loot_table\blocks\acacia_end
 acf8c67f8da5a37f26ca687e312337bf2e133f5c data\maple\loot_table\blocks\cherry_table.json
 20befe3b113685565288e24530d499649c59c58c data\maple\loot_table\blocks\jungle_light_blue_cushion.json
 e64adadd1aad055af87a803a67d9cc4baecf909f data\maple\loot_table\blocks\bamboo_sign.json
-c6c238c6c18ed32d86b46ee5d4456a4052a72409 data\maple\loot_table\blocks\iron_sea_lantern.json
 dee1a136cf7d4b1297b4364dde312c05f4071830 data\maple\loot_table\blocks\acacia_orange_cushion.json
 0924ab12255c0e391837b6ca2fe43e613ae2f91f data\maple\loot_table\blocks\spruce_plank_coffee_table.json
+c6c238c6c18ed32d86b46ee5d4456a4052a72409 data\maple\loot_table\blocks\iron_sea_lantern.json
 14878a357176af62c197b5be59ed8ab1c76d1185 data\maple\loot_table\blocks\acacia_purple_cushion.json
 26bb9c73a6ed98d4c409ceb69ff5e9be765f22cb data\maple\loot_table\blocks\mangrove_light_gray_cushion.json
 19277bb2676a7a8ee344952c24a1ebfa79a61d30 data\maple\loot_table\blocks\bamboo_mosaic.json
@@ -386,8 +386,8 @@ daf44290cfe7111442fa806b5d55ba8f910d2883 data\maple\loot_table\blocks\green_stai
 b533005a058cce7c256cd0d9386fc165b8f93ed0 data\maple\loot_table\blocks\dark_oak_wood_coffee_table.json
 3ed6246a4a0f6051ecd9e05dc590003d66f2090a data\maple\loot_table\blocks\lime_stained_glass_slab.json
 bc6302b40b4b92780d0ef5c72fc64e3b130c3f40 data\maple\loot_table\blocks\cherry_wood.json
-a82840e960aaf9215fa46b4a14f04578d7e9a36b data\maple\loot_table\blocks\yellow_stained_glass_slab.json
 eef7a9eb1931a3dcd290d28d144c2b2aec51cc97 data\maple\loot_table\blocks\acacia_wood_chair.json
+a82840e960aaf9215fa46b4a14f04578d7e9a36b data\maple\loot_table\blocks\yellow_stained_glass_slab.json
 bf8bdcb75182d6fa6cdab82607952f964bb5346d data\maple\loot_table\blocks\acacia_brown_cushion.json
 02f2af2dd389d41f660494dd1d77450fe4fc7e0c data\maple\loot_table\blocks\spruce_wood_window.json
 95729fdd705fb2fafc9e20b863fd9a4efc19c200 data\maple\loot_table\blocks\maple_sapling.json
