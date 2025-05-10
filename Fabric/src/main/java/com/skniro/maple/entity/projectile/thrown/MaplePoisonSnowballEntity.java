@@ -24,7 +24,9 @@ public class MaplePoisonSnowballEntity extends MapleSnowballEntity {
         Entity entity = entityHitResult.getEntity();
         int i = entity instanceof BlazeEntity ? 4 : 0;
         entity.serverDamage(this.getDamageSources().thrown(this, this.getOwner()), i);
-        LivingEntity playerEntity = (LivingEntity) entityHitResult.getEntity();;
-        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON,30,1));
+        if(entity instanceof LivingEntity) {
+            LivingEntity playerEntity = (LivingEntity) entityHitResult.getEntity();;
+            playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON,30,1));
+        }
     }
 }
