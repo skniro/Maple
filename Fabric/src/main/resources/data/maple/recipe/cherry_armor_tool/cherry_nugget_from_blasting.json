@@ -32,5 +32,7 @@
             "item": "maple:cherry_boots"
         }
     ],
-    "result": "maple:cherry_nugget"
+    "result": {
+        "id": "maple:cherry_nugget"
+    }
 }
