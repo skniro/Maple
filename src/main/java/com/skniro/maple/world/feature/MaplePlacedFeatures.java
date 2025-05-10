@@ -64,35 +64,35 @@ public class MaplePlacedFeatures {
 
         register(context, LAKE_HOT_SPRING_SURFACE, registryEntry1, RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP);
         register(context, Coal_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Coal_ORE_KEY),
-                modifiersWithCount(40, // Veins per Chunk
+                modifiersWithCount(20, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context,Nether_Copper_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Copper_KEY),
-                modifiersWithCount(32, // Veins per Chunk
+                modifiersWithCount(16, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Diamond_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Diamond_KEY),
-                modifiersWithCount(17, // Veins per Chunk
+                modifiersWithCount(8, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Emerald_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Emerald_KEY),
-                modifiersWithCount(17, // Veins per Chunk
+                modifiersWithCount(6, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Gold_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Gold_KEY),
-                modifiersWithCount(20, // Veins per Chunk
+                modifiersWithCount(10, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Iron_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures. Nether_Iron_KEY),
-                modifiersWithCount(32, // Veins per Chunk
+                modifiersWithCount(16, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Lapis_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Lapis_KEY),
-                modifiersWithCount(25, // Veins per Chunk
+                modifiersWithCount(10, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Nether_Redstone_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Nether_Redstone_ORE_KEY),
-                modifiersWithCount(20, // Veins per Chunk
+                modifiersWithCount(10, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(256))));
 
         register(context, Sakura_carpet_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Sakura_Carpet_KEY),
