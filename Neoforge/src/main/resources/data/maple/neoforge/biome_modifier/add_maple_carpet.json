@@ -1,5 +1,5 @@
 {
-  "type": "forge:add_features",
+  "type": "neoforge:add_features",
   "biomes": "#maple:is_maple_grove",
   "features": "maple:maple_carpet_placed",
   "step": "vegetal_decoration"
