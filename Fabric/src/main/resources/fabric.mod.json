@@ -23,9 +23,6 @@
     ],
     "fabric-datagen": [
       "com.skniro.maple.datagen.MapleDataGeneration"
-    ],
-    "rei_client": [
-      "com.skniro.maple.compat.rei.MapleREIClientPlugin"
     ]
   },
   "mixins": [
