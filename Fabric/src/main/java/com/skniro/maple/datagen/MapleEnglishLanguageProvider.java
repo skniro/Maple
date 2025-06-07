@@ -217,8 +217,8 @@ public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(MapleBlocks.TATAMI,"Tatami");
         translationBuilder.add(MapleBlocks.TATAMI_SLAB,"Tatami Slab");
 
-        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Plaster Bucket");
-        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Plaster");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BUCKET,"Hot Spring Bucket");
+        translationBuilder.add(MapleFluidBlockOrItem.Hot_Spring_BLOCK,"Hot Spring");
 
         //PLASTER
         translationBuilder.add(MapleBlocks.GREEN_PLASTER,"Green Plaster");
