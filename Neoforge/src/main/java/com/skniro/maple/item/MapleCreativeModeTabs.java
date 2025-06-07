@@ -209,7 +209,7 @@ public class MapleCreativeModeTabs {
                         pOutput.accept(MapleFoodComponents.MILK_BOTTOM.get());
                         pOutput.accept(MapleItems.SOYBEAN.get());
                         pOutput.accept(MapleItems.Salt.get());
-                        //pOutput.accept(MapleItems.Rice.get());
+                        pOutput.accept(MapleItems.Rice.get());
                         pOutput.accept(MapleFoodComponents.Sanshoku_Dango.get());
                         pOutput.accept(MapleFoodComponents.Anko_Dango.get());
                         pOutput.accept(MapleFoodComponents.Zunda_Dango.get());

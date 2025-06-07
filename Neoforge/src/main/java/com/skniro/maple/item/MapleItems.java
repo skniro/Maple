@@ -22,7 +22,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Function;
-
 public class MapleItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Maple.MOD_ID);
 
@@ -100,10 +99,8 @@ public class MapleItems {
 
 
     //Seed
-/*
     public static final Supplier<Item> Rice = registerItem("rice",
             createBlockItemWithUniqueName(MapleBlocks.RICE), (new Item.Properties()));
-*/
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {
         DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
@@ -112,7 +109,7 @@ public class MapleItems {
 
     private static Function<Item.Properties, Item> createBlockItemWithUniqueName(Supplier<Block> block) {
         return (properties) -> {
-            return new BlockItem(block.get(), properties.useItemDescriptionPrefix());
+            return new MapleBlockItem(block, properties.useItemDescriptionPrefix());
         };
     }
 

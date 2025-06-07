@@ -4,7 +4,6 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleBlockSetType;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.block.init.*;
-import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.Tree.*;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
@@ -31,6 +30,7 @@ import java.util.function.Supplier;
 
 public class MapleBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Maple.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Maple.MOD_ID);
 
     //LOG_Block
     public static final Supplier<Block> MAPLE_LOG = registerBlock("maple_log",RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_BROWN)));
@@ -196,7 +196,7 @@ public class MapleBlocks {
     public static final Supplier<Block> BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
             (settings)-> new PressurePlateBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).noCollission().strength(0.5f).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     //Plants Block
-    public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant",RiceBlock::new, (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
+    public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
 
     //FlowerBlock
     public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", PinkPetalsBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().sound(SoundType.GRASS)));
@@ -428,7 +428,7 @@ public class MapleBlocks {
     }
 
     private static <T extends Block> Holder<Item> registerBlockItem(String name, DeferredBlock<T> block) {
-        return MapleItems.ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
+        return ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
                 new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name)))));
     }
 
@@ -442,5 +442,6 @@ public class MapleBlocks {
 
     public static void registerMapleBlocks(IEventBus eventBus) {
         BLOCKS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }

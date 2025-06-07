@@ -1,14 +1,8 @@
 package com.skniro.maple.fluid.init;
 
-import com.mojang.blaze3d.shaders.FogShape;
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.Camera;
-import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.fluids.FluidType;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -46,7 +40,8 @@ public ResourceLocation getOverlayTexture() {
 public Vector3f getFogColor() {
     return fogColor;
 }
-@Override
+
+
 public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
     consumer.accept(new IClientFluidTypeExtensions() {
         @Override
@@ -65,11 +60,7 @@ public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         public int getTintColor() {
             return tintColor;
         }
-        @Override
-        public @NotNull Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level,
-                                                int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
-            return fogColor;
-        }
+
     });
 }
 }

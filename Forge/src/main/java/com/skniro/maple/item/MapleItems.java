@@ -16,6 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class MapleItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MOD_ID);
@@ -108,7 +109,7 @@ public class MapleItems {
         return toReturn;
     }
 
-    private static Function<Item.Properties, Item> createBlockItemWithUniqueName(RegistryObject<Block> block) {
+    private static Function<Item.Properties, Item> createBlockItemWithUniqueName(Supplier<Block> block) {
         return (properties) -> {
             return new BlockItem(block.get(), properties.useItemDescriptionPrefix());
         };

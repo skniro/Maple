@@ -10,15 +10,19 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 
+import java.util.function.Supplier;
+
 public class MapleHotSpringFluidBlock extends LiquidBlock {
-    public MapleHotSpringFluidBlock(FlowingFluid fluid, Properties settings) {
-        super(fluid, settings);
+    public MapleHotSpringFluidBlock(Supplier<FlowingFluid> fluid, Properties settings) {
+        super(fluid.get(), settings);
     }
 
     @Override
     public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && this.getFluidState(state).getType().isSource(this.getFluidState(state))) {
-            ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10 * 6,0));
+            if(!((LivingEntity) entity).hasEffect(MobEffects.REGENERATION)) {
+                ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10 * 6, 1));
+            }
         }
     }
 }

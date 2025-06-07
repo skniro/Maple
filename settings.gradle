@@ -21,4 +21,4 @@ pluginManagement {
 
 
 rootProject.name = 'Maple-1.21.4'
-include("Fabric", "Neoforge")
+include("Fabric", "Neoforge","Forge")

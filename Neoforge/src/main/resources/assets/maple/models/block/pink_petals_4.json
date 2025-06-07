@@ -3,6 +3,5 @@
   "textures": {
     "flowerbed": "maple:block/pink_petals",
     "stem": "maple:block/pink_petals_stem"
-  },
-  "render_type": "cutout"
+  }
 }

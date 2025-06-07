@@ -2,6 +2,7 @@ package com.skniro.maple.item;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.item.init.MapleBlockItem;
 import com.skniro.maple.item.init.food.ItemBottle;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -294,7 +295,7 @@ public class MapleFoodComponents {
             ));
 
     public static final RegistryObject<Item> Green_Tea_Leaves = registerItem("green_tea_leaves",
-            createBlockItemWithUniqueName(MapleBlocks.Tea_Block.get()),
+            createBlockItemWithUniqueName(MapleBlocks.Tea_Block),
                     new Item
                             .Properties() .food
                                     (new FoodProperties
@@ -362,9 +363,9 @@ public class MapleFoodComponents {
         return toReturn;
     }
 
-    private static Function<Item.Properties, Item> createBlockItemWithUniqueName(Block block) {
+    private static Function<Item.Properties, Item> createBlockItemWithUniqueName(Supplier<Block> block) {
         return (properties) -> {
-            return new BlockItem(block, properties.useItemDescriptionPrefix());
+            return new MapleBlockItem(block, properties.useItemDescriptionPrefix());
         };
     }
 

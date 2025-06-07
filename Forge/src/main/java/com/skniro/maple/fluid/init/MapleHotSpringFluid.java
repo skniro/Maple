@@ -1,7 +1,6 @@
 package com.skniro.maple.fluid.init;
 
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
-import com.skniro.maple.fluid.MapleFluidTypes;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import net.minecraft.core.BlockPos;
