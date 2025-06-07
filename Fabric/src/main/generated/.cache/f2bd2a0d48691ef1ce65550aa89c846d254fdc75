@@ -1,6 +1,6 @@
-// 1.21.1	2025-05-10T19:14:37.1292103	Maple/Recipes
-72f942ac15810cb30bcafc7c91f9b312ea5f01e7 data\maple\advancement\recipes\building_blocks\light_gray_plaster.json
+// 1.21.1	2025-06-07T21:21:16.2814454	Maple/Recipes
 beb5011fc2b1deb996a9f7d6a0f00d3000ce7dc5 data\maple\advancement\recipes\building_blocks\cyan_plaster.json
+72f942ac15810cb30bcafc7c91f9b312ea5f01e7 data\maple\advancement\recipes\building_blocks\light_gray_plaster.json
 a14435f683d7c4ff38a81826c3e0931ba87f043c data\maple\recipe\gold_sea_lantern.json
 357925b0987b1b6497402405899a4b8499cbe4be data\maple\advancement\recipes\building_blocks\pink_plaster.json
 f7a871b1286999b2dc0c7f38d7764a3b94e43206 data\maple\advancement\recipes\building_blocks\iron_sea_lantern.json
@@ -10,8 +10,8 @@ f7a871b1286999b2dc0c7f38d7764a3b94e43206 data\maple\advancement\recipes\building
 7eae34e4152ce19dbff489a7ee7a994b6ee4a97b data\maple\advancement\recipes\food\milk_icecream.json
 0d1a4d667b127249a20269d102b41de7e7b7049e data\maple\advancement\recipes\food\cream.json
 2b130ae8e0ce63f8fd9715f6972710bada965230 data\maple\recipe\gray_plaster.json
-424a695fad287b14df5af560b36ecf1deaa0677b data\maple\recipe\light_gray_plaster.json
 b2b1983359167e9b072e6383b273f9b88ef72e0c data\maple\recipe\cyan_plaster.json
+424a695fad287b14df5af560b36ecf1deaa0677b data\maple\recipe\light_gray_plaster.json
 7f5069750802bea58dce9b02b513568ee39302f7 data\maple\recipe\sakura_carpet.json
 073c2fa54ff4c72f40b2af6bfa1f9394d8a492ab data\maple\advancement\recipes\food\beef_rice.json
 ff4e5253434914c7dee9400b2746a4c4473fc2b9 data\maple\recipe\light_blue_plaster.json
@@ -20,7 +20,7 @@ a998529a5fc8bbb7543c336baf3ea7cd299e809d data\maple\recipe\red_maple_carpet.json
 dd577c8b67390af362095c48f35dc3110f99549d data\maple\recipe\lime_plaster.json
 5063b4ed231bdf9eb86513e9ed0cc274064f7ccf data\maple\advancement\recipes\decorations\sakura_carpet.json
 bc950c0ca09962b8af43265519d7859ebc844789 data\maple\recipe\zunda_dango.json
-63afc10a19b930b5b404237a5b4992fa1cf8b02b data\maple\recipe\milk_bottom.json
+8e82da37b31863ca600f8d863a7a7a0ca1fa1082 data\maple\recipe\milk_bottom.json
 2ec14132522dedfc11bec6e8bcfe67392bc98ebb data\maple\recipe\red_tea.json
 360974c85176dc86de81818941e9d5b8cc77df0a data\maple\advancement\recipes\food\tofu.json
 aab8efa7ca2e28915958fb5e00d020c64e4b7516 data\maple\recipe\green_plaster.json
@@ -32,8 +32,8 @@ aab8efa7ca2e28915958fb5e00d020c64e4b7516 data\maple\recipe\green_plaster.json
 258461f7342b9344bb68fca3134309e9d6eca077 data\maple\advancement\recipes\food\maple_syrup_from_smelting_stripped_maple_wood.json
 184ef60e5b3f5eab6ced57352e5d549f1c53e9d7 data\maple\recipe\cooked_rice.json
 a2e04dd547a67436891c9779fdde4ab03e49b445 data\maple\advancement\recipes\building_blocks\red_plaster.json
-c6e90cd49c5d873546422cb128f7fe3ee32a3791 data\maple\recipe\maple_syrup_from_smelting_stripped_maple_log.json
 1fd03349d54e6f61d8604afd905d978a9b09f09c data\maple\advancement\recipes\food\maple_syrup_from_smelting_stripped_maple_log.json
+c6e90cd49c5d873546422cb128f7fe3ee32a3791 data\maple\recipe\maple_syrup_from_smelting_stripped_maple_log.json
 537d17e1e0851b1e6cac9afa8962fac8709f95f6 data\maple\recipe\milk_icecream.json
 ab92cce0c31d464545fc38113208fbfe3a3f0d4a data\maple\recipe\kinako_dango.json
 645048d27cdd2c579787d68414e03267024bf713 data\maple\advancement\recipes\building_blocks\magenta_plaster.json
@@ -41,8 +41,8 @@ b0a0ee0ff5611710ad61357d7473b0d1d71c8d04 data\maple\advancement\recipes\food\gre
 9d82b9af5f9ef70b72de84a47293529003fe4f1d data\maple\recipe\beef_rice.json
 23a11ea4260175cee786a913fa5504a1aac9f94c data\maple\advancement\recipes\decorations\ginkgo_carpet.json
 62c69627974b5dbdd3f44ba6844a4c66159d7c0a data\maple\advancement\recipes\building_blocks\yellow_plaster.json
-7bf3376b8c8ac7fd47883cc946d0030d21fd4412 data\maple\advancement\recipes\building_blocks\purple_plaster.json
 be9540f2ace91bea2c709d0b80793402147b2758 data\maple\recipe\blue_plaster.json
+7bf3376b8c8ac7fd47883cc946d0030d21fd4412 data\maple\advancement\recipes\building_blocks\purple_plaster.json
 199e3a162d2a4a2d35e76c1c13a2751015bf2f72 data\maple\recipe\sakura_sapling.json
 e2a55da4cfc689cec5b38b128592fc591e2f22dc data\maple\recipe\maple_carpet.json
 7b2b9597cb87e102b7200d954ac059d77d8f8ba6 data\maple\recipe\sakura_mochi.json

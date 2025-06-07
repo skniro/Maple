@@ -36,9 +36,9 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).input(Items.MILK_BUCKET).criterion(FabricRecipeProvider.hasItem(MapleFoodComponents.MILK_BOTTOM),
-                FabricRecipeProvider.conditionsFromItem(MapleFoodComponents.MILK_BOTTOM)).criterion(FabricRecipeProvider.hasItem(Items.MILK_BUCKET),
-                FabricRecipeProvider.conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).input(Items.MILK_BUCKET).input(Items.GLASS_BOTTLE,3).criterion(hasItem(MapleFoodComponents.MILK_BOTTOM),
+                conditionsFromItem(MapleFoodComponents.MILK_BOTTOM)).criterion(hasItem(Items.MILK_BUCKET),
+                conditionsFromItem(Items.MILK_BUCKET)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD ,MapleItems.Flour,2).input(Items.WHEAT).criterion(FabricRecipeProvider.hasItem(MapleItems.Flour),
                 FabricRecipeProvider.conditionsFromItem(MapleItems.Flour)).criterion(FabricRecipeProvider.hasItem(Items.WHEAT),
