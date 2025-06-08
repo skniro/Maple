@@ -1,6 +1,6 @@
-// 1.21.4	-999999999-01-01T00:00:00	Maple/maple
-35ad91ab27942851907f13ff77065a0feec1fdf7 data/maple/worldgen/biome/maple_grove.json
-b3537d7fa08ad55084a6cd8b2375d2b7ef6c702d data/maple/worldgen/biome/sakura.json
+// 1.21.5	-999999999-01-01T00:00:00	Maple/maple
+05fc05be8d150ce515c37f4409aa07bc1d742730 data/maple/worldgen/biome/maple_grove.json
+941d389479e0507d308e4f2dfdd8d96e80632bee data/maple/worldgen/biome/sakura.json
 04924321450f09f75b54b3cc9c75e93fa0efe229 data/maple/worldgen/configured_feature/cherry_tree.json
 e77cbd097644ae9debd772d950e418141d287257 data/maple/worldgen/configured_feature/coal_ore.json
 0e5a8d0e01887b668e82074ba2177c474a6b81b6 data/maple/worldgen/configured_feature/copper_ore.json

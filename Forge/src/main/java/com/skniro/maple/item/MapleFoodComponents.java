@@ -238,7 +238,7 @@ public class MapleFoodComponents {
                                             .alwaysEdible().build()
                                             , Consumables.defaultFood()
                                                     .onConsume(new ApplyStatusEffectsConsumeEffect(
-                                                            new MobEffectInstance(MobEffects.MOVEMENT_SPEED,100,1),1.0F)
+                                                            new MobEffectInstance(MobEffects.SPEED,100,1),1.0F)
                                                     )
                                                     .build()
                                     )

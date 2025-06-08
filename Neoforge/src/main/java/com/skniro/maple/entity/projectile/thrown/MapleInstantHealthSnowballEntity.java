@@ -27,7 +27,7 @@ public class MapleInstantHealthSnowballEntity extends Snowball {
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), i);
         if(entity instanceof LivingEntity) {
             LivingEntity playerEntity = (LivingEntity) entityHitResult.getEntity();
-            playerEntity.addEffect(new MobEffectInstance(MobEffects.HEAL, 1));
+            playerEntity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1));
         }
     }
 }

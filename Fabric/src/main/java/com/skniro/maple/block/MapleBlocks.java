@@ -3,6 +3,7 @@ package com.skniro.maple.block;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleSignTypes;
 import com.skniro.maple.block.init.*;
+import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.world.Tree.*;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -62,16 +63,16 @@ public class MapleBlocks {
 
     //LEAVES Block
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves",
-            LeavesBlock::new, (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
-            LeavesBlock::new, (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.RED)), Maple.Maple_Group);
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.RED)), Maple.Maple_Group);
 
     public static final Block GINKGO_LEAVES = registerBlock("ginkgo_leaves",
-            LeavesBlock::new, (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)), Maple.Maple_Group);
     public static final Block CHERRY_LEAVES = registerBlock("cherry_leaves",
-            (settings)-> new ParticleLeavesBlock(10, ParticleTypes.CHERRY_LEAVES, settings), AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK), Maple.Maple_Group);
+            (settings)-> new UntintedParticleLeavesBlock(0.1f, ParticleTypes.CHERRY_LEAVES, settings), AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK), Maple.Maple_Group);
     public static final Block SAKURA_LEAVES = registerBlock("sakura_leaves",
-            MapleSakuraLeavesBlock::new, (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK).luminance((state) -> 8)), Maple.Maple_Group);
+            (settings)-> new UntintedParticleLeavesBlock(0.1f, MapleParticleTypes.SAKURA_LEAVES, settings), (AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).mapColor(MapColor.PINK).luminance((state) -> 8)), Maple.Maple_Group);
 
     //PLANKS Block
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks",

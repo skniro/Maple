@@ -31,7 +31,7 @@ public class MapleVillagers {
 
 
     private static Supplier<VillagerType> registerType(String name, Set<ResourceKey<Biome>> biomes) {
-        VillagerType villagerType = new VillagerType(name);
+        VillagerType villagerType = new VillagerType();
         Supplier<VillagerType> type = VILLAGER_TYPES.register(name, () -> villagerType);
         VILLAGER_TYPE_BY_BIOME.put(villagerType, biomes);
         return type;

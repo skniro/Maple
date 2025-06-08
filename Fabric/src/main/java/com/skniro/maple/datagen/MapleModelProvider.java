@@ -14,9 +14,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 
 public class MapleModelProvider extends FabricModelProvider {
     public MapleModelProvider(FabricDataOutput dataGenerator){
@@ -192,10 +192,10 @@ public class MapleModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerCubeAllModelTexturePool(MapleNetherOresBlocks.Nether_Redstone_Ore);
 
         //LOG Block
-        blockStateModelGenerator.registerLog(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
-        blockStateModelGenerator.registerLog(MapleBlocks.STRIPPED_MAPLE_LOG).log(MapleBlocks.STRIPPED_MAPLE_LOG).wood(MapleBlocks.STRIPPED_MAPLE_WOOD);
-        blockStateModelGenerator.registerLog(MapleBlocks.GINKGO_LOG).log(MapleBlocks.GINKGO_LOG).wood(MapleBlocks.GINKGO_WOOD);
-        blockStateModelGenerator.registerLog(MapleBlocks.STRIPPED_GINKGO_LOG).log(MapleBlocks.STRIPPED_GINKGO_LOG).wood(MapleBlocks.STRIPPED_GINKGO_WOOD);
+        blockStateModelGenerator.createLogTexturePool(MapleBlocks.MAPLE_LOG).log(MapleBlocks.MAPLE_LOG).wood(MapleBlocks.MAPLE_WOOD);
+        blockStateModelGenerator.createLogTexturePool(MapleBlocks.STRIPPED_MAPLE_LOG).log(MapleBlocks.STRIPPED_MAPLE_LOG).wood(MapleBlocks.STRIPPED_MAPLE_WOOD);
+        blockStateModelGenerator.createLogTexturePool(MapleBlocks.GINKGO_LOG).log(MapleBlocks.GINKGO_LOG).wood(MapleBlocks.GINKGO_WOOD);
+        blockStateModelGenerator.createLogTexturePool(MapleBlocks.STRIPPED_GINKGO_LOG).log(MapleBlocks.STRIPPED_GINKGO_LOG).wood(MapleBlocks.STRIPPED_GINKGO_WOOD);
 
         //Door
         blockStateModelGenerator.registerDoor(MapleBlocks.MAPLE_DOOR);
@@ -606,10 +606,10 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.register(MapleArmorItems.Cherry_HOE, Models.HANDHELD);
 
         //Cherry armors
-        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_HELMET, MapleEquipmentAssetKeys.Cherry,"helmet", false);
-        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_CHESTPLATE, MapleEquipmentAssetKeys.Cherry,"chestplate", false);
-        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_LEGGINGS, MapleEquipmentAssetKeys.Cherry,"leggings", false);
-        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_BOOTS, MapleEquipmentAssetKeys.Cherry,"boots", false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_HELMET, MapleEquipmentAssetKeys.Cherry,Identifier.of("helmet"), false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_CHESTPLATE, MapleEquipmentAssetKeys.Cherry,Identifier.of("chestplate"), false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_LEGGINGS, MapleEquipmentAssetKeys.Cherry,Identifier.of("leggings"), false);
+        itemModelGenerator.registerArmor(MapleArmorItems.Cherry_BOOTS, MapleEquipmentAssetKeys.Cherry,Identifier.of("boots"), false);
 
         //Sign
         itemModelGenerator.register(MapleItems.Maple_HANGING_SIGN, Models.GENERATED);

@@ -36,7 +36,7 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
         return new RecipeProvider(wrapperLookup, exporter) {
             @Override
             public void buildRecipes() {
-        shapeless(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).requires(Items.MILK_BUCKET).unlockedBy(getHasName(MapleFoodComponents.MILK_BOTTOM),
+        shapeless(RecipeCategory.FOOD ,MapleFoodComponents.MILK_BOTTOM,3).requires(Items.MILK_BUCKET).requires(Items.GLASS_BOTTLE,3).unlockedBy(getHasName(MapleFoodComponents.MILK_BOTTOM),
                 has(MapleFoodComponents.MILK_BOTTOM)).unlockedBy(getHasName(Items.MILK_BUCKET),
                 has(Items.MILK_BUCKET)).save(output);
 

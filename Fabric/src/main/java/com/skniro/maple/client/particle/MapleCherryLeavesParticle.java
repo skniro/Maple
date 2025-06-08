@@ -37,9 +37,9 @@ public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
     }
 
     public void tick() {
-        this.prevPosX = this.x;
-        this.prevPosY = this.y;
-        this.prevPosZ = this.z;
+        this.lastX = this.x;
+        this.lastY = this.y;
+        this.lastZ = this.z;
         if (this.maxAge-- <= 0) {
             this.markDead();
         }
@@ -53,7 +53,7 @@ public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
             this.velocityZ += e * 0.0024999999441206455D;
             this.velocityY -= (double)this.gravityStrength;
             this.field_43369 += this.field_43371 / 20.0F;
-            this.prevAngle = this.angle;
+            this.lastAngle = this.angle;
             this.angle += this.field_43369 / 20.0F;
             this.move(this.velocityX, this.velocityY, this.velocityZ);
             if (this.onGround || this.maxAge < 299 && (this.velocityX == 0.0D || this.velocityZ == 0.0D)) {

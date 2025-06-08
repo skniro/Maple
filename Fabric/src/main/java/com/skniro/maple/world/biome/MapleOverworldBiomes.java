@@ -32,7 +32,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addForestGrass(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, false);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         DefaultBiomeFeatures.addFarmAnimals(builder);
@@ -43,7 +43,7 @@ public class MapleOverworldBiomes {
     public static Biome createSakura(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIG, 1, 1, 2)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 2, 6)).spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 2, 4));
+        builder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(EntityType.PIG, 1, 2)).spawn(SpawnGroup.CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.RABBIT, 2, 6)).spawn(SpawnGroup.CREATURE, 2, new SpawnSettings.SpawnEntry(EntityType.SHEEP, 2, 4));
         addBasicFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
@@ -51,7 +51,7 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addDefaultFlowers(lookupBackedBuilder);
         lookupBackedBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.FLOWER_FLOWER_FOREST);
         MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(lookupBackedBuilder, false);
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);

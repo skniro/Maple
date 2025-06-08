@@ -46,11 +46,6 @@ public class MapleTeaBlock extends BushBlock implements BonemealableBlock {
         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(AGE, 0));
     }
 
-    @Override
-    protected MapCodec<? extends BushBlock> codec() {
-        return CODEC;
-    }
-
     public ItemStack getPickStack(BlockGetter world, BlockPos pos, BlockState state) {
         return new ItemStack(MapleFoodComponents.Green_Tea_Leaves.get());
     }

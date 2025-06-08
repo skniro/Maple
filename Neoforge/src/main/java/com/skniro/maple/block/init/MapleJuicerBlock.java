@@ -6,6 +6,7 @@ import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.entity.MapleJuicerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
@@ -75,14 +76,14 @@ public class MapleJuicerBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
+    public void affectNeighborsAfterRemoval(BlockState state, ServerLevel world, BlockPos pos, boolean moved) {
+        if (state.getBlock() != state.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof MapleJuicerBlockEntity) {
                 Containers.dropContents(world, pos, (Container) blockEntity);
                 world.updateNeighbourForOutputSignal(pos,this);
             }
-            super.onRemove(state, world, pos, newState, moved);
+            super.affectNeighborsAfterRemoval(state, world, pos, moved);
         }
     }
 

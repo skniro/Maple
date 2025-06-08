@@ -2,7 +2,6 @@ package com.skniro.maple.entity.village;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.world.biome.MapleBiomeKeys;
-import net.fabricmc.fabric.api.object.builder.v1.villager.VillagerTypeHelper;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -15,11 +14,9 @@ public class MapleVillagers {
 
     private static VillagerType registerProfession(String name) {
         return Registry.register(Registries.VILLAGER_TYPE, Identifier.of(Maple.MOD_ID, name),
-                new VillagerType(name));
+                new VillagerType());
     }
     public static void registerVillagerType() {
-        VillagerTypeHelper.addVillagerTypeToBiome(BiomeKeys.CHERRY_GROVE, Cherry);
-        VillagerTypeHelper.addVillagerTypeToBiome(MapleBiomeKeys.Sakura, Cherry);
         Maple.LOGGER.info("Registering Villagers " + Maple.MOD_ID);
     }
 }

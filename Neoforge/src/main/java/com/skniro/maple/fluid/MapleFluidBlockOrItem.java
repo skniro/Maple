@@ -1,11 +1,9 @@
 package com.skniro.maple.fluid;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.fluid.init.MapleBucketItem;
 import com.skniro.maple.fluid.init.MapleHotSpringFluidBlock;
 import com.skniro.maple.item.MapleItems;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +26,7 @@ public class MapleFluidBlockOrItem {
             (properties)->   new MapleHotSpringFluidBlock(MapleFluids.STILL_Hot_Spring, properties), BlockBehaviour.Properties.ofLegacyCopy(Blocks.WATER).lightLevel((state) -> 8));
 
     public static Supplier<Item> Hot_Spring_BUCKET = registerItem("hot_spring_bucket",
-            (properties)-> new MapleBucketItem(MapleFluids.STILL_Hot_Spring, properties), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
+            (properties)-> new BucketItem(MapleFluids.STILL_Hot_Spring.get(), properties), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1));
 
 
     private static <B extends Block> DeferredBlock<B> registerBlock(String name, Function<BlockBehaviour.Properties, ? extends B> block, BlockBehaviour.Properties properties) {

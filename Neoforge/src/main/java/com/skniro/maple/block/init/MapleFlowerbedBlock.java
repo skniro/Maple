@@ -34,11 +34,6 @@ public class MapleFlowerbedBlock extends BushBlock implements BonemealableBlock 
     }
 
     @Override
-    protected MapCodec<? extends MapleFlowerbedBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
     public BlockState rotate(BlockState state, Rotation rotation) {
         return (BlockState)state.setValue(FACING, rotation.rotate((Direction)state.getValue(FACING)));
     }

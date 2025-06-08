@@ -111,8 +111,8 @@ public class MapleJuicerBlockEntity extends BlockEntity implements MenuProvider,
     @Override
     public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
         ContainerHelper.loadAllItems(nbt, inventory, registryLookup);
-        progress = nbt.getInt("maple_juicer.progress");
-        maxProgress = nbt.getInt("maple_juicer.max_progress");
+        progress = nbt.getInt("maple_juicer.progress").orElse(0);
+        maxProgress = nbt.getInt("maple_juicer.max_progress").orElse(72);
         super.loadAdditional(nbt, registryLookup);
     }
 

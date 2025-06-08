@@ -27,7 +27,7 @@ public class MapleConfusionSnowballEntity extends Snowball {
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), i);
         if(entity instanceof LivingEntity) {
             LivingEntity playerEntity = (LivingEntity) entityHitResult.getEntity();
-            playerEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 150, 1));
+            playerEntity.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 150, 1));
         }
     }
 }

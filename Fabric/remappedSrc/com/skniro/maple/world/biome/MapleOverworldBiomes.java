@@ -35,7 +35,7 @@ public class MapleOverworldBiomes {
         BiomeDefaultFeatures.addDefaultGrass(lookupBackedBuilder);
         MapleBiomeFeatures.addMapleGroveFeatures(lookupBackedBuilder);
         BiomeDefaultFeatures.addForestGrass(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder, false);
         BiomeDefaultFeatures.addExtraEmeralds(lookupBackedBuilder);
         BiomeDefaultFeatures.addInfestedStone(lookupBackedBuilder);
         BiomeDefaultFeatures.farmAnimals(builder);
@@ -46,7 +46,7 @@ public class MapleOverworldBiomes {
     public static Biome createSakura(HolderGetter<PlacedFeature> featureLookup, HolderGetter<ConfiguredWorldCarver<?>> carverLookup) {
         BiomeGenerationSettings.Builder lookupBackedBuilder = new BiomeGenerationSettings.Builder(featureLookup, carverLookup);
         MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
-        builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6)).addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        builder.addSpawn(MobCategory.CREATURE, 1, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 2)).addSpawn(MobCategory.CREATURE, 2, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 6)).addSpawn(MobCategory.CREATURE, 2, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 4));
         addBasicFeatures(lookupBackedBuilder);
         BiomeDefaultFeatures.addPlainGrass(lookupBackedBuilder);
         BiomeDefaultFeatures.addDefaultOres(lookupBackedBuilder);
@@ -54,7 +54,7 @@ public class MapleOverworldBiomes {
         BiomeDefaultFeatures.addDefaultFlowers(lookupBackedBuilder);
         lookupBackedBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
         MapleBiomeFeatures.addSakuraFeatures(lookupBackedBuilder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(lookupBackedBuilder, false);
         BiomeDefaultFeatures.addExtraEmeralds(lookupBackedBuilder);
         BiomeDefaultFeatures.addInfestedStone(lookupBackedBuilder);
         Music musicSound = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);

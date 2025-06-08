@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -605,10 +606,10 @@ public class MapleModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(MapleArmorItems.Cherry_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
         //Cherry armors
-        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_HELMET, MapleEquipmentAssetKeys.Cherry,"helmet", false);
-        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_CHESTPLATE, MapleEquipmentAssetKeys.Cherry,"chestplate", false);
-        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_LEGGINGS, MapleEquipmentAssetKeys.Cherry,"leggings", false);
-        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_BOOTS, MapleEquipmentAssetKeys.Cherry,"boots", false);
+        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_HELMET, MapleEquipmentAssetKeys.Cherry,ResourceLocation.parse("helmet"), false);
+        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_CHESTPLATE, MapleEquipmentAssetKeys.Cherry,ResourceLocation.parse("chestplate"), false);
+        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_LEGGINGS, MapleEquipmentAssetKeys.Cherry,ResourceLocation.parse("leggings"), false);
+        itemModelGenerator.generateTrimmableItem(MapleArmorItems.Cherry_BOOTS, MapleEquipmentAssetKeys.Cherry,ResourceLocation.parse("boots"), false);
 
         //Sign
         itemModelGenerator.generateFlatItem(MapleItems.Maple_HANGING_SIGN, ModelTemplates.FLAT_ITEM);

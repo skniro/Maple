@@ -111,8 +111,8 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     @Override
     public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("maple_juicer.progress");
-        maxProgress = nbt.getInt("maple_juicer.max_progress");
+        progress = nbt.getInt("maple_juicer.progress").orElse(0);
+        maxProgress = nbt.getInt("maple_juicer.max_progress").orElse(72);
         super.readNbt(nbt, registryLookup);
     }
 

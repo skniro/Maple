@@ -4,6 +4,7 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.block.entity.MapleBlockSetType;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.block.init.*;
+import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.world.Tree.*;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
@@ -73,16 +74,16 @@ public class MapleBlocks {
 
     //LEAVES Block
     public static final Supplier<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
-            LeavesBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
     public static final Supplier<Block> RED_MAPLE_LEAVES = registerBlock("red_maple_leaves",
-            LeavesBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_RED)));
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_RED)));
 
     public static final Supplier<Block> GINKGO_LEAVES = registerBlock("ginkgo_leaves",
-            LeavesBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
+            (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
     public static final Supplier<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
-            (settings)-> new ParticleLeavesBlock(10, ParticleTypes.CHERRY_LEAVES, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK));
+            (settings)-> new UntintedParticleLeavesBlock(10, ParticleTypes.CHERRY_LEAVES, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK));
     public static final Supplier<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
-            MapleSakuraLeavesBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8)));
+            (settings)-> new UntintedParticleLeavesBlock(0.1f, MapleParticleTypes.SAKURA_LEAVES.get(), settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8)));
 
     //PLANKS Block
     public static final Supplier<Block> MAPLE_PLANKS = registerBlock("maple_planks",
@@ -199,7 +200,7 @@ public class MapleBlocks {
     public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
 
     //FlowerBlock
-    public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", PinkPetalsBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().sound(SoundType.GRASS)));
+    public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", FlowerBedBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().sound(SoundType.GRASS)));
 
 
     public static final Supplier<Block> CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", ChiseledBookShelfBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD)));

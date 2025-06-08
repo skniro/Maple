@@ -17,6 +17,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.phys.Vec3;
 
 public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuicerBlockEntity> {
     public MapleJuicerEntityRenderer(BlockEntityRendererProvider.Context context) {
@@ -24,7 +25,7 @@ public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuice
 
     @Override
     public void render(MapleJuicerBlockEntity entity, float tickDelta, PoseStack matrices,
-                       MultiBufferSource vertexConsumers, int light, int overlay) {
+                       MultiBufferSource vertexConsumers, int light, int overlay, Vec3 cameraPos) {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         ItemStack stack = entity.getRenderStack();
 
@@ -45,7 +46,7 @@ public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuice
             float rotation = random.nextFloat() * 260.0f;
             matrices.mulPose(Axis.XP.rotationDegrees(rotation));
 
-            itemRenderer.renderStatic(stack, ItemDisplayContext.GROUND, getLightLevel(entity.getLevel(),
+            itemRenderer.renderStatic(stack, ItemDisplayContext.GUI, getLightLevel(entity.getLevel(),
                     entity.getBlockPos()), OverlayTexture.NO_OVERLAY, matrices, vertexConsumers, entity.getLevel(), 1);
             matrices.popPose();
         }
