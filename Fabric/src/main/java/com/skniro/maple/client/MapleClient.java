@@ -151,7 +151,45 @@ public class MapleClient implements ClientModInitializer {
         HandledScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);
         BlockEntityRendererFactories.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, MapleJuicerEntityRenderer::new);
 
-        MapleContent.registerClientEntityRenderer();
-        MapleContent.registerClientParticle();
+        registerClientEntityRenderer();
+        registerClientParticle();
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientEntityRenderer() {
+        EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
+
+        var maple_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher,maple_boat));
+
+        var ginkgo_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_boat));
+
+        var maple_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, maple_chest_boat));
+
+        var ginkgo_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_chest_boat));
+
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientParticle() {
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
+
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
     }
 }
