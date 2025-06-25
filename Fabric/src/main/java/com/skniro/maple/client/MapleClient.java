@@ -1,5 +1,6 @@
 package com.skniro.maple.client;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.MapleContent;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleFurnitureBlocks;
@@ -7,17 +8,28 @@ import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.renderer.MapleJuicerEntityRenderer;
 import com.skniro.maple.client.gui.screen.ingame.MapleJuicerBlockScreen;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
+import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.client.renderer.ChairRenderer;
+import com.skniro.maple.client.renderer.CushinoRenderer;
+import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.screen.MapleScreenHandlerType;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.BoatEntityRenderer;
+import net.minecraft.client.render.entity.model.BoatEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
