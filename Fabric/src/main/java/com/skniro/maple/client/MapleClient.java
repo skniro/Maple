@@ -1,5 +1,6 @@
 package com.skniro.maple.client;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.MapleContent;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleFurnitureBlocks;
@@ -7,133 +8,144 @@ import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.renderer.MapleJuicerEntityRenderer;
 import com.skniro.maple.client.gui.screen.ingame.MapleJuicerBlockScreen;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
+import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
+import com.skniro.maple.client.renderer.ChairRenderer;
+import com.skniro.maple.client.renderer.CushinoRenderer;
+import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.screen.MapleScreenHandlerType;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.BoatEntityRenderer;
+import net.minecraft.client.render.entity.model.BoatEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
 public class MapleClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CHERRY_LEAVES, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.SAKURA_LEAVES, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CHERRY_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_CHERRY_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAPLE_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_MAPLE_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.SAKURA_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_SAKURA_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAPLE_LEAVES, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAPLE_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAPLE_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CHERRY_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CHERRY_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAPLE_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BAMBOO_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BAMBOO_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RICE, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_PETALS,RenderLayer.getCutout());
+        BlockRenderLayer renderLayer2 = BlockRenderLayer.CUTOUT_MIPPED;
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_LEAVES, renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_LEAVES, renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_LEAVES, renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.Maple_CARPET,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_OAK,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_SPRUCE,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BIRCH,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_JUNGLE,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_ACACIA,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_DARK_OAK,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CRIMSON,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_WARPED,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MANGROVE,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BAMBOO,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CHERRY,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MAPLE,renderLayer2);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_GINKGO,renderLayer2);
 
-        RenderLayer renderLayer2 = RenderLayer.getCutoutMipped();
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.Maple_CARPET,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_OAK,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_SPRUCE,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_BIRCH,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_JUNGLE,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_ACACIA,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_DARK_OAK,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_CRIMSON,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_WARPED,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_MANGROVE,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_BAMBOO,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_CHERRY,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_MAPLE,renderLayer2);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.TABLE_GINKGO,renderLayer2);
-
-        RenderLayer renderLayer3 = RenderLayer.getCutout();
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_SAPLING, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_GINKGO_SAPLING, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_DOOR, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GINKGO_TRAPDOOR, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_LEAVES, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_MAPLE_SAPLING , renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.POTTED_RED_MAPLE_SAPLING, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_Wood_GINKGO, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_Wood_MAPLE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_OAK, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_BIRCH, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_SPRUCE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_JUNGLE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_DARK_OAK, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_ACACIA, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_MANGROVE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_CHERRY, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_CRIMSON, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_WOOD_WARPED, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_MAPLE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_GINKGO, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_OAK, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_BIRCH, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_SPRUCE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_JUNGLE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_DARK_OAK, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_ACACIA, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_MANGROVE, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_CHERRY, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_CRIMSON, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleFurnitureBlocks.Window_PLANK_WARPED, renderLayer3);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.Tea_Block, renderLayer3);
+        BlockRenderLayer renderLayer3 = BlockRenderLayer.CUTOUT;
+        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_CHERRY_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_MAPLE_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_SAKURA_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_DOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_DOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_TRAPDOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_TRAPDOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BAMBOO_TRAPDOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BAMBOO_DOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RICE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.PINK_PETALS, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_GINKGO_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_DOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_TRAPDOOR, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_LEAVES, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_SAPLING , renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_RED_MAPLE_SAPLING, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_Wood_GINKGO, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_Wood_MAPLE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_OAK, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_BIRCH, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_SPRUCE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_JUNGLE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_DARK_OAK, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_ACACIA, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_MANGROVE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_CHERRY, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_CRIMSON, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_WARPED, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_MAPLE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_GINKGO, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_OAK, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_BIRCH, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_SPRUCE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_JUNGLE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_DARK_OAK, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_ACACIA, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_MANGROVE, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_CHERRY, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_CRIMSON, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_WARPED, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.Tea_Block, renderLayer3);
 
 
-        RenderLayer renderLayer4 = RenderLayer.getTranslucent();
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.WHITE_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.WHITE_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.ORANGE_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.YELLOW_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIME_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIME_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PINK_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GRAY_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GRAY_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CYAN_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.CYAN_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PURPLE_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BLUE_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BLUE_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BROWN_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BROWN_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GREEN_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GREEN_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.RED_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BLACK_STAINED_GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.BLACK_STAINED_GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GLASS_SLAB, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.GLASS_STAIRS, renderLayer4);
-        BlockRenderLayerMap.INSTANCE.putBlock(MapleBlocks.Maple_Juicer_Block, renderLayer4);
+        BlockRenderLayer renderLayer4 = BlockRenderLayer.TRANSLUCENT;
+        BlockRenderLayerMap.putBlock(MapleBlocks.WHITE_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.WHITE_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.ORANGE_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.YELLOW_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIME_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIME_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.PINK_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.PINK_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GRAY_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GRAY_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CYAN_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CYAN_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.PURPLE_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BLUE_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BLUE_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BROWN_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BROWN_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GREEN_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GREEN_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BLACK_STAINED_GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.BLACK_STAINED_GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GLASS_SLAB, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GLASS_STAIRS, renderLayer4);
+        BlockRenderLayerMap.putBlock(MapleBlocks.Maple_Juicer_Block, renderLayer4);
 
         FluidRenderHandlerRegistry.INSTANCE.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
                 new SimpleFluidRenderHandler(
@@ -142,7 +154,7 @@ public class MapleClient implements ClientModInitializer {
                         0x5DB7EF
                 ));
 
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+        BlockRenderLayerMap.putFluids(BlockRenderLayer.TRANSLUCENT,
                 MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring);
 
 
@@ -151,7 +163,45 @@ public class MapleClient implements ClientModInitializer {
         HandledScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);
         BlockEntityRendererFactories.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, MapleJuicerEntityRenderer::new);
 
-        MapleContent.registerClientEntityRenderer();
-        MapleContent.registerClientParticle();
+        registerClientEntityRenderer();
+        registerClientParticle();
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientEntityRenderer() {
+        EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
+        EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
+
+        var maple_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher,maple_boat));
+
+        var ginkgo_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatEntityModel::getTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_boat));
+
+        var maple_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, maple_chest_boat));
+
+        var ginkgo_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatEntityModel::getChestTexturedModelData);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_chest_boat));
+
+    }
+
+    @Environment(EnvType.CLIENT)
+    public static void registerClientParticle() {
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
+
+        ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES, ((spriteProvider) -> {
+            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+            };
+        }));
     }
 }

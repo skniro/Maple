@@ -12,7 +12,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -66,11 +67,11 @@ public class MapleFluidBlockOrItem {
                 new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name)))));
     }
 
-    public static void registerFluidItems(IEventBus eventBus) {
+    public static void registerFluidItems(BusGroup eventBus) {
         ITEMS.register(eventBus);
     }
 
-    public static void registerFluidBlocks(IEventBus eventBus) {
+    public static void registerFluidBlocks(BusGroup eventBus) {
         BLOCKS.register(eventBus);
     }
 }

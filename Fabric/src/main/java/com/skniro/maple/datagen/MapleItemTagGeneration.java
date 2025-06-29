@@ -1,30 +1,29 @@
 package com.skniro.maple.datagen;
 
-import com.skniro.maple.Maple;
+
+
+
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.MapleArmorItems;
-import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.tag.MapleItemTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
-import net.minecraft.registry.*;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
-
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static com.skniro.maple.datagen.MapleItemTagGeneration.ModItemTags.C_CHERRY_LOGS;
 import static net.minecraft.registry.tag.ItemTags.*;
 
 
-public class MapleItemTagGeneration extends FabricTagProvider<Item> {
+public class MapleItemTagGeneration extends FabricTagProvider.ItemTagProvider{
     public MapleItemTagGeneration(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
-        super(dataGenerator, RegistryKeys.ITEM, completableFuture);
+        super(dataGenerator, completableFuture);
     }
 
     public static class ModItemTags {
@@ -35,47 +34,47 @@ public class MapleItemTagGeneration extends FabricTagProvider<Item> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(MapleItemTags.REPAIRS_CHERRY_ARMOR)
+        valueLookupBuilder(MapleItemTags.REPAIRS_CHERRY_ARMOR)
                 .add(MapleArmorItems.Cherry_INGOT);
-        getOrCreateTagBuilder(MapleItemTags.CHERRY_TOOL_MATERIALS)
+        valueLookupBuilder(MapleItemTags.CHERRY_TOOL_MATERIALS)
                 .add(MapleArmorItems.Cherry_INGOT);
-        getOrCreateTagBuilder(SAPLINGS)
+        valueLookupBuilder(SAPLINGS)
                 .add(Item.fromBlock(MapleBlocks.MAPLE_SAPLING))
                 .add(Item.fromBlock(MapleBlocks.CHERRY_SAPLING))
                 .add(Item.fromBlock(MapleBlocks.GINKGO_SAPLING))
                 .add(Item.fromBlock(MapleBlocks.SAKURA_SAPLING))
                 .add(Item.fromBlock(MapleBlocks.RED_MAPLE_SAPLING))
                 .setReplace(false);
-        getOrCreateTagBuilder(C_CHERRY_LOGS)
+        valueLookupBuilder(C_CHERRY_LOGS)
                 .add(Item.fromBlock(MapleBlocks.CHERRY_LOG));
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(MapleArmorItems.Cherry_HELMET, MapleArmorItems.Cherry_CHESTPLATE, MapleArmorItems.Cherry_LEGGINGS, MapleArmorItems.Cherry_BOOTS)
                 .setReplace(false);
-        getOrCreateTagBuilder(FOOT_ARMOR)
+        valueLookupBuilder(FOOT_ARMOR)
                 .add(MapleArmorItems.Cherry_BOOTS)
                 .setReplace(false);
-        getOrCreateTagBuilder(LEG_ARMOR)
+        valueLookupBuilder(LEG_ARMOR)
                 .add(MapleArmorItems.Cherry_LEGGINGS)
                 .setReplace(false);
-        getOrCreateTagBuilder(CHEST_ARMOR)
+        valueLookupBuilder(CHEST_ARMOR)
                 .add(MapleArmorItems.Cherry_CHESTPLATE)
                 .setReplace(false);
-        getOrCreateTagBuilder(HEAD_ARMOR)
+        valueLookupBuilder(HEAD_ARMOR)
                 .add(MapleArmorItems.Cherry_HELMET)
                 .setReplace(false);
-        getOrCreateTagBuilder(SWORDS)
+        valueLookupBuilder(SWORDS)
                 .add(MapleArmorItems.Cherry_SWORD)
                 .setReplace(false);
-        getOrCreateTagBuilder(AXES)
+        valueLookupBuilder(AXES)
                 .add(MapleArmorItems.Cherry_AXE)
                 .setReplace(false);
-        getOrCreateTagBuilder(HOES)
+        valueLookupBuilder(HOES)
                 .add(MapleArmorItems.Cherry_HOE)
                 .setReplace(false);
-        getOrCreateTagBuilder(PICKAXES)
+        valueLookupBuilder(PICKAXES)
                 .add(MapleArmorItems.Cherry_PICKAXE)
                 .setReplace(false);
-        getOrCreateTagBuilder(SHOVELS)
+        valueLookupBuilder(SHOVELS)
                 .add(MapleArmorItems.Cherry_SHOVEL)
                 .setReplace(false);
     }

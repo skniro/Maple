@@ -10,7 +10,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -115,7 +116,7 @@ public class MapleItems {
         };
     }
 
-    public static void registerModItems(IEventBus eventBus) {
+    public static void registerModItems(BusGroup eventBus) {
         ITEMS.register(eventBus);
     }
 }

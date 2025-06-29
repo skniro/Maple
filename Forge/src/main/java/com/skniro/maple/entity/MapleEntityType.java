@@ -1,22 +1,19 @@
 package com.skniro.maple.entity;
 
-import com.mojang.datafixers.types.Type;
 import com.skniro.maple.Maple;
 import com.skniro.maple.entity.furniture.ChairEntity;
 import com.skniro.maple.entity.furniture.CushionEntity;
 import com.skniro.maple.item.MapleItems;
-import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.datafix.fixes.References;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -67,7 +64,7 @@ public class MapleEntityType {
             return new ChestBoat(type, world, itemSupplier);
         };
     }
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         ENTITY_TYPES.register(eventBus);
     }
 }

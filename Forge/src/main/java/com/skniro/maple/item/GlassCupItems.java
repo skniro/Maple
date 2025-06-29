@@ -6,13 +6,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BottleItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 public class GlassCupItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Maple.MOD_ID);
@@ -34,7 +34,7 @@ public class GlassCupItems {
         return toReturn;
     }
 
-    public static void registerMapleGlassItems(IEventBus eventBus) {
+    public static void registerMapleGlassItems(BusGroup eventBus) {
         ITEMS.register(eventBus);
     }
 }

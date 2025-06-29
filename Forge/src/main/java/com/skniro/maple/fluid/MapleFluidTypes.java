@@ -5,11 +5,10 @@ import com.skniro.maple.fluid.init.BaseFluidType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.joml.Vector3f;
 
 import java.util.function.Supplier;
@@ -30,7 +29,7 @@ public class MapleFluidTypes {
                 0x5DB7EF, new Vector3f(224f / 255f, 56f / 255f, 208f / 255f), properties));
     }
 
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         FLUID_TYPES.register(eventBus);
     }
 }

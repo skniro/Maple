@@ -21,6 +21,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -101,19 +103,19 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, inventory, registryLookup);
+    protected void writeData(WriteView nbt) {
+        super.writeData(nbt);
+        Inventories.writeData(nbt, inventory);
         nbt.putInt("maple_juicer.progress", progress);
         nbt.putInt("maple_juicer.max_progress", maxProgress);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("maple_juicer.progress").orElse(0);
-        maxProgress = nbt.getInt("maple_juicer.max_progress").orElse(72);
-        super.readNbt(nbt, registryLookup);
+    public void readData(ReadView nbt) {
+        Inventories.readData(nbt, inventory);
+        progress = nbt.getInt("maple_juicer.progress", 0);
+        maxProgress = nbt.getInt("maple_juicer.max_progress", 72);
+        super.readData(nbt);
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {

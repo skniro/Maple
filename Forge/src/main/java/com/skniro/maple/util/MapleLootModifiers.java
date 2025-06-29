@@ -1,10 +1,10 @@
 package com.skniro.maple.util;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.skniro.maple.Maple;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,7 +17,7 @@ public class MapleLootModifiers {
             LOOT_MODIFIER_SERIALIZERS.register("add_item", () -> AddItemModifier.CODEC);
 
 
-    public static void register(IEventBus bus) {
+    public static void register(BusGroup bus) {
         LOOT_MODIFIER_SERIALIZERS.register(bus);
     }
 }

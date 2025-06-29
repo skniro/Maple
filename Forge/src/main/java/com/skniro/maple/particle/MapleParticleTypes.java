@@ -3,7 +3,8 @@ package com.skniro.maple.particle;
 import com.skniro.maple.Maple;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,7 +22,7 @@ public class MapleParticleTypes {
     }
 
 
-    public static void MapleParticleTypesRegister(IEventBus eventBus){
+    public static void MapleParticleTypesRegister(BusGroup eventBus){
         PARTICLE_TYPES.register(eventBus);
     }
 }

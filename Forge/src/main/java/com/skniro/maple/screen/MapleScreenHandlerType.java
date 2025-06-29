@@ -1,13 +1,11 @@
 package com.skniro.maple.screen;
 
 import com.skniro.maple.Maple;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.network.IContainerFactory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,7 +23,7 @@ public class MapleScreenHandlerType<T extends AbstractContainerMenu> {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
 
-    public static void registerMapleScreenHandlerType(IEventBus eventBus) {
+    public static void registerMapleScreenHandlerType(BusGroup eventBus) {
         MENUS.register(eventBus);
     }
 }

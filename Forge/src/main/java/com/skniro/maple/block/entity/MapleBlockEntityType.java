@@ -1,16 +1,9 @@
 package com.skniro.maple.block.entity;
 
-import com.mojang.datafixers.types.Type;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
-import net.minecraft.Util;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.datafix.fixes.References;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,7 +19,7 @@ public class MapleBlockEntityType {
             BLOCK_ENTITIES.register("maple_juicer_block_entity", () -> new BlockEntityType<>(
                     MapleJuicerBlockEntity::new, Set.of(MapleBlocks.Maple_Juicer_Block.get())));
 
-    public static void registerBlockEntityType(IEventBus eventBus) {
+    public static void registerBlockEntityType(BusGroup eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
 

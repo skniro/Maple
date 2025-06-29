@@ -2,9 +2,8 @@ package com.skniro.maple.block.entity;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -39,7 +38,7 @@ public class MapleBlockEntities {
                             )));
 
 
-    public static void registerMapleBlockEntities(IEventBus eventBus) {
+    public static void registerMapleBlockEntities(BusGroup eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
 }

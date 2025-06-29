@@ -2,13 +2,12 @@ package com.skniro.maple.fluid;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.fluid.init.MapleHotSpringFluid;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
@@ -26,7 +25,7 @@ public class MapleFluids {
         return toReturn;
     }
 
-    public static void registerFluids(IEventBus eventBus) {
+    public static void registerFluids(BusGroup eventBus) {
         FLUIDS.register(eventBus);
     }
 }

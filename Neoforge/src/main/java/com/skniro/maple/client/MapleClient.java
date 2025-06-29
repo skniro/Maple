@@ -6,36 +6,21 @@ import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.fluid.MapleFluids;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-@EventBusSubscriber(modid = Maple.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Maple.MOD_ID, value = Dist.CLIENT)
 public class MapleClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_LEAVES.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_LEAVES.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_MAPLE_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_SAKURA_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_LEAVES.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RICE.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.PINK_PETALS.get(),RenderType.cutout());
-
-        RenderType renderLayer2 = RenderType.cutoutMipped();
+        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.CUTOUT_MIPPED;
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.GINKGO_LEAVES.get(), renderLayer2);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_LEAVES.get(), renderLayer2);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_LEAVES.get(), renderLayer2);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_LEAVES.get(), renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_CARPET.get(),renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.Maple_CARPET.get(),renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_CARPET.get(),renderLayer2);
@@ -54,7 +39,7 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_MAPLE.get(),renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_GINKGO.get(),renderLayer2);
 
-        RenderType renderLayer3 = RenderType.cutout();
+        ChunkSectionLayer renderLayer3 = ChunkSectionLayer.CUTOUT;
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.GINKGO_SAPLING.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_GINKGO_SAPLING.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.GINKGO_DOOR.get(), renderLayer3);
@@ -62,6 +47,21 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_LEAVES.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_SAPLING .get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_RED_MAPLE_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_CHERRY_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_MAPLE_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.SAKURA_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_SAKURA_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_SAPLING.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_DOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_DOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_TRAPDOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_TRAPDOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_TRAPDOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.BAMBOO_DOOR.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RICE.get(), renderLayer3);
+        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.PINK_PETALS.get(),renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_GINKGO.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_MAPLE.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_OAK.get(), renderLayer3);
@@ -89,7 +89,7 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.Tea_Block.get(), renderLayer3);
 
 
-        RenderType renderLayer4 = RenderType.translucent();
+        ChunkSectionLayer renderLayer4 = ChunkSectionLayer.TRANSLUCENT;
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.WHITE_STAINED_GLASS_STAIRS.get(), renderLayer4);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.WHITE_STAINED_GLASS_SLAB.get(), renderLayer4);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.ORANGE_STAINED_GLASS_SLAB.get(), renderLayer4);

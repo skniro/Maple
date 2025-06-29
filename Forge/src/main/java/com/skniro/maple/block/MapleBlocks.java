@@ -6,7 +6,6 @@ import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.block.init.*;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.world.Tree.*;
-import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -20,7 +19,8 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraftforge.eventbus.api.IEventBus;
+
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -442,7 +442,7 @@ public class MapleBlocks {
         return BlockBehaviour.Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY);
     }
 
-    public static void registerMapleBlocks(IEventBus eventBus) {
+    public static void registerMapleBlocks(BusGroup eventBus) {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
     }
