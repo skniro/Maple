@@ -183,8 +183,6 @@ dependencies {
 // Example for how to get properties into the manifest for reading at runtime.
 
 
-jar.finalizedBy('reobfJar')
-
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
