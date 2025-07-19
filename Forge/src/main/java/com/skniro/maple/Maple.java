@@ -16,7 +16,8 @@ import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.client.renderer.ChairRenderer;
 import com.skniro.maple.client.renderer.CushinoRenderer;
-import com.skniro.maple.entity.MapleEntityType;
+import com.skniro.maple.conifg.Configuration;
+import com.skniro.maple.conifg.MapleConfig;
 import com.skniro.maple.entity.MapleEntityType;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluidTypes;
@@ -34,6 +35,7 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -60,13 +62,16 @@ public class Maple {
 
     public Maple(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+        new Configuration(MapleConfig.class, MODID);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         MapleBlocks.registerMapleBlocks(modEventBus);
         MapleOreBlocks.registerMapleOreBlocks(modEventBus);
-        MapleFurnitureBlocks.registerMapleBlocks(modEventBus);
+        if(MapleConfig.Furniture_Module) {
+            MapleFurnitureBlocks.registerMapleBlocks(modEventBus);
+        }
 
         MapleBlockEntityType.registerBlockEntityType(modEventBus);
 
