@@ -41,7 +41,6 @@ minecraft {
     mappings channel: "official", version: "${project.minecraft_version}"
     copyIdeResources = true
 
-
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -56,8 +55,6 @@ minecraft {
             // "REGISTRIES": For firing of registry events.
             // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
-
-
             // Recommended logging level for the console
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
@@ -182,9 +179,6 @@ dependencies {
 
 // Example for how to get properties into the manifest for reading at runtime.
 
-
-jar.finalizedBy('reobfJar')
-
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
@@ -217,6 +211,7 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -240,11 +235,11 @@ publishing {
             }
         }
     }
+}
 
-    sourceSets.each {
-        def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
-        it.output.resourcesDir = dir
-        it.java.destinationDirectory = dir
-    }
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }
 
