@@ -1,6 +1,8 @@
 package com.skniro.maple;
 
 import com.skniro.maple.block.MapleFurnitureBlocks;
+import com.skniro.maple.conifg.Configuration;
+import com.skniro.maple.conifg.MapleConfig;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
@@ -36,6 +38,7 @@ public class Maple implements ModInitializer, TerraBlenderApi {
 
     @Override
     public void onInitialize() {
+        new Configuration(MapleConfig.class, MOD_ID);
         Registry.register(Registries.ITEM_GROUP, Maple_Group, FabricItemGroup.builder()
                 .icon(() -> new ItemStack(MAPLE_LOG))
                 .displayName(Text.translatable("itemGroup.maple.maple_group"))

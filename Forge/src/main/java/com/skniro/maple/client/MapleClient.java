@@ -10,6 +10,7 @@ import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
 import com.skniro.maple.client.renderer.ChairRenderer;
 import com.skniro.maple.client.renderer.CushinoRenderer;
+import com.skniro.maple.conifg.MapleConfig;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.screen.MapleScreenHandlerType;
@@ -25,6 +26,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = Maple.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MapleClient {
+    @SuppressWarnings({"deprecation","removal"})
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.CHERRY_LEAVES.get(), RenderType.cutoutMipped());
@@ -52,19 +54,21 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.Maple_CARPET.get(),renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_CARPET.get(),renderLayer2);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.GINKGO_CARPET.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_OAK.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_SPRUCE.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_BIRCH.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_JUNGLE.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_ACACIA.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_DARK_OAK.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_CRIMSON.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_WARPED.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_MANGROVE.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_BAMBOO.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_CHERRY.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_MAPLE.get(),renderLayer2);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_GINKGO.get(),renderLayer2);
+        if(MapleConfig.Furniture_Module) {
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_OAK.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_SPRUCE.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_BIRCH.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_JUNGLE.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_ACACIA.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_DARK_OAK.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_CRIMSON.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_WARPED.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_MANGROVE.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_BAMBOO.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_CHERRY.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_MAPLE.get(), renderLayer2);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.TABLE_GINKGO.get(), renderLayer2);
+        }
 
         RenderType renderLayer3 = RenderType.cutout();
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.GINKGO_SAPLING.get(), renderLayer3);
@@ -74,30 +78,32 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_LEAVES.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RED_MAPLE_SAPLING .get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.POTTED_RED_MAPLE_SAPLING.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_GINKGO.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_MAPLE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_OAK.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_BIRCH.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_SPRUCE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_JUNGLE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_DARK_OAK.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_ACACIA.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_MANGROVE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_CHERRY.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_CRIMSON.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_WARPED.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_MAPLE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_GINKGO.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_OAK.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_BIRCH.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_SPRUCE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_JUNGLE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_DARK_OAK.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_ACACIA.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_MANGROVE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_CHERRY.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_CRIMSON.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_WARPED.get(), renderLayer3);
+        if(MapleConfig.Furniture_Module) {
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_GINKGO.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_MAPLE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_OAK.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_BIRCH.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_SPRUCE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_JUNGLE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_DARK_OAK.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_ACACIA.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_MANGROVE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_CHERRY.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_CRIMSON.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_WOOD_WARPED.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_MAPLE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_GINKGO.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_OAK.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_BIRCH.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_SPRUCE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_JUNGLE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_DARK_OAK.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_ACACIA.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_MANGROVE.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_CHERRY.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_CRIMSON.get(), renderLayer3);
+            ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_PLANK_WARPED.get(), renderLayer3);
+        }
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.Tea_Block.get(), renderLayer3);
 
 
