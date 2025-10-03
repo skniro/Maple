@@ -27,7 +27,7 @@ public class MapleSignItem extends StandingAndWallBlockItem {
 
     protected boolean updateCustomBlockEntityTag(BlockPos p_43130_, Level p_43131_, @Nullable Player p_43132_, ItemStack p_43133_, BlockState p_43134_) {
         boolean flag = super.updateCustomBlockEntityTag(p_43130_, p_43131_, p_43132_, p_43133_, p_43134_);
-        if (!p_43131_.isClientSide && !flag && p_43132_ != null) {
+        if (!p_43131_.isClientSide() && !flag && p_43132_ != null) {
             BlockEntity var9 = p_43131_.getBlockEntity(p_43130_);
             if (var9 instanceof SignBlockEntity) {
                 SignBlockEntity signblockentity = (SignBlockEntity)var9;

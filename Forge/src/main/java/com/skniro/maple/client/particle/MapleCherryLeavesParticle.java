@@ -1,14 +1,14 @@
 package com.skniro.maple.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class MapleCherryLeavesParticle extends TextureSheetParticle {
+public class MapleCherryLeavesParticle extends SingleQuadParticle {
     private static final float field_43372 = 0.0025F;
     private static final int field_43373 = 300;
     private static final int field_43366 = 300;
@@ -18,8 +18,8 @@ public class MapleCherryLeavesParticle extends TextureSheetParticle {
     private final float field_43370;
     private final float field_43371;
 
-    public MapleCherryLeavesParticle(ClientLevel world, double x, double y, double z, SpriteSet spriteProvider) {
-        super(world, x, y, z);
+    public MapleCherryLeavesParticle(ClientLevel world, double x, double y, double z, SpriteSet spriteProvider, TextureAtlasSprite sprite) {
+        super(world, x, y, z, sprite);
         this.setSprite(spriteProvider.get(this.random.nextInt(12), 12));
         this.field_43369 = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
         this.field_43370 = this.random.nextFloat();
@@ -27,13 +27,13 @@ public class MapleCherryLeavesParticle extends TextureSheetParticle {
         this.lifetime = 300;
         this.gravity = 7.5E-4F;
         float f = this.random.nextBoolean() ? 0.05F : 0.075F;
-        this.scale(f);
+        this.quadSize = f;
         this.setSize(f, f);
         this.friction = 1.0F;
     }
 
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    public Layer getLayer() {
+        return Layer.OPAQUE;
     }
 
     public void tick() {

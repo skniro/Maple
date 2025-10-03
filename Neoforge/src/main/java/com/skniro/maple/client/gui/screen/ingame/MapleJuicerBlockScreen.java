@@ -13,7 +13,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
 public class MapleJuicerBlockScreen extends AbstractContainerScreen<MapleJuicerBlockScreenHandler> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "textures/gui/maple_juicer/maple_juicer.png");
 

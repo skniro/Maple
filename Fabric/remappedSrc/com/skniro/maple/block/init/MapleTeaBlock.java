@@ -81,7 +81,7 @@ public class MapleTeaBlock extends VegetationBlock implements BonemealableBlock 
     public void onEntityCollision(BlockState state, Level world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
             entity.makeStuckInBlock(state, new Vec3(0.800000011920929, 0.75, 0.800000011920929));
-            if (!world.isClientSide && (Integer)state.getValue(AGE) > 0 && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
+            if (!world.isClientSide() && (Integer)state.getValue(AGE) > 0 && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.xOld);
                 double e = Math.abs(entity.getZ() - entity.zOld);
             }

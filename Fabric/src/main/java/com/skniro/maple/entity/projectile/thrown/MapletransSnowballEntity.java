@@ -28,7 +28,7 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
         entity.move(MovementType.SELF, new Vec3d(5.0, 0.0, 5.0));
         if (entity instanceof ServerPlayerEntity) {
             ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) entity;
-            if (serverPlayerEntity.networkHandler.isConnectionOpen() && serverPlayerEntity.getWorld() == this.getWorld() && !serverPlayerEntity.isSleeping()) {
+            if (serverPlayerEntity.networkHandler.isConnectionOpen() && serverPlayerEntity.getEntityWorld() == this.getEntityWorld() && !serverPlayerEntity.isSleeping()) {
 
                 if (entity.hasVehicle()) {
                     serverPlayerEntity.requestTeleportAndDismount(this.getX(), this.getY(), this.getZ());
@@ -47,8 +47,8 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
-        if (!this.getWorld().isClient) {
-            this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
+        if (!this.getEntityWorld().isClient()) {
+            this.getEntityWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
             this.discard();
         }
     }
@@ -56,7 +56,7 @@ public class MapletransSnowballEntity extends MapleSnowballEntity {
     @Nullable
     public Entity teleportTo(TeleportTarget teleportTarget) {
         Entity entity = this.getOwner();
-        if (entity != null && entity.getWorld().getRegistryKey() != teleportTarget.world().getRegistryKey()) {
+        if (entity != null && entity.getEntityWorld().getRegistryKey() != teleportTarget.world().getRegistryKey()) {
             this.setOwner((Entity)null);
         }
 

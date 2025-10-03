@@ -132,14 +132,14 @@ public class Maple {
            event.registerSpriteSet(MapleParticleTypes.HOT_SPRING.get(), MapleCampfireSmokeParticle.CosySmokeFactory::new);
 
            event.registerSpriteSet(MapleParticleTypes.CHERRY_LEAVES.get(),((spriteProvider) -> {
-                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ, randomSource) -> {
+                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.get(randomSource));
                 };
             }));
 
             event.registerSpriteSet(MapleParticleTypes.SAKURA_LEAVES.get(),((spriteProvider) -> {
-                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider);
+                return (parameters, world, x, y, z, velocityX, velocityY, velocityZ, randomSource) -> {
+                    return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.get(randomSource));
                 };
             }));
         }

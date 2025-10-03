@@ -3,12 +3,12 @@ package com.skniro.maple.client.particle;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SpriteSet;
-import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 
 @Environment(EnvType.CLIENT)
-public class MapleCherryLeavesParticle extends TextureSheetParticle {
+public class MapleCherryLeavesParticle extends SingleQuadParticle {
     private static final float field_43372 = 0.0025F;
     private static final int field_43373 = 300;
     private static final int field_43366 = 300;
@@ -18,8 +18,8 @@ public class MapleCherryLeavesParticle extends TextureSheetParticle {
     private final float field_43370;
     private final float field_43371;
 
-    public MapleCherryLeavesParticle(ClientLevel world, double x, double y, double z, SpriteSet spriteProvider) {
-        super(world, x, y, z);
+    public MapleCherryLeavesParticle(ClientLevel world, double x, double y, double z, SpriteSet spriteProvider, TextureAtlasSprite sprite) {
+        super(world, x, y, z, sprite);
         this.setSprite(spriteProvider.get(this.random.nextInt(12), 12));
         this.field_43369 = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
         this.field_43370 = this.random.nextFloat();
@@ -32,8 +32,8 @@ public class MapleCherryLeavesParticle extends TextureSheetParticle {
         this.friction = 1.0F;
     }
 
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    public SingleQuadParticle.Layer getLayer() {
+        return Layer.OPAQUE;
     }
 
     public void tick() {
@@ -53,8 +53,6 @@ public class MapleCherryLeavesParticle extends TextureSheetParticle {
             this.zd += e * 0.0024999999441206455D;
             this.yd -= (double)this.gravity;
             this.field_43369 += this.field_43371 / 20.0F;
-            this.oRoll = this.roll;
-            this.roll += this.field_43369 / 20.0F;
             this.move(this.xd, this.yd, this.zd);
             if (this.onGround || this.lifetime < 299 && (this.xd == 0.0D || this.zd == 0.0D)) {
                 this.remove();

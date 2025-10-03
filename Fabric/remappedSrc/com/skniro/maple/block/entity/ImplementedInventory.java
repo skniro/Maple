@@ -5,7 +5,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
@@ -16,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
  * A simple {@code SidedInventory} implementation with only default methods + an item list getter.
  *
  * <h2>Reading and writing to tags</h2>
- * Use {@link ContainerHelper#saveAllItems(CompoundTag, NonNullList)} and {@link ContainerHelper#loadAllItems(CompoundTag, NonNullList)}
+ * Use {@link ContainerHelper#writeNbt(NbtCompound, DefaultedList)} and {@link ContainerHelper#readNbt(NbtCompound, DefaultedList)}
  * on {@linkplain #getItems() the item list}.
  *
  * License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>

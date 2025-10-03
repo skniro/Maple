@@ -33,21 +33,21 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        tag(SAPLINGS)
+        valueLookupBuilder(SAPLINGS)
                 .add(MapleBlocks.MAPLE_SAPLING)
                 .add(MapleBlocks.CHERRY_SAPLING);
-        tag(C_SAPLING)
+        valueLookupBuilder(C_SAPLING)
                 .add(MapleBlocks.MAPLE_SAPLING)
                 .add(MapleBlocks.CHERRY_SAPLING);
-        tag(C_MAPLE_LOGS)
+        valueLookupBuilder(C_MAPLE_LOGS)
                 .add(MapleBlocks.MAPLE_LOG);
-        tag(C_CHERRY_LOGS)
+        valueLookupBuilder(C_CHERRY_LOGS)
                 .add(MapleBlocks.CHERRY_LOG);
-        tag(FENCES)
+        valueLookupBuilder(FENCES)
                 .add(MapleBlocks.MAPLE_FENCE)
                 .add(MapleBlocks.CHERRY_FENCE)
                 .add(MapleBlocks.BAMBOO_FENCE);
-        tag(C_PLASTER)
+        valueLookupBuilder(C_PLASTER)
                 .add(MapleBlocks.GREEN_PLASTER)
                 .add(MapleBlocks.PLASTER)
                 .add(MapleBlocks.ORANGE_PLASTER)
@@ -63,7 +63,7 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
                 .add(MapleBlocks.BLUE_PLASTER)
                 .add(MapleBlocks.BROWN_PLASTER)
                 .add(MapleBlocks.RED_PLASTER);
-        tag(MINEABLE_WITH_PICKAXE)
+        valueLookupBuilder(MINEABLE_WITH_PICKAXE)
                 .add(MapleBlocks.GREEN_PLASTER)
                 .add(MapleBlocks.PLASTER)
                 .add(MapleBlocks.ORANGE_PLASTER)
@@ -90,10 +90,10 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
                 .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
                 .add(MapleNetherOresBlocks.Nether_Redstone_Ore)
                 .setReplace(false);
-        tag(CEILING_HANGING_SIGNS)
+        valueLookupBuilder(CEILING_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_HANGING_SIGN);
-        tag(WALL_HANGING_SIGNS)
+        valueLookupBuilder(WALL_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_WALL_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
     }

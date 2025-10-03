@@ -31,7 +31,7 @@ public class ItemBottle
         }
 
         // Clear statuses (if milk)
-        if (!world.isClientSide && stack.is(MapleFoodComponents.MILK_BOTTOM.get()))
+        if (!world.isClientSide() && stack.is(MapleFoodComponents.MILK_BOTTOM.get()))
             user.removeAllEffects();
 
 

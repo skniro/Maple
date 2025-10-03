@@ -7,11 +7,10 @@ import com.skniro.maple.block.entity.MapleJuicerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -88,12 +87,11 @@ public class MapleJuicerBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
-        if (!world.isClientSide) {
-            MenuProvider screenHandlerFactory = state.getMenuProvider(world, pos);
-
-            if (screenHandlerFactory != null) {
-                player.openMenu(screenHandlerFactory);
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!world.isClientSide()) {
+            BlockEntity entity = world.getBlockEntity(pos);
+            if (entity instanceof MapleJuicerBlockEntity mapleJuicerBlockEntity) {
+                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(mapleJuicerBlockEntity, mapleJuicerBlockEntity.getDisplayName()), pos);
             }
         }
 

@@ -189,18 +189,18 @@ public class MapleBlocks {
 
     //PRESSURE_PLATE
     public static final Supplier<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
-            (settings)-> new PressurePlateBlock(MapleBlockSetType.GINKGO, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollission().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
+            (settings)-> new PressurePlateBlock(MapleBlockSetType.GINKGO, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     public static final Supplier<Block> CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            (settings)-> new PressurePlateBlock(BlockSetType.CHERRY, settings), BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).noCollission().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
+            (settings)-> new PressurePlateBlock(BlockSetType.CHERRY, settings), BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     public static final Supplier<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
-            (settings)-> new PressurePlateBlock(MapleBlockSetType.MAPLE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
+            (settings)-> new PressurePlateBlock(MapleBlockSetType.MAPLE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     public static final Supplier<Block> BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
-            (settings)-> new PressurePlateBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).noCollission().strength(0.5f).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
+            (settings)-> new PressurePlateBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).noCollision().strength(0.5f).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     //Plants Block
-    public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
+    public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP)));
 
     //FlowerBlock
-    public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", FlowerBedBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollission().sound(SoundType.GRASS)));
+    public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", FlowerBedBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollision().sound(SoundType.GRASS)));
 
 
     public static final Supplier<Block> CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", ChiseledBookShelfBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD)));
@@ -439,7 +439,7 @@ public class MapleBlocks {
     }
 
     private static BlockBehaviour.Properties buttonProperties() {
-        return BlockBehaviour.Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY);
+        return BlockBehaviour.Properties.of().noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY);
     }
 
     public static void registerMapleBlocks(BusGroup eventBus) {

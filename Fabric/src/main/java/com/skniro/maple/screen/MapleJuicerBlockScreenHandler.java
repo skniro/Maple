@@ -21,7 +21,7 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
     public final MapleJuicerBlockEntity blockEntity;
 
     public MapleJuicerBlockScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos){
-        this(syncId,playerInventory, playerInventory.player.getWorld().getBlockEntity(pos),new ArrayPropertyDelegate(2));
+        this(syncId,playerInventory, playerInventory.player.getEntityWorld().getBlockEntity(pos),new ArrayPropertyDelegate(2));
     }
 
 

@@ -26,6 +26,8 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -101,19 +103,19 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     @Override
-    protected void saveAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        super.saveAdditional(nbt, registryLookup);
-        ContainerHelper.saveAllItems(nbt, inventory, registryLookup);
+    protected void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
+        ContainerHelper.saveAllItems(nbt, inventory);
         nbt.putInt("maple_juicer.progress", progress);
         nbt.putInt("maple_juicer.max_progress", maxProgress);
     }
 
     @Override
-    public void loadAdditional(CompoundTag nbt, HolderLookup.Provider registryLookup) {
-        ContainerHelper.loadAllItems(nbt, inventory, registryLookup);
-        progress = nbt.getInt("maple_juicer.progress").orElse(0);
-        maxProgress = nbt.getInt("maple_juicer.max_progress").orElse(72);
-        super.loadAdditional(nbt, registryLookup);
+    public void loadAdditional(ValueInput nbt) {
+        ContainerHelper.loadAllItems(nbt, inventory);
+        progress = nbt.getIntOr("maple_juicer.progress", 0);
+        maxProgress = nbt.getIntOr("maple_juicer.max_progress", 72);
+        super.loadAdditional(nbt);
     }
 
     public void tick(Level world, BlockPos pos, BlockState state) {

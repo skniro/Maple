@@ -2,13 +2,14 @@ package com.skniro.maple.client.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.particle.BillboardParticle;
 import net.minecraft.client.particle.ParticleTextureSheet;
-import net.minecraft.client.particle.SpriteBillboardParticle;
 import net.minecraft.client.particle.SpriteProvider;
+import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.world.ClientWorld;
 
 @Environment(EnvType.CLIENT)
-public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
+public class MapleCherryLeavesParticle extends BillboardParticle {
     private static final float field_43372 = 0.0025F;
     private static final int field_43373 = 300;
     private static final int field_43366 = 300;
@@ -18,8 +19,8 @@ public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
     private final float field_43370;
     private final float field_43371;
 
-    public MapleCherryLeavesParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
-        super(world, x, y, z);
+    public MapleCherryLeavesParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider, Sprite sprite) {
+        super(world, x, y, z, sprite);
         this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
         this.field_43369 = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
         this.field_43370 = this.random.nextFloat();
@@ -32,8 +33,8 @@ public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
         this.velocityMultiplier = 1.0F;
     }
 
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_OPAQUE;
+    public BillboardParticle.RenderType getRenderType() {
+        return RenderType.PARTICLE_ATLAS_OPAQUE;
     }
 
     public void tick() {
@@ -53,8 +54,8 @@ public class MapleCherryLeavesParticle extends SpriteBillboardParticle {
             this.velocityZ += e * 0.0024999999441206455D;
             this.velocityY -= (double)this.gravityStrength;
             this.field_43369 += this.field_43371 / 20.0F;
-            this.lastAngle = this.angle;
-            this.angle += this.field_43369 / 20.0F;
+            this.lastZRotation = this.zRotation;
+            this.zRotation += this.field_43369 / 20.0F;
             this.move(this.velocityX, this.velocityY, this.velocityZ);
             if (this.onGround || this.maxAge < 299 && (this.velocityX == 0.0D || this.velocityZ == 0.0D)) {
                 this.markDead();

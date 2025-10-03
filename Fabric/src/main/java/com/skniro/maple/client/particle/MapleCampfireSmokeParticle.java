@@ -3,12 +3,14 @@ package com.skniro.maple.client.particle;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.SimpleParticleType;
+import net.minecraft.util.math.random.Random;
 
-public class MapleCampfireSmokeParticle extends SpriteBillboardParticle {
-    MapleCampfireSmokeParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, boolean signal) {
-        super(world, x, y, z);
+public class MapleCampfireSmokeParticle extends BillboardParticle {
+    MapleCampfireSmokeParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, boolean signal, Sprite sprite) {
+        super(world, x, y, z, sprite);
         this.scale(1.0F);
         this.setBoundingBoxSpacing(0.25F, 0.25F);
         if (signal) {
@@ -41,8 +43,8 @@ public class MapleCampfireSmokeParticle extends SpriteBillboardParticle {
         }
     }
 
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
+    public BillboardParticle.RenderType getRenderType() {
+        return RenderType.PARTICLE_ATLAS_TRANSLUCENT;
     }
 
     @Environment(EnvType.CLIENT)
@@ -53,10 +55,9 @@ public class MapleCampfireSmokeParticle extends SpriteBillboardParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(SimpleParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i) {
-            MapleCampfireSmokeParticle campfireSmokeParticle = new MapleCampfireSmokeParticle(clientWorld, d, e, f, g, h, i, true);
+        public Particle createParticle(SimpleParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i, Random random) {
+            MapleCampfireSmokeParticle campfireSmokeParticle = new MapleCampfireSmokeParticle(clientWorld, d, e, f, g, h, i, true, this.spriteProvider.getSprite(random));
             campfireSmokeParticle.setAlpha(0.95F);
-            campfireSmokeParticle.setSprite(this.spriteProvider);
             return campfireSmokeParticle;
         }
     }
@@ -69,10 +70,9 @@ public class MapleCampfireSmokeParticle extends SpriteBillboardParticle {
             this.spriteProvider = spriteProvider;
         }
 
-        public Particle createParticle(SimpleParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i) {
-            MapleCampfireSmokeParticle campfireSmokeParticle = new MapleCampfireSmokeParticle(clientWorld, d, e, f, g, h, i, false);
+        public Particle createParticle(SimpleParticleType defaultParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i, Random random) {
+            MapleCampfireSmokeParticle campfireSmokeParticle = new MapleCampfireSmokeParticle(clientWorld, d, e, f, g, h, i, false, this.spriteProvider.getSprite(random));
             campfireSmokeParticle.setAlpha(0.7F);
-            campfireSmokeParticle.setSprite(this.spriteProvider);
             return campfireSmokeParticle;
         }
     }

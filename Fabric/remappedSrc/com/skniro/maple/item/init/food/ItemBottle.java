@@ -31,7 +31,7 @@ public class ItemBottle
         }
 
         // Clear statuses (if milk)
-        if (!world.isClientSide && stack.is(MapleFoodComponents.MILK_BOTTOM))
+        if (!world.isClientSide() && stack.is(MapleFoodComponents.MILK_BOTTOM))
             user.removeAllEffects();
 
         if (user instanceof Player && !(playerEntity = (Player) user).hasInfiniteMaterials()) {

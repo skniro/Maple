@@ -31,7 +31,7 @@ public class ItemBottle
         }
 
         // Clear statuses (if milk)
-        if (!world.isClient && stack.isOf(MapleFoodComponents.MILK_BOTTOM))
+        if (!world.isClient() && stack.isOf(MapleFoodComponents.MILK_BOTTOM))
             user.clearStatusEffects();
 
         if (user instanceof PlayerEntity && !(playerEntity = (PlayerEntity) user).isInCreativeMode()) {
