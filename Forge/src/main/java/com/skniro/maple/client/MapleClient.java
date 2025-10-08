@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = Maple.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Maple.MOD_ID, value = Dist.CLIENT)
 public class MapleClient {
     @SuppressWarnings({"deprecation","removal"})
     @SubscribeEvent

@@ -107,7 +107,7 @@ public class Maple {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientModEvents {
 
         @SubscribeEvent
@@ -125,7 +125,7 @@ public class Maple {
         }
     }
 
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ParticleFactoryRegistry {
         @SubscribeEvent
         public static void onParticleFactoryRegistration(RegisterParticleProvidersEvent event) {
