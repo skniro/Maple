@@ -1,4 +1,4 @@
-// 1.21.5	-999999999-01-01T00:00:00	Maple/
+// 1.21.10	-999999999-01-01T00:00:00	Maple/
 01f7be1f08e661b57e3db7625fb13073147ef5e6 data/maple/advancement/recipes/building_blocks/blue_plaster.json
 5b7a928c2bebd6b633d5ecbcc771537b7a31c6db data/maple/advancement/recipes/building_blocks/brown_plaster.json
 beb5011fc2b1deb996a9f7d6a0f00d3000ce7dc5 data/maple/advancement/recipes/building_blocks/cyan_plaster.json
@@ -27,13 +27,13 @@ a7c11585df27a06d10a70dcf04601d64ff386502 data/maple/advancement/recipes/food/ank
 3e46dc994a1050cdcd1a5c9f6bf3290405107c28 data/maple/advancement/recipes/food/flour.json
 b0a0ee0ff5611710ad61357d7473b0d1d71c8d04 data/maple/advancement/recipes/food/green_tea.json
 f3514e3e953f46f27c0692f72df309829d80630b data/maple/advancement/recipes/food/kinako_dango.json
-1fd03349d54e6f61d8604afd905d978a9b09f09c data/maple/advancement/recipes/food/maple_syrup_from_smelting_stripped_maple_log.json
-258461f7342b9344bb68fca3134309e9d6eca077 data/maple/advancement/recipes/food/maple_syrup_from_smelting_stripped_maple_wood.json
+557227866e737543fbcf7376dfbb797c1de412fc data/maple/advancement/recipes/food/maple_syrup_from_smelting_stripped_maple_log.json
+191e37a1545e988aac1fc26e9f6f71d69e1bda34 data/maple/advancement/recipes/food/maple_syrup_from_smelting_stripped_maple_wood.json
 59d9120afcd96907cb7fb33d51ce0df167a69c73 data/maple/advancement/recipes/food/milk_bottom.json
 7eae34e4152ce19dbff489a7ee7a994b6ee4a97b data/maple/advancement/recipes/food/milk_icecream.json
 a22e2419ac1a2413b2416ab95fbda1bfbca1d8e7 data/maple/advancement/recipes/food/mochi.json
 75bb32594b6179a392f319114f0edb2abe9e837c data/maple/advancement/recipes/food/red_tea.json
-dfb7aa16e1cf3333cebfeaad85ba8f57cc1634bd data/maple/advancement/recipes/food/red_tea_leaves_from_smelting_green_tea_leaves.json
+9ac2d44dd6afd44a79f5743df3e97d1e20b6418a data/maple/advancement/recipes/food/red_tea_leaves_from_smelting_green_tea_leaves.json
 37862f2c46f92f92a02f6697dd597ecdf66ccfe1 data/maple/advancement/recipes/food/sakura_mochi.json
 4070cda144fe133735a38b3022c95e90e7d20855 data/maple/advancement/recipes/food/sakura_sapling.json
 1183ec8a10bc790b2d39962b489d1335766a1f91 data/maple/advancement/recipes/food/sanshoku_dango.json
