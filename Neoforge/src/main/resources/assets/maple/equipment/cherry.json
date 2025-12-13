@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "maple:cherry"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "maple:cherry"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "maple:cherry"
+      }
+    ]
+  }
+}
