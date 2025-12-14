@@ -5,8 +5,8 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.registry.*;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -17,7 +17,7 @@ public class MapleBiomeKeys {
     public static final ResourceKey<Biome> Sakura = register("sakura");
 
     private static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID,name));
+        return ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Maple.MOD_ID,name));
     }
 
 

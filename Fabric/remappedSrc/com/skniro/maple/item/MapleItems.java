@@ -10,8 +10,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.item.*;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BoatItem;
@@ -76,8 +76,8 @@ public class MapleItems {
     public static final Item SNOWBALL_Instant_Health = registerItem("snowball_instant_health", BetterSnowballSnowballItem::new, new Item.Properties().stacksTo(64));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
-        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
-        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name)), item);
+        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name))));
+        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name)), item);
     }
 
     private static Function<Item.Properties, Item> createBlockItemWithUniqueName(Block block) {

@@ -11,7 +11,7 @@ import com.skniro.maple.item.init.sign.MapleSignItem;
 import com.skniro.maple.item.init.snowball.BetterSnowballSnowballItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 
@@ -103,7 +103,7 @@ public class MapleItems {
             createBlockItemWithUniqueName(MapleBlocks.RICE), (new Item.Properties()));
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {
-        DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
+        DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name))));
         return toReturn;
     }
 

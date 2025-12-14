@@ -1,10 +1,7 @@
 package com.skniro.maple.item.init.tool;
 
 
-import com.google.common.base.Suppliers;
-import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.tag.MapleItemTags;
-import java.util.function.Supplier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ToolMaterial;
 

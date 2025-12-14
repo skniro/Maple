@@ -8,14 +8,14 @@ import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 
 public class MapleGroveBiome extends Region {
-    public MapleGroveBiome(ResourceLocation name, int weight) {
+    public MapleGroveBiome(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
 

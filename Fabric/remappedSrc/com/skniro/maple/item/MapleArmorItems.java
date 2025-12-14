@@ -7,8 +7,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.item.*;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
@@ -36,8 +36,8 @@ public class MapleArmorItems {
     public static final Item Cherry_BOOTS = registerItem("cherry_boots", Item::new, new Item.Properties().enchantable(25).humanoidArmor(MapleArmorMaterials.Cherry, ArmorType.BOOTS).durability(ArmorType.BOOTS.getDurability(MapleArmorMaterials.Cherry_DURABILITY_MULTIPLIER)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties settings) {
-        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
-        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name)), item);
+        Item item = factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name))));
+        return Registry.register(BuiltInRegistries.ITEM, ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name)), item);
     }
 
     public static void registerMapleArmorItems() {

@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 public class MapleHotSpringFluid extends FlowableFluid {
     @Override
     protected boolean isInfinite(ServerWorld world) {
-        return world.getGameRules().getBoolean(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION);
+        return world.getGameRules().getValue(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION);
     }
 
     @Override

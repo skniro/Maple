@@ -4,7 +4,7 @@ import com.skniro.maple.Maple;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.biome.*;
 
 
@@ -25,6 +25,6 @@ public class MapleBiomeKeys {
 
 
     private static ResourceKey<Biome> register(String name) {
-        return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name));
+        return ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name));
     }
 }

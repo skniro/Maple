@@ -2,7 +2,7 @@ package com.skniro.maple.fluid;
 
 import com.skniro.maple.Maple;
 import com.skniro.maple.fluid.init.BaseFluidType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.SoundActions;
@@ -14,9 +14,9 @@ import org.joml.Vector3f;
 import java.util.function.Supplier;
 
 public class MapleFluidTypes {
-    public static final ResourceLocation Spring_STILL_RL = ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "block/spring_still");
-    public static final ResourceLocation Spring_FLOWING_RL = ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "block/spring_flow");
-    private static final ResourceLocation Spring_OVERLAY_RL = ResourceLocation.parse("block/water_overlay");
+    public static final Identifier Spring_STILL_RL = Identifier.fromNamespaceAndPath(Maple.MOD_ID, "block/spring_still");
+    public static final Identifier Spring_FLOWING_RL = Identifier.fromNamespaceAndPath(Maple.MOD_ID, "block/spring_flow");
+    private static final Identifier Spring_OVERLAY_RL = Identifier.parse("block/water_overlay");
 
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, Maple.MOD_ID);

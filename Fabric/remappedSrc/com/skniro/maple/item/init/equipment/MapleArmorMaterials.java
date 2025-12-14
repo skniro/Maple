@@ -1,12 +1,12 @@
 package com.skniro.maple.item.init.equipment;
 
 import com.skniro.maple.tag.MapleItemTags;
-import java.util.EnumMap;
-import java.util.Map;
-import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Util;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
+import java.util.EnumMap;
+import java.util.Map;
 
 public interface MapleArmorMaterials
 {

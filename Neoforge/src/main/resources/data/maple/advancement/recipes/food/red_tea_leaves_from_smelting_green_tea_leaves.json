@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:red_tea_leaves_from_smelting_green_tea_leaves"
+        "recipe": "maple:red_tea_leaves_from_smelting_green_tea_leaves"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:red_tea_leaves_from_smelting_green_tea_leaves"
+      "maple:red_tea_leaves_from_smelting_green_tea_leaves"
     ]
   }
 }

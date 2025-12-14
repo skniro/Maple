@@ -7,8 +7,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -124,7 +124,7 @@ public class MaplePlacedFeatures {
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name));
+        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name));
     }
 
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,

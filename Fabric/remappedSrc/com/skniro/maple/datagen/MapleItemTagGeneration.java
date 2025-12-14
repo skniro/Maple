@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -26,9 +26,9 @@ public class MapleItemTagGeneration extends FabricTagProvider.ItemTagProvider{
     }
 
     public static class ModItemTags {
-        public static final TagKey<Item> C_SAPLING = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "saplings"));
-        public static final TagKey<Item> C_MAPLE_LOGS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "maple_logs"));
-        public static final TagKey<Item> C_CHERRY_LOGS = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "cherry_logs"));
+        public static final TagKey<Item> C_SAPLING = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "saplings"));
+        public static final TagKey<Item> C_MAPLE_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "maple_logs"));
+        public static final TagKey<Item> C_CHERRY_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "cherry_logs"));
     }
 
     @Override

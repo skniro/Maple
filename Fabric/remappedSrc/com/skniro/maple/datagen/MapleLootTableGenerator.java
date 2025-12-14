@@ -114,7 +114,7 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         add(MapleBlocks.SAKURA_LEAVES, createLeavesDrops(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
 
         //Crop
-        net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MapleBlocks.RICE).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
+        net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MapleBlocks.RICE).setProperties(net.minecraft.advancements.criterion.StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
         add(MapleBlocks.RICE, createCropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
 
         //Glass Block

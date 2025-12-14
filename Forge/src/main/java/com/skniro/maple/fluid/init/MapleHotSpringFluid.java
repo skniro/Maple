@@ -18,6 +18,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.gamerules.GameRule;
+import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -29,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 public class MapleHotSpringFluid extends FlowingFluid {
     @Override
     protected boolean canConvertToSource(ServerLevel level) {
-        return level.getGameRules().getBoolean(GameRules.RULE_WATER_SOURCE_CONVERSION);
+        return level.getGameRules().get(GameRules.WATER_SOURCE_CONVERSION);
     }
 
     @Override

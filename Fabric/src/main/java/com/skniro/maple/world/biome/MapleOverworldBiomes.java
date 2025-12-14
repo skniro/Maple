@@ -9,6 +9,8 @@ import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.MusicType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.attribute.BackgroundMusic;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
@@ -22,7 +24,7 @@ public class MapleOverworldBiomes {
     public static Biome createMapleGrove(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
         GenerationSettings.LookupBackedBuilder lookupBackedBuilder = new GenerationSettings.LookupBackedBuilder(featureLookup, carverLookup);
         SpawnSettings.Builder builder = new SpawnSettings.Builder();
-        DefaultBiomeFeatures.addBatsAndMonsters(builder);
+        DefaultBiomeFeatures.addCaveAndMonsters(builder);
         addBasicFeatures(lookupBackedBuilder);
         DefaultBiomeFeatures.addPlainsTallGrass(lookupBackedBuilder);
         DefaultBiomeFeatures.addDefaultOres(lookupBackedBuilder);
@@ -37,7 +39,8 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         DefaultBiomeFeatures.addFarmAnimals(builder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
-        return createBiome(true, 0.5F, 0.8F, 4159204, 329011, 13408563, 11983713, builder, lookupBackedBuilder, musicSound);
+        BiomeEffects.Builder builder2 = (new BiomeEffects.Builder()).waterColor(4159204).grassColor(13408563).foliageColor(11983713);
+        return biome( 0.5F, 0.8F).setEnvironmentAttribute(EnvironmentAttributes.BACKGROUND_MUSIC_AUDIO, new BackgroundMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW)).effects(builder2.build()).spawnSettings(builder.build()).generationSettings(lookupBackedBuilder.build()).build();
     }
 
     public static Biome createSakura(RegistryEntryLookup<PlacedFeature> featureLookup, RegistryEntryLookup<ConfiguredCarver<?>> carverLookup) {
@@ -55,7 +58,8 @@ public class MapleOverworldBiomes {
         DefaultBiomeFeatures.addEmeraldOre(lookupBackedBuilder);
         DefaultBiomeFeatures.addInfestedStone(lookupBackedBuilder);
         MusicSound musicSound = MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW);
-        return createBiome(true, 0.5F, 0.8F, 6141935, 6141935, 11983713, 11983713, builder, lookupBackedBuilder, musicSound);
+        BiomeEffects.Builder builder2 = (new BiomeEffects.Builder()).waterColor(6141935).grassColor(11983713).foliageColor(11983713);
+        return biome(0.5F, 0.8F).setEnvironmentAttribute(EnvironmentAttributes.WATER_FOG_COLOR_VISUAL, 6141935).setEnvironmentAttribute(EnvironmentAttributes.BACKGROUND_MUSIC_AUDIO, new BackgroundMusic(SoundEvents.MUSIC_OVERWORLD_CHERRY_GROVE)).effects(builder2.build()).spawnSettings(builder.build()).generationSettings(lookupBackedBuilder.build()).build();
     }
 
     private static void addBasicFeatures(GenerationSettings.LookupBackedBuilder generationSettings) {
@@ -73,21 +77,7 @@ public class MapleOverworldBiomes {
         return MathHelper.hsvToRgb(0.62222224F - f * 0.05F, 0.5F + f * 0.1F, 1.0F);
     }
 
-
-    private static Biome createBiome(boolean precipitation, float temperature, float downfall, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
-        return createBiome(precipitation, temperature, downfall, 4159204, 329011, (Integer)null, (Integer)null, spawnSettings, generationSettings, music);
-    }
-
-    private static Biome createBiome(boolean precipitation, float temperature, float downfall, int waterColor, int waterFogColor, @Nullable Integer grassColor, @Nullable Integer foliageColor, SpawnSettings.Builder spawnSettings, net.minecraft.world.biome.GenerationSettings.Builder generationSettings, @Nullable MusicSound music) {
-        net.minecraft.world.biome.BiomeEffects.Builder builder = (new net.minecraft.world.biome.BiomeEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(getSkyColor(temperature)).moodSound(BiomeMoodSound.CAVE).music(music);
-        if (grassColor != null) {
-            builder.grassColor(grassColor);
-        }
-
-        if (foliageColor != null) {
-            builder.foliageColor(foliageColor);
-        }
-
-        return (new net.minecraft.world.biome.Biome.Builder()).precipitation(true).temperature(temperature).downfall(downfall).effects(builder.build()).spawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+    private static Biome.Builder biome(float temperature, float downfall) {
+        return (new Biome.Builder()).precipitation(true).temperature(temperature).downfall(downfall).setEnvironmentAttribute(EnvironmentAttributes.SKY_COLOR_VISUAL, getSkyColor(temperature)).effects((new BiomeEffects.Builder()).waterColor(4159204).build());
     }
 }

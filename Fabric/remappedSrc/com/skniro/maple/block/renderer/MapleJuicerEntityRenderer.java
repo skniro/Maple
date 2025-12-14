@@ -63,6 +63,7 @@ public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuice
         return new MapleJuicerBlockEntityRenderState();
     }
 
+    @Override
     public void updateRenderState(MapleJuicerBlockEntity entity, MapleJuicerBlockEntityRenderState state, float tickProgress, Vec3 cameraPos, @Nullable ModelFeatureRenderer.CrumblingOverlay crumblingOverlay) {
         BlockEntityRenderer.super.extractRenderState(entity, state, tickProgress, cameraPos, crumblingOverlay);
         ItemModelResolver itemModelResolver = Minecraft.getInstance().getItemModelResolver();

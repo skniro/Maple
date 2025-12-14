@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import java.util.concurrent.CompletableFuture;
@@ -24,10 +24,10 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
 
 
     public static class ModBlockTags {
-        public static final TagKey<Block> C_SAPLING = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "saplings"));
-        public static final TagKey<Block> C_MAPLE_LOGS = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "maple_logs"));
-        public static final TagKey<Block> C_CHERRY_LOGS = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "cherry_logs"));
-        public static final TagKey<Block> C_PLASTER = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", "plaster"));
+        public static final TagKey<Block> C_SAPLING = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "saplings"));
+        public static final TagKey<Block> C_MAPLE_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "maple_logs"));
+        public static final TagKey<Block> C_CHERRY_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "cherry_logs"));
+        public static final TagKey<Block> C_PLASTER = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "plaster"));
 
     }
 

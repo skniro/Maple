@@ -1,17 +1,16 @@
 package com.skniro.maple.item.init.equipment;
 
 import com.skniro.maple.Maple;
-import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
 public interface MapleEquipmentAssetKeys {
-    ResourceKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID,"equipment_asset"));
     ResourceKey<EquipmentAsset> Cherry = register("cherry");
 
     static ResourceKey<EquipmentAsset> register(String name) {
-        return ResourceKey.create(REGISTRY_KEY, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID,name));
+        return ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Maple.MOD_ID,name));
     }
 
     public static void registerMapleArmorAssetsKeys() {

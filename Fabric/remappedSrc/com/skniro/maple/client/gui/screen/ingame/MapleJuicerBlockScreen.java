@@ -9,12 +9,12 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 
 @Environment(EnvType.CLIENT)
 public class MapleJuicerBlockScreen extends AbstractContainerScreen<MapleJuicerBlockScreenHandler> {
-    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "textures/gui/maple_juicer/maple_juicer.png");
+    private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(Maple.MOD_ID, "textures/gui/maple_juicer/maple_juicer.png");
 
     public MapleJuicerBlockScreen(MapleJuicerBlockScreenHandler handler, Inventory inventory, Component title) {
         super(handler, inventory, title);

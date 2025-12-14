@@ -53,6 +53,8 @@ public class MapleCherryLeavesParticle extends SingleQuadParticle {
             this.zd += e * 0.0024999999441206455D;
             this.yd -= (double)this.gravity;
             this.field_43369 += this.field_43371 / 20.0F;
+            this.oRoll = this.roll;
+            this.roll += this.field_43369 / 20.0F;
             this.move(this.xd, this.yd, this.zd);
             if (this.onGround || this.lifetime < 299 && (this.xd == 0.0D || this.zd == 0.0D)) {
                 this.remove();

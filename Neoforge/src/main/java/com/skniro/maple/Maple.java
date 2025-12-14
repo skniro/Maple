@@ -27,7 +27,7 @@ import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleScreenHandlerType;
 import com.skniro.maple.util.MapleLootModifiers;
 import com.skniro.maple.world.biome.MapleTerrablender;
-import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;

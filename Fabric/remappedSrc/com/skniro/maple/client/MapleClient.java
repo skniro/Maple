@@ -26,43 +26,43 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.entity.BoatRenderer;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
 public class MapleClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.CUTOUT_MIPPED;
-        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_LEAVES, renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_LEAVES, renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_LEAVES, renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.Maple_CARPET,renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer2);
-        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer2);
-        if (MapleConfig.Furniture_Module) {
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_OAK, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_SPRUCE, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BIRCH, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_JUNGLE, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_ACACIA, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_DARK_OAK, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CRIMSON, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_WARPED, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MANGROVE, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BAMBOO, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CHERRY, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MAPLE, renderLayer2);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_GINKGO, renderLayer2);
-        }
+        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.TRIPWIRE;
 
         ChunkSectionLayer renderLayer3 = ChunkSectionLayer.CUTOUT;
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_LEAVES, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_LEAVES, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_LEAVES, renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.Maple_CARPET,renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer3);
+        BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer3);
+        if (MapleConfig.Furniture_Module) {
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_OAK, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_SPRUCE, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BIRCH, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_JUNGLE, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_ACACIA, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_DARK_OAK, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CRIMSON, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_WARPED, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MANGROVE, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BAMBOO, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CHERRY, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MAPLE, renderLayer3);
+            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_GINKGO, renderLayer3);
+        }
         BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_CHERRY_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_SAPLING, renderLayer3);
@@ -153,8 +153,8 @@ public class MapleClient implements ClientModInitializer {
 
         FluidRenderHandlerRegistry.INSTANCE.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
                 new SimpleFluidRenderHandler(
-                        ResourceLocation.parse("maple:block/spring_still"),
-                        ResourceLocation.parse("maple:block/spring_flow"),
+                        Identifier.parse("maple:block/spring_still"),
+                        Identifier.parse("maple:block/spring_flow"),
                         0x5DB7EF
                 ));
 
@@ -176,19 +176,19 @@ public class MapleClient implements ClientModInitializer {
         EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
         EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
 
-        var maple_boat = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "boat/maple"), "main");
+        var maple_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "boat/maple"), "main");
         EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatModel::createBoatModel);
         EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatRenderer(dispatcher,maple_boat));
 
-        var ginkgo_boat = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "boat/ginkgo"), "main");
+        var ginkgo_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "boat/ginkgo"), "main");
         EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatModel::createBoatModel);
         EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatRenderer(dispatcher, ginkgo_boat));
 
-        var maple_chest_boat = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/maple"), "main");
+        var maple_chest_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/maple"), "main");
         EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatModel::createChestBoatModel);
         EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatRenderer(dispatcher, maple_chest_boat));
 
-        var ginkgo_chest_boat = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
+        var ginkgo_chest_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
         EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatModel::createChestBoatModel);
         EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatRenderer(dispatcher, ginkgo_chest_boat));
 

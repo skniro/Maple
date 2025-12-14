@@ -14,8 +14,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
@@ -31,9 +31,9 @@ public class Maple implements ModInitializer, TerraBlenderApi {
     public static final ModContainer MOD_CONTAINER = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow();
 
 
-    public static final ResourceKey<CreativeModeTab> Maple_Group = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "maple_group"));
-    public static final ResourceKey<CreativeModeTab> Maple_Group_Food = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "test_group"));
-    public static final ResourceKey<CreativeModeTab> Maple_Group_Furniture = ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(MOD_ID, "maple_group_furniture"));
+    public static final ResourceKey<CreativeModeTab> Maple_Group = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "maple_group"));
+    public static final ResourceKey<CreativeModeTab> Maple_Group_Food = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "test_group"));
+    public static final ResourceKey<CreativeModeTab> Maple_Group_Furniture = ResourceKey.create(Registries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(MOD_ID, "maple_group_furniture"));
 
 
     @Override
@@ -67,12 +67,12 @@ public class Maple implements ModInitializer, TerraBlenderApi {
 
     @Override
     public void onTerraBlenderInitialized() {
-        Regions.register(new MapleGroveBiome(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "overworld_1"), 2));
-        Regions.register(new MapleSakuraBiome(ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, "overworld_2"), 2));
+        Regions.register(new MapleGroveBiome(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "overworld_1"), 2));
+        Regions.register(new MapleSakuraBiome(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "overworld_2"), 2));
     }
 
-    public static ResourceLocation asResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    public static Identifier asResource(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
     }
 
 }

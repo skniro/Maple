@@ -5,7 +5,7 @@ import com.skniro.maple.item.init.equipment.MapleArmorMaterials;
 import com.skniro.maple.item.init.tool.MapleToolMaterials;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -41,7 +41,7 @@ public class MapleArmorItems {
 
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, ? extends T> item, Item.Properties properties) {
-        DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Maple.MOD_ID, name))));
+        DeferredItem<T> toReturn = ITEMS.registerItem(name, item, properties.setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name))));
         return toReturn;
     }
 
