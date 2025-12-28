@@ -15,8 +15,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import java.util.concurrent.CompletableFuture;
-
-import static com.skniro.maple.datagen.MapleItemTagGeneration.ModItemTags.C_CHERRY_LOGS;
 import static net.minecraft.tags.ItemTags.*;
 
 
@@ -28,7 +26,6 @@ public class MapleItemTagGeneration extends FabricTagProvider.ItemTagProvider{
     public static class ModItemTags {
         public static final TagKey<Item> C_SAPLING = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "saplings"));
         public static final TagKey<Item> C_MAPLE_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "maple_logs"));
-        public static final TagKey<Item> C_CHERRY_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "cherry_logs"));
     }
 
     @Override
@@ -39,13 +36,10 @@ public class MapleItemTagGeneration extends FabricTagProvider.ItemTagProvider{
                 .add(MapleArmorItems.Cherry_INGOT);
         valueLookupBuilder(SAPLINGS)
                 .add(Item.byBlock(MapleBlocks.MAPLE_SAPLING))
-                .add(Item.byBlock(MapleBlocks.CHERRY_SAPLING))
                 .add(Item.byBlock(MapleBlocks.GINKGO_SAPLING))
                 .add(Item.byBlock(MapleBlocks.SAKURA_SAPLING))
                 .add(Item.byBlock(MapleBlocks.RED_MAPLE_SAPLING))
                 .setReplace(false);
-        valueLookupBuilder(C_CHERRY_LOGS)
-                .add(Item.byBlock(MapleBlocks.CHERRY_LOG));
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(MapleArmorItems.Cherry_HELMET, MapleArmorItems.Cherry_CHESTPLATE, MapleArmorItems.Cherry_LEGGINGS, MapleArmorItems.Cherry_BOOTS)
                 .setReplace(false);

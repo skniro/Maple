@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "maple:maple_pressure_plate",
-    "maple:bamboo_pressure_plate",
-    "maple:cherry_pressure_plate",
     "maple:ginkgo_pressure_plate"
   ]
 }

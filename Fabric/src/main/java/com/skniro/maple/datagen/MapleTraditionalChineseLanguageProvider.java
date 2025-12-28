@@ -39,43 +39,6 @@ public class MapleTraditionalChineseLanguageProvider extends FabricLanguageProvi
         translationBuilder.add(MapleBlocks.MAPLE_TRAPDOOR,"楓木活版門");
         translationBuilder.add(MapleBlocks.MAPLE_PRESSURE_PLATE,"楓木壓力板");
 
-        //Cherry
-        translationBuilder.add(MapleBlocks.CHERRY_LOG,"櫻樹原木");
-        translationBuilder.add(MapleBlocks.CHERRY_WOOD,"櫻樹木");
-        translationBuilder.add(MapleBlocks.CHERRY_PLANKS,"櫻木木板");
-        translationBuilder.add(MapleBlocks.STRIPPED_CHERRY_WOOD,"去皮櫻樹木");
-        translationBuilder.add(MapleBlocks.STRIPPED_CHERRY_LOG,"去皮櫻樹原木");
-        translationBuilder.add(MapleBlocks.CHERRY_LEAVES,"櫻樹葉");
-        translationBuilder.add(MapleBlocks.CHERRY_DOOR,"櫻木門");
-        translationBuilder.add(MapleBlocks.CHERRY_BUTTON,"櫻木按鈕");
-        translationBuilder.add(MapleBlocks.CHERRY_FENCE,"櫻木欄杆");
-        translationBuilder.add(MapleBlocks.CHERRY_FENCE_GATE,"櫻木欄杆門");
-        translationBuilder.add(MapleBlocks.CHERRY_SLAB,"櫻木臺階");
-        translationBuilder.add(MapleBlocks.CHERRY_STAIRS,"櫻木樓梯");
-        translationBuilder.add(MapleBlocks.CHERRY_SAPLING,"櫻木樹苗");
-        translationBuilder.add(MapleBlocks.POTTED_CHERRY_SAPLING,"櫻木樹苗盆栽");
-        translationBuilder.add(MapleSignBlocks.CHERRY_SIGN,"櫻木告示牌");
-        translationBuilder.add(MapleBlocks.CHERRY_TRAPDOOR,"櫻木活版門");
-        translationBuilder.add(MapleBlocks.CHERRY_PRESSURE_PLATE,"櫻木壓力板");
-        translationBuilder.add(MapleBlocks.PINK_PETALS,"粉紅色花簇");
-
-        //BAMBOO
-        translationBuilder.add(MapleBlocks.BAMBOO_BLOCK,"竹塊");
-        translationBuilder.add(MapleBlocks.BAMBOO_PLANKS,"竹制木板");
-        translationBuilder.add(MapleBlocks.STRIPPED_BAMBOO_BLOCK,"去皮竹塊");
-        translationBuilder.add(MapleBlocks.BAMBOO_DOOR,"竹制木門");
-        translationBuilder.add(MapleBlocks.BAMBOO_BUTTON,"竹制木按鈕");
-        translationBuilder.add(MapleBlocks.BAMBOO_FENCE,"竹制欄杆");
-        translationBuilder.add(MapleBlocks.BAMBOO_FENCE_GATE,"竹制欄杆門");
-        translationBuilder.add(MapleBlocks.BAMBOO_SLAB,"竹制臺階");
-        translationBuilder.add(MapleBlocks.BAMBOO_STAIRS,"竹制樓梯");
-        translationBuilder.add(MapleBlocks.BAMBOO_MOSAIC,"竹馬賽克");
-        translationBuilder.add(MapleBlocks.BAMBOO_MOSAIC_SLAB,"竹馬賽克臺階");
-        translationBuilder.add(MapleBlocks.BAMBOO_MOSAIC_STAIRS,"竹馬賽克樓梯");
-        translationBuilder.add(MapleSignBlocks.BAMBOO_SIGN,"竹制告示牌");
-        translationBuilder.add(MapleBlocks.BAMBOO_TRAPDOOR,"竹制活版門");
-        translationBuilder.add(MapleBlocks.BAMBOO_PRESSURE_PLATE,"竹制壓力板");
-
         //ITEM GLASS CUP
         translationBuilder.add(GlassCupItems.HIGH_GLASS_CUP,"高玻璃杯");
 
@@ -116,12 +79,8 @@ public class MapleTraditionalChineseLanguageProvider extends FabricLanguageProvi
         translationBuilder.add(MapleFoodComponents.SakuraMochi,"櫻花麻糬");
 
         //Boat
-        translationBuilder.add(MapleItems.CHERRY_BOAT,"櫻木船");
-        translationBuilder.add(MapleItems.CHERRY_CHEST_BOAT,"櫻木箱船");
         translationBuilder.add(MapleItems.MAPLE_BOAT,"楓木船");
         translationBuilder.add(MapleItems.MAPLE_CHEST_BOAT,"楓木箱船");
-
-        translationBuilder.add(MapleBlocks.CHISELED_BOOKSHELF,"雕紋書架");
 
     }
 }

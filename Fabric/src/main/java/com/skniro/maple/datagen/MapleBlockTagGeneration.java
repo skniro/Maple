@@ -34,19 +34,14 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         valueLookupBuilder(SAPLINGS)
-                .add(MapleBlocks.MAPLE_SAPLING)
-                .add(MapleBlocks.CHERRY_SAPLING);
+                .add(MapleBlocks.MAPLE_SAPLING);
         valueLookupBuilder(C_SAPLING)
-                .add(MapleBlocks.MAPLE_SAPLING)
-                .add(MapleBlocks.CHERRY_SAPLING);
+                .add(MapleBlocks.MAPLE_SAPLING);
         valueLookupBuilder(C_MAPLE_LOGS)
                 .add(MapleBlocks.MAPLE_LOG);
-        valueLookupBuilder(C_CHERRY_LOGS)
-                .add(MapleBlocks.CHERRY_LOG);
+        valueLookupBuilder(C_CHERRY_LOGS);
         valueLookupBuilder(FENCES)
-                .add(MapleBlocks.MAPLE_FENCE)
-                .add(MapleBlocks.CHERRY_FENCE)
-                .add(MapleBlocks.BAMBOO_FENCE);
+                .add(MapleBlocks.MAPLE_FENCE);
         valueLookupBuilder(C_PLASTER)
                 .add(MapleBlocks.GREEN_PLASTER)
                 .add(MapleBlocks.PLASTER)

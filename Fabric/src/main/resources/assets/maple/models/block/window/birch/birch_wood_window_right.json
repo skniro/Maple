@@ -1,8 +1,0 @@
-{
-  "parent": "maple:block/window/window_right",
-  "textures": {
-    "front": "minecraft:block/stripped_birch_log",
-    "side": "minecraft:block/stripped_birch_log",
-    "glass": "minecraft:block/glass"
-  }
-}

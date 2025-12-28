@@ -1,8 +1,0 @@
-{
-  "parent": "maple:block/window/window_left",
-  "textures": {
-    "front": "minecraft:block/mangrove_planks",
-    "side": "minecraft:block/mangrove_planks",
-    "glass": "minecraft:block/glass"
-  }
-}

@@ -63,9 +63,6 @@ public class MaplePlacedFeatures {
         register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING));
 
-        register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.CHERRY_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING));
-
         register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SAKURA_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING));
 

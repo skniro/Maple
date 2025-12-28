@@ -25,25 +25,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        //CHERRY
-        dropSelf(MapleSignBlocks.CHERRY_SIGN);
-        dropSelf(MapleSignBlocks.CHERRY_WALL_SIGN);
-        dropSelf(MapleBlocks.CHERRY_LOG);
-        dropSelf(MapleBlocks.CHERRY_WOOD);
-        add(MapleBlocks.CHERRY_DOOR,createDoorTable(MapleBlocks.CHERRY_DOOR));
-        dropSelf(MapleBlocks.CHERRY_SAPLING);
-        add(MapleBlocks.CHERRY_LEAVES,createLeavesDrops(MapleBlocks.CHERRY_LEAVES,MapleBlocks.CHERRY_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
-        dropSelf(MapleBlocks.CHERRY_BUTTON);
-        dropSelf(MapleBlocks.CHERRY_FENCE);
-        dropSelf(MapleBlocks.CHERRY_FENCE_GATE);
-        dropSelf(MapleBlocks.CHERRY_PLANKS);
-        dropSelf(MapleBlocks.CHERRY_PRESSURE_PLATE);
-        dropSelf(MapleBlocks.CHERRY_SLAB);
-        dropSelf(MapleBlocks.CHERRY_STAIRS);
-        dropSelf(MapleBlocks.CHERRY_TRAPDOOR);
-        dropSelf(MapleBlocks.STRIPPED_CHERRY_LOG);
-        dropSelf(MapleBlocks.STRIPPED_CHERRY_WOOD);
-
         //MAPLE
         dropSelf(MapleSignBlocks.Maple_SIGN);
         dropSelf(MapleSignBlocks.Maple_WALL_SIGN);
@@ -87,27 +68,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         dropSelf(MapleBlocks.GINKGO_SAPLING);
         dropSelf(MapleBlocks.STRIPPED_GINKGO_LOG);
         dropSelf(MapleBlocks.STRIPPED_GINKGO_WOOD);
-
-
-
-
-        //BAMBOO
-        dropSelf(MapleBlocks.BAMBOO_BLOCK);
-        dropSelf(MapleSignBlocks.BAMBOO_SIGN);
-        dropSelf(MapleSignBlocks.BAMBOO_WALL_SIGN);
-        dropSelf(MapleBlocks.BAMBOO_MOSAIC);
-        add(MapleBlocks.BAMBOO_DOOR,createDoorTable(MapleBlocks.BAMBOO_DOOR));
-        dropSelf(MapleBlocks.BAMBOO_BUTTON);
-        dropSelf(MapleBlocks.BAMBOO_FENCE);
-        dropSelf(MapleBlocks.BAMBOO_FENCE_GATE);
-        dropSelf(MapleBlocks.BAMBOO_PLANKS);
-        dropSelf(MapleBlocks.BAMBOO_PRESSURE_PLATE);
-        dropSelf(MapleBlocks.BAMBOO_SLAB);
-        dropSelf(MapleBlocks.BAMBOO_STAIRS);
-        dropSelf(MapleBlocks.BAMBOO_MOSAIC_SLAB);
-        dropSelf(MapleBlocks.BAMBOO_MOSAIC_STAIRS);
-        dropSelf(MapleBlocks.BAMBOO_TRAPDOOR);
-        dropSelf(MapleBlocks.STRIPPED_BAMBOO_BLOCK);
 
         //SAKURA
         dropSelf(MapleBlocks.SAKURA_SAPLING);
@@ -197,7 +157,6 @@ public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
         //Potted
         dropPottedContents(MapleBlocks.POTTED_SAKURA_SAPLING);
         dropPottedContents(MapleBlocks.POTTED_RED_MAPLE_SAPLING);
-        dropPottedContents(MapleBlocks.POTTED_CHERRY_SAPLING);
         dropPottedContents(MapleBlocks.POTTED_GINKGO_SAPLING);
         dropPottedContents(MapleBlocks.POTTED_MAPLE_SAPLING);
     }

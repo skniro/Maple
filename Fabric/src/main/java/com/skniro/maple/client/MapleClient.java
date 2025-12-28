@@ -41,7 +41,6 @@ public class MapleClient implements ClientModInitializer {
 
         ChunkSectionLayer renderLayer3 = ChunkSectionLayer.CUTOUT;
         BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_LEAVES, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_LEAVES, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_LEAVES, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_CARPET,renderLayer3);
@@ -49,35 +48,17 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(MapleBlocks.RED_MAPLE_CARPET,renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_CARPET,renderLayer3);
         if (MapleConfig.Furniture_Module) {
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_SPRUCE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BIRCH, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_JUNGLE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_ACACIA, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_DARK_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CRIMSON, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_WARPED, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MANGROVE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_BAMBOO, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_CHERRY, renderLayer3);
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_MAPLE, renderLayer3);
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.TABLE_GINKGO, renderLayer3);
         }
-        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_SAPLING, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_CHERRY_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_MAPLE_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_SAKURA_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_DOOR, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_DOOR, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_TRAPDOOR, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.MAPLE_TRAPDOOR, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.BAMBOO_TRAPDOOR, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.BAMBOO_DOOR, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.RICE, renderLayer3);
-        BlockRenderLayerMap.putBlock(MapleBlocks.PINK_PETALS, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.POTTED_GINKGO_SAPLING, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_DOOR, renderLayer3);
@@ -88,28 +69,8 @@ public class MapleClient implements ClientModInitializer {
         if (MapleConfig.Furniture_Module) {
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_Wood_GINKGO, renderLayer3);
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_Wood_MAPLE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_BIRCH, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_SPRUCE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_JUNGLE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_DARK_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_ACACIA, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_MANGROVE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_CHERRY, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_CRIMSON, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_WOOD_WARPED, renderLayer3);
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_MAPLE, renderLayer3);
             BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_GINKGO, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_BIRCH, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_SPRUCE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_JUNGLE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_DARK_OAK, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_ACACIA, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_MANGROVE, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_CHERRY, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_CRIMSON, renderLayer3);
-            BlockRenderLayerMap.putBlock(MapleFurnitureBlocks.Window_PLANK_WARPED, renderLayer3);
         }
         BlockRenderLayerMap.putBlock(MapleBlocks.Tea_Block, renderLayer3);
 

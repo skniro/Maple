@@ -22,12 +22,8 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Function;
 
 public class MapleItems {
-    public static final Item CHERRY_SIGN = registerItem("cherry_sign",
-            (settings)-> new SignItem(MapleSignBlocks.CHERRY_SIGN, MapleSignBlocks.CHERRY_WALL_SIGN, settings), new Item.Properties().stacksTo(16));
     public static final Item MAPLE_SIGN = registerItem("maple_sign",
             (settings)-> new SignItem(MapleSignBlocks.Maple_SIGN,MapleSignBlocks.Maple_WALL_SIGN, settings), new Item.Properties().stacksTo(16));
-    public static final Item BAMBOO_SIGN = registerItem("bamboo_sign",
-            (settings)-> new SignItem(MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN, settings), new Item.Properties().stacksTo(16));
     public static final Item GINKGO_SIGN = registerItem("ginkgo_sign",
             (settings)-> new SignItem(MapleSignBlocks.GINKGO_SIGN, MapleSignBlocks.GINKGO_WALL_SIGN, settings), new Item.Properties().stacksTo(16));
 
@@ -36,9 +32,7 @@ public class MapleItems {
     public static final Item Maple_HANGING_SIGN = registerItem("maple_hanging_sign", (settings)->  new HangingSignItem(
             MapleSignBlocks.Maple_HANGING_SIGN, MapleSignBlocks.Maple_WALL_HANGING_SIGN, settings), new Item.Properties().stacksTo(16));
 
-    public static final Item CHERRY_DOOR = registerItem("cherry_door", (settings)-> new DoubleHighBlockItem(MapleBlocks.CHERRY_DOOR, settings),  new Item.Properties().stacksTo(16));
     public static final Item MAPLE_DOOR = registerItem("maple_door", (settings)-> new DoubleHighBlockItem(MapleBlocks.MAPLE_DOOR, settings), new Item.Properties().stacksTo(16));
-    public static final Item BAMBOO_DOOR = registerItem("bamboo_door", (settings)-> new DoubleHighBlockItem(MapleBlocks.BAMBOO_DOOR, settings), new Item.Properties().stacksTo(16));
     public static final Item GINKGO_DOOR = registerItem("ginkgo_door", (settings)-> new DoubleHighBlockItem(MapleBlocks.GINKGO_DOOR, settings), new Item.Properties().stacksTo(16));
     //Food Materials
     public static final Item Flour = registerItem("flour", Item::new, (new Item.Properties()));
@@ -51,14 +45,10 @@ public class MapleItems {
     public static final Item Rice = registerItem("rice", createBlockItemWithUniqueName(MapleBlocks.RICE), (new Item.Properties()));
 
     //Boat
-    public static final Item CHERRY_BOAT = registerItem("cherry_boat", (settings) -> new BoatItem(EntityType.CHERRY_BOAT, settings), new Item.Properties().stacksTo(1));
     public static final Item MAPLE_BOAT = registerItem("maple_boat", (settings) -> new BoatItem(MapleEntityType.Maple_BOAT, settings), new Item.Properties().stacksTo(1));
-    public static final Item BAMBOO_BOAT = registerItem("bamboo_boat", (settings) -> new BoatItem(EntityType.BAMBOO_RAFT, settings), new Item.Properties().stacksTo(1));
     public static final Item GINKGO_BOAT = registerItem("ginkgo_boat", (settings) -> new BoatItem(MapleEntityType.GINKGO_BOAT, settings), new Item.Properties().stacksTo(1));
 
-    public static final Item CHERRY_CHEST_BOAT = registerItem("cherry_chest_boat", (settings) -> new BoatItem(EntityType.CHERRY_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
     public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", (settings) -> new BoatItem(MapleEntityType.Maple_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
-    public static final Item BAMBOO_CHEST_BOAT = registerItem("bamboo_chest_boat", (settings) -> new BoatItem(EntityType.BAMBOO_CHEST_RAFT, settings), new Item.Properties().stacksTo(1));
     public static final Item GINKGO_CHEST_BOAT = registerItem("ginkgo_chest_boat", (settings) -> new BoatItem(MapleEntityType.GINKGO_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
 
 
