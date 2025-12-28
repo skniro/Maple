@@ -1,27 +1,26 @@
 package com.skniro.maple.world.biome;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
-import terrablender.api.ParameterUtils;
+/*import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
-import terrablender.api.VanillaParameterOverlayBuilder;
+import terrablender.api.VanillaParameterOverlayBuilder;*/
 
 import java.util.function.Consumer;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
 
-public class MapleSakuraBiome extends Region {
+public class MapleSakuraBiome{}/* extends Region {
     public MapleSakuraBiome(Identifier name, int weight) {
         super
                 (name, RegionType.OVERWORLD, weight);
     }
 
     @Override
-    public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> mapper) {
+    public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
         // Overlap Vanilla's parameters with our own for our COLD_BLUE biome.
         // The parameters for this biome are chosen arbitrarily.
@@ -37,4 +36,4 @@ public class MapleSakuraBiome extends Region {
         // Add our points to the mapper
         builder.build().forEach(mapper::accept);
     }
-}
+}*/

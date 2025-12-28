@@ -1,12 +1,10 @@
 package com.skniro.maple.tag;
 
 import com.skniro.maple.Maple;
-import net.minecraft.item.Item;
-
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 
 public class MapleItemTags {
@@ -16,6 +14,6 @@ public class MapleItemTags {
 
 
     private static TagKey<Item> of(String id) {
-        return TagKey.of(Registries.ITEM.getKey(), Identifier.of(Maple.MOD_ID,id));
+        return TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(Maple.MOD_ID,id));
     }
 }

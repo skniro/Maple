@@ -25,22 +25,21 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.gui.screen.ingame.HandledScreens;
-import net.minecraft.client.render.BlockRenderLayer;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
-import net.minecraft.client.render.entity.BoatEntityRenderer;
-import net.minecraft.client.render.entity.model.BoatEntityModel;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.BoatRenderer;
+import net.minecraft.resources.Identifier;
 
-@net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 public class MapleClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayer renderLayer2 = BlockRenderLayer.TRIPWIRE;
+        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.TRIPWIRE;
 
-        BlockRenderLayer renderLayer3 = BlockRenderLayer.CUTOUT;
+        ChunkSectionLayer renderLayer3 = ChunkSectionLayer.CUTOUT;
         BlockRenderLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.CHERRY_LEAVES, renderLayer3);
         BlockRenderLayerMap.putBlock(MapleBlocks.SAKURA_LEAVES, renderLayer3);
@@ -115,7 +114,7 @@ public class MapleClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(MapleBlocks.Tea_Block, renderLayer3);
 
 
-        BlockRenderLayer renderLayer4 = BlockRenderLayer.TRANSLUCENT;
+        ChunkSectionLayer renderLayer4 = ChunkSectionLayer.TRANSLUCENT;
         BlockRenderLayerMap.putBlock(MapleBlocks.WHITE_STAINED_GLASS_STAIRS, renderLayer4);
         BlockRenderLayerMap.putBlock(MapleBlocks.WHITE_STAINED_GLASS_SLAB, renderLayer4);
         BlockRenderLayerMap.putBlock(MapleBlocks.ORANGE_STAINED_GLASS_SLAB, renderLayer4);
@@ -154,19 +153,19 @@ public class MapleClient implements ClientModInitializer {
 
         FluidRenderHandlerRegistry.INSTANCE.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
                 new SimpleFluidRenderHandler(
-                        Identifier.of("maple:block/spring_still"),
-                        Identifier.of("maple:block/spring_flow"),
+                        Identifier.parse("maple:block/spring_still"),
+                        Identifier.parse("maple:block/spring_flow"),
                         0x5DB7EF
                 ));
 
-        BlockRenderLayerMap.putFluids(BlockRenderLayer.TRANSLUCENT,
+        BlockRenderLayerMap.putFluids(ChunkSectionLayer.TRANSLUCENT,
                 MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring);
 
 
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.HOT_SPRING, MapleCampfireSmokeParticle.CosySmokeFactory::new);
 
-        HandledScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);
-        BlockEntityRendererFactories.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, MapleJuicerEntityRenderer::new);
+        MenuScreens.register(MapleScreenHandlerType.Maple_JUICER, MapleJuicerBlockScreen::new);
+        BlockEntityRenderers.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, MapleJuicerEntityRenderer::new);
 
         registerClientEntityRenderer();
         registerClientParticle();
@@ -177,21 +176,21 @@ public class MapleClient implements ClientModInitializer {
         EntityRendererRegistry.register(MapleEntityType.CHAIR_ENTITY, ChairRenderer::new);
         EntityRendererRegistry.register(MapleEntityType.Cushion_ENTITY, CushinoRenderer::new);
 
-        var maple_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/maple"), "main");
-        EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatEntityModel::getTexturedModelData);
-        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher,maple_boat));
+        var maple_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_boat, BoatModel::createBoatModel);
+        EntityRendererRegistry.register(MapleEntityType.Maple_BOAT, (dispatcher) -> new BoatRenderer(dispatcher,maple_boat));
 
-        var ginkgo_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "boat/ginkgo"), "main");
-        EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatEntityModel::getTexturedModelData);
-        EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_boat));
+        var ginkgo_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_boat, BoatModel::createBoatModel);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_BOAT, (dispatcher) -> new BoatRenderer(dispatcher, ginkgo_boat));
 
-        var maple_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/maple"), "main");
-        EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatEntityModel::getChestTexturedModelData);
-        EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatEntityRenderer(dispatcher, maple_chest_boat));
+        var maple_chest_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/maple"), "main");
+        EntityModelLayerRegistry.registerModelLayer(maple_chest_boat, BoatModel::createChestBoatModel);
+        EntityRendererRegistry.register(MapleEntityType.Maple_CHEST_BOAT, (dispatcher) -> new BoatRenderer(dispatcher, maple_chest_boat));
 
-        var ginkgo_chest_boat = new EntityModelLayer(Identifier.of(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
-        EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatEntityModel::getChestTexturedModelData);
-        EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatEntityRenderer(dispatcher, ginkgo_chest_boat));
+        var ginkgo_chest_boat = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "chest_boat/ginkgo"), "main");
+        EntityModelLayerRegistry.registerModelLayer(ginkgo_chest_boat, BoatModel::createChestBoatModel);
+        EntityRendererRegistry.register(MapleEntityType.GINKGO_CHEST_BOAT,  (dispatcher) -> new BoatRenderer(dispatcher, ginkgo_chest_boat));
 
     }
 
@@ -199,13 +198,13 @@ public class MapleClient implements ClientModInitializer {
     public static void registerClientParticle() {
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.CHERRY_LEAVES, ((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ, random) -> {
-                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.getSprite(random));
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.get(random));
             };
         }));
 
         ParticleFactoryRegistry.getInstance().register(MapleParticleTypes.SAKURA_LEAVES, ((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ, random) -> {
-                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.getSprite(random));
+                return new MapleCherryLeavesParticle(world, x, y, z, spriteProvider, spriteProvider.get(random));
             };
         }));
     }

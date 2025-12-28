@@ -8,10 +8,13 @@
     "skniro"
   ],
   "contact": {},
-  "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+  "license": "MIT",
   "icon": "assets/maple/icon.png",
   "environment": "*",
   "entrypoints": {
+    "terrablender": [
+      "com.skniro.maple.Maple"
+    ],
     "client": [
       "com.skniro.maple.client.MapleClient"
     ],
@@ -27,7 +30,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.9",
-    "minecraft": "26.1.x",
-    "fabric-api": "*"
+    "minecraft": "1.21.X",
+    "terrablender": "*",
+    "fabric": "*"
   }
 }

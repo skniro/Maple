@@ -2,10 +2,10 @@ package com.skniro.maple.particle;
 
 import com.skniro.maple.Maple;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
-import net.minecraft.particle.SimpleParticleType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
 
 
 public class MapleParticleTypes {
@@ -14,9 +14,9 @@ public class MapleParticleTypes {
     public static final SimpleParticleType HOT_SPRING = FabricParticleTypes.simple();
 
     static {
-        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Maple.MOD_ID,"cherry_leaves"), CHERRY_LEAVES);
-        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Maple.MOD_ID,"sakura_leaves"), SAKURA_LEAVES);
-        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Maple.MOD_ID,"hot_spring"), HOT_SPRING);
+        Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID,"cherry_leaves"), CHERRY_LEAVES);
+        Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID,"sakura_leaves"), SAKURA_LEAVES);
+        Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID,"hot_spring"), HOT_SPRING);
     }
 
     public static void registerParticleTypes() {

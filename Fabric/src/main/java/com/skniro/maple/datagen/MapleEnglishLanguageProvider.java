@@ -9,18 +9,17 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.minecraft.core.HolderLookup;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class MapleEnglishLanguageProvider extends FabricLanguageProvider {
-    public MapleEnglishLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
+    public MapleEnglishLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup){
         super(dataGenerator,"en_us", registryLookup);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider wrapperLookup, TranslationBuilder translationBuilder) {
         //Maple
         translationBuilder.add(MapleBlocks.MAPLE_PLANKS,"Maple Planks");
         translationBuilder.add(MapleBlocks.MAPLE_LOG,"Maple Log");

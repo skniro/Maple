@@ -24,5 +24,6 @@ plugins {
 }
 
 
-rootProject.name = 'Maple-1.21.9'
-include("Fabric", "Neoforge","Forge")
+rootProject.name = 'Maple-26.1'
+include("Fabric", "Neoforge")
+//include("Fabric", "Neoforge","Forge")

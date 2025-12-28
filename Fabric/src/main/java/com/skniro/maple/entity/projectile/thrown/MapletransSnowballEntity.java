@@ -1,65 +1,65 @@
 package com.skniro.maple.entity.projectile.thrown;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityStatuses;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MovementType;
-import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.TeleportTarget;
-import net.minecraft.world.World;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityEvent;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.portal.TeleportTransition;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class MapletransSnowballEntity extends MapleSnowballEntity {
-    public MapletransSnowballEntity(World world, LivingEntity owner, ItemStack stack) {
+    public MapletransSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
         super(world, owner,stack);
     }
 
     @Override
-    protected void onEntityHit(EntityHitResult entityHitResult) {
-        super.onEntityHit(entityHitResult);
+    protected void onHitEntity(EntityHitResult entityHitResult) {
+        super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        int i = entity instanceof BlazeEntity ? 4 : 0;
-        entity.serverDamage(this.getDamageSources().thrown(this, this.getOwner()), i);
-        entity.move(MovementType.SELF, new Vec3d(5.0, 0.0, 5.0));
-        if (entity instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) entity;
-            if (serverPlayerEntity.networkHandler.isConnectionOpen() && serverPlayerEntity.getEntityWorld() == this.getEntityWorld() && !serverPlayerEntity.isSleeping()) {
+        int i = entity instanceof Blaze ? 4 : 0;
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), i);
+        entity.move(MoverType.SELF, new Vec3(5.0, 0.0, 5.0));
+        if (entity instanceof ServerPlayer) {
+            ServerPlayer serverPlayerEntity = (ServerPlayer) entity;
+            if (serverPlayerEntity.connection.isAcceptingMessages() && serverPlayerEntity.level() == this.level() && !serverPlayerEntity.isSleeping()) {
 
-                if (entity.hasVehicle()) {
-                    serverPlayerEntity.requestTeleportAndDismount(this.getX(), this.getY(), this.getZ());
+                if (entity.isPassenger()) {
+                    serverPlayerEntity.dismountTo(this.getX(), this.getY(), this.getZ());
                 } else {
-                    entity.requestTeleport(this.getX(), this.getY(), this.getZ());
+                    entity.teleportTo(this.getX(), this.getY(), this.getZ());
                 }
-                entity.onLanding();
+                entity.resetFallDistance();
             } else if (entity != null) {
-                entity.requestTeleport(this.getX(), this.getY(), this.getZ());
-                entity.onLanding();
+                entity.teleportTo(this.getX(), this.getY(), this.getZ());
+                entity.resetFallDistance();
             }
             this.discard();
         }
     }
 
     @Override
-    protected void onCollision(HitResult hitResult) {
-        super.onCollision(hitResult);
-        if (!this.getEntityWorld().isClient()) {
-            this.getEntityWorld().sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
+    protected void onHit(HitResult hitResult) {
+        super.onHit(hitResult);
+        if (!this.level().isClientSide()) {
+            this.level().broadcastEntityEvent(this, EntityEvent.DEATH);
             this.discard();
         }
     }
 
     @Nullable
-    public Entity teleportTo(TeleportTarget teleportTarget) {
+    public Entity teleport(TeleportTransition teleportTarget) {
         Entity entity = this.getOwner();
-        if (entity != null && entity.getEntityWorld().getRegistryKey() != teleportTarget.world().getRegistryKey()) {
+        if (entity != null && entity.level().dimension() != teleportTarget.newLevel().dimension()) {
             this.setOwner((Entity)null);
         }
 
-        return super.teleportTo(teleportTarget);
+        return super.teleport(teleportTarget);
     }
 }

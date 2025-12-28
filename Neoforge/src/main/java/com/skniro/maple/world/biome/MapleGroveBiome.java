@@ -7,12 +7,12 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import terrablender.api.Region;
-import terrablender.api.RegionType;
+/*import terrablender.api.Region;
+import terrablender.api.RegionType;*/
 
 import java.util.function.Consumer;
 
-public class MapleGroveBiome extends Region {
+public class MapleGroveBiome{} /*extends Region {
     public MapleGroveBiome(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
@@ -21,7 +21,7 @@ public class MapleGroveBiome extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         {
             this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-/*        // Overlap Vanilla's parameters with our own for our COLD_BLUE biome.
+*//*        // Overlap Vanilla's parameters with our own for our COLD_BLUE biome.
         // The parameters for this biome are chosen arbitrarily.
         new ParameterUtils.ParameterPointListBuilder()
                 .temperature(ParameterUtils.Temperature.span(ParameterUtils.Temperature.COOL, ParameterUtils.Temperature.FROZEN))
@@ -33,9 +33,9 @@ public class MapleGroveBiome extends Region {
                 .build().forEach(point -> builder.add(point, MapleBiomeKeys.Maple_Grove));
 
         // Add our points to the mapper
-        builder.build().forEach(mapper::accept);*/
+        builder.build().forEach(mapper::accept);*//*
                 addBiomeSimilar(mapper, Biomes.FOREST, MapleBiomeKeys.Maple_Grove);
             });
         }
     }
-}
+}*/

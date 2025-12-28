@@ -1,11 +1,11 @@
 package com.skniro.maple.recipe;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.input.RecipeInput;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeInput;
 
 public record MapleCraftingRecipeInput(ItemStack input,ItemStack glass) implements RecipeInput {
     @Override
-    public ItemStack getStackInSlot(int slot) {
+    public ItemStack getItem(int slot) {
         ItemStack input;
         switch (slot) {
             case 0 -> input = this.input;

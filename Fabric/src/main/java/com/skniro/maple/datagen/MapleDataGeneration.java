@@ -5,8 +5,8 @@ import com.skniro.maple.world.feature.MapleConfiguredFeatures;
 import com.skniro.maple.world.feature.MaplePlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 
 public class MapleDataGeneration implements DataGeneratorEntrypoint {
     @Override
@@ -24,9 +24,9 @@ public class MapleDataGeneration implements DataGeneratorEntrypoint {
     }
 
     @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, MapleConfiguredFeatures::bootstrap);
-        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, MaplePlacedFeatures::bootstrap);
-        registryBuilder.addRegistry(RegistryKeys.BIOME, MapleBiomeKeys::bootstrap);
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.CONFIGURED_FEATURE, MapleConfiguredFeatures::bootstrap);
+        registryBuilder.add(Registries.PLACED_FEATURE, MaplePlacedFeatures::bootstrap);
+        registryBuilder.add(Registries.BIOME, MapleBiomeKeys::bootstrap);
     }
 }

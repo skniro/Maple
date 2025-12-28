@@ -11,18 +11,17 @@ import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.minecraft.core.HolderLookup;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
-    public MapleSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
+    public MapleSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup){
         super(dataGenerator, "zh_cn", registryLookup);
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(HolderLookup.Provider wrapperLookup, TranslationBuilder translationBuilder) {
         //Maple
         translationBuilder.add(MapleBlocks.MAPLE_PLANKS,"枫木木板");
         translationBuilder.add(MapleBlocks.MAPLE_LOG,"枫树原木");

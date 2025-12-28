@@ -2,8 +2,7 @@ package com.skniro.maple.block.entity;
 
 import com.skniro.maple.block.init.MapleBlockSetType;
 import com.skniro.maple.mixin.SignTypeAccessor;
-import net.minecraft.block.BlockSetType;
-import net.minecraft.block.WoodType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class MapleSignTypes {
     public static final WoodType MAPLE =

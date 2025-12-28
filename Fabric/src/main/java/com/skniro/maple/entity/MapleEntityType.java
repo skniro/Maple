@@ -5,65 +5,63 @@ import com.skniro.maple.Maple;
 import com.skniro.maple.entity.furniture.ChairEntity;
 import com.skniro.maple.entity.furniture.CushionEntity;
 import com.skniro.maple.item.MapleItems;
-import net.minecraft.datafixer.TypeReferences;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.vehicle.BoatEntity;
-import net.minecraft.entity.vehicle.ChestBoatEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Util;
-
+import net.minecraft.util.datafix.fixes.References;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.vehicle.boat.Boat;
+import net.minecraft.world.entity.vehicle.boat.ChestBoat;
+import net.minecraft.world.item.Item;
 import java.util.function.Supplier;
 
 public class MapleEntityType {
     public static final EntityType<ChairEntity> CHAIR_ENTITY =
-            register("chair_entity",  EntityType.Builder.create(ChairEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.5f, 0.5f));
+            register("chair_entity",  EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f));
 
     public static final EntityType<CushionEntity> Cushion_ENTITY =
-            register("cushion_entity",  EntityType.Builder.create(CushionEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.5f, 0.5f));
+            register("cushion_entity",  EntityType.Builder.of(CushionEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f));
 
-    public static final EntityType<BoatEntity> Maple_BOAT = register("maple_boat", EntityType.Builder.create(getBoatFactory(() -> {
+    public static final EntityType<Boat> Maple_BOAT = register("maple_boat", EntityType.Builder.of(getBoatFactory(() -> {
         return MapleItems.MAPLE_BOAT;
-    }), SpawnGroup.MISC).dropsNothing().dimensions(1.375F, 0.5625F).eyeHeight(0.5625F).maxTrackingRange(10));
+    }), MobCategory.MISC).noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10));
 
-    public static final EntityType<ChestBoatEntity> Maple_CHEST_BOAT = register("maple_chest_boat", EntityType.Builder.create(getChestBoatFactory(() -> {
+    public static final EntityType<ChestBoat> Maple_CHEST_BOAT = register("maple_chest_boat", EntityType.Builder.of(getChestBoatFactory(() -> {
         return MapleItems.MAPLE_CHEST_BOAT;
-    }), SpawnGroup.MISC).dropsNothing().dimensions(1.375F, 0.5625F).eyeHeight(0.5625F).maxTrackingRange(10));
+    }), MobCategory.MISC).noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10));
 
-    public static final EntityType<BoatEntity> GINKGO_BOAT = register("ginkgo_boat", EntityType.Builder.create(getBoatFactory(() -> {
+    public static final EntityType<Boat> GINKGO_BOAT = register("ginkgo_boat", EntityType.Builder.of(getBoatFactory(() -> {
         return MapleItems.MAPLE_BOAT;
-    }), SpawnGroup.MISC).dropsNothing().dimensions(1.375F, 0.5625F).eyeHeight(0.5625F).maxTrackingRange(10));
+    }), MobCategory.MISC).noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10));
 
-    public static final EntityType<ChestBoatEntity> GINKGO_CHEST_BOAT = register("ginkgo_chest_boat", EntityType.Builder.create(getChestBoatFactory(() -> {
+    public static final EntityType<ChestBoat> GINKGO_CHEST_BOAT = register("ginkgo_chest_boat", EntityType.Builder.of(getChestBoatFactory(() -> {
         return MapleItems.MAPLE_CHEST_BOAT;
-    }), SpawnGroup.MISC).dropsNothing().dimensions(1.375F, 0.5625F).eyeHeight(0.5625F).maxTrackingRange(10));
+    }), MobCategory.MISC).noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10));
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
-        Type<?> type = Util.getChoiceType(TypeReferences.ENTITY, name);
-        return (EntityType) Registry.register(Registries.ENTITY_TYPE, Identifier.of(Maple.MOD_ID, name), builder.build(keyOf(name)));
+        Type<?> type = Util.fetchChoiceType(References.ENTITY, name);
+        return (EntityType) Registry.register(BuiltInRegistries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name), builder.build(keyOf(name)));
     }
-    private static RegistryKey<EntityType<?>> keyOf(String name) {
-        return RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Maple.MOD_ID, name));
+    private static ResourceKey<EntityType<?>> keyOf(String name) {
+        return ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name));
     }
 
-    private static EntityType.EntityFactory<BoatEntity> getBoatFactory(Supplier<Item> itemSupplier) {
+    private static EntityType.EntityFactory<Boat> getBoatFactory(Supplier<Item> itemSupplier) {
         return (type, world) -> {
-            return new BoatEntity(type, world, itemSupplier);
+            return new Boat(type, world, itemSupplier);
         };
     }
 
-    private static EntityType.EntityFactory<ChestBoatEntity> getChestBoatFactory(Supplier<Item> itemSupplier) {
+    private static EntityType.EntityFactory<ChestBoat> getChestBoatFactory(Supplier<Item> itemSupplier) {
         return (type, world) -> {
-            return new ChestBoatEntity(type, world, itemSupplier);
+            return new ChestBoat(type, world, itemSupplier);
         };
     }
 

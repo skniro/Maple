@@ -7,199 +7,198 @@ import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.CropBlock;
-import net.minecraft.item.Items;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.registry.RegistryWrapper;
-
+import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import java.util.concurrent.CompletableFuture;
 
 
 public class MapleLootTableGenerator extends FabricBlockLootTableProvider {
-    public MapleLootTableGenerator(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public MapleLootTableGenerator(FabricDataOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataGenerator, registryLookup);
     }
-    public static final float[] SAPLING_DROP_CHANCE = new float[]{0.048F, 0.0425F, 0.062333336F, 0.1F};
+    public static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.048F, 0.0425F, 0.062333336F, 0.1F};
 
     @Override
     public void generate() {
         //CHERRY
-        addDrop(MapleSignBlocks.CHERRY_SIGN);
-        addDrop(MapleSignBlocks.CHERRY_WALL_SIGN);
-        addDrop(MapleBlocks.CHERRY_LOG);
-        addDrop(MapleBlocks.CHERRY_WOOD);
-        addDrop(MapleBlocks.CHERRY_DOOR,doorDrops(MapleBlocks.CHERRY_DOOR));
-        addDrop(MapleBlocks.CHERRY_SAPLING);
-        addDrop(MapleBlocks.CHERRY_LEAVES,leavesDrops(MapleBlocks.CHERRY_LEAVES,MapleBlocks.CHERRY_SAPLING,SAPLING_DROP_CHANCE));
-        addDrop(MapleBlocks.CHERRY_BUTTON);
-        addDrop(MapleBlocks.CHERRY_FENCE);
-        addDrop(MapleBlocks.CHERRY_FENCE_GATE);
-        addDrop(MapleBlocks.CHERRY_PLANKS);
-        addDrop(MapleBlocks.CHERRY_PRESSURE_PLATE);
-        addDrop(MapleBlocks.CHERRY_SLAB);
-        addDrop(MapleBlocks.CHERRY_STAIRS);
-        addDrop(MapleBlocks.CHERRY_TRAPDOOR);
-        addDrop(MapleBlocks.STRIPPED_CHERRY_LOG);
-        addDrop(MapleBlocks.STRIPPED_CHERRY_WOOD);
+        dropSelf(MapleSignBlocks.CHERRY_SIGN);
+        dropSelf(MapleSignBlocks.CHERRY_WALL_SIGN);
+        dropSelf(MapleBlocks.CHERRY_LOG);
+        dropSelf(MapleBlocks.CHERRY_WOOD);
+        add(MapleBlocks.CHERRY_DOOR,createDoorTable(MapleBlocks.CHERRY_DOOR));
+        dropSelf(MapleBlocks.CHERRY_SAPLING);
+        add(MapleBlocks.CHERRY_LEAVES,createLeavesDrops(MapleBlocks.CHERRY_LEAVES,MapleBlocks.CHERRY_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MapleBlocks.CHERRY_BUTTON);
+        dropSelf(MapleBlocks.CHERRY_FENCE);
+        dropSelf(MapleBlocks.CHERRY_FENCE_GATE);
+        dropSelf(MapleBlocks.CHERRY_PLANKS);
+        dropSelf(MapleBlocks.CHERRY_PRESSURE_PLATE);
+        dropSelf(MapleBlocks.CHERRY_SLAB);
+        dropSelf(MapleBlocks.CHERRY_STAIRS);
+        dropSelf(MapleBlocks.CHERRY_TRAPDOOR);
+        dropSelf(MapleBlocks.STRIPPED_CHERRY_LOG);
+        dropSelf(MapleBlocks.STRIPPED_CHERRY_WOOD);
 
         //MAPLE
-        addDrop(MapleSignBlocks.Maple_SIGN);
-        addDrop(MapleSignBlocks.Maple_WALL_SIGN);
-        addDrop(MapleSignBlocks.Maple_HANGING_SIGN);
-        addDrop(MapleSignBlocks.Maple_WALL_HANGING_SIGN);
-        addDrop(MapleBlocks.MAPLE_LOG);
-        addDrop(MapleBlocks.MAPLE_WOOD);
-        addDrop(MapleBlocks.MAPLE_DOOR,doorDrops(MapleBlocks.MAPLE_DOOR));
-        addDrop(MapleBlocks.MAPLE_SAPLING);
-        addDrop(MapleBlocks.RED_MAPLE_SAPLING);
-        addDrop(MapleBlocks.MAPLE_LEAVES,leavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,SAPLING_DROP_CHANCE));
-        addDrop(MapleBlocks.RED_MAPLE_LEAVES,leavesDrops(MapleBlocks.RED_MAPLE_LEAVES,MapleBlocks.RED_MAPLE_SAPLING,SAPLING_DROP_CHANCE));
-        addDrop(MapleBlocks.MAPLE_BUTTON);
-        addDrop(MapleBlocks.MAPLE_FENCE);
-        addDrop(MapleBlocks.MAPLE_FENCE_GATE);
-        addDrop(MapleBlocks.MAPLE_PLANKS);
-        addDrop(MapleBlocks.MAPLE_PRESSURE_PLATE);
-        addDrop(MapleBlocks.MAPLE_SLAB);
-        addDrop(MapleBlocks.MAPLE_STAIRS);
-        addDrop(MapleBlocks.MAPLE_TRAPDOOR);
-        addDrop(MapleBlocks.STRIPPED_MAPLE_LOG);
-        addDrop(MapleBlocks.STRIPPED_MAPLE_WOOD);
+        dropSelf(MapleSignBlocks.Maple_SIGN);
+        dropSelf(MapleSignBlocks.Maple_WALL_SIGN);
+        dropSelf(MapleSignBlocks.Maple_HANGING_SIGN);
+        dropSelf(MapleSignBlocks.Maple_WALL_HANGING_SIGN);
+        dropSelf(MapleBlocks.MAPLE_LOG);
+        dropSelf(MapleBlocks.MAPLE_WOOD);
+        add(MapleBlocks.MAPLE_DOOR,createDoorTable(MapleBlocks.MAPLE_DOOR));
+        dropSelf(MapleBlocks.MAPLE_SAPLING);
+        dropSelf(MapleBlocks.RED_MAPLE_SAPLING);
+        add(MapleBlocks.MAPLE_LEAVES,createLeavesDrops(MapleBlocks.MAPLE_LEAVES,MapleBlocks.MAPLE_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        add(MapleBlocks.RED_MAPLE_LEAVES,createLeavesDrops(MapleBlocks.RED_MAPLE_LEAVES,MapleBlocks.RED_MAPLE_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MapleBlocks.MAPLE_BUTTON);
+        dropSelf(MapleBlocks.MAPLE_FENCE);
+        dropSelf(MapleBlocks.MAPLE_FENCE_GATE);
+        dropSelf(MapleBlocks.MAPLE_PLANKS);
+        dropSelf(MapleBlocks.MAPLE_PRESSURE_PLATE);
+        dropSelf(MapleBlocks.MAPLE_SLAB);
+        dropSelf(MapleBlocks.MAPLE_STAIRS);
+        dropSelf(MapleBlocks.MAPLE_TRAPDOOR);
+        dropSelf(MapleBlocks.STRIPPED_MAPLE_LOG);
+        dropSelf(MapleBlocks.STRIPPED_MAPLE_WOOD);
 
         //GINKGO
-        addDrop(MapleSignBlocks.GINKGO_SIGN);
-        addDrop(MapleSignBlocks.GINKGO_WALL_SIGN);
-        addDrop(MapleSignBlocks.GINKGO_HANGING_SIGN);
-        addDrop(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
-        addDrop(MapleBlocks.GINKGO_LOG);
-        addDrop(MapleBlocks.GINKGO_WOOD);
-        addDrop(MapleBlocks.GINKGO_DOOR,doorDrops(MapleBlocks.GINKGO_DOOR));
-        addDrop(MapleBlocks.GINKGO_LEAVES,leavesDrops(MapleBlocks.GINKGO_LEAVES,MapleBlocks.GINKGO_SAPLING,SAPLING_DROP_CHANCE));
-        addDrop(MapleBlocks.GINKGO_BUTTON);
-        addDrop(MapleBlocks.GINKGO_FENCE);
-        addDrop(MapleBlocks.GINKGO_FENCE_GATE);
-        addDrop(MapleBlocks.GINKGO_PLANKS);
-        addDrop(MapleBlocks.GINKGO_PRESSURE_PLATE);
-        addDrop(MapleBlocks.GINKGO_SLAB);
-        addDrop(MapleBlocks.GINKGO_STAIRS);
-        addDrop(MapleBlocks.GINKGO_TRAPDOOR);
-        addDrop(MapleBlocks.GINKGO_SAPLING);
-        addDrop(MapleBlocks.STRIPPED_GINKGO_LOG);
-        addDrop(MapleBlocks.STRIPPED_GINKGO_WOOD);
+        dropSelf(MapleSignBlocks.GINKGO_SIGN);
+        dropSelf(MapleSignBlocks.GINKGO_WALL_SIGN);
+        dropSelf(MapleSignBlocks.GINKGO_HANGING_SIGN);
+        dropSelf(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
+        dropSelf(MapleBlocks.GINKGO_LOG);
+        dropSelf(MapleBlocks.GINKGO_WOOD);
+        add(MapleBlocks.GINKGO_DOOR,createDoorTable(MapleBlocks.GINKGO_DOOR));
+        add(MapleBlocks.GINKGO_LEAVES,createLeavesDrops(MapleBlocks.GINKGO_LEAVES,MapleBlocks.GINKGO_SAPLING,NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MapleBlocks.GINKGO_BUTTON);
+        dropSelf(MapleBlocks.GINKGO_FENCE);
+        dropSelf(MapleBlocks.GINKGO_FENCE_GATE);
+        dropSelf(MapleBlocks.GINKGO_PLANKS);
+        dropSelf(MapleBlocks.GINKGO_PRESSURE_PLATE);
+        dropSelf(MapleBlocks.GINKGO_SLAB);
+        dropSelf(MapleBlocks.GINKGO_STAIRS);
+        dropSelf(MapleBlocks.GINKGO_TRAPDOOR);
+        dropSelf(MapleBlocks.GINKGO_SAPLING);
+        dropSelf(MapleBlocks.STRIPPED_GINKGO_LOG);
+        dropSelf(MapleBlocks.STRIPPED_GINKGO_WOOD);
 
 
 
 
         //BAMBOO
-        addDrop(MapleBlocks.BAMBOO_BLOCK);
-        addDrop(MapleSignBlocks.BAMBOO_SIGN);
-        addDrop(MapleSignBlocks.BAMBOO_WALL_SIGN);
-        addDrop(MapleBlocks.BAMBOO_MOSAIC);
-        addDrop(MapleBlocks.BAMBOO_DOOR,doorDrops(MapleBlocks.BAMBOO_DOOR));
-        addDrop(MapleBlocks.BAMBOO_BUTTON);
-        addDrop(MapleBlocks.BAMBOO_FENCE);
-        addDrop(MapleBlocks.BAMBOO_FENCE_GATE);
-        addDrop(MapleBlocks.BAMBOO_PLANKS);
-        addDrop(MapleBlocks.BAMBOO_PRESSURE_PLATE);
-        addDrop(MapleBlocks.BAMBOO_SLAB);
-        addDrop(MapleBlocks.BAMBOO_STAIRS);
-        addDrop(MapleBlocks.BAMBOO_MOSAIC_SLAB);
-        addDrop(MapleBlocks.BAMBOO_MOSAIC_STAIRS);
-        addDrop(MapleBlocks.BAMBOO_TRAPDOOR);
-        addDrop(MapleBlocks.STRIPPED_BAMBOO_BLOCK);
+        dropSelf(MapleBlocks.BAMBOO_BLOCK);
+        dropSelf(MapleSignBlocks.BAMBOO_SIGN);
+        dropSelf(MapleSignBlocks.BAMBOO_WALL_SIGN);
+        dropSelf(MapleBlocks.BAMBOO_MOSAIC);
+        add(MapleBlocks.BAMBOO_DOOR,createDoorTable(MapleBlocks.BAMBOO_DOOR));
+        dropSelf(MapleBlocks.BAMBOO_BUTTON);
+        dropSelf(MapleBlocks.BAMBOO_FENCE);
+        dropSelf(MapleBlocks.BAMBOO_FENCE_GATE);
+        dropSelf(MapleBlocks.BAMBOO_PLANKS);
+        dropSelf(MapleBlocks.BAMBOO_PRESSURE_PLATE);
+        dropSelf(MapleBlocks.BAMBOO_SLAB);
+        dropSelf(MapleBlocks.BAMBOO_STAIRS);
+        dropSelf(MapleBlocks.BAMBOO_MOSAIC_SLAB);
+        dropSelf(MapleBlocks.BAMBOO_MOSAIC_STAIRS);
+        dropSelf(MapleBlocks.BAMBOO_TRAPDOOR);
+        dropSelf(MapleBlocks.STRIPPED_BAMBOO_BLOCK);
 
         //SAKURA
-        addDrop(MapleBlocks.SAKURA_SAPLING);
-        addDrop(MapleBlocks.SAKURA_LEAVES, leavesDrops(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_SAPLING, SAPLING_DROP_CHANCE));
+        dropSelf(MapleBlocks.SAKURA_SAPLING);
+        add(MapleBlocks.SAKURA_LEAVES, createLeavesDrops(MapleBlocks.SAKURA_LEAVES,MapleBlocks.SAKURA_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
 
         //Crop
-        net.minecraft.loot.condition.LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(MapleBlocks.RICE).properties(net.minecraft.predicate.StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 7));
-        addDrop(MapleBlocks.RICE, cropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
+        net.minecraft.world.level.storage.loot.predicates.LootItemCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MapleBlocks.RICE).setProperties(net.minecraft.advancements.criterion.StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7));
+        add(MapleBlocks.RICE, createCropDrops(MapleBlocks.RICE, MapleItems.SOYBEAN,MapleItems.Rice,builder));
 
         //Glass Block
-        addDropWithSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.LIME_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.LIME_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.PINK_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.PINK_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.RED_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.RED_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
-        addDropWithSilkTouch(MapleBlocks.GLASS_SLAB);
-        addDropWithSilkTouch(MapleBlocks.GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.WHITE_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.ORANGE_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.MAGENTA_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.YELLOW_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.LIME_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.LIME_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.PINK_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.PINK_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.GRAY_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.CYAN_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.PURPLE_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.BLUE_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.BROWN_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.GREEN_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.RED_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.RED_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.BLACK_STAINED_GLASS_STAIRS);
+        dropWhenSilkTouch(MapleBlocks.GLASS_SLAB);
+        dropWhenSilkTouch(MapleBlocks.GLASS_STAIRS);
 
-        addDrop(MapleBlocks.TATAMI);
-        addDrop(MapleBlocks.TATAMI_SLAB);
+        dropSelf(MapleBlocks.TATAMI);
+        dropSelf(MapleBlocks.TATAMI_SLAB);
 
-        addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore, Items.COAL));
-        addDrop(MapleNetherOresBlocks.Nether_Copper_Ore, copperOreDrops(MapleNetherOresBlocks.Nether_Copper_Ore));
-        addDrop(MapleNetherOresBlocks.Nether_Diamond_Ore, oreDrops(MapleNetherOresBlocks.Nether_Diamond_Ore,Items.DIAMOND));
-        addDrop(MapleNetherOresBlocks.Nether_Emerald_Ore, oreDrops(MapleNetherOresBlocks.Nether_Emerald_Ore,Items.EMERALD));
-        addDrop(MapleNetherOresBlocks.Nether_Gold_Ore, oreDrops(MapleNetherOresBlocks.Nether_Gold_Ore,Items.RAW_GOLD));
-        addDrop(MapleNetherOresBlocks.Nether_Iron_Ore, oreDrops(MapleNetherOresBlocks.Nether_Iron_Ore,Items.RAW_IRON));
-        addDrop(MapleNetherOresBlocks.Nether_Lapis_Ore, lapisOreDrops(MapleNetherOresBlocks.Nether_Lapis_Ore));
-        addDrop(MapleNetherOresBlocks.Nether_Redstone_Ore,redstoneOreDrops(MapleNetherOresBlocks.Nether_Redstone_Ore));
-        addDrop(MapleNetherOresBlocks.Nether_Coal_Ore, oreDrops(MapleNetherOresBlocks.Nether_Coal_Ore,Items.COAL));
-        addDrop(MapleOreBlocks.Salt_Ore, dropsWithSilkTouch(MapleOreBlocks.Salt_Ore, this.applyExplosionDecay(MapleOreBlocks.Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F,1.0F))))));
-        addDrop(MapleOreBlocks.DEEPSLATE_Salt_Ore, dropsWithSilkTouch(MapleOreBlocks.DEEPSLATE_Salt_Ore, this.applyExplosionDecay(MapleOreBlocks.DEEPSLATE_Salt_Ore, ItemEntry.builder(MapleItems.Salt).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F))))));
+        add(MapleNetherOresBlocks.Nether_Coal_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Coal_Ore, Items.COAL));
+        add(MapleNetherOresBlocks.Nether_Copper_Ore, createCopperOreDrops(MapleNetherOresBlocks.Nether_Copper_Ore));
+        add(MapleNetherOresBlocks.Nether_Diamond_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Diamond_Ore,Items.DIAMOND));
+        add(MapleNetherOresBlocks.Nether_Emerald_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Emerald_Ore,Items.EMERALD));
+        add(MapleNetherOresBlocks.Nether_Gold_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Gold_Ore,Items.RAW_GOLD));
+        add(MapleNetherOresBlocks.Nether_Iron_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Iron_Ore,Items.RAW_IRON));
+        add(MapleNetherOresBlocks.Nether_Lapis_Ore, createLapisOreDrops(MapleNetherOresBlocks.Nether_Lapis_Ore));
+        add(MapleNetherOresBlocks.Nether_Redstone_Ore,createRedstoneOreDrops(MapleNetherOresBlocks.Nether_Redstone_Ore));
+        add(MapleNetherOresBlocks.Nether_Coal_Ore, createOreDrop(MapleNetherOresBlocks.Nether_Coal_Ore,Items.COAL));
+        add(MapleOreBlocks.Salt_Ore, createSilkTouchDispatchTable(MapleOreBlocks.Salt_Ore, this.applyExplosionDecay(MapleOreBlocks.Salt_Ore, LootItem.lootTableItem(MapleItems.Salt).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F,1.0F))))));
+        add(MapleOreBlocks.DEEPSLATE_Salt_Ore, createSilkTouchDispatchTable(MapleOreBlocks.DEEPSLATE_Salt_Ore, this.applyExplosionDecay(MapleOreBlocks.DEEPSLATE_Salt_Ore, LootItem.lootTableItem(MapleItems.Salt).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))))));
 
-        addDrop(MapleBlocks.RED_MAPLE_CARPET);
-        addDrop(MapleBlocks.Maple_CARPET);
-        addDrop(MapleBlocks.GINKGO_CARPET);
-        addDrop(MapleBlocks.SAKURA_CARPET);
+        dropSelf(MapleBlocks.RED_MAPLE_CARPET);
+        dropSelf(MapleBlocks.Maple_CARPET);
+        dropSelf(MapleBlocks.GINKGO_CARPET);
+        dropSelf(MapleBlocks.SAKURA_CARPET);
 
         //PLASTER
-        addDrop(MapleBlocks.GREEN_PLASTER);
-        addDrop(MapleBlocks.PLASTER);
-        addDrop(MapleBlocks.ORANGE_PLASTER);
-        addDrop(MapleBlocks.MAGENTA_PLASTER);
-        addDrop(MapleBlocks.LIGHT_BLUE_PLASTER);
-        addDrop(MapleBlocks.YELLOW_PLASTER);
-        addDrop(MapleBlocks.LIME_PLASTER);
-        addDrop(MapleBlocks.PINK_PLASTER);
-        addDrop(MapleBlocks.GRAY_PLASTER);
-        addDrop(MapleBlocks.LIGHT_GRAY_PLASTER);
-        addDrop(MapleBlocks.CYAN_PLASTER);
-        addDrop(MapleBlocks.PURPLE_PLASTER);
-        addDrop(MapleBlocks.BLUE_PLASTER);
-        addDrop(MapleBlocks.BROWN_PLASTER);
-        addDrop(MapleBlocks.RED_PLASTER);
+        dropSelf(MapleBlocks.GREEN_PLASTER);
+        dropSelf(MapleBlocks.PLASTER);
+        dropSelf(MapleBlocks.ORANGE_PLASTER);
+        dropSelf(MapleBlocks.MAGENTA_PLASTER);
+        dropSelf(MapleBlocks.LIGHT_BLUE_PLASTER);
+        dropSelf(MapleBlocks.YELLOW_PLASTER);
+        dropSelf(MapleBlocks.LIME_PLASTER);
+        dropSelf(MapleBlocks.PINK_PLASTER);
+        dropSelf(MapleBlocks.GRAY_PLASTER);
+        dropSelf(MapleBlocks.LIGHT_GRAY_PLASTER);
+        dropSelf(MapleBlocks.CYAN_PLASTER);
+        dropSelf(MapleBlocks.PURPLE_PLASTER);
+        dropSelf(MapleBlocks.BLUE_PLASTER);
+        dropSelf(MapleBlocks.BROWN_PLASTER);
+        dropSelf(MapleBlocks.RED_PLASTER);
 
         //Sea Lantern
-        addDrop(MapleBlocks.Iron_Sea_Lantern);
-        addDrop(MapleBlocks.Gold_Sea_Lantern);
+        dropSelf(MapleBlocks.Iron_Sea_Lantern);
+        dropSelf(MapleBlocks.Gold_Sea_Lantern);
 
         //Potted
-        addPottedPlantDrops(MapleBlocks.POTTED_SAKURA_SAPLING);
-        addPottedPlantDrops(MapleBlocks.POTTED_RED_MAPLE_SAPLING);
-        addPottedPlantDrops(MapleBlocks.POTTED_CHERRY_SAPLING);
-        addPottedPlantDrops(MapleBlocks.POTTED_GINKGO_SAPLING);
-        addPottedPlantDrops(MapleBlocks.POTTED_MAPLE_SAPLING);
+        dropPottedContents(MapleBlocks.POTTED_SAKURA_SAPLING);
+        dropPottedContents(MapleBlocks.POTTED_RED_MAPLE_SAPLING);
+        dropPottedContents(MapleBlocks.POTTED_CHERRY_SAPLING);
+        dropPottedContents(MapleBlocks.POTTED_GINKGO_SAPLING);
+        dropPottedContents(MapleBlocks.POTTED_MAPLE_SAPLING);
     }
 }

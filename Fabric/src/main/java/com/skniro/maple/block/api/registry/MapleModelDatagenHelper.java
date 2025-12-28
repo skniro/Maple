@@ -1,24 +1,29 @@
 package com.skniro.maple.block.api.registry;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.data.*;
-import net.minecraft.item.Item;
-import net.minecraft.state.property.Properties;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class MapleModelDatagenHelper {
-    private final BlockStateModelGenerator generator;
+    private final BlockModelGenerators generator;
 
-    public MapleModelDatagenHelper(BlockStateModelGenerator generator) {
+    public MapleModelDatagenHelper(BlockModelGenerators generator) {
         this.generator = generator;
     }
 
     public void registerModSweetBerryBush(Item fruititem, Block block) {
-        generator.registerItemModel(fruititem);
-        generator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(block)
-                .with(BlockStateVariantMap.models(Properties.AGE_3).generate(stage ->
-                        createWeightedVariant(generator.createSubModel(block, "_stage" + stage, Models.CROSS, TextureMap::cross)
+        generator.registerSimpleFlatItemModel(fruititem);
+        generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BlockStateProperties.AGE_3).generate(stage ->
+                        plainVariant(generator.createSuffixedVariant(block, "_stage" + stage, ModelTemplates.CROSS, TextureMapping::cross)
                         )
                 ))
         );

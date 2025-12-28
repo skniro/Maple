@@ -1,54 +1,53 @@
 package com.skniro.maple.entity.furniture;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityDimensions;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.storage.ReadView;
-import net.minecraft.storage.WriteView;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
 public class CushionEntity extends Entity {
-    public CushionEntity(EntityType<?> type, World world) {
+    public CushionEntity(EntityType<?> type, Level world) {
         super(type, world);
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
 
     }
 
     @Override
-    public boolean damage(ServerWorld world, DamageSource source, float amount) {
+    public boolean hurtServer(ServerLevel world, DamageSource source, float amount) {
         return false;
     }
 
     @Override
-    protected Vec3d getPassengerAttachmentPos(Entity passenger, EntityDimensions dimensions, float scaleFactor)
+    protected Vec3 getPassengerAttachmentPoint(Entity passenger, EntityDimensions dimensions, float scaleFactor)
     {
-        return new Vec3d(0F, dimensions.height() * 0.50F * scaleFactor, 0F);
+        return new Vec3(0F, dimensions.height() * 0.50F * scaleFactor, 0F);
     }
 
 
     @Override
-    protected void readCustomData(ReadView nbt) {
+    protected void readAdditionalSaveData(ValueInput nbt) {
 
     }
 
     @Override
-    protected void writeCustomData(WriteView nbt) {
+    protected void addAdditionalSaveData(ValueOutput nbt) {
 
     }
 
     protected void kill(){
-        this.remove(Entity.RemovalReason.KILLED);
-        this.emitGameEvent(GameEvent.ENTITY_DIE);
+        this.remove(RemovalReason.KILLED);
+        this.gameEvent(GameEvent.ENTITY_DIE);
     }
 
     @Override

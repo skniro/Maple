@@ -3,15 +3,19 @@ package com.skniro.maple.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.recipe.*;
-import net.minecraft.recipe.book.RecipeBookCategory;
-import net.minecraft.recipe.input.RecipeInput;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.world.World;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.PlacementInfo;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeBookCategory;
+import net.minecraft.world.item.crafting.RecipeInput;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
@@ -23,7 +27,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     private final ItemStack output;
     final List<Ingredient>  recipeItems;
     @Nullable
-    private IngredientPlacement ingredientPlacement;
+    private PlacementInfo ingredientPlacement;
 
     public MapleJuicerCraftingRecipe(List<Ingredient> recipeItems, ItemStack output) {
         this.output = output;
@@ -31,9 +35,9 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public boolean matches(RecipeInput inventory, World world) {
+    public boolean matches(RecipeInput inventory, Level world) {
         for (int i = 0; i < recipeItems.size(); i++) {
-            if (!recipeItems.get(i).test(inventory.getStackInSlot(i))) {
+            if (!recipeItems.get(i).test(inventory.getItem(i))) {
                 return false;
             }
         }
@@ -41,33 +45,33 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public ItemStack craft(RecipeInput inventory, RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack assemble(RecipeInput inventory, HolderLookup.Provider lookup) {
         return output;
     }
 
 
     @Override
-    public IngredientPlacement getIngredientPlacement() {
+    public PlacementInfo placementInfo() {
         if (this.ingredientPlacement == null) {
-            this.ingredientPlacement = IngredientPlacement.forShapeless(this.recipeItems);
+            this.ingredientPlacement = PlacementInfo.create(this.recipeItems);
         }
 
         return this.ingredientPlacement;
     }
 
     @Override
-    public RecipeBookCategory getRecipeBookCategory() {
+    public RecipeBookCategory recipeBookCategory() {
         return null;
     }
 
 
-    public ItemStack getResult(RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack getResult(HolderLookup.Provider lookup) {
         return output;
     }
 
 
-    public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(2);
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> list = NonNullList.createWithCapacity(2);
         list.addAll(recipeItems);
         return list;
     }
@@ -94,7 +98,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
         ).apply(inst, MapleJuicerCraftingRecipe::new));
 
 
-        public static final PacketCodec<RegistryByteBuf, MapleJuicerCraftingRecipe> PACKET_CODEC = PacketCodec.ofStatic(MapleJuicerCraftingRecipe.Serializer::write, MapleJuicerCraftingRecipe.Serializer::read);
+        public static final StreamCodec<RegistryFriendlyByteBuf, MapleJuicerCraftingRecipe> PACKET_CODEC = StreamCodec.of(Serializer::write, Serializer::read);
 
         public Serializer() {
         }
@@ -103,30 +107,30 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
             return CODEC;
         }
 
-        public PacketCodec<RegistryByteBuf, MapleJuicerCraftingRecipe> packetCodec() {
+        public StreamCodec<RegistryFriendlyByteBuf, MapleJuicerCraftingRecipe> streamCodec() {
             return PACKET_CODEC;
         }
 
-        private static MapleJuicerCraftingRecipe read(RegistryByteBuf buf) {
+        private static MapleJuicerCraftingRecipe read(RegistryFriendlyByteBuf buf) {
             int i = buf.readVarInt();
-            DefaultedList<Ingredient> defaultedList = DefaultedList.ofSize(i, Ingredient.ofItem(ItemStack.EMPTY.getItem()));
+            NonNullList<Ingredient> defaultedList = NonNullList.withSize(i, Ingredient.of(ItemStack.EMPTY.getItem()));
             defaultedList.replaceAll((empty) -> {
-                return (Ingredient)Ingredient.PACKET_CODEC.decode(buf);
+                return (Ingredient)Ingredient.CONTENTS_STREAM_CODEC.decode(buf);
             });
-            ItemStack itemStack = (ItemStack)ItemStack.PACKET_CODEC.decode(buf);
+            ItemStack itemStack = (ItemStack)ItemStack.STREAM_CODEC.decode(buf);
             return new MapleJuicerCraftingRecipe(defaultedList, itemStack);
         }
 
-        private static void write(RegistryByteBuf buf, MapleJuicerCraftingRecipe recipe) {
+        private static void write(RegistryFriendlyByteBuf buf, MapleJuicerCraftingRecipe recipe) {
             buf.writeVarInt(recipe.recipeItems.size());
             Iterator var2 = recipe.recipeItems.iterator();
 
             while(var2.hasNext()) {
                 Ingredient ingredient = (Ingredient)var2.next();
-                Ingredient.PACKET_CODEC.encode(buf, ingredient);
+                Ingredient.CONTENTS_STREAM_CODEC.encode(buf, ingredient);
             }
 
-            ItemStack.PACKET_CODEC.encode(buf, recipe.output);
+            ItemStack.STREAM_CODEC.encode(buf, recipe.output);
         }
     }
 }

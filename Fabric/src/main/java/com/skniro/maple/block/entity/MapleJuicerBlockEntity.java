@@ -5,49 +5,49 @@ import com.skniro.maple.recipe.MapleJuicerCraftingRecipe;
 import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleJuicerBlockScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.listener.ClientPlayPacketListener;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.storage.ReadView;
-import net.minecraft.storage.WriteView;
-import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
     private float rotation = 0;
     private static final int INPUT_SLOT = 0;
     private static final int Glass_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
     private static final int ENERGY_ITEM_SLOT = 3;
 
-    protected final PropertyDelegate propertyDelegate;
+    protected final ContainerData propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
     private final int DEFAULT_MAX_PROGRESS = 72;
 
     public MapleJuicerBlockEntity(BlockPos pos, BlockState state) {
         super(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, pos, state);
-        this.propertyDelegate = new PropertyDelegate() {
+        this.propertyDelegate = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
@@ -66,65 +66,65 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
             }
 
             @Override
-            public int size() {
+            public int getCount() {
                 return 2;
             }
         };
     }
 
     public ItemStack getRenderStack() {
-            return this.getStack(INPUT_SLOT);
+            return this.getItem(INPUT_SLOT);
     }
     @Override
-    public void markDirty() {
-        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
-        super.markDirty();
-    }
-
-    @Override
-    public BlockPos getScreenOpeningData(ServerPlayerEntity player) {
-        return this.pos;
+    public void setChanged() {
+        level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        super.setChanged();
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public BlockPos getScreenOpeningData(ServerPlayer player) {
+        return this.worldPosition;
+    }
+
+    @Override
+    public NonNullList<ItemStack> getItems() {
         return inventory;
     }
 
     @Override
-    public Text getDisplayName() {
-        return Text.translatable("gui.maple.maple_juicer");
+    public Component getDisplayName() {
+        return Component.translatable("gui.maple.maple_juicer");
     }
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+    public AbstractContainerMenu createMenu(int syncId, Inventory playerInventory, Player player) {
         return new MapleJuicerBlockScreenHandler(syncId, playerInventory, this, propertyDelegate);
     }
 
     @Override
-    protected void writeData(WriteView nbt) {
-        super.writeData(nbt);
-        Inventories.writeData(nbt, inventory);
+    protected void saveAdditional(ValueOutput nbt) {
+        super.saveAdditional(nbt);
+        ContainerHelper.saveAllItems(nbt, inventory);
         nbt.putInt("maple_juicer.progress", progress);
         nbt.putInt("maple_juicer.max_progress", maxProgress);
     }
 
     @Override
-    public void readData(ReadView nbt) {
-        Inventories.readData(nbt, inventory);
-        progress = nbt.getInt("maple_juicer.progress", 0);
-        maxProgress = nbt.getInt("maple_juicer.max_progress", 72);
-        super.readData(nbt);
+    public void loadAdditional(ValueInput nbt) {
+        ContainerHelper.loadAllItems(nbt, inventory);
+        progress = nbt.getIntOr("maple_juicer.progress", 0);
+        maxProgress = nbt.getIntOr("maple_juicer.max_progress", 72);
+        super.loadAdditional(nbt);
     }
 
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient()) {
+    public void tick(Level world, BlockPos pos, BlockState state) {
+        if(world.isClientSide()) {
             return;
         }
         if(hasRecipe() && canInsertIntoOutputSlot()) {
             increaseCraftingProgress();
-            markDirty(world, pos, state);
+            setChanged(world, pos, state);
 
             if(hasCraftingFinished()) {
                 craftItem();
@@ -141,15 +141,15 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private void craftItem() {
-        Optional<RecipeEntry<MapleJuicerCraftingRecipe>> recipe = getCurrentRecipe();
-        this.removeStack(INPUT_SLOT, 1);
-        this.removeStack(Glass_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
-                this.getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
+        Optional<RecipeHolder<MapleJuicerCraftingRecipe>> recipe = getCurrentRecipe();
+        this.removeItem(INPUT_SLOT, 1);
+        this.removeItem(Glass_SLOT, 1);
+        this.setItem(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                this.getItem(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
     @Override
-    public int[] getAvailableSlots(Direction direction) {
+    public int[] getSlotsForFace(Direction direction) {
         return switch (direction){
             case UP -> new int[]{INPUT_SLOT};
             case DOWN -> new int[]{Glass_SLOT};
@@ -158,7 +158,7 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     @Override
-    public boolean isValid(int slot, ItemStack stack) {
+    public boolean canPlaceItem(int slot, ItemStack stack) {
         return slot != OUTPUT_SLOT;
     }
 
@@ -171,12 +171,12 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private boolean canInsertIntoOutputSlot() {
-        return this.getStack(OUTPUT_SLOT).isEmpty() ||
-                this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getItem(OUTPUT_SLOT).isEmpty() ||
+                this.getItem(OUTPUT_SLOT).getCount() < this.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 
     private boolean hasRecipe() {
-        Optional<RecipeEntry<MapleJuicerCraftingRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeHolder<MapleJuicerCraftingRecipe>> recipe = getCurrentRecipe();
         if(recipe.isEmpty()) {
             return false;
         }
@@ -185,35 +185,35 @@ public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScree
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
-    private Optional<RecipeEntry<MapleJuicerCraftingRecipe>> getCurrentRecipe() {
-        SimpleInventory inv = new SimpleInventory(this.size());
-        for(int i = 0; i < this.size(); i++) {
-            inv.setStack(i, this.getStack(i));
+    private Optional<RecipeHolder<MapleJuicerCraftingRecipe>> getCurrentRecipe() {
+        SimpleContainer inv = new SimpleContainer(this.getContainerSize());
+        for(int i = 0; i < this.getContainerSize(); i++) {
+            inv.setItem(i, this.getItem(i));
         }
-        return this.getWorld().getServer().getRecipeManager()
-                .getFirstMatch(MapleRecipeType.Maple_JUIER_TYPE, new MapleCraftingRecipeInput(inventory.get(INPUT_SLOT), inventory.get(Glass_SLOT)), this.getWorld());
+        return this.getLevel().getServer().getRecipeManager()
+                .getRecipeFor(MapleRecipeType.Maple_JUIER_TYPE, new MapleCraftingRecipeInput(inventory.get(INPUT_SLOT), inventory.get(Glass_SLOT)), this.getLevel());
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getItem() == output.getItem();
+        return this.getItem(OUTPUT_SLOT).isEmpty() || this.getItem(OUTPUT_SLOT).getItem() == output.getItem();
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
-    int maxCount = this.getStack(OUTPUT_SLOT).isEmpty() ? 1 : this.getStack(OUTPUT_SLOT).getMaxCount();
-    int currentCount = this.getStack(OUTPUT_SLOT).getCount();
+    int maxCount = this.getItem(OUTPUT_SLOT).isEmpty() ? 1 : this.getItem(OUTPUT_SLOT).getMaxStackSize();
+    int currentCount = this.getItem(OUTPUT_SLOT).getCount();
 
         return maxCount >= currentCount + count;
 }
 
    @Nullable
    @Override
-    public Packet<ClientPlayPacketListener> toUpdatePacket() {
-    return BlockEntityUpdateS2CPacket.create(this);
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+    return ClientboundBlockEntityDataPacket.create(this);
 }
 
 
     @Override
-    public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
-        return createNbt(registryLookup);
+    public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
+        return saveWithoutMetadata(registryLookup);
     }
 }

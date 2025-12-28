@@ -2,14 +2,13 @@ package com.skniro.maple.client.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.particle.BillboardParticle;
-import net.minecraft.client.particle.ParticleTextureSheet;
-import net.minecraft.client.particle.SpriteProvider;
-import net.minecraft.client.texture.Sprite;
-import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.SingleQuadParticle;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 
 @Environment(EnvType.CLIENT)
-public class MapleCherryLeavesParticle extends BillboardParticle {
+public class MapleCherryLeavesParticle extends SingleQuadParticle {
     private static final float field_43372 = 0.0025F;
     private static final int field_43373 = 300;
     private static final int field_43366 = 300;
@@ -19,52 +18,52 @@ public class MapleCherryLeavesParticle extends BillboardParticle {
     private final float field_43370;
     private final float field_43371;
 
-    public MapleCherryLeavesParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider, Sprite sprite) {
+    public MapleCherryLeavesParticle(ClientLevel world, double x, double y, double z, SpriteSet spriteProvider, TextureAtlasSprite sprite) {
         super(world, x, y, z, sprite);
-        this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
+        this.setSprite(spriteProvider.get(this.random.nextInt(12), 12));
         this.field_43369 = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
         this.field_43370 = this.random.nextFloat();
         this.field_43371 = (float)Math.toRadians(this.random.nextBoolean() ? -5.0D : 5.0D);
-        this.maxAge = 300;
-        this.gravityStrength = 7.5E-4F;
+        this.lifetime = 300;
+        this.gravity = 7.5E-4F;
         float f = this.random.nextBoolean() ? 0.05F : 0.075F;
-        this.scale = f;
-        this.setBoundingBoxSpacing(f, f);
-        this.velocityMultiplier = 1.0F;
+        this.quadSize = f;
+        this.setSize(f, f);
+        this.friction = 1.0F;
     }
 
-    public BillboardParticle.RenderType getRenderType() {
-        return RenderType.PARTICLE_ATLAS_OPAQUE;
+    public Layer getLayer() {
+        return Layer.OPAQUE;
     }
 
     public void tick() {
-        this.lastX = this.x;
-        this.lastY = this.y;
-        this.lastZ = this.z;
-        if (this.maxAge-- <= 0) {
-            this.markDead();
+        this.xo = this.x;
+        this.yo = this.y;
+        this.zo = this.z;
+        if (this.lifetime-- <= 0) {
+            this.remove();
         }
 
-        if (!this.dead) {
-            float f = (float)(300 - this.maxAge);
+        if (!this.removed) {
+            float f = (float)(300 - this.lifetime);
             float g = Math.min(f / 300.0F, 1.0F);
             double d = Math.cos(Math.toRadians((double)(this.field_43370 * 60.0F))) * 2.0D * Math.pow((double)g, 1.25D);
             double e = Math.sin(Math.toRadians((double)(this.field_43370 * 60.0F))) * 2.0D * Math.pow((double)g, 1.25D);
-            this.velocityX += d * 0.0024999999441206455D;
-            this.velocityZ += e * 0.0024999999441206455D;
-            this.velocityY -= (double)this.gravityStrength;
+            this.xd += d * 0.0024999999441206455D;
+            this.zd += e * 0.0024999999441206455D;
+            this.yd -= (double)this.gravity;
             this.field_43369 += this.field_43371 / 20.0F;
-            this.lastZRotation = this.zRotation;
-            this.zRotation += this.field_43369 / 20.0F;
-            this.move(this.velocityX, this.velocityY, this.velocityZ);
-            if (this.onGround || this.maxAge < 299 && (this.velocityX == 0.0D || this.velocityZ == 0.0D)) {
-                this.markDead();
+            this.oRoll = this.roll;
+            this.roll += this.field_43369 / 20.0F;
+            this.move(this.xd, this.yd, this.zd);
+            if (this.onGround || this.lifetime < 299 && (this.xd == 0.0D || this.zd == 0.0D)) {
+                this.remove();
             }
 
-            if (!this.dead) {
-                this.velocityX *= (double)this.velocityMultiplier;
-                this.velocityY *= (double)this.velocityMultiplier;
-                this.velocityZ *= (double)this.velocityMultiplier;
+            if (!this.removed) {
+                this.xd *= (double)this.friction;
+                this.yd *= (double)this.friction;
+                this.zd *= (double)this.friction;
             }
         }
     }

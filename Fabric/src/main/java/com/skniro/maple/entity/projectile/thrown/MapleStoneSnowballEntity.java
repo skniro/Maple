@@ -1,22 +1,22 @@
 package com.skniro.maple.entity.projectile.thrown;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 
 public class MapleStoneSnowballEntity extends MapleSnowballEntity {
-    public MapleStoneSnowballEntity(World world, LivingEntity owner, ItemStack stack) {
+    public MapleStoneSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
         super(world, owner, stack);
     }
 
     @Override
-    protected void onEntityHit(EntityHitResult entityHitResult) {
-        super.onEntityHit(entityHitResult);
+    protected void onHitEntity(EntityHitResult entityHitResult) {
+        super.onHitEntity(entityHitResult);
         Entity entity = entityHitResult.getEntity();
-        int i = entity instanceof BlazeEntity ? 4 : 1;
-        entity.serverDamage(this.getDamageSources().thrown(this, this.getOwner()), i);
+        int i = entity instanceof Blaze ? 4 : 1;
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), i);
     }
 }

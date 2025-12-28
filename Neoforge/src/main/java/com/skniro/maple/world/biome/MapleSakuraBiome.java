@@ -7,13 +7,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import terrablender.api.ParameterUtils;
+/*import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
-import terrablender.api.RegionType;
+import terrablender.api.RegionType;*/
 
 import java.util.function.Consumer;
 
-public class MapleSakuraBiome extends Region {
+public class MapleSakuraBiome {}/*extends Region {
     public MapleSakuraBiome(Identifier name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
@@ -37,4 +37,4 @@ public class MapleSakuraBiome extends Region {
             builder.build().forEach(mapper::accept);
         });
     }
-}
+}*/

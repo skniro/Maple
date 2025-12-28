@@ -1,40 +1,39 @@
 package com.skniro.maple.screen;
 
 import com.skniro.maple.block.entity.MapleJuicerBlockEntity;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.FurnaceOutputSlot;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.Container;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.FurnaceResultSlot;
+import net.minecraft.world.inventory.SimpleContainerData;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 
 
-public class MapleJuicerBlockScreenHandler extends ScreenHandler {
-    private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
+public class MapleJuicerBlockScreenHandler extends AbstractContainerMenu {
+    private final Container inventory;
+    private final ContainerData propertyDelegate;
     public final MapleJuicerBlockEntity blockEntity;
 
-    public MapleJuicerBlockScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos){
-        this(syncId,playerInventory, playerInventory.player.getEntityWorld().getBlockEntity(pos),new ArrayPropertyDelegate(2));
+    public MapleJuicerBlockScreenHandler(int syncId, Inventory playerInventory, BlockPos pos){
+        this(syncId,playerInventory, playerInventory.player.level().getBlockEntity(pos),new SimpleContainerData(2));
     }
 
 
-    public MapleJuicerBlockScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate delegate) {
+    public MapleJuicerBlockScreenHandler(int syncId, Inventory playerInventory, BlockEntity blockEntity, ContainerData delegate) {
         super(MapleScreenHandlerType.Maple_JUICER, syncId);
-        checkSize((Inventory) blockEntity,4);
-        this.inventory = (Inventory) blockEntity;
-        inventory.onOpen(playerInventory.player);
+        checkContainerSize((Container) blockEntity,4);
+        this.inventory = (Container) blockEntity;
+        inventory.startOpen(playerInventory.player);
         this.propertyDelegate = delegate;
         this.blockEntity = (MapleJuicerBlockEntity) blockEntity;
         this.addSlot(new Slot(inventory, 0, 52, 19));
         this.addSlot(new Slot(inventory, 1, 52, 50));
-        this.addSlot(new FurnaceOutputSlot(playerInventory.player, inventory, 2, 100, 34));
+        this.addSlot(new FurnaceResultSlot(playerInventory.player, inventory, 2, 100, 34));
 
 
 
@@ -42,7 +41,7 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
-        addProperties(delegate);
+        addDataSlots(delegate);
     }
 
     public boolean isCrafting() {
@@ -66,24 +65,24 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
     }*/
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+    public ItemStack quickMoveStack(Player player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
-            ItemStack originalStack = slot.getStack();
+        if (slot != null && slot.hasItem()) {
+            ItemStack originalStack = slot.getItem();
             newStack = originalStack.copy();
-            if (invSlot < this.inventory.size()) {
-                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
+            if (invSlot < this.inventory.getContainerSize()) {
+                if (!this.moveItemStackTo(originalStack, this.inventory.getContainerSize(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
+            } else if (!this.moveItemStackTo(originalStack, 0, this.inventory.getContainerSize(), false)) {
                 return ItemStack.EMPTY;
             }
 
             if (originalStack.isEmpty()) {
-                slot.setStack(ItemStack.EMPTY);
+                slot.setByPlayer(ItemStack.EMPTY);
             } else {
-                slot.markDirty();
+                slot.setChanged();
             }
         }
 
@@ -91,11 +90,11 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
+    public boolean stillValid(Player player) {
+        return this.inventory.stillValid(player);
     }
 
-    private void addPlayerInventory(PlayerInventory playerInventory) {
+    private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
@@ -103,7 +102,7 @@ public class MapleJuicerBlockScreenHandler extends ScreenHandler {
         }
     }
 
-    private void addPlayerHotbar(PlayerInventory playerInventory) {
+    private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
