@@ -133,12 +133,6 @@ public class MapleBlocks {
     //Plants Block
     public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP)));
 
-    //FlowerBlock
-    public static final Supplier<Block> PINK_PETALS = registerBlock("pink_petals", FlowerBedBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollision().sound(SoundType.GRASS)));
-
-
-    public static final Supplier<Block> CHISELED_BOOKSHELF = registerBlock("chiseled_bookshelf", ChiseledBookShelfBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.5F).sound(SoundType.WOOD)));
-
     public static final Supplier<Block> SAKURA_CARPET = registerBlock("sakura_carpet", MapleCarpetBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS).mapColor(MapColor.COLOR_PINK)));
     public static final Supplier<Block> Maple_CARPET = registerBlock("maple_carpet", MapleCarpetBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS).mapColor(MapColor.TERRACOTTA_YELLOW)));
     public static final Supplier<Block> RED_MAPLE_CARPET = registerBlock("red_maple_carpet",MapleCarpetBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS).mapColor(MapColor.COLOR_RED)));

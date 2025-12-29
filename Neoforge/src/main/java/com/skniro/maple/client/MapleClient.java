@@ -47,7 +47,6 @@ public class MapleClient {
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_DOOR.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.MAPLE_TRAPDOOR.get(), renderLayer3);
         ItemBlockRenderTypes.setRenderLayer(MapleBlocks.RICE.get(), renderLayer3);
-        ItemBlockRenderTypes.setRenderLayer(MapleBlocks.PINK_PETALS.get(),renderLayer3);
         if(MapleConfig.Furniture_Module) {
             ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_GINKGO.get(), renderLayer3);
             ItemBlockRenderTypes.setRenderLayer(MapleFurnitureBlocks.Window_Wood_MAPLE.get(), renderLayer3);
