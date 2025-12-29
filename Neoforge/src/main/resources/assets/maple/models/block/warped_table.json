@@ -1,6 +1,0 @@
-{
-  "parent": "maple:block/table",
-  "textures": {
-    "plank": "minecraft:block/warped_planks"
-  }
-}

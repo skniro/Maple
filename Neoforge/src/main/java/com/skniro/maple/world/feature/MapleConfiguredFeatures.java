@@ -42,7 +42,6 @@ import java.util.OptionalInt;
 public class MapleConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> Maple_TREE =registerKey("maple_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> Red_Maple_TREE =registerKey("red_maple_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CHERRY_TREE = registerKey("cherry_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAKURA_TREE = registerKey("sakura_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAGE_SAKURA_TREE = registerKey("mage_sakura_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GINKGO_TREE = registerKey("ginkgo_tree");
@@ -71,10 +70,6 @@ public class MapleConfiguredFeatures {
 
     private static TreeConfiguration.TreeConfigurationBuilder redmaple() {
         return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG.get(), MapleBlocks.RED_MAPLE_LEAVES.get(), 4, 3, 0, 2).ignoreVines();
-    }
-
-    private static TreeConfiguration.TreeConfigurationBuilder cherry() {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.CHERRY_LOG), new CherryTrunkPlacer(7, 1, 0, new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(1), 1).add(ConstantInt.of(2), 1).add(ConstantInt.of(3), 1).build()), UniformInt.of(2, 4), UniformInt.of(-4, -3), UniformInt.of(-1, 0)), BlockStateProvider.simple(Blocks.CHERRY_LEAVES), new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25f, 0.5f, 0.16666667f, 0.33333334f), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder sakura() {
@@ -121,8 +116,6 @@ public class MapleConfiguredFeatures {
                 MapleConfiguredFeatures.redmaple().build());
         register(featureRegisterable, Maple_TREE, Feature.TREE,
                 MapleConfiguredFeatures.maple().build());
-        register(featureRegisterable, CHERRY_TREE, Feature.TREE,
-                MapleConfiguredFeatures.cherry().build());
         register(featureRegisterable, SAKURA_TREE, Feature.TREE,
                 MapleConfiguredFeatures.sakura().build());
         register(featureRegisterable, MAGE_SAKURA_TREE, Feature.TREE,

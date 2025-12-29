@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_uv_locked_x",
-  "textures": {
-    "end": "maple:block/stripped_bamboo_block_top",
-    "side": "maple:block/stripped_bamboo_block"
-  }
-}

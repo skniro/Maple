@@ -1,6 +1,0 @@
-{
-  "parent": "maple:block/normal_chair",
-  "textures": {
-    "plank": "minecraft:block/stripped_cherry_log"
-  }
-}

@@ -50,26 +50,10 @@ public class MapleBlocks {
     public static final Supplier<Block> GINKGO_WOOD = registerBlock("ginkgo_wood",
             RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).mapColor(MapColor.SAND)));
 
-
-    public static final Supplier<Block> CHERRY_LOG = registerBlock("cherry_log",RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
-    public static final Supplier<Block> CHERRY_WOOD = registerBlock("cherry_wood",
-            RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final Supplier<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
-    public static final Supplier<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            RotatedPillarBlock::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
-
-    public static final Supplier<Block> BAMBOO_BLOCK = registerBlock("bamboo_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(2.0f).sound(SoundType.WOOD));
-    public static final Supplier<Block> STRIPPED_BAMBOO_BLOCK = registerBlock("stripped_bamboo_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f).sound(SoundType.WOOD) );
-
-
-
-
     //SAPLING Block
     public static final Supplier<Block> MAPLE_SAPLING = registerBlock("maple_sapling",(settings)-> new SaplingBlock(MapleSaplingGenerator.MapleSapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
     public static final Supplier<Block> RED_MAPLE_SAPLING = registerBlock("red_maple_sapling",(settings)-> new SaplingBlock(RedMapleSaplingGenerator.RedMapleSapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
     public static final Supplier<Block> GINKGO_SAPLING = registerBlock("ginkgo_sapling",(settings)-> new SaplingBlock(GinkgoSaplingGenerator.GinkgoSapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
-    public static final Supplier<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",(settings)-> new SaplingBlock(CherrySaplingGenerator.CherrySapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
     public static final Supplier<Block> SAKURA_SAPLING = registerBlock("sakura_sapling",(settings)-> new SaplingBlock(SakuraSaplingGenerator.SakuraSapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
 
     //LEAVES Block
@@ -80,31 +64,19 @@ public class MapleBlocks {
 
     public static final Supplier<Block> GINKGO_LEAVES = registerBlock("ginkgo_leaves",
             (settings)-> new TintedParticleLeavesBlock(0.1f, settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_YELLOW)));
-    public static final Supplier<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
-            (settings)-> new UntintedParticleLeavesBlock(0.1f, ParticleTypes.CHERRY_LEAVES, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK));
     public static final Supplier<Block> SAKURA_LEAVES = registerBlock("sakura_leaves",
             (settings)-> new UntintedParticleLeavesBlock(0.1f, MapleParticleTypes.SAKURA_LEAVES.get(), settings), (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_PINK).lightLevel((state) -> 8)));
 
     //PLANKS Block
     public static final Supplier<Block> MAPLE_PLANKS = registerBlock("maple_planks",
             Block::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_BROWN)));
-    public static final Supplier<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
-            Block::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_PINK)));
     public static final Supplier<Block> GINKGO_PLANKS = registerBlock("ginkgo_planks",
             Block::new, (BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_YELLOW)));
-    public static final Supplier<Block> BAMBOO_PLANKS = registerBlock("bamboo_planks",
-            Block::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final Supplier<Block> BAMBOO_MOSAIC = registerBlock("bamboo_mosaic",
-            Block::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-
     //Potted
     public static final Supplier<Block> POTTED_GINKGO_SAPLING = registerBlockWithoutItem("potted_ginkgo_sapling",
             (settings)-> new FlowerPotBlock(GINKGO_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
-    public static final Supplier<Block> POTTED_CHERRY_SAPLING = registerBlockWithoutItem("potted_cherry_sapling",
-            (settings)-> new FlowerPotBlock(CHERRY_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
     public static final Supplier<Block> POTTED_MAPLE_SAPLING = registerBlockWithoutItem("potted_maple_sapling",
             (settings)-> new FlowerPotBlock(MAPLE_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
-
     public static final Supplier<Block> POTTED_RED_MAPLE_SAPLING = registerBlockWithoutItem("potted_red_maple_sapling",
             (settings)-> new FlowerPotBlock(RED_MAPLE_SAPLING.get(), settings), BlockBehaviour.Properties.of().instabreak().noOcclusion());
     public static final Supplier<Block> POTTED_SAKURA_SAPLING = registerBlockWithoutItem("potted_sakura_sapling",
@@ -114,88 +86,50 @@ public class MapleBlocks {
     //BUTTON
     public static final Supplier<Block> GINKGO_BUTTON = registerBlock("ginkgo_button",
             (settings)-> new ButtonBlock(MapleBlockSetType.GINKGO,30, settings), buttonProperties());
-    public static final Supplier<Block> CHERRY_BUTTON = registerBlock("cherry_button",
-            (settings)-> new ButtonBlock(BlockSetType.CHERRY,30, settings), buttonProperties());
     public static final Supplier<Block> MAPLE_BUTTON = registerBlock("maple_button",
             (settings)-> new ButtonBlock(MapleBlockSetType.MAPLE,30, settings), buttonProperties());
-    public static final Supplier<Block> BAMBOO_BUTTON = registerBlock("bamboo_button",
-            (settings)-> new ButtonBlock(BlockSetType.BAMBOO,30, settings), buttonProperties());
 
 
     //STAIRS
     public static final Supplier<Block> GINKGO_STAIRS = registerBlock("ginkgo_stairs",
             (settings)-> new StairBlock(Blocks.CHERRY_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS));
-    public static final Supplier<Block> CHERRY_STAIRS = registerBlock("cherry_stairs",
-            (settings)-> new StairBlock(Blocks.CHERRY_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS));
     public static final Supplier<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
             (settings)-> new StairBlock(Blocks.CHERRY_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS));
-    public static final Supplier<Block> BAMBOO_STAIRS = registerBlock("bamboo_stairs",
-            (settings)-> new StairBlock(Blocks.BAMBOO_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS));
-    public static final Supplier<Block> BAMBOO_MOSAIC_STAIRS = registerBlock("bamboo_mosaic_stairs",
-            (settings)-> new StairBlock(Blocks.BAMBOO_MOSAIC.defaultBlockState(), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_MOSAIC));
-
 
     //SLAB
     public static final Supplier<Block> GINKGO_SLAB = registerBlock("ginkgo_slab",
             SlabBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Supplier<Block> CHERRY_SLAB = registerBlock("cherry_slab",
-            SlabBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final Supplier<Block> MAPLE_SLAB = registerBlock("maple_slab",
             SlabBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Supplier<Block> BAMBOO_SLAB = registerBlock("bamboo_slab",
-            SlabBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final Supplier<Block> BAMBOO_MOSAIC_SLAB = registerBlock("bamboo_mosaic_slab",
-            SlabBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
 
     //FENCE
     public static final Supplier<Block> GINKGO_FENCE_GATE = registerBlock("ginkgo_fence_gate",
             (settings)-> new FenceGateBlock(MapleWoodTypes.GINKGO, settings),  BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0F, 3.0F));
     public static final Supplier<Block> GINKGO_FENCE = registerBlock("ginkgo_fence",
             FenceBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Supplier<Block> CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
-            (settings)-> new FenceGateBlock(WoodType.CHERRY, settings),  BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).strength(2.0F, 3.0F));
-    public static final Supplier<Block> CHERRY_FENCE = registerBlock("cherry_fence",
-            FenceBlock::new, (BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final Supplier<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
             (settings)-> new FenceGateBlock(MapleWoodTypes.MAPLE, settings),  BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0F, 3.0F));
     public static final Supplier<Block> MAPLE_FENCE = registerBlock("maple_fence",
             FenceBlock::new, (BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-    public static final Supplier<Block> BAMBOO_FENCE_GATE = registerBlock("bamboo_fence_gate",
-            (settings)-> new FenceGateBlock(WoodType.BAMBOO, settings),  BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).strength(2.0f, 3.0f));
-    public static final Supplier<Block> BAMBOO_FENCE = registerBlock("bamboo_fence",
-            FenceBlock::new, (BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-
 
     //Door
     public static final Supplier<Block> GINKGO_DOOR = registerBlockWithoutItem("ginkgo_door",
             (settings)-> new DoorBlock(MapleBlockSetType.GINKGO, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(3.0f).sound(SoundType.WOOD).noOcclusion());
     public static final Supplier<Block> MAPLE_DOOR = registerBlockWithoutItem("maple_door",
-            (settings)-> new DoorBlock(BlockSetType.CHERRY, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(3.0f).sound(SoundType.WOOD).noOcclusion());
-    public static final Supplier<Block> CHERRY_DOOR = registerBlockWithoutItem("cherry_door",
-            (settings)-> new DoorBlock(MapleBlockSetType.MAPLE, settings), BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion());
-    public static final Supplier<Block> BAMBOO_DOOR = registerBlockWithoutItem("bamboo_door",
-            (settings)-> new DoorBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).strength(3.0f).sound(SoundType.WOOD).noOcclusion());
+            (settings)-> new DoorBlock(MapleBlockSetType.MAPLE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).strength(3.0f).sound(SoundType.WOOD).noOcclusion());
 
     //TRAPDOOR
     public static final Supplier<Block> GINKGO_TRAPDOOR = registerBlock("ginkgo_trapdoor",
             (settings)-> new TrapDoorBlock(MapleBlockSetType.GINKGO,settings), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).strength(3.0F).noOcclusion());
-    public static final Supplier<Block> CHERRY_TRAPDOOR = registerBlock("cherry_trapdoor",
-            (settings)-> new TrapDoorBlock(BlockSetType.CHERRY, settings),BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK).strength(3.0F).noOcclusion());
     public static final Supplier<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
             (settings)-> new TrapDoorBlock(MapleBlockSetType.MAPLE, settings),BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN).strength(3.0F).noOcclusion());
-    public static final Supplier<Block> BAMBOO_TRAPDOOR = registerBlock("bamboo_trapdoor",
-            (settings)-> new TrapDoorBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(3.0f).noOcclusion());
-
 
     //PRESSURE_PLATE
     public static final Supplier<Block> GINKGO_PRESSURE_PLATE = registerBlock("ginkgo_pressure_plate",
             (settings)-> new PressurePlateBlock(MapleBlockSetType.GINKGO, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
-    public static final Supplier<Block> CHERRY_PRESSURE_PLATE = registerBlock("cherry_pressure_plate",
-            (settings)-> new PressurePlateBlock(BlockSetType.CHERRY, settings), BlockBehaviour.Properties.of().mapColor(Blocks.CHERRY_PLANKS.defaultMapColor()).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
     public static final Supplier<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
             (settings)-> new PressurePlateBlock(MapleBlockSetType.MAPLE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollision().strength(0.5F).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
-    public static final Supplier<Block> BAMBOO_PRESSURE_PLATE = registerBlock("bamboo_pressure_plate",
-            (settings)-> new PressurePlateBlock(BlockSetType.BAMBOO, settings), BlockBehaviour.Properties.of().mapColor(Blocks.BAMBOO_PLANKS.defaultMapColor()).noCollision().strength(0.5f).ignitedByLava().instrument(NoteBlockInstrument.BASS).pushReaction(PushReaction.DESTROY));
+
     //Plants Block
     public static final Supplier<Block> RICE = registerBlockWithoutItem("rice_plant", RiceBlock::new, (BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP)));
 
@@ -431,10 +365,6 @@ public class MapleBlocks {
     private static <T extends Block> Holder<Item> registerBlockItem(String name, DeferredBlock<T> block) {
         return ITEMS.registerItem(name, (properties) -> new BlockItem(block.get(),
                 new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, name)))));
-    }
-
-    private static RotatedPillarBlock createBambooBlock(MapColor topMaterialColor, MapColor sideMaterialColor, SoundType soundGroup) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(sideMaterialColor).strength(2.0f).sound(soundGroup));
     }
 
     private static BlockBehaviour.Properties buttonProperties() {

@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "maple:block/stripped_cherry_log",
-    "side": "maple:block/stripped_cherry_log"
-  }
-}

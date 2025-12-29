@@ -29,18 +29,10 @@ import java.util.function.Supplier;
 public class MapleSignBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Maple.MOD_ID);
 
-    public static final Supplier<Block> CHERRY_SIGN = registerBlockWithoutItem("cherry_sign",
-            (properties)-> new MapleStandingSignBlock(properties, WoodType.CHERRY), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollision().strength(1.0F));
-    public static final Supplier<Block> CHERRY_WALL_SIGN = registerBlockWithoutItem("cherry_wall_sign",
-            (properties)-> new MapleWallSignBlock(properties, WoodType.CHERRY),BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).noCollision().strength(1.0F));
     public static final Supplier<Block> Maple_SIGN = registerBlockWithoutItem("maple_sign",
             (properties)-> new MapleStandingSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollision().strength(1.0F));
     public static final Supplier<Block> Maple_WALL_SIGN = registerBlockWithoutItem("maple_wall_sign",
             (properties)-> new MapleWallSignBlock(properties, MapleWoodTypes.MAPLE), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).noCollision().strength(1.0F));
-    public static final Supplier<Block> BAMBOO_SIGN = registerBlockWithoutItem("bamboo_sign",
-            (properties)-> new MapleStandingSignBlock(properties, WoodType.BAMBOO), BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollision().strength(1.0f));
-    public static final Supplier<Block> BAMBOO_WALL_SIGN = registerBlockWithoutItem("bamboo_wall_sign",
-            (properties)-> new MapleWallSignBlock(properties, WoodType.BAMBOO),BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).noCollision().strength(1.0F));
    public static final Supplier<Block> GINKGO_SIGN = registerBlockWithoutItem("ginkgo_sign",
             (properties)-> new MapleStandingSignBlock(properties, MapleWoodTypes.GINKGO), BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).noCollision().strength(1.0F));
     public static final Supplier<Block> GINKGO_WALL_SIGN = registerBlockWithoutItem("ginkgo_wall_sign",

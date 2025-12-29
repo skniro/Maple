@@ -22,8 +22,7 @@ import java.util.List;
 public class MaplePlacedFeatures {
     public static final ResourceKey<PlacedFeature> Maple_TREE_PLACED = registerKey("maple_tree_placed");
     public static final ResourceKey<PlacedFeature> Red_Maple_TREE_PLACED = registerKey("red_maple_tree_placed");
-    public static final ResourceKey<PlacedFeature> CHERRY_TREE_PLACED= registerKey("cherry_tree_placed");;
-    public static final ResourceKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");;
+    public static final ResourceKey<PlacedFeature> SAKURA_TREE_PLACED= registerKey("sakura_tree_placed");
     public static final ResourceKey<PlacedFeature> MAGE_SAKURA_TREE_PLACED= registerKey("mage_sakura_tree_placed");;
     public static final ResourceKey<PlacedFeature> SALT_ORE_PLACED = registerKey("ore_salt_overworld");
     public static final ResourceKey<PlacedFeature> LAKE_HOT_SPRING_SURFACE = registerKey("lake_hot_spring_surface");
@@ -56,9 +55,6 @@ public class MaplePlacedFeatures {
 
         register(context, Red_Maple_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.Red_Maple_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), MapleBlocks.MAPLE_SAPLING.get()));
-
-        register(context, CHERRY_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.CHERRY_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.CHERRY_SAPLING.get()));
 
         register(context, SAKURA_TREE_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(MapleConfiguredFeatures.SAKURA_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), MapleBlocks.SAKURA_SAPLING.get()));

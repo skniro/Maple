@@ -4,6 +4,7 @@ import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluidTypes;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -31,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 public class MapleHotSpringFluid extends FlowingFluid {
     @Override
     protected boolean canConvertToSource(ServerLevel level) {
-        return level.getGameRules().get(GameRules.WATER_SOURCE_CONVERSION);
+        return level.getGameRules().get(MapleGameRules.HOT_SPRING_SOURCE_CONVERSION.get());
     }
 
     @Override

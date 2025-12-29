@@ -25,12 +25,8 @@ import java.util.function.Function;
 public class MapleItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Maple.MOD_ID);
 
-    public static final Supplier<Item> CHERRY_SIGN = registerItem("cherry_sign",
-            (properties)-> new MapleSignItem(MapleSignBlocks.CHERRY_SIGN, MapleSignBlocks.CHERRY_WALL_SIGN, properties), new Item.Properties().stacksTo(16));
     public static final Supplier<Item> MAPLE_SIGN = registerItem("maple_sign",
             (properties)-> new MapleSignItem(MapleSignBlocks.Maple_SIGN,MapleSignBlocks.Maple_WALL_SIGN, properties), new Item.Properties().stacksTo(16));
-    public static final Supplier<Item> BAMBOO_SIGN = registerItem("bamboo_sign",
-            (properties)-> new MapleSignItem(MapleSignBlocks.BAMBOO_SIGN,MapleSignBlocks.BAMBOO_WALL_SIGN, properties), new Item.Properties().stacksTo(16));
     public static final Supplier<Item> GINKGO_SIGN = registerItem("ginkgo_sign",
             (properties)-> new MapleSignItem(MapleSignBlocks.GINKGO_SIGN,MapleSignBlocks.GINKGO_WALL_SIGN, properties), new Item.Properties().stacksTo(16));
     public static final Supplier<Item> GINKGO_HANGING_SIGN = registerItem("ginkgo_hanging_sign",
@@ -38,12 +34,8 @@ public class MapleItems {
     public static final Supplier<Item> Maple_HANGING_SIGN = registerItem("maple_hanging_sign",
             (properties)-> new MapleHangingSignItem(MapleSignBlocks.Maple_HANGING_SIGN, MapleSignBlocks.Maple_WALL_HANGING_SIGN, properties), new Item.Properties().stacksTo(16));
 
-    public static final Supplier<Item> CHERRY_DOOR = registerItem("cherry_door",
-            (properties)-> new MapleDoubleHighBlockItem(MapleBlocks.CHERRY_DOOR, properties), new Item.Properties().stacksTo(16));
     public static final Supplier<Item> MAPLE_DOOR = registerItem("maple_door",
             (properties)-> new MapleDoubleHighBlockItem(MapleBlocks.MAPLE_DOOR, properties), new Item.Properties().stacksTo(16));
-    public static final Supplier<Item> BAMBOO_DOOR = registerItem("bamboo_door",
-            (properties)-> new MapleDoubleHighBlockItem(MapleBlocks.BAMBOO_DOOR, properties), new Item.Properties().stacksTo(16));
     public static final Supplier<Item> GINKGO_DOOR = registerItem("ginkgo_door",
             (properties)-> new MapleDoubleHighBlockItem(MapleBlocks.GINKGO_DOOR, properties), new Item.Properties().stacksTo(16));
 

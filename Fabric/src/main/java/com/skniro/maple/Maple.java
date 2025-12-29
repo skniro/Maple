@@ -63,7 +63,6 @@ public class Maple implements ModInitializer {
         MapleContent.registerMapleCompostableItems();
         MapleContent.registerScreenType();
         MapleContent.registerRecipeType();
-        //MapleContent.datafix(MOD_CONTAINER);
     }
 
 /*    @Override

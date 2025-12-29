@@ -76,10 +76,6 @@ public class MapleConfiguredFeatures {
         return MapleConfiguredFeatures.builder(MapleBlocks.MAPLE_LOG, MapleBlocks.RED_MAPLE_LEAVES, 4, 3, 0, 2).ignoreVines();
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder cherry() {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.CHERRY_LOG), new CherryTrunkPlacer(7, 1, 0, new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(1), 1).add(ConstantInt.of(2), 1).add(ConstantInt.of(3), 1).build()), UniformInt.of(2, 4), UniformInt.of(-4, -3), UniformInt.of(-1, 0)), BlockStateProvider.simple(Blocks.CHERRY_LEAVES), new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25f, 0.5f, 0.16666667f, 0.33333334f), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines();
-    }
-
     private static TreeConfiguration.TreeConfigurationBuilder sakura() {
         return MapleConfiguredFeatures.builder(Blocks.CHERRY_LOG, MapleBlocks.SAKURA_LEAVES,4,2,0,2).ignoreVines();
     }

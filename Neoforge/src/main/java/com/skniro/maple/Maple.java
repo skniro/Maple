@@ -18,6 +18,7 @@ import com.skniro.maple.client.renderer.CushinoRenderer;
 import com.skniro.maple.conifg.Configuration;
 import com.skniro.maple.conifg.MapleConfig;
 import com.skniro.maple.entity.MapleEntityType;
+import com.skniro.maple.entity.village.MapleVillagers;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluidTypes;
 import com.skniro.maple.fluid.MapleFluids;
@@ -27,6 +28,7 @@ import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleScreenHandlerType;
 import com.skniro.maple.util.MapleLootModifiers;
 import com.skniro.maple.world.biome.MapleTerrablender;
+import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -85,6 +87,7 @@ public class Maple{
 
         MapleSignBlocks.registerMapleSignBlocks(modEventBus);
 
+        MapleGameRules.maplegamerule(modEventBus);
         MapleBlockEntities.registerMapleBlockEntities(modEventBus);
         MapleEntityType.register(modEventBus);
         MapleScreenHandlerType.registerMapleScreenHandlerType(modEventBus);
@@ -92,6 +95,7 @@ public class Maple{
         MapleFluidTypes.register(modEventBus);
 
         MapleBlockEntityType.registerBlockEntityType(modEventBus);
+        MapleVillagers.registerVillagerType(modEventBus);
 
         MapleParticleTypes.MapleParticleTypesRegister(modEventBus);
 
