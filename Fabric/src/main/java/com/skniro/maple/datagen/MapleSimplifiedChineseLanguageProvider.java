@@ -9,14 +9,14 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.gamerules.MapleGameRules;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvider {
-    public MapleSimplifiedChineseLanguageProvider(FabricDataOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup){
+    public MapleSimplifiedChineseLanguageProvider(FabricPackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> registryLookup){
         super(dataGenerator, "zh_cn", registryLookup);
     }
 
@@ -332,7 +332,7 @@ public class MapleSimplifiedChineseLanguageProvider extends FabricLanguageProvid
 
 
         try {
-            Path existingFilePath = dataOutput.getModContainer().findPath("assets/maple/lang/zh_cn.existing.json").get();
+            Path existingFilePath = packOutput.getModContainer().findPath("assets/maple/lang/zh_cn.existing.json").get();
             translationBuilder.add(existingFilePath);
         } catch (Exception e) {
             throw new RuntimeException("Failed to add existing language file!", e);

@@ -6,8 +6,8 @@ package com.skniro.maple.datagen;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.MapleArmorItems;
 import com.skniro.maple.tag.MapleItemTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -18,8 +18,8 @@ import java.util.concurrent.CompletableFuture;
 import static net.minecraft.tags.ItemTags.*;
 
 
-public class MapleItemTagGeneration extends FabricTagProvider.ItemTagProvider{
-    public MapleItemTagGeneration(FabricDataOutput dataGenerator, CompletableFuture<HolderLookup.Provider> completableFuture) {
+public class MapleItemTagGeneration extends FabricTagsProvider.ItemTagsProvider{
+    public MapleItemTagGeneration(FabricPackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(dataGenerator, completableFuture);
     }
 

@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class MapleRecipeGeneration extends FabricRecipeProvider {
-    public MapleRecipeGeneration(FabricDataOutput generator, CompletableFuture<HolderLookup.Provider> registryLookup) {
+    public MapleRecipeGeneration(FabricPackOutput generator, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(generator, registryLookup);
     }
 

@@ -27,8 +27,8 @@ import com.skniro.maple.world.gamerules.MapleGameRules;
 import com.skniro.maple.world.gen.MapleLakeGeneration;
 import com.skniro.maple.world.gen.MapleOreGeneration;
 import com.skniro.maple.world.gen.MapleTreeGeneration;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.registry.CompostableRegistry;
 
 
 public class MapleContent {
@@ -59,7 +59,7 @@ public class MapleContent {
     }
 
     public static void CreativeTab() {
-        ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group).register(content -> {
+        CreativeModeTabEvents.modifyOutputEvent(Maple.Maple_Group).register(content -> {
             content.accept(MapleBlocks.MAPLE_LOG);
             content.accept(MapleBlocks.STRIPPED_MAPLE_LOG);
             content.accept(MapleBlocks.STRIPPED_MAPLE_WOOD);
@@ -233,7 +233,7 @@ public class MapleContent {
             content.accept(MapleBlocks.Maple_Juicer_Block);
         });
 
-            ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Food).register(content -> {
+            CreativeModeTabEvents.modifyOutputEvent(Maple.Maple_Group_Food).register(content -> {
                 content.accept(MapleItems.Flour);
                 content.accept(MapleItems.MapleSyrup);
                 content.accept(MapleItems.Cream);
@@ -264,7 +264,7 @@ public class MapleContent {
                 content.accept(MapleFoodComponents.Red_Tea_Leaves);
             });
         if (MapleConfig.Furniture_Module){
-            ItemGroupEvents.modifyEntriesEvent(Maple.Maple_Group_Furniture).register(content -> {
+            CreativeModeTabEvents.modifyOutputEvent(Maple.Maple_Group_Furniture).register(content -> {
                 //Cushion
                 content.accept(MapleFurnitureBlocks.CUSHION_MAPLE_WHITE);
                 content.accept(MapleFurnitureBlocks.CUSHION_MAPLE_ORANGE);
@@ -355,20 +355,20 @@ public class MapleContent {
     }
 
     public static void registerMapleCompostableItems() {
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.MAPLE_SAPLING, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_SAPLING, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_SAPLING, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_SAPLING, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.MAPLE_LEAVES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_LEAVES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_LEAVES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_LEAVES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.Maple_CARPET, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_CARPET, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.GINKGO_CARPET, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleBlocks.SAKURA_CARPET, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleItems.Rice, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MapleItems.SOYBEAN, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.MAPLE_SAPLING, 0.65f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_SAPLING, 0.65f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.SAKURA_SAPLING, 0.65f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.GINKGO_SAPLING, 0.65f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.MAPLE_LEAVES, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_LEAVES, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.SAKURA_LEAVES, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.GINKGO_LEAVES, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.Maple_CARPET, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.RED_MAPLE_CARPET, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.GINKGO_CARPET, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleBlocks.SAKURA_CARPET, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleItems.Rice, 0.3f);
+        CompostableRegistry.INSTANCE.add(MapleItems.SOYBEAN, 0.3f);
     }
 }
 

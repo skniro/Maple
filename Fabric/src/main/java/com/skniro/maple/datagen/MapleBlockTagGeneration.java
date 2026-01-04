@@ -4,8 +4,8 @@ import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -17,8 +17,8 @@ import static com.skniro.maple.datagen.MapleBlockTagGeneration.ModBlockTags.*;
 import static net.minecraft.tags.BlockTags.*;
 
 
-public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider {
-    public MapleBlockTagGeneration(FabricDataOutput dataGenerator,CompletableFuture<HolderLookup.Provider> completableFuture) {
+public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvider {
+    public MapleBlockTagGeneration(FabricPackOutput dataGenerator,CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(dataGenerator, completableFuture);
     }
 

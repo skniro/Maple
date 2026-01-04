@@ -7,7 +7,7 @@ import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.world.biome.MapleGroveBiome;
 import com.skniro.maple.world.biome.MapleSakuraBiome;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.core.Registry;
@@ -40,15 +40,15 @@ public class Maple implements ModInitializer {
     @Override
     public void onInitialize() {
         new Configuration(MapleConfig.class, MOD_ID);
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group, FabricCreativeModeTab.builder()
                 .icon(() -> new ItemStack(MAPLE_LOG))
                 .title(Component.translatable("itemGroup.maple.maple_group"))
                 .build()); // build() no longer registers by itself
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group_Food, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group_Food, FabricCreativeModeTab.builder()
                 .icon(() -> new ItemStack(MapleItems.MapleSyrup))
                 .title(Component.translatable("itemGroup.maple.maple_group_food"))
                 .build()); // build() no longer registers by itself
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group_Furniture, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Maple_Group_Furniture, FabricCreativeModeTab.builder()
                 .icon(() -> new ItemStack(MapleFurnitureBlocks.CUSHION_MAPLE_YELLOW))
                 .title(Component.translatable("itemGroup.maple.maple_group_furniture"))
                 .build());

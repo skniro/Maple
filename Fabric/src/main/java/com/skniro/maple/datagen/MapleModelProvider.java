@@ -9,7 +9,7 @@ import com.skniro.maple.item.MapleFoodComponents;
 import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.item.init.equipment.MapleEquipmentAssetKeys;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import static net.minecraft.client.data.models.ItemModelGenerators.*;
 
 public class MapleModelProvider extends FabricModelProvider {
-    public MapleModelProvider(FabricDataOutput dataGenerator){
+    public MapleModelProvider(FabricPackOutput dataGenerator){
         super(dataGenerator);
     }
 

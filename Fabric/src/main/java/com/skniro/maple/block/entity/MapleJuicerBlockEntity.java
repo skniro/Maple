@@ -4,7 +4,7 @@ import com.skniro.maple.recipe.MapleCraftingRecipeInput;
 import com.skniro.maple.recipe.MapleJuicerCraftingRecipe;
 import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleJuicerBlockScreenHandler;
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class MapleJuicerBlockEntity extends BlockEntity implements ExtendedMenuProvider, ImplementedInventory {
     private final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
     private float rotation = 0;
     private static final int INPUT_SLOT = 0;

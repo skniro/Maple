@@ -26,8 +26,8 @@
     "maple.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.9",
+    "fabricloader": ">=0.18.0",
     "minecraft": "26.1.x",
-    "fabric-api": "*"
+    "fabric-api": ">=0.140.3"
   }
 }
