@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": "minecraft:brown_stained_glass",
-    "result": {
-        "id": "maple:brown_stained_glass_slab",
-        "count": 2
-    }
-}
