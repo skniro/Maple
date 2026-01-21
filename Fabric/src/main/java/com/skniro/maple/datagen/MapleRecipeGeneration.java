@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -349,8 +350,8 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                 .unlockedBy(getHasName(Items.GLASS_BOTTLE),
                         has(Items.GLASS_BOTTLE)).save(output);
 
-                oreSmelting(STRIPPED_MAPLE, RecipeCategory.FOOD , MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
-                oreSmelting(Green_Tea, RecipeCategory.FOOD , MapleFoodComponents.Red_Tea_Leaves, 0.45F, 300, "red_tea");
+                oreSmelting(STRIPPED_MAPLE, RecipeCategory.FOOD , CookingBookCategory.FOOD, MapleItems.MapleSyrup, 0.45F, 300, "maple_syrup");
+                oreSmelting(Green_Tea, RecipeCategory.FOOD , CookingBookCategory.FOOD, MapleFoodComponents.Red_Tea_Leaves, 0.45F, 300, "red_tea");
 
                 shaped(RecipeCategory.COMBAT, MapleArmorItems.Cherry_BOOTS).pattern("X X").pattern("X X")
                         .define('X', MapleArmorItems.Cherry_INGOT)
@@ -405,7 +406,7 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
 
                 SimpleCookingRecipeBuilder.smelting
                                 (Ingredient.of(MapleArmorItems.Cherry_PICKAXE, MapleArmorItems.Cherry_SHOVEL, MapleArmorItems.Cherry_AXE, MapleArmorItems.Cherry_HOE, MapleArmorItems.Cherry_SWORD, MapleArmorItems.Cherry_HELMET, MapleArmorItems.Cherry_CHESTPLATE, MapleArmorItems.Cherry_LEGGINGS, MapleArmorItems.Cherry_BOOTS)
-                                        , RecipeCategory.MISC, MapleArmorItems.Cherry_INGOT, 0.1F, 200)
+                                        , RecipeCategory.MISC, CookingBookCategory.MISC, MapleArmorItems.Cherry_INGOT, 0.1F, 200)
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_PICKAXE), has(MapleArmorItems.Cherry_PICKAXE))
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_SHOVEL), has(MapleArmorItems.Cherry_SHOVEL))
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_AXE), has(MapleArmorItems.Cherry_AXE))
@@ -419,7 +420,7 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
 
                 SimpleCookingRecipeBuilder.blasting
                                 (Ingredient.of(MapleArmorItems.Cherry_PICKAXE, MapleArmorItems.Cherry_SHOVEL, MapleArmorItems.Cherry_AXE, MapleArmorItems.Cherry_HOE, MapleArmorItems.Cherry_SWORD, MapleArmorItems.Cherry_HELMET, MapleArmorItems.Cherry_CHESTPLATE, MapleArmorItems.Cherry_LEGGINGS, MapleArmorItems.Cherry_BOOTS)
-                                        , RecipeCategory.MISC, MapleArmorItems.Cherry_INGOT, 0.1F, 200)
+                                        , RecipeCategory.MISC, CookingBookCategory.MISC, MapleArmorItems.Cherry_INGOT, 0.1F, 200)
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_PICKAXE), has(MapleArmorItems.Cherry_PICKAXE))
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_SHOVEL), has(MapleArmorItems.Cherry_SHOVEL))
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_AXE), has(MapleArmorItems.Cherry_AXE))

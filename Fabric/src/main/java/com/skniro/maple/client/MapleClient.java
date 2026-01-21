@@ -37,7 +37,7 @@ import net.minecraft.resources.Identifier;
 public class MapleClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.TRIPWIRE;
+        ChunkSectionLayer renderLayer2 = ChunkSectionLayer.SOLID;
 
         ChunkSectionLayer renderLayer3 = ChunkSectionLayer.CUTOUT;
         ChunkSectionLayerMap.putBlock(MapleBlocks.GINKGO_LEAVES, renderLayer3);

@@ -45,7 +45,7 @@ public class MapleJuicerCraftingRecipe implements Recipe<RecipeInput> {
     }
 
     @Override
-    public ItemStack assemble(RecipeInput inventory, HolderLookup.Provider lookup) {
+    public ItemStack assemble(RecipeInput inventory) {
         return output;
     }
 
