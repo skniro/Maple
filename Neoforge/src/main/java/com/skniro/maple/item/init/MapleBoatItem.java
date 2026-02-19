@@ -3,11 +3,13 @@ package com.skniro.maple.item.init;
 
 import com.skniro.maple.entity.custom.MapleBoatEntity;
 import com.skniro.maple.entity.custom.MapleChestBoatEntity;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
@@ -49,7 +51,7 @@ public class MapleBoatItem extends Item {
                 }
             }
             if (hitresult.getType() == HitResult.Type.BLOCK) {
-                Boat boat = this.getBoat(pLevel, hitresult);
+                Boat boat = this.getBoat(pLevel, hitresult, itemstack, pPlayer);
                 if(boat instanceof MapleChestBoatEntity chestBoat) {
                     chestBoat.setVariant(this.type);
                 } else if(boat instanceof MapleBoatEntity) {
@@ -74,8 +76,13 @@ public class MapleBoatItem extends Item {
             }
         }
     }
-    private Boat getBoat(Level p_220017_, HitResult p_220018_) {
-        return (Boat)(this.hasChest ? new MapleChestBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) :
-                new MapleBoatEntity(p_220017_, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z));
+
+    private Boat getBoat(Level level, HitResult p_220018_, ItemStack stack, Player player) {
+         Boat boat =  this.hasChest ? new MapleChestBoatEntity(level, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z) :
+                new MapleBoatEntity(level, p_220018_.getLocation().x, p_220018_.getLocation().y, p_220018_.getLocation().z);
+        if (level instanceof ServerLevel serverlevel) {
+            EntityType.createDefaultStackConfig(serverlevel, stack, player).accept(boat);
+        }
+        return boat;
     }
 }
