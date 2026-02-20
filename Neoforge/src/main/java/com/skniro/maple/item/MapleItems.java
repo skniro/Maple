@@ -3,8 +3,7 @@ package com.skniro.maple.item;
 import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.block.MapleBlocks;
-import com.skniro.maple.entity.custom.MapleBoatEntity;
-import com.skniro.maple.item.init.MapleBoatItem;
+import com.skniro.maple.entity.MapleBoatType;
 import com.skniro.maple.item.init.snowball.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.*;
@@ -57,14 +56,14 @@ public class MapleItems {
             ()-> new Item(new Item.Properties()));
 
     public static final Supplier<Item> MAPLE_BOAT = registerItem("maple_boat",
-            ()->(new MapleBoatItem(false, MapleBoatEntity.Type.MAPLE, (new Item.Properties()).stacksTo(1))));
+            ()->(new BoatItem(false, MapleBoatType.MAPLE.getValue(), (new Item.Properties()).stacksTo(1))));
     public static final Supplier<Item> GINKGO_BOAT = registerItem("ginkgo_boat",
-            ()->(new MapleBoatItem(false, MapleBoatEntity.Type.GINKGO, (new Item.Properties()).stacksTo(1))));
+            ()->(new BoatItem(false, MapleBoatType.GINKGO.getValue(), (new Item.Properties()).stacksTo(1))));
 
     public static final Supplier<Item> MAPLE_CHEST_BOAT = registerItem("maple_chest_boat",
-            ()->(new MapleBoatItem(true, MapleBoatEntity.Type.MAPLE, (new Item.Properties()).stacksTo(1))));
+            ()->(new BoatItem(true, MapleBoatType.MAPLE.getValue(), (new Item.Properties()).stacksTo(1))));
     public static final Supplier<Item> GINKGO_CHEST_BOAT = registerItem("ginkgo_chest_boat",
-            ()->(new MapleBoatItem(true, MapleBoatEntity.Type.GINKGO, (new Item.Properties()).stacksTo(1))));
+            ()->(new BoatItem(true, MapleBoatType.GINKGO.getValue(), (new Item.Properties()).stacksTo(1))));
 
 
     //Snowball

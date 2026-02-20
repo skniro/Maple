@@ -9,8 +9,6 @@ import com.skniro.maple.block.entity.MapleBlockEntities;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
 import com.skniro.maple.block.entity.MapleWoodTypes;
 import com.skniro.maple.block.renderer.MapleJuicerEntityRenderer;
-import com.skniro.maple.client.boat.MapleBoatRenderer;
-import com.skniro.maple.client.boat.MapleModelLayers;
 import com.skniro.maple.client.gui.screen.ingame.MapleJuicerBlockScreen;
 import com.skniro.maple.client.particle.MapleCampfireSmokeParticle;
 import com.skniro.maple.client.particle.MapleCherryLeavesParticle;
@@ -28,13 +26,10 @@ import com.skniro.maple.recipe.MapleRecipeType;
 import com.skniro.maple.screen.MapleScreenHandlerType;
 import com.skniro.maple.util.MapleLootModifiers;
 import com.skniro.maple.world.biome.MapleTerrablender;
-import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.api.distmarker.Dist;
@@ -124,8 +119,6 @@ public class Maple{
             BlockEntityRenderers.register(MapleBlockEntities.Maple_HANGING_SIGN.get(), HangingSignRenderer::new);
             Sheets.addWoodType(MapleWoodTypes.MAPLE);
             Sheets.addWoodType(MapleWoodTypes.GINKGO);
-            EntityRenderers.register(MapleEntityType.Maple_BOAT.get(), pContext -> new MapleBoatRenderer(pContext, false));
-            EntityRenderers.register(MapleEntityType.Maple_CHEST_BOAT.get(), pContext -> new MapleBoatRenderer(pContext, true));
             EntityRenderers.register(MapleEntityType.Cushion_ENTITY.get(), CushinoRenderer::new);
             EntityRenderers.register(MapleEntityType.CHAIR_ENTITY.get(), ChairRenderer::new);
             BlockEntityRenderers.register(MapleBlockEntityType.MAPLE_JUICER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE.get(), MapleJuicerEntityRenderer::new);
@@ -158,10 +151,7 @@ public class Maple{
 
         @SubscribeEvent
         public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(MapleModelLayers.Maple_BOAT_LAYER, BoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Maple_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Ginkgo_BOAT_LAYER, BoatModel::createBodyModel);
-            event.registerLayerDefinition(MapleModelLayers.Ginkgo_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+
         }
     }
 }
