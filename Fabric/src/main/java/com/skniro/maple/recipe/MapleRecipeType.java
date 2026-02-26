@@ -10,7 +10,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 
 public interface MapleRecipeType<T extends Recipe<?>> {
     public static final RecipeSerializer<MapleJuicerCraftingRecipe> Maple_JUIER_SERIALIZER = Registry.register(
-            BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "maple_juicer"), new MapleJuicerCraftingRecipe.Serializer());
+            BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "maple_juicer"), MapleJuicerCraftingRecipe.SERIALIZER);
     public static final RecipeType<MapleJuicerCraftingRecipe> Maple_JUIER_TYPE = Registry.register(
             BuiltInRegistries.RECIPE_TYPE, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "maple_juicer"), new RecipeType<>() {
                 @Override

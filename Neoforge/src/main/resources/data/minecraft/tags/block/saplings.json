@@ -1,5 +1,8 @@
 {
   "values": [
-    "maple:maple_sapling"
+    "maple:maple_sapling",
+    "maple:ginkgo_sapling",
+    "maple:sakura_leaves",
+    "maple:red_maple_sapling"
   ]
 }

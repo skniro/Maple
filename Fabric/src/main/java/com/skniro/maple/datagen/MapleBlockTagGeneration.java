@@ -6,10 +6,13 @@ import com.skniro.maple.block.MapleOreBlocks;
 import com.skniro.maple.block.MapleSignBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import java.util.concurrent.CompletableFuture;
 
@@ -24,24 +27,66 @@ public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvide
 
 
     public static class ModBlockTags {
-        public static final TagKey<Block> C_SAPLING = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "saplings"));
-        public static final TagKey<Block> C_MAPLE_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "maple_logs"));
-        public static final TagKey<Block> C_CHERRY_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "cherry_logs"));
         public static final TagKey<Block> C_PLASTER = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "plaster"));
 
     }
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
+        valueLookupBuilder(MINEABLE_WITH_AXE)
+                .add(MapleBlocks.TATAMI)
+                .add(MapleBlocks.TATAMI_SLAB);
+        valueLookupBuilder(ConventionalBlockTags.COAL_ORES)
+                .add(MapleNetherOresBlocks.Nether_Coal_Ore);
+        valueLookupBuilder(ConventionalBlockTags.COPPER_ORES)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore);
+        valueLookupBuilder(ConventionalBlockTags.DIAMOND_ORES)
+                .add(MapleNetherOresBlocks.Nether_Diamond_Ore);
+        valueLookupBuilder(ConventionalBlockTags.EMERALD_ORES)
+                .add(MapleNetherOresBlocks.Nether_Emerald_Ore);
+        valueLookupBuilder(ConventionalBlockTags.IRON_ORES)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore);
+        valueLookupBuilder(ConventionalBlockTags.LAPIS_ORES)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore);
+        valueLookupBuilder(ConventionalBlockTags.REDSTONE_ORES)
+                .add(MapleNetherOresBlocks.Nether_Redstone_Ore);
+        valueLookupBuilder(PLANKS)
+                .add(MapleBlocks.MAPLE_PLANKS)
+                .add(MapleBlocks.GINKGO_PLANKS);
         valueLookupBuilder(SAPLINGS)
-                .add(MapleBlocks.MAPLE_SAPLING);
-        valueLookupBuilder(C_SAPLING)
-                .add(MapleBlocks.MAPLE_SAPLING);
-        valueLookupBuilder(C_MAPLE_LOGS)
-                .add(MapleBlocks.MAPLE_LOG);
-        valueLookupBuilder(C_CHERRY_LOGS);
-        valueLookupBuilder(FENCES)
-                .add(MapleBlocks.MAPLE_FENCE);
+                .add(MapleBlocks.MAPLE_SAPLING)
+                .add(MapleBlocks.GINKGO_SAPLING)
+                .add(MapleBlocks.SAKURA_LEAVES)
+                .add(MapleBlocks.RED_MAPLE_SAPLING);
+        valueLookupBuilder(LEAVES)
+                .add(MapleBlocks.MAPLE_LEAVES)
+                .add(MapleBlocks.GINKGO_LEAVES)
+                .add(MapleBlocks.SAKURA_LEAVES)
+                .add(MapleBlocks.RED_MAPLE_LEAVES);
+        valueLookupBuilder(ConventionalBlockTags.OVERWORLD_NATURAL_LOGS)
+                .add(MapleBlocks.MAPLE_LOG)
+                .add(MapleBlocks.GINKGO_LOG);
+        valueLookupBuilder(WOODEN_FENCES)
+                .add(MapleBlocks.MAPLE_FENCE)
+                .add(MapleBlocks.GINKGO_FENCE);
+        valueLookupBuilder(WOODEN_BUTTONS)
+                .add(MapleBlocks.MAPLE_BUTTON)
+                .add(MapleBlocks.GINKGO_BUTTON);
+        valueLookupBuilder(WOODEN_DOORS)
+                .add(MapleBlocks.MAPLE_DOOR)
+                .add(MapleBlocks.GINKGO_DOOR);
+        valueLookupBuilder(WOODEN_PRESSURE_PLATES)
+                .add(MapleBlocks.MAPLE_PRESSURE_PLATE)
+                .add(MapleBlocks.GINKGO_PRESSURE_PLATE);
+        valueLookupBuilder(WOODEN_SLABS)
+                .add(MapleBlocks.MAPLE_SLAB)
+                .add(MapleBlocks.GINKGO_SLAB);
+        valueLookupBuilder(WOODEN_STAIRS)
+                .add(MapleBlocks.MAPLE_STAIRS)
+                .add(MapleBlocks.GINKGO_STAIRS);
+        valueLookupBuilder(WOODEN_TRAPDOORS)
+                .add(MapleBlocks.MAPLE_TRAPDOOR)
+                .add(MapleBlocks.GINKGO_TRAPDOOR);
         valueLookupBuilder(C_PLASTER)
                 .add(MapleBlocks.GREEN_PLASTER)
                 .add(MapleBlocks.PLASTER)
@@ -85,6 +130,12 @@ public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvide
                 .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
                 .add(MapleNetherOresBlocks.Nether_Redstone_Ore)
                 .setReplace(false);
+        valueLookupBuilder(STANDING_SIGNS)
+                .add(MapleSignBlocks.Maple_SIGN)
+                .add(MapleSignBlocks.GINKGO_SIGN);
+        valueLookupBuilder(WALL_SIGNS)
+                .add(MapleSignBlocks.Maple_WALL_SIGN)
+                .add(MapleSignBlocks.GINKGO_WALL_SIGN);
         valueLookupBuilder(CEILING_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_HANGING_SIGN);

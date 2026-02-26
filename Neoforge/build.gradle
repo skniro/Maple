@@ -12,6 +12,14 @@ group = mod_group_id
 repositories {
     mavenLocal()
     maven { url = 'https://maven.minecraftforge.net/' }
+    maven {
+        name = "Maven for PR #2975" // https://github.com/neoforged/NeoForge/pull/2975
+        url = uri("https://prmaven.neoforged.net/NeoForge/pr2975")
+        content {
+            includeModule("net.neoforged", "neoforge")
+            includeModule("net.neoforged", "testframework")
+        }
+    }
 }
 
 base {

@@ -1,0 +1,120 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cherry_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cherry_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:cherry_ingot_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cherry_pickaxe",
+      "has_cherry_shovel",
+      "has_cherry_axe",
+      "has_cherry_hoe",
+      "has_cherry_sword",
+      "has_cherry_helmet",
+      "has_cherry_chestplate",
+      "has_cherry_leggings",
+      "has_cherry_boots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:cherry_ingot_from_smelting"
+    ]
+  }
+}
