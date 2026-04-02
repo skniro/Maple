@@ -25,5 +25,5 @@ plugins {
 
 
 rootProject.name = 'Maple-26.1'
+//include("Fabric", "Neoforge")
 include("Fabric", "Neoforge")
-//include("Fabric", "Neoforge","Forge")

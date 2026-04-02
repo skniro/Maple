@@ -1,6 +1,6 @@
 {
-  "replace": false,
   "values": [
-    "maple:tatami"
+    "maple:tatami",
+    "maple:tatami_slab"
   ]
 }

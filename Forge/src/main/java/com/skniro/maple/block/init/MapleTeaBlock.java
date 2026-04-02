@@ -87,9 +87,9 @@ public class MapleTeaBlock extends BushBlock implements BonemealableBlock {
         int i = (Integer)state.getValue(AGE);
         boolean bl = i == 3;
         if (i > 1) {
-            int j = 1 + world.random.nextInt(2);
+            int j = 1 + world.getRandom().nextInt(2);
             popResource(world, pos, new ItemStack(MapleFoodComponents.Green_Tea_Leaves.get(), j + (bl ? 1 : 0)));
-            world.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+            world.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + world.getRandom().nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             world.setBlock(pos, blockState, 2);
             world.gameEvent(GameEvent.BLOCK_CHANGE, pos, Context.of(player, blockState));

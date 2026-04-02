@@ -22,6 +22,7 @@ import com.skniro.maple.entity.village.MapleVillagers;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import com.skniro.maple.fluid.MapleFluidTypes;
 import com.skniro.maple.fluid.MapleFluids;
+import com.skniro.maple.fluid.init.BaseFluidType;
 import com.skniro.maple.item.*;
 import com.skniro.maple.particle.MapleParticleTypes;
 import com.skniro.maple.recipe.MapleRecipeType;
@@ -33,10 +34,11 @@ import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.blockentity.StandingSignRenderer;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -45,6 +47,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterFluidModelsEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -123,7 +126,7 @@ public class Maple{
         public static void onClientSetup(FMLClientSetupEvent event) {
             WoodType.register(MapleWoodTypes.MAPLE);
             WoodType.register(MapleWoodTypes.GINKGO);
-            BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+            BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), StandingSignRenderer::new);
             BlockEntityRenderers.register(MapleBlockEntities.Maple_HANGING_SIGN.get(), HangingSignRenderer::new);
             Sheets.addWoodType(MapleWoodTypes.MAPLE);
             Sheets.addWoodType(MapleWoodTypes.GINKGO);
@@ -167,6 +170,13 @@ public class Maple{
             event.registerLayerDefinition(MapleModelLayers.Maple_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
             event.registerLayerDefinition(MapleModelLayers.Ginkgo_BOAT_LAYER, BoatModel::createBoatModel);
             event.registerLayerDefinition(MapleModelLayers.Ginkgo_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterFluidModels(RegisterFluidModelsEvent event) {
+            Fluid stillFluid = MapleFluids.STILL_Hot_Spring.get();
+            Fluid flowingFluid = MapleFluids.FLOWING_Hot_Spring.get();
+            event.register(BaseFluidType.Spring_MODEL, stillFluid, flowingFluid);
         }
     }
 }

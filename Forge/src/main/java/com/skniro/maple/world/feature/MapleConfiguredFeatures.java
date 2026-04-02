@@ -19,6 +19,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
@@ -144,11 +145,11 @@ public class MapleConfiguredFeatures {
         register(featureRegisterable, Nether_Redstone_ORE_KEY, Feature.ORE, new OreConfiguration(netherRedstoneOres, 8));
 
         //Leave carpet
-        register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET.get())))));
-        register(featureRegisterable, Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET.get())))));
-        register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET.get())))));
+        register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET.get())));
+        register(featureRegisterable, Maple_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET.get())));
+        register(featureRegisterable, Sakura_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET.get())));
 
-        register(featureRegisterable, PATCH_TEA, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Tea_Block.get().defaultBlockState().setValue(MapleTeaBlock.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+        register(featureRegisterable, PATCH_TEA, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Tea_Block.get().defaultBlockState().setValue(MapleTeaBlock.AGE, 3))));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

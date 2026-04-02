@@ -32,7 +32,7 @@ import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.blockentity.StandingSignRenderer;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -114,7 +114,7 @@ public class Maple {
         public static void onClientSetup(FMLClientSetupEvent event) {
             WoodType.register(MapleWoodTypes.MAPLE);
             WoodType.register(MapleWoodTypes.GINKGO);
-            BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+            BlockEntityRenderers.register(MapleBlockEntities.SIGN_BLOCK_ENTITIES.get(), StandingSignRenderer::new);
             BlockEntityRenderers.register(MapleBlockEntities.Maple_HANGING_SIGN.get(), HangingSignRenderer::new);
             Sheets.addWoodType(MapleWoodTypes.MAPLE);
             Sheets.addWoodType(MapleWoodTypes.GINKGO);

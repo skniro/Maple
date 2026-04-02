@@ -40,7 +40,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    //modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
+    implementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_version}"
     //modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     //modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
     //Production environment client test to use

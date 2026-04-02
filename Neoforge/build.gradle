@@ -121,7 +121,7 @@ dependencies {
     // And its provides the option to then use net.minecraft as the group, and one of; client, server or joined as the module name, plus the game version as version.
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
 
-    //implementation "com.github.glitchfiend:TerraBlender-neoforge:${project.terrablender_version}"
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${project.terrablender_version}"
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     //compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"

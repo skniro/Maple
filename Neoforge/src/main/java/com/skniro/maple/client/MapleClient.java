@@ -5,7 +5,6 @@ import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.conifg.MapleConfig;
 import com.skniro.maple.fluid.MapleFluids;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -92,7 +91,7 @@ public class MapleClient {
         ModItemBlockRenderTypes.setRenderLayer(MapleBlocks.GLASS_SLAB.get(), renderLayer4);
         ModItemBlockRenderTypes.setRenderLayer(MapleBlocks.GLASS_STAIRS.get(), renderLayer4);
         ModItemBlockRenderTypes.setRenderLayer(MapleBlocks.Maple_Juicer_Block.get(), renderLayer4);
-        ItemBlockRenderTypes.setRenderLayer(MapleFluids.FLOWING_Hot_Spring.get(), renderLayer4);
-        ItemBlockRenderTypes.setRenderLayer(MapleFluids.STILL_Hot_Spring.get(), renderLayer4);
+        ModItemBlockRenderTypes.setRenderLayer(MapleFluids.FLOWING_Hot_Spring.get(), renderLayer4);
+        ModItemBlockRenderTypes.setRenderLayer(MapleFluids.STILL_Hot_Spring.get(), renderLayer4);
     }
 }

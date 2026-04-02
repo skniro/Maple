@@ -12,6 +12,9 @@
   "icon": "assets/maple/icon.png",
   "environment": "*",
   "entrypoints": {
+    "terrablender": [
+      "com.skniro.maple.Maple"
+    ],
     "client": [
       "com.skniro.maple.client.MapleClient"
     ],
@@ -28,6 +31,7 @@
   "depends": {
     "fabricloader": ">=0.18.0",
     "minecraft": "26.1.x",
-    "fabric-api": ">=0.140.3"
+    "fabric-api": ">=0.140.3",
+    "terrablender": "*"
   }
 }

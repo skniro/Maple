@@ -8,16 +8,10 @@ import com.skniro.maple.block.init.MapleTeaBlock;
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -25,15 +19,12 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
@@ -141,11 +132,11 @@ public class MapleConfiguredFeatures {
         register(featureRegisterable, Nether_Redstone_ORE_KEY, Feature.ORE, new OreConfiguration(netherRedstoneOres, 8));
 
         //Leave carpet
-        register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET.defaultBlockState())))));
-        register(featureRegisterable, Maple_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET.defaultBlockState())))));
-        register(featureRegisterable, Sakura_Carpet_KEY, Feature.FLOWER, new RandomPatchConfiguration(30, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET.defaultBlockState())))));
+        register(featureRegisterable, Red_Maple_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.RED_MAPLE_CARPET)));
+        register(featureRegisterable, Maple_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Maple_CARPET)));
+        register(featureRegisterable, Sakura_Carpet_KEY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.SAKURA_CARPET)));
 
-        FeatureUtils.register(featureRegisterable, PATCH_TEA, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Tea_Block.defaultBlockState().setValue(MapleTeaBlock.AGE, 3))), List.of(Blocks.GRASS_BLOCK)));
+        register(featureRegisterable, PATCH_TEA, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MapleBlocks.Tea_Block.defaultBlockState().setValue(MapleTeaBlock.AGE, 3))));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

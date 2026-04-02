@@ -5,23 +5,23 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.skniro.maple.block.entity.MapleJuicerBlockEntity;
 import com.skniro.maple.block.renderer.state.MapleJuicerBlockEntityRenderState;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Random;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.client.renderer.item.ItemModelResolver;
-import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuicerBlockEntity, MapleJuicerBlockEntityRenderState> {
     public MapleJuicerEntityRenderer(BlockEntityRendererProvider.Context context) {
@@ -55,7 +55,7 @@ public class MapleJuicerEntityRenderer implements BlockEntityRenderer<MapleJuice
     private int getLightLevel(Level world, BlockPos pos) {
         int bLight = world.getBrightness(LightLayer.BLOCK, pos);
         int sLight = world.getBrightness(LightLayer.SKY, pos);
-        return LightTexture.pack(bLight, Math.max(sLight, 15));
+        return LightCoordsUtil.pack(bLight, Math.max(sLight, 15));
     }
 
     @Override

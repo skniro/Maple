@@ -18,12 +18,8 @@ public class MapleBlockEntities {
             BLOCK_ENTITIES.register("sign_block_entity", () ->
                     new BlockEntityType<>(MapleSignBlockEntity::new,
                             Set.of(
-                            MapleSignBlocks.BAMBOO_SIGN.get(),
-                            MapleSignBlocks.BAMBOO_WALL_SIGN.get(),
                             MapleSignBlocks.Maple_SIGN.get(),
                             MapleSignBlocks.Maple_WALL_SIGN.get(),
-                            MapleSignBlocks.CHERRY_SIGN.get(),
-                            MapleSignBlocks.CHERRY_WALL_SIGN.get(),
                             MapleSignBlocks.GINKGO_SIGN.get(),
                             MapleSignBlocks.GINKGO_WALL_SIGN.get())));
 

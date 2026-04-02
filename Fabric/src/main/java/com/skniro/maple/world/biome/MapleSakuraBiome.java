@@ -1,10 +1,10 @@
 package com.skniro.maple.world.biome;
 
 import com.mojang.datafixers.util.Pair;
-/*import terrablender.api.ParameterUtils;
+import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
-import terrablender.api.VanillaParameterOverlayBuilder;*/
+import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 import net.minecraft.core.Registry;
@@ -13,10 +13,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
 
-public class MapleSakuraBiome{}/* extends Region {
+public class MapleSakuraBiome extends Region {
     public MapleSakuraBiome(Identifier name, int weight) {
-        super
-                (name, RegionType.OVERWORLD, weight);
+        super(name, RegionType.OVERWORLD, weight);
     }
 
     @Override
@@ -36,4 +35,4 @@ public class MapleSakuraBiome{}/* extends Region {
         // Add our points to the mapper
         builder.build().forEach(mapper::accept);
     }
-}*/
+}

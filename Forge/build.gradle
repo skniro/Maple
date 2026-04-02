@@ -3,7 +3,7 @@ plugins {
     id 'idea'
     id 'eclipse'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '7.0.0-beta.51'
+    id 'net.minecraftforge.gradle' version '7.0.+'
     id 'net.minecraftforge.jarjar' version '0.2.3'
 }
 
@@ -11,12 +11,7 @@ version = forge_mod_version
 group = mod_group_id
 base.archivesName = mod_id
 
-// Mojang ships Java 25 to end users in 26.1+, so your mod should target Java 25.
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
-
-println "Java: ${providers.systemProperty('java.version').get()}, " +
-    "JVM: ${providers.systemProperty('java.vm.version').get()} (${providers.systemProperty('java.vendor').get()}), " +
-    "Arch: ${providers.systemProperty('os.arch').get()}"
 
 minecraft {
     // The mappings can be changed at any time and must be in the following format.

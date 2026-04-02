@@ -1,6 +1,7 @@
 package com.skniro.maple.fluid.init;
 
 import com.skniro.maple.fluid.MapleFluidBlockOrItem;
+import com.skniro.maple.fluid.MapleFluidTypes;
 import com.skniro.maple.fluid.MapleFluids;
 import com.skniro.maple.particle.MapleParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -75,7 +76,7 @@ public class MapleHotSpringFluid extends FlowingFluid {
 
     @Override
     public FluidType getFluidType() {
-        return ForgeMod.WATER_TYPE.get();
+        return MapleFluidTypes.Spring_FLUID_TYPE.get();
     }
 
 

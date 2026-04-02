@@ -16,7 +16,7 @@ public interface MapleRecipeType<T extends Recipe<?>> {
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, Maple.MOD_ID);
 
-    public static final RegistryObject<RecipeSerializer<MapleJuicerCraftingRecipe>> Maple_JUIER_SERIALIZER = SERIALIZERS.register( "maple_juicer", MapleJuicerCraftingRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<MapleJuicerCraftingRecipe>> Maple_JUIER_SERIALIZER = SERIALIZERS.register( "maple_juicer", () -> MapleJuicerCraftingRecipe.SERIALIZER);
     public static final RegistryObject<RecipeType<MapleJuicerCraftingRecipe>> Maple_JUIER_TYPE = TYPES.register( "maple_juicer", () -> new RecipeType<MapleJuicerCraftingRecipe>() {
         @Override
         public String toString() {

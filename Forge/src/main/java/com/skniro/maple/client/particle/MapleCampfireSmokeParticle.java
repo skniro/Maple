@@ -5,8 +5,6 @@ import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MapleCampfireSmokeParticle extends SingleQuadParticle {
     MapleCampfireSmokeParticle(ClientLevel world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, boolean signal, TextureAtlasSprite sprite) {
@@ -47,7 +45,6 @@ public class MapleCampfireSmokeParticle extends SingleQuadParticle {
         return Layer.TRANSLUCENT;
     }
 
-    @OnlyIn(Dist.CLIENT)
     public static class SignalSmokeFactory implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet spriteProvider;
 
@@ -62,7 +59,6 @@ public class MapleCampfireSmokeParticle extends SingleQuadParticle {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     public static class CosySmokeFactory implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet spriteProvider;
 

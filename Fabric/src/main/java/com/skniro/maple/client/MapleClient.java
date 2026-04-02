@@ -1,7 +1,6 @@
 package com.skniro.maple.client;
 
 import com.skniro.maple.Maple;
-import com.skniro.maple.MapleContent;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleFurnitureBlocks;
 import com.skniro.maple.block.entity.MapleBlockEntityType;
@@ -20,17 +19,18 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
-import net.fabricmc.fabric.api.client.rendering.v1.ChunkSectionLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.renderer.entity.BoatRenderer;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 
 @Environment(EnvType.CLIENT)
@@ -112,16 +112,16 @@ public class MapleClient implements ClientModInitializer {
         ModItemBlockRenderTypes.setRenderLayer(MapleBlocks.GLASS_STAIRS, renderLayer4);
         ModItemBlockRenderTypes.setRenderLayer(MapleBlocks.Maple_Juicer_Block, renderLayer4);
 
-        FluidRenderHandlerRegistry.INSTANCE.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
-                new SimpleFluidRenderHandler(
-                        Identifier.parse("maple:block/spring_still"),
-                        Identifier.parse("maple:block/spring_flow"),
-                        0x5DB7EF
+        FluidRenderingRegistry.register(MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring,
+                new FluidModel.Unbaked(
+                        new Material(Identifier.parse("maple:block/spring_still")),
+                        new Material(Identifier.parse("maple:block/spring_flow")),
+                        null,
+                        _ -> -6141935
                 ));
 
-        ChunkSectionLayerMap.putFluids(ChunkSectionLayer.TRANSLUCENT,
-                MapleFluids.STILL_Hot_Spring, MapleFluids.FLOWING_Hot_Spring);
-
+        ModItemBlockRenderTypes.setRenderLayer(MapleFluids.FLOWING_Hot_Spring, ChunkSectionLayer.TRANSLUCENT);
+        ModItemBlockRenderTypes.setRenderLayer(MapleFluids.STILL_Hot_Spring, ChunkSectionLayer.TRANSLUCENT);
 
         ParticleProviderRegistry.getInstance().register(MapleParticleTypes.HOT_SPRING, MapleCampfireSmokeParticle.CosySmokeFactory::new);
 

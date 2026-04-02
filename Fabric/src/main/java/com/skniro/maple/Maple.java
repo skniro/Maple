@@ -20,13 +20,12 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-/*import terrablender.api.Regions;
-import terrablender.api.TerraBlenderApi;*/
+import terrablender.api.Regions;
+import terrablender.api.TerraBlenderApi;
 
 import static com.skniro.maple.block.MapleBlocks.MAPLE_LOG;
 
-//public class Maple implements ModInitializer, TerraBlenderApi {
-public class Maple implements ModInitializer {
+public class Maple implements ModInitializer, TerraBlenderApi {
     public static final String MOD_ID = "maple";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final ModContainer MOD_CONTAINER = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow();
@@ -65,11 +64,11 @@ public class Maple implements ModInitializer {
         MapleContent.registerRecipeType();
     }
 
-/*    @Override
+    @Override
     public void onTerraBlenderInitialized() {
         Regions.register(new MapleGroveBiome(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "overworld_1"), 2));
         Regions.register(new MapleSakuraBiome(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "overworld_2"), 2));
-    }*/
+    }
 
     public static Identifier asResource(String path) {
         return Identifier.fromNamespaceAndPath(MOD_ID, path);
