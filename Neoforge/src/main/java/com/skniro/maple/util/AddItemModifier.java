@@ -22,8 +22,8 @@ public class AddItemModifier extends LootModifier {
             .fieldOf("item").forGetter(m -> m.item)).apply(inst, AddItemModifier::new));
     private final Item item;
 
-    protected AddItemModifier(LootItemCondition[] conditionsIn, Item item) {
-        super(conditionsIn);
+    protected AddItemModifier(LootItemCondition[] conditionsIn, int priority, Item item) {
+        super(conditionsIn, priority);
         this.item = item;
     }
 

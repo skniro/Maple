@@ -26,8 +26,6 @@ public class MapleCreativeModeTabs {
                     .title(Component.translatable("itemGroup.maple.maple_group"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(MapleBlocks.MAPLE_LOG.get());
-                        pOutput.accept(MapleBlocks.STRIPPED_MAPLE_LOG.get());
-                        pOutput.accept(MapleBlocks.STRIPPED_MAPLE_WOOD.get());
                         pOutput.accept(MapleBlocks.MAPLE_WOOD.get());
                         pOutput.accept(MapleBlocks.STRIPPED_MAPLE_WOOD.get());
                         pOutput.accept(MapleBlocks.STRIPPED_MAPLE_LOG.get());
