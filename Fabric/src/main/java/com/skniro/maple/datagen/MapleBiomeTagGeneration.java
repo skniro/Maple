@@ -1,5 +1,7 @@
 package com.skniro.maple.datagen;
 
+import com.skniro.maple.Maple;
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
@@ -40,5 +42,12 @@ public class MapleBiomeTagGeneration extends FabricTagsProvider<Biome> {
         builder(BiomeTags.IS_OVERWORLD)
                 .add(MapleBiomeKeys.Sakura)
                 .add(MapleBiomeKeys.Maple_Grove);
+
+        // generate tags under data/maple/tags/worldgen/biome/has_structure/
+        TagKey<Biome> villageSakura = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "has_structure/village_sakura"));
+        builder(villageSakura).add(ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath("minecraft", "cherry_grove")));
+
+        TagKey<Biome> hotSpringBaths = TagKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "has_structure/hot_spring_baths"));
+        builder(hotSpringBaths).add(MapleBiomeKeys.Sakura);
     }
 }

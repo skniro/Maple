@@ -1,5 +1,6 @@
 package com.skniro.maple.datagen;
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
 import com.skniro.maple.block.MapleNetherOresBlocks;
 import com.skniro.maple.block.MapleOreBlocks;
@@ -21,13 +22,15 @@ import static net.minecraft.tags.BlockTags.*;
 
 
 public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvider {
-    public MapleBlockTagGeneration(FabricPackOutput dataGenerator,CompletableFuture<HolderLookup.Provider> completableFuture) {
+    public MapleBlockTagGeneration(FabricPackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(dataGenerator, completableFuture);
     }
 
 
     public static class ModBlockTags {
         public static final TagKey<Block> C_PLASTER = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "plaster"));
+        public static final TagKey<Block> MAPLE_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "maple_logs"));
+        public static final TagKey<Block> GINKGO_LOGS = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "ginkgo_logs"));
 
     }
 
@@ -66,6 +69,16 @@ public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvide
         valueLookupBuilder(ConventionalBlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(MapleBlocks.MAPLE_LOG)
                 .add(MapleBlocks.GINKGO_LOG);
+        valueLookupBuilder(ModBlockTags.MAPLE_LOGS)
+                .add(MapleBlocks.MAPLE_LOG)
+                .add(MapleBlocks.MAPLE_WOOD)
+                .add(MapleBlocks.STRIPPED_MAPLE_LOG)
+                .add(MapleBlocks.STRIPPED_MAPLE_WOOD);
+        valueLookupBuilder(ModBlockTags.GINKGO_LOGS)
+                .add(MapleBlocks.GINKGO_LOG)
+                .add(MapleBlocks.GINKGO_WOOD)
+                .add(MapleBlocks.STRIPPED_GINKGO_LOG)
+                .add(MapleBlocks.STRIPPED_GINKGO_WOOD);
         valueLookupBuilder(WOODEN_FENCES)
                 .add(MapleBlocks.MAPLE_FENCE)
                 .add(MapleBlocks.GINKGO_FENCE);
@@ -142,5 +155,40 @@ public class MapleBlockTagGeneration extends FabricTagsProvider.BlockTagsProvide
         valueLookupBuilder(WALL_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_WALL_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
+        // minecraft:block/needs_stone_tool -> add mod ores that require stone
+        valueLookupBuilder(NEEDS_STONE_TOOL)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore);
+        // minecraft:block/needs_stone_tool -> add mod ores that require stone
+        valueLookupBuilder(NEEDS_STONE_TOOL)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore);
+        // minecraft:block/needs_iron_tool -> add mod ores that require iron
+        valueLookupBuilder(NEEDS_IRON_TOOL)
+                .add(MapleOreBlocks.DEEPSLATE_Salt_Ore)
+                .add(MapleOreBlocks.Salt_Ore)
+                .add(MapleNetherOresBlocks.Nether_Diamond_Ore)
+                .add(MapleNetherOresBlocks.Nether_Emerald_Ore)
+                .add(MapleNetherOresBlocks.Nether_Gold_Ore)
+                .add(MapleNetherOresBlocks.Nether_Redstone_Ore)
+                .setReplace(false);
+        // minecraft:block/logs_that_burn -> maple/ginkgo logs
+        valueLookupBuilder(LOGS_THAT_BURN)
+                .add(MapleBlocks.MAPLE_LOG)
+                .add(MapleBlocks.MAPLE_WOOD)
+                .add(MapleBlocks.STRIPPED_MAPLE_LOG)
+                .add(MapleBlocks.STRIPPED_MAPLE_WOOD)
+                .add(MapleBlocks.GINKGO_LOG)
+                .add(MapleBlocks.GINKGO_WOOD)
+                .add(MapleBlocks.STRIPPED_GINKGO_LOG)
+                .add(MapleBlocks.STRIPPED_GINKGO_WOOD)
+                .setReplace(false);
+        // minecraft:block/crops -> maples rice plant
+        valueLookupBuilder(CROPS)
+                .add(MapleBlocks.RICE)
+                .setReplace(false);
+
     }
 }

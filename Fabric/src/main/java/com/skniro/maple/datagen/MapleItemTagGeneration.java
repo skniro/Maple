@@ -3,8 +3,12 @@ package com.skniro.maple.datagen;
 
 
 
+import com.skniro.maple.Maple;
 import com.skniro.maple.block.MapleBlocks;
+import com.skniro.maple.block.MapleOreBlocks;
+import com.skniro.maple.block.MapleSignBlocks;
 import com.skniro.maple.item.MapleArmorItems;
+import com.skniro.maple.item.MapleItems;
 import com.skniro.maple.tag.MapleItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -29,6 +33,13 @@ public class MapleItemTagGeneration extends FabricTagsProvider.ItemTagsProvider{
     public static class ModItemTags {
         public static final TagKey<Item> C_SAPLING = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "saplings"));
         public static final TagKey<Item> C_MAPLE_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", "maple_logs"));
+        public static final TagKey<Item> MAPLE_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "maple_logs"));
+        public static final TagKey<Item> GINKGO_LOGS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Maple.MOD_ID, "ginkgo_logs"));
+        // minecraft namespace tags used by the game that we need to extend
+        public static final TagKey<Item> NEEDS_IRON_TOOL_ITEM = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "needs_iron_tool"));
+        public static final TagKey<Item> LOGS_THAT_BURN_ITEM = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "logs_that_burn"));
+        public static final TagKey<Item> VILLAGER_PLANTABLE_SEEDS_ITEM = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "villager_plantable_seeds"));
+        public static final TagKey<Item> STANDING_SIGNS_ITEM = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "standing_signs"));
     }
 
     @Override
@@ -42,6 +53,16 @@ public class MapleItemTagGeneration extends FabricTagsProvider.ItemTagsProvider{
                 .add(Item.byBlock(MapleBlocks.GINKGO_LEAVES))
                 .add(Item.byBlock(MapleBlocks.SAKURA_LEAVES))
                 .add(Item.byBlock(MapleBlocks.RED_MAPLE_LEAVES));
+        valueLookupBuilder(ModItemTags.MAPLE_LOGS)
+                .add(Item.byBlock(MapleBlocks.MAPLE_LOG))
+                .add(Item.byBlock(MapleBlocks.MAPLE_WOOD))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_MAPLE_LOG))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_MAPLE_WOOD));
+        valueLookupBuilder(ModItemTags.GINKGO_LOGS)
+                .add(Item.byBlock(MapleBlocks.GINKGO_LOG))
+                .add(Item.byBlock(MapleBlocks.GINKGO_WOOD))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_GINKGO_LOG))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_GINKGO_WOOD));
         valueLookupBuilder(SAPLINGS)
                 .add(Item.byBlock(MapleBlocks.MAPLE_SAPLING))
                 .add(Item.byBlock(MapleBlocks.GINKGO_SAPLING))
@@ -105,6 +126,31 @@ public class MapleItemTagGeneration extends FabricTagsProvider.ItemTagsProvider{
         valueLookupBuilder(WOODEN_TRAPDOORS)
                 .add(Item.byBlock(MapleBlocks.MAPLE_TRAPDOOR))
                 .add(Item.byBlock(MapleBlocks.GINKGO_TRAPDOOR));
+        // minecraft:item/villager_plantable_seeds -> maple:rice
+        valueLookupBuilder(ModItemTags.VILLAGER_PLANTABLE_SEEDS_ITEM)
+                .add(MapleItems.Rice)
+                .setReplace(false);
+        // minecraft:item/standing_signs -> maple signs
+        valueLookupBuilder(ModItemTags.STANDING_SIGNS_ITEM)
+                .add(Item.byBlock(MapleSignBlocks.Maple_SIGN))
+                .add(Item.byBlock(MapleSignBlocks.GINKGO_SIGN))
+                .setReplace(false);
+        // minecraft:item/needs_iron_tool -> item forms of ore blocks
+        valueLookupBuilder(ModItemTags.NEEDS_IRON_TOOL_ITEM)
+                .add(Item.byBlock(MapleOreBlocks.DEEPSLATE_Salt_Ore))
+                .add(Item.byBlock(MapleOreBlocks.Salt_Ore))
+                .setReplace(false);
+        // minecraft:item/logs_that_burn -> maple/ginkgo log items
+        valueLookupBuilder(ModItemTags.LOGS_THAT_BURN_ITEM)
+                .add(Item.byBlock(MapleBlocks.MAPLE_LOG))
+                .add(Item.byBlock(MapleBlocks.MAPLE_WOOD))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_MAPLE_LOG))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_MAPLE_WOOD))
+                .add(Item.byBlock(MapleBlocks.GINKGO_LOG))
+                .add(Item.byBlock(MapleBlocks.GINKGO_WOOD))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_GINKGO_LOG))
+                .add(Item.byBlock(MapleBlocks.STRIPPED_GINKGO_WOOD))
+                .setReplace(false);
     }
 
 

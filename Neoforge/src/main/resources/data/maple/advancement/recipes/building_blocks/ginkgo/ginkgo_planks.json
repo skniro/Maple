@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "Criterion[trigger=net.minecraft.advancements.criterion.InventoryChangeTrigger@6fd93c83, triggerInstance=TriggerInstance[player=Optional.empty, slots=Slots[occupied=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], full=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], empty=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]]], items=[ItemPredicate[items=Optional[NamedSet(TagKey[minecraft:item / maple:ginkgo_logs])[null]], count=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], components=DataComponentMatchers[exact=[], partial={}]]]]]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#maple:ginkgo_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:ginkgo/ginkgo_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "Criterion[trigger=net.minecraft.advancements.criterion.InventoryChangeTrigger@6fd93c83, triggerInstance=TriggerInstance[player=Optional.empty, slots=Slots[occupied=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], full=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], empty=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]]], items=[ItemPredicate[items=Optional[NamedSet(TagKey[minecraft:item / maple:ginkgo_logs])[null]], count=Ints[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], components=DataComponentMatchers[exact=[], partial={}]]]]]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:ginkgo/ginkgo_planks"
+    ]
+  }
+}

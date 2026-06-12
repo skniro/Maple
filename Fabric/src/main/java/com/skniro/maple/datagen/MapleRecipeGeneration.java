@@ -432,6 +432,25 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                         .unlockedBy(getHasName(MapleArmorItems.Cherry_BOOTS), has(MapleArmorItems.Cherry_BOOTS))
                         .save(this.output, getBlastingRecipeName(MapleArmorItems.Cherry_INGOT));
 
+                // cherry nugget / ingot recipes (convert from JSON -> datagen)
+                shapeless(RecipeCategory.MISC, MapleArmorItems.Cherry_NUGGET, 9)
+                        .requires(MapleArmorItems.Cherry_INGOT)
+                        .unlockedBy(getHasName(MapleArmorItems.Cherry_INGOT), has(MapleArmorItems.Cherry_INGOT))
+                        .save(output, "cherry_armor_tool/cherry_nugget");
+
+                shaped(RecipeCategory.MISC, MapleArmorItems.Cherry_INGOT)
+                        .pattern("###").pattern("###").pattern("###")
+                        .define('#', MapleArmorItems.Cherry_NUGGET)
+                        .unlockedBy(getHasName(MapleArmorItems.Cherry_NUGGET), has(MapleArmorItems.Cherry_NUGGET))
+                        .save(output, "cherry_armor_tool/cherry_ingot_from_nuggets");
+
+                shapeless(RecipeCategory.MISC, MapleArmorItems.Cherry_INGOT)
+                        .requires(Items.IRON_INGOT).requires(Items.IRON_INGOT).requires(Items.IRON_INGOT).requires(Items.IRON_INGOT)
+                        .requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT)
+                        .requires(MapleBlocks.MAPLE_LEAVES)
+                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                        .save(output, "cherry_armor_tool/cherry_ingot");
+
 
                 shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.WHITE_CONCRETE_SLAB, 6)
                         .pattern("###")
@@ -1030,6 +1049,198 @@ public class MapleRecipeGeneration extends FabricRecipeProvider {
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.RED_CONCRETE), RecipeCategory.BUILDING_BLOCKS, MapleBlocks.RED_CONCRETE_SLAB, 2).unlockedBy(getHasName(Blocks.RED_CONCRETE), has(Blocks.RED_CONCRETE)).save(exporter, String.valueOf(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "cutting/red_concrete_slab")));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLACK_CONCRETE), RecipeCategory.BUILDING_BLOCKS, MapleBlocks.BLACK_CONCRETE_STAIRS, 1).unlockedBy(getHasName(Blocks.BLACK_CONCRETE), has(Blocks.BLACK_CONCRETE)).save(exporter, String.valueOf(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "cutting/black_concrete_stairs")));
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BLACK_CONCRETE), RecipeCategory.BUILDING_BLOCKS, MapleBlocks.BLACK_CONCRETE_SLAB, 2).unlockedBy(getHasName(Blocks.BLACK_CONCRETE), has(Blocks.BLACK_CONCRETE)).save(exporter, String.valueOf(Identifier.fromNamespaceAndPath(Maple.MOD_ID, "cutting/black_concrete_slab")));
+                // Additional datagen conversions for recipes currently in resources
+
+                // snowball variants
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_STONE, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.STONE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_stone");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_ICE, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.ICE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_ice");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_ICE, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.ICE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_ice2");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_ICE, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.ICE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_ice3");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_IRON, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.IRON_INGOT)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_iron");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Gold, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.GOLD_NUGGET)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_gold");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Diamond, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.DIAMOND)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_diamond");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Compression, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.WATER_BUCKET)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_compression");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Teleporting, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.ENDER_PEARL)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_teleporting");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Confusion, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.RED_MUSHROOM)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_confusion");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Poison, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.SPIDER_EYE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_posion");
+
+                shaped(RecipeCategory.MISC, MapleItems.SNOWBALL_Instant_Health, 32)
+                        .pattern("###").pattern("#G#").pattern("###")
+                        .define('#', Blocks.SNOW_BLOCK)
+                        .define('G', Items.MELON_SLICE)
+                        .unlockedBy(getHasName(Blocks.SNOW_BLOCK), has(Blocks.SNOW_BLOCK))
+                        .save(output, "snowball/snowball_instant_health");
+
+                // hanging signs
+                shaped(RecipeCategory.MISC, MapleItems.Maple_HANGING_SIGN, 6)
+                        .pattern("X X").pattern("###").pattern("###")
+                        .define('X', Items.IRON_CHAIN)
+                        .define('#', MapleBlocks.STRIPPED_MAPLE_LOG)
+                        .unlockedBy(getHasName(MapleBlocks.STRIPPED_MAPLE_LOG), has(MapleBlocks.STRIPPED_MAPLE_LOG))
+                        .save(output, "hanging_sign/maple_hanging_sign");
+
+                shaped(RecipeCategory.MISC, MapleItems.GINKGO_HANGING_SIGN, 6)
+                        .pattern("X X").pattern("###").pattern("###")
+                        .define('X', Items.IRON_CHAIN)
+                        .define('#', MapleBlocks.STRIPPED_GINKGO_LOG)
+                        .unlockedBy(getHasName(MapleBlocks.STRIPPED_GINKGO_LOG), has(MapleBlocks.STRIPPED_GINKGO_LOG))
+                        .save(output, "hanging_sign/ginkgo_hanging_sign");
+
+                // tatami
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.TATAMI, 4)
+                        .pattern("###").pattern("GGG")
+                        .define('#', Items.SHORT_GRASS)
+                        .define('G', Items.WHEAT)
+                        .unlockedBy(getHasName(Items.WHEAT), has(Items.WHEAT))
+                        .save(output, "tatami/tatami");
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.TATAMI_SLAB, 6)
+                        .pattern("###")
+                        .define('#', MapleBlocks.TATAMI)
+                        .unlockedBy(getHasName(MapleBlocks.TATAMI), has(MapleBlocks.TATAMI))
+                        .save(output, "tatami/tatami_slab");
+
+                // ginkgo sapling
+                shapeless(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.GINKGO_SAPLING)
+                        .requires(Items.OAK_SAPLING)
+                        .requires(Items.YELLOW_DYE)
+                        .unlockedBy(getHasName(Items.OAK_SAPLING), has(Items.OAK_SAPLING))
+                        .save(output, "sapling/ginkgo_sapling");
+
+                // maple wood family (maple + ginkgo) common recipes
+                // planks from logs
+                shapeless(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.MAPLE_PLANKS, 4)
+                        .requires(MapleItemTagGeneration.ModItemTags.MAPLE_LOGS)
+                        .unlockedBy(String.valueOf(has(MapleItemTagGeneration.ModItemTags.MAPLE_LOGS)), has(MapleItemTagGeneration.ModItemTags.MAPLE_LOGS))
+                        .save(output, "maple/maple_planks");
+
+                shapeless(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.GINKGO_PLANKS, 4)
+                        .requires(MapleItemTagGeneration.ModItemTags.GINKGO_LOGS)
+                        .unlockedBy(String.valueOf(has(MapleItemTagGeneration.ModItemTags.GINKGO_LOGS)), has(MapleItemTagGeneration.ModItemTags.GINKGO_LOGS))
+                        .save(output, "ginkgo/ginkgo_planks");
+
+                // slabs & stairs & trapdoor
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.MAPLE_SLAB, 6).pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_slab");
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.MAPLE_STAIRS, 4).pattern("#  ").pattern("## ").pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_stairs");
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.MAPLE_TRAPDOOR, 2).pattern("###").pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_trapdoor");
+
+                shaped(RecipeCategory.MISC, MapleItems.MAPLE_SIGN, 3).pattern("###").pattern("###").pattern(" X ").define('#', MapleBlocks.MAPLE_PLANKS).define('X', Items.STICK).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_sign");
+
+                shaped(RecipeCategory.REDSTONE, MapleItems.MAPLE_DOOR, 3).pattern("##").pattern("##").pattern("##").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_door");
+
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.MAPLE_BUTTON).pattern("#").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_button");
+
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.MAPLE_PRESSURE_PLATE).pattern("##").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_pressure_plate");
+
+                shaped(RecipeCategory.DECORATIONS, MapleBlocks.MAPLE_FENCE, 3).pattern("# #").pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_fence");
+
+                shaped(RecipeCategory.DECORATIONS, MapleBlocks.MAPLE_FENCE_GATE).pattern("# #").pattern("# #").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_fence_gate");
+
+                shaped(RecipeCategory.MISC, MapleItems.MAPLE_BOAT).pattern("# #").pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_boat");
+                shaped(RecipeCategory.MISC, MapleItems.MAPLE_CHEST_BOAT).pattern("# #").pattern("###").define('#', MapleBlocks.MAPLE_PLANKS).unlockedBy(getHasName(MapleBlocks.MAPLE_PLANKS), has(MapleBlocks.MAPLE_PLANKS)).save(output, "maple/maple_chest_boat");
+
+                // cherry ingot variant using sakura leaves
+                shapeless(RecipeCategory.MISC, MapleArmorItems.Cherry_INGOT)
+                        .requires(Items.IRON_INGOT).requires(Items.IRON_INGOT).requires(Items.IRON_INGOT).requires(Items.IRON_INGOT)
+                        .requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT).requires(Items.GOLD_INGOT)
+                        .requires(MapleBlocks.SAKURA_LEAVES)
+                        .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                        .save(output, "cherry_armor_tool/cherry_ingot_sakura");
+
+                // cheese
+                shapeless(RecipeCategory.MISC, MapleFoodComponents.Cheese)
+                        .requires(MapleFoodComponents.MILK_BOTTOM)
+                        .unlockedBy(getHasName(MapleFoodComponents.MILK_BOTTOM), has(MapleFoodComponents.MILK_BOTTOM))
+                        .save(output, "food/cheese");
+
+                // maple wood conversions
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.MAPLE_WOOD, 3).pattern("##").pattern("##").define('#', MapleBlocks.MAPLE_LOG).unlockedBy(getHasName(MapleBlocks.MAPLE_LOG), has(MapleBlocks.MAPLE_LOG)).save(output, "maple/maple_wood");
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.STRIPPED_MAPLE_WOOD, 3).pattern("##").pattern("##").define('#', MapleBlocks.STRIPPED_MAPLE_LOG).unlockedBy(getHasName(MapleBlocks.STRIPPED_MAPLE_LOG), has(MapleBlocks.STRIPPED_MAPLE_LOG)).save(output, "maple/stripped_maple_wood");
+
+                // ginkgo wood conversions & family
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.GINKGO_WOOD, 3).pattern("##").pattern("##").define('#', MapleBlocks.GINKGO_LOG).unlockedBy(getHasName(MapleBlocks.GINKGO_LOG), has(MapleBlocks.GINKGO_LOG)).save(output, "ginkgo/ginkgo_wood");
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.STRIPPED_GINKGO_WOOD, 3).pattern("##").pattern("##").define('#', MapleBlocks.STRIPPED_GINKGO_LOG).unlockedBy(getHasName(MapleBlocks.STRIPPED_GINKGO_LOG), has(MapleBlocks.STRIPPED_GINKGO_LOG)).save(output, "ginkgo/stripped_ginkgo_wood");
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.GINKGO_SLAB, 6).pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_slab");
+                shaped(RecipeCategory.BUILDING_BLOCKS, MapleBlocks.GINKGO_STAIRS, 4).pattern("#  ").pattern("## ").pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_stairs");
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.GINKGO_TRAPDOOR, 2).pattern("###").pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_trapdoor");
+
+                shaped(RecipeCategory.MISC, MapleItems.GINKGO_SIGN, 3).pattern("###").pattern("###").pattern(" X ").define('#', MapleBlocks.GINKGO_PLANKS).define('X', Items.STICK).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_sign");
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.GINKGO_BUTTON).pattern("#").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_button");
+                shaped(RecipeCategory.REDSTONE, MapleBlocks.GINKGO_PRESSURE_PLATE).pattern("##").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_pressure_plate");
+
+                shaped(RecipeCategory.DECORATIONS, MapleBlocks.GINKGO_FENCE, 3).pattern("# #").pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_fence");
+                shaped(RecipeCategory.DECORATIONS, MapleBlocks.GINKGO_FENCE_GATE).pattern("# #").pattern("# #").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_fence_gate");
+
+                shaped(RecipeCategory.REDSTONE, MapleItems.GINKGO_DOOR, 3).pattern("##").pattern("##").pattern("##").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_door");
+                shaped(RecipeCategory.MISC, MapleItems.GINKGO_BOAT).pattern("# #").pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_boat");
+                shaped(RecipeCategory.MISC, MapleItems.GINKGO_CHEST_BOAT).pattern("# #").pattern("###").define('#', MapleBlocks.GINKGO_PLANKS).unlockedBy(getHasName(MapleBlocks.GINKGO_PLANKS), has(MapleBlocks.GINKGO_PLANKS)).save(output, "ginkgo/ginkgo_chest_boat");
+
             }
         };
     }
