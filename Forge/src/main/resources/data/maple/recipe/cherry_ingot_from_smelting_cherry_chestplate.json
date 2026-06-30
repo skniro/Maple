@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "cherry_ingot_smelting",
+  "ingredient": "maple:cherry_chestplate",
+  "result": {
+    "id": "maple:cherry_ingot"
+  }
+}

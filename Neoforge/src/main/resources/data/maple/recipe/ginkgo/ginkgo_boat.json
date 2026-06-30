@@ -1,16 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "misc",
-    "group": "boat",
-    "key": {
-        "#": "maple:ginkgo_planks"
-    },
-    "pattern": [
-        "# #",
-        "###"
-    ],
-    "result": {
-        "id": "maple:ginkgo_boat"
-    },
-    "show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "maple:ginkgo_planks"
+  },
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "maple:ginkgo_boat"
+  }
 }
