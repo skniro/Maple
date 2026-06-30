@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "maple:tatami"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "maple:tatami_slab"
+  }
+}

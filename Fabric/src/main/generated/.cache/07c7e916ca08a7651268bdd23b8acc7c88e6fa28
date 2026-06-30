@@ -1,0 +1,6 @@
+// 1.21.4	-999999999-01-01T00:00:00	Maple/Tags for minecraft:worldgen/biome
+8ef8d73ba26b5cb810372048d517f4671d8fe5c0 data/maple/tags/worldgen/biome/has_structure/hot_spring_baths.json
+a18b42d48e473c1416af02fa30d2722fbc057e77 data/maple/tags/worldgen/biome/has_structure/village_sakura.json
+4ed32990c496eea648d78cec36f9de5cbfbbdb9a data/minecraft/tags/worldgen/biome/is_forest.json
+8ef8d73ba26b5cb810372048d517f4671d8fe5c0 data/minecraft/tags/worldgen/biome/is_mountain.json
+5d74ae581af419ac9c85eb77365ddee304f86ea7 data/minecraft/tags/worldgen/biome/is_overworld.json

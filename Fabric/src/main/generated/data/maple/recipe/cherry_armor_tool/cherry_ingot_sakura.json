@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "maple:sakura_leaves"
+  ],
+  "result": {
+    "count": 1,
+    "id": "maple:cherry_ingot"
+  }
+}
