@@ -1,10 +1,11 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "misc",
-    "ingredients": [
-        "maple:milk_bottom"
-    ],
-    "result": {
-        "id": "maple:cheese"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "maple:milk_bottom"
+  ],
+  "result": {
+    "count": 1,
+    "id": "maple:cheese"
+  }
 }

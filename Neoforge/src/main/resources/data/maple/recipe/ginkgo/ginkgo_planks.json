@@ -1,12 +1,11 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "building",
-    "group": "planks",
-    "ingredients": [
-        "#maple:ginkgo_logs"
-    ],
-    "result": {
-        "count": 4,
-        "id": "maple:ginkgo_planks"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#maple:ginkgo_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "maple:ginkgo_planks"
+  }
 }

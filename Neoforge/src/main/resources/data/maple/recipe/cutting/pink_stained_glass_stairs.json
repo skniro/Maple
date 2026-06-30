@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:pink_stained_glass",
+  "result": {
+    "count": 1,
+    "id": "maple:pink_stained_glass_stairs"
+  }
+}

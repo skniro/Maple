@@ -1,12 +1,11 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "category": "building",
-    "group": "planks",
-    "ingredients": [
-        "#maple:maple_logs"
-    ],
-    "result": {
-        "count": 4,
-        "id": "maple:maple_planks"
-    }
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#maple:maple_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "maple:maple_planks"
+  }
 }

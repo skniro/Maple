@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "AdvancementCriterion[trigger=net.minecraft.advancement.criterion.InventoryChangedCriterion@72fe4fe8, triggerInstance=Conditions[player=Optional.empty, slots=Slots[occupied=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], full=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], empty=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]]], items=[ItemPredicate[items=Optional[NamedSet(TagKey[minecraft:item / maple:maple_logs])[null]], count=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], components=ComponentsPredicate[exact=[], partial={}]]]]]": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#maple:maple_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:maple/maple_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "AdvancementCriterion[trigger=net.minecraft.advancement.criterion.InventoryChangedCriterion@72fe4fe8, triggerInstance=Conditions[player=Optional.empty, slots=Slots[occupied=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], full=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], empty=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]]], items=[ItemPredicate[items=Optional[NamedSet(TagKey[minecraft:item / maple:maple_logs])[null]], count=IntRange[bounds=Bounds[min=Optional.empty, max=Optional.empty], boundsSqr=Bounds[min=Optional.empty, max=Optional.empty]], components=ComponentsPredicate[exact=[], partial={}]]]]]"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:maple/maple_planks"
+    ]
+  }
+}
