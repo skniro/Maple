@@ -2,6 +2,9 @@
   "values": [
     "maple:iron_ore",
     "maple:lapis_ore",
+    "maple:copper_ore",
+    "maple:iron_ore",
+    "maple:lapis_ore",
     "maple:copper_ore"
   ]
 }

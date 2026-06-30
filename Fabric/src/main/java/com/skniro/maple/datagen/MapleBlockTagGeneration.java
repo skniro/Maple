@@ -97,5 +97,39 @@ public class MapleBlockTagGeneration extends FabricTagProvider.BlockTagProvider 
         valueLookupBuilder(WALL_HANGING_SIGNS)
                 .add(MapleSignBlocks.Maple_WALL_HANGING_SIGN)
                 .add(MapleSignBlocks.GINKGO_WALL_HANGING_SIGN);
+        // minecraft:block/needs_stone_tool -> add mod ores that require stone
+        valueLookupBuilder(NEEDS_STONE_TOOL)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore);
+        // minecraft:block/needs_stone_tool -> add mod ores that require stone
+        valueLookupBuilder(NEEDS_STONE_TOOL)
+                .add(MapleNetherOresBlocks.Nether_Iron_Ore)
+                .add(MapleNetherOresBlocks.Nether_Lapis_Ore)
+                .add(MapleNetherOresBlocks.Nether_Copper_Ore);
+        // minecraft:block/needs_iron_tool -> add mod ores that require iron
+        valueLookupBuilder(NEEDS_IRON_TOOL)
+                .add(MapleOreBlocks.DEEPSLATE_Salt_Ore)
+                .add(MapleOreBlocks.Salt_Ore)
+                .add(MapleNetherOresBlocks.Nether_Diamond_Ore)
+                .add(MapleNetherOresBlocks.Nether_Emerald_Ore)
+                .add(MapleNetherOresBlocks.Nether_Gold_Ore)
+                .add(MapleNetherOresBlocks.Nether_Redstone_Ore)
+                .setReplace(false);
+        // minecraft:block/logs_that_burn -> maple/ginkgo logs
+        valueLookupBuilder(LOGS_THAT_BURN)
+                .add(MapleBlocks.MAPLE_LOG)
+                .add(MapleBlocks.MAPLE_WOOD)
+                .add(MapleBlocks.STRIPPED_MAPLE_LOG)
+                .add(MapleBlocks.STRIPPED_MAPLE_WOOD)
+                .add(MapleBlocks.GINKGO_LOG)
+                .add(MapleBlocks.GINKGO_WOOD)
+                .add(MapleBlocks.STRIPPED_GINKGO_LOG)
+                .add(MapleBlocks.STRIPPED_GINKGO_WOOD)
+                .setReplace(false);
+        // minecraft:block/crops -> maples rice plant
+        valueLookupBuilder(CROPS)
+                .add(MapleBlocks.RICE)
+                .setReplace(false);
     }
 }

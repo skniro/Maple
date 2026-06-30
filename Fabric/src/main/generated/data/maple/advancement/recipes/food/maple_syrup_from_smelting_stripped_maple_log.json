@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:maple_syrup_from_smelting_stripped_maple_log"
+        "recipe": "maple:maple_syrup_from_smelting_stripped_maple_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:maple_syrup_from_smelting_stripped_maple_log"
+      "maple:maple_syrup_from_smelting_stripped_maple_log"
     ]
   }
 }

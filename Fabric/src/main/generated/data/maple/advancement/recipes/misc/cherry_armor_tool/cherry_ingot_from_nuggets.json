@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cherry_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "maple:cherry_armor_tool/cherry_ingot_from_nuggets"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cherry_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "maple:cherry_armor_tool/cherry_ingot_from_nuggets"
+    ]
+  }
+}

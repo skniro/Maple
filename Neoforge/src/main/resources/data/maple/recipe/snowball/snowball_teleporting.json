@@ -1,16 +1,17 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "#G#",
-        "###"
-    ],
-    "key": {
-        "#": "minecraft:snow_block",
-        "G": "minecraft:ender_pearl"
-    },
-    "result": {
-        "count": 32,
-        "id": "maple:snowball_teleporting"
-    }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:snow_block",
+    "G": "minecraft:ender_pearl"
+  },
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "id": "maple:snowball_teleporting"
+  }
 }

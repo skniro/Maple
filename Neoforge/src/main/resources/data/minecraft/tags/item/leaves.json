@@ -1,8 +1,8 @@
 {
-  "replace": false,
   "values": [
     "maple:maple_leaves",
-    "maple:cherry_leaves",
-    "maple:sakura_leaves"
+    "maple:ginkgo_leaves",
+    "maple:sakura_leaves",
+    "maple:red_maple_leaves"
   ]
 }
