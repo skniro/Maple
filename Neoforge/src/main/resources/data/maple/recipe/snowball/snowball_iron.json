@@ -1,20 +1,21 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "#G#",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:iron_ingot"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:snow_block"
     },
-    "result": {
-        "id": "maple:snowball_iron",
-        "count": 32
+    "G": {
+      "item": "minecraft:iron_ingot"
     }
+  },
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "id": "maple:snowball_iron"
+  }
 }

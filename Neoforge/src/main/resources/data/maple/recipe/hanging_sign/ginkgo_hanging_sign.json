@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "hanging_sign",
   "key": {
     "#": {
       "item": "maple:stripped_ginkgo_log"
@@ -18,6 +17,5 @@
   "result": {
     "count": 6,
     "id": "maple:ginkgo_hanging_sign"
-  },
-  "show_notification": true
+  }
 }

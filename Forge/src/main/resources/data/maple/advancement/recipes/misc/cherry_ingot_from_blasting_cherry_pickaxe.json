@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cherry_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "maple:cherry_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cherry_ingot_from_blasting_cherry_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cherry_pickaxe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cherry_ingot_from_blasting_cherry_pickaxe"
+    ]
+  }
+}

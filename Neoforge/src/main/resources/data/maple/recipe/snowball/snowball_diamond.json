@@ -1,20 +1,21 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "#G#",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:diamond"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:snow_block"
     },
-    "result": {
-        "id": "maple:snowball_diamond",
-        "count": 32
+    "G": {
+      "item": "minecraft:diamond"
     }
+  },
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "id": "maple:snowball_diamond"
+  }
 }

@@ -1,7 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "wooden_door",
   "key": {
     "#": {
       "item": "maple:maple_planks"
@@ -13,8 +12,7 @@
     "##"
   ],
   "result": {
-    "id": "maple:maple_door",
-    "count": 3
-  },
-  "show_notification": true
+    "count": 3,
+    "id": "maple:maple_door"
+  }
 }

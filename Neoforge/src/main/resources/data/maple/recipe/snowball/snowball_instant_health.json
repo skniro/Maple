@@ -1,20 +1,21 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "#G#",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:snow_block"
-        },
-        "G": {
-            "item": "minecraft:melon_slice"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:snow_block"
     },
-    "result": {
-        "id": "maple:snowball_instant_health",
-        "count": 32
+    "G": {
+      "item": "minecraft:melon_slice"
     }
+  },
+  "pattern": [
+    "###",
+    "#G#",
+    "###"
+  ],
+  "result": {
+    "count": 32,
+    "id": "maple:snowball_instant_health"
+  }
 }

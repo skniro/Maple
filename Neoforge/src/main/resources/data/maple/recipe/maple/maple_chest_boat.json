@@ -1,16 +1,17 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "chest_boat",
-  "ingredients": [
-    {
-      "item": "minecraft:chest"
-    },
-    {
-      "item": "maple:maple_boat"
+  "key": {
+    "#": {
+      "item": "maple:maple_planks"
     }
+  },
+  "pattern": [
+    "# #",
+    "###"
   ],
-   "result": {
+  "result": {
+    "count": 1,
     "id": "maple:maple_chest_boat"
   }
 }

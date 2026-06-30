@@ -1,7 +1,6 @@
 {
-  "replace": false,
   "values": [
-    "maple:maple_grove",
-    "maple:sakura"
+    "maple:sakura",
+    "maple:maple_grove"
   ]
 }

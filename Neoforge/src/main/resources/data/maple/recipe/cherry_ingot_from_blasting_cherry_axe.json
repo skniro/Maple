@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "cherry_ingot_blasting",
+  "ingredient": {
+    "item": "maple:cherry_axe"
+  },
+  "result": {
+    "id": "maple:cherry_ingot"
+  }
+}

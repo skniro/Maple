@@ -6,7 +6,8 @@
       "item": "maple:milk_bottom"
     }
   ],
-   "result": {
+  "result": {
+    "count": 1,
     "id": "maple:cheese"
   }
 }
