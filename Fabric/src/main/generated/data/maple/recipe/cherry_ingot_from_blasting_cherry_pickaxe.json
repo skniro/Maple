@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "cherry_ingot_blasting",
+  "ingredient": "maple:cherry_pickaxe",
+  "result": {
+    "id": "maple:cherry_ingot"
+  }
+}

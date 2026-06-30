@@ -1,17 +1,15 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "building",
-    "group": "bark",
-    "key": {
-        "#": "maple:stripped_ginkgo_log"
-    },
-    "pattern": [
-        "##",
-        "##"
-    ],
-    "result": {
-        "count": 3,
-        "id": "maple:stripped_ginkgo_wood"
-    },
-    "show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "maple:stripped_ginkgo_log"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "maple:stripped_ginkgo_wood"
+  }
 }
